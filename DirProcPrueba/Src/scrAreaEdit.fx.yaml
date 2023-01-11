@@ -1431,6 +1431,8 @@ scrAreaEdit As screen:
     ConfirmDialogContainer As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.5)
         Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Manual
+        LayoutMode: =LayoutMode.Auto
         Visible: =showConfirmDialog
         Width: =Parent.Width
         ZIndex: =26
