@@ -2743,6 +2743,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.varIdOpcionMenu"
                 }
               ],

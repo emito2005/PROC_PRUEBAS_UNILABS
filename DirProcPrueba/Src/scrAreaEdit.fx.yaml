@@ -1478,8 +1478,66 @@ scrAreaEdit As screen:
 
         confirmDialogYes As icon.Check:
             Color: =Color.Green
+            DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
             Icon: =Icon.Check
+            OnSelect: |-
+                =UpdateContext({ isProcessing: true });
+                
+                // Manager
+                If(confirmType = 1,
+                	// Remove all Analysts that are equals to this Manager ID
+                	RemoveIf(AreaManagerLiderAnalista, IdAreaManager = PeopleAddedGallery1_1.Selected.ID);
+                
+                	// Remove all Leaders that are equals to this Manager ID
+                	RemoveIf(AreaManagerLider, IdAreaManager = PeopleAddedGallery1_1.Selected.ID);
+                
+                	// Remove this Manager
+                	Remove(AreaManager, LookUp(AreaManager, ID = PeopleAddedGallery1_1.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_1.Selected.EmailPersonal), 
+                		{
+                			IdPerfil: 1, 
+                			IdArea: 0
+                		}
+                	),
+                
+                	
+                	// Leader
+                	confirmType = 2,
+                	// Remove all Analysts that are equals to this Leader ID
+                	RemoveIf(AreaManagerLiderAnalista, IdAreaManagerLider = PeopleAddedGallery1_2.Selected.ID);
+                
+                	// Remove this Leader
+                	Remove(AreaManagerLider, LookUp(AreaManagerLider, ID = PeopleAddedGallery1_2.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_2.Selected.EmailPersonalML), 
+                		{
+                			IdPerfil: 1,
+                			IdArea: 0
+                		}
+                	),
+                	
+                	
+                	// Analyst
+                	confirmType = 3,
+                	// Remove this Analyst
+                	Remove(AreaManagerLiderAnalista, LookUp(AreaManagerLiderAnalista, ID = PeopleAddedGallery1_3.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_3.Selected.EmailPersonalMLA), 
+                		{
+                			IdPerfil: 1,
+                			IdArea: 0
+                		}
+                	)
+                );
+                
+                Notify(If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & " eliminado correctamente.", NotificationType.Success);
+                
+                UpdateContext({ isProcessing: false, showConfirmDialog: false });
             Width: =50
             X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
@@ -1487,6 +1545,7 @@ scrAreaEdit As screen:
 
         confirmDialogNo As icon.Check:
             Color: =RGBA(228, 3, 44, 1)
+            DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
             Icon: =Icon.Cancel
             OnSelect: |-
