@@ -2653,19 +2653,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrAreaEdit.Container1.Button1.FocusedBorderThickness"
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrAreaEdit.Container1.Button1.FocusedBorderThickness",
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scrAreaEdit",
-                "type": "scrAreaEdit.Container1.Button1"
+                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame"
               }
             }
           ],
@@ -2677,6 +2677,66 @@
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -2796,6 +2856,36 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmType"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmType",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "confirmType",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
         }
       ],
       "tool": {
