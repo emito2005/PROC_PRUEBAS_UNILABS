@@ -1,0 +1,301 @@
+scrMisSolicitudes As screen:
+
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =660
+        Width: =1171
+        X: =181
+        Y: =100
+        ZIndex: =1
+
+    cmpBarraSuperior_5 As cmpBarraSuperior:
+        ZIndex: =2
+
+    gaMenuLateral_MS As gallery.galleryVertical:
+        Height: =335
+        Items: =colBarraLateral
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Transition: =Transition.Pop
+        Width: =181
+        Y: =100
+        ZIndex: =3
+
+        Button2_1 As button:
+            Align: =Align.Left
+            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
+            Height: =61
+            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
+            OnSelect: |-
+                =Set(varIdOpcionMenu,ThisItem.id_boton);
+                Set(varOpcionMenu,ThisItem.texto_boton);
+                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
+            PaddingLeft: |
+                =ThisItem.sangria*10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: =ThisItem.texto_boton
+            Width: =171
+            ZIndex: =1
+
+    lbl_TituloPrincipal_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =43
+        Size: =24
+        Text: ="MIS SOLICITUDES"
+        Width: =1072
+        X: =278
+        Y: =100
+        ZIndex: =4
+
+    "HeaderGallery_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =50
+        Items: =colHeader
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =50
+        Width: =1175
+        X: =179
+        Y: =235
+        ZIndex: =5
+
+        lbl_Tit_Nombre_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lbl_Tit_Codigo_1.Height
+            Size: =10
+            Text: ="TIPO SOLIC."
+            Width: =80
+            X: =241
+            Y: =3
+            ZIndex: =5
+
+        lbl_Tit_Codigo_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: |
+                ="NRO TICKET"
+            Width: |
+                =80
+            X: =2
+            Y: =3
+            ZIndex: =6
+
+        lbl_Tit_NomAbrev_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lbl_Tit_Codigo_1.Height
+            Size: =10
+            Text: ="NOMBRE SOL."
+            X: =85
+            Y: =3
+            ZIndex: =7
+
+        lbl_Tit_SLA_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lbl_Tit_Codigo_1.Height
+            Size: =10
+            Text: ="TIPO SERV."
+            Width: =80
+            X: =lbl_Tit_Nombre_1.X+lbl_Tit_Nombre_1.Width
+            Y: =3
+            ZIndex: =8
+
+        lbl_Tit_OLA_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lbl_Tit_Codigo_1.Height
+            Size: =10
+            Text: ="ESTADO"
+            Width: =80
+            X: =lbl_Tit_SLA_1.X+lbl_Tit_SLA_1.Width
+            Y: =3
+            ZIndex: =9
+
+        lbl_Tit_Accion_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. PROCEDENCIA"
+            Width: =110
+            X: =483
+            Y: =3
+            ZIndex: =10
+
+        lbl_Tit_Accion_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. ASIGNADO"
+            Width: =110
+            X: =598
+            Y: =3
+            ZIndex: =11
+
+        lbl_Tit_Accion_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="MANAGER"
+            Width: =100
+            X: =713
+            Y: =3
+            ZIndex: =12
+
+        lbl_Tit_Accion_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="LIDER"
+            Width: =100
+            X: =817
+            Y: =3
+            ZIndex: =13
+
+        lbl_Tit_Accion_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="ANALISTA"
+            Width: =100
+            X: =917
+            Y: =3
+            ZIndex: =14
+
+        lbl_Tit_Accion_6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA CREAC."
+            Width: =70
+            X: =1017
+            Y: =3
+            ZIndex: =15
+
+        lbl_Tit_Accion_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA EXPIRA"
+            Width: =70
+            X: =1095
+            Y: =3
+            ZIndex: =16
+
+    Label3 As label:
+        Height: =33
+        Size: =12
+        Text: ="Nombre / Nro. Solicitud"
+        Width: =196
+        X: =186
+        Y: =143
+        ZIndex: =6
+
+    Label3_1 As label:
+        Height: =33
+        Size: =12
+        Text: ="Estado"
+        Width: =100
+        X: =396
+        Y: =143
+        ZIndex: =7
+
+    Label3_2 As label:
+        Height: =33
+        Size: =12
+        Text: ="Dpto. Procedencia"
+        X: =573
+        Y: =143
+        ZIndex: =8
+
+    Label3_3 As label:
+        Height: =33
+        Size: =12
+        Text: ="Solicitante"
+        X: =790
+        Y: =143
+        ZIndex: =9
+
+    TextInput1 As text:
+        Default: ="Entrada de texto"
+        Width: =196
+        X: =186
+        Y: =176
+        ZIndex: =10
+
+    Dropdown2 As dropdown:
+        Items: =["Activo","Cancelado","Eliminado"]
+        Width: =168
+        X: =396
+        Y: =176
+        ZIndex: =11
+
+    Dropdown2_1 As dropdown:
+        Items: =["Sistemas","Contabilidad","Comercial","Planing y Control","Logistica","Operaciones"]
+        Width: =204
+        X: =575
+        Y: =176
+        ZIndex: =12
+
+    Dropdown2_2 As dropdown:
+        Items: =[""]
+        Width: =204
+        X: =795
+        Y: =176
+        ZIndex: =13
+
+    Button2_7 As button:
+        Text: ="Filtrar"
+        Width: =100
+        X: =1018
+        Y: =176
+        ZIndex: =14
+
+    Button2_8 As button:
+        Text: ="Exportar"
+        Width: =100
+        X: =1129
+        Y: =176
+        ZIndex: =15
+
+    Button2_9 As button:
+        Text: ="Limpiar"
+        Width: =100
+        X: =1243
+        Y: =176
+        ZIndex: =16
+

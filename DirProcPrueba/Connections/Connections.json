@@ -1,0 +1,90 @@
+{
+  "5bd8dc9c-5626-4c87-8750-2d738a5ddbb9": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/juanq/gateway/greyhound/3000.150.11/1.0.1613.3116/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas": {
+        "dataSources": {
+          "Accion": {
+            "tableName": "b3b44c8b-c2ed-4922-bbca-017762d11c1d"
+          },
+          "Area_1": {
+            "tableName": "b5911605-2657-4238-b8f9-779106bdf130"
+          },
+          "AreaManager": {
+            "tableName": "f979de34-d2e4-429f-a304-a419efd7b656"
+          },
+          "AreaManagerLider": {
+            "tableName": "19ac9088-9f35-46d6-95c0-223a7a6d4084"
+          },
+          "AreaManagerLiderAnalista": {
+            "tableName": "6a05f5f3-c2c2-4ee4-8329-b05f0a44a7ec"
+          },
+          "Perfil": {
+            "tableName": "d13fe43e-6e88-449e-b5c8-6aed0386fd51"
+          },
+          "Personal": {
+            "tableName": "efaa905d-ef6d-42a7-bfc3-46c09824b345"
+          },
+          "Solicitud": {
+            "tableName": "e3863b8b-bcaa-4962-8aa6-4779683f8ffc"
+          },
+          "SolicitudDetalle": {
+            "tableName": "efddad2c-77cb-47cd-a4a8-01ae5b325291"
+          },
+          "TipoServicio": {
+            "tableName": "cee98033-3faa-4b51-9f9a-81be2c6b788a"
+          },
+          "TipoSolicitud": {
+            "tableName": "40e5f876-8dc8-4709-a4f3-4c0540ea3df6"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Accion",
+      "Area_1",
+      "Perfil",
+      "Personal",
+      "TipoServicio",
+      "TipoSolicitud",
+      "AreaManager",
+      "AreaManagerLider",
+      "AreaManagerLiderAnalista",
+      "Solicitud",
+      "SolicitudDetalle"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5bd8dc9c-5626-4c87-8750-2d738a5ddbb9"
+  },
+  "ab57d5e8-2497-452f-927b-d81c72911df5": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuarios de Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1611/1.0.1611.3104/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuariosdeOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ab57d5e8-2497-452f-927b-d81c72911df5"
+  }
+}
