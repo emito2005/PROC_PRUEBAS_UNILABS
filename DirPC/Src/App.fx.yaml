@@ -1,0 +1,20 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |+
+        =Set(varIdArea,0);
+        Set(varUserEmail, User().Email);
+        Set(varUserFullName, User().FullName);
+        Set(MyUser, LookUp(Personal, Email = varUserEmail));
+        If(IsBlank(MyUser),
+        	Set(MyUser,
+        		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varUserEmail,IdPerfil:1})
+        	)
+        );
+        ClearCollect(colBarraLateral,
+            {id_boton:"NuevaSol",texto_boton:"Nueva Solicitud",navegacion:scrNuevaSolicitud,sangria:1},
+            {id_boton:"MisSol",texto_boton:"Mis Solicitudes",navegacion:scrMisSolicitudes,sangria:1},
+            {id_boton:"Sol",texto_boton:"Solicitudes",navegacion:scrSolicitudes,sangria:1},
+            {id_boton:"Area",texto_boton:"Area",navegacion:scrArea,sangria:1}
+        )
+        
+
