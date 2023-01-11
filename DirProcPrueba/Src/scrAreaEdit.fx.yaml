@@ -11,108 +11,18 @@ scrAreaEdit As screen:
         Y: =86
         ZIndex: =1
 
-    PeopleAddedGallery1_3 As gallery.SelectedUsersTabletGallery:
-        AccessibleLabel: ="Personas seleccionadas por el usuario"
-        BorderColor: =RGBA(166, 166, 166, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =219
-        Items: |-
-            =Filter(
-                AddColumns(AreaManagerLiderAnalista,
-                    "IdAreaMLA",LookUp(Area_1,ID=IdArea).ID,
-                    "NombreAreaMLA",LookUp(Area_1,ID=IdArea).Nombre,
-                    "IdAreaManagerMLA",LookUp(AreaManager,ID=IdAreaManager).ID,
-                    "IdAreaManagerLiderMLA",LookUp(AreaManagerLider,ID=IdAreaManagerLider).ID,
-                    "NombrePersonalMLA",LookUp(Personal,ID=IdPersonal).Nombre,
-                    "EmailPersonalMLA",LookUp(Personal,ID=IdPersonal).Email)
-                ,IdAreaMLA=varIdArea,IdAreaManagerMLA= PeopleAddedGallery1_1.Selected.ID,IdAreaManagerLiderMLA= PeopleAddedGallery1_2.Selected.ID)
-            
-            /*
-            "IdAreaMLA";LookUp(Area_1;ID=AreaManagerLiderAnalista[@IdArea].Id).ID;
-            "NombreAreaMLA";LookUp(Area_1;ID=AreaManagerLiderAnalista[@IdArea].Id).Nombre;
-            "IdAreaManagerMLA";LookUp(AreaManager;ID=AreaManagerLiderAnalista[@IdAreaManager].Id).ID;
-            "IdAreaManagerLiderMLA";LookUp(AreaManagerLider;ID=AreaManagerLiderAnalista[@IdAreaManagerLider].Id).ID;
-            "NombrePersonalMLA";LookUp(Personal;ID=AreaManagerLiderAnalista[@IdPersonal].Id).Nombre;
-            "EmailPersonalMLA";LookUp(Personal;ID=AreaManagerLiderAnalista[@IdPersonal].Id).Email)
-            */
-        Layout: =Layout.Vertical
-        TemplateSize: =45
-        Width: =354
-        X: =929
-        Y: =534
-        ZIndex: =2
-
-        Rectangle1_3 As rectangle:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(135, 100, 184, 1)
-            FocusedBorderThickness: =4
-            Height: =Parent.TemplateHeight
-            HoverFill: =RGBA(135, 100, 184, 1)
-            OnSelect: =Select(Parent)
-            PressedFill: =RGBA(135, 100, 184, 1)
-            Width: =Parent.TemplateWidth
-            ZIndex: =1
-
-        Title1_3 As label:
-            Fill: =RGBA(153, 153, 153, 1)
-            FocusedBorderThickness: =2
-            Font: =Font.'Segoe UI'
-            Height: =PeopleAddedGallery1_3.TemplateHeight
-            OnSelect: =//Set(_selectedUser; ThisItem)
-            PaddingLeft: =10
-            Size: =13
-            TabIndex: =0//If(UserBrowseGallery1.Visible; -1; 0)
-            Text: =ThisItem.NombrePersonalMLA
-            VerticalAlign: =Middle
-            Width: =PeopleAddedGallery1_3.TemplateWidth - iconRemove1_3.Width + 10
-            Wrap: =false
-            ZIndex: =2
-
-        iconRemove1_3 As icon.Cancel:
-            AccessibleLabel: =iconRemove1_3.Tooltip
-            BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =Title1_3.Color
-            DisabledColor: =RGBA(220, 220, 220, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(153, 153, 153, 1)
-            Height: =PeopleAddedGallery1_3.TemplateHeight
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =//Remove(MyPeople3; LookUp(MyPeople3; UserPrincipalName = ThisItem.UserPrincipalName))
-                Remove(AreaManagerLiderAnalista,LookUp(AreaManagerLiderAnalista, ID = ThisItem.ID));
-                Patch(Personal, LookUp(Personal,Email=ThisItem.EmailPersonalMLA), {IdPerfil:1})
-            PaddingBottom: =9
-            PaddingLeft: =9
-            PaddingRight: =9
-            PaddingTop: =9
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            TabIndex: =0//If(UserBrowseGallery1.Visible; -1; 0)
-            Tooltip: ="Seleccione esta opción para quitar el usuario de la colección."
-            Visible: =If(form_EditArea.Mode = FormMode.View,false,true)
-            Width: =Self.Height
-            X: =PeopleAddedGallery1_3.TemplateWidth - Self.Width
-            ZIndex: =3
-
     form_EditArea As form:
         DataSource: =Area_1
         DefaultMode: |-
             =FormMode.Edit
             //If(varNewRegArea=1;FormMode.New;FormMode.View)
         Height: =330
-        Item: =DetAreaGallery.Selected
+        Item: =LookUp(Area_1, ID = varIdArea)//DetAreaGallery.Selected
         OnSuccess: =Set(varIdArea,form_EditArea.LastSubmit.ID)
         Width: =1024
         X: =198
         Y: =80
-        ZIndex: =3
+        ZIndex: =2
 
         NotificaManager_DataCard1 As typedDataCard.toggleEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -658,10 +568,10 @@ scrAreaEdit As screen:
         OnSelect: =ResetForm(form_EditArea);Back()
         X: =20
         Y: =112
-        ZIndex: =4
+        ZIndex: =3
 
     cmpBarraSuperior_2 As cmpBarraSuperior:
-        ZIndex: =5
+        ZIndex: =4
 
     rectTitManager As rectangle:
         Fill: =RGBA(221, 79, 14, 1)
@@ -669,14 +579,18 @@ scrAreaEdit As screen:
         Width: =354
         X: =108
         Y: =475
-        ZIndex: =6
+        ZIndex: =5
 
     txtBuscarManager As text:
         Align: =Left
         Default: =""
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
         DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+            =// Disable if Form is not equal to editMode
+            If(form_EditArea.Mode <> FormMode.Edit,
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -688,7 +602,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =108
         Y: =504
-        ZIndex: =7
+        ZIndex: =6
 
     lblTitManager As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -697,13 +611,14 @@ scrAreaEdit As screen:
         Text: ="MANAGER"
         X: =108
         Y: =475
-        ZIndex: =8
+        ZIndex: =7
 
     SearchIcon1_1 As icon.Search:
         BorderColor: =RGBA(0, 0, 0, 0)
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarManager.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -721,7 +636,7 @@ scrAreaEdit As screen:
         Width: =38
         X: =108
         Y: =504
-        ZIndex: =9
+        ZIndex: =8
 
     PeopleAddedGallery1_1 As gallery.SelectedUsersTabletGallery:
         AccessibleLabel: ="Personas seleccionadas por el usuario"
@@ -745,7 +660,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =108
         Y: =534
-        ZIndex: =10
+        ZIndex: =9
 
         Rectangle1_1 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -789,8 +704,8 @@ scrAreaEdit As screen:
             HoverFill: =RGBA(0, 0, 0, 0)
             Icon: =Icon.Cancel
             OnSelect: |-
-                =Remove(AreaManager,LookUp(AreaManager, ID = ThisItem.ID));
-                Patch(Personal, LookUp(Personal,Email=ThisItem.EmailPersonal), {IdPerfil:1})
+                =UpdateContext({ showConfirmDialog: true, confirmType: 1 });
+                Select(Parent)
             PaddingBottom: =9
             PaddingLeft: =9
             PaddingRight: =9
@@ -830,7 +745,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =108
         Y: =534
-        ZIndex: =11
+        ZIndex: =10
 
         Rectangle2_1 As rectangle:
             BorderColor: =Title2_1.Color
@@ -859,13 +774,37 @@ scrAreaEdit As screen:
             OnSelect: |-
                 =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
                 If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
-                		Patch(Personal, Defaults(Personal), {Nombre:ThisItem.DisplayName,Email:ThisItem.UserPrincipalName,IdPerfil:2}),
-                        Patch(Personal, LookUp(Personal,Email=ThisItem.UserPrincipalName), {IdPerfil:2})
+                    // New
+                    Patch(Personal, 
+                        Defaults(Personal), 
+                        {
+                            Nombre: ThisItem.DisplayName,
+                            Email: ThisItem.UserPrincipalName,
+                            IdPerfil: 2, 
+                            IdArea: varIdArea
+                        }
+                    ),
+                
+                    // Edit
+                    Patch(Personal, 
+                        LookUp(Personal, Email = ThisItem.UserPrincipalName), 
+                        {
+                            IdPerfil: 2, 
+                            IdArea: varIdArea
+                        }
+                    )
                 );
+                
                 Concurrent(
                 //Set(_selectedUser; ThisItem);
-                Reset(txtBuscarManager),
-                Patch(AreaManager,Defaults(AreaManager),{IdArea:varIdArea,IdPersonal:LookUp(Personal, Email = ThisItem.UserPrincipalName).ID})
+                    Reset(txtBuscarManager),
+                    Patch(AreaManager,
+                        Defaults(AreaManager),
+                        {
+                            IdArea: varIdArea,
+                            IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
+                        }
+                    )
                 )
                 
                 
@@ -912,14 +851,18 @@ scrAreaEdit As screen:
         Width: =354
         X: =518
         Y: =475
-        ZIndex: =12
+        ZIndex: =11
 
     txtBuscarLider As text:
         Align: =Left
         Default: =""
-        DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+        DisplayMode: |-
+            =// Disable if Form is not equal to editMode or Manager is not selected
+            If(form_EditArea.Mode <> FormMode.Edit || IsBlank(PeopleAddedGallery1_1.Selected.ID),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -931,7 +874,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =518
         Y: =504
-        ZIndex: =13
+        ZIndex: =12
 
     lblTitManager_1 As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -940,13 +883,14 @@ scrAreaEdit As screen:
         Text: ="LIDER"
         X: =518
         Y: =475
-        ZIndex: =14
+        ZIndex: =13
 
     SearchIcon1_2 As icon.Search:
         BorderColor: =RGBA(0, 0, 0, 0)
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarLider.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -964,7 +908,7 @@ scrAreaEdit As screen:
         Width: =38
         X: =518
         Y: =504
-        ZIndex: =15
+        ZIndex: =14
 
     PeopleAddedGallery1_2 As gallery.SelectedUsersTabletGallery:
         AccessibleLabel: ="Personas seleccionadas por el usuario"
@@ -992,7 +936,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =518
         Y: =534
-        ZIndex: =16
+        ZIndex: =15
 
         Rectangle1_2 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -1036,9 +980,8 @@ scrAreaEdit As screen:
             HoverFill: =RGBA(0, 0, 0, 0)
             Icon: =Icon.Cancel
             OnSelect: |-
-                =//Remove(MyPeople2; LookUp(MyPeople2; UserPrincipalName = ThisItem.UserPrincipalName))
-                Remove(AreaManagerLider,LookUp(AreaManagerLider, ID = ThisItem.ID));
-                Patch(Personal, LookUp(Personal,Email=ThisItem.EmailPersonalML), {IdPerfil:1})
+                =UpdateContext({ showConfirmDialog: true, confirmType: 2 });
+                Select(Parent)
             PaddingBottom: =9
             PaddingLeft: =9
             PaddingRight: =9
@@ -1081,7 +1024,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =518
         Y: =534
-        ZIndex: =17
+        ZIndex: =16
 
         Rectangle2_2 As rectangle:
             BorderColor: =Title2_2.Color
@@ -1105,17 +1048,41 @@ scrAreaEdit As screen:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =Self.Size * 1.8
-            OnSelect: |
+            OnSelect: |-
                 =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
                 //Concurrent(Set(_selectedUser2; ThisItem);Reset(txtBuscarLider);If(Not(ThisItem.UserPrincipalName in MyPeople2.UserPrincipalName); Collect(MyPeople2; ThisItem)))
                 If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
-                		Patch(Personal, Defaults(Personal), {Nombre:ThisItem.DisplayName,Email:ThisItem.UserPrincipalName,IdPerfil:3})
+                    // New
+                    Patch(Personal, 
+                        Defaults(Personal), 
+                        {
+                            Nombre: ThisItem.DisplayName,
+                            Email: ThisItem.UserPrincipalName,
+                            IdPerfil: 3, 
+                            IdArea: varIdArea
+                        }
+                    ),
+                
+                    // Edit
+                    Patch(Personal, 
+                        LookUp(Personal, Email = ThisItem.UserPrincipalName), 
+                        {
+                            IdPerfil: 3, 
+                            IdArea: varIdArea
+                        }
+                    )
                 );
+                
                 Reset(txtBuscarLider);
+                
                 Patch(AreaManagerLider,
                     Defaults(AreaManagerLider),
-                    {IdArea:varIdArea,IdAreaManager:PeopleAddedGallery1_1.Selected.ID,IdPersonal:LookUp(Personal, Email = ThisItem.UserPrincipalName).ID}
-                    )
+                    {
+                        IdArea: varIdArea,
+                        IdAreaManager: PeopleAddedGallery1_1.Selected.ID,
+                        IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
+                    }    
+                )
             Size: =12
             TabIndex: =0
             Text: =ThisItem.DisplayName
@@ -1156,14 +1123,18 @@ scrAreaEdit As screen:
         Width: =354
         X: =929
         Y: =475
-        ZIndex: =18
+        ZIndex: =17
 
     txtBuscarAnalista As text:
         Align: =Left
         Default: =""
-        DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+        DisplayMode: |-
+            =// Disable if Form is not equal to editMode or Leader is not selected
+            If(form_EditArea.Mode <> FormMode.Edit || IsBlank(PeopleAddedGallery1_2.Selected.ID),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -1175,7 +1146,7 @@ scrAreaEdit As screen:
         Width: =354
         X: =929
         Y: =504
-        ZIndex: =19
+        ZIndex: =18
 
     lblTitManager_2 As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -1184,13 +1155,14 @@ scrAreaEdit As screen:
         Text: ="ANALISTA"
         X: =929
         Y: =475
-        ZIndex: =20
+        ZIndex: =19
 
     SearchIcon1_3 As icon.Search:
         BorderColor: =RGBA(0, 0, 0, 0)
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarAnalista.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -1208,7 +1180,96 @@ scrAreaEdit As screen:
         Width: =38
         X: =929
         Y: =504
+        ZIndex: =20
+
+    PeopleAddedGallery1_3 As gallery.SelectedUsersTabletGallery:
+        AccessibleLabel: ="Personas seleccionadas por el usuario"
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =219
+        Items: |-
+            =Filter(
+                AddColumns(AreaManagerLiderAnalista,
+                    "IdAreaMLA",LookUp(Area_1,ID=IdArea).ID,
+                    "NombreAreaMLA",LookUp(Area_1,ID=IdArea).Nombre,
+                    "IdAreaManagerMLA",LookUp(AreaManager,ID=IdAreaManager).ID,
+                    "IdAreaManagerLiderMLA",LookUp(AreaManagerLider,ID=IdAreaManagerLider).ID,
+                    "NombrePersonalMLA",LookUp(Personal,ID=IdPersonal).Nombre,
+                    "EmailPersonalMLA",LookUp(Personal,ID=IdPersonal).Email)
+                ,IdAreaMLA=varIdArea,IdAreaManagerMLA= PeopleAddedGallery1_1.Selected.ID,IdAreaManagerLiderMLA= PeopleAddedGallery1_2.Selected.ID)
+            
+            /*
+            "IdAreaMLA";LookUp(Area_1;ID=AreaManagerLiderAnalista[@IdArea].Id).ID;
+            "NombreAreaMLA";LookUp(Area_1;ID=AreaManagerLiderAnalista[@IdArea].Id).Nombre;
+            "IdAreaManagerMLA";LookUp(AreaManager;ID=AreaManagerLiderAnalista[@IdAreaManager].Id).ID;
+            "IdAreaManagerLiderMLA";LookUp(AreaManagerLider;ID=AreaManagerLiderAnalista[@IdAreaManagerLider].Id).ID;
+            "NombrePersonalMLA";LookUp(Personal;ID=AreaManagerLiderAnalista[@IdPersonal].Id).Nombre;
+            "EmailPersonalMLA";LookUp(Personal;ID=AreaManagerLiderAnalista[@IdPersonal].Id).Email)
+            */
+        Layout: =Layout.Vertical
+        TemplateSize: =45
+        Width: =354
+        X: =929
+        Y: =534
         ZIndex: =21
+
+        Rectangle1_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(135, 100, 184, 1)
+            FocusedBorderThickness: =4
+            Height: =Parent.TemplateHeight
+            HoverFill: =RGBA(135, 100, 184, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(135, 100, 184, 1)
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        Title1_3 As label:
+            Fill: =RGBA(153, 153, 153, 1)
+            FocusedBorderThickness: =2
+            Font: =Font.'Segoe UI'
+            Height: =PeopleAddedGallery1_3.TemplateHeight
+            OnSelect: =//Set(_selectedUser; ThisItem)
+            PaddingLeft: =10
+            Size: =13
+            TabIndex: =0//If(UserBrowseGallery1.Visible; -1; 0)
+            Text: =ThisItem.NombrePersonalMLA
+            VerticalAlign: =Middle
+            Width: =PeopleAddedGallery1_3.TemplateWidth - iconRemove1_3.Width + 10
+            Wrap: =false
+            ZIndex: =2
+
+        iconRemove1_3 As icon.Cancel:
+            AccessibleLabel: =iconRemove1_3.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =Title1_3.Color
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(153, 153, 153, 1)
+            Height: =PeopleAddedGallery1_3.TemplateHeight
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({ showConfirmDialog: true, confirmType: 3 });
+                Select(Parent)
+            PaddingBottom: =9
+            PaddingLeft: =9
+            PaddingRight: =9
+            PaddingTop: =9
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            TabIndex: =0//If(UserBrowseGallery1.Visible; -1; 0)
+            Tooltip: ="Seleccione esta opción para quitar el usuario de la colección."
+            Visible: =If(form_EditArea.Mode = FormMode.View,false,true)
+            Width: =Self.Height
+            X: =PeopleAddedGallery1_3.TemplateWidth - Self.Width
+            ZIndex: =3
 
     UserBrowseGallery1_3 As gallery.PeoplePickerTabletGallery:
         AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -1268,13 +1329,38 @@ scrAreaEdit As screen:
                 //Concurrent(Set(_selectedUser3; ThisItem);Reset(txtBuscarAnalista);If(Not(ThisItem.UserPrincipalName in MyPeople3.UserPrincipalName); Collect(MyPeople3; ThisItem)))
                 
                 If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
-                		Patch(Personal, Defaults(Personal), {Nombre:ThisItem.DisplayName,Email:ThisItem.UserPrincipalName,IdPerfil:4})
+                    // New
+                    Patch(Personal, 
+                        Defaults(Personal), 
+                        {
+                            Nombre: ThisItem.DisplayName,
+                            Email: ThisItem.UserPrincipalName,
+                            IdPerfil: 4,
+                            IdArea: varIdArea
+                        }
+                    ),
+                
+                    // Edit
+                    Patch(Personal, 
+                        LookUp(Personal, Email = ThisItem.UserPrincipalName), 
+                        {
+                            IdPerfil: 4, 
+                            IdArea: varIdArea
+                        }
+                    )
                 );
+                
                 Reset(txtBuscarAnalista);
+                
                 Patch(AreaManagerLiderAnalista,
                     Defaults(AreaManagerLiderAnalista),
-                    {IdArea:varIdArea,IdAreaManager:PeopleAddedGallery1_1.Selected.ID,IdAreaManagerLider:PeopleAddedGallery1_2.Selected.ID,IdPersonal:LookUp(Personal, Email = ThisItem.UserPrincipalName).ID}
-                    )
+                    {
+                        IdArea: varIdArea,
+                        IdAreaManager: PeopleAddedGallery1_1.Selected.ID,
+                        IdAreaManagerLider: PeopleAddedGallery1_2.Selected.ID,
+                        IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
+                    }
+                )
             Size: =12
             TabIndex: =0
             Text: =ThisItem.DisplayName
@@ -1341,4 +1427,131 @@ scrAreaEdit As screen:
         X: =1268
         Y: =112
         ZIndex: =25
+
+    ConfirmDialogContainer As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =Parent.Height
+        Visible: =showConfirmDialog
+        Width: =Parent.Width
+        ZIndex: =26
+
+        confirmDialogFrame As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =200
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Width: =400
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =1
+
+        confirmDialogTitle As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿Eliminar " & If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & "?"
+            Width: =confirmDialogFrame.Width
+            X: =confirmDialogFrame.X
+            Y: =confirmDialogFrame.Y + 15
+            ZIndex: =2
+
+        confirmDialogDescription As label:
+            Align: =Align.Center
+            PaddingLeft: =20
+            PaddingRight: =20
+            Size: =12
+            Text: |-
+                =If(confirmType = 3, "El analista eliminado se podrá asignar de nuevo.",
+                "Al eliminar al " & If(confirmType = 1, "Manager", confirmType = 2, "Líder") &
+                ", todos los " & If(confirmType = 1, "líderes y ") &
+                "analistas elegidos también serán eliminados."
+                )
+            Width: =confirmDialogFrame.Width
+            X: =confirmDialogFrame.X
+            Y: =confirmDialogTitle.Y + confirmDialogTitle.Height + 15
+            ZIndex: =3
+
+        confirmDialogYes As icon.Check:
+            Color: =Color.Green
+            DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
+            Height: =50
+            Icon: =Icon.Check
+            OnSelect: |-
+                =UpdateContext({ isProcessing: true });
+                
+                // Manager
+                If(confirmType = 1,
+                	// Remove all Analysts that are equals to this Manager ID
+                	RemoveIf(AreaManagerLiderAnalista, IdAreaManager = PeopleAddedGallery1_1.Selected.ID);
+                
+                	// Remove all Leaders that are equals to this Manager ID
+                	RemoveIf(AreaManagerLider, IdAreaManager = PeopleAddedGallery1_1.Selected.ID);
+                
+                	// Remove this Manager
+                	Remove(AreaManager, LookUp(AreaManager, ID = PeopleAddedGallery1_1.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_1.Selected.EmailPersonal), 
+                		{
+                			IdPerfil: 1, 
+                			IdArea: 0
+                		}
+                	),
+                
+                	
+                	// Leader
+                	confirmType = 2,
+                	// Remove all Analysts that are equals to this Leader ID
+                	RemoveIf(AreaManagerLiderAnalista, IdAreaManagerLider = PeopleAddedGallery1_2.Selected.ID);
+                
+                	// Remove this Leader
+                	Remove(AreaManagerLider, LookUp(AreaManagerLider, ID = PeopleAddedGallery1_2.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_2.Selected.EmailPersonalML), 
+                		{
+                			IdPerfil: 1,
+                			IdArea: 0
+                		}
+                	),
+                	
+                	
+                	// Analyst
+                	confirmType = 3,
+                	// Remove this Analyst
+                	Remove(AreaManagerLiderAnalista, LookUp(AreaManagerLiderAnalista, ID = PeopleAddedGallery1_3.Selected.ID));
+                
+                	Patch(Personal, 
+                		LookUp(Personal, Email = PeopleAddedGallery1_3.Selected.EmailPersonalMLA), 
+                		{
+                			IdPerfil: 1,
+                			IdArea: 0
+                		}
+                	)
+                );
+                
+                Notify(If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & " eliminado correctamente.", NotificationType.Success);
+                
+                UpdateContext({ isProcessing: false, showConfirmDialog: false });
+            Width: =50
+            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
+            ZIndex: =4
+
+        confirmDialogNo As icon.Check:
+            Color: =RGBA(228, 3, 44, 1)
+            DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
+            Height: =50
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({ showConfirmDialog: false })
+            Width: =50
+            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) + 20
+            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
+            ZIndex: =5
 
