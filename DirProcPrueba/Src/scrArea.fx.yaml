@@ -181,7 +181,6 @@ scrArea As screen:
         OnSelect: |-
             =//Set(varNewRegArea;1);;
             Set(varIdArea,0);
-            Set(varIdAreaDestino,1);
             ResetForm(form_EditArea);NewForm(form_EditArea);Navigate(scrAreaEdit, ScreenTransition.None)
         Width: =51
         X: =1252
