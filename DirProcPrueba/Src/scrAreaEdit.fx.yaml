@@ -17,7 +17,7 @@ scrAreaEdit As screen:
             =FormMode.Edit
             //If(varNewRegArea=1;FormMode.New;FormMode.View)
         Height: =330
-        Item: =DetAreaGallery.Selected
+        Item: =LookUp(Area_1, ID = varIdArea)//DetAreaGallery.Selected
         OnSuccess: =Set(varIdArea,form_EditArea.LastSubmit.ID)
         Width: =1024
         X: =198
@@ -584,9 +584,13 @@ scrAreaEdit As screen:
     txtBuscarManager As text:
         Align: =Left
         Default: =""
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
         DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+            =// Disable if Form is not equal to editMode
+            If(form_EditArea.Mode <> FormMode.Edit,
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -614,6 +618,7 @@ scrAreaEdit As screen:
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarManager.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -858,9 +863,13 @@ scrAreaEdit As screen:
     txtBuscarLider As text:
         Align: =Left
         Default: =""
-        DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+        DisplayMode: |-
+            =// Disable if Form is not equal to editMode or Manager is not selected
+            If(form_EditArea.Mode <> FormMode.Edit || IsBlank(PeopleAddedGallery1_1.Selected.ID),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -888,6 +897,7 @@ scrAreaEdit As screen:
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarLider.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -1133,9 +1143,13 @@ scrAreaEdit As screen:
     txtBuscarAnalista As text:
         Align: =Left
         Default: =""
-        DisplayMode: |
-            =//DisplayMode.Edit
-            If(form_EditArea.Mode = FormMode.View,DisplayMode.Disabled,DisplayMode.Edit)
+        DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+        DisplayMode: |-
+            =// Disable if Form is not equal to editMode or Leader is not selected
+            If(form_EditArea.Mode <> FormMode.Edit || IsBlank(PeopleAddedGallery1_2.Selected.ID),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -1163,6 +1177,7 @@ scrAreaEdit As screen:
         Color: =RGBA(135, 100, 184, 1)
         DisabledColor: =RGBA(220, 220, 220, 1)
         DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(txtBuscarAnalista.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
         FocusedBorderThickness: =4
         Height: =30
         HoverBorderColor: =RGBA(0, 0, 0, 0)
