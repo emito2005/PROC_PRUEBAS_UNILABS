@@ -663,24 +663,23 @@ scrAreaEdit As screen:
         ZIndex: =9
 
         Rectangle1_1 As rectangle:
-            BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
-            BorderThickness: =2
             DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(135, 100, 184, 1)
+            Fill: =RGBA(135, 100, 184, 0)//RGBA(135; 100; 184; 1)
             FocusedBorderThickness: =4
             Height: =Parent.TemplateHeight
-            HoverFill: =RGBA(135, 100, 184, 1)
+            HoverFill: =RGBA(135, 100, 184, 0)
             OnSelect: =Select(Parent)
-            PressedFill: =RGBA(135, 100, 184, 1)
+            PressedFill: =RGBA(89, 89, 89, 1)
             Width: =Parent.TemplateWidth
             ZIndex: =1
 
         Title1_1 As label:
-            Fill: =RGBA(153, 153, 153, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(153, 153, 153, 0)
             FocusedBorderThickness: =2
             Font: =Font.'Segoe UI'
-            Height: =PeopleAddedGallery1_1.TemplateHeight
+            Height: =PeopleAddedGallery1_1.TemplateHeight / 2
             OnSelect: =//Set(_selectedUser; ThisItem)
             PaddingLeft: =10
             Size: =13
@@ -690,6 +689,15 @@ scrAreaEdit As screen:
             Width: =PeopleAddedGallery1_1.TemplateWidth - iconRemove1_1.Width + 10
             Wrap: =false
             ZIndex: =2
+
+        Label8 As label:
+            Height: =Title1_1.Height
+            OnSelect: =
+            Text: =ThisItem.EmailPersonal
+            Width: =Title1_1.Width
+            X: =Title1_1.X
+            Y: =Title1_1.Y + Title1_1.Height
+            ZIndex: =3
 
         iconRemove1_1 As icon.Cancel:
             AccessibleLabel: =iconRemove1_1.Tooltip
@@ -720,7 +728,7 @@ scrAreaEdit As screen:
                 If(form_EditArea.Mode = FormMode.View,false,true)
             Width: =Self.Height
             X: =PeopleAddedGallery1_1.TemplateWidth - Self.Width
-            ZIndex: =3
+            ZIndex: =4
 
     UserBrowseGallery1_1 As gallery.PeoplePickerTabletGallery:
         AccessibleLabel: ="Resultados de la búsqueda de usuarios"
