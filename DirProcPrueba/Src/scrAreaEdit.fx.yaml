@@ -1,5 +1,6 @@
 scrAreaEdit As screen:
     Fill: =
+    OnVisible: =
 
     Rectangle4_3 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -702,17 +703,28 @@ scrAreaEdit As screen:
             Y: =Title1_1.Y + Title1_1.Height
             ZIndex: =3
 
+        Rectangle1 As rectangle:
+            Fill: =RGBA(89, 89, 89, 1)
+            FocusedBorderThickness: =0
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =Rectangle1_1.Width
+            X: =Rectangle1_1.X
+            Y: =Rectangle1_1.Y + Rectangle1_1.Height - Self.Height
+            ZIndex: =4
+
         iconRemove1_1 As icon.Cancel:
             AccessibleLabel: =iconRemove1_1.Tooltip
             BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =Title1_1.Color
+            Color: =Color.White//Title1_1.Color
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(153, 153, 153, 1)
+            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_1.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
+            HoverColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            HoverFill: =ColorFade(Self.Fill, 0.2)
             Icon: =Icon.Cancel
             OnSelect: |-
                 =UpdateContext({ showConfirmDialog: true, confirmType: 1 });
@@ -722,8 +734,8 @@ scrAreaEdit As screen:
             PaddingRight: =9
             PaddingTop: =9
             PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
+            PressedColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            PressedFill: =ColorFade(Self.Fill, -0.2)
             TabIndex: =//If(UserBrowseGallery1.Visible; -1; 0)
             Tooltip: ="Seleccione esta opción para quitar el usuario de la colección."
             Visible: |-
@@ -731,16 +743,6 @@ scrAreaEdit As screen:
                 If(form_EditArea.Mode = FormMode.View,false,true)
             Width: =Self.Height
             X: =PeopleAddedGallery1_1.TemplateWidth - Self.Width
-            ZIndex: =4
-
-        Rectangle1 As rectangle:
-            Fill: =RGBA(89, 89, 89, 1)
-            FocusedBorderThickness: =0
-            Height: =2
-            OnSelect: =Select(Parent)
-            Width: =Rectangle1_1.Width
-            X: =Rectangle1_1.X
-            Y: =Rectangle1_1.Y + Rectangle1_1.Height - Self.Height
             ZIndex: =5
 
     UserBrowseGallery1_1 As gallery.PeoplePickerTabletGallery:
@@ -978,7 +980,6 @@ scrAreaEdit As screen:
         Title1_2 As label:
             Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
             Fill: =RGBA(153, 153, 153, 0)
-            FocusedBorderThickness: =2
             Font: =Font.'Segoe UI'
             Height: =PeopleAddedGallery1_2.TemplateHeight / 2
             OnSelect: =//Set(_selectedUser2; ThisItem)
@@ -1003,17 +1004,28 @@ scrAreaEdit As screen:
             Y: =Title1_2.Y + Title1_2.Height
             ZIndex: =3
 
+        Rectangle1_4 As rectangle:
+            Fill: =RGBA(89, 89, 89, 1)
+            FocusedBorderThickness: =0
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =Rectangle1_2.Width
+            X: =Rectangle1_2.X
+            Y: =Rectangle1_2.Y + Rectangle1_2.Height - Self.Height
+            ZIndex: =4
+
         iconRemove1_2 As icon.Cancel:
             AccessibleLabel: =iconRemove1_2.Tooltip
             BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =Title1_2.Color
+            Color: =Color.White
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(153, 153, 153, 1)
+            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_2.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
+            HoverColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            HoverFill: =ColorFade(Self.Fill, 0.2)
             Icon: =Icon.Cancel
             OnSelect: |-
                 =UpdateContext({ showConfirmDialog: true, confirmType: 2 });
@@ -1023,23 +1035,13 @@ scrAreaEdit As screen:
             PaddingRight: =9
             PaddingTop: =9
             PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
+            PressedColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            PressedFill: =ColorFade(Self.Fill, -0.2)
             TabIndex: =//If(UserBrowseGallery1.Visible; -1; 0)
             Tooltip: ="Seleccione esta opción para quitar el usuario de la colección."
             Visible: =If(form_EditArea.Mode = FormMode.View,false,true)
             Width: =Self.Height
             X: =PeopleAddedGallery1_2.TemplateWidth - Self.Width
-            ZIndex: =4
-
-        Rectangle1_4 As rectangle:
-            Fill: =RGBA(89, 89, 89, 1)
-            FocusedBorderThickness: =0
-            Height: =2
-            OnSelect: =Select(Parent)
-            Width: =Rectangle1_1.Width
-            X: =Rectangle1_1.X
-            Y: =Rectangle1_1.Y + Rectangle1_1.Height - Self.Height
             ZIndex: =5
 
     UserBrowseGallery1_2 As gallery.PeoplePickerTabletGallery:
@@ -1253,10 +1255,12 @@ scrAreaEdit As screen:
             "EmailPersonalMLA";LookUp(Personal;ID=AreaManagerLiderAnalista[@IdPersonal].Id).Email)
             */
         Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected, RGBA(89, 89, 89, 1), RGBA(0,0,0,0))
+        TemplatePadding: =0
         TemplateSize: =45
         Width: =354
         X: =929
-        Y: =534
+        Y: =txtBuscarAnalista.Y + txtBuscarAnalista.Height + 5
         ZIndex: =21
 
         Rectangle1_3 As rectangle:
@@ -1264,20 +1268,20 @@ scrAreaEdit As screen:
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
             DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(135, 100, 184, 1)
+            Fill: =RGBA(135, 100, 184, 0)
             FocusedBorderThickness: =4
             Height: =Parent.TemplateHeight
-            HoverFill: =RGBA(135, 100, 184, 1)
+            HoverFill: =RGBA(135, 100, 184, 0)
             OnSelect: =Select(Parent)
-            PressedFill: =RGBA(135, 100, 184, 1)
+            PressedFill: =RGBA(135, 100, 184, 0)
             Width: =Parent.TemplateWidth
             ZIndex: =1
 
         Title1_3 As label:
-            Fill: =RGBA(153, 153, 153, 1)
-            FocusedBorderThickness: =2
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Fill: =RGBA(153, 153, 153, 0)
             Font: =Font.'Segoe UI'
-            Height: =PeopleAddedGallery1_3.TemplateHeight
+            Height: =PeopleAddedGallery1_3.TemplateHeight / 2
             OnSelect: =//Set(_selectedUser; ThisItem)
             PaddingLeft: =10
             Size: =13
@@ -1288,17 +1292,39 @@ scrAreaEdit As screen:
             Wrap: =false
             ZIndex: =2
 
+        Label9 As label:
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Height: =Title1_3.Height
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.EmailPersonalMLA
+            Width: =Title1_3.Width
+            X: =Title1_3.X
+            Y: =Title1_3.Y + Title1_3.Height
+            ZIndex: =3
+
+        Rectangle1_5 As rectangle:
+            Fill: =RGBA(89, 89, 89, 1)
+            FocusedBorderThickness: =0
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =Rectangle1_3.Width
+            X: =Rectangle1_3.X
+            Y: =Rectangle1_3.Y + Rectangle1_3.Height - Self.Height
+            ZIndex: =4
+
         iconRemove1_3 As icon.Cancel:
             AccessibleLabel: =iconRemove1_3.Tooltip
             BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =Title1_3.Color
+            Color: =Color.White//Title1_3.Color
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(153, 153, 153, 1)
+            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_3.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
+            HoverColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            HoverFill: =ColorFade(Self.Fill, 0.2)
             Icon: =Icon.Cancel
             OnSelect: |-
                 =UpdateContext({ showConfirmDialog: true, confirmType: 3 });
@@ -1308,14 +1334,14 @@ scrAreaEdit As screen:
             PaddingRight: =9
             PaddingTop: =9
             PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
+            PressedColor: =Color.White//ColorFade(RGBA(135; 100; 184; 1); -30%)
+            PressedFill: =ColorFade(Self.Fill, -0.2)
             TabIndex: =0//If(UserBrowseGallery1.Visible; -1; 0)
             Tooltip: ="Seleccione esta opción para quitar el usuario de la colección."
             Visible: =If(form_EditArea.Mode = FormMode.View,false,true)
             Width: =Self.Height
             X: =PeopleAddedGallery1_3.TemplateWidth - Self.Width
-            ZIndex: =3
+            ZIndex: =5
 
     UserBrowseGallery1_3 As gallery.PeoplePickerTabletGallery:
         AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -1474,16 +1500,23 @@ scrAreaEdit As screen:
         Y: =112
         ZIndex: =25
 
-    ConfirmDialogContainer As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =Parent.Height
-        LayoutDirection: =LayoutDirection.Manual
-        LayoutMode: =LayoutMode.Auto
-        Visible: =showConfirmDialog
-        Width: =Parent.Width
-        ZIndex: =26
+    confirmDialogGroup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
 
-        confirmDialogFrame As button:
+        confirmDialogRect_1 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showConfirmDialog
+            Width: =Parent.Width
+            ZIndex: =27
+
+        confirmDialogFrame_1 As button:
             BorderThickness: =0
             DisabledFill: =Color.White
             DisplayMode: =DisplayMode.Disabled
@@ -1494,21 +1527,23 @@ scrAreaEdit As screen:
             RadiusTopLeft: =20
             RadiusTopRight: =20
             Text: =""
+            Visible: =showConfirmDialog
             Width: =400
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =1
+            ZIndex: =28
 
-        confirmDialogTitle As label:
+        confirmDialogTitle_1 As label:
             Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Text: ="¿Eliminar " & If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & "?"
-            Width: =confirmDialogFrame.Width
-            X: =confirmDialogFrame.X
-            Y: =confirmDialogFrame.Y + 15
-            ZIndex: =2
+            Visible: =showConfirmDialog
+            Width: =confirmDialogFrame_1.Width
+            X: =confirmDialogFrame_1.X
+            Y: =confirmDialogFrame_1.Y + 15
+            ZIndex: =29
 
-        confirmDialogDescription As label:
+        confirmDialogDescription_1 As label:
             Align: =Align.Center
             PaddingLeft: =20
             PaddingRight: =20
@@ -1519,12 +1554,13 @@ scrAreaEdit As screen:
                 ", todos los " & If(confirmType = 1, "líderes y ") &
                 "analistas elegidos también serán eliminados."
                 )
-            Width: =confirmDialogFrame.Width
-            X: =confirmDialogFrame.X
-            Y: =confirmDialogTitle.Y + confirmDialogTitle.Height + 15
-            ZIndex: =3
+            Visible: =showConfirmDialog
+            Width: =confirmDialogFrame_1.Width
+            X: =confirmDialogFrame_1.X
+            Y: =confirmDialogTitle_1.Y + confirmDialogTitle_1.Height + 15
+            ZIndex: =30
 
-        confirmDialogYes As icon.Check:
+        confirmDialogYes_1 As icon.Check:
             Color: =Color.Green
             DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
@@ -1586,20 +1622,22 @@ scrAreaEdit As screen:
                 Notify(If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & " eliminado correctamente.", NotificationType.Success);
                 
                 UpdateContext({ isProcessing: false, showConfirmDialog: false });
+            Visible: =showConfirmDialog
             Width: =50
-            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
-            ZIndex: =4
+            X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
+            ZIndex: =31
 
-        confirmDialogNo As icon.Check:
+        confirmDialogNo_1 As icon.Check:
             Color: =RGBA(228, 3, 44, 1)
             DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
             Icon: =Icon.Cancel
             OnSelect: |-
                 =UpdateContext({ showConfirmDialog: false })
+            Visible: =showConfirmDialog
             Width: =50
-            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) + 20
-            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
-            ZIndex: =5
+            X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) + 20
+            Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
+            ZIndex: =32
 
