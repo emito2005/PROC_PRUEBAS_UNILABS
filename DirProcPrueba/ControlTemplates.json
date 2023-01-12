@@ -111,19 +111,29 @@
     "OverridableProperties": {},
     "Version": "1.0"
   },
-  "groupContainer": {
+  "group": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/groupContainer",
+    "Id": "http://microsoft.com/appmagic/group",
     "IsComponentTemplate": false,
     "IsCustomGroupControlTemplate": false,
     "IsPcfControl": false,
     "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": true,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "group",
+    "OverridableProperties": {},
+    "Version": "1"
+  },
+  "groupContainer": {
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/groupContainer",
+    "IsComponentTemplate": false,
+    "IsPcfControl": false,
+    "IsWidgetTemplate": false,
     "LastModifiedTimestamp": "0",
     "Name": "groupContainer",
-    "OverridableProperties": {},
-    "Version": "1.1.0"
+    "Version": "1.0"
   },
   "icon": {
     "CustomGroupControlTemplateName": "",

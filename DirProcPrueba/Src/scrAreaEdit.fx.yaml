@@ -1500,16 +1500,23 @@ scrAreaEdit As screen:
         Y: =112
         ZIndex: =25
 
-    ConfirmDialogContainer As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =Parent.Height
-        LayoutDirection: =LayoutDirection.Manual
-        LayoutMode: =LayoutMode.Auto
-        Visible: =showConfirmDialog
-        Width: =Parent.Width
-        ZIndex: =26
+    confirmDialogGroup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
 
-        confirmDialogFrame As button:
+        confirmDialogRect_1 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showConfirmDialog
+            Width: =Parent.Width
+            ZIndex: =27
+
+        confirmDialogFrame_1 As button:
             BorderThickness: =0
             DisabledFill: =Color.White
             DisplayMode: =DisplayMode.Disabled
@@ -1520,21 +1527,23 @@ scrAreaEdit As screen:
             RadiusTopLeft: =20
             RadiusTopRight: =20
             Text: =""
+            Visible: =showConfirmDialog
             Width: =400
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =1
+            ZIndex: =28
 
-        confirmDialogTitle As label:
+        confirmDialogTitle_1 As label:
             Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Text: ="¿Eliminar " & If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & "?"
-            Width: =confirmDialogFrame.Width
-            X: =confirmDialogFrame.X
-            Y: =confirmDialogFrame.Y + 15
-            ZIndex: =2
+            Visible: =showConfirmDialog
+            Width: =confirmDialogFrame_1.Width
+            X: =confirmDialogFrame_1.X
+            Y: =confirmDialogFrame_1.Y + 15
+            ZIndex: =29
 
-        confirmDialogDescription As label:
+        confirmDialogDescription_1 As label:
             Align: =Align.Center
             PaddingLeft: =20
             PaddingRight: =20
@@ -1545,12 +1554,13 @@ scrAreaEdit As screen:
                 ", todos los " & If(confirmType = 1, "líderes y ") &
                 "analistas elegidos también serán eliminados."
                 )
-            Width: =confirmDialogFrame.Width
-            X: =confirmDialogFrame.X
-            Y: =confirmDialogTitle.Y + confirmDialogTitle.Height + 15
-            ZIndex: =3
+            Visible: =showConfirmDialog
+            Width: =confirmDialogFrame_1.Width
+            X: =confirmDialogFrame_1.X
+            Y: =confirmDialogTitle_1.Y + confirmDialogTitle_1.Height + 15
+            ZIndex: =30
 
-        confirmDialogYes As icon.Check:
+        confirmDialogYes_1 As icon.Check:
             Color: =Color.Green
             DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
@@ -1612,20 +1622,22 @@ scrAreaEdit As screen:
                 Notify(If(confirmType = 1, "Manager", confirmType = 2, "Líder", confirmType = 3, "Analista") & " eliminado correctamente.", NotificationType.Success);
                 
                 UpdateContext({ isProcessing: false, showConfirmDialog: false });
+            Visible: =showConfirmDialog
             Width: =50
-            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
-            ZIndex: =4
+            X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
+            ZIndex: =31
 
-        confirmDialogNo As icon.Check:
+        confirmDialogNo_1 As icon.Check:
             Color: =RGBA(228, 3, 44, 1)
             DisplayMode: =If(isProcessing, DisplayMode.Disabled, DisplayMode.Edit)
             Height: =50
             Icon: =Icon.Cancel
             OnSelect: |-
                 =UpdateContext({ showConfirmDialog: false })
+            Visible: =showConfirmDialog
             Width: =50
-            X: =confirmDialogFrame.X + (confirmDialogFrame.Width / 2) + 20
-            Y: =confirmDialogFrame.Y + confirmDialogFrame.Height - Self.Height - 20
-            ZIndex: =5
+            X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) + 20
+            Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
+            ZIndex: =32
 
