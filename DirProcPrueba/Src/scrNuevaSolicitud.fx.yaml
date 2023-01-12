@@ -718,25 +718,27 @@ scrNuevaSolicitud As screen:
 
     Button3 As button:
         OnSelect: |-
-            =Clear(myProduct3);
-            Clear(mySales3);
-            Clear(mySolution3);
+            =//Clear(myProduct3);;
+            //Clear(mySales3);;
+            //Clear(mySolution3);;
+            /*
             //Create two collections
-            ClearCollect(myProduct3,
-            {ProductID: "1000", ProductName: "Jacket"},
-            {ProductID: "1001", ProductName: "T-Shirt"},
-            {ProductID: "1002", ProductName: "Baseball Cap"}
-            );
-            ClearCollect(mySales3,
-            {ProductID: "1001", QuantitySold: 4},
-            {ProductID: "1002", QuantitySold: 5},
-            {ProductID: "1001", QuantitySold: 7},
-            {ProductID: "1000", QuantitySold: 1},
-            {ProductID: "1000", QuantitySold: 8}
-            );
+            ClearCollect(myProduct3;
+            {ProductID: "1000"; ProductName: "Jacket"};
+            {ProductID: "1001"; ProductName: "T-Shirt"};
+            {ProductID: "1002"; ProductName: "Baseball Cap"}
+            );;
+            ClearCollect(mySales3;
+            {ProductID: "1001"; QuantitySold: 4};
+            {ProductID: "1002"; QuantitySold: 5};
+            {ProductID: "1001"; QuantitySold: 7};
+            {ProductID: "1000"; QuantitySold: 1};
+            {ProductID: "1000"; QuantitySold: 8}
+            );;
             //Add a column from another table code
             //ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=myProduct3[@ProductID];ProductName)));;
-            ClearCollect(mySolution3,AddColumns(mySales3,"ProductName",LookUp(myProduct3,ProductID=ProductID,ProductName)));
+            ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=ProductID;ProductName)));;
+            */
         Text: ="Botón"
         X: =13
         Y: =656
@@ -744,9 +746,9 @@ scrNuevaSolicitud As screen:
 
     Button4 As button:
         OnSelect: |-
-            =Clear(myPersonal);
+            =//Clear(myPersonal);;
             //ClearCollect(myPersonal;LookUp(Personal; Email = varUserEmail));;
-            ClearCollect(myPersonal,AddColumns(Personal,"Perfil",LookUp(Perfil,ID=IdPerfil,Nombre)));
+            //ClearCollect(myPersonal;AddColumns(Personal;"Perfil";LookUp(Perfil;ID=IdPerfil;Nombre)));;
         Text: ="Botón"
         X: =13
         Y: =700

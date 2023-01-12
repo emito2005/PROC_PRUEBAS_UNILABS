@@ -20,6 +20,9 @@
           "Area_1": {
             "tableName": "b5911605-2657-4238-b8f9-779106bdf130"
           },
+          "AreaEtapaFlujo": {
+            "tableName": "fc193ca2-0934-4e29-a4b9-01333cc5888e"
+          },
           "AreaManager": {
             "tableName": "f979de34-d2e4-429f-a304-a419efd7b656"
           },
@@ -28,6 +31,9 @@
           },
           "AreaManagerLiderAnalista": {
             "tableName": "6a05f5f3-c2c2-4ee4-8329-b05f0a44a7ec"
+          },
+          "Etapa": {
+            "tableName": "11ae83ab-ee6e-4f77-91a9-a14199d00a86"
           },
           "Perfil": {
             "tableName": "d13fe43e-6e88-449e-b5c8-6aed0386fd51"
@@ -61,7 +67,9 @@
       "AreaManagerLider",
       "AreaManagerLiderAnalista",
       "Solicitud",
-      "SolicitudDetalle"
+      "SolicitudDetalle",
+      "Etapa",
+      "AreaEtapaFlujo"
     ],
     "dependencies": {},
     "dependents": [],

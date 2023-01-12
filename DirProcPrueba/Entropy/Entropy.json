@@ -342,7 +342,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "01/12/2023 14:55:49",
+  "HeaderLastSavedDateTimeUTC": "01/12/2023 15:44:12",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "5bd8dc9c-5626-4c87-8750-2d738a5ddbb9": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/43050d6ea4864bdab5f5e0a01217f68c\"",
@@ -368,18 +368,16 @@
   "OrderDataSource": {
     "Accion": 1,
     "Area_1": 5,
+    "AreaEtapaFlujo": 16,
     "AreaManager": 2,
     "AreaManagerLider": 3,
     "AreaManagerLiderAnalista": 4,
-    "colBarraLateral": 15,
-    "colHeader": 16,
+    "colBarraLateral": 17,
+    "colHeader": 18,
     "ComboBoxSample": 6,
     "CustomGallerySample": 7,
     "DropDownSample": 8,
-    "myPersonal": 17,
-    "myProduct3": 18,
-    "mySales3": 19,
-    "mySolution3": 20,
+    "Etapa": 15,
     "Perfil": 9,
     "Personal": 10,
     "Solicitud": 11,
@@ -1111,7 +1109,7 @@
       "typedDataCard": 34
     },
     "DeserializationLoadTime": 6.0378968,
-    "ErrorCount": 2
+    "ErrorCount": 1
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

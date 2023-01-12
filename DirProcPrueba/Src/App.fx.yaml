@@ -4,14 +4,16 @@ App As appinfo:
         =Set(varIdArea,0);
         Set(varUserEmail, User().Email);
         Set(varUserFullName, User().FullName);
-        Set(MyUser, LookUp(Personal, Email = varUserEmail));
-        If(IsBlank(MyUser),
-        	Set(MyUser,
-        		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varUserEmail,IdPerfil:1})
+        Set(varMyUser, LookUp(Personal, Email = varUserEmail));
+        If(IsBlank(varMyUser),
+        	Set(varMyUser,
+        		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varUserEmail,IdPerfil:1,IdArea:0})
         	)
         );
         
-        Set(MyUserArea, LookUp(Area_1, ID = varUserEmail));
+        Set(MyUserArea, LookUp(Area_1, ID = varMyUser.IdArea));
+        Set(MyOrdenFlujo, If(varMyUser.IdArea=1,1,varMyUser.IdArea=2,2,999));
+        Set(MyAreaEtapaFlujo, LookUp(AreaEtapaFlujo, Orden = MyOrdenFlujo));
         
         ClearCollect(colBarraLateral,
             {id_boton:"NuevaSol",texto_boton:"Nueva Solicitud",navegacion:scrNuevaSolicitud,sangria:1},
