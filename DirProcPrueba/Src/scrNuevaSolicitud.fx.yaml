@@ -53,6 +53,9 @@ scrNuevaSolicitud As screen:
         DefaultMode: =FormMode.New
         Height: =466
         NumberOfColumns: =2
+        OnSuccess: |-
+            =Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
+                FechaExpiraSLA:DateAdd(Today(),MyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),MyUserArea.OLA),EsAtendido:0,IdAccion:1,IdEtapaOrigen:var})
         Width: =1076
         X: =173
         Y: =133
@@ -756,8 +759,8 @@ scrNuevaSolicitud As screen:
 
     Label6_1 As label:
         Height: =35
-        Text: =varIdTipoServicio
-        Width: =46
+        Text: =Today()
+        Width: =204
         X: =70
         Y: =600
         ZIndex: =12
