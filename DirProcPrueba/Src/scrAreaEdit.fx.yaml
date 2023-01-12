@@ -655,29 +655,30 @@ scrAreaEdit As screen:
         Layout: =Layout.Vertical
         TemplateFill: |-
             =//RGBA(0; 0; 0; 0)
-            If(ThisItem.IsSelected,ColorFade(RGBA(98,100,167,1),-2%),RGBA(0,0,0,0))
+            //If(ThisItem.IsSelected;ColorFade(RGBA(98;100;167;1);-2%);RGBA(0;0;0;0))
+            If(ThisItem.IsSelected, RGBA(89, 89, 89, 1), RGBA(0,0,0,0))
+        TemplatePadding: =0
         TemplateSize: =45
         Width: =354
         X: =108
-        Y: =534
+        Y: =txtBuscarManager.Y + txtBuscarManager.Height + 5
         ZIndex: =9
 
         Rectangle1_1 As rectangle:
             BorderStyle: =BorderStyle.None
             DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(135, 100, 184, 0)//RGBA(135; 100; 184; 1)
+            Fill: =RGBA(255, 255, 255, 0)//RGBA(135; 100; 184; 1)
             FocusedBorderThickness: =4
             Height: =Parent.TemplateHeight
             HoverFill: =RGBA(135, 100, 184, 0)
             OnSelect: =Select(Parent)
-            PressedFill: =RGBA(89, 89, 89, 1)
+            PressedFill: =RGBA(89, 89, 89, 0)
             Width: =Parent.TemplateWidth
             ZIndex: =1
 
         Title1_1 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
             Fill: =RGBA(153, 153, 153, 0)
-            FocusedBorderThickness: =2
             Font: =Font.'Segoe UI'
             Height: =PeopleAddedGallery1_1.TemplateHeight / 2
             OnSelect: =//Set(_selectedUser; ThisItem)
@@ -691,8 +692,10 @@ scrAreaEdit As screen:
             ZIndex: =2
 
         Label8 As label:
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
             Height: =Title1_1.Height
             OnSelect: =
+            PaddingLeft: =10
             Text: =ThisItem.EmailPersonal
             Width: =Title1_1.Width
             X: =Title1_1.X
@@ -729,6 +732,16 @@ scrAreaEdit As screen:
             Width: =Self.Height
             X: =PeopleAddedGallery1_1.TemplateWidth - Self.Width
             ZIndex: =4
+
+        Rectangle1 As rectangle:
+            Fill: =RGBA(89, 89, 89, 1)
+            FocusedBorderThickness: =0
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =Rectangle1_1.Width
+            X: =Rectangle1_1.X
+            Y: =Rectangle1_1.Y + Rectangle1_1.Height - Self.Height
+            ZIndex: =5
 
     UserBrowseGallery1_1 As gallery.PeoplePickerTabletGallery:
         AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -940,10 +953,12 @@ scrAreaEdit As screen:
             "EmailPersonalML";LookUp(Personal;ID=AreaManagerLider[@IdPersonal].Id).Email)
             */
         Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected, RGBA(89, 89, 89, 1), RGBA(0,0,0,0))
+        TemplatePadding: =0
         TemplateSize: =45
         Width: =354
         X: =518
-        Y: =534
+        Y: =txtBuscarLider.Y + txtBuscarLider.Height + 5
         ZIndex: =15
 
         Rectangle1_2 As rectangle:
@@ -951,20 +966,21 @@ scrAreaEdit As screen:
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
             DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(135, 100, 184, 1)
+            Fill: =RGBA(135, 100, 184, 0)
             FocusedBorderThickness: =4
             Height: =Parent.TemplateHeight
-            HoverFill: =RGBA(135, 100, 184, 1)
+            HoverFill: =RGBA(135, 100, 184, 0)
             OnSelect: =Select(Parent)
-            PressedFill: =RGBA(135, 100, 184, 1)
+            PressedFill: =RGBA(135, 100, 184, 0)
             Width: =Parent.TemplateWidth
             ZIndex: =1
 
         Title1_2 As label:
-            Fill: =RGBA(153, 153, 153, 1)
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Fill: =RGBA(153, 153, 153, 0)
             FocusedBorderThickness: =2
             Font: =Font.'Segoe UI'
-            Height: =PeopleAddedGallery1_2.TemplateHeight
+            Height: =PeopleAddedGallery1_2.TemplateHeight / 2
             OnSelect: =//Set(_selectedUser2; ThisItem)
             PaddingLeft: =10
             Size: =13
@@ -974,6 +990,18 @@ scrAreaEdit As screen:
             Width: =PeopleAddedGallery1_2.TemplateWidth - iconRemove1_2.Width + 10
             Wrap: =false
             ZIndex: =2
+
+        Label4 As label:
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            FontWeight: =FontWeight.Lighter
+            Height: =Title1_2.Height
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.EmailPersonalML
+            Width: =Title1_2.Width
+            X: =Title1_2.X
+            Y: =Title1_2.Y + Title1_2.Height
+            ZIndex: =3
 
         iconRemove1_2 As icon.Cancel:
             AccessibleLabel: =iconRemove1_2.Tooltip
@@ -1002,7 +1030,17 @@ scrAreaEdit As screen:
             Visible: =If(form_EditArea.Mode = FormMode.View,false,true)
             Width: =Self.Height
             X: =PeopleAddedGallery1_2.TemplateWidth - Self.Width
-            ZIndex: =3
+            ZIndex: =4
+
+        Rectangle1_4 As rectangle:
+            Fill: =RGBA(89, 89, 89, 1)
+            FocusedBorderThickness: =0
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =Rectangle1_1.Width
+            X: =Rectangle1_1.X
+            Y: =Rectangle1_1.Y + Rectangle1_1.Height - Self.Height
+            ZIndex: =5
 
     UserBrowseGallery1_2 As gallery.PeoplePickerTabletGallery:
         AccessibleLabel: ="Resultados de la búsqueda de usuarios"
