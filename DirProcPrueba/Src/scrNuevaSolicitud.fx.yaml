@@ -55,7 +55,7 @@ scrNuevaSolicitud As screen:
         NumberOfColumns: =2
         OnSuccess: |-
             =Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
-                FechaExpiraSLA:DateAdd(Today(),MyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),MyUserArea.OLA),EsAtendido:0,IdAccion:1,IdEtapaOrigen:var})
+                FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,IdAccion:1,IdEtapaOrigen:varMyAreaEtapaFlujo.IdEtapa,IdAreaOrigen:1,IdPerfilOrigen:1,IdPersonalOrigen:1,IdEtapaDestino:1,IdAreaDestino:1,IdPerfilDestino:1,IdPersonalDestino:1})
         Width: =1076
         X: =173
         Y: =133
@@ -744,7 +744,7 @@ scrNuevaSolicitud As screen:
             */
         Text: ="Botón"
         X: =13
-        Y: =656
+        Y: =647
         ZIndex: =9
 
     Button4 As button:
