@@ -2843,17 +2843,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.MyAreaEtapaFlujo"
+                  "fullyQualifiedName": "App.MyUserArea"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.MyAreaEtapaFlujo",
+                  "fullyQualifiedName": "App.MyUserArea",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "MyAreaEtapaFlujo",
+                "member": "MyUserArea",
                 "module": "App",
                 "type": "App"
               }
@@ -2903,17 +2903,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.MyUserArea"
+                  "fullyQualifiedName": "App.MyAreaEtapaFlujo"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.MyUserArea",
+                  "fullyQualifiedName": "App.MyAreaEtapaFlujo",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "MyUserArea",
+                "member": "MyAreaEtapaFlujo",
                 "module": "App",
                 "type": "App"
               }
