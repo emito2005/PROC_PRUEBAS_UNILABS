@@ -10,6 +10,9 @@ App As appinfo:
         		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varUserEmail,IdPerfil:1})
         	)
         );
+        
+        Set(MyUserArea, LookUp(Area_1, ID = varUserEmail));
+        
         ClearCollect(colBarraLateral,
             {id_boton:"NuevaSol",texto_boton:"Nueva Solicitud",navegacion:scrNuevaSolicitud,sangria:1},
             {id_boton:"MisSol",texto_boton:"Mis Solicitudes",navegacion:scrMisSolicitudes,sangria:1},
