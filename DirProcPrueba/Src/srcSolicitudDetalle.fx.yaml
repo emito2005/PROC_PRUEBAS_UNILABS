@@ -36,7 +36,7 @@ srcSolicitudDetalle As screen:
             Text: ="ID"
             Width: =30
             X: =icn_Volver_NS_1.X
-            Y: =200
+            Y: =180
             ZIndex: =4
 
         requestFieldTxt_1 As text:
@@ -99,7 +99,7 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Nombre de Solicitud"
             Width: =180
-            X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 160
+            X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 100
             Y: =requestFieldLbl_1.Y
             ZIndex: =8
 
@@ -131,7 +131,7 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Tipo de Solicitud"
             X: =requestFieldLbl_1.X
-            Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 70
+            Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 40
             ZIndex: =10
 
         requestFieldTxt_4 As text:
@@ -194,7 +194,7 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Estado"
             Width: =70
-            X: =requestFieldTxt_5.X + requestFieldTxt_5.Width + 160
+            X: =requestFieldTxt_5.X + requestFieldTxt_5.Width + 130
             Y: =requestFieldLbl_4.Y
             ZIndex: =16
 
@@ -210,4 +210,252 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_6.X + requestFieldLbl_6.Width
             Y: =requestFieldLbl_6.Y
             ZIndex: =17
+
+    requestFieldGroup_7 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =300
+        ZIndex: =20
+
+        requestFieldLbl_7 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Dpto. de Procedencia"
+            Width: =190
+            X: =requestFieldLbl_1.X
+            Y: =requestFieldLbl_4.Y + requestFieldLbl_4.Height + 40
+            ZIndex: =18
+
+        requestFieldTxt_7 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_7.X + requestFieldLbl_7.Width
+            Y: =requestFieldLbl_7.Y
+            ZIndex: =19
+
+    requestFieldGroup_8 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =300
+        ZIndex: =23
+
+        requestFieldLbl_8 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Dpto. Asignado"
+            Width: =140
+            X: =requestFieldTxt_7.X + requestFieldTxt_7.Width + 50
+            Y: =requestFieldLbl_7.Y
+            ZIndex: =21
+
+        requestFieldTxt_8 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_8.X + requestFieldLbl_8.Width
+            Y: =requestFieldLbl_8.Y
+            ZIndex: =22
+
+    requestFieldGroup_9 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =300
+        ZIndex: =25
+
+        requestFieldLbl_9 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Manager"
+            Width: =90
+            X: =requestFieldLbl_1.X
+            Y: =requestFieldLbl_7.Y + requestFieldLbl_7.Height + 40
+            ZIndex: =23
+
+        requestFieldTxt_9 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+            X: =requestFieldLbl_9.X + requestFieldLbl_9.Width
+            Y: =requestFieldLbl_9.Y
+            ZIndex: =24
+
+    requestFieldGroup_10 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =300
+        ZIndex: =28
+
+        requestFieldLbl_10 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Lider"
+            Width: =60
+            X: =requestFieldTxt_9.X + requestFieldTxt_9.Width + 50
+            Y: =requestFieldLbl_9.Y
+            ZIndex: =26
+
+        requestFieldTxt_10 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+            X: =requestFieldLbl_10.X + requestFieldLbl_10.Width
+            Y: =requestFieldLbl_10.Y
+            ZIndex: =27
+
+    requestFieldGroup_11 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =300
+        ZIndex: =31
+
+        requestFieldLbl_11 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Analista"
+            Width: =80
+            X: =requestFieldTxt_10.X + requestFieldTxt_10.Width + 60
+            Y: =requestFieldLbl_9.Y
+            ZIndex: =29
+
+        requestFieldTxt_11 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+            X: =requestFieldLbl_11.X + requestFieldLbl_11.Width
+            Y: =requestFieldLbl_11.Y
+            ZIndex: =30
+
+    requestFieldGroup_12 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =380
+        ZIndex: =33
+
+        requestFieldLbl_12 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Creación"
+            Width: =110
+            X: =requestFieldLbl_9.X
+            Y: =requestFieldLbl_9.Y + requestFieldLbl_9.Height + 40
+            ZIndex: =31
+
+        requestFieldTxt_12 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_12.X + requestFieldLbl_12.Width
+            Y: =requestFieldLbl_12.Y
+            ZIndex: =32
+
+    requestFieldLbl_14 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Descripción"
+        Width: =120
+        X: =requestFieldLbl_12.X
+        Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
+        ZIndex: =36
+
+    requestFieldGroup_13 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =380
+        ZIndex: =36
+
+        requestFieldLbl_13 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Expiración"
+            Width: =120
+            X: =requestFieldTxt_12.X + requestFieldTxt_12.Width + 50
+            Y: =requestFieldLbl_12.Y
+            ZIndex: =34
+
+        requestFieldTxt_13 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_13.X + requestFieldLbl_13.Width
+            Y: =requestFieldLbl_13.Y
+            ZIndex: =35
+
+    requestFieldLbl_15 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Descripción"
+        Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
+        X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
+        Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
+        ZIndex: =38
 
