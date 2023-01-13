@@ -472,6 +472,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =39
 
     trazabilidadBtn As button:
+        OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
         Size: =12
         Text: ="Trazabilidad"
         X: =descargarPDFBtn.X + descargarPDFBtn.Width + 25
