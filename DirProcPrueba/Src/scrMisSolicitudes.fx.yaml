@@ -301,12 +301,26 @@ scrMisSolicitudes As screen:
 
     Button1 As button:
         OnSelect: |-
-            =
-            
+            =ClearCollect(colSolicitudCab,
+                AddColumns(
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                )
+                );
             ClearCollect(colSolicitudes,
                 AddColumns(
                     ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
-                    ,"NroSolicitud",LookUp(Solicitud,ID=IdSolicitud,NroSolicitud)
+                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
                     )
                 )
         Text: ="crear collect"
