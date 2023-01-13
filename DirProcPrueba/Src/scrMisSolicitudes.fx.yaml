@@ -300,9 +300,81 @@ scrMisSolicitudes As screen:
         ZIndex: =16
 
     Button1 As button:
-        OnSelect: =ClearCollect(colSolicitudes,ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud"),ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA"))
+        OnSelect: |-
+            =ClearCollect(colSolicitudes,
+                AddColumns(
+                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
+                    ,"NroSolicitud",LookUp(Solicitud,ID=IdSolicitud,NroSolicitud)
+                    )
+                )
         Text: ="crear collect"
         X: =10
         Y: =660
         ZIndex: =17
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =443
+        Items: =colSolicitudes
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =29
+        Width: =1160
+        X: =187
+        Y: =301
+        ZIndex: =18
+
+        Title2 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Width: =32
+            X: =7
+            Y: =3
+            ZIndex: =1
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =23
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =5
+            PaddingTop: =3
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =32
+            X: =1127
+            Y: =6
+            ZIndex: =2
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =3
+
+        Title2_4 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.NombreSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =32
+            X: =40
+            Y: =4
+            ZIndex: =4
 
