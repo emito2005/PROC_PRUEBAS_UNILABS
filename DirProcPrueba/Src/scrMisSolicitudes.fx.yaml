@@ -323,45 +323,6 @@ scrMisSolicitudes As screen:
         Y: =301
         ZIndex: =18
 
-        Title2 As label:
-            FontWeight: =FontWeight.Normal
-            Height: =25
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =15
-            Text: =ThisItem.ID
-            VerticalAlign: =VerticalAlign.Top
-            Width: =32
-            X: =7
-            Y: =3
-            ZIndex: =1
-
-        NextArrow2 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Height: =23
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =3
-            PaddingLeft: =3
-            PaddingRight: =5
-            PaddingTop: =3
-            TabIndex: =0
-            Tooltip: ="Ver los detalles del elemento"
-            Width: =32
-            X: =1127
-            Y: =6
-            ZIndex: =2
-
-        Separator2 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =3
-
         Title2_4 As label:
             FontWeight: =FontWeight.Normal
             Height: =25
