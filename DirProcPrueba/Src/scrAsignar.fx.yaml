@@ -1,0 +1,544 @@
+scrAsignar As screen:
+
+    cmpBarraSuperior_10 As cmpBarraSuperior:
+
+    lbl_TituloPrincipal_7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =24
+        Text: ="ELEVAR SOLICITUD"
+        Width: =1335
+        X: =13
+        Y: =icn_Volver_NS_4.Y + (icn_Volver_NS_4.Height / 2) - (Self.Height / 2)
+        ZIndex: =2
+
+    icn_Volver_NS_4 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back();
+        X: =60
+        Y: =100
+        ZIndex: =3
+
+    requestFieldGroup_22 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =6
+
+        requestFieldLbl_29 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="ID"
+            Width: =30
+            X: =icn_Volver_NS_1.X
+            Y: =200
+            ZIndex: =4
+
+        requestFieldTxt_22 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =120
+            X: =requestFieldLbl_29.X + requestFieldLbl_29.Width
+            Y: =requestFieldLbl_29.Y
+            ZIndex: =5
+
+    requestFieldGroup_23 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =10
+
+        requestFieldLbl_30 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Nro. Ticket"
+            Width: =100
+            X: =requestFieldTxt_22.X + requestFieldTxt_22.Width + 170
+            Y: =requestFieldLbl_29.Y
+            ZIndex: =7
+
+        requestFieldTxt_23 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =120
+            X: =requestFieldLbl_30.X + requestFieldLbl_30.Width
+            Y: =requestFieldLbl_30.Y
+            ZIndex: =8
+
+    requestFieldGroup_24 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =14
+
+        requestFieldLbl_31 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Nombre de Solicitud"
+            Width: =180
+            X: =requestFieldTxt_23.X + requestFieldTxt_23.Width + 100
+            Y: =requestFieldLbl_29.Y
+            ZIndex: =9
+
+        requestFieldTxt_24 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+            X: =requestFieldLbl_31.X + requestFieldLbl_31.Width
+            Y: =requestFieldLbl_31.Y
+            ZIndex: =11
+
+    requestFieldGroup_25 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =18
+
+        requestFieldLbl_32 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Tipo de Solicitud"
+            X: =requestFieldLbl_29.X
+            Y: =requestFieldLbl_29.Y + requestFieldLbl_29.Height + 40
+            ZIndex: =12
+
+        requestFieldTxt_25 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_32.X + requestFieldLbl_32.Width
+            Y: =requestFieldLbl_32.Y
+            ZIndex: =13
+
+    requestFieldGroup_26 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =22
+
+        requestFieldLbl_33 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Tipo de Servicio"
+            Width: =140
+            X: =requestFieldTxt_25.X + requestFieldTxt_25.Width + 100
+            Y: =requestFieldLbl_32.Y
+            ZIndex: =15
+
+        requestFieldTxt_26 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_33.X + requestFieldLbl_33.Width
+            Y: =requestFieldLbl_33.Y
+            ZIndex: =16
+
+    requestFieldGroup_27 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =26
+
+        requestFieldLbl_34 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Estado"
+            Width: =70
+            X: =requestFieldTxt_26.X + requestFieldTxt_26.Width + 130
+            Y: =requestFieldLbl_32.Y
+            ZIndex: =17
+
+        requestFieldTxt_27 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_34.X + requestFieldLbl_34.Width
+            Y: =requestFieldLbl_34.Y
+            ZIndex: =19
+
+    Button5_1 As button:
+        Text: ="ASIGNAR"
+        Width: =Parent.Width / 2
+        X: =Parent.Width / 2 - Self.Width / 2
+        Y: =Parent.Height - Self.Height - 15
+        ZIndex: =30
+
+    requestFieldGroup_28 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =31
+
+        requestFieldLbl_35 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Creación"
+            Width: =110
+            X: =requestFieldLbl_32.X
+            Y: =requestFieldLbl_32.Y + requestFieldLbl_32.Height + 40
+            ZIndex: =20
+
+        requestFieldTxt_28 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_35.X + requestFieldLbl_35.Width
+            Y: =requestFieldLbl_35.Y
+            ZIndex: =21
+
+    upperToGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =34
+
+        requestFieldLbl_41 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Elevar Solicitud a:"
+            X: =requestFieldLbl_35.X
+            Y: =requestFieldLbl_38.Y + requestFieldLbl_38.Height + 25
+            ZIndex: =32
+
+        txtBuscarManager_2 As text:
+            Align: =Left
+            Default: =""
+            DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+            DisplayMode: |
+                =// Disable if Form is not equal to editMode
+                If(form_EditArea.Mode <> FormMode.Edit,
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            HintText: ="Buscar"
+            PaddingLeft: =35
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Width: =354
+            X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
+            Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
+            ZIndex: =33
+
+        SearchIcon1_5 As icon.Search:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(135, 100, 184, 1)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(txtBuscarManager_2.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
+            FocusedBorderThickness: =4
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Search
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Buscar"
+            Width: =38
+            X: =txtBuscarManager_2.X
+            Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
+            ZIndex: =35
+
+        UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
+            AccessibleLabel: ="Resultados de la búsqueda de usuarios"
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height - Self.Y - 20
+            Items: |
+                =//If(!IsBlank(Trim(txtBuscarManager.Text)); UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager.Text); top: 999}))
+                If(!IsBlank(Trim(txtBuscarManager_2.Text)), 
+                    /*Filter(*/UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager_2.Text), top: 999})/*;
+                    Not(UserPrincipalName in AddColumns(AreaManager;"EmailPersonalM";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalM);
+                    Not(UserPrincipalName in AddColumns(AreaManagerLider;"EmailPersonalML";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalML);
+                    Not(UserPrincipalName in AddColumns(AreaManagerLiderAnalista;"EmailPersonalMLA";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalMLA)*/
+                    //)
+                )
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =60
+            Visible: =!IsBlank(Trim(txtBuscarManager_2.Text))
+            Width: =txtBuscarManager_2.Width
+            X: =txtBuscarManager_2.X
+            Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
+            ZIndex: =38
+
+            Rectangle2_5 As rectangle:
+                BorderColor: =Title2_8.Color
+                BorderThickness: |-
+                    =//If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName; 2; 0)
+                    1
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0,0,0,0)
+                Height: =58
+                HoverFill: =RGBA(0,0,0,0)
+                OnSelect: =Select(Title2_8)
+                PressedFill: =RGBA(135, 100, 184, 1)
+                Width: =Parent.TemplateWidth - 2*Self.X
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+            Title2_8 As label:
+                BorderColor: =Self.Color
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =2
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =Self.Size * 1.8
+                OnSelect: |-
+                    =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
+                    If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
+                        // New
+                        Patch(Personal, 
+                            Defaults(Personal), 
+                            {
+                                Nombre: ThisItem.DisplayName,
+                                Email: ThisItem.UserPrincipalName,
+                                IdPerfil: 2, 
+                                IdArea: varIdArea
+                            }
+                        ),
+                    
+                        // Edit
+                        Patch(Personal, 
+                            LookUp(Personal, Email = ThisItem.UserPrincipalName), 
+                            {
+                                IdPerfil: 2, 
+                                IdArea: varIdArea
+                            }
+                        )
+                    );
+                    
+                    Concurrent(
+                    //Set(_selectedUser; ThisItem);
+                        Reset(txtBuscarManager),
+                        Patch(AreaManager,
+                            Defaults(AreaManager),
+                            {
+                                IdArea: varIdArea,
+                                IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
+                            }
+                        )
+                    )
+                    
+                    
+                    //If(Not(ThisItem.UserPrincipalName in AddColumns(AreaManager;"EmailPersonal";LookUp(Personal;ID=AreaManager[@IdPersonal].Id).Email).EmailPersonal);
+                    //Patch(AreaManager;Defaults(AreaManager);{IdArea:{Value:"";Id:varIdArea};IdPersonal:{Value:"";Id:LookUp(Personal; Email = ThisItem.UserPrincipalName).ID}})
+                    //If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName); Collect(MyPeople; ThisItem)))
+                Size: =12
+                TabIndex: =0
+                Text: =ThisItem.DisplayName
+                VerticalAlign: =Middle
+                Width: =UserBrowseGallery1_5.TemplateWidth - 30
+                Wrap: =false
+                X: =5
+                Y: =9
+                ZIndex: =4
+
+            Subtitle1_5 As label:
+                Color: =RGBA(51, 51, 51, 1)
+                FocusedBorderThickness: =2
+                Font: =Font.'Segoe UI'
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Title2_8)
+                Size: =12
+                Text: =ThisItem.UserPrincipalName
+                VerticalAlign: =Middle
+                Width: =Title2_8.Width
+                Wrap: =false
+                X: =5
+                Y: =31
+                ZIndex: =5
+
+            Separator1_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =58
+                ZIndex: =6
+
+    requestFieldGroup_29 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =36
+
+        requestFieldLbl_36 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Expiración"
+            Width: =120
+            X: =requestFieldTxt_28.X + requestFieldTxt_28.Width + 50
+            Y: =requestFieldLbl_35.Y
+            ZIndex: =23
+
+        requestFieldTxt_29 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_36.X + requestFieldLbl_36.Width
+            Y: =requestFieldLbl_36.Y
+            ZIndex: =24
+
+    descriptionGroup_5 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =440
+        ZIndex: =37
+
+        requestFieldLbl_39 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Comentario:"
+            Width: =110
+            X: =requestFieldLbl_35.X
+            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 25
+            ZIndex: =28
+
+        requestFieldLbl_40 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam,"
+            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
+            X: =requestFieldLbl_39.X + requestFieldLbl_39.Width
+            Y: =requestFieldLbl_39.Y
+            ZIndex: =29
+
+    descriptionGroup_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =39
+
+        requestFieldLbl_37 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Descripción"
+            Width: =110
+            X: =requestFieldLbl_35.X
+            Y: =requestFieldLbl_35.Y + requestFieldLbl_35.Height + 20
+            ZIndex: =25
+
+        requestFieldLbl_38 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =100
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum."
+            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
+            X: =requestFieldLbl_37.X + requestFieldLbl_37.Width
+            Y: =requestFieldLbl_37.Y
+            ZIndex: =27
+
