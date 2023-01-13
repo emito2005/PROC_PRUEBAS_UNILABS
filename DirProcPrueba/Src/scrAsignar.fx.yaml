@@ -264,7 +264,8 @@ scrAsignar As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: |-
-                ="Elevar Solicitud a:"
+                ="Asignar Solicitud a:"
+            Width: =155
             X: =requestFieldLbl_35.X
             Y: =requestFieldLbl_38.Y + requestFieldLbl_38.Height + 25
             ZIndex: =32
