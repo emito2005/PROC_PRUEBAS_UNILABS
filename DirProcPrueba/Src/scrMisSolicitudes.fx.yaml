@@ -1,4 +1,37 @@
 scrMisSolicitudes As screen:
+    OnVisible: |-
+        =ClearCollect(colSolicitudCab,
+            AddColumns(
+                ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+            )
+            );
+        ClearCollect(colSolicitudes,
+            AddColumns(
+                ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
+                ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                )
+            )
 
     Rectangle4 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -298,45 +331,6 @@ scrMisSolicitudes As screen:
         X: =1243
         Y: =176
         ZIndex: =16
-
-    Button1 As button:
-        OnSelect: |-
-            =ClearCollect(colSolicitudCab,
-                AddColumns(
-                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
-                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
-                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
-                )
-                );
-            ClearCollect(colSolicitudes,
-                AddColumns(
-                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
-                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
-                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
-                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
-                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
-                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
-                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
-                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
-                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
-                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
-                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
-                    ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
-                    ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
-                    ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
-                    ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
-                    ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
-                    ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
-                    ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
-                    ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
-                    ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
-                    ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
-                    )
-                )
-        Text: ="crear collect"
-        X: =10
-        Y: =660
-        ZIndex: =17
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         Height: =443

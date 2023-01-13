@@ -668,3 +668,105 @@ Screen1 As screen:
         Y: =161
         ZIndex: =3
 
+    Button3 As button:
+        OnSelect: |+
+            =//Clear(myProduct3);;
+            //Clear(mySales3);;
+            //Clear(mySolution3);;
+            /*
+            //Create two collections
+            ClearCollect(myProduct3;
+            {ProductID: "1000"; ProductName: "Jacket"};
+            {ProductID: "1001"; ProductName: "T-Shirt"};
+            {ProductID: "1002"; ProductName: "Baseball Cap"}
+            );;
+            ClearCollect(mySales3;
+            {ProductID: "1001"; QuantitySold: 4};
+            {ProductID: "1002"; QuantitySold: 5};
+            {ProductID: "1001"; QuantitySold: 7};
+            {ProductID: "1000"; QuantitySold: 1};
+            {ProductID: "1000"; QuantitySold: 8}
+            );;
+            //Add a column from another table code
+            //ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=myProduct3[@ProductID];ProductName)));;
+            ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=ProductID;ProductName)));;
+            */
+            
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+                ShowColumns(
+                    AddColumns(
+                        Filter(AreaManager,IdArea=varMyUser.IdArea),
+                        "IdEtapaDestino",varMyAreaEtapaFlujo.IdEtapaDestino,"IdAreaDestino",varMyAreaEtapaFlujo.IdAreaDestino,"IdPerfilDestino",2),
+                        "IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonal")
+                        );
+            
+        Text: ="Botón"
+        X: =13
+        Y: =647
+        ZIndex: =4
+
+    Button4 As button:
+        Height: =45
+        OnSelect: |-
+            =//Clear(myPersonal);;
+            //ClearCollect(myPersonal;LookUp(Personal; Email = varUserEmail));;
+            //ClearCollect(myPersonal;AddColumns(Personal;"Perfil";LookUp(Perfil;ID=IdPerfil;Nombre)));;
+            /*
+            Clear(colMyManagers);;
+            ClearCollect(colMyManagers;
+                        Filter(AreaManager;IdArea=varMyUser.IdArea)
+                        );;
+            
+            ForAll(colMyManagers;
+                Patch(SolicitudDetalleDestino;Defaults(SolicitudDetalleDestino);{IdSolicitud:frm_EditSolicitud.LastSubmit.ID;
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle;IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino;
+                    IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino;IdPerfilDestino:2;IdPersonalDestino:IdPersonal})
+                );;
+            
+            */
+        Text: ="Grabar SolicitudDetalleDestino"
+        Width: =297
+        X: =13
+        Y: =700
+        ZIndex: =5
+
+    Button1 As button:
+        OnSelect: |-
+            =ClearCollect(colSolicitudCab,
+                AddColumns(
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                )
+                );
+            ClearCollect(colSolicitudes,
+                AddColumns(
+                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
+                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                    ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                    ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                    ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                    ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                    ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                    ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                    ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                    ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                    ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                    )
+                )
+        Text: ="crear collect"
+        X: =1019
+        Y: =451
+        ZIndex: =6
+
