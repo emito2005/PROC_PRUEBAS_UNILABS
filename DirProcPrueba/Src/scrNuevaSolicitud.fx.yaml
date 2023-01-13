@@ -59,6 +59,15 @@ scrNuevaSolicitud As screen:
                 IdAccion:1,IdEtapaOrigen:varMyAreaEtapaFlujo.IdEtapa,IdAreaOrigen:varMyAreaEtapaFlujo.IdArea,
                 IdPerfilOrigen:varMyUser.IdPerfil,IdPersonalOrigen:varMyUser.ID,IdEtapaDestino:1,
                 IdAreaDestino:1,IdPerfilDestino:1,IdPersonalDestino:1}).ID);
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+                        Filter(AreaManager,IdArea=varMyUser.IdArea)
+                        );
+            ForAll(colMyManagers,
+                Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino,
+                    IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
+                );
         Width: =1076
         X: =173
         Y: =133
@@ -764,7 +773,7 @@ scrNuevaSolicitud As screen:
 
     Button4 As button:
         Height: =45
-        OnSelect: |
+        OnSelect: |+
             =//Clear(myPersonal);;
             //ClearCollect(myPersonal;LookUp(Personal; Email = varUserEmail));;
             //ClearCollect(myPersonal;AddColumns(Personal;"Perfil";LookUp(Perfil;ID=IdPerfil;Nombre)));;
@@ -778,8 +787,8 @@ scrNuevaSolicitud As screen:
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,
                     IdSolicitudDetalle:varLastPatchSolicitudDetalle,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino,
                     IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
-                )
-            )
+                );
+            
         Text: ="Grabar SolicitudDetalleDestino"
         Width: =297
         X: =13
