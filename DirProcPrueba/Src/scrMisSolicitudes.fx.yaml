@@ -423,7 +423,7 @@ scrMisSolicitudes As screen:
             Size: =12
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
-            Width: =80
+            Width: =75
             X: =973
             Y: =4
             ZIndex: =8
@@ -439,8 +439,8 @@ scrMisSolicitudes As screen:
             Size: =12
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =1070
+            Width: =75
+            X: =1049
             Y: =4
             ZIndex: =9
 
@@ -453,10 +453,26 @@ scrMisSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =12
-            Text: =ThisItem.TipoServicio
+            Text: =ThisItem.AreaOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =107
             X: =515
             Y: =4
             ZIndex: =10
+
+        Title2_12 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.AreaDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =622
+            Y: =4
+            ZIndex: =11
 
