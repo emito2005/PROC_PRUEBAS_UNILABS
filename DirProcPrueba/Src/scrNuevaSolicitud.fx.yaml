@@ -9,7 +9,7 @@ scrNuevaSolicitud As screen:
         BorderColor: =RGBA(255, 191, 0, 1)
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =23
+        Height: =669
         Width: =1339
         X: =13
         Y: =89
@@ -719,88 +719,4 @@ scrNuevaSolicitud As screen:
             Width: =142
             X: =1
             ZIndex: =1
-
-    Label6 As label:
-        Height: =35
-        Text: |-
-            =//LookUp(AddColumns(AreaManager;"IdArea2";LookUp(Area_1;ID=IdArea).ID;"NombreArea";LookUp(Area_1;ID=IdArea).Nombre); IdArea = LookUp(Personal; Email = varUserEmail).ID).ID
-            //LookUp(AreaManager; AreaManager[@IdPersonal].Id = LookUp(Personal; Email = varUserEmail).ID).ID
-            //LookUp(AddColumns(AreaManager;"IdArea2";LookUp(Area_1;ID=AreaManager[@IdArea].Id).ID;"NombreArea";LookUp(Area_1;ID=AreaManager[@IdArea].Id).Nombre);Email = varUserEmail).ID
-            
-            varMyAreaEtapaFlujo.Orden
-        Width: =46
-        X: =20
-        Y: =600
-        ZIndex: =8
-
-    Button3 As button:
-        OnSelect: |+
-            =//Clear(myProduct3);;
-            //Clear(mySales3);;
-            //Clear(mySolution3);;
-            /*
-            //Create two collections
-            ClearCollect(myProduct3;
-            {ProductID: "1000"; ProductName: "Jacket"};
-            {ProductID: "1001"; ProductName: "T-Shirt"};
-            {ProductID: "1002"; ProductName: "Baseball Cap"}
-            );;
-            ClearCollect(mySales3;
-            {ProductID: "1001"; QuantitySold: 4};
-            {ProductID: "1002"; QuantitySold: 5};
-            {ProductID: "1001"; QuantitySold: 7};
-            {ProductID: "1000"; QuantitySold: 1};
-            {ProductID: "1000"; QuantitySold: 8}
-            );;
-            //Add a column from another table code
-            //ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=myProduct3[@ProductID];ProductName)));;
-            ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=ProductID;ProductName)));;
-            */
-            
-            Clear(colMyManagers);
-            ClearCollect(colMyManagers,
-                ShowColumns(
-                    AddColumns(
-                        Filter(AreaManager,IdArea=varMyUser.IdArea),
-                        "IdEtapaDestino",varMyAreaEtapaFlujo.IdEtapaDestino,"IdAreaDestino",varMyAreaEtapaFlujo.IdAreaDestino,"IdPerfilDestino",2),
-                        "IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonal")
-                        );
-            
-        Text: ="Botón"
-        X: =13
-        Y: =647
-        ZIndex: =9
-
-    Button4 As button:
-        Height: =45
-        OnSelect: |-
-            =//Clear(myPersonal);;
-            //ClearCollect(myPersonal;LookUp(Personal; Email = varUserEmail));;
-            //ClearCollect(myPersonal;AddColumns(Personal;"Perfil";LookUp(Perfil;ID=IdPerfil;Nombre)));;
-            /*
-            Clear(colMyManagers);;
-            ClearCollect(colMyManagers;
-                        Filter(AreaManager;IdArea=varMyUser.IdArea)
-                        );;
-            
-            ForAll(colMyManagers;
-                Patch(SolicitudDetalleDestino;Defaults(SolicitudDetalleDestino);{IdSolicitud:frm_EditSolicitud.LastSubmit.ID;
-                    IdSolicitudDetalle:varLastPatchSolicitudDetalle;IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino;
-                    IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino;IdPerfilDestino:2;IdPersonalDestino:IdPersonal})
-                );;
-            
-            */
-        Text: ="Grabar SolicitudDetalleDestino"
-        Width: =297
-        X: =13
-        Y: =700
-        ZIndex: =10
-
-    Label6_1 As label:
-        Height: =35
-        Text: =If(varMyUserArea.NotificaManager,"adicionar manager","No Manager")
-        Width: =204
-        X: =70
-        Y: =600
-        ZIndex: =12
 

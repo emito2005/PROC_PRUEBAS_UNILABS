@@ -1,4 +1,37 @@
 scrMisSolicitudes As screen:
+    OnVisible: |-
+        =ClearCollect(colSolicitudCab,
+            AddColumns(
+                ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+            )
+            );
+        ClearCollect(colSolicitudes,
+            AddColumns(
+                ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
+                ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                )
+            )
 
     Rectangle4 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -299,30 +332,16 @@ scrMisSolicitudes As screen:
         Y: =176
         ZIndex: =16
 
-    Button1 As button:
-        OnSelect: |-
-            =
-            
-            ClearCollect(colSolicitudes,
-                AddColumns(
-                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
-                    ,"NroSolicitud",LookUp(Solicitud,ID=IdSolicitud,NroSolicitud)
-                    )
-                )
-        Text: ="crear collect"
-        X: =10
-        Y: =660
-        ZIndex: =17
-
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         Height: =443
         Items: =colSolicitudes
         Layout: =Layout.Vertical
+        OnSelect: =Navigate(srcSolicitudDetalle, ScreenTransition.None)
         TemplatePadding: =0
-        TemplateSize: =29
+        TemplateSize: =27
         Width: =1160
         X: =187
-        Y: =301
+        Y: =287
         ZIndex: =18
 
         Title2_4 As label:
@@ -337,39 +356,111 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =99
-            X: =40
             Y: =4
             ZIndex: =4
 
         Title2_5 As label:
             FontWeight: =FontWeight.Normal
-            Height: =25
+            Height: =23
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
             Size: =12
-            Text: =ThisItem.ID
+            Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =24
-            X: =139
+            Width: =151
+            X: =83
             Y: =4
             ZIndex: =5
 
         Title2_6 As label:
             FontWeight: =FontWeight.Normal
-            Height: =25
+            Height: =23
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
             Size: =12
-            Text: =ThisItem.IdSolicitud
+            Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =24
-            X: =16
+            Width: =151
+            X: =250
             Y: =4
             ZIndex: =6
+
+        Title2_9 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =75
+            X: =973
+            Y: =4
+            ZIndex: =8
+
+        Title2_10 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =75
+            X: =1049
+            Y: =4
+            ZIndex: =9
+
+        Title2_11 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.AreaOrigen
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =515
+            Y: =4
+            ZIndex: =10
+
+        Title2_12 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.AreaDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =622
+            Y: =4
+            ZIndex: =11
+
+        Icon5 As icon.ChevronRight:
+            Height: =20
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =25
+            X: =1133
+            Y: =4
+            ZIndex: =12
 
