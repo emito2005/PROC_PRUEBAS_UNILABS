@@ -47,9 +47,6 @@
           "SolicitudDetalle": {
             "tableName": "efddad2c-77cb-47cd-a4a8-01ae5b325291"
           },
-          "SolicitudDetalleDestino": {
-            "tableName": "1204728d-b186-4e6b-b4fc-2249f653a738"
-          },
           "TipoServicio": {
             "tableName": "cee98033-3faa-4b51-9f9a-81be2c6b788a"
           },
@@ -72,8 +69,7 @@
       "Solicitud",
       "SolicitudDetalle",
       "Etapa",
-      "AreaEtapaFlujo",
-      "SolicitudDetalleDestino"
+      "AreaEtapaFlujo"
     ],
     "dependencies": {},
     "dependents": [],
