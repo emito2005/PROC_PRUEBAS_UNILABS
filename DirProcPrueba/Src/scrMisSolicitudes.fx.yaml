@@ -336,6 +336,7 @@ scrMisSolicitudes As screen:
         Height: =443
         Items: =colSolicitudes
         Layout: =Layout.Vertical
+        OnSelect: =Navigate(srcSolicitudDetalle, ScreenTransition.None)
         TemplatePadding: =0
         TemplateSize: =27
         Width: =1160
@@ -469,4 +470,13 @@ scrMisSolicitudes As screen:
             X: =622
             Y: =4
             ZIndex: =11
+
+        Icon5 As icon.ChevronRight:
+            Height: =20
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =25
+            X: =1133
+            Y: =4
+            ZIndex: =12
 
