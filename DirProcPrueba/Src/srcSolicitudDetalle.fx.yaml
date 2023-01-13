@@ -466,6 +466,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =41
 
         asignarBtn As button:
+            OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
             Size: =12
             Text: ="Asignar"
             X: =elevarBtn.X + elevarBtn.Width + 25
