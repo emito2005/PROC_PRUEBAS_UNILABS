@@ -391,22 +391,6 @@ scrMisSolicitudes As screen:
             Y: =4
             ZIndex: =6
 
-        Title2_8 As label:
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: =ThisItem.TipoServicio
-            VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =408
-            Y: =4
-            ZIndex: =7
-
         Title2_9 As label:
             FontWeight: =FontWeight.Normal
             Height: =23
