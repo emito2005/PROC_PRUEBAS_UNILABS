@@ -347,10 +347,3 @@ scrSolicitudes As screen:
         Y: =176
         ZIndex: =16
 
-    Button1 As button:
-        OnSelect: =ClearCollect(colSolicitudes,ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud"),ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA"))
-        Text: ="crear collect"
-        X: =10
-        Y: =660
-        ZIndex: =17
-
