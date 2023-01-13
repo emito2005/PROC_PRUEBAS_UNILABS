@@ -1,0 +1,154 @@
+scrTrazabilidad As screen:
+
+    cmpBarraSuperior_8 As cmpBarraSuperior:
+
+    lbl_TituloPrincipal_5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =24
+        Text: ="TRAZABILIDAD DE SOLICITUD"
+        Width: =1335
+        X: =13
+        Y: =icn_Volver_NS_2.Y + (icn_Volver_NS_2.Height / 2) - (Self.Height / 2)
+        ZIndex: =2
+
+    icn_Volver_NS_2 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back();
+        X: =60
+        Y: =100
+        ZIndex: =3
+
+    lblHeader_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ID"
+        Width: =60
+        X: =10
+        Y: =icn_Volver_NS_2.Y + icn_Volver_NS_2.Height + 15
+        ZIndex: =4
+
+    lblHeader_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="AREA ORIGEN"
+        Width: |
+            =80
+        X: =lblHeader_1.X + lblHeader_1.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =5
+
+    lblHeader_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ESTADO ORIGEN"
+        Width: =110
+        X: =lblHeader_2.X + lblHeader_2.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =6
+
+    lblHeader_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ADMIN. ORIGEN"
+        Width: =110
+        X: =lblHeader_3.X + lblHeader_3.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =7
+
+    lblHeader_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ANALISTA ORIGEN"
+        Width: =110
+        X: =lblHeader_4.X + lblHeader_4.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =8
+
+    lblHeader_6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="COMENTARIO"
+        Width: =400
+        X: =lblHeader_5.X + lblHeader_5.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =9
+
+    lblHeader_7 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="DOCUMENTO ADJUNTO"
+        Width: =160
+        X: =lblHeader_6.X + lblHeader_6.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =10
+
+    lblHeader_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="AREA DESTINO"
+        Width: |
+            =80
+        X: =lblHeader_7.X + lblHeader_7.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =11
+
+    lblHeader_9 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ESTADO DESTINO"
+        Width: =110
+        X: =lblHeader_8.X + lblHeader_8.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =12
+
+    lblHeader_10 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="F. CREACIÓN"
+        Width: =110
+        X: =lblHeader_9.X + lblHeader_9.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =13
+

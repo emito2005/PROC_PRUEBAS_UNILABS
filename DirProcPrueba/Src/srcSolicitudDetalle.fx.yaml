@@ -403,18 +403,6 @@ srcSolicitudDetalle As screen:
             Y: =requestFieldLbl_12.Y
             ZIndex: =32
 
-    requestFieldLbl_14 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Descripción"
-        Width: =110
-        X: =requestFieldLbl_12.X
-        Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
-        ZIndex: =36
-
     requestFieldGroup_13 As group:
         Height: =5
         Width: =5
@@ -447,69 +435,97 @@ srcSolicitudDetalle As screen:
             Y: =requestFieldLbl_13.Y
             ZIndex: =35
 
-    requestFieldLbl_15 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        Height: =100
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: |-
-            ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum."
-        Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
-        X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
-        Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
-        ZIndex: =38
+    actionButtonsGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =46
 
-    descargarPDFBtn As button:
-        Size: =12
-        Text: ="Descargar PDF"
-        X: =40
-        Y: =Parent.Height - Self.Height - 20
-        ZIndex: =39
+        descargarPDFBtn As button:
+            Size: =12
+            Text: ="Descargar PDF"
+            X: =40
+            Y: =Parent.Height - Self.Height - 20
+            ZIndex: =39
 
-    trazabilidadBtn As button:
-        Size: =12
-        Text: ="Trazabilidad"
-        X: =descargarPDFBtn.X + descargarPDFBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =40
+        trazabilidadBtn As button:
+            OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Trazabilidad"
+            X: =descargarPDFBtn.X + descargarPDFBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =40
 
-    elevarBtn As button:
-        Size: =12
-        Text: ="Elevar"
-        X: =trazabilidadBtn.X + trazabilidadBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =41
+        elevarBtn As button:
+            OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Elevar"
+            X: =trazabilidadBtn.X + trazabilidadBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =41
 
-    asignarBtn As button:
-        Size: =12
-        Text: ="Asignar"
-        X: =elevarBtn.X + elevarBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =42
+        asignarBtn As button:
+            Size: =12
+            Text: ="Asignar"
+            X: =elevarBtn.X + elevarBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =42
 
-    derivarBtn As button:
-        Size: =12
-        Text: ="Derivar"
-        X: =asignarBtn.X + asignarBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =43
+        derivarBtn As button:
+            Size: =12
+            Text: ="Derivar"
+            X: =asignarBtn.X + asignarBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =43
 
-    archivarBtn As button:
-        Size: =12
-        Text: ="Archivar"
-        X: =derivarBtn.X + derivarBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =44
+        archivarBtn As button:
+            Size: =12
+            Text: ="Archivar"
+            X: =derivarBtn.X + derivarBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =44
 
-    eliminarBtn As button:
-        Size: =12
-        Text: ="Eliminar"
-        X: =archivarBtn.X + archivarBtn.Width + 25
-        Y: =descargarPDFBtn.Y
-        ZIndex: =45
+        eliminarBtn As button:
+            Size: =12
+            Text: ="Eliminar"
+            X: =archivarBtn.X + archivarBtn.Width + 25
+            Y: =descargarPDFBtn.Y
+            ZIndex: =45
+
+    descriptionGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =46
+
+        requestFieldLbl_14 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Descripción"
+            Width: =110
+            X: =requestFieldLbl_12.X
+            Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
+            ZIndex: =36
+
+        requestFieldLbl_15 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =100
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum."
+            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
+            X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
+            Y: =requestFieldLbl_14.Y
+            ZIndex: =38
 
