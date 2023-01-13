@@ -301,7 +301,9 @@ scrMisSolicitudes As screen:
 
     Button1 As button:
         OnSelect: |-
-            =ClearCollect(colSolicitudes,
+            =
+            
+            ClearCollect(colSolicitudes,
                 AddColumns(
                     ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
                     ,"NroSolicitud",LookUp(Solicitud,ID=IdSolicitud,NroSolicitud)
@@ -331,11 +333,43 @@ scrMisSolicitudes As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =15
-            Text: =ThisItem.NombreSolicitud
+            Size: =12
+            Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =32
+            Width: =99
             X: =40
             Y: =4
             ZIndex: =4
+
+        Title2_5 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Width: =24
+            X: =139
+            Y: =4
+            ZIndex: =5
+
+        Title2_6 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.IdSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =24
+            X: =16
+            Y: =4
+            ZIndex: =6
 
