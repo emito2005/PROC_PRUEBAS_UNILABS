@@ -14,39 +14,36 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.LayoutDirection"
+                  "fullyQualifiedName": "scrNuevaSolicitud.Button4.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.LayoutDirection",
+                  "fullyQualifiedName": "scrNuevaSolicitud.Button4.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 7,
-                  "charOffset": 15,
+                  "charLength": 1,
+                  "charOffset": 676,
                   "snippet": {
-                    "text": ".Manual"
+                    "text": ")"
                   }
                 }
               },
               "properties": {
-                "member": "LayoutDirection",
-                "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer"
+                "member": "OnSelect",
+                "module": "scrNuevaSolicitud",
+                "type": "scrNuevaSolicitud.Button4"
               }
             }
           ],
           "message": {
-            "arguments": [
-              "Manual"
-            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidName",
+          "ruleId": "app-ErrBadToken",
           "ruleIndex": 0
         },
         {
@@ -504,19 +501,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame.FocusedBorderThickness"
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame.FocusedBorderThickness",
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogRect_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogFrame"
+                "type": "scrAreaEdit.confirmDialogRect_1"
               }
             }
           ],
@@ -534,109 +561,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.AccessibleLabel"
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes.TabIndex",
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogRect_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogYes"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scrAreaEdit",
-                "type": "scrAreaEdit.ConfirmDialogContainer.confirmDialogNo"
+                "type": "scrAreaEdit.confirmDialogRect_1"
               }
             }
           ],
@@ -1014,6 +951,156 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogFrame_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogFrame_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogFrame_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogYes_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogYes_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogYes_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogYes_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogYes_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogYes_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogNo_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogNo_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogNo_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogNo_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.confirmDialogNo_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.confirmDialogNo_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrAreaEdit.txtBuscarManager.AccessibleLabel"
                 }
               ],
@@ -1147,6 +1234,36 @@
                 "member": "FocusedBorderThickness",
                 "module": "scrAreaEdit",
                 "type": "scrAreaEdit.PeopleAddedGallery1_1.Title1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_1.iconRemove1_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_1.iconRemove1_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.PeopleAddedGallery1_1.iconRemove1_1"
               }
             }
           ],
@@ -1314,6 +1431,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_2.Title1_2.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_2.Title1_2.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.PeopleAddedGallery1_2.Title1_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_2.iconRemove1_2.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_2.iconRemove1_2.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.PeopleAddedGallery1_2.iconRemove1_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrAreaEdit.UserBrowseGallery1_2.TabIndex"
                 }
               ],
@@ -1458,6 +1635,66 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_3.Title1_3.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_3.Title1_3.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.PeopleAddedGallery1_3.Title1_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_3.iconRemove1_3.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrAreaEdit.PeopleAddedGallery1_3.iconRemove1_3.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scrAreaEdit",
+                "type": "scrAreaEdit.PeopleAddedGallery1_3.iconRemove1_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -2903,6 +3140,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.varLastPatchSolicitudDetalle"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varLastPatchSolicitudDetalle",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varLastPatchSolicitudDetalle",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.icon_analisis_lab"
                 }
               ],
@@ -2994,16 +3261,16 @@
           "name": "PowerApps app checker",
           "rules": [
             {
-              "id": "app-ErrInvalidName",
+              "id": "app-ErrBadToken",
               "messageStrings": {
                 "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
+                  "text": "Unexpected characters. Characters are used in the formula in an unexpected way."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
+                  "Remove or replace the unexpected characters."
                 ],
                 "level": "High",
                 "primaryCategory": "formula",

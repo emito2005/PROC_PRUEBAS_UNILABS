@@ -54,11 +54,11 @@ scrNuevaSolicitud As screen:
         Height: =466
         NumberOfColumns: =2
         OnSuccess: |
-            =Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
+            =Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
                 FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
                 IdAccion:1,IdEtapaOrigen:varMyAreaEtapaFlujo.IdEtapa,IdAreaOrigen:varMyAreaEtapaFlujo.IdArea,
                 IdPerfilOrigen:varMyUser.IdPerfil,IdPersonalOrigen:varMyUser.ID,IdEtapaDestino:1,
-                IdAreaDestino:1,IdPerfilDestino:1,IdPersonalDestino:1});
+                IdAreaDestino:1,IdPerfilDestino:1,IdPersonalDestino:1}).ID);
         Width: =1076
         X: =173
         Y: =133
@@ -714,16 +714,18 @@ scrNuevaSolicitud As screen:
     Label6 As label:
         Height: =35
         Text: |-
-            =LookUp(AddColumns(AreaManager,"IdArea2",LookUp(Area_1,ID=IdArea).ID,"NombreArea",LookUp(Area_1,ID=IdArea).Nombre), IdArea = LookUp(Personal, Email = varUserEmail).ID).ID
+            =//LookUp(AddColumns(AreaManager;"IdArea2";LookUp(Area_1;ID=IdArea).ID;"NombreArea";LookUp(Area_1;ID=IdArea).Nombre); IdArea = LookUp(Personal; Email = varUserEmail).ID).ID
             //LookUp(AreaManager; AreaManager[@IdPersonal].Id = LookUp(Personal; Email = varUserEmail).ID).ID
             //LookUp(AddColumns(AreaManager;"IdArea2";LookUp(Area_1;ID=AreaManager[@IdArea].Id).ID;"NombreArea";LookUp(Area_1;ID=AreaManager[@IdArea].Id).Nombre);Email = varUserEmail).ID
+            
+            varMyAreaEtapaFlujo.Orden
         Width: =46
         X: =20
         Y: =600
         ZIndex: =8
 
     Button3 As button:
-        OnSelect: |-
+        OnSelect: |+
             =//Clear(myProduct3);;
             //Clear(mySales3);;
             //Clear(mySolution3);;
@@ -745,24 +747,48 @@ scrNuevaSolicitud As screen:
             //ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=myProduct3[@ProductID];ProductName)));;
             ClearCollect(mySolution3;AddColumns(mySales3;"ProductName";LookUp(myProduct3;ProductID=ProductID;ProductName)));;
             */
+            
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+                ShowColumns(
+                    AddColumns(
+                        Filter(AreaManager,IdArea=varMyUser.IdArea),
+                        "IdEtapaDestino",varMyAreaEtapaFlujo.IdEtapaDestino,"IdAreaDestino",varMyAreaEtapaFlujo.IdAreaDestino,"IdPerfilDestino",2),
+                        "IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonal")
+                        );
+            
         Text: ="Botón"
         X: =13
         Y: =647
         ZIndex: =9
 
     Button4 As button:
-        OnSelect: |-
+        Height: =45
+        OnSelect: |
             =//Clear(myPersonal);;
             //ClearCollect(myPersonal;LookUp(Personal; Email = varUserEmail));;
             //ClearCollect(myPersonal;AddColumns(Personal;"Perfil";LookUp(Perfil;ID=IdPerfil;Nombre)));;
-        Text: ="Botón"
+            
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+                        Filter(AreaManager,IdArea=varMyUser.IdArea)
+                        );
+            
+            ForAll(colMyManagers,
+                Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino,
+                    IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
+                )
+            )
+        Text: ="Grabar SolicitudDetalleDestino"
+        Width: =297
         X: =13
         Y: =700
         ZIndex: =10
 
     Label6_1 As label:
         Height: =35
-        Text: =Today()
+        Text: =If(varMyUserArea.NotificaManager,"adicionar manager","No Manager")
         Width: =204
         X: =70
         Y: =600
