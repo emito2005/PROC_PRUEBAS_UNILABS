@@ -6,8 +6,8 @@ App As appinfo:
         //Set(varUserFullName; User().FullName);;
         //Set(varMyUser; LookUp(Personal; Email = varUserEmail));;
         
-        //Set(varMyUser; LookUp(Personal; Email = "526453@unilabs.com"));;
-        Set(varMyUser, LookUp(Personal, Email = User().Email));
+        Set(varMyUser, LookUp(Personal, Email = "526453@unilabs.com"));
+        //Set(varMyUser; LookUp(Personal; Email = User().Email));;
         //Set(varUserEmail; varMyUser.Email);;
         Set(varUserFullName, varMyUser.Nombre);
         
