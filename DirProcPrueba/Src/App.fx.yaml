@@ -2,12 +2,18 @@ App As appinfo:
     BackEnabled: =false
     OnStart: |+
         =Set(varIdArea,0);
-        Set(varUserEmail, User().Email);
-        Set(varUserFullName, User().FullName);
-        Set(varMyUser, LookUp(Personal, Email = varUserEmail));
+        //Set(varUserEmail; User().Email);;
+        //Set(varUserFullName; User().FullName);;
+        //Set(varMyUser; LookUp(Personal; Email = varUserEmail));;
+        
+        Set(varMyUser, LookUp(Personal, Email = "526453@unilabs.com"));
+        //Set(varMyUser; LookUp(Personal; Email = User().Email));;
+        //Set(varUserEmail; varMyUser.Email);;
+        Set(varUserFullName, varMyUser.Nombre);
+        
         If(IsBlank(varMyUser),
         	Set(varMyUser,
-        		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varUserEmail,IdPerfil:1,IdArea:0})
+        		Patch(Personal, Defaults(Personal), {Title:varUserFullName,Email:varMyUser.Email,IdPerfil:1,IdArea:0})
         	)
         );
         
