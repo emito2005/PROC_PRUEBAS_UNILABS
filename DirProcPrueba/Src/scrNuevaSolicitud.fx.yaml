@@ -58,21 +58,29 @@ scrNuevaSolicitud As screen:
                 FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
                 IdAccionOrigen:1,IdEtapaOrigen:varMyAreaEtapaFlujo.IdEtapa,IdAreaOrigen:varMyAreaEtapaFlujo.IdArea,
                 IdPerfilOrigen:varMyUser.IdPerfil,IdPersonalOrigen:varMyUser.ID,
-                IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino,IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino,IdPerfilDestino:0,IdPersonalDestino:0}));
+                IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:0,IdPersonalDestino:0}));
             Clear(colMyManagers);
-            Clear(colMyLideres);
             ClearCollect(colMyManagers,
                         Filter(AreaManager,IdArea=varMyUser.IdArea)
                         );
-            
-            
+            Clear(colMyLideres);
+            ClearCollect(colMyLideres,
+                        Filter(AreaManagerLider,IdArea=varMyUser.IdArea)
+                        );
+            If(varMyUserArea.NotificaManager,
             ForAll(colMyManagers,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
-                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapaDestino,
-                    IdAreaDestino:varMyAreaEtapaFlujo.IdAreaDestino,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
-                );
-            
-            
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
+                    IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
+                )
+            );
+            If(varMyUserArea.NotificaLider,
+            ForAll(colMyLideres,
+                Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
+                    IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:3,IdPersonalDestino:IdPersonal})
+                )
+            );
             
         Width: =1076
         X: =173

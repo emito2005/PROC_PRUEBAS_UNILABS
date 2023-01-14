@@ -1,5 +1,5 @@
 scrMisSolicitudes As screen:
-    OnVisible: |-
+    OnVisible: |
         =ClearCollect(colSolicitudCab,
             AddColumns(
                 ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
@@ -31,7 +31,10 @@ scrMisSolicitudes As screen:
                 ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
                 ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
                 )
-            )
+            );
+        ClearCollect(colSolicitudDetalleDestino,
+            Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
+        Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
 
     Rectangle4 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -463,4 +466,22 @@ scrMisSolicitudes As screen:
             X: =1133
             Y: =4
             ZIndex: =12
+
+    Label6 As label:
+        Text: =varMyUser.IdArea
+        X: =15
+        Y: =435
+        ZIndex: =19
+
+    Label10 As label:
+        Text: =varMyUser.IdPerfil
+        X: =15
+        Y: =488
+        ZIndex: =20
+
+    Label11 As label:
+        Text: =varMyUser.ID
+        X: =15
+        Y: =545
+        ZIndex: =21
 
