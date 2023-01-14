@@ -34,7 +34,10 @@ scrMisSolicitudes As screen:
             );
         ClearCollect(colSolicitudDetalleDestino,
             Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
-        Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
+        //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+        ClearCollect(colSolicitudes,
+            Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
+        );
 
     Rectangle4 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
