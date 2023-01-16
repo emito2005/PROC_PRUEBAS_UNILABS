@@ -56,8 +56,8 @@ scrNuevaSolicitud As screen:
         OnSuccess: |+
             =Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
                 FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
-                IdAccionOrigen:1,IdEtapaOrigen:varMyAreaEtapaFlujo.IdEtapa,IdAreaOrigen:varMyAreaEtapaFlujo.IdArea,
-                IdPerfilOrigen:varMyUser.IdPerfil,IdPersonalOrigen:varMyUser.ID,
+                IdAccionOrigen:0,IdEtapaOrigen:0,IdAreaOrigen:0,IdPerfilOrigen:0,IdPersonalOrigen:0,
+                IdAccionActual:1,IdEtapaActual:varMyAreaEtapaFlujo.IdEtapa,IdAreaActual:varMyAreaEtapaFlujo.IdArea,IdPerfilActual:varMyUser.IdPerfil,IdPersonalActual:varMyUser.ID,
                 IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:0,IdPersonalDestino:0}));
             Clear(colMyManagers);
             ClearCollect(colMyManagers,
@@ -70,7 +70,8 @@ scrNuevaSolicitud As screen:
             If(varMyUserArea.NotificaManager,
             ForAll(colMyManagers,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
-                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
+                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,
+                    IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
                     IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
                 )
             );
