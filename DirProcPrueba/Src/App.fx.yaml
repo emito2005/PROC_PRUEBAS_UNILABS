@@ -44,11 +44,6 @@ App As appinfo:
         If(IsBlank(varGestionarArea),Set(varGestionarArea,false),Set(varGestionarArea,varGestionarArea));
         If(IsBlank(varDescargarPdfSol),Set(varDescargarPdfSol,false),Set(varDescargarPdfSol,varDescargarPdfSol));
         
-        
-        
-        
-        
-        
         ClearCollect(colBarraLateral,
             {id_boton:"NuevaSol",texto_boton:"Nueva Solicitud",navegacion:scrNuevaSolicitud,sangria:1,Habilitado:varGenerar},
             {id_boton:"MisSol",texto_boton:"Mis Solicitudes",navegacion:scrMisSolicitudes,sangria:1,Habilitado:true},
