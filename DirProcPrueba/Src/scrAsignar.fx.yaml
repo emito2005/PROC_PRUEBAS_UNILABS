@@ -179,6 +179,13 @@ scrAsignar As screen:
             Y: =requestFieldLbl_33.Y
             ZIndex: =13
 
+    Button5_1 As button:
+        Text: ="ASIGNAR"
+        Width: =Parent.Width / 2
+        X: =Parent.Width / 2 - Self.Width / 2
+        Y: =Parent.Height - Self.Height - 15
+        ZIndex: =26
+
     requestFieldGroup_27 As group:
         Height: =5
         Width: =5
@@ -210,13 +217,6 @@ scrAsignar As screen:
             X: =requestFieldLbl_34.X + requestFieldLbl_34.Width
             Y: =requestFieldLbl_34.Y
             ZIndex: =15
-
-    Button5_1 As button:
-        Text: ="ASIGNAR"
-        Width: =Parent.Width / 2
-        X: =Parent.Width / 2 - Self.Width / 2
-        Y: =Parent.Height - Self.Height - 15
-        ZIndex: =26
 
     requestFieldGroup_28 As group:
         Height: =5
