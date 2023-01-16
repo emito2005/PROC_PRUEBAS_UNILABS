@@ -5383,6 +5383,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.varNroSolGenerada"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varNroSolGenerada",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varNroSolGenerada",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.icon_analisis_lab"
                 }
               ],
