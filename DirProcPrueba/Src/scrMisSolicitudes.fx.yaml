@@ -274,7 +274,7 @@ scrMisSolicitudes As screen:
         Size: =12
         Text: ="Estado"
         Width: =100
-        X: =396
+        X: =529
         Y: =143
         ZIndex: =7
 
@@ -282,7 +282,7 @@ scrMisSolicitudes As screen:
         Height: =33
         Size: =12
         Text: ="Dpto. Procedencia"
-        X: =573
+        X: =636
         Y: =143
         ZIndex: =8
 
@@ -303,15 +303,15 @@ scrMisSolicitudes As screen:
 
     Dropdown2 As dropdown:
         Items: =["Activo","Cancelado","Eliminado"]
-        Width: =168
-        X: =396
+        Width: =100
+        X: =529
         Y: =176
         ZIndex: =11
 
     Dropdown2_1 As dropdown:
         Items: =["Sistemas","Contabilidad","Comercial","Planing y Control","Logistica","Operaciones"]
-        Width: =204
-        X: =575
+        Width: =148
+        X: =638
         Y: =176
         ZIndex: =12
 
@@ -360,13 +360,13 @@ scrMisSolicitudes As screen:
 
         Title2_4 As label:
             FontWeight: =FontWeight.Normal
-            Height: =25
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =99
@@ -375,13 +375,13 @@ scrMisSolicitudes As screen:
 
         Title2_5 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =151
@@ -391,13 +391,13 @@ scrMisSolicitudes As screen:
 
         Title2_6 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =151
@@ -407,45 +407,45 @@ scrMisSolicitudes As screen:
 
         Title2_9 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
-            Width: =75
-            X: =973
+            Width: =70
+            X: =1001
             Y: =4
             ZIndex: =8
 
         Title2_10 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
-            Width: =75
-            X: =1049
+            Width: =70
+            X: =1077
             Y: =4
             ZIndex: =9
 
         Title2_11 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =ThisItem.AreaOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =107
@@ -455,13 +455,13 @@ scrMisSolicitudes As screen:
 
         Title2_12 As label:
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =20
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =11
             Text: =ThisItem.AreaDestino
             VerticalAlign: =VerticalAlign.Top
             Width: =107
@@ -473,8 +473,8 @@ scrMisSolicitudes As screen:
             Height: =20
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
-            Width: =25
-            X: =1133
+            Width: =15
+            X: =1145
             Y: =4
             ZIndex: =12
 
