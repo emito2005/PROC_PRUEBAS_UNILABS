@@ -302,9 +302,9 @@ scrMisSolicitudes As screen:
         Y: =143
         ZIndex: =9
 
-    TextInput1 As text:
-        Default: ="Entrada de texto"
-        Width: =196
+    txtFilNomNroSol As text:
+        Default: =
+        Width: =281
         X: =186
         Y: =176
         ZIndex: =10
@@ -345,6 +345,7 @@ scrMisSolicitudes As screen:
         ZIndex: =15
 
     Button2_9 As button:
+        OnSelect: =Reset(txtFilNomNroSol)
         Text: ="Limpiar"
         Width: =100
         X: =1243
@@ -353,10 +354,12 @@ scrMisSolicitudes As screen:
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         Height: =443
-        Items: |-
-            =colSolicitudes
+        Items: |
+            =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-            //Filter(colSolicitudes;EsAtendido=false;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud))
+            Search(
+                Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
+                ,txtFilNomNroSol.Text,"NroSolicitud","NombreSolicitud")
         Layout: =Layout.Vertical
         OnSelect: =Navigate(srcSolicitudDetalle, ScreenTransition.None)
         TemplatePadding: =0
