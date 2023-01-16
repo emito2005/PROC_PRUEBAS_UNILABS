@@ -5023,17 +5023,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varIdOpcionMenu"
+                  "fullyQualifiedName": "App.varAsignar"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varIdOpcionMenu",
+                  "fullyQualifiedName": "App.varAsignar",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varIdOpcionMenu",
+                "member": "varAsignar",
                 "module": "App",
                 "type": "App"
               }
@@ -5053,17 +5053,47 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varFinalizar"
+                  "fullyQualifiedName": "App.varElevar"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varFinalizar",
+                  "fullyQualifiedName": "App.varElevar",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varFinalizar",
+                "member": "varElevar",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varIdOpcionMenu"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varIdOpcionMenu",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varIdOpcionMenu",
                 "module": "App",
                 "type": "App"
               }
