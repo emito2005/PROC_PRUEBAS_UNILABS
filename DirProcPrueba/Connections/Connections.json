@@ -38,6 +38,9 @@
           "Perfil": {
             "tableName": "d13fe43e-6e88-449e-b5c8-6aed0386fd51"
           },
+          "PerfilAccion": {
+            "tableName": "16b877bd-84e6-4dc7-a31f-26c3fb107dea"
+          },
           "Personal": {
             "tableName": "efaa905d-ef6d-42a7-bfc3-46c09824b345"
           },
@@ -73,7 +76,8 @@
       "SolicitudDetalle",
       "Etapa",
       "AreaEtapaFlujo",
-      "SolicitudDetalleDestino"
+      "SolicitudDetalleDestino",
+      "PerfilAccion"
     ],
     "dependencies": {},
     "dependents": [],

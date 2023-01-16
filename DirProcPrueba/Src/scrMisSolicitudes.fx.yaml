@@ -66,6 +66,9 @@ scrMisSolicitudes As screen:
 
         Button2_1 As button:
             Align: =Align.Left
+            DisplayMode: |-
+                =//DisplayMode.Edit
+                If(ThisItem.Habilitado,DisplayMode.Edit,DisplayMode.Disabled)
             Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
             Height: =61
             HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
