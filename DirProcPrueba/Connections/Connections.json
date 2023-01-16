@@ -35,6 +35,9 @@
           "Etapa": {
             "tableName": "11ae83ab-ee6e-4f77-91a9-a14199d00a86"
           },
+          "Parametros": {
+            "tableName": "f78e146b-a78c-42ca-97b6-a55b50f46448"
+          },
           "Perfil": {
             "tableName": "d13fe43e-6e88-449e-b5c8-6aed0386fd51"
           },
@@ -77,7 +80,8 @@
       "Etapa",
       "AreaEtapaFlujo",
       "SolicitudDetalleDestino",
-      "PerfilAccion"
+      "PerfilAccion",
+      "Parametros"
     ],
     "dependencies": {},
     "dependents": [],

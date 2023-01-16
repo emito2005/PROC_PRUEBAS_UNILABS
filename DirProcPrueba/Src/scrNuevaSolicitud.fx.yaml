@@ -252,7 +252,9 @@ scrNuevaSolicitud As screen:
         NroSolicitud_DataCard1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="NroSolicitud"
-            Default: =ThisItem.NroSolicitud
+            Default: |
+                =//ThisItem.NroSolicitud
+                Concatenate(LookUp(Parametros,Codigo="PREFIJONROSOL",Valor),Right(Concatenate("000000",LookUp(Parametros,Codigo="NROSOL",Valor)),6))
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
                 =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"NroSolicitud")
