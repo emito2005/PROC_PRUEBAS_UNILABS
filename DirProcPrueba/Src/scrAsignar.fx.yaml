@@ -40,7 +40,7 @@ scrAsignar As screen:
             ZIndex: =4
 
         requestFieldTxt_22 As text:
-            Default: =""
+            Default: =requestFieldTxt_1.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -69,10 +69,10 @@ scrAsignar As screen:
             Width: =100
             X: =requestFieldTxt_22.X + requestFieldTxt_22.Width + 170
             Y: =requestFieldLbl_29.Y
-            ZIndex: =7
+            ZIndex: =6
 
         requestFieldTxt_23 As text:
-            Default: =""
+            Default: =requestFieldTxt_2.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -82,7 +82,7 @@ scrAsignar As screen:
             Width: =120
             X: =requestFieldLbl_30.X + requestFieldLbl_30.Width
             Y: =requestFieldLbl_30.Y
-            ZIndex: =8
+            ZIndex: =7
 
     requestFieldGroup_24 As group:
         Height: =5
@@ -101,10 +101,10 @@ scrAsignar As screen:
             Width: =180
             X: =requestFieldTxt_23.X + requestFieldTxt_23.Width + 100
             Y: =requestFieldLbl_29.Y
-            ZIndex: =9
+            ZIndex: =8
 
         requestFieldTxt_24 As text:
-            Default: =""
+            Default: =requestFieldTxt_3.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -114,7 +114,7 @@ scrAsignar As screen:
             Width: =300
             X: =requestFieldLbl_31.X + requestFieldLbl_31.Width
             Y: =requestFieldLbl_31.Y
-            ZIndex: =11
+            ZIndex: =9
 
     requestFieldGroup_25 As group:
         Height: =5
@@ -132,10 +132,10 @@ scrAsignar As screen:
             Text: ="Tipo de Solicitud"
             X: =requestFieldLbl_29.X
             Y: =requestFieldLbl_29.Y + requestFieldLbl_29.Height + 40
-            ZIndex: =12
+            ZIndex: =10
 
         requestFieldTxt_25 As text:
-            Default: =""
+            Default: =requestFieldTxt_4.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -145,7 +145,7 @@ scrAsignar As screen:
             Width: =200
             X: =requestFieldLbl_32.X + requestFieldLbl_32.Width
             Y: =requestFieldLbl_32.Y
-            ZIndex: =13
+            ZIndex: =11
 
     requestFieldGroup_26 As group:
         Height: =5
@@ -164,10 +164,10 @@ scrAsignar As screen:
             Width: =140
             X: =requestFieldTxt_25.X + requestFieldTxt_25.Width + 100
             Y: =requestFieldLbl_32.Y
-            ZIndex: =15
+            ZIndex: =12
 
         requestFieldTxt_26 As text:
-            Default: =""
+            Default: =requestFieldTxt_5.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -177,7 +177,7 @@ scrAsignar As screen:
             Width: =200
             X: =requestFieldLbl_33.X + requestFieldLbl_33.Width
             Y: =requestFieldLbl_33.Y
-            ZIndex: =16
+            ZIndex: =13
 
     requestFieldGroup_27 As group:
         Height: =5
@@ -196,10 +196,10 @@ scrAsignar As screen:
             Width: =70
             X: =requestFieldTxt_26.X + requestFieldTxt_26.Width + 130
             Y: =requestFieldLbl_32.Y
-            ZIndex: =17
+            ZIndex: =14
 
         requestFieldTxt_27 As text:
-            Default: =""
+            Default: =requestFieldTxt_6.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -209,14 +209,14 @@ scrAsignar As screen:
             Width: =200
             X: =requestFieldLbl_34.X + requestFieldLbl_34.Width
             Y: =requestFieldLbl_34.Y
-            ZIndex: =19
+            ZIndex: =15
 
     Button5_1 As button:
         Text: ="ASIGNAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 15
-        ZIndex: =30
+        ZIndex: =26
 
     requestFieldGroup_28 As group:
         Height: =5
@@ -235,10 +235,10 @@ scrAsignar As screen:
             Width: =110
             X: =requestFieldLbl_32.X
             Y: =requestFieldLbl_32.Y + requestFieldLbl_32.Height + 40
-            ZIndex: =20
+            ZIndex: =16
 
         requestFieldTxt_28 As text:
-            Default: =""
+            Default: =requestFieldTxt_12.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -248,7 +248,58 @@ scrAsignar As screen:
             Width: =180
             X: =requestFieldLbl_35.X + requestFieldLbl_35.Width
             Y: =requestFieldLbl_35.Y
-            ZIndex: =21
+            ZIndex: =17
+
+    descriptionGroup_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        requestFieldLbl_39 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Comentario:"
+            Width: =110
+            X: =requestFieldLbl_35.X
+            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 25
+            ZIndex: =22
+
+        requestFieldScrollLbl_2 As label:
+            Align: =Align.Justify
+            AutoHeight: =true
+            Color: =RGBA(0, 18, 107, 0)
+            Height: =80
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =requestFieldLbl_57.Text
+            Width: =requestFieldLbl_57.Width
+            X: =requestFieldLbl_57.X
+            Y: =requestFieldLbl_57.Y
+            ZIndex: =24
+
+        requestFieldLbl_57 As label:
+            Align: =Align.Justify
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Min(requestFieldScrollLbl_2.Height, 85)
+            Overflow: =Overflow.Scroll
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =requestFieldLbl_15.Text
+            Width: =requestFieldLbl_38.X + requestFieldLbl_38.Width - Self.X
+            X: =requestFieldLbl_39.X + requestFieldLbl_39.Width
+            Y: =requestFieldLbl_39.Y
+            ZIndex: =25
 
     upperToGroup_1 As group:
         Height: =5
@@ -268,7 +319,7 @@ scrAsignar As screen:
             Width: =155
             X: =requestFieldLbl_35.X
             Y: =requestFieldLbl_38.Y + requestFieldLbl_38.Height + 25
-            ZIndex: =32
+            ZIndex: =27
 
         txtBuscarManager_2 As text:
             Align: =Left
@@ -290,7 +341,7 @@ scrAsignar As screen:
             Width: =354
             X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
             Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
-            ZIndex: =33
+            ZIndex: =28
 
         SearchIcon1_5 As icon.Search:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -315,7 +366,7 @@ scrAsignar As screen:
             Width: =38
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
-            ZIndex: =35
+            ZIndex: =29
 
         UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
             AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -340,7 +391,7 @@ scrAsignar As screen:
             Width: =txtBuscarManager_2.Width
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
-            ZIndex: =38
+            ZIndex: =30
 
             Rectangle2_5 As rectangle:
                 BorderColor: =Title2_8.Color
@@ -457,10 +508,10 @@ scrAsignar As screen:
             Width: =120
             X: =requestFieldTxt_28.X + requestFieldTxt_28.Width + 50
             Y: =requestFieldLbl_35.Y
-            ZIndex: =23
+            ZIndex: =18
 
         requestFieldTxt_29 As text:
-            Default: =""
+            Default: =requestFieldTxt_13.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -470,42 +521,7 @@ scrAsignar As screen:
             Width: =180
             X: =requestFieldLbl_36.X + requestFieldLbl_36.Width
             Y: =requestFieldLbl_36.Y
-            ZIndex: =24
-
-    descriptionGroup_5 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =440
-        ZIndex: =37
-
-        requestFieldLbl_39 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Comentario:"
-            Width: =110
-            X: =requestFieldLbl_35.X
-            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 25
-            ZIndex: =28
-
-        requestFieldLbl_40 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Height: =60
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam,"
-            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
-            X: =requestFieldLbl_39.X + requestFieldLbl_39.Width
-            Y: =requestFieldLbl_39.Y
-            ZIndex: =29
+            ZIndex: =19
 
     descriptionGroup_4 As group:
         Height: =5
@@ -524,7 +540,7 @@ scrAsignar As screen:
             Width: =110
             X: =requestFieldLbl_35.X
             Y: =requestFieldLbl_35.Y + requestFieldLbl_35.Height + 20
-            ZIndex: =25
+            ZIndex: =20
 
         requestFieldLbl_38 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -541,5 +557,5 @@ scrAsignar As screen:
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_37.X + requestFieldLbl_37.Width
             Y: =requestFieldLbl_37.Y
-            ZIndex: =27
+            ZIndex: =21
 
