@@ -199,7 +199,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =14
 
         requestFieldTxt_6 As text:
-            Default: =""
+            Default: =If(Gallery1.Selected.EsActivo, "Activo", "Inactivo")
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -799,7 +799,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =30
 
         requestFieldTxt_38 As text:
-            Default: =Text(Gallery1.Selected.FechaExpiraOLA, "dd/MM/yyyy")
+            Default: =Text(Gallery1.Selected.FechaExpiraOLA, "dd/mm/yyyy")
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
