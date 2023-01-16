@@ -347,7 +347,8 @@ scrMisSolicitudes As screen:
         Height: =443
         Items: |-
             =//colSolicitudes
-            Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
+            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            Filter(colSolicitudes,EsAtendido=false,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(srcSolicitudDetalle, ScreenTransition.None)
         TemplatePadding: =0

@@ -5023,66 +5023,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varAsignar"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varAsignar",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varAsignar",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.varElevar"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varElevar",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varElevar",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.varIdOpcionMenu"
                 }
               ],
@@ -5094,6 +5034,36 @@
               },
               "properties": {
                 "member": "varIdOpcionMenu",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varFinalizar"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varFinalizar",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varFinalizar",
                 "module": "App",
                 "type": "App"
               }

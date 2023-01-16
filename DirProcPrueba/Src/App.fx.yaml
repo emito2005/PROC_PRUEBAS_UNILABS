@@ -25,8 +25,28 @@ App As appinfo:
         Set(varGenerar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=1).EsPermitido);
         Set(varAsignar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=2).EsPermitido);
         Set(varElevar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=3).EsPermitido);
-        
+        Set(varDerivar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=4).EsPermitido);
+        Set(varAnular,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=5).EsPermitido);
+        Set(varEliminar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=6).EsPermitido);
+        Set(varFinalizar,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=7).EsPermitido);
+        Set(varTrazabilidad,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=8).EsPermitido);
         Set(varGestionarArea,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=9).EsPermitido);
+        Set(varDescargarPdfSol,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=10).EsPermitido);
+        
+        
+        If(IsBlank(varGenerar),Set(varGenerar,false),Set(varGenerar,varGenerar));
+        If(IsBlank(varAsignar),Set(varAsignar,false),Set(varAsignar,varAsignar));
+        If(IsBlank(varElevar),Set(varElevar,false),Set(varElevar,varElevar));
+        If(IsBlank(varDerivar),Set(varDerivar,false),Set(varDerivar,varDerivar));
+        If(IsBlank(varAnular),Set(varAnular,false),Set(varAnular,varAnular));
+        If(IsBlank(varEliminar),Set(varEliminar,false),Set(varEliminar,varEliminar));
+        If(IsBlank(varTrazabilidad),Set(varTrazabilidad,false),Set(varTrazabilidad,varTrazabilidad));
+        If(IsBlank(varGestionarArea),Set(varGestionarArea,false),Set(varGestionarArea,varGestionarArea));
+        If(IsBlank(varDescargarPdfSol),Set(varDescargarPdfSol,false),Set(varDescargarPdfSol,varDescargarPdfSol));
+        
+        
+        
+        
         
         
         ClearCollect(colBarraLateral,
