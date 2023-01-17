@@ -52,46 +52,99 @@ scrNuevaSolicitud As screen:
         DataSource: =Solicitud
         DefaultMode: =FormMode.New
         Height: =466
-        OnSuccess: |+
-            =Set(varIdSolNueva,frm_EditSolicitud.LastSubmit.ID);
-            Set(varNroSolActual,LookUp(Parametros,Codigo="NROSOL").Valor);
-            Set(varNroSolNuevo,Value(varNroSolActual)+1);
-            Patch(Parametros,LookUp(Parametros,Codigo="NROSOL"),{Valor:varNroSolNuevo});
-            Set(varNroSolGenerada,"");
+        OnSuccess: |-
+            =// Guardar ID de la nueva solicitud
+            Set(varIdSolNueva, frm_EditSolicitud.LastSubmit.ID);
             
+            // Actualizar último ID de solicitud generado
+            Set(varNroSolActual, LookUp(Parametros, Codigo = "NROSOL").Valor);
             
-            Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:varIdSolNueva,FechaAtencion:Today(),
-                FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
-                IdAccionOrigen:0,IdEtapaOrigen:0,IdAreaOrigen:0,IdPerfilOrigen:0,IdPersonalOrigen:0,
-                IdAccionActual:1,IdEtapaActual:varMyAreaEtapaFlujo.IdEtapa,IdAreaActual:varMyAreaEtapaFlujo.IdArea,IdPerfilActual:varMyUser.IdPerfil,IdPersonalActual:varMyUser.ID,
-                IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:0,IdPersonalDestino:0}));
+            Set(varNroSolNuevo, Value(varNroSolActual) + 1);
             
+            Patch(Parametros, 
+            	LookUp(Parametros, Codigo = "NROSOL"),
+            	{
+            		Valor: varNroSolNuevo
+            	}
+            );
+            
+            Set(varNroSolGenerada, "");
+            
+            // Crear Solicitud Detalle inicial
+            Set(varLastPatchSolicitudDetalle,
+            	Patch(SolicitudDetalle,
+            		Defaults(SolicitudDetalle),
+            		{
+            			IdSolicitud: varIdSolNueva,
+            			FechaAtencion: Today(),
+            			FechaExpiraSLA: DateAdd(Today(), varMyUserArea.SLA),
+            			FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
+            			EsAtendido: 0,
+            			IdAccionOrigen: 0,
+            			IdEtapaOrigen: 0,
+            			IdAreaOrigen: 0,
+            			IdPerfilOrigen: 0,
+            			IdPersonalOrigen: 0,
+            			IdAccionActual: 1,
+            			IdEtapaActual: varMyAreaEtapaFlujo.IdEtapa,
+            			IdAreaActual: varMyAreaEtapaFlujo.IdArea,
+            			IdPerfilActual: varMyUser.IdPerfil,
+            			IdPersonalActual: varMyUser.ID,
+            			IdAccionDestino: 0,
+            			// Al momento de crear, el destino es igual que el actual
+            			IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapa,
+            			IdAreaDestino: varMyAreaEtapaFlujo.IdArea,
+            			IdPerfilDestino: 0,
+            			IdPersonalDestino: 0
+            		}
+            	)
+            );
+            
+            // Obtener mis managers
             Clear(colMyManagers);
             ClearCollect(colMyManagers,
-                        Filter(AreaManager,IdArea=varMyUser.IdArea)
-                        );
+            	Filter(AreaManager, IdArea = varMyUser.IdArea)
+            );
+            
+            // Obtener mis líderes
             Clear(colMyLideres);
             ClearCollect(colMyLideres,
-                        Filter(AreaManagerLider,IdArea=varMyUser.IdArea)
-                        );
+            	Filter(AreaManagerLider, IdArea = varMyUser.IdArea)
+            );
             
+            // Validar si se notificará a los managers
             If(varMyUserArea.NotificaManager,
-            ForAll(colMyManagers,
-                Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
-                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,
-                    IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
-                    IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
-                )
+            	ForAll(colMyManagers,
+            		Patch(SolicitudDetalleDestino,
+            			Defaults(SolicitudDetalleDestino),
+            			{
+            				IdSolicitud: varLastPatchSolicitudDetalle.IdSolicitud,
+            				IdSolicitudDetalle: varLastPatchSolicitudDetalle.ID,
+            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapa,
+            				IdAreaDestino: varMyAreaEtapaFlujo.IdArea,
+            				IdPerfilDestino: 2,
+            				IdPersonalDestino: IdPersonal
+            			}
+            		)
+            	)
             );
             
+            // Validar si se notificará a los líderes
             If(varMyUserArea.NotificaLider,
-            ForAll(colMyLideres,
-                Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
-                    IdSolicitudDetalle:varLastPatchSolicitudDetalle.ID,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,
-                    IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:3,IdPersonalDestino:IdPersonal})
-                )
+            	ForAll(colMyLideres,
+            		Patch(SolicitudDetalleDestino,
+            			Defaults(SolicitudDetalleDestino),
+            			{
+            				IdSolicitud: varLastPatchSolicitudDetalle.IdSolicitud,
+            				IdSolicitudDetalle: varLastPatchSolicitudDetalle.ID,
+            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapa,
+            				IdAreaDestino: varMyAreaEtapaFlujo.IdArea,
+            				IdPerfilDestino: 3,
+            				IdPersonalDestino: IdPersonal
+            			}
+            		)
+            	)
             );
-            
         Width: =1076
         X: =173
         Y: =133
