@@ -52,19 +52,20 @@ scrNuevaSolicitud As screen:
         DataSource: =Solicitud
         DefaultMode: =FormMode.New
         Height: =466
-        NumberOfColumns: =2
         OnSuccess: |+
-            =
+            =Set(varIdSolNueva,frm_EditSolicitud.LastSubmit.ID);
             Set(varNroSolActual,LookUp(Parametros,Codigo="NROSOL").Valor);
             Set(varNroSolNuevo,Value(varNroSolActual)+1);
             Patch(Parametros,LookUp(Parametros,Codigo="NROSOL"),{Valor:varNroSolNuevo});
             Set(varNroSolGenerada,"");
             
-            Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:frm_EditSolicitud.LastSubmit.ID,FechaAtencion:Today(),
+            
+            Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:varIdSolNueva,FechaAtencion:Today(),
                 FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
                 IdAccionOrigen:0,IdEtapaOrigen:0,IdAreaOrigen:0,IdPerfilOrigen:0,IdPersonalOrigen:0,
                 IdAccionActual:1,IdEtapaActual:varMyAreaEtapaFlujo.IdEtapa,IdAreaActual:varMyAreaEtapaFlujo.IdArea,IdPerfilActual:varMyUser.IdPerfil,IdPersonalActual:varMyUser.ID,
                 IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:0,IdPersonalDestino:0}));
+            
             Clear(colMyManagers);
             ClearCollect(colMyManagers,
                         Filter(AreaManager,IdArea=varMyUser.IdArea)
@@ -73,6 +74,7 @@ scrNuevaSolicitud As screen:
             ClearCollect(colMyLideres,
                         Filter(AreaManagerLider,IdArea=varMyUser.IdArea)
                         );
+            
             If(varMyUserArea.NotificaManager,
             ForAll(colMyManagers,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
@@ -81,6 +83,7 @@ scrNuevaSolicitud As screen:
                     IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
                 )
             );
+            
             If(varMyUserArea.NotificaLider,
             ForAll(colMyLideres,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
@@ -108,9 +111,9 @@ scrNuevaSolicitud As screen:
             Height: =50
             Required: =false
             Update: =Value(DataCardValue34.Text)
-            Width: =450
-            X: =0
-            Y: =1
+            Width: =358
+            X: =2
+            Y: =0
             ZIndex: =1
 
             DataCardKey34 As label:
@@ -189,9 +192,9 @@ scrNuevaSolicitud As screen:
             Height: =50
             Required: =false
             Update: =Value(DataCardValue35.Text)
-            Width: =450
+            Width: =358
             X: =1
-            Y: =1
+            Y: =0
             ZIndex: =1
 
             DataCardKey35 As label:
@@ -261,7 +264,10 @@ scrNuevaSolicitud As screen:
             Default: |
                 =//ThisItem.NroSolicitud
                 Concatenate(LookUp(Parametros,Codigo="PREFIJONROSOL",Valor),Right(Concatenate("000000",LookUp(Parametros,Codigo="NROSOL",Valor)),6))
-            DisplayMode: =Parent.DisplayMode
+            DisplayMode: |+
+                =//Parent.DisplayMode
+                DisplayMode.View
+                
             DisplayName: |-
                 =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"NroSolicitud")
                 "Nro. Solicitud"
@@ -270,7 +276,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "NroSolicitud")
             Required: =false
             Update: =DataCardValue16.Text
-            Width: =250
+            Width: =358
             X: =0
             Y: =0
             ZIndex: =7
@@ -341,8 +347,8 @@ scrNuevaSolicitud As screen:
             Required: =false
             Update: =DataCardValue17.Text
             Width: =800
-            X: =1
-            Y: =0
+            X: =0
+            Y: =1
             ZIndex: =7
 
             DataCardKey17 As label:
@@ -408,9 +414,9 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "Obs")
             Required: =false
             Update: =DataCardValue18.Text
-            Width: =538
-            X: =0
-            Y: =2
+            Width: =620
+            X: =1
+            Y: =1
             ZIndex: =7
 
             DataCardKey18 As label:
@@ -473,12 +479,12 @@ scrNuevaSolicitud As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =200
+            Height: =122
             Required: =false
             Update: =DataCardValue24.Attachments
-            Width: =538
-            X: =1
-            Y: =2
+            Width: =450
+            X: =2
+            Y: =1
             ZIndex: =7
 
             DataCardKey24 As label:
@@ -530,186 +536,6 @@ scrNuevaSolicitud As screen:
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey24.Y
-                ZIndex: =4
-
-        EsActivo_DataCard3 As typedDataCard.toggleEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="EsActivo"
-            Default: =ThisItem.EsActivo
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"EsActivo")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue19.Value
-            Visible: =false
-            Width: =538
-            X: =0
-            Y: =3
-            ZIndex: =7
-
-            DataCardKey19 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue19 As toggleSwitch:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Tooltip: =Parent.DisplayName
-                X: =30
-                Y: =DataCardKey19.Y + DataCardKey19.Height + 5
-                ZIndex: =2
-
-            ErrorMessage12 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue19.Y + DataCardValue19.Height
-                ZIndex: =3
-
-            StarVisible12 As label:
-                Align: =Align.Center
-                Height: =DataCardKey19.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey19.Y
-                ZIndex: =4
-
-        EsFinalizado_DataCard1 As typedDataCard.toggleEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="EsFinalizado"
-            Default: =ThisItem.EsFinalizado
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"EsFinalizado")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue21.Value
-            Visible: =false
-            Width: =538
-            X: =0
-            Y: =4
-            ZIndex: =7
-
-            DataCardKey21 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue21 As toggleSwitch:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Tooltip: =Parent.DisplayName
-                X: =30
-                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
-                ZIndex: =2
-
-            ErrorMessage14 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue21.Y + DataCardValue21.Height
-                ZIndex: =3
-
-            StarVisible14 As label:
-                Align: =Align.Center
-                Height: =DataCardKey21.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey21.Y
-                ZIndex: =4
-
-        EsEliminado_DataCard1 As typedDataCard.toggleEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="EsEliminado"
-            Default: =ThisItem.EsEliminado
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"EsEliminado")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue20.Value
-            Visible: =false
-            Width: =538
-            X: =1
-            Y: =3
-            ZIndex: =7
-
-            DataCardKey20 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue20 As toggleSwitch:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Tooltip: =Parent.DisplayName
-                X: =30
-                Y: =DataCardKey20.Y + DataCardKey20.Height + 5
-                ZIndex: =2
-
-            ErrorMessage13 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue20.Y + DataCardValue20.Height
-                ZIndex: =3
-
-            StarVisible13 As label:
-                Align: =Align.Center
-                Height: =DataCardKey20.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey20.Y
                 ZIndex: =4
 
     gaMenuLateral_NS As gallery.galleryVertical:

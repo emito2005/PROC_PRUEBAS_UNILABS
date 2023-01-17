@@ -18,6 +18,8 @@ App As appinfo:
         );
         
         Set(varMyUserArea, LookUp(Area_1, ID = varMyUser.IdArea));
+        
+        //esta variable solo sirve para la cracion de solicitud
         //Set(MyOrdenFlujo; If(varMyUser.IdArea=1;1;varMyUser.IdArea=2;2;999));;
         Set(varMyAreaEtapaFlujo, LookUp(AreaEtapaFlujo, Orden = If(varMyUser.IdArea=1,1,varMyUser.IdArea=2,2,999)));
         
