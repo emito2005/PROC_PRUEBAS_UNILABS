@@ -1,4 +1,5 @@
 scrAsignar As screen:
+    OnHidden: =Select(ClearSelectedUserIcon);
     OnVisible: =
 
     cmpBarraSuperior_10 As cmpBarraSuperior:
@@ -260,7 +261,6 @@ scrAsignar As screen:
 
         requestFieldLbl_39 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -268,8 +268,8 @@ scrAsignar As screen:
             Text: |-
                 ="Comentario:"
             Width: =110
-            X: =requestFieldLbl_35.X
-            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 25
+            X: =txtBuscarManager_2.X + txtBuscarManager_2.Width + 25
+            Y: =txtBuscarManager_2.Y
             ZIndex: =22
 
         requestFieldScrollLbl_2 As label:
@@ -298,8 +298,8 @@ scrAsignar As screen:
             PaddingTop: =0
             Text: =requestFieldLbl_15.Text
             Width: =requestFieldLbl_38.X + requestFieldLbl_38.Width - Self.X
-            X: =requestFieldLbl_39.X + requestFieldLbl_39.Width
-            Y: =requestFieldLbl_39.Y
+            X: =requestFieldLbl_39.X
+            Y: =requestFieldLbl_39.Y + requestFieldLbl_39.Height
             ZIndex: =25
 
     upperToGroup_1 As group:
@@ -327,10 +327,10 @@ scrAsignar As screen:
             Default: =""
             DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
             DisplayMode: |
-                =// Disable if Form is not equal to editMode
-                If(form_EditArea.Mode <> FormMode.Edit,
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                =// Disable if UserSelected is blank
+                If(IsBlank(UserSelected),
+                     DisplayMode.Edit,
+                     DisplayMode.Disabled
                 )
             HintText: ="Buscar"
             PaddingLeft: =35
@@ -373,6 +373,7 @@ scrAsignar As screen:
             AccessibleLabel: ="Resultados de la búsqueda de usuarios"
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderThickness: =1
+            Default: ={}
             Fill: =RGBA(255, 255, 255, 1)
             Height: =Parent.Height - Self.Y - 20
             Items: |-
@@ -390,6 +391,9 @@ scrAsignar As screen:
                 	)
                 )
             Layout: =Layout.Vertical
+            OnSelect: |-
+                =UpdateContext({ UserSelected: UserBrowseGallery1_5.Selected });
+                Reset(txtBuscarManager_2);
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =60
@@ -423,46 +427,7 @@ scrAsignar As screen:
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 Height: =Self.Size * 1.8
-                OnSelect: |-
-                    =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
-                    If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
-                        // New
-                        Patch(Personal, 
-                            Defaults(Personal), 
-                            {
-                                Nombre: ThisItem.DisplayName,
-                                Email: ThisItem.UserPrincipalName,
-                                IdPerfil: 2, 
-                                IdArea: varIdArea
-                            }
-                        ),
-                    
-                        // Edit
-                        Patch(Personal, 
-                            LookUp(Personal, Email = ThisItem.UserPrincipalName), 
-                            {
-                                IdPerfil: 2, 
-                                IdArea: varIdArea
-                            }
-                        )
-                    );
-                    
-                    Concurrent(
-                    //Set(_selectedUser; ThisItem);
-                        Reset(txtBuscarManager),
-                        Patch(AreaManager,
-                            Defaults(AreaManager),
-                            {
-                                IdArea: varIdArea,
-                                IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
-                            }
-                        )
-                    )
-                    
-                    
-                    //If(Not(ThisItem.UserPrincipalName in AddColumns(AreaManager;"EmailPersonal";LookUp(Personal;ID=AreaManager[@IdPersonal].Id).Email).EmailPersonal);
-                    //Patch(AreaManager;Defaults(AreaManager);{IdArea:{Value:"";Id:varIdArea};IdPersonal:{Value:"";Id:LookUp(Personal; Email = ThisItem.UserPrincipalName).ID}})
-                    //If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName); Collect(MyPeople; ThisItem)))
+                OnSelect: =Select(Parent);
                 Size: =12
                 TabIndex: =0
                 Text: =ThisItem.DisplayName
@@ -528,6 +493,77 @@ scrAsignar As screen:
             X: =requestFieldLbl_36.X + requestFieldLbl_36.Width
             Y: =requestFieldLbl_36.Y
             ZIndex: =19
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =36
+
+        Label5 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Usuario seleccionado:"
+            Visible: =!IsBlank(UserSelected)
+            Width: =txtBuscarManager_2.X + txtBuscarManager_2.Width - Self.X - 50
+            X: =requestFieldLbl_41.X
+            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 5
+            ZIndex: =31
+
+        Icon6 As icon.Person:
+            DisplayMode: =DisplayMode.View
+            Icon: =Icon.Person
+            Visible: =!IsBlank(UserSelected)
+            X: =Label5.X
+            Y: =Label5.Y + Label5.Height + 5
+            ZIndex: =32
+
+        Label5_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Icon6.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =UserSelected.DisplayName
+            Visible: =!IsBlank(UserSelected)
+            Width: =Label5.X + Label5.Width - Self.X
+            X: =Icon6.X + Icon6.Width
+            Y: =Icon6.Y
+            ZIndex: =33
+
+        Label5_2 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Icon6.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =UserSelected.UserPrincipalName
+            Visible: =!IsBlank(UserSelected)
+            Width: =Label5.X + Label5.Width - Self.X
+            X: =Icon6.X + Icon6.Width
+            Y: =Label5_1.Y + Label5_1.Height
+            ZIndex: =34
+
+        ClearSelectedUserIcon As icon.Cancel:
+            Height: =40
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =Reset(txtBuscarManager_2);
+                Reset(UserBrowseGallery1_5);
+                UpdateContext({ UserSelected: Blank() })
+            Tooltip: ="Cancelar selección"
+            Visible: =!IsBlank(UserSelected)
+            Width: =40
+            X: =Label5_1.X + Label5_1.Width + 5
+            Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
+            ZIndex: =35
 
     descriptionGroup_4 As group:
         Height: =5
