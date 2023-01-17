@@ -374,14 +374,19 @@ scrAsignar As screen:
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
             Height: =Parent.Height - Self.Y - 20
-            Items: |
-                =//If(!IsBlank(Trim(txtBuscarManager.Text)); UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager.Text); top: 999}))
-                If(!IsBlank(Trim(txtBuscarManager_2.Text)), 
-                    /*Filter(*/UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager_2.Text), top: 999})/*;
-                    Not(UserPrincipalName in AddColumns(AreaManager;"EmailPersonalM";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalM);
-                    Not(UserPrincipalName in AddColumns(AreaManagerLider;"EmailPersonalML";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalML);
-                    Not(UserPrincipalName in AddColumns(AreaManagerLiderAnalista;"EmailPersonalMLA";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalMLA)*/
-                    //)
+            Items: |-
+                =// Validate if textField is not blank
+                If(!IsBlank(Trim(txtBuscarManager_2.Text)),
+                	If(varMyUser.IdPerfil = 2, // Manager
+                		Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text), top: 999 }),
+                			UserPrincipalName in AddColumns(AreaManagerLider, "EmailPersonalML", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalML
+                		),
+                		
+                		varMyUser.IdPerfil = 3, // Leader
+                		Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text), top: 999 }),
+                			UserPrincipalName in AddColumns(AreaManagerLiderAnalista, "EmailPersonalMLA", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalMLA
+                		)
+                	)
                 )
             Layout: =Layout.Vertical
             ShowScrollbar: =false
