@@ -128,7 +128,7 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="TIPO SOLIC."
             Width: =80
-            X: =241
+            X: =297
             Y: =3
             ZIndex: =5
 
@@ -154,7 +154,7 @@ scrMisSolicitudes As screen:
             Height: =lbl_Tit_Codigo_1.Height
             Size: =10
             Text: ="NOMBRE SOL."
-            X: =85
+            X: =106
             Y: =3
             ZIndex: =7
 
@@ -167,22 +167,9 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="TIPO SERV."
             Width: =80
-            X: =lbl_Tit_Nombre_1.X+lbl_Tit_Nombre_1.Width
+            X: =419
             Y: =3
             ZIndex: =8
-
-        lbl_Tit_OLA_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo_1.Height
-            Size: =10
-            Text: ="ESTADO"
-            Width: =80
-            X: =lbl_Tit_SLA_1.X+lbl_Tit_SLA_1.Width
-            Y: =3
-            ZIndex: =9
 
         lbl_Tit_Accion_1 As label:
             Align: =Align.Center
@@ -192,7 +179,7 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
             Width: =110
-            X: =483
+            X: =518
             Y: =3
             ZIndex: =10
 
@@ -204,7 +191,7 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="DPTO. ASIGNADO"
             Width: =110
-            X: =598
+            X: =619
             Y: =3
             ZIndex: =11
 
@@ -277,78 +264,25 @@ scrMisSolicitudes As screen:
         Y: =143
         ZIndex: =6
 
-    Label3_1 As label:
-        Height: =33
-        Size: =12
-        Text: ="Estado"
-        Width: =100
-        X: =529
-        Y: =143
-        ZIndex: =7
-
-    Label3_2 As label:
-        Height: =33
-        Size: =12
-        Text: ="Dpto. Procedencia"
-        X: =636
-        Y: =143
-        ZIndex: =8
-
-    Label3_3 As label:
-        Height: =33
-        Size: =12
-        Text: ="Solicitante"
-        X: =790
-        Y: =143
-        ZIndex: =9
-
     txtFilNomNroSol As text:
         Default: =
-        Width: =281
+        Width: =812
         X: =186
         Y: =176
         ZIndex: =10
 
-    Dropdown2 As dropdown:
-        Items: =["Activo","Cancelado","Eliminado"]
-        Width: =100
-        X: =529
-        Y: =176
-        ZIndex: =11
-
-    Dropdown2_1 As dropdown:
-        Items: =["Sistemas","Contabilidad","Comercial","Planing y Control","Logistica","Operaciones"]
-        Width: =148
-        X: =638
-        Y: =176
-        ZIndex: =12
-
-    Dropdown2_2 As dropdown:
-        Items: =[""]
-        Width: =204
-        X: =795
-        Y: =176
-        ZIndex: =13
-
-    Button2_7 As button:
-        Text: ="Filtrar"
-        Width: =100
-        X: =1018
-        Y: =176
-        ZIndex: =14
-
-    Button2_8 As button:
+    btnExportar As button:
         Text: ="Exportar"
         Width: =100
         X: =1129
         Y: =176
         ZIndex: =15
 
-    Button2_9 As button:
+    btnLimpiar As button:
         OnSelect: =Reset(txtFilNomNroSol)
         Text: ="Limpiar"
         Width: =100
-        X: =1243
+        X: =1019
         Y: =176
         ZIndex: =16
 
@@ -396,7 +330,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =151
-            X: =83
+            X: =90
             Y: =4
             ZIndex: =5
 
@@ -411,8 +345,8 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =151
-            X: =250
+            Width: =140
+            X: =264
             Y: =4
             ZIndex: =6
 
@@ -488,6 +422,22 @@ scrMisSolicitudes As screen:
             X: =1145
             Y: =4
             ZIndex: =12
+
+        Title2_14 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.TipoServicio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =90
+            X: =411
+            Y: =4
+            ZIndex: =13
 
     Label6 As label:
         Text: =varMyUser.IdArea

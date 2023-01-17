@@ -6,7 +6,7 @@ scrAreaEdit As screen:
         BorderColor: =RGBA(255, 191, 0, 1)
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =26
+        Height: =672
         Width: =1350
         X: =7
         Y: =86
@@ -1480,14 +1480,6 @@ scrAreaEdit As screen:
         X: =323
         Y: =410
         ZIndex: =23
-
-    Label5 As label:
-        Height: =38
-        Text: =PeopleAddedGallery1_1.Selected.ID
-        Width: =64
-        X: =20
-        Y: =423
-        ZIndex: =24
 
     Icon3_1 As icon.Edit:
         DisplayMode: =If(DataSourceInfo(Area_1, DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
