@@ -1,4 +1,14 @@
 srcSolicitudDetalle As screen:
+    OnVisible: |-
+        =// Get AreaManager ID if is blank
+        If(IsBlank(MyAreaManagerID) && varMyUser.IdPerfil = 2,
+        	Set(MyAreaManagerID, LookUp(AreaManager, IdPersonal = varMyUser.ID).ID)
+        );
+        
+        // Get AreaManagerLider ID if is blank
+        If(IsBlank(MyAreaManagerLiderID) && varMyUser.IdPerfil = 3,
+        	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
+        );
 
     cmpBarraSuperior_7 As cmpBarraSuperior:
 

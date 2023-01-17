@@ -1,4 +1,5 @@
 scrAsignar As screen:
+    OnVisible: =
 
     cmpBarraSuperior_10 As cmpBarraSuperior:
 
@@ -379,12 +380,12 @@ scrAsignar As screen:
                 If(!IsBlank(Trim(txtBuscarManager_2.Text)),
                 	If(varMyUser.IdPerfil = 2, // Manager
                 		Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text), top: 999 }),
-                			UserPrincipalName in AddColumns(AreaManagerLider, "EmailPersonalML", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalML
+                			UserPrincipalName in AddColumns(Filter(AreaManagerLider, IdAreaManager = MyAreaManagerID), "EmailPersonalML", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalML
                 		),
                 		
                 		varMyUser.IdPerfil = 3, // Leader
                 		Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text), top: 999 }),
-                			UserPrincipalName in AddColumns(AreaManagerLiderAnalista, "EmailPersonalMLA", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalMLA
+                			UserPrincipalName in AddColumns(Filter(AreaManagerLiderAnalista, IdAreaManagerLider = MyAreaManagerLiderID), "EmailPersonalMLA", LookUp(Personal, ID = IdPersonal).Email).EmailPersonalMLA
                 		)
                 	)
                 )
