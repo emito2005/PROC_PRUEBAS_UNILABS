@@ -1,53 +1,5 @@
 scrMisSolicitudes As screen:
-    OnVisible: |-
-        =ClearCollect(colSolicitudCab,
-            AddColumns(
-                ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
-                ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
-                ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
-            )
-            );
-        ClearCollect(colSolicitudes,
-            AddColumns(
-                ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAccionOrigen","IdEtapaOrigen","IdAreaOrigen","IdPerfilOrigen","IdPersonalOrigen","IdAccionActual","IdEtapaActual","IdAreaActual","IdPerfilActual","IdPersonalActual","IdAccionDestino","IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonalDestino")
-                ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
-                ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
-                ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
-                ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
-                ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
-                ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
-                ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
-                ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
-                ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
-                ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
-                ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
-                ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
-                ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
-                ,"AreaAbrevOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
-                ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
-                ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
-                ,"AccionActual",LookUp(Accion,ID=IdAccionActual,Nombre)
-                ,"EtapaActual",LookUp(Etapa,ID=IdEtapaActual,Nombre)
-                ,"AreaActual",LookUp(Area_1,ID=IdAreaActual,Nombre)
-                ,"AreaAbrevActual",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
-                ,"PerfilActual",LookUp(Perfil,ID=IdPerfilActual,Nombre)
-                ,"PersonalActual",LookUp(Personal,ID=IdPersonalActual,Nombre)
-                ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
-                ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
-                ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,Nombre)
-                ,"AreaAbrevDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
-                ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
-                ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
-                )
-            );
-        ClearCollect(colSolicitudDetalleDestino,
-            Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
-        //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-        /*
-        ClearCollect(colSolicitudes;
-            Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-        );;
-        */
+    OnVisible: =Select(icnActualizar)
 
     Rectangle4 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -456,4 +408,64 @@ scrMisSolicitudes As screen:
         X: =15
         Y: =545
         ZIndex: =21
+
+    icnActualizar As icon.Reload:
+        Height: =39
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =ClearCollect(colSolicitudCab,
+                AddColumns(
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                )
+                );
+            ClearCollect(colSolicitudes,
+                AddColumns(
+                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAccionOrigen","IdEtapaOrigen","IdAreaOrigen","IdPerfilOrigen","IdPersonalOrigen","IdAccionActual","IdEtapaActual","IdAreaActual","IdPerfilActual","IdPersonalActual","IdAccionDestino","IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonalDestino")
+                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                    ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                    ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                    ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
+                    ,"AreaAbrevOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                    ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                    ,"AccionActual",LookUp(Accion,ID=IdAccionActual,Nombre)
+                    ,"EtapaActual",LookUp(Etapa,ID=IdEtapaActual,Nombre)
+                    ,"AreaActual",LookUp(Area_1,ID=IdAreaActual,Nombre)
+                    ,"AreaAbrevActual",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilActual",LookUp(Perfil,ID=IdPerfilActual,Nombre)
+                    ,"PersonalActual",LookUp(Personal,ID=IdPersonalActual,Nombre)
+                    ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                    ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                    ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,Nombre)
+                    ,"AreaAbrevDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                    ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                    ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                    )
+                );
+            
+            //Coleccion para obtener el listado de personal que tienen solicitudes por antender en su area
+            ClearCollect(colSolicitudDetalleDestino,
+                Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
+            
+            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            /*
+            ClearCollect(colSolicitudes;
+                Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            );;
+            */
+        Width: =50
+        X: =1286
+        Y: =177
+        ZIndex: =22
 
