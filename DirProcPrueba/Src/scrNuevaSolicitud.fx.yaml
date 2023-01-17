@@ -59,13 +59,13 @@ scrNuevaSolicitud As screen:
             Patch(Parametros,LookUp(Parametros,Codigo="NROSOL"),{Valor:varNroSolNuevo});
             Set(varNroSolGenerada,"");
             
-            //Notify(Self.LastSubmit.ID);;
             
             Set(varLastPatchSolicitudDetalle,Patch(SolicitudDetalle,Defaults(SolicitudDetalle),{IdSolicitud:varIdSolNueva,FechaAtencion:Today(),
                 FechaExpiraSLA:DateAdd(Today(),varMyUserArea.SLA),FechaExpiraOLA:DateAdd(Today(),varMyUserArea.OLA),EsAtendido:0,
                 IdAccionOrigen:0,IdEtapaOrigen:0,IdAreaOrigen:0,IdPerfilOrigen:0,IdPersonalOrigen:0,
                 IdAccionActual:1,IdEtapaActual:varMyAreaEtapaFlujo.IdEtapa,IdAreaActual:varMyAreaEtapaFlujo.IdArea,IdPerfilActual:varMyUser.IdPerfil,IdPersonalActual:varMyUser.ID,
                 IdAccionDestino:0,IdEtapaDestino:varMyAreaEtapaFlujo.IdEtapa,IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:0,IdPersonalDestino:0}));
+            
             Clear(colMyManagers);
             ClearCollect(colMyManagers,
                         Filter(AreaManager,IdArea=varMyUser.IdArea)
@@ -74,6 +74,7 @@ scrNuevaSolicitud As screen:
             ClearCollect(colMyLideres,
                         Filter(AreaManagerLider,IdArea=varMyUser.IdArea)
                         );
+            
             If(varMyUserArea.NotificaManager,
             ForAll(colMyManagers,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
@@ -82,6 +83,7 @@ scrNuevaSolicitud As screen:
                     IdAreaDestino:varMyAreaEtapaFlujo.IdArea,IdPerfilDestino:2,IdPersonalDestino:IdPersonal})
                 )
             );
+            
             If(varMyUserArea.NotificaLider,
             ForAll(colMyLideres,
                 Patch(SolicitudDetalleDestino,Defaults(SolicitudDetalleDestino),{IdSolicitud:varLastPatchSolicitudDetalle.IdSolicitud,
