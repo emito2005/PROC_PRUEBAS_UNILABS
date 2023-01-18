@@ -199,43 +199,54 @@ scrAsignar As screen:
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
             				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
             				EsAtendido: false,
-            				IdAccionOrigen: Gallery1.Selected.IdAccionActual,
+            				IdAccionOrigen: 2, // Asignar
             				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
-            				IdAreaOrigen: Gallery1.Selected.IdAreaActual,
-            				IdPerfilOrigen: Gallery1.Selected.IdPerfilActual,
-            				IdPersonalOrigen: Gallery1.Selected.IdPersonalActual,
-            				IdAccionActual: 2, // Asignar
+            				IdAreaOrigen: varMyUser.IdArea,
+            				IdPerfilOrigen: varMyUser.IdPerfil,
+            				IdPersonalOrigen: varMyUser.ID,
+            				IdAccionActual: 0, // Lo actualizará el siguiente usuario
             				IdEtapaActual: Gallery1.Selected.IdEtapaActual,
             				IdAreaActual: Gallery1.Selected.IdAreaActual,
-            				IdPerfilActual: varMyUser.IdPerfil,
-            				IdPersonalActual: varMyUser.ID,
-            				IdAccionDestino: 0,
-            				IdEtapaDestino: LookUp(AreaEtapaFlujo, IdEtapa = Gallery1.Selected.IdEtapaActual && IdArea = Gallery1.Selected.IdAreaActual).IdEtapaDestino,
-            				IdAreaDestino: LookUp(AreaEtapaFlujo, IdEtapa = Gallery1.Selected.IdEtapaActual && IdArea = Gallery1.Selected.IdAreaActual).IdAreaDestino,
-            				IdPerfilDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).IdPerfil,
-            				IdPersonalDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).ID
+                            // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+            				IdPerfilActual: LookUp(Personal, Email = UserSelected.UserPrincipalName).IdPerfil,
+            				IdPersonalActual: LookUp(Personal, Email = UserSelected.UserPrincipalName).ID,
+                            IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+            				IdEtapaDestino: 0, // Etapa Destino Real
+            				IdAreaDestino: 0, // Area Destino Real
+            				IdPerfilDestino: 0, // Perfil Destino Real
+            				IdPersonalDestino: 0, // Personal Destino 
+                            IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
+                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
             			}
             		)
             });
             
-            // Crear Solicitud Detalle del siguiente usuario
+            // Crear Solicitud Detalle Destino del siguiente usuario
             Patch(SolicitudDetalleDestino,
             	Defaults(SolicitudDetalleDestino),
             	{
             		IdSolicitud: lastSolicitudDetalle.IdSolicitud,
             		IdSolicitudDetalle: lastSolicitudDetalle.ID,
-            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaDestino,
-            		IdAreaDestino: lastSolicitudDetalle.IdAreaDestino,
-            		IdPerfilDestino: lastSolicitudDetalle.IdPerfilDestino,
-            		IdPersonalDestino: lastSolicitudDetalle.IdPersonalDestino
+            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,
+            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual,
+            		IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
+            		IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual
             	}
             );
             
-            // Actualizar estado actual
+            // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
             Patch(SolicitudDetalle, 
-                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID), 
+                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
                 {
-                    EsAtendido: true
+                    IdAccionActual: 2, // Asignar
+                    IdPerfilActual: varMyUser.IdPerfil,
+                    IdPersonalActual: varMyUser.ID,
+                    IdAreaDestino: Gallery1.Selected.IdAreaActual,
+                    IdEtapaDestino: Gallery1.Selected.IdEtapaActual,
+                    IdPerfilDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).IdPerfil,
+                    IdPersonalDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).ID,
+                    EsAtendido: true, // Actualizar estado del registro seleccionado
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada
                 }
             );
             
@@ -524,6 +535,13 @@ scrAsignar As screen:
                 Y: =58
                 ZIndex: =6
 
+    Rectangle2 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =36
+
     requestFieldGroup_29 As group:
         Height: =5
         Width: =5
@@ -555,13 +573,6 @@ scrAsignar As screen:
             X: =requestFieldLbl_36.X + requestFieldLbl_36.Width
             Y: =requestFieldLbl_36.Y
             ZIndex: =19
-
-    Rectangle2 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =36
 
     Group1 As group:
         Height: =5
