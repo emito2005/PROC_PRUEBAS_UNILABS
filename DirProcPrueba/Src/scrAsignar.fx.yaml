@@ -535,6 +535,13 @@ scrAsignar As screen:
                 Y: =58
                 ZIndex: =6
 
+    Rectangle2 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =36
+
     requestFieldGroup_29 As group:
         Height: =5
         Width: =5
@@ -566,13 +573,6 @@ scrAsignar As screen:
             X: =requestFieldLbl_36.X + requestFieldLbl_36.Width
             Y: =requestFieldLbl_36.Y
             ZIndex: =19
-
-    Rectangle2 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =36
 
     Group1 As group:
         Height: =5

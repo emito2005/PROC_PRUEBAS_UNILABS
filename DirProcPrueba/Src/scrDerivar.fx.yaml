@@ -69,7 +69,7 @@ scrDerivar As screen:
             Width: =100
             X: =requestFieldTxt_30.X + requestFieldTxt_30.Width + 170
             Y: =requestFieldLbl_42.Y
-            ZIndex: =7
+            ZIndex: =6
 
         requestFieldTxt_31 As text:
             Default: =requestFieldTxt_2.Text
@@ -82,7 +82,7 @@ scrDerivar As screen:
             Width: =120
             X: =requestFieldLbl_43.X + requestFieldLbl_43.Width
             Y: =requestFieldLbl_43.Y
-            ZIndex: =8
+            ZIndex: =7
 
     requestFieldGroup_32 As group:
         Height: =5
@@ -101,7 +101,7 @@ scrDerivar As screen:
             Width: =180
             X: =requestFieldTxt_31.X + requestFieldTxt_31.Width + 100
             Y: =requestFieldLbl_42.Y
-            ZIndex: =9
+            ZIndex: =8
 
         requestFieldTxt_32 As text:
             Default: =requestFieldTxt_3.Text
@@ -114,7 +114,7 @@ scrDerivar As screen:
             Width: =300
             X: =requestFieldLbl_44.X + requestFieldLbl_44.Width
             Y: =requestFieldLbl_44.Y
-            ZIndex: =11
+            ZIndex: =9
 
     requestFieldGroup_33 As group:
         Height: =5
@@ -132,7 +132,7 @@ scrDerivar As screen:
             Text: ="Tipo de Solicitud"
             X: =requestFieldLbl_42.X
             Y: =requestFieldLbl_42.Y + requestFieldLbl_42.Height + 20
-            ZIndex: =12
+            ZIndex: =10
 
         requestFieldTxt_33 As text:
             Default: =requestFieldTxt_4.Text
@@ -145,7 +145,7 @@ scrDerivar As screen:
             Width: =200
             X: =requestFieldLbl_45.X + requestFieldLbl_45.Width
             Y: =requestFieldLbl_45.Y
-            ZIndex: =13
+            ZIndex: =11
 
     requestFieldGroup_34 As group:
         Height: =5
@@ -164,7 +164,7 @@ scrDerivar As screen:
             Width: =140
             X: =requestFieldTxt_33.X + requestFieldTxt_33.Width + 100
             Y: =requestFieldLbl_45.Y
-            ZIndex: =15
+            ZIndex: =12
 
         requestFieldTxt_34 As text:
             Default: =requestFieldTxt_5.Text
@@ -177,7 +177,120 @@ scrDerivar As screen:
             Width: =200
             X: =requestFieldLbl_46.X + requestFieldLbl_46.Width
             Y: =requestFieldLbl_46.Y
-            ZIndex: =16
+            ZIndex: =13
+
+    Button5_2 As button:
+        OnSelect: |-
+            =UpdateContext({ isLoading: true });
+            
+            // Crear Solicitud Detalle inicial
+            UpdateContext({
+            	lastSolicitudDetalle:
+            		Patch(SolicitudDetalle,
+            			Defaults(SolicitudDetalle),
+            			{
+            				IdSolicitud: Gallery1.Selected.IdSolicitud,
+            				FechaAtencion: Today(),
+            				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
+                            //FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA;
+                            // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+            				FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
+            				EsAtendido: false,
+            				IdAccionOrigen: 4, // Derivar
+            				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+            				IdAreaOrigen: varMyUser.IdArea,
+            				IdPerfilOrigen: varMyUser.IdPerfil,
+            				IdPersonalOrigen: varMyUser.ID,
+            				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+            				IdEtapaActual: varMyAreaEtapaFlujo.IdEtapaDestino,
+            				IdAreaActual: varMyAreaEtapaFlujo.IdAreaDestino,
+                            // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+            				IdPerfilActual: 0,
+            				IdPersonalActual: 0,
+                            IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+            				IdEtapaDestino: 0, // Etapa Destino Real
+            				IdAreaDestino: 0, // Area Destino Real
+            				IdPerfilDestino: 0, // Perfil Destino Real
+            				IdPersonalDestino: 0, // Personal Destino 
+                            IdEtapaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdEtapaDestino,
+                            IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino
+            			}
+            		)
+            });
+            
+            // Crear Solicitud Detalle Destino de los usuarios designados por area
+            // Obtener los managers de la siguiente area
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+            	Filter(AreaManager, IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+            );
+            
+            // Obtener los líderes de la siguiente area
+            Clear(colMyLideres);
+            ClearCollect(colMyLideres,
+            	Filter(AreaManagerLider, IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+            );
+            
+            // Validar si se notificará a los managers
+            If(LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaManager,
+            	ForAll(colMyManagers,
+            		Patch(SolicitudDetalleDestino,
+            			Defaults(SolicitudDetalleDestino),
+            			{
+            				IdSolicitud: lastSolicitudDetalle.IdSolicitud,
+            				IdSolicitudDetalle: lastSolicitudDetalle.ID,
+            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
+            				IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
+            				IdPerfilDestino: 2, // Manager
+            				IdPersonalDestino: IdPersonal
+            			}
+            		)
+            	)
+            );
+            
+            // Validar si se notificará a los líderes
+            If(LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaLider,
+            	ForAll(colMyLideres,
+            		Patch(SolicitudDetalleDestino,
+            			Defaults(SolicitudDetalleDestino),
+            			{
+            				IdSolicitud: lastSolicitudDetalle.IdSolicitud,
+            				IdSolicitudDetalle: lastSolicitudDetalle.ID,
+            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
+            				IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
+            				IdPerfilDestino: 3, // Lider
+            				IdPersonalDestino: IdPersonal
+            			}
+            		)
+            	)
+            );
+            
+            // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+            Patch(SolicitudDetalle, 
+                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                {
+                    IdAccionActual: 4, // Derivar
+                    IdPerfilActual: varMyUser.IdPerfil,
+                    IdPersonalActual: varMyUser.ID,
+                    IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
+                    IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
+                    IdPerfilDestino: 0,
+                    IdPersonalDestino: 0,
+                    EsAtendido: true, // Actualizar estado del registro seleccionado
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada
+                }
+            );
+            
+            Notify("Solicitud derivada correctamente.", NotificationType.Success);
+            
+            UpdateContext({ isLoading: false });
+            
+            Navigate(scrMisSolicitudes, Fade);
+        Text: ="DERIVAR"
+        Width: =Parent.Width / 2
+        X: =Parent.Width / 2 - Self.Width / 2
+        Y: =Parent.Height - Self.Height - 15
+        ZIndex: =24
 
     requestFieldGroup_35 As group:
         Height: =5
@@ -196,7 +309,7 @@ scrDerivar As screen:
             Width: =70
             X: =requestFieldTxt_34.X + requestFieldTxt_34.Width + 130
             Y: =requestFieldLbl_45.Y
-            ZIndex: =17
+            ZIndex: =14
 
         requestFieldTxt_35 As text:
             Default: =requestFieldTxt_6.Text
@@ -209,14 +322,58 @@ scrDerivar As screen:
             Width: =200
             X: =requestFieldLbl_47.X + requestFieldLbl_47.Width
             Y: =requestFieldLbl_47.Y
-            ZIndex: =19
+            ZIndex: =15
 
-    Button5_2 As button:
-        Text: ="DERIVAR"
-        Width: =Parent.Width / 2
-        X: =Parent.Width / 2 - Self.Width / 2
-        Y: =Parent.Height - Self.Height - 15
+    requestFieldLbl_55 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: |-
+            ="Adjuntar Archivo(s):"
+        Width: =180
+        X: =requestFieldLbl_48.X
+        Y: =requestFieldLbl_54.Y + requestFieldLbl_54.Height + 25
         ZIndex: =30
+
+    RequestAttachmentsForm As form:
+        DataSource: =Solicitud
+        Height: =Button5_2.Y - Self.Y - 15
+        NumberOfColumns: =1
+        Width: =300
+        X: =requestFieldLbl_55.X + requestFieldLbl_55.Width
+        Y: =requestFieldLbl_55.Y
+        ZIndex: =31
+
+        "'Datos adjuntos_DataCard3' As typedDataCard.attachmentsEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.'Datos adjuntos'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height
+            Required: =false
+            Update: =DataCardValue44.Attachments
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =41
+
+            DataCardValue44 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =Parent.Height
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width
+                ZIndex: =2
 
     requestFieldGroup_36 As group:
         Height: =5
@@ -235,7 +392,7 @@ scrDerivar As screen:
             Width: =110
             X: =requestFieldLbl_45.X
             Y: =requestFieldLbl_45.Y + requestFieldLbl_45.Height + 20
-            ZIndex: =20
+            ZIndex: =16
 
         requestFieldTxt_36 As text:
             Default: =requestFieldTxt_12.Text
@@ -248,14 +405,21 @@ scrDerivar As screen:
             Width: =180
             X: =requestFieldLbl_48.X + requestFieldLbl_48.Width
             Y: =requestFieldLbl_48.Y
-            ZIndex: =21
+            ZIndex: =17
+
+    Rectangle2_7 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =32
 
     upperToGroup_2 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =34
+        ZIndex: =32
 
         requestFieldLbl_54 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -268,7 +432,20 @@ scrDerivar As screen:
             Width: =200
             X: =requestFieldLbl_48.X
             Y: =requestFieldLbl_52.Y + requestFieldLbl_52.Height + 20
-            ZIndex: =32
+            ZIndex: =25
+
+        requestFieldLbl_58 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).Nombre
+            Width: =requestFieldLbl_52.X + requestFieldLbl_52.Width - Self.X
+            X: =requestFieldLbl_54.X + requestFieldLbl_54.Width + 15
+            Y: =requestFieldLbl_52.Y + requestFieldLbl_52.Height + 20
+            ZIndex: =26
 
         txtBuscarManager_3 As text:
             Align: =Left
@@ -287,10 +464,11 @@ scrDerivar As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
+            Visible: =false
             Width: =354
             X: =requestFieldLbl_54.X + requestFieldLbl_54.Width + 10
             Y: =requestFieldLbl_54.Y + (requestFieldLbl_54.Height / 2) - (Self.Height / 2)
-            ZIndex: =33
+            ZIndex: =27
 
         SearchIcon1_6 As icon.Search:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -312,10 +490,11 @@ scrDerivar As screen:
             PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
             PressedFill: =RGBA(0, 0, 0, 0)
             Tooltip: ="Buscar"
+            Visible: =false
             Width: =38
             X: =txtBuscarManager_3.X
             Y: =txtBuscarManager_3.Y + (txtBuscarManager_3.Height / 2) - (Self.Height / 2)
-            ZIndex: =35
+            ZIndex: =28
 
         UserBrowseGallery1_6 As gallery.PeoplePickerTabletGallery:
             AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -336,11 +515,11 @@ scrDerivar As screen:
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =60
-            Visible: =!IsBlank(Trim(txtBuscarManager_3.Text))
+            Visible: =false//!IsBlank(Trim(txtBuscarManager_3.Text))
             Width: =txtBuscarManager_3.Width
             X: =txtBuscarManager_3.X
             Y: =txtBuscarManager_3.Y + txtBuscarManager_3.Height + 5
-            ZIndex: =38
+            ZIndex: =29
 
             Rectangle2_6 As rectangle:
                 BorderColor: =Title2_13.Color
@@ -457,7 +636,7 @@ scrDerivar As screen:
             Width: =120
             X: =requestFieldTxt_36.X + requestFieldTxt_36.Width + 50
             Y: =requestFieldLbl_48.Y
-            ZIndex: =23
+            ZIndex: =18
 
         requestFieldTxt_37 As text:
             Default: =requestFieldTxt_13.Text
@@ -470,7 +649,7 @@ scrDerivar As screen:
             Width: =180
             X: =requestFieldLbl_49.X + requestFieldLbl_49.Width
             Y: =requestFieldLbl_49.Y
-            ZIndex: =24
+            ZIndex: =19
 
     descriptionGroup_7 As group:
         Height: =5
@@ -481,6 +660,7 @@ scrDerivar As screen:
 
         requestFieldLbl_51 As label:
             Color: =RGBA(0, 18, 107, 1)
+            Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -488,9 +668,9 @@ scrDerivar As screen:
             Text: |-
                 ="Comentario:"
             Width: =110
-            X: =requestFieldLbl_48.X
+            X: =RequestAttachmentsForm.X + RequestAttachmentsForm.Width + 15
             Y: =requestFieldLbl_54.Y + requestFieldLbl_54.Height + 25
-            ZIndex: =28
+            ZIndex: =22
 
         requestFieldLbl_53 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -505,20 +685,7 @@ scrDerivar As screen:
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_51.X + requestFieldLbl_51.Width
             Y: =requestFieldLbl_51.Y
-            ZIndex: =29
-
-    requestFieldLbl_55 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: |-
-            ="Adjuntar Archivo(s):"
-        Width: =180
-        X: =requestFieldLbl_48.X
-        Y: =requestFieldLbl_53.Y + requestFieldLbl_53.Height + 15
-        ZIndex: =39
+            ZIndex: =23
 
     descriptionGroup_6 As group:
         Height: =5
@@ -537,7 +704,7 @@ scrDerivar As screen:
             Width: =110
             X: =requestFieldLbl_48.X
             Y: =requestFieldLbl_48.Y + requestFieldLbl_48.Height + 20
-            ZIndex: =25
+            ZIndex: =20
 
         requestFieldLbl_52 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -554,43 +721,5 @@ scrDerivar As screen:
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_50.X + requestFieldLbl_50.Width
             Y: =requestFieldLbl_50.Y
-            ZIndex: =27
-
-    RequestAttachmentsForm As form:
-        DataSource: =Solicitud
-        Height: =Button5_2.Y - Self.Y - 5
-        NumberOfColumns: =1
-        Width: =300
-        X: =requestFieldLbl_55.X + requestFieldLbl_55.Width
-        Y: =requestFieldLbl_55.Y
-        ZIndex: =40
-
-        "'Datos adjuntos_DataCard3' As typedDataCard.attachmentsEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="{Attachments}"
-            Default: =ThisItem.'Datos adjuntos'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =Parent.Height
-            Required: =false
-            Update: =DataCardValue44.Attachments
-            Width: =Parent.Width
-            X: =0
-            Y: =0
-            ZIndex: =41
-
-            DataCardValue44 As attachments:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DisplayMode: =Parent.DisplayMode
-                Height: =Parent.Height
-                IsInDataCard: =true
-                Items: =Parent.Default
-                PaddingBottom: =5
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PaddingRight: =5
-                PaddingTop: =5
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width
-                ZIndex: =2
+            ZIndex: =21
 
