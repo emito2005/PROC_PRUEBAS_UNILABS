@@ -400,7 +400,7 @@ scrMisSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.LiderDelArea
+            Text: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =261
             X: =721
@@ -412,8 +412,9 @@ scrMisSolicitudes As screen:
         Text: |-
             =
             //Concat(Filter(SolicitudDetalleDestino;IdSolicitud=10;IdSolicitudDetalle=8);LookUp(Personal;ID=IdPersonalDestino).Nombre & ", ")
-            Concat(Filter(SolicitudDetalleDestino,IdSolicitud=10,IdSolicitudDetalle=8,IdPerfilDestino=2),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
-        Width: =349
+            //Concat(Filter(SolicitudDetalleDestino;IdSolicitud=10;IdSolicitudDetalle=8;IdPerfilDestino=2);LookUp(Personal;ID=IdPersonalDestino).Nombre & ", ")
+            "ggg"
+        Width: =91
         X: =15
         Y: =435
         ZIndex: =19
