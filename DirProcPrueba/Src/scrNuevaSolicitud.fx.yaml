@@ -79,23 +79,24 @@ scrNuevaSolicitud As screen:
             			FechaAtencion: Today(),
             			FechaExpiraSLA: DateAdd(Today(), varMyUserArea.SLA),
             			FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
-            			EsAtendido: 0,
-            			IdAccionOrigen: 0,
-            			IdEtapaOrigen: 0,
-            			IdAreaOrigen: 0,
-            			IdPerfilOrigen: 0,
-            			IdPersonalOrigen: 0,
-            			IdAccionActual: 1,
+            			EsAtendido: false,
+            			IdAccionOrigen: 1, //Generar(Crear) - los datos de ORIGEN al inicio de generar son los mismos que los datos de ACTUAL
+            			IdEtapaOrigen: varMyAreaEtapaFlujo.IdEtapa,
+            			IdAreaOrigen: varMyAreaEtapaFlujo.IdArea,
+            			IdPerfilOrigen: varMyUser.IdPerfil,
+            			IdPersonalOrigen: varMyUser.ID,
+            			IdAccionActual: 0,  //se actualiza cuando con el usuario realiza la accion
             			IdEtapaActual: varMyAreaEtapaFlujo.IdEtapa,
             			IdAreaActual: varMyAreaEtapaFlujo.IdArea,
-            			IdPerfilActual: varMyUser.IdPerfil,
-            			IdPersonalActual: varMyUser.ID,
-            			IdAccionDestino: 0,
-            			// Al momento de crear, el destino es igual que el actual
-            			IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapa,
-            			IdAreaDestino: varMyAreaEtapaFlujo.IdArea,
-            			IdPerfilDestino: 0,
-            			IdPersonalDestino: 0
+            			IdPerfilActual: 0,  //se actualiza cuando con el usuario realiza la accion
+            			IdPersonalActual: 0,    //se actualiza cuando con el usuario realiza la accion
+            			IdAccionDestino: 0, //no es necesario por el momento
+            			IdEtapaDestino: 0, //se actualiza cuando el usuario realiza la accion
+            			IdAreaDestino: 0,   //se actualiza cuando el usuario realiza la accion
+            			IdPerfilDestino: 0, //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
+            			IdPersonalDestino: 0,   //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
+                        IdEtapaDestinoFlujo:varMyAreaEtapaFlujo.IdEtapaDestino,
+                        IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
             		}
             	)
             );
