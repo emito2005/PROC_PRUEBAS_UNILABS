@@ -508,21 +508,6 @@ scrElevar As screen:
             Y: =requestFieldLbl_16.Y
             ZIndex: =21
 
-    requestFieldScrollLbl_3 As label:
-        Align: =Align.Justify
-        AutoHeight: =true
-        Color: =RGBA(0, 18, 107, 0)
-        Height: =80
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =requestFieldLbl_58.Text
-        Width: =requestFieldLbl_58.Width
-        X: =requestFieldLbl_58.X
-        Y: =requestFieldLbl_58.Y
-        ZIndex: =31
-
     descriptionGroup_3 As group:
         Height: =5
         Width: =5
@@ -573,19 +558,4 @@ scrElevar As screen:
             X: =requestFieldLbl_27.X + requestFieldLbl_27.Width
             Y: =requestFieldLbl_27.Y
             ZIndex: =25
-
-    requestFieldLbl_58 As label:
-        Align: =Align.Justify
-        Color: =RGBA(0, 18, 107, 1)
-        Height: =Min(requestFieldScrollLbl_3.Height, 85)
-        Overflow: =Overflow.Scroll
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =requestFieldLbl_15.Text
-        Width: =requestFieldLbl_38.X + requestFieldLbl_38.Width - Self.X
-        X: =requestFieldLbl_39.X + requestFieldLbl_39.Width
-        Y: =requestFieldLbl_39.Y
-        ZIndex: =32
 
