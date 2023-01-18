@@ -391,8 +391,29 @@ scrMisSolicitudes As screen:
             Y: =4
             ZIndex: =13
 
+        Title2_15 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.LiderDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =261
+            X: =721
+            Y: =4
+            ZIndex: =14
+
     Label6 As label:
-        Text: =varMyUser.IdArea
+        Height: =53
+        Text: |-
+            =
+            //Concat(Filter(SolicitudDetalleDestino;IdSolicitud=10;IdSolicitudDetalle=8);LookUp(Personal;ID=IdPersonalDestino).Nombre & ", ")
+            Concat(Filter(SolicitudDetalleDestino,IdSolicitud=10,IdSolicitudDetalle=8,IdPerfilDestino=2),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+        Width: =349
         X: =15
         Y: =435
         ZIndex: =19
@@ -412,7 +433,7 @@ scrMisSolicitudes As screen:
     icnActualizar As icon.Reload:
         Height: =39
         Icon: =Icon.Reload
-        OnSelect: |-
+        OnSelect: |+
             =ClearCollect(colSolicitudCab,
                 AddColumns(
                     ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
@@ -451,19 +472,16 @@ scrMisSolicitudes As screen:
                     ,"AreaAbrevDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
                     ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
                     ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                    ,"ManagerDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=2),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"LiderDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=3),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
             
-            //Coleccion para obtener el listado de personal que tienen solicitudes por antender en su area
+            //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
             ClearCollect(colSolicitudDetalleDestino,
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
-            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-            /*
-            ClearCollect(colSolicitudes;
-                Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-            );;
-            */
         Width: =50
         X: =1286
         Y: =177
