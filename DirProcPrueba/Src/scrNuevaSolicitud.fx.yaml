@@ -9,7 +9,7 @@ scrNuevaSolicitud As screen:
         BorderColor: =RGBA(255, 191, 0, 1)
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =669
+        Height: =670
         Width: =1339
         X: =13
         Y: =89
@@ -146,6 +146,8 @@ scrNuevaSolicitud As screen:
             		)
             	)
             );
+            
+            Patch(SolicitudDetalle,SolicitudDetalle.ID=1,Att
         Width: =1076
         X: =173
         Y: =133
@@ -469,8 +471,8 @@ scrNuevaSolicitud As screen:
             Required: =false
             Update: =DataCardValue18.Text
             Width: =620
-            X: =1
-            Y: =1
+            X: =0
+            Y: =2
             ZIndex: =7
 
             DataCardKey18 As label:
@@ -526,72 +528,6 @@ scrNuevaSolicitud As screen:
                 Y: =DataCardKey18.Y
                 ZIndex: =4
 
-        "'Datos adjuntos_DataCard1' As typedDataCard.attachmentsEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="{Attachments}"
-            Default: =ThisItem.'Datos adjuntos'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =122
-            Required: =false
-            Update: =DataCardValue24.Attachments
-            Width: =450
-            X: =2
-            Y: =1
-            ZIndex: =7
-
-            DataCardKey24 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue24 As attachments:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DisplayMode: =Parent.DisplayMode
-                Height: =200
-                IsInDataCard: =true
-                Items: =Parent.Default
-                PaddingBottom: =5
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PaddingRight: =5
-                PaddingTop: =5
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey24.Y + DataCardKey24.Height + 5
-                ZIndex: =2
-
-            ErrorMessage17 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue24.Y + DataCardValue24.Height
-                ZIndex: =3
-
-            StarVisible17 As label:
-                Align: =Align.Center
-                Height: =DataCardKey24.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey24.Y
-                ZIndex: =4
-
     gaMenuLateral_NS As gallery.galleryVertical:
         Height: =81
         Items: =colBarraLateral
@@ -622,4 +558,28 @@ scrNuevaSolicitud As screen:
             Width: =142
             X: =1
             ZIndex: =1
+
+    lblDatosAdjuntos As label:
+        AutoHeight: =true
+        Height: =34
+        Text: ="Datos Adjuntos"
+        Width: =300
+        Wrap: =false
+        X: =788
+        Y: =334
+        ZIndex: =8
+
+    adjDocAjuntos As attachments:
+        Height: =268
+        IsInDataCard: =true
+        Items: =
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        Tooltip: ="Seleccionar Archivo(s)"
+        Width: =440
+        X: =788
+        Y: =373
+        ZIndex: =9
 
