@@ -90,8 +90,7 @@ scrMisSolicitudes As screen:
             Fill: =RGBA(221, 79, 14, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: |
-                ="NRO TICKET"
+            Text: ="NRO TICKET"
             Width: |
                 =80
             X: =2
@@ -257,8 +256,7 @@ scrMisSolicitudes As screen:
 
         Title2_4 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -266,14 +264,13 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =99
+            Width: =85
             Y: =4
             ZIndex: =4
 
         Title2_5 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -281,15 +278,14 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =151
-            X: =90
+            Width: =170
+            X: =86
             Y: =4
             ZIndex: =5
 
         Title2_6 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -304,8 +300,7 @@ scrMisSolicitudes As screen:
 
         Title2_9 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -320,8 +315,7 @@ scrMisSolicitudes As screen:
 
         Title2_10 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -336,8 +330,7 @@ scrMisSolicitudes As screen:
 
         Title2_11 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -352,8 +345,7 @@ scrMisSolicitudes As screen:
 
         Title2_12 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -367,18 +359,17 @@ scrMisSolicitudes As screen:
             ZIndex: =11
 
         Icon5 As icon.ChevronRight:
-            Height: =20
+            Height: =24
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
             X: =1145
-            Y: =4
+            Y: =2
             ZIndex: =12
 
         Title2_14 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -393,8 +384,7 @@ scrMisSolicitudes As screen:
 
         Title2_15 As label:
             FontWeight: =FontWeight.Normal
-            Height: =20
-            OnSelect: =Select(Parent)
+            Height: =23
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -402,7 +392,7 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
-            Width: =261
+            Width: =107
             X: =721
             Y: =4
             ZIndex: =14
@@ -479,7 +469,6 @@ scrMisSolicitudes As screen:
                     ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
-            
             
             
             //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
