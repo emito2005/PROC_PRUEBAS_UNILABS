@@ -1,0 +1,35 @@
+scrVerDocAdjuntos As screen:
+
+    cmpBarraSuperior_12 As cmpBarraSuperior:
+
+    lbl_TituloPrincipal_9 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =24
+        Text: ="DOCUMENTOS ADJUNTOS"
+        Width: =1335
+        X: =13
+        Y: =icn_Volver_NS_6.Y + (icn_Volver_NS_6.Height / 2) - (Self.Height / 2)
+        ZIndex: =2
+
+    icn_Volver_NS_6 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back();
+        X: =60
+        Y: =100
+        ZIndex: =3
+
+    lblHeader_16 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="COMENTARIO"
+        Width: =400
+        X: =304
+        Y: =264
+        ZIndex: =9
+
