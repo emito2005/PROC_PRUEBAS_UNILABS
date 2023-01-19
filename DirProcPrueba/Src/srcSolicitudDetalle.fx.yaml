@@ -305,7 +305,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =22
 
         requestFieldTxt_9 As text:
-            Default: =
+            Default: =Gallery1.Selected.ManagerDelArea
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -337,7 +337,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =24
 
         requestFieldTxt_10 As text:
-            Default: =""
+            Default: =Gallery1.Selected.LiderDelArea
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -369,7 +369,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =26
 
         requestFieldTxt_11 As text:
-            Default: =""
+            Default: =Gallery1.Selected.AnalistaDelArea
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -754,7 +754,8 @@ srcSolicitudDetalle As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: ="Descripción"
+            Text: |-
+                ="Observación: "
             Width: =110
             X: =requestFieldLbl_12.X
             Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
@@ -784,7 +785,7 @@ srcSolicitudDetalle As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Gallery1.Selected.Obs
+            Text: =Gallery1.Selected.ObsSolDet
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
             Y: =requestFieldLbl_14.Y

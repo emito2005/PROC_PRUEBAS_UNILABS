@@ -1,4 +1,8 @@
 scrDerivar As screen:
+    OnHidden: =Reset(TextInput2_2)
+    OnVisible: |-
+        =ResetForm(RequestAttachmentsForm);
+        NewForm(RequestAttachmentsForm)
 
     cmpBarraSuperior_11 As cmpBarraSuperior:
 
@@ -213,8 +217,11 @@ scrDerivar As screen:
             				IdPerfilDestino: 0, // Perfil Destino Real
             				IdPersonalDestino: 0, // Personal Destino 
                             IdEtapaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdEtapaDestino,
-                            IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino
-            			}
+                            IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino,
+                            ObsSolDet: TrimEnds(TextInput2_2.Text)
+            			},
+                        // Guarda los datos adjuntos luego de crear el nuevo registro
+                        RequestAttachmentsForm.Updates
             		)
             });
             
@@ -277,7 +284,8 @@ scrDerivar As screen:
                     IdPerfilDestino: 0,
                     IdPersonalDestino: 0,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
-                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                    ObsSolDetDestino: TrimEnds(TextInput2_2.Text)
                 }
             );
             
@@ -338,7 +346,7 @@ scrDerivar As screen:
         ZIndex: =30
 
     RequestAttachmentsForm As form:
-        DataSource: =Solicitud
+        DataSource: =SolicitudDetalle
         Height: =Button5_2.Y - Self.Y - 15
         NumberOfColumns: =1
         Width: =300
@@ -407,11 +415,14 @@ scrDerivar As screen:
             Y: =requestFieldLbl_48.Y
             ZIndex: =17
 
-    Rectangle2_7 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
+    TextInput2_2 As text:
+        Default: =""
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        X: =665
+        Y: =545
         ZIndex: =32
 
     upperToGroup_2 As group:
@@ -619,6 +630,13 @@ scrDerivar As screen:
                 Y: =58
                 ZIndex: =6
 
+    Rectangle2_7 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =33
+
     requestFieldGroup_37 As group:
         Height: =5
         Width: =5
@@ -679,9 +697,7 @@ scrDerivar As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam,"
+            Text: =""
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_51.X + requestFieldLbl_51.Width
             Y: =requestFieldLbl_51.Y
@@ -713,11 +729,7 @@ scrDerivar As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum."
+            Text: =requestFieldLbl_15.Text
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_50.X + requestFieldLbl_50.Width
             Y: =requestFieldLbl_50.Y
