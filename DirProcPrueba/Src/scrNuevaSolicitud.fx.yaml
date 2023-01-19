@@ -3,6 +3,8 @@ scrNuevaSolicitud As screen:
     OnVisible: |-
         =Set(varIdTipoServicio,ddwTipoServicio.Selected.ID);
         Set(varIdTipoSolicitud,ddwTipoSolicitud.Selected.ID);
+        ResetForm(frm_EditSolicitud);
+        ResetForm(frmDatosAdjuntos);
         NewForm(frm_EditSolicitud);
         NewForm(frmDatosAdjuntos);
 
@@ -563,9 +565,9 @@ scrNuevaSolicitud As screen:
         DataSource: =SolicitudDetalle
         Height: =364
         NumberOfColumns: =1
-        Width: =403
-        X: =860
-        Y: =324
+        Width: =493
+        X: =772
+        Y: =331
         ZIndex: =8
 
         "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
@@ -575,10 +577,10 @@ scrNuevaSolicitud As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@SolicitudDetalle],DataSourceInfo.DisplayName,"{Attachments}")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =359
             Required: =false
             Update: =DataCardValue49.Attachments
-            Width: =403
+            Width: =493
             X: =0
             Y: =0
             ZIndex: =9
