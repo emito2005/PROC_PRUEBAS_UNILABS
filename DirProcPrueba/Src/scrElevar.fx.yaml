@@ -1,4 +1,5 @@
 scrElevar As screen:
+    OnHidden: =Reset(TextInput2_1)
     OnVisible: |-
         =If(IsBlank(MyLiderElevarID) && varMyUser.IdPerfil = 4, // Analyst
             UpdateContext({ 
@@ -287,28 +288,17 @@ scrElevar As screen:
             				IdEtapaActual: Gallery1.Selected.IdEtapaActual,
             				IdAreaActual: Gallery1.Selected.IdAreaActual,
                             // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
-            				IdPerfilActual: varMyUser.IdPerfil - 1,
-                            /*If(varMyUser.IdPerfil = 3;  // Leader
-                                LookUp(Personal; ID = MyManagerElevarPersonalID).IdPerfil;
-                                
-                                varMyUser.IdPerfil = 4; // Analyst
-                                LookUp(Personal; ID = MyLiderElevarPersonalID).IdPerfil
-                            );*/
-            				IdPersonalActual: 
-                            If(varMyUser.IdPerfil = 3,  // Leader
-                                MyManagerElevarPersonalID,
-                                
-                                varMyUser.IdPerfil = 4, // Analyst
-                                MyLiderElevarPersonalID
-                            ),
+            				IdPerfilActual: LookUp(Personal, ID = Gallery1.Selected.IdPersonalOrigen).IdPerfil,
+            				IdPersonalActual: Gallery1.Selected.IdPersonalOrigen,
                             IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
             				IdEtapaDestino: 0, // Etapa Destino Real
             				IdAreaDestino: 0, // Area Destino Real
             				IdPerfilDestino: 0, // Perfil Destino Real
             				IdPersonalDestino: 0, // Personal Destino 
                             IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
-                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
-            			}
+                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                            ObsSolDet: TrimEnds(TextInput2_1.Text)
+                        }
             		)
             });
             
@@ -337,7 +327,8 @@ scrElevar As screen:
                     IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
                     IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
-                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                    ObsSolDetDestino: TrimEnds(TextInput2_1.Text)
                 }
             );
             
@@ -384,6 +375,23 @@ scrElevar As screen:
             Y: =requestFieldLbl_25.Y
             ZIndex: =19
 
+    TextInput2_1 As text:
+        Default: =""
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        X: =60
+        Y: =630
+        ZIndex: =28
+
+    Rectangle2_8 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =29
+
     descriptionGroup_2 As group:
         Height: =5
         Width: =5
@@ -411,11 +419,7 @@ scrElevar As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum."
+            Text: =requestFieldLbl_15.Text
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_16.X + requestFieldLbl_16.Width
             Y: =requestFieldLbl_16.Y
@@ -471,13 +475,6 @@ scrElevar As screen:
             Y: =requestFieldLbl_27.Y + requestFieldLbl_27.Height
             ZIndex: =24
 
-    Rectangle2_8 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =36
-
     upperToGroup As group:
         Height: =5
         Width: =5
@@ -504,14 +501,15 @@ scrElevar As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: |-
-                =If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4, // Analyst
-                    LookUp(Personal, ID = MyLiderElevarPersonalID).Nombre,
+                =/*If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4; // Analyst
+                    LookUp(Personal; ID = MyLiderElevarPersonalID).Nombre;
                 
-                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3, // Leader
-                    LookUp(Personal, ID = MyManagerElevarPersonalID).Nombre
-                )
+                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
+                    LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
+                )*/
+                LookUp(Personal, ID = Gallery1.Selected.IdPersonalOrigen).Nombre
             Width: =requestFieldLbl_17.X + requestFieldLbl_17.Width - Self.X
             X: =requestFieldLbl_26.X + requestFieldLbl_26.Width + 5
             Y: =requestFieldLbl_26.Y
-            ZIndex: =30
+            ZIndex: =27
 

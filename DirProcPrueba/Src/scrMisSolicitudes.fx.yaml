@@ -243,8 +243,18 @@ scrMisSolicitudes As screen:
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
             Search(
-                Filter(colSolicitudes,IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),EsAtendido=false)
-                ,txtFilNomNroSol.Text,"NroSolicitud","NombreSolicitud")
+                Filter(colSolicitudes,
+                    IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
+                    ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
+                    EsAtendido = false,
+                    EsEliminado = false,
+                    EsFinalizado = false,
+                    EsActivo = true // Va a cambiar cuando se anula la solicitud
+                ),
+                txtFilNomNroSol.Text,
+                "NroSolicitud",
+                "NombreSolicitud"
+            )
         Layout: =Layout.Vertical
         OnSelect: =Navigate(srcSolicitudDetalle, ScreenTransition.None)
         TemplatePadding: =0
