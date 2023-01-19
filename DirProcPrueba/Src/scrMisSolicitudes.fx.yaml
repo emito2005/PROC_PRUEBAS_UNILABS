@@ -444,7 +444,8 @@ scrMisSolicitudes As screen:
                 );
             ClearCollect(colSolicitudes,
                 AddColumns(
-                    ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAccionOrigen","IdEtapaOrigen","IdAreaOrigen","IdPerfilOrigen","IdPersonalOrigen","IdAccionActual","IdEtapaActual","IdAreaActual","IdPerfilActual","IdPersonalActual","IdAccionDestino","IdEtapaDestino","IdAreaDestino","IdPerfilDestino","IdPersonalDestino")
+                    //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
+                    SolicitudDetalle
                     ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
                     ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
                     ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
@@ -478,6 +479,8 @@ scrMisSolicitudes As screen:
                     ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
+            
+            
             
             //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
             ClearCollect(colSolicitudDetalleDestino,
