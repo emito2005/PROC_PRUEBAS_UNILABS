@@ -453,6 +453,23 @@ srcSolicitudDetalle As screen:
         ZIndex: =46
 
         descargarPDFBtn As button:
+            OnSelect: |-
+                =UpdateContext({
+                    //isLoading: true;
+                    callback:
+                    Exportacion_PDF.Run(
+                        "<h1>Ejemplo</h1>", 
+                        "request_" & Gallery1.Selected.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
+                        Gallery1.Selected.ID
+                    ).callback
+                });
+                If(callback = "true",
+                    Notify("Exportacion realizada correctamente.", NotificationType.Success);
+                    UpdateContext({ 
+                        //isLoading: false;
+                        callback: "false"
+                    })
+                )
             Size: =12
             Text: ="Descargar PDF"
             X: =40
@@ -562,6 +579,13 @@ srcSolicitudDetalle As screen:
             Y: =requestFieldLbl_14.Y
             ZIndex: =36
 
+    Rectangle2_9 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =58
+
     requestFieldGroup_38 As group:
         Height: =5
         Width: =5
@@ -592,13 +616,6 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_28.X + requestFieldLbl_28.Width
             Y: =requestFieldLbl_28.Y
             ZIndex: =33
-
-    Rectangle2_9 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =58
 
     requestFieldGroup_39 As group:
         Height: =5
