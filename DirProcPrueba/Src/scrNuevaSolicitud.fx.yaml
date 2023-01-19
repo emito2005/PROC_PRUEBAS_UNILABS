@@ -53,7 +53,7 @@ scrNuevaSolicitud As screen:
         DataSource: =Solicitud
         DefaultMode: =FormMode.New
         Height: =466
-        OnSuccess: |-
+        OnSuccess: |
             =// Guardar ID de la nueva solicitud
             Set(varIdSolNueva, frm_EditSolicitud.LastSubmit.ID);
             
@@ -148,8 +148,6 @@ scrNuevaSolicitud As screen:
             		)
             	)
             );
-            
-            Patch(SolicitudDetalle,SolicitudDetalle.ID=1,Att
         Width: =1076
         X: =173
         Y: =133
