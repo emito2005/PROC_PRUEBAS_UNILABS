@@ -99,7 +99,8 @@ scrNuevaSolicitud As screen:
             			IdPerfilDestino: 0, //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
             			IdPersonalDestino: 0,   //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
                         IdEtapaDestinoFlujo:varMyAreaEtapaFlujo.IdEtapaDestino,
-                        IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
+                        IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                        ObsSolDet:DataCardValue18.Text
             		},
                     frmDatosAdjuntos.Updates
             	)
