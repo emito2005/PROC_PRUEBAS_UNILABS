@@ -1,4 +1,5 @@
 srcSolicitudDetalle As screen:
+    OnHidden: =
     OnVisible: |-
         =// Get AreaManager ID if is blank
         If(IsBlank(MyAreaManagerID) && varMyUser.IdPerfil = 2,
@@ -77,7 +78,7 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Nro. Ticket"
             Width: =100
-            X: =requestFieldTxt_1.X + requestFieldTxt_1.Width + 170
+            X: =requestFieldTxt_1.X + requestFieldTxt_1.Width + 50
             Y: =requestFieldLbl_1.Y
             ZIndex: =6
 
@@ -109,8 +110,8 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Nombre de Solicitud"
             Width: =180
-            X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 100
-            Y: =requestFieldLbl_1.Y
+            X: =requestFieldLbl_1.X
+            Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 40
             ZIndex: =8
 
         requestFieldTxt_3 As text:
@@ -121,7 +122,7 @@ srcSolicitudDetalle As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Width: =300
+            Width: =500
             X: =requestFieldLbl_3.X + requestFieldLbl_3.Width
             Y: =requestFieldLbl_3.Y
             ZIndex: =9
@@ -140,8 +141,8 @@ srcSolicitudDetalle As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: ="Tipo de Solicitud"
-            X: =requestFieldLbl_1.X
-            Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 40
+            X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 50
+            Y: =requestFieldTxt_2.Y
             ZIndex: =10
 
         requestFieldTxt_4 As text:
@@ -172,7 +173,7 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Tipo de Servicio"
             Width: =140
-            X: =requestFieldTxt_4.X + requestFieldTxt_4.Width + 100
+            X: =requestFieldTxt_4.X + requestFieldTxt_4.Width + 50
             Y: =requestFieldLbl_4.Y
             ZIndex: =12
 
@@ -204,12 +205,12 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Estado"
             Width: =70
-            X: =requestFieldTxt_5.X + requestFieldTxt_5.Width + 130
-            Y: =requestFieldLbl_4.Y
+            X: =requestFieldTxt_3.X + requestFieldTxt_3.Width + 130
+            Y: =requestFieldTxt_3.Y
             ZIndex: =14
 
         requestFieldTxt_6 As text:
-            Default: =If(Gallery1.Selected.EsActivo, "Activo", "Inactivo")
+            Default: =If(Gallery1.Selected.EsActivo, "Activo", If(Gallery1.Selected.EsEliminado, "Eliminado", "Inactivo"))
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -236,8 +237,8 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: ="Dpto. de Procedencia"
             Width: =190
-            X: =requestFieldLbl_1.X
-            Y: =requestFieldLbl_4.Y + requestFieldLbl_4.Height + 40
+            X: =requestFieldLbl_3.X
+            Y: =requestFieldLbl_3.Y + requestFieldLbl_3.Height + 40
             ZIndex: =16
 
         requestFieldTxt_7 As text:
@@ -492,7 +493,8 @@ srcSolicitudDetalle As screen:
 
         archivarBtn As button:
             OnSelect: |-
-                =UpdateContext({ showArchiveDialog: true })
+                =Reset(TextInput3);
+                UpdateContext({ showArchiveDialog: true })
             Size: =12
             Text: ="Archivar"
             X: =derivarBtn.X + derivarBtn.Width + 25
@@ -501,244 +503,13 @@ srcSolicitudDetalle As screen:
 
         eliminarBtn As button:
             OnSelect: |-
-                =UpdateContext({ showDeleteDialog: true })
+                =Reset(TextInput3_1);
+                UpdateContext({ showDeleteDialog: true })
             Size: =12
             Text: ="Eliminar"
             X: =archivarBtn.X + archivarBtn.Width + 25
             Y: =descargarPDFBtn.Y
             ZIndex: =43
-
-    archiveDialogGroup As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =47
-
-        confirmDialogRect_2 As rectangle:
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(0, 0, 0, 0.5)
-            FocusedBorderThickness: =0
-            Height: =Parent.Height
-            Visible: =showArchiveDialog
-            Width: =Parent.Width
-            ZIndex: =44
-
-        commentaryValueScroll As label:
-            Align: =Align.Justify
-            AutoHeight: =true
-            Color: =RGBA(0, 0, 0, 0)
-            DisplayMode: =DisplayMode.View
-            PaddingBottom: =0
-            PaddingLeft: =20
-            PaddingRight: =20
-            PaddingTop: =0
-            Size: =12
-            Text: =commentaryValueLbl.Text
-            Visible: =showArchiveDialog
-            Width: =confirmDialogFrame_2.X + confirmDialogFrame_2.Width - Self.X - 20
-            X: =commentaryLbl.X + commentaryLbl.Width
-            Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
-            ZIndex: =45
-
-        confirmDialogFrame_2 As button:
-            BorderThickness: =0
-            DisabledFill: =Color.White
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =270
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Text: =""
-            Visible: =showArchiveDialog
-            Width: =600
-            X: =Parent.Width / 2 - Self.Width / 2
-            Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =46
-
-        confirmDialogTitle_2 As label:
-            Align: =Align.Center
-            FontWeight: =FontWeight.Semibold
-            Text: ="¿ESTA SEGURO DE ARCHIVAR LA SOLICITUD?"
-            Visible: =showArchiveDialog
-            Width: =confirmDialogFrame_2.Width
-            X: =confirmDialogFrame_2.X
-            Y: =confirmDialogFrame_2.Y + 15
-            ZIndex: =47
-
-        commentaryLbl As label:
-            Align: =Align.Center
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: |-
-                ="Comentario:"
-            Visible: =showArchiveDialog
-            Width: =100
-            X: =confirmDialogFrame_2.X + 20
-            Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
-            ZIndex: =48
-
-        commentaryValueLbl As label:
-            Align: =Align.Justify
-            Height: =Min(commentaryValueScroll.Height, 100)
-            Overflow: =Overflow.Scroll
-            PaddingBottom: =0
-            PaddingLeft: =20
-            PaddingRight: =20
-            PaddingTop: =0
-            Size: =12
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in"
-            Visible: =showArchiveDialog
-            Width: =confirmDialogFrame_2.X + confirmDialogFrame_2.Width - Self.X - 20
-            X: =commentaryLbl.X + commentaryLbl.Width
-            Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
-            ZIndex: =49
-
-        aceptarBtn As button:
-            OnSelect: |-
-                =UpdateContext({ showArchiveDialog: false })
-            Size: =12
-            Text: ="Aceptar"
-            Visible: =showArchiveDialog
-            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
-            ZIndex: =50
-
-        cancelarBtn As button:
-            OnSelect: |-
-                =UpdateContext({ showArchiveDialog: false })
-            Size: =12
-            Text: ="Cancelar"
-            Visible: =showArchiveDialog
-            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) + 20
-            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
-            ZIndex: =51
-
-    deleteDialogGroup As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =55
-
-        confirmDialogRect_3 As rectangle:
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(0, 0, 0, 0.5)
-            FocusedBorderThickness: =0
-            Height: =Parent.Height
-            Visible: =showDeleteDialog
-            Width: =Parent.Width
-            ZIndex: =52
-
-        commentaryValueScroll_1 As label:
-            Align: =Align.Justify
-            AutoHeight: =true
-            Color: =RGBA(0, 0, 0, 0)
-            DisplayMode: =DisplayMode.View
-            PaddingBottom: =0
-            PaddingLeft: =20
-            PaddingRight: =20
-            PaddingTop: =0
-            Size: =12
-            Text: =commentaryValueLbl_1.Text
-            Visible: =showDeleteDialog
-            Width: =confirmDialogFrame_3.X + confirmDialogFrame_3.Width - Self.X - 20
-            X: =commentaryLbl_1.X + commentaryLbl_1.Width
-            Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
-            ZIndex: =53
-
-        confirmDialogFrame_3 As button:
-            BorderThickness: =0
-            DisabledFill: =Color.White
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =270
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Text: =""
-            Visible: =showDeleteDialog
-            Width: =600
-            X: =Parent.Width / 2 - Self.Width / 2
-            Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =54
-
-        confirmDialogTitle_3 As label:
-            Align: =Align.Center
-            FontWeight: =FontWeight.Semibold
-            Text: ="¿ESTA SEGURO DE ELIMINAR LA SOLICITUD?"
-            Visible: =showDeleteDialog
-            Width: =confirmDialogFrame_3.Width
-            X: =confirmDialogFrame_3.X
-            Y: =confirmDialogFrame_3.Y + 15
-            ZIndex: =55
-
-        commentaryLbl_1 As label:
-            Align: =Align.Center
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: |-
-                ="Comentario:"
-            Visible: =showDeleteDialog
-            Width: =100
-            X: =confirmDialogFrame_3.X + 20
-            Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
-            ZIndex: =56
-
-        commentaryValueLbl_1 As label:
-            Align: =Align.Justify
-            Height: =Min(commentaryValueScroll_1.Height, 100)
-            Overflow: =Overflow.Scroll
-            PaddingBottom: =0
-            PaddingLeft: =20
-            PaddingRight: =20
-            PaddingTop: =0
-            Size: =12
-            Text: |-
-                ="lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in"
-            Visible: =showDeleteDialog
-            Width: =confirmDialogFrame_3.X + confirmDialogFrame_3.Width - Self.X - 20
-            X: =commentaryLbl_1.X + commentaryLbl_1.Width
-            Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
-            ZIndex: =57
-
-        aceptarBtn_1 As button:
-            OnSelect: |-
-                =UpdateContext({ showDeleteDialog: false })
-            Size: =12
-            Text: ="Aceptar"
-            Visible: =showDeleteDialog
-            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
-            ZIndex: =58
-
-        cancelarBtn_1 As button:
-            OnSelect: |-
-                =UpdateContext({ showDeleteDialog: false })
-            Size: =12
-            Text: ="Cancelar"
-            Visible: =showDeleteDialog
-            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) + 20
-            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
-            ZIndex: =59
 
     descriptionGroup As group:
         Height: =5
@@ -790,6 +561,13 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
             Y: =requestFieldLbl_14.Y
             ZIndex: =36
+
+    Rectangle2_9 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =58
 
     requestFieldGroup_38 As group:
         Height: =5
@@ -853,4 +631,333 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
             Y: =requestFieldLbl_40.Y
             ZIndex: =21
+
+    archiveDialogGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =61
+
+        confirmDialogRect_2 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showArchiveDialog
+            Width: =Parent.Width
+            ZIndex: =44
+
+        confirmDialogFrame_2 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showArchiveDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =45
+
+        confirmDialogTitle_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE ARCHIVAR LA SOLICITUD?"
+            Visible: =showArchiveDialog
+            Width: =confirmDialogFrame_2.Width
+            X: =confirmDialogFrame_2.X
+            Y: =confirmDialogFrame_2.Y + 15
+            ZIndex: =46
+
+        commentaryLbl As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showArchiveDialog
+            Width: =100
+            X: =confirmDialogFrame_2.X + 20
+            Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
+            ZIndex: =47
+
+        TextInput3 As text:
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showArchiveDialog
+            Width: =confirmDialogFrame_2.X + confirmDialogFrame_2.Width - Self.X - 20
+            X: =confirmDialogFrame_2.X + 20
+            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            ZIndex: =48
+
+        aceptarBtn As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            OnSelect: |-
+                =UpdateContext({ showArchiveDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = Gallery1.Selected.ID), 
+                	{ 
+                		EsActivo: false 
+                	}
+                );
+                
+                // Crear Solicitud Detalle inicial
+                UpdateContext({
+                	lastSolicitudDetalle:
+                		Patch(SolicitudDetalle,
+                			Defaults(SolicitudDetalle),
+                			{
+                				IdSolicitud: Gallery1.Selected.IdSolicitud,
+                				FechaAtencion: Today(),
+                				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
+                                FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,
+                                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+                				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+                				EsAtendido: false,
+                				IdAccionOrigen: 6, // Anular
+                				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+                				IdAreaOrigen: varMyUser.IdArea,
+                				IdPerfilOrigen: varMyUser.IdPerfil,
+                				IdPersonalOrigen: varMyUser.ID,
+                				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+                				IdEtapaActual: 0,
+                				IdAreaActual: 0,
+                                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+                				IdPerfilActual: 0,
+                				IdPersonalActual: 0,
+                                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+                				IdEtapaDestino: 0, // Etapa Destino Real
+                				IdAreaDestino: 0, // Area Destino Real
+                				IdPerfilDestino: 0, // Perfil Destino Real
+                				IdPersonalDestino: 0, // Personal Destino 
+                                IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
+                                IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                                ObsSolDet: TrimEnds(TextInput3.Text)
+                			}
+                		)
+                });
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                    {
+                        IdAccionActual: 6, // Anular
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3.Text)
+                    }
+                );
+                
+                Notify("Solicitud archivada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showArchiveDialog
+            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
+            ZIndex: =49
+
+        cancelarBtn As button:
+            OnSelect: |-
+                =UpdateContext({ showArchiveDialog: false });
+                Reset(TextInput3)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showArchiveDialog
+            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) + 20
+            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
+            ZIndex: =50
+
+    deleteDialogGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =62
+
+        confirmDialogRect_3 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showDeleteDialog
+            Width: =Parent.Width
+            ZIndex: =51
+
+        confirmDialogFrame_3 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showDeleteDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =52
+
+        confirmDialogTitle_3 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE ELIMINAR LA SOLICITUD?"
+            Visible: =showDeleteDialog
+            Width: =confirmDialogFrame_3.Width
+            X: =confirmDialogFrame_3.X
+            Y: =confirmDialogFrame_3.Y + 15
+            ZIndex: =53
+
+        commentaryLbl_1 As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showDeleteDialog
+            Width: =100
+            X: =confirmDialogFrame_3.X + 20
+            Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
+            ZIndex: =54
+
+        TextInput3_1 As text:
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showDeleteDialog
+            Width: =confirmDialogFrame_3.X + confirmDialogFrame_3.Width - Self.X - 20
+            X: =confirmDialogFrame_3.X + 20
+            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            ZIndex: =55
+
+        aceptarBtn_1 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_1.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            OnSelect: |-
+                =UpdateContext({ showDeleteDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = Gallery1.Selected.ID), 
+                	{ 
+                		EsActivo: false,
+                		EsEliminado: true
+                	}
+                );
+                
+                // Crear Solicitud Detalle inicial
+                UpdateContext({
+                	lastSolicitudDetalle:
+                		Patch(SolicitudDetalle,
+                			Defaults(SolicitudDetalle),
+                			{
+                				IdSolicitud: Gallery1.Selected.IdSolicitud,
+                				FechaAtencion: Today(),
+                				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
+                                FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,
+                                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+                				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+                				EsAtendido: false,
+                				IdAccionOrigen: 7, // Eliminar
+                				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+                				IdAreaOrigen: varMyUser.IdArea,
+                				IdPerfilOrigen: varMyUser.IdPerfil,
+                				IdPersonalOrigen: varMyUser.ID,
+                				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+                				IdEtapaActual: 0,
+                				IdAreaActual: 0,
+                                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+                				IdPerfilActual: 0,
+                				IdPersonalActual: 0,
+                                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+                				IdEtapaDestino: 0, // Etapa Destino Real
+                				IdAreaDestino: 0, // Area Destino Real
+                				IdPerfilDestino: 0, // Perfil Destino Real
+                				IdPersonalDestino: 0, // Personal Destino 
+                                IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
+                                IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                                ObsSolDet: TrimEnds(TextInput3_1.Text)
+                			}
+                		)
+                });
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                    {
+                        IdAccionActual: 7, // Eliminar
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text)
+                    }
+                );
+                
+                Notify("Solicitud archivada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3_1);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showDeleteDialog
+            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
+            ZIndex: =56
+
+        cancelarBtn_1 As button:
+            OnSelect: |-
+                =UpdateContext({ showDeleteDialog: false });
+                Reset(TextInput3_1)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showDeleteDialog
+            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) + 20
+            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
+            ZIndex: =57
 
