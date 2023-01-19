@@ -4,6 +4,7 @@ scrNuevaSolicitud As screen:
         =Set(varIdTipoServicio,ddwTipoServicio.Selected.ID);
         Set(varIdTipoSolicitud,ddwTipoSolicitud.Selected.ID);
         NewForm(frm_EditSolicitud);
+        NewForm(frmDatosAdjuntos);
 
     Rectangle4_1 As rectangle:
         BorderColor: =RGBA(255, 191, 0, 1)
@@ -97,7 +98,8 @@ scrNuevaSolicitud As screen:
             			IdPersonalDestino: 0,   //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
                         IdEtapaDestinoFlujo:varMyAreaEtapaFlujo.IdEtapaDestino,
                         IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
-            		}
+            		},
+                    frmDatosAdjuntos.Updates
             	)
             );
             
@@ -559,27 +561,77 @@ scrNuevaSolicitud As screen:
             X: =1
             ZIndex: =1
 
-    lblDatosAdjuntos As label:
-        AutoHeight: =true
-        Height: =34
-        Text: ="Datos Adjuntos"
-        Width: =300
-        Wrap: =false
-        X: =788
-        Y: =334
+    frmDatosAdjuntos As form:
+        DataSource: =SolicitudDetalle
+        Height: =364
+        NumberOfColumns: =1
+        Width: =403
+        X: =860
+        Y: =324
         ZIndex: =8
 
-    adjDocAjuntos As attachments:
-        Height: =268
-        IsInDataCard: =true
-        Items: =
-        PaddingBottom: =5
-        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-        PaddingRight: =5
-        PaddingTop: =5
-        Tooltip: ="Seleccionar Archivo(s)"
-        Width: =440
-        X: =788
-        Y: =373
-        ZIndex: =9
+        "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.'Datos adjuntos'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@SolicitudDetalle],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue49.Attachments
+            Width: =403
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey48 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue49 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey48.Y + DataCardKey48.Height + 5
+                ZIndex: =2
+
+            ErrorMessage40 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue49.Y + DataCardValue49.Height
+                ZIndex: =3
+
+            StarVisible40 As label:
+                Align: =Align.Center
+                Height: =DataCardKey48.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey48.Y
+                ZIndex: =4
 
