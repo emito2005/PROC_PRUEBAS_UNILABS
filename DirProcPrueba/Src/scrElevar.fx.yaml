@@ -1,4 +1,22 @@
 scrElevar As screen:
+    OnVisible: |-
+        =If(IsBlank(MyLiderElevarID) && varMyUser.IdPerfil = 4, // Analyst
+            UpdateContext({ 
+                MyLiderElevarID: LookUp(AreaManagerLiderAnalista, IdPersonal = varMyUser.ID).IdAreaManagerLider
+            });
+            UpdateContext({ 
+                MyLiderElevarPersonalID: LookUp(AreaManagerLider, ID = MyLiderElevarID).IdPersonal
+            });
+        );
+        
+        If(IsBlank(MyManagerElevarID) && varMyUser.IdPerfil = 3, // Leader
+            UpdateContext({ 
+                MyManagerElevarID: LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).IdAreaManager
+            });
+            UpdateContext({ 
+                MyManagerElevarPersonalID: LookUp(AreaManager, ID = MyManagerElevarID).IdPersonal
+            });
+        );
 
     cmpBarraSuperior_9 As cmpBarraSuperior:
 
@@ -244,200 +262,95 @@ scrElevar As screen:
             ZIndex: =17
 
     Button5 As button:
+        OnSelect: |-
+            =UpdateContext({ isLoading: true });
+            
+            // Crear Solicitud Detalle inicial
+            UpdateContext({
+            	lastSolicitudDetalle:
+            		Patch(SolicitudDetalle,
+            			Defaults(SolicitudDetalle),
+            			{
+            				IdSolicitud: Gallery1.Selected.IdSolicitud,
+            				FechaAtencion: Today(),
+            				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
+                            FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,
+                            // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+            				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+            				EsAtendido: false,
+            				IdAccionOrigen: 3, // Elevar
+            				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+            				IdAreaOrigen: varMyUser.IdArea,
+            				IdPerfilOrigen: varMyUser.IdPerfil,
+            				IdPersonalOrigen: varMyUser.ID,
+            				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+            				IdEtapaActual: Gallery1.Selected.IdEtapaActual,
+            				IdAreaActual: Gallery1.Selected.IdAreaActual,
+                            // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+            				IdPerfilActual: varMyUser.IdPerfil - 1,
+                            /*If(varMyUser.IdPerfil = 3;  // Leader
+                                LookUp(Personal; ID = MyManagerElevarPersonalID).IdPerfil;
+                                
+                                varMyUser.IdPerfil = 4; // Analyst
+                                LookUp(Personal; ID = MyLiderElevarPersonalID).IdPerfil
+                            );*/
+            				IdPersonalActual: 
+                            If(varMyUser.IdPerfil = 3,  // Leader
+                                MyManagerElevarPersonalID,
+                                
+                                varMyUser.IdPerfil = 4, // Analyst
+                                MyLiderElevarPersonalID
+                            ),
+                            IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+            				IdEtapaDestino: 0, // Etapa Destino Real
+            				IdAreaDestino: 0, // Area Destino Real
+            				IdPerfilDestino: 0, // Perfil Destino Real
+            				IdPersonalDestino: 0, // Personal Destino 
+                            IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
+                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino
+            			}
+            		)
+            });
+            
+            // Crear Solicitud Detalle Destino del siguiente usuario
+            Patch(SolicitudDetalleDestino,
+            	Defaults(SolicitudDetalleDestino),
+            	{
+            		IdSolicitud: lastSolicitudDetalle.IdSolicitud,
+            		IdSolicitudDetalle: lastSolicitudDetalle.ID,
+            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,
+            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual,
+            		IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
+            		IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual
+            	}
+            );
+            
+            // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+            Patch(SolicitudDetalle, 
+                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                {
+                    IdAccionActual: 3, // Elevar
+                    IdPerfilActual: varMyUser.IdPerfil,
+                    IdPersonalActual: varMyUser.ID,
+                    IdAreaDestino: Gallery1.Selected.IdAreaActual,
+                    IdEtapaDestino: Gallery1.Selected.IdEtapaActual,
+                    IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
+                    IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
+                    EsAtendido: true, // Actualizar estado del registro seleccionado
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada
+                }
+            );
+            
+            Notify("Solicitud elevada correctamente.", NotificationType.Success);
+            
+            UpdateContext({ isLoading: false });
+            
+            Navigate(scrMisSolicitudes, Fade);
         Text: ="ELEVAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 15
-        ZIndex: =26
-
-    upperToGroup As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        requestFieldLbl_26 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Elevar Solicitud a:"
-            X: =requestFieldLbl_24.X
-            Y: =requestFieldLbl_17.Y + requestFieldLbl_17.Height + 25
-            ZIndex: =27
-
-        txtBuscarManager_1 As text:
-            Align: =Left
-            Default: =""
-            DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
-            DisplayMode: |
-                =// Disable if Form is not equal to editMode
-                If(form_EditArea.Mode <> FormMode.Edit,
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
-                )
-            HintText: ="Buscar"
-            PaddingLeft: =35
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =13
-            Width: =354
-            X: =requestFieldLbl_26.X + requestFieldLbl_26.Width + 10
-            Y: =requestFieldLbl_26.Y + (requestFieldLbl_26.Height / 2) - (Self.Height / 2)
-            ZIndex: =28
-
-        SearchIcon1_4 As icon.Search:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =RGBA(135, 100, 184, 1)
-            DisabledColor: =RGBA(220, 220, 220, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            DisplayMode: =If(txtBuscarManager_1.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
-            FocusedBorderThickness: =4
-            Height: =30
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Icon: =Icon.Search
-            PaddingBottom: =8
-            PaddingLeft: =8
-            PaddingRight: =8
-            PaddingTop: =8
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Tooltip: ="Buscar"
-            Width: =38
-            X: =txtBuscarManager_1.X
-            Y: =txtBuscarManager_1.Y + (txtBuscarManager_1.Height / 2) - (Self.Height / 2)
-            ZIndex: =29
-
-        UserBrowseGallery1_4 As gallery.PeoplePickerTabletGallery:
-            AccessibleLabel: ="Resultados de la búsqueda de usuarios"
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =Parent.Height - Self.Y - 20
-            Items: |
-                =//If(!IsBlank(Trim(txtBuscarManager.Text)); UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager.Text); top: 999}))
-                If(!IsBlank(Trim(txtBuscarManager_1.Text)), 
-                    /*Filter(*/UsuariosdeOffice365.SearchUser({searchTerm: Trim(txtBuscarManager_1.Text), top: 999})/*;
-                    Not(UserPrincipalName in AddColumns(AreaManager;"EmailPersonalM";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalM);
-                    Not(UserPrincipalName in AddColumns(AreaManagerLider;"EmailPersonalML";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalML);
-                    Not(UserPrincipalName in AddColumns(AreaManagerLiderAnalista;"EmailPersonalMLA";LookUp(Personal;ID=IdPersonal).Email).EmailPersonalMLA)*/
-                    //)
-                )
-            Layout: =Layout.Vertical
-            ShowScrollbar: =false
-            TemplatePadding: =0
-            TemplateSize: =60
-            Visible: =!IsBlank(Trim(txtBuscarManager_1.Text))
-            Width: =txtBuscarManager_1.Width
-            X: =txtBuscarManager_1.X
-            Y: =txtBuscarManager_1.Y + txtBuscarManager_1.Height + 5
-            ZIndex: =30
-
-            Rectangle2_4 As rectangle:
-                BorderColor: =Title2_7.Color
-                BorderThickness: |-
-                    =//If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName; 2; 0)
-                    1
-                DisabledFill: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(0,0,0,0)
-                Height: =58
-                HoverFill: =RGBA(0,0,0,0)
-                OnSelect: =Select(Title2_7)
-                PressedFill: =RGBA(135, 100, 184, 1)
-                Width: =Parent.TemplateWidth - 2*Self.X
-                X: =1
-                Y: =1
-                ZIndex: =1
-
-            Title2_7 As label:
-                BorderColor: =Self.Color
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =2
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =Self.Size * 1.8
-                OnSelect: |-
-                    =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
-                    If(IsBlank(LookUp(Personal, Email = ThisItem.UserPrincipalName)),
-                        // New
-                        Patch(Personal, 
-                            Defaults(Personal), 
-                            {
-                                Nombre: ThisItem.DisplayName,
-                                Email: ThisItem.UserPrincipalName,
-                                IdPerfil: 2, 
-                                IdArea: varIdArea
-                            }
-                        ),
-                    
-                        // Edit
-                        Patch(Personal, 
-                            LookUp(Personal, Email = ThisItem.UserPrincipalName), 
-                            {
-                                IdPerfil: 2, 
-                                IdArea: varIdArea
-                            }
-                        )
-                    );
-                    
-                    Concurrent(
-                    //Set(_selectedUser; ThisItem);
-                        Reset(txtBuscarManager),
-                        Patch(AreaManager,
-                            Defaults(AreaManager),
-                            {
-                                IdArea: varIdArea,
-                                IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
-                            }
-                        )
-                    )
-                    
-                    
-                    //If(Not(ThisItem.UserPrincipalName in AddColumns(AreaManager;"EmailPersonal";LookUp(Personal;ID=AreaManager[@IdPersonal].Id).Email).EmailPersonal);
-                    //Patch(AreaManager;Defaults(AreaManager);{IdArea:{Value:"";Id:varIdArea};IdPersonal:{Value:"";Id:LookUp(Personal; Email = ThisItem.UserPrincipalName).ID}})
-                    //If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName); Collect(MyPeople; ThisItem)))
-                Size: =12
-                TabIndex: =0
-                Text: =ThisItem.DisplayName
-                VerticalAlign: =Middle
-                Width: =UserBrowseGallery1_4.TemplateWidth - 30
-                Wrap: =false
-                X: =5
-                Y: =9
-                ZIndex: =4
-
-            Subtitle1_4 As label:
-                Color: =RGBA(51, 51, 51, 1)
-                FocusedBorderThickness: =2
-                Font: =Font.'Segoe UI'
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Title2_7)
-                Size: =12
-                Text: =ThisItem.UserPrincipalName
-                VerticalAlign: =Middle
-                Width: =Title2_7.Width
-                Wrap: =false
-                X: =5
-                Y: =31
-                ZIndex: =5
-
-            Separator1_4 As rectangle:
-                BorderColor: =RGBA(0, 0, 0, 0)
-                Fill: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-                Height: =1
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =58
-                ZIndex: =6
+        ZIndex: =25
 
     requestFieldGroup_21 As group:
         Height: =5
@@ -517,7 +430,6 @@ scrElevar As screen:
 
         requestFieldLbl_27 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -525,8 +437,8 @@ scrElevar As screen:
             Text: |-
                 ="Comentario:"
             Width: =110
-            X: =requestFieldLbl_24.X
-            Y: =requestFieldLbl_26.Y + requestFieldLbl_26.Height + 25
+            X: =requestFieldLbl_26.X
+            Y: =requestFieldLbl_26.Y + requestFieldLbl_26.Height + 5
             ZIndex: =22
 
         requestFieldScrollLbl_1 As label:
@@ -542,7 +454,7 @@ scrElevar As screen:
             Width: =requestFieldLbl_56.Width
             X: =requestFieldLbl_56.X
             Y: =requestFieldLbl_56.Y
-            ZIndex: =24
+            ZIndex: =23
 
         requestFieldLbl_56 As label:
             Align: =Align.Justify
@@ -555,7 +467,51 @@ scrElevar As screen:
             PaddingTop: =0
             Text: =requestFieldLbl_15.Text
             Width: =requestFieldLbl_17.X + requestFieldLbl_17.Width - Self.X
-            X: =requestFieldLbl_27.X + requestFieldLbl_27.Width
-            Y: =requestFieldLbl_27.Y
-            ZIndex: =25
+            X: =requestFieldLbl_27.X
+            Y: =requestFieldLbl_27.Y + requestFieldLbl_27.Height
+            ZIndex: =24
+
+    Rectangle2_8 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =36
+
+    upperToGroup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        requestFieldLbl_26 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Elevar Solicitud a:"
+            X: =requestFieldLbl_24.X
+            Y: =requestFieldLbl_17.Y + requestFieldLbl_17.Height + 25
+            ZIndex: =26
+
+        requestFieldLbl_59 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                =If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4, // Analyst
+                    LookUp(Personal, ID = MyLiderElevarPersonalID).Nombre,
+                
+                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3, // Leader
+                    LookUp(Personal, ID = MyManagerElevarPersonalID).Nombre
+                )
+            Width: =requestFieldLbl_17.X + requestFieldLbl_17.Width - Self.X
+            X: =requestFieldLbl_26.X + requestFieldLbl_26.Width + 5
+            Y: =requestFieldLbl_26.Y
+            ZIndex: =30
 
