@@ -263,7 +263,7 @@ scrAsignar As screen:
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 15
-        ZIndex: =26
+        ZIndex: =25
 
     requestFieldGroup_27 As group:
         Height: =5
@@ -362,7 +362,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_57.Width
             X: =requestFieldLbl_57.X
             Y: =requestFieldLbl_57.Y
-            ZIndex: =24
+            ZIndex: =23
 
         requestFieldLbl_57 As label:
             Align: =Align.Justify
@@ -377,7 +377,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_38.X + requestFieldLbl_38.Width - Self.X
             X: =requestFieldLbl_39.X
             Y: =requestFieldLbl_39.Y + requestFieldLbl_39.Height
-            ZIndex: =25
+            ZIndex: =24
 
     upperToGroup_1 As group:
         Height: =5
@@ -397,7 +397,7 @@ scrAsignar As screen:
             Width: =155
             X: =requestFieldLbl_35.X
             Y: =requestFieldLbl_38.Y + requestFieldLbl_38.Height + 25
-            ZIndex: =27
+            ZIndex: =26
 
         txtBuscarManager_2 As text:
             Align: =Left
@@ -419,7 +419,7 @@ scrAsignar As screen:
             Width: =354
             X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
             Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
-            ZIndex: =28
+            ZIndex: =27
 
         SearchIcon1_5 As icon.Search:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -444,7 +444,7 @@ scrAsignar As screen:
             Width: =38
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
-            ZIndex: =29
+            ZIndex: =28
 
         UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
             AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -488,7 +488,7 @@ scrAsignar As screen:
             Width: =txtBuscarManager_2.Width
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
-            ZIndex: =30
+            ZIndex: =29
 
             Rectangle2_5 As rectangle:
                 BorderColor: =Title2_8.Color
@@ -549,6 +549,16 @@ scrAsignar As screen:
                 Y: =58
                 ZIndex: =6
 
+    TextInput2 As text:
+        Default: =""
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        X: =600
+        Y: =585
+        ZIndex: =35
+
     Rectangle2 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
@@ -607,7 +617,7 @@ scrAsignar As screen:
             Width: =txtBuscarManager_2.X + txtBuscarManager_2.Width - Self.X - 50
             X: =requestFieldLbl_41.X
             Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 5
-            ZIndex: =31
+            ZIndex: =30
 
         Icon6 As icon.Person:
             DisplayMode: =DisplayMode.View
@@ -615,7 +625,7 @@ scrAsignar As screen:
             Visible: =!IsBlank(UserSelected)
             X: =Label5.X
             Y: =Label5.Y + Label5.Height + 5
-            ZIndex: =32
+            ZIndex: =31
 
         Label5_1 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -629,7 +639,7 @@ scrAsignar As screen:
             Width: =Label5.X + Label5.Width - Self.X
             X: =Icon6.X + Icon6.Width
             Y: =Icon6.Y
-            ZIndex: =33
+            ZIndex: =32
 
         Label5_2 As label:
             Color: =RGBA(0, 18, 107, 1)
@@ -643,7 +653,7 @@ scrAsignar As screen:
             Width: =Label5.X + Label5.Width - Self.X
             X: =Icon6.X + Icon6.Width
             Y: =Label5_1.Y + Label5_1.Height
-            ZIndex: =34
+            ZIndex: =33
 
         ClearSelectedUserIcon As icon.Cancel:
             Height: =40
@@ -657,17 +667,7 @@ scrAsignar As screen:
             Width: =40
             X: =Label5_1.X + Label5_1.Width + 5
             Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
-            ZIndex: =35
-
-    TextInput2 As text:
-        Default: =""
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        X: =600
-        Y: =585
-        ZIndex: =37
+            ZIndex: =34
 
     descriptionGroup_4 As group:
         Height: =5
