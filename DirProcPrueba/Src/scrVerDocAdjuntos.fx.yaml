@@ -178,7 +178,7 @@ scrVerDocAdjuntos As screen:
         DisplayMode: =DisplayMode.View
         Document: |-
             =//If(Gallery4.Selected.Extension="pdf";Gallery4.Selected.Value;Substitute(Gallery4.Selected.AbsoluteUri;"/thumbnail";"/pdf"))
-            If(Gallery4.Selected.Extension="pdf",Gallery4.Selected.Value)
+            If(Gallery4.Selected.Extension="pdf",Gallery4.Selected.Value,Gallery4.Selected.AbsoluteUri)
         Fill: =RGBA(0, 0, 0, 0.5)
         Height: =576
         ShowControls: =true
@@ -190,8 +190,8 @@ scrVerDocAdjuntos As screen:
 
     Label7 As label:
         Height: =310
-        Text: =Gallery4.Selected.Value
-        Width: =565
+        Text: =Gallery4.Selected.AbsoluteUri
+        Width: =698
         X: =176
         Y: =404
         ZIndex: =13
