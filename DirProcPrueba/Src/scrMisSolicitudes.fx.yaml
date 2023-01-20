@@ -139,7 +139,7 @@ scrMisSolicitudes As screen:
             )
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Navigate(srcSolicitudDetalle, ScreenTransition.None);
+            =Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: true });
             //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1.Selected.ID));

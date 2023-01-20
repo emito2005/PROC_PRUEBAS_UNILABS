@@ -273,7 +273,7 @@ scrElevar As screen:
             			Defaults(SolicitudDetalle),
             			{
             				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-            				FechaAtencion: Today(),
+            				FechaCreacion: Today(), 
             				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                             FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -328,7 +328,8 @@ scrElevar As screen:
                     IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2_1.Text)
+                    ObsSolDetDestino: TrimEnds(TextInput2_1.Text),
+                    FechaAtencion: Today()
                 }
             );
             
@@ -345,10 +346,13 @@ scrElevar As screen:
 
     TextInput2_1 As text:
         Default: =""
+        Height: =60
+        Mode: =TextMode.MultiLine
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
+        Width: =requestFieldTxt_19.X + requestFieldTxt_19.Width - Self.X
         X: =60
         Y: =630
         ZIndex: =28
@@ -455,6 +459,7 @@ scrElevar As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =requestFieldLbl_56.Text
+            Visible: =false
             Width: =requestFieldLbl_56.Width
             X: =requestFieldLbl_56.X
             Y: =requestFieldLbl_56.Y
@@ -470,6 +475,7 @@ scrElevar As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =requestFieldLbl_15.Text
+            Visible: =false
             Width: =requestFieldLbl_17.X + requestFieldLbl_17.Width - Self.X
             X: =requestFieldLbl_27.X
             Y: =requestFieldLbl_27.Y + requestFieldLbl_27.Height

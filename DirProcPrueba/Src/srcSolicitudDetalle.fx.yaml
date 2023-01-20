@@ -219,28 +219,28 @@ srcSolicitudDetalle As screen:
             </html>"
         Visible: =false
         Width: =0
-        ZIndex: =2
+        ZIndex: =1
 
     cmpBarraSuperior_7 As cmpBarraSuperior:
-        ZIndex: =3
+        ZIndex: =2
 
     lbl_TituloPrincipal_4 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
-        Text: ="CREACION DE SOLICITUD"
+        Text: ="DETALLE DE SOLICITUD"
         Width: =1335
         X: =13
         Y: =icn_Volver_NS_1.Y + (icn_Volver_NS_1.Height / 2) - (Self.Height / 2)
-        ZIndex: =4
+        ZIndex: =3
 
     icn_Volver_NS_1 As icon.BackArrow:
         Icon: =Icon.BackArrow
         OnSelect: =Back();
         X: =60
         Y: =100
-        ZIndex: =5
+        ZIndex: =4
 
     requestFieldGroup_1 As group:
         Height: =5
@@ -259,7 +259,7 @@ srcSolicitudDetalle As screen:
             Width: =30
             X: =icn_Volver_NS_1.X
             Y: =180
-            ZIndex: =6
+            ZIndex: =5
 
         requestFieldTxt_1 As text:
             Default: |
@@ -274,7 +274,7 @@ srcSolicitudDetalle As screen:
             Width: =120
             X: =90
             Y: =requestFieldLbl_1.Y
-            ZIndex: =7
+            ZIndex: =6
 
     requestFieldGroup_2 As group:
         Height: =5
@@ -293,7 +293,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =requestFieldTxt_1.X + requestFieldTxt_1.Width + 50
             Y: =requestFieldLbl_1.Y
-            ZIndex: =8
+            ZIndex: =7
 
         requestFieldTxt_2 As text:
             Default: =varSolicitudDetalleItemSel.NroSolicitud
@@ -306,7 +306,7 @@ srcSolicitudDetalle As screen:
             Width: =120
             X: =requestFieldLbl_2.X + requestFieldLbl_2.Width
             Y: =requestFieldLbl_2.Y
-            ZIndex: =9
+            ZIndex: =8
 
     requestFieldGroup_3 As group:
         Height: =5
@@ -325,7 +325,7 @@ srcSolicitudDetalle As screen:
             Width: =180
             X: =requestFieldLbl_1.X
             Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 40
-            ZIndex: =10
+            ZIndex: =9
 
         requestFieldTxt_3 As text:
             Default: =varSolicitudDetalleItemSel.NombreSolicitud
@@ -338,7 +338,7 @@ srcSolicitudDetalle As screen:
             Width: =500
             X: =requestFieldLbl_3.X + requestFieldLbl_3.Width
             Y: =requestFieldLbl_3.Y
-            ZIndex: =11
+            ZIndex: =10
 
     requestFieldGroup_4 As group:
         Height: =5
@@ -356,7 +356,7 @@ srcSolicitudDetalle As screen:
             Text: ="Tipo de Solicitud"
             X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 50
             Y: =requestFieldTxt_2.Y
-            ZIndex: =12
+            ZIndex: =11
 
         requestFieldTxt_4 As text:
             Default: =varSolicitudDetalleItemSel.TipoSolicitud
@@ -369,7 +369,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_4.X + requestFieldLbl_4.Width
             Y: =requestFieldLbl_4.Y
-            ZIndex: =13
+            ZIndex: =12
 
     requestFieldGroup_5 As group:
         Height: =5
@@ -388,7 +388,7 @@ srcSolicitudDetalle As screen:
             Width: =140
             X: =requestFieldTxt_4.X + requestFieldTxt_4.Width + 50
             Y: =requestFieldLbl_4.Y
-            ZIndex: =14
+            ZIndex: =13
 
         requestFieldTxt_5 As text:
             Default: =varSolicitudDetalleItemSel.TipoServicio
@@ -401,7 +401,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_5.X + requestFieldLbl_5.Width
             Y: =requestFieldLbl_5.Y
-            ZIndex: =15
+            ZIndex: =14
 
     requestFieldGroup_6 As group:
         Height: =5
@@ -420,7 +420,7 @@ srcSolicitudDetalle As screen:
             Width: =70
             X: =requestFieldTxt_3.X + requestFieldTxt_3.Width + 130
             Y: =requestFieldTxt_3.Y
-            ZIndex: =16
+            ZIndex: =15
 
         requestFieldTxt_6 As text:
             Default: =If(varSolicitudDetalleItemSel.EsActivo, "Activo", If(varSolicitudDetalleItemSel.EsEliminado, "Eliminado", "Inactivo"))
@@ -433,7 +433,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_6.X + requestFieldLbl_6.Width
             Y: =requestFieldLbl_6.Y
-            ZIndex: =17
+            ZIndex: =16
 
     requestFieldGroup_7 As group:
         Height: =5
@@ -452,7 +452,7 @@ srcSolicitudDetalle As screen:
             Width: =190
             X: =requestFieldLbl_3.X
             Y: =requestFieldLbl_3.Y + requestFieldLbl_3.Height + 40
-            ZIndex: =18
+            ZIndex: =17
 
         requestFieldTxt_7 As text:
             Default: =varSolicitudDetalleItemSel.AreaOrigen
@@ -465,7 +465,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_7.X + requestFieldLbl_7.Width
             Y: =requestFieldLbl_7.Y
-            ZIndex: =19
+            ZIndex: =18
 
     requestFieldGroup_8 As group:
         Height: =5
@@ -484,7 +484,7 @@ srcSolicitudDetalle As screen:
             Width: =140
             X: =requestFieldTxt_7.X + requestFieldTxt_7.Width + 50
             Y: =requestFieldLbl_7.Y
-            ZIndex: =20
+            ZIndex: =19
 
         requestFieldTxt_8 As text:
             Default: =varSolicitudDetalleItemSel.AreaActual
@@ -497,7 +497,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_8.X + requestFieldLbl_8.Width
             Y: =requestFieldLbl_8.Y
-            ZIndex: =21
+            ZIndex: =20
 
     requestFieldGroup_9 As group:
         Height: =5
@@ -516,7 +516,7 @@ srcSolicitudDetalle As screen:
             Width: =90
             X: =requestFieldLbl_1.X
             Y: =requestFieldLbl_7.Y + requestFieldLbl_7.Height + 40
-            ZIndex: =24
+            ZIndex: =23
 
         requestFieldTxt_9 As text:
             Default: =varSolicitudDetalleItemSel.ManagerDelArea
@@ -529,7 +529,7 @@ srcSolicitudDetalle As screen:
             Width: =300
             X: =requestFieldLbl_9.X + requestFieldLbl_9.Width
             Y: =requestFieldLbl_9.Y
-            ZIndex: =25
+            ZIndex: =24
 
     requestFieldGroup_10 As group:
         Height: =5
@@ -548,7 +548,7 @@ srcSolicitudDetalle As screen:
             Width: =60
             X: =requestFieldTxt_9.X + requestFieldTxt_9.Width + 50
             Y: =requestFieldLbl_9.Y
-            ZIndex: =26
+            ZIndex: =25
 
         requestFieldTxt_10 As text:
             Default: =varSolicitudDetalleItemSel.LiderDelArea
@@ -561,7 +561,7 @@ srcSolicitudDetalle As screen:
             Width: =300
             X: =requestFieldLbl_10.X + requestFieldLbl_10.Width
             Y: =requestFieldLbl_10.Y
-            ZIndex: =27
+            ZIndex: =26
 
     requestFieldGroup_11 As group:
         Height: =5
@@ -580,7 +580,7 @@ srcSolicitudDetalle As screen:
             Width: =80
             X: =requestFieldTxt_10.X + requestFieldTxt_10.Width + 60
             Y: =requestFieldLbl_9.Y
-            ZIndex: =28
+            ZIndex: =27
 
         requestFieldTxt_11 As text:
             Default: =varSolicitudDetalleItemSel.AnalistaDelArea
@@ -593,7 +593,7 @@ srcSolicitudDetalle As screen:
             Width: =300
             X: =requestFieldLbl_11.X + requestFieldLbl_11.Width
             Y: =requestFieldLbl_11.Y
-            ZIndex: =29
+            ZIndex: =28
 
     requestFieldGroup_12 As group:
         Height: =5
@@ -612,7 +612,7 @@ srcSolicitudDetalle As screen:
             Width: =110
             X: =requestFieldLbl_9.X
             Y: =requestFieldLbl_9.Y + requestFieldLbl_9.Height + 40
-            ZIndex: =30
+            ZIndex: =29
 
         requestFieldTxt_12 As text:
             Default: =varSolicitudDetalleItemSel.FechaAtencion
@@ -625,7 +625,7 @@ srcSolicitudDetalle As screen:
             Width: =180
             X: =requestFieldLbl_12.X + requestFieldLbl_12.Width
             Y: =requestFieldLbl_12.Y
-            ZIndex: =31
+            ZIndex: =30
 
     requestFieldGroup_13 As group:
         Height: =5
@@ -643,7 +643,7 @@ srcSolicitudDetalle As screen:
             Text: ="F. Expiración SLA"
             X: =requestFieldTxt_12.X + requestFieldTxt_12.Width + 50
             Y: =requestFieldLbl_12.Y
-            ZIndex: =32
+            ZIndex: =31
 
         requestFieldTxt_13 As text:
             Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
@@ -656,7 +656,17 @@ srcSolicitudDetalle As screen:
             Width: =180
             X: =requestFieldLbl_13.X + requestFieldLbl_13.Width
             Y: =requestFieldLbl_13.Y
-            ZIndex: =33
+            ZIndex: =32
+
+    btnVerDocAdjuntos As button:
+        Height: =42
+        OnSelect: =Navigate(scrVerDocAdjuntos)
+        Text: ="Ver Doc. Adjuntos"
+        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
+        Width: =212
+        X: =1098
+        Y: =612
+        ZIndex: =45
 
     actionButtonsGroup As group:
         Height: =5
@@ -666,6 +676,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =46
 
         descargarPDFBtn As button:
+            DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: |-
                 =UpdateContext({
                     isLoading: true,
@@ -687,41 +698,46 @@ srcSolicitudDetalle As screen:
             Text: ="Generar PDF"
             X: =40
             Y: =Parent.Height - Self.Height - 20
-            ZIndex: =39
+            ZIndex: =38
 
         trazabilidadBtn As button:
+            DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
             Size: =12
             Text: ="Trazabilidad"
             X: =descargarPDFBtn.X + descargarPDFBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =40
+            ZIndex: =39
 
         elevarBtn As button:
+            DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
             Size: =12
             Text: ="Elevar"
             X: =trazabilidadBtn.X + trazabilidadBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =41
+            ZIndex: =40
 
         asignarBtn As button:
+            DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
             Size: =12
             Text: ="Asignar"
             X: =elevarBtn.X + elevarBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =42
+            ZIndex: =41
 
         derivarBtn As button:
+            DisplayMode: =If(varDerivar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
             Size: =12
             Text: ="Derivar"
             X: =asignarBtn.X + asignarBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =43
+            ZIndex: =42
 
         archivarBtn As button:
+            DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: |-
                 =Reset(TextInput3);
                 UpdateContext({ showArchiveDialog: true })
@@ -729,9 +745,10 @@ srcSolicitudDetalle As screen:
             Text: ="Archivar"
             X: =derivarBtn.X + derivarBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =44
+            ZIndex: =43
 
         eliminarBtn As button:
+            DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: |-
                 =Reset(TextInput3_1);
                 UpdateContext({ showDeleteDialog: true })
@@ -739,7 +756,7 @@ srcSolicitudDetalle As screen:
             Text: ="Eliminar"
             X: =archivarBtn.X + archivarBtn.Width + 25
             Y: =descargarPDFBtn.Y
-            ZIndex: =45
+            ZIndex: =44
 
     descriptionGroup As group:
         Height: =5
@@ -760,7 +777,7 @@ srcSolicitudDetalle As screen:
             Width: =110
             X: =requestFieldLbl_12.X
             Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
-            ZIndex: =36
+            ZIndex: =35
 
         requestFieldScrollLbl As label:
             Align: =Align.Justify
@@ -775,7 +792,7 @@ srcSolicitudDetalle As screen:
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
             Y: =requestFieldLbl_14.Y
-            ZIndex: =37
+            ZIndex: =36
 
         requestFieldLbl_15 As label:
             Align: =Align.Justify
@@ -790,7 +807,7 @@ srcSolicitudDetalle As screen:
             Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
             X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
             Y: =requestFieldLbl_14.Y
-            ZIndex: =38
+            ZIndex: =37
 
     requestFieldGroup_38 As group:
         Height: =5
@@ -808,7 +825,7 @@ srcSolicitudDetalle As screen:
             Text: ="F. Expiración OLA"
             X: =requestFieldTxt_13.X + requestFieldTxt_13.Width + 50
             Y: =requestFieldLbl_12.Y
-            ZIndex: =34
+            ZIndex: =33
 
         requestFieldTxt_38 As text:
             Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
@@ -821,16 +838,13 @@ srcSolicitudDetalle As screen:
             Width: =180
             X: =requestFieldLbl_28.X + requestFieldLbl_28.Width
             Y: =requestFieldLbl_28.Y
-            ZIndex: =35
+            ZIndex: =34
 
-    btnVerDocAdjuntos As button:
-        Height: =42
-        OnSelect: =Navigate(scrVerDocAdjuntos)
-        Text: ="Ver Doc. Adjuntos"
-        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
-        Width: =212
-        X: =1098
-        Y: =612
+    Rectangle2_9 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
         ZIndex: =60
 
     requestFieldGroup_39 As group:
@@ -850,7 +864,7 @@ srcSolicitudDetalle As screen:
             Width: =140
             X: =requestFieldTxt_8.X + requestFieldTxt_8.Width + 50
             Y: =requestFieldLbl_7.Y
-            ZIndex: =22
+            ZIndex: =21
 
         requestFieldTxt_39 As text:
             Default: =varSolicitudDetalleItemSel.AreaDestino
@@ -863,7 +877,7 @@ srcSolicitudDetalle As screen:
             Width: =200
             X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
             Y: =requestFieldLbl_40.Y
-            ZIndex: =23
+            ZIndex: =22
 
     archiveDialogGroup As group:
         Height: =5
@@ -947,7 +961,8 @@ srcSolicitudDetalle As screen:
                 Patch(Solicitud, 
                 	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
                 	{ 
-                		EsActivo: false 
+                		EsActivo: false,
+                        FechaFinalSol: Today() 
                 	}
                 );
                 
@@ -1112,7 +1127,8 @@ srcSolicitudDetalle As screen:
                 	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
                 	{ 
                 		EsActivo: false,
-                		EsEliminado: true
+                		EsEliminado: true,
+                        FechaFinalSol: Today()
                 	}
                 );
                 
@@ -1193,11 +1209,4 @@ srcSolicitudDetalle As screen:
             X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) + 20
             Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
             ZIndex: =59
-
-    Rectangle2_9 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =67
 

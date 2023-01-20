@@ -194,7 +194,7 @@ scrDerivar As screen:
             			Defaults(SolicitudDetalle),
             			{
             				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-            				FechaAtencion: Today(),
+            				FechaCreacion: Today(),
             				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                             //FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA;
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -285,7 +285,8 @@ scrDerivar As screen:
                     IdPersonalDestino: 0,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2_2.Text)
+                    ObsSolDetDestino: TrimEnds(TextInput2_2.Text),
+                    FechaAtencion: Today()
                 }
             );
             
