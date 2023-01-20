@@ -108,7 +108,14 @@ scrVerDocAdjuntos As screen:
 
         Image3 As image:
             Height: =94
-            Image: =ThisItem.Value
+            Image: |-
+                =//ThisItem.Value
+                If(Subtitle3.Text in ["xlsx","xls"],Excel_Logo,
+                Subtitle3.Text in ["docx","doc"],Word_Logo,
+                Subtitle3.Text in ["pdf"],PdfLogo,
+                Subtitle3.Text in ["mp3","mp4","avi","wav"],Audio_Logo,
+                ThisItem.Value
+                )
             OnSelect: =Select(Parent)
             Width: =78
             X: =16
