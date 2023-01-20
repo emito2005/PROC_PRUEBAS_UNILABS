@@ -331,7 +331,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =6
 
         requestFieldTxt_1 As text:
-            Default: =Gallery1.Selected.ID
+            Default: =colSolDetSeleccionado.ID
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -925,6 +925,14 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
             Y: =requestFieldLbl_40.Y
             ZIndex: =23
+
+    btnVerDocAdjuntos As button:
+        Height: =42
+        Text: ="Ver Doc. Adjuntos"
+        Width: =212
+        X: =1064
+        Y: =623
+        ZIndex: =60
 
     archiveDialogGroup As group:
         Height: =5
