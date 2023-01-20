@@ -4,3 +4,27 @@ Screen2 As screen:
         X: =44
         Y: =40
 
+    Button2 As button:
+        OnSelect: |-
+            =ClearCollect(colEjemploPersonas, {
+                ID: 1,
+                Nombre: "Julio",
+                Genero: "Masculino"
+            }, {
+                ID: 2,
+                Nombre: "Teressa",
+                Genero: "Femenino"
+            }, {
+                ID: 3,
+                Nombre: "Bonifacio",
+                Genero: "Masculino"
+            });
+            
+            Exportacion_Excel.Run(JSON(colEjemploPersonas));
+            
+            Notify("Exportacion Excel realizada correctamente.", NotificationType.Success);
+        Text: ="Botón"
+        X: =746
+        Y: =616
+        ZIndex: =2
+

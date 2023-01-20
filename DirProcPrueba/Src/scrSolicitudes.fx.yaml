@@ -70,6 +70,31 @@ scrSolicitudes As screen:
         ZIndex: =7
 
     btnExportar_1 As button:
+        OnSelect: |-
+            =Exportacion_Excel.Run(
+                JSON(
+                    ShowColumns(
+                        Search(
+                            Filter(colSolicitudes,
+                                //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
+                                //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
+                                EsAtendido = false,
+                                EsEliminado = false,
+                                EsFinalizado = false,
+                                EsActivo = true // Va a cambiar cuando se anula la solicitud
+                            ),
+                            txtFilNomNroSol_1.Text,
+                            "NroSolicitud",
+                            "NombreSolicitud"
+                        ),
+                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
+                        "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
+                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                    )
+                )
+            );
+            
+            Notify("Exportacion realizada correctamente.", NotificationType.Success);
         Text: ="Exportar"
         Width: =100
         X: =1129
