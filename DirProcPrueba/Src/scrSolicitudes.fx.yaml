@@ -103,10 +103,11 @@ scrSolicitudes As screen:
                 "NombreSolicitud"
             )
         Layout: =Layout.Vertical
-        OnSelect: |-
+        OnSelect: |
             =Navigate(srcSolicitudDetalle, ScreenTransition.None);
-            ClearCollect(colSolDetDatosAdjuntos,Gallery1_1.Selected.'Datos adjuntos');
-            ClearCollect(colSolDetSeleccionado,Gallery1_1.Selected);
+            //ClearCollect(colSolicitudDetalleItemSel;Gallery1_1.Selected);;
+            //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1_1.Selected.'Datos adjuntos');;
+            Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_1.Selected.ID));
         TemplatePadding: =0
         TemplateSize: =27
         Width: =1166
