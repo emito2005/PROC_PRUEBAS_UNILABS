@@ -840,6 +840,13 @@ srcSolicitudDetalle As screen:
             Y: =requestFieldLbl_28.Y
             ZIndex: =34
 
+    Rectangle2_9 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =60
+
     requestFieldGroup_39 As group:
         Height: =5
         Width: =5
@@ -871,13 +878,6 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
             Y: =requestFieldLbl_40.Y
             ZIndex: =22
-
-    Rectangle2_9 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =60
 
     archiveDialogGroup As group:
         Height: =5
