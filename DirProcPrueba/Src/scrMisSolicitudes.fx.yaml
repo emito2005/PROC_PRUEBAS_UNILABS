@@ -76,30 +76,35 @@ scrMisSolicitudes As screen:
 
     btnExportar As button:
         OnSelect: |-
-            =Exportacion_Excel.Run(
-                JSON(
-                    ShowColumns(
-                        Search(
-                            Filter(colSolicitudes,
-                                IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
-                                ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
-                                EsAtendido = false,
-                                EsEliminado = false,
-                                EsFinalizado = false,
-                                EsActivo = true // Va a cambiar cuando se anula la solicitud
-                            ),
-                            txtFilNomNroSol.Text,
-                            "NroSolicitud",
-                            "NombreSolicitud"
-                        ),
-                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
-                        "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
-                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
-                    )
-                )
-            );
+            =UpdateContext({
+                excelPath: 
+                    Exportacion_Excel.Run(
+                        JSON(
+                            ShowColumns(
+                                Search(
+                                    Filter(colSolicitudes,
+                                        IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
+                                        ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
+                                        EsAtendido = false,
+                                        EsEliminado = false,
+                                        EsFinalizado = false,
+                                        EsActivo = true // Va a cambiar cuando se anula la solicitud
+                                    ),
+                                    txtFilNomNroSol.Text,
+                                    "NroSolicitud",
+                                    "NombreSolicitud"
+                                ),
+                                "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
+                                "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
+                                "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                            )
+                        )
+                    ).excelpath
+            });
             
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
+            
+            //Launch(excelPath);;
         Text: ="Exportar"
         Width: =100
         X: =1129
@@ -134,7 +139,7 @@ scrMisSolicitudes As screen:
             )
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Navigate(srcSolicitudDetalle, ScreenTransition.None);
+            =Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: true });
             //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1.Selected.ID));
