@@ -106,6 +106,7 @@ scrSolicitudes As screen:
         OnSelect: |-
             =Navigate(srcSolicitudDetalle, ScreenTransition.None);
             ClearCollect(colSolDetDatosAdjuntos,Gallery1_1.Selected.'Datos adjuntos');
+            ClearCollect(colSolDetSeleccionado,Gallery1_1.Selected);
         TemplatePadding: =0
         TemplateSize: =27
         Width: =1166
