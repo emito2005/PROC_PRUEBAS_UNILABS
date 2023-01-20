@@ -45,11 +45,11 @@ scrSolicitudes As screen:
     lbl_TituloPrincipal_3 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =43
+        Height: =36
         Size: =24
-        Text: ="MIS SOLICITUDES"
-        Width: =1072
-        X: =278
+        Text: ="SOLICITUDES"
+        Width: =1160
+        X: =190
         Y: =100
         ZIndex: =5
 
@@ -91,8 +91,8 @@ scrSolicitudes As screen:
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
             Search(
                 Filter(colSolicitudes,
-                    --IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
-                    --ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
+                    //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
+                    //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
                     EsAtendido = false,
                     EsEliminado = false,
                     EsFinalizado = false,
