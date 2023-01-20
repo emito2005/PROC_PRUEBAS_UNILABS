@@ -823,6 +823,16 @@ srcSolicitudDetalle As screen:
             Y: =requestFieldLbl_28.Y
             ZIndex: =35
 
+    btnVerDocAdjuntos As button:
+        Height: =42
+        OnSelect: =Navigate(scrVerDocAdjuntos)
+        Text: ="Ver Doc. Adjuntos"
+        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
+        Width: =212
+        X: =1064
+        Y: =623
+        ZIndex: =60
+
     requestFieldGroup_39 As group:
         Height: =5
         Width: =5
@@ -854,16 +864,6 @@ srcSolicitudDetalle As screen:
             X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
             Y: =requestFieldLbl_40.Y
             ZIndex: =23
-
-    btnVerDocAdjuntos As button:
-        Height: =42
-        OnSelect: =Navigate(scrVerDocAdjuntos)
-        Text: ="Ver Doc. Adjuntos"
-        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
-        Width: =212
-        X: =1064
-        Y: =623
-        ZIndex: =60
 
     archiveDialogGroup As group:
         Height: =5
