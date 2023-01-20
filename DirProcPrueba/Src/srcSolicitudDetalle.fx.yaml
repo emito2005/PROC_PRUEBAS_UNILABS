@@ -10,75 +10,6 @@ srcSolicitudDetalle As screen:
         If(IsBlank(MyAreaManagerLiderID) && varMyUser.IdPerfil = 3,
         	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
         );
-        
-        // Refresh Attachments
-        UpdateContext({ hasAttachments: LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID).'Tiene datos adjuntos' });
-        ResetForm(RequestAttachmentsForm_1)
-
-    RequestAttachmentsForm_1 As form:
-        DataSource: =SolicitudDetalle
-        Height: =160
-        Item: =LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID)
-        NumberOfColumns: =1
-        OnFailure: |-
-            =ResetForm(RequestAttachmentsForm_1);
-            
-            Notify("Ocurrió un error al eliminar el reporte.", NotificationType.Error);
-            
-            UpdateContext({ 
-                hasAttachments: LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID).'Tiene datos adjuntos',
-                isLoading: false 
-            });
-        OnSuccess: |-
-            =ResetForm(RequestAttachmentsForm_1);
-            
-            Notify("Reporte eliminado correctamente.", NotificationType.Success);
-            
-            UpdateContext({ 
-                hasAttachments: LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID).'Tiene datos adjuntos',
-                isLoading: false 
-            });
-        Visible: =hasAttachments //LookUp(SolicitudDetalle; ID = Gallery1.Selected.ID).'Tiene datos adjuntos' //CountRows(DataCardValue44_1.Attachments) > 0
-        Width: =300
-        X: =descargarPDFBtn.X
-        Y: =descargarPDFBtn.Y - 60
-        ZIndex: =1
-
-        "'Datos adjuntos_DataCard3_1' As typedDataCard.attachmentsEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="{Attachments}"
-            Default: =ThisItem.'Datos adjuntos'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =Parent.Height
-            Required: =false
-            Update: =DataCardValue44_1.Attachments
-            Width: =Parent.Width
-            X: =0
-            Y: =0
-            ZIndex: =41
-
-            DataCardValue44_1 As attachments:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                BorderThickness: =0
-                DisplayMode: =Parent.DisplayMode
-                DropTargetBorderThickness: =0
-                FocusedBorderThickness: =0
-                Height: =Parent.Height
-                IsInDataCard: =true
-                Items: =Parent.Default
-                MaxAttachments: =1
-                MaxAttachmentsText: =""
-                OnRemoveFile: |-
-                    =UpdateContext({ removeAttachment: true })
-                PaddingBottom: =5
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PaddingRight: =5
-                PaddingTop: =5
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width
-                ZIndex: =2
 
     HtmlText1 As htmlViewer:
         Height: =0
@@ -735,7 +666,6 @@ srcSolicitudDetalle As screen:
         ZIndex: =46
 
         descargarPDFBtn As button:
-            DisplayMode: =If(RequestAttachmentsForm_1.Visible, DisplayMode.Disabled, DisplayMode.Edit)
             OnSelect: |-
                 =UpdateContext({
                     isLoading: true,
@@ -747,14 +677,11 @@ srcSolicitudDetalle As screen:
                     ).callback
                 });
                 If(callback = "true",
-                    Refresh(SolicitudDetalle);
                     Notify("Exportacion realizada correctamente.", NotificationType.Success);
                     UpdateContext({ 
                         isLoading: false,
-                        callback: "false",
-                        hasAttachments: LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID).'Tiene datos adjuntos'
-                    });
-                    ResetForm(RequestAttachmentsForm_1)
+                        callback: "false"
+                    })
                 )
             Size: =12
             Text: ="Generar PDF"
@@ -853,7 +780,7 @@ srcSolicitudDetalle As screen:
         requestFieldLbl_15 As label:
             Align: =Align.Justify
             Color: =RGBA(0, 18, 107, 1)
-            Height: =Max(requestFieldScrollLbl.Height, If(RequestAttachmentsForm_1.Visible, 50, 85))
+            Height: =Max(requestFieldScrollLbl.Height, 85)
             Overflow: =Overflow.Scroll
             PaddingBottom: =0
             PaddingLeft: =0
@@ -1273,73 +1200,4 @@ srcSolicitudDetalle As screen:
         Visible: =isLoading
         Width: =Parent.Width
         ZIndex: =67
-
-    deleteDialogGroup_1 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =68
-
-        confirmDialogRect_4 As rectangle:
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(0, 0, 0, 0.5)
-            FocusedBorderThickness: =0
-            Height: =Parent.Height
-            Visible: =removeAttachment
-            Width: =Parent.Width
-            ZIndex: =60
-
-        confirmDialogFrame_4 As button:
-            BorderThickness: =0
-            DisabledFill: =Color.White
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =130
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Text: =""
-            Visible: =removeAttachment
-            Width: =450
-            X: =Parent.Width / 2 - Self.Width / 2
-            Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =61
-
-        confirmDialogTitle_4 As label:
-            Align: =Align.Center
-            FontWeight: =FontWeight.Semibold
-            Text: ="¿ESTA SEGURO DE ELIMINAR EL REPORTE?"
-            Visible: =removeAttachment
-            Width: =confirmDialogFrame_4.Width
-            X: =confirmDialogFrame_4.X
-            Y: =confirmDialogFrame_4.Y + 15
-            ZIndex: =62
-
-        aceptarBtn_2 As button:
-            OnSelect: |-
-                =SubmitForm(RequestAttachmentsForm_1);
-                
-                UpdateContext({ 
-                    removeAttachment: false, 
-                    isLoading: true 
-                });
-            Size: =12
-            Text: ="Aceptar"
-            Visible: =removeAttachment
-            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
-            ZIndex: =65
-
-        cancelarBtn_2 As button:
-            OnSelect: |-
-                =ResetForm(RequestAttachmentsForm_1);
-                UpdateContext({ removeAttachment: false })
-            Size: =12
-            Text: ="Cancelar"
-            Visible: =removeAttachment
-            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) + 20
-            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
-            ZIndex: =66
 
