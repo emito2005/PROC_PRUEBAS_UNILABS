@@ -79,7 +79,7 @@ scrNuevaSolicitud As screen:
             		Defaults(SolicitudDetalle),
             		{
             			IdSolicitud: varIdSolNueva,
-            			FechaAtencion: Today(),
+            			FechaCreacion: Today(),
             			FechaExpiraSLA: DateAdd(Today(), varMyUserArea.SLA),
             			FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
             			EsAtendido: false,
