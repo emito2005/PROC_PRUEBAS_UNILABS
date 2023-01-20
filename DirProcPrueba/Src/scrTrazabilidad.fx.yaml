@@ -30,7 +30,7 @@ scrTrazabilidad As screen:
         Size: =10
         Text: ="ID"
         Width: =60
-        X: =10
+        X: =24
         Y: =icn_Volver_NS_2.Y + icn_Volver_NS_2.Height + 15
         ZIndex: =4
 
@@ -44,7 +44,7 @@ scrTrazabilidad As screen:
         Text: ="AREA ORIGEN"
         Width: |
             =80
-        X: =lblHeader_1.X + lblHeader_1.Width
+        X: =84
         Y: =lblHeader_1.Y
         ZIndex: =5
 
@@ -57,7 +57,7 @@ scrTrazabilidad As screen:
         Size: =10
         Text: ="ESTADO ORIGEN"
         Width: =110
-        X: =lblHeader_2.X + lblHeader_2.Width
+        X: =164
         Y: =lblHeader_1.Y
         ZIndex: =6
 
@@ -70,7 +70,7 @@ scrTrazabilidad As screen:
         Size: =10
         Text: ="ADMIN. ORIGEN"
         Width: =110
-        X: =lblHeader_3.X + lblHeader_3.Width
+        X: =274
         Y: =lblHeader_1.Y
         ZIndex: =7
 
@@ -83,7 +83,7 @@ scrTrazabilidad As screen:
         Size: =10
         Text: ="ANALISTA ORIGEN"
         Width: =110
-        X: =lblHeader_4.X + lblHeader_4.Width
+        X: =384
         Y: =lblHeader_1.Y
         ZIndex: =8
 
@@ -95,7 +95,7 @@ scrTrazabilidad As screen:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="COMENTARIO"
-        Width: =400
+        Width: =350
         X: =lblHeader_5.X + lblHeader_5.Width
         Y: =lblHeader_1.Y
         ZIndex: =9
@@ -177,7 +177,7 @@ scrTrazabilidad As screen:
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
         TemplatePadding: =0
         TemplateSize: =27
-        Width: =1287
+        Width: =1316
         X: =24
         Y: =236
         ZIndex: =14
@@ -222,7 +222,7 @@ scrTrazabilidad As screen:
             Size: =11
             Text: =ThisItem.AreaAbrevOrigen
             VerticalAlign: =VerticalAlign.Top
-            Width: =90
+            Width: =80
             X: =152
             Y: =4
             ZIndex: =6
@@ -265,10 +265,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.AreaOrigen
+            Text: =ThisItem.PersonalOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =107
-            X: =515
+            X: =361
             Y: =4
             ZIndex: =10
 
@@ -292,7 +292,7 @@ scrTrazabilidad As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1145
+            X: =1257
             Y: =2
             ZIndex: =12
 
@@ -304,10 +304,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.TipoServicio
+            Text: =ThisItem.PerfilOrigen
             VerticalAlign: =VerticalAlign.Top
-            Width: =90
-            X: =411
+            Width: =80
+            X: =257
             Y: =4
             ZIndex: =13
 
