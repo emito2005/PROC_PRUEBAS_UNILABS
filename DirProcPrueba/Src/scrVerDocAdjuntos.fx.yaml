@@ -2,69 +2,6 @@ scrVerDocAdjuntos As screen:
 
     cmpBarraSuperior_12 As cmpBarraSuperior:
 
-    "Gallery3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
-        Height: =321
-        Items: =SolicitudDetalle
-        Layout: =Layout.Vertical
-        TemplatePadding: =0
-        TemplateSize: =27
-        Width: =118
-        X: =13
-        Y: =430
-        ZIndex: =1
-
-        Title3 As label:
-            Height: =22
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: =ThisItem.IdSolicitud
-            VerticalAlign: =VerticalAlign.Top
-            Width: =31
-            X: =11
-            Y: =3
-            ZIndex: =1
-
-        NextArrow3 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Height: =27
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =2
-            PaddingLeft: =2
-            PaddingRight: =2
-            PaddingTop: =2
-            TabIndex: =0
-            Tooltip: ="Ver los detalles del elemento"
-            Width: =29
-            X: =82
-            ZIndex: =2
-
-        Separator3 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =3
-
-        Title3_1 As label:
-            Height: =25
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: =ThisItem.ID
-            VerticalAlign: =VerticalAlign.Top
-            Width: =30
-            X: =39
-            Y: =2
-            ZIndex: =4
-
     lbl_TituloPrincipal_9 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
@@ -99,7 +36,9 @@ scrVerDocAdjuntos As screen:
 
     "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =436
-        Items: =AddColumns(Gallery3.Selected.'Datos adjuntos',"Extension",Last(Split(DisplayName,".")).Result)
+        Items: |
+            =//AddColumns(Gallery3.Selected.'Datos adjuntos';"Extension";Last(Split(DisplayName;".")).Result)
+            AddColumns(colSolDetDatosAdjuntos,"Extension",Last(Split(DisplayName,".")).Result)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
         TemplatePadding: =0
@@ -144,14 +83,16 @@ scrVerDocAdjuntos As screen:
         NextArrow4 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
+            Icon: =Icon.OpenInNewWindow
+            OnSelect: |-
+                =//Select(Parent)
+                Launch(Gallery4.Selected.AbsoluteUri)
             PaddingBottom: =10
             PaddingLeft: =10
             PaddingRight: =10
             PaddingTop: =10
             TabIndex: =0
-            Tooltip: ="Ver los detalles del elemento"
+            Tooltip: ="Abrir Documento"
             Width: =60
             X: =Parent.TemplateWidth - Self.Width - 5
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
@@ -189,13 +130,4 @@ scrVerDocAdjuntos As screen:
         X: =572
         Y: =164
         ZIndex: =12
-
-    Button8 As button:
-        Height: =42
-        OnSelect: =Launch(Gallery4.Selected.AbsoluteUri)
-        Text: ="Abrir Documento"
-        Width: =201
-        X: =212
-        Y: =672
-        ZIndex: =13
 

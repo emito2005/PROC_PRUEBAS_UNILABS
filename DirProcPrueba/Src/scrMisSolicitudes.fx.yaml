@@ -110,7 +110,7 @@ scrMisSolicitudes As screen:
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(srcSolicitudDetalle, ScreenTransition.None);
-            Set(varSolicitudDetalleItemSel,Gallery1.Selected);
+            ClearCollect(colSolicitudDetalleItemSel,Gallery1.Selected);
         TemplatePadding: =0
         TemplateSize: =27
         Width: =1166
