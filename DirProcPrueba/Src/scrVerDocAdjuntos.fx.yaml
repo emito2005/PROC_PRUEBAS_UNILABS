@@ -193,7 +193,7 @@ scrVerDocAdjuntos As screen:
     Button8 As button:
         OnSelect: =Launch(Gallery4.Selected.AbsoluteUri)
         Text: ="Botón"
-        X: =224
-        Y: =500
+        X: =212
+        Y: =672
         ZIndex: =13
 
