@@ -272,24 +272,24 @@ scrElevar As screen:
             		Patch(SolicitudDetalle,
             			Defaults(SolicitudDetalle),
             			{
-            				IdSolicitud: Gallery1.Selected.IdSolicitud,
+            				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
             				FechaAtencion: Today(),
-            				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
-                            FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,
+            				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                            FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
             				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
             				EsAtendido: false,
             				IdAccionOrigen: 3, // Elevar
-            				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+            				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
             				IdAreaOrigen: varMyUser.IdArea,
             				IdPerfilOrigen: varMyUser.IdPerfil,
             				IdPersonalOrigen: varMyUser.ID,
             				IdAccionActual: 0, // Lo actualizará el siguiente usuario
-            				IdEtapaActual: Gallery1.Selected.IdEtapaActual,
-            				IdAreaActual: Gallery1.Selected.IdAreaActual,
+            				IdEtapaActual: varSolicitudDetalleItemSel.IdEtapaActual,
+            				IdAreaActual: varSolicitudDetalleItemSel.IdAreaActual,
                             // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
-            				IdPerfilActual: LookUp(Personal, ID = Gallery1.Selected.IdPersonalOrigen).IdPerfil,
-            				IdPersonalActual: Gallery1.Selected.IdPersonalOrigen,
+            				IdPerfilActual: LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).IdPerfil,
+            				IdPersonalActual: varSolicitudDetalleItemSel.IdPersonalOrigen,
                             IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
             				IdEtapaDestino: 0, // Etapa Destino Real
             				IdAreaDestino: 0, // Area Destino Real
@@ -317,13 +317,13 @@ scrElevar As screen:
             
             // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
             Patch(SolicitudDetalle, 
-                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
                 {
                     IdAccionActual: 3, // Elevar
                     IdPerfilActual: varMyUser.IdPerfil,
                     IdPersonalActual: varMyUser.ID,
-                    IdAreaDestino: Gallery1.Selected.IdAreaActual,
-                    IdEtapaDestino: Gallery1.Selected.IdEtapaActual,
+                    IdAreaDestino: varSolicitudDetalleItemSel.IdAreaActual,
+                    IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaActual,
                     IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
                     IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
@@ -507,7 +507,7 @@ scrElevar As screen:
                     IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
                     LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
                 )*/
-                LookUp(Personal, ID = Gallery1.Selected.IdPersonalOrigen).Nombre
+                LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Nombre
             Width: =requestFieldLbl_17.X + requestFieldLbl_17.Width - Self.X
             X: =requestFieldLbl_26.X + requestFieldLbl_26.Width + 5
             Y: =requestFieldLbl_26.Y

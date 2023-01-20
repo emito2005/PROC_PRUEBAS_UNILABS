@@ -193,15 +193,15 @@ scrDerivar As screen:
             		Patch(SolicitudDetalle,
             			Defaults(SolicitudDetalle),
             			{
-            				IdSolicitud: Gallery1.Selected.IdSolicitud,
+            				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
             				FechaAtencion: Today(),
-            				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
-                            //FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA;
+            				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                            //FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA;
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
             				FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
             				EsAtendido: false,
             				IdAccionOrigen: 4, // Derivar
-            				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+            				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
             				IdAreaOrigen: varMyUser.IdArea,
             				IdPerfilOrigen: varMyUser.IdPerfil,
             				IdPersonalOrigen: varMyUser.ID,
@@ -274,7 +274,7 @@ scrDerivar As screen:
             
             // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
             Patch(SolicitudDetalle, 
-                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
                 {
                     IdAccionActual: 4, // Derivar
                     IdPerfilActual: varMyUser.IdPerfil,

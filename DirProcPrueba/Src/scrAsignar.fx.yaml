@@ -194,21 +194,21 @@ scrAsignar As screen:
             		Patch(SolicitudDetalle,
             			Defaults(SolicitudDetalle),
             			{
-            				IdSolicitud: Gallery1.Selected.IdSolicitud,
+            				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
             				FechaAtencion: Today(),
-            				FechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,
-                            FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,
+            				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                            FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
             				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
             				EsAtendido: false,
             				IdAccionOrigen: 2, // Asignar
-            				IdEtapaOrigen: Gallery1.Selected.IdEtapaActual,
+            				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
             				IdAreaOrigen: varMyUser.IdArea,
             				IdPerfilOrigen: varMyUser.IdPerfil,
             				IdPersonalOrigen: varMyUser.ID,
             				IdAccionActual: 0, // Lo actualizará el siguiente usuario
-            				IdEtapaActual: Gallery1.Selected.IdEtapaActual,
-            				IdAreaActual: Gallery1.Selected.IdAreaActual,
+            				IdEtapaActual: varSolicitudDetalleItemSel.IdEtapaActual,
+            				IdAreaActual: varSolicitudDetalleItemSel.IdAreaActual,
                             // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
             				IdPerfilActual: LookUp(Personal, Email = UserSelected.Email).IdPerfil,
             				IdPersonalActual: LookUp(Personal, Email = UserSelected.Email).ID,
@@ -239,13 +239,13 @@ scrAsignar As screen:
             
             // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
             Patch(SolicitudDetalle, 
-                LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),
+                LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
                 {
                     IdAccionActual: 2, // Asignar
                     IdPerfilActual: varMyUser.IdPerfil,
                     IdPersonalActual: varMyUser.ID,
-                    IdAreaDestino: Gallery1.Selected.IdAreaActual,
-                    IdEtapaDestino: Gallery1.Selected.IdEtapaActual,
+                    IdAreaDestino: varSolicitudDetalleItemSel.IdAreaActual,
+                    IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaActual,
                     IdPerfilDestino: LookUp(Personal, Email = UserSelected.Email).IdPerfil,
                     IdPersonalDestino: LookUp(Personal, Email = UserSelected.Email).ID,
                     EsAtendido: true, // Actualizar estado del registro seleccionado

@@ -69,7 +69,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "UpdateContext({ isLoading: true });\r\n\r\n// Crear Solicitud Detalle inicial\r\nUpdateContext({\r\n\tlastSolicitudDetalle:\r\n\t\tPatch(SolicitudDetalle,\r\n\t\t\tDefaults(SolicitudDetalle),\r\n\t\t\t{\r\n\t\t\t\tIdSolicitud: Gallery1.Selected.IdSolicitud,\r\n\t\t\t\tFechaAtencion: Today(),\r\n\t\t\t\tFechaExpiraSLA: Gallery1.Selected.FechaExpiraSLA,\r\n                FechaExpiraOLA: Gallery1.Selected.FechaExpiraOLA,\r\n                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto\r\n\t\t\t\t//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);\r\n\t\t\t\tEsAtendido: false,\r\n\t\t\t\tIdAccionOrigen: 2, // Asignar\r\n\t\t\t\tIdEtapaOrigen: Gallery1.Selected.IdEtapaActual,\r\n\t\t\t\tIdAreaOrigen: varMyUser.IdArea,\r\n\t\t\t\tIdPerfilOrigen: varMyUser.IdPerfil,\r\n\t\t\t\tIdPersonalOrigen: varMyUser.ID,\r\n\t\t\t\tIdAccionActual: 0, // Lo actualizará el siguiente usuario\r\n\t\t\t\tIdEtapaActual: Gallery1.Selected.IdEtapaActual,\r\n\t\t\t\tIdAreaActual: Gallery1.Selected.IdAreaActual,\r\n                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos\r\n\t\t\t\tIdPerfilActual: LookUp(Personal, Email = UserSelected.UserPrincipalName).IdPerfil,\r\n\t\t\t\tIdPersonalActual: LookUp(Personal, Email = UserSelected.UserPrincipalName).ID,\r\n                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta\r\n\t\t\t\tIdEtapaDestino: 0, // Etapa Destino Real\r\n\t\t\t\tIdAreaDestino: 0, // Area Destino Real\r\n\t\t\t\tIdPerfilDestino: 0, // Perfil Destino Real\r\n\t\t\t\tIdPersonalDestino: 0, // Personal Destino \r\n                IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,\r\n                IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino\r\n\t\t\t}\r\n\t\t)\r\n});\r\n\r\n// Crear Solicitud Detalle Destino del siguiente usuario\r\nPatch(SolicitudDetalleDestino,\r\n\tDefaults(SolicitudDetalleDestino),\r\n\t{\r\n\t\tIdSolicitud: lastSolicitudDetalle.IdSolicitud,\r\n\t\tIdSolicitudDetalle: lastSolicitudDetalle.ID,\r\n\t\tIdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,\r\n\t\tIdAreaDestino: lastSolicitudDetalle.IdAreaActual,\r\n\t\tIdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,\r\n\t\tIdPersonalDestino: lastSolicitudDetalle.IdPersonalActual\r\n\t}\r\n);\r\n\r\n// Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion\r\nPatch(SolicitudDetalle, \r\n    LookUp(SolicitudDetalle, ID = Gallery1.Selected.ID),\r\n    {\r\n        IdAccionActual: 2, // Asignar\r\n        IdPerfilActual: varMyUser.IdPerfil,\r\n        IdPersonalActual: varMyUser.ID,\r\n        IdAreaDestino: Gallery1.Selected.IdAreaActual,\r\n        IdEtapaDestino: Gallery1.Selected.IdEtapaActual,\r\n        IdPerfilDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).IdPerfil,\r\n        IdPersonalDestino: LookUp(Personal, Email = UserSelected.UserPrincipalName).ID,\r\n        EsAtendido: true, // Actualizar estado del registro seleccionado\r\n        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID // Guardar ID de la solicitud detalle generada\r\n    }\r\n);\r\n\r\nNotify(\"Solicitud asignada correctamente.\", NotificationType.Success);\r\n\r\nUpdateContext({ isLoading: false });\r\n\r\nNavigate(scrMisSolicitudes, Fade);",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -85,7 +85,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button5_1",
-      "ParentIndex": 1,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -361,7 +361,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ClearSelectedUserIcon",
-      "ParentIndex": 34,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -832,7 +832,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "icn_Volver_NS_4",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1025,7 +1025,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon6",
-      "ParentIndex": 32,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1276,7 +1276,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label5",
-      "ParentIndex": 30,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1614,7 +1614,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label5_1",
-      "ParentIndex": 33,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1952,7 +1952,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label5_2",
-      "ParentIndex": 35,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2247,7 +2247,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TituloPrincipal_7",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2521,7 +2521,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle2",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3262,7 +3262,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_29",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3580,7 +3580,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_30",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3898,7 +3898,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_31",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4209,7 +4209,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_32",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4527,7 +4527,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_33",
-      "ParentIndex": 13,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4845,7 +4845,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_34",
-      "ParentIndex": 15,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5163,7 +5163,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_35",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5481,7 +5481,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_36",
-      "ParentIndex": 19,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5799,7 +5799,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_37",
-      "ParentIndex": 21,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6124,7 +6124,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_38",
-      "ParentIndex": 22,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6442,7 +6442,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_39",
-      "ParentIndex": 25,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6760,7 +6760,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_41",
-      "ParentIndex": 23,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7099,7 +7099,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldLbl_57",
-      "ParentIndex": 29,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7454,7 +7454,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldScrollLbl_2",
-      "ParentIndex": 28,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7789,7 +7789,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_22",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8114,7 +8114,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_23",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8439,7 +8439,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_24",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8764,7 +8764,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_25",
-      "ParentIndex": 12,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9089,7 +9089,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_26",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9414,7 +9414,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_27",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9739,7 +9739,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_28",
-      "ParentIndex": 18,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10064,7 +10064,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "requestFieldTxt_29",
-      "ParentIndex": 20,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10423,7 +10423,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "SearchIcon1_5",
-      "ParentIndex": 26,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11000,7 +11000,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput2",
-      "ParentIndex": 27,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11611,7 +11611,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txtBuscarManager_2",
-      "ParentIndex": 24,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11955,7 +11955,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "UserBrowseGallery1_5",
-      "ParentIndex": 31,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
