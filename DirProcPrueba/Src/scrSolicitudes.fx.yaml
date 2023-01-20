@@ -1,15 +1,5 @@
 scrSolicitudes As screen:
 
-    Rectangle4_2 As rectangle:
-        BorderColor: =RGBA(255, 191, 0, 1)
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =660
-        Width: =1170
-        X: =188
-        Y: =101
-        ZIndex: =1
-
     cmpBarraSuperior_6 As cmpBarraSuperior:
         ZIndex: =2
 
@@ -42,259 +32,444 @@ scrSolicitudes As screen:
             Width: =257
             ZIndex: =1
 
+    Rectangle4_2 As rectangle:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =664
+        Width: =1171
+        X: =181
+        Y: =93
+        ZIndex: =4
+
     lbl_TituloPrincipal_3 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Height: =43
         Size: =24
-        Text: ="SOLICITUDES"
+        Text: ="MIS SOLICITUDES"
         Width: =1072
-        X: =285
+        X: =278
         Y: =100
-        ZIndex: =4
-
-    "HeaderGallery_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Fill: =RGBA(221, 79, 14, 1)
-        Height: =50
-        Items: =colHeader
-        Layout: =Layout.Vertical
-        ShowScrollbar: =false
-        TemplatePadding: =0
-        TemplateSize: =50
-        Width: =1175
-        X: =186
-        Y: =235
         ZIndex: =5
 
-        lbl_Tit_Nombre_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo_2.Height
-            Size: =10
-            Text: ="TIPO SOLIC."
-            Width: =80
-            X: =241
-            Y: =3
-            ZIndex: =5
-
-        lbl_Tit_Codigo_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: |
-                ="NRO TICKET"
-            Width: |
-                =80
-            X: =2
-            Y: =3
-            ZIndex: =6
-
-        lbl_Tit_NomAbrev_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo_2.Height
-            Size: =10
-            Text: ="NOMBRE SOL."
-            X: =85
-            Y: =3
-            ZIndex: =7
-
-        lbl_Tit_SLA_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo_2.Height
-            Size: =10
-            Text: ="TIPO SERV."
-            Width: =80
-            X: =lbl_Tit_Nombre_2.X+lbl_Tit_Nombre_2.Width
-            Y: =3
-            ZIndex: =8
-
-        lbl_Tit_OLA_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo_2.Height
-            Size: =10
-            Text: ="ESTADO"
-            Width: =80
-            X: =lbl_Tit_SLA_2.X+lbl_Tit_SLA_2.Width
-            Y: =3
-            ZIndex: =9
-
-        lbl_Tit_Accion_8 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. PROCEDENCIA"
-            Width: =110
-            X: =483
-            Y: =3
-            ZIndex: =10
-
-        lbl_Tit_Accion_9 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. ASIGNADO"
-            Width: =110
-            X: =598
-            Y: =3
-            ZIndex: =11
-
-        lbl_Tit_Accion_10 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="MANAGER"
-            Width: =100
-            X: =713
-            Y: =3
-            ZIndex: =12
-
-        lbl_Tit_Accion_11 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="LIDER"
-            Width: =100
-            X: =817
-            Y: =3
-            ZIndex: =13
-
-        lbl_Tit_Accion_12 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="ANALISTA"
-            Width: =100
-            X: =917
-            Y: =3
-            ZIndex: =14
-
-        lbl_Tit_Accion_13 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA CREAC."
-            Width: =70
-            X: =1017
-            Y: =3
-            ZIndex: =15
-
-        lbl_Tit_Accion_14 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA EXPIRA"
-            Width: =70
-            X: =1095
-            Y: =3
-            ZIndex: =16
-
-    Label3_4 As label:
+    Label3_1 As label:
         Height: =33
         Size: =12
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
-        X: =193
-        Y: =143
+        X: =186
+        Y: =136
         ZIndex: =6
 
-    Label3_5 As label:
-        Height: =33
-        Size: =12
-        Text: ="Estado"
-        Width: =100
-        X: =403
-        Y: =143
+    txtFilNomNroSol_1 As text:
+        Default: =
+        Width: =812
+        X: =186
+        Y: =169
         ZIndex: =7
 
-    Label3_6 As label:
-        Height: =33
-        Size: =12
-        Text: ="Dpto. Procedencia"
-        X: =587
-        Y: =143
-        ZIndex: =8
-
-    Label3_7 As label:
-        Height: =33
-        Size: =12
-        Text: ="Solicitante"
-        X: =804
-        Y: =143
-        ZIndex: =9
-
-    TextInput1_1 As text:
-        Default: ="Entrada de texto"
-        Width: =196
-        X: =193
-        Y: =176
-        ZIndex: =10
-
-    Dropdown2_3 As dropdown:
-        Items: =["Activo","Cancelado","Eliminado"]
-        Width: =168
-        X: =403
-        Y: =176
-        ZIndex: =11
-
-    Dropdown2_4 As dropdown:
-        Items: =["Sistemas","Contabilidad","Comercial","Planing y Control","Logistica","Operaciones"]
-        Width: =204
-        X: =589
-        Y: =176
-        ZIndex: =12
-
-    Dropdown2_5 As dropdown:
-        Items: =[""]
-        Width: =204
-        X: =809
-        Y: =176
-        ZIndex: =13
-
-    Button2 As button:
-        Text: ="Filtrar"
-        Width: =100
-        X: =1028
-        Y: =176
-        ZIndex: =14
-
-    Button2_5 As button:
+    btnExportar_1 As button:
         Text: ="Exportar"
         Width: =100
-        X: =1139
-        Y: =176
-        ZIndex: =15
+        X: =1129
+        Y: =169
+        ZIndex: =8
 
-    Button2_6 As button:
+    btnLimpiar_1 As button:
+        OnSelect: =Reset(txtFilNomNroSol_1)
         Text: ="Limpiar"
         Width: =100
-        X: =1253
-        Y: =176
-        ZIndex: =16
+        X: =1019
+        Y: =169
+        ZIndex: =9
+
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =464
+        Items: |
+            =//colSolicitudes
+            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            Search(
+                Filter(colSolicitudes,
+                    --IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
+                    --ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
+                    EsAtendido = false,
+                    EsEliminado = false,
+                    EsFinalizado = false,
+                    EsActivo = true // Va a cambiar cuando se anula la solicitud
+                ),
+                txtFilNomNroSol_1.Text,
+                "NroSolicitud",
+                "NombreSolicitud"
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =Navigate(srcSolicitudDetalle, ScreenTransition.None);
+            Set(varSolicitudDetalleItemSel,Gallery1_1.Selected);
+        TemplatePadding: =0
+        TemplateSize: =27
+        Width: =1166
+        X: =190
+        Y: =273
+        ZIndex: =10
+
+        Title2_7 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.NroSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =85
+            Y: =4
+            ZIndex: =4
+
+        Title2_16 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.NombreSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =170
+            X: =86
+            Y: =4
+            ZIndex: =5
+
+        Title2_17 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.TipoSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =140
+            X: =264
+            Y: =4
+            ZIndex: =6
+
+        Title2_22 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =70
+            X: =1001
+            Y: =4
+            ZIndex: =8
+
+        Title2_23 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =70
+            X: =1077
+            Y: =4
+            ZIndex: =9
+
+        Title2_19 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AreaOrigen
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =515
+            Y: =4
+            ZIndex: =10
+
+        Title2_20 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AreaDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =622
+            Y: =4
+            ZIndex: =11
+
+        Icon5_1 As icon.ChevronRight:
+            Height: =24
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =15
+            X: =1145
+            Y: =2
+            ZIndex: =12
+
+        Title2_18 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.TipoServicio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =90
+            X: =411
+            Y: =4
+            ZIndex: =13
+
+        Title2_21 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.ManagerDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =721
+            Y: =4
+            ZIndex: =14
+
+    icnActualizar_1 As icon.Reload:
+        Height: =39
+        Icon: =Icon.Reload
+        OnSelect: |+
+            =ClearCollect(colSolicitudCab,
+                AddColumns(
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                )
+                );
+            ClearCollect(colSolicitudes,
+                AddColumns(
+                    //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
+                    SolicitudDetalle
+                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                    ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                    ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                    ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
+                    ,"AreaAbrevOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                    ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                    ,"AccionActual",LookUp(Accion,ID=IdAccionActual,Nombre)
+                    ,"EtapaActual",LookUp(Etapa,ID=IdEtapaActual,Nombre)
+                    ,"AreaActual",LookUp(Area_1,ID=IdAreaActual,Nombre)
+                    ,"AreaAbrevActual",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilActual",LookUp(Perfil,ID=IdPerfilActual,Nombre)
+                    ,"PersonalActual",LookUp(Personal,ID=IdPersonalActual,Nombre)
+                    ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                    ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                    ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,Nombre)
+                    ,"AreaAbrevDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                    ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                    ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                    ,"ManagerDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=2),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"LiderDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=3),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    )
+                );
+            
+            
+            //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
+            ClearCollect(colSolicitudDetalleDestino,
+                Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
+            
+        Width: =50
+        X: =1286
+        Y: =170
+        ZIndex: =11
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(221, 79, 14, 1)
+            Height: =50
+            Width: =1175
+            X: =181
+            Y: =219
+            ZIndex: =12
+
+        lblHeaderMS_12 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NRO TICKET"
+            Width: =80
+            X: =190
+            Y: =223
+            ZIndex: =13
+
+        lblHeaderMS_13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NOMBRE SOL."
+            Width: =110
+            X: =324
+            Y: =223
+            ZIndex: =14
+
+        lblHeaderMS_14 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="TIPO SOLIC."
+            Width: =80
+            X: =477
+            Y: =223
+            ZIndex: =15
+
+        lblHeaderMS_15 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="TIPO SERV."
+            Width: =80
+            X: =598
+            Y: =223
+            ZIndex: =16
+
+        lblHeaderMS_16 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. PROCEDENCIA"
+            Width: =110
+            X: =696
+            Y: =223
+            ZIndex: =17
+
+        lblHeaderMS_17 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. ASIGNADO"
+            Width: =100
+            X: =809
+            Y: =223
+            ZIndex: =18
+
+        lblHeaderMS_18 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="MANAGER"
+            Width: =93
+            X: =904
+            Y: =223
+            ZIndex: =19
+
+        lblHeaderMS_19 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="LIDER"
+            Width: =73
+            X: =1013
+            Y: =223
+            ZIndex: =20
+
+        lblHeaderMS_20 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="ANALISTA"
+            Width: =80
+            X: =1110
+            Y: =223
+            ZIndex: =21
+
+        lblHeaderMS_21 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA CREAC."
+            Width: =70
+            X: =1191
+            Y: =223
+            ZIndex: =22
+
+        lblHeaderMS_22 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA EXPIRA"
+            Width: =70
+            X: =1260
+            Y: =223
+            ZIndex: =23
 

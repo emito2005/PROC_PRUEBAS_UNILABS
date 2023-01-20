@@ -191,8 +191,10 @@ scrVerDocAdjuntos As screen:
         ZIndex: =12
 
     Button8 As button:
+        Height: =42
         OnSelect: =Launch(Gallery4.Selected.AbsoluteUri)
-        Text: ="Botón"
+        Text: ="Abrir Documento"
+        Width: =201
         X: =212
         Y: =672
         ZIndex: =13
