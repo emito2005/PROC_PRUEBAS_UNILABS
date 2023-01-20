@@ -152,3 +152,236 @@ scrTrazabilidad As screen:
         Y: =lblHeader_1.Y
         ZIndex: =13
 
+    "Gallery1_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =464
+        Items: |
+            =//colSolicitudes
+            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            Search(
+                Filter(colSolicitudes,
+                    IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
+                    ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
+                    EsAtendido = false,
+                    EsEliminado = false,
+                    EsFinalizado = false,
+                    EsActivo = true // Va a cambiar cuando se anula la solicitud
+                ),
+                txtFilNomNroSol.Text,
+                "NroSolicitud",
+                "NombreSolicitud"
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =Navigate(srcSolicitudDetalle, ScreenTransition.None);
+            //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
+            //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
+            Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
+        TemplatePadding: =0
+        TemplateSize: =27
+        Width: =1267
+        X: =44
+        Y: =236
+        ZIndex: =14
+
+        Title2_24 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.NroSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =85
+            Y: =4
+            ZIndex: =4
+
+        Title2_25 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.NombreSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =170
+            X: =86
+            Y: =4
+            ZIndex: =5
+
+        Title2_26 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.TipoSolicitud
+            VerticalAlign: =VerticalAlign.Top
+            Width: =140
+            X: =264
+            Y: =4
+            ZIndex: =6
+
+        Title2_31 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =70
+            X: =1001
+            Y: =4
+            ZIndex: =8
+
+        Title2_32 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =70
+            X: =1077
+            Y: =4
+            ZIndex: =9
+
+        Title2_28 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AreaOrigen
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =515
+            Y: =4
+            ZIndex: =10
+
+        Title2_29 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AreaDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =622
+            Y: =4
+            ZIndex: =11
+
+        Icon5_2 As icon.ChevronRight:
+            Height: =24
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =15
+            X: =1145
+            Y: =2
+            ZIndex: =12
+
+        Title2_27 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.TipoServicio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =90
+            X: =411
+            Y: =4
+            ZIndex: =13
+
+        Title2_30 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.ManagerDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =721
+            Y: =4
+            ZIndex: =14
+
+    icnActualizar_2 As icon.Reload:
+        Height: =39
+        Icon: =Icon.Reload
+        OnSelect: |+
+            =ClearCollect(colSolicitudCab,
+                AddColumns(
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
+                    ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                )
+                );
+            ClearCollect(colSolicitudes,
+                AddColumns(
+                    //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
+                    SolicitudDetalle
+                    ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
+                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
+                    ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
+                    ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)
+                    ,"EsFinalizado",LookUp(colSolicitudCab,ID=IdSolicitud,EsFinalizado)
+                    ,"IdTipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoSolicitud)
+                    ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
+                    ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
+                    ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                    ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
+                    ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
+                    ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
+                    ,"AreaAbrevOrigen",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilOrigen",LookUp(Perfil,ID=IdPerfilOrigen,Nombre)
+                    ,"PersonalOrigen",LookUp(Personal,ID=IdPersonalOrigen,Nombre)
+                    ,"AccionActual",LookUp(Accion,ID=IdAccionActual,Nombre)
+                    ,"EtapaActual",LookUp(Etapa,ID=IdEtapaActual,Nombre)
+                    ,"AreaActual",LookUp(Area_1,ID=IdAreaActual,Nombre)
+                    ,"AreaAbrevActual",LookUp(Area_1,ID=IdAreaOrigen,NombreAbrev)
+                    ,"PerfilActual",LookUp(Perfil,ID=IdPerfilActual,Nombre)
+                    ,"PersonalActual",LookUp(Personal,ID=IdPersonalActual,Nombre)
+                    ,"AccionDestino",LookUp(Accion,ID=IdAccionDestino,Nombre)
+                    ,"EtapaDestino",LookUp(Etapa,ID=IdEtapaDestino,Nombre)
+                    ,"AreaDestino",LookUp(Area_1,ID=IdAreaDestino,Nombre)
+                    ,"AreaAbrevDestino",LookUp(Area_1,ID=IdAreaDestino,NombreAbrev)
+                    ,"PerfilDestino",LookUp(Perfil,ID=IdPerfilDestino,Nombre)
+                    ,"PersonalDestino",LookUp(Personal,ID=IdPersonalDestino,Nombre)
+                    ,"ManagerDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=2),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"LiderDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=3),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
+                    )
+                );
+            
+            
+            //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
+            ClearCollect(colSolicitudDetalleDestino,
+                Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
+            
+        Width: =50
+        X: =1290
+        Y: =125
+        ZIndex: =15
+
