@@ -29,7 +29,7 @@ scrTrazabilidad As screen:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ID"
-        Width: =60
+        Width: =40
         X: =24
         Y: =icn_Volver_NS_2.Y + icn_Volver_NS_2.Height + 15
         ZIndex: =4
@@ -41,10 +41,10 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="AREA ORIGEN"
+        Text: ="ACCION ORIGEN"
         Width: |
             =80
-        X: =84
+        X: =65
         Y: =lblHeader_1.Y
         ZIndex: =5
 
@@ -55,9 +55,9 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="ESTADO ORIGEN"
-        Width: =110
-        X: =164
+        Text: ="AREA ORIGEN"
+        Width: =70
+        X: =143
         Y: =lblHeader_1.Y
         ZIndex: =6
 
@@ -68,9 +68,9 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="ADMIN. ORIGEN"
-        Width: =110
-        X: =274
+        Text: ="PERFIL ORIGEN"
+        Width: =80
+        X: =214
         Y: =lblHeader_1.Y
         ZIndex: =7
 
@@ -81,9 +81,9 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="ANALISTA ORIGEN"
-        Width: =110
-        X: =384
+        Text: ="COMENTARIO"
+        Width: =250
+        X: =475
         Y: =lblHeader_1.Y
         ZIndex: =8
 
@@ -94,8 +94,8 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="COMENTARIO"
-        Width: =350
+        Text: ="ACCION DESTINO"
+        Width: =80
         X: =lblHeader_5.X + lblHeader_5.Width
         Y: =lblHeader_1.Y
         ZIndex: =9
@@ -107,8 +107,8 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="DOCUMENTO ADJUNTO"
-        Width: =160
+        Text: ="AREA DESTINO"
+        Width: =70
         X: =lblHeader_6.X + lblHeader_6.Width
         Y: =lblHeader_1.Y
         ZIndex: =10
@@ -120,9 +120,8 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="AREA DESTINO"
-        Width: |
-            =80
+        Text: ="PERFIL DESTINO"
+        Width: =80
         X: =lblHeader_7.X + lblHeader_7.Width
         Y: =lblHeader_1.Y
         ZIndex: =11
@@ -134,8 +133,8 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="ESTADO DESTINO"
-        Width: =110
+        Text: ="PERSONAL DESTINO"
+        Width: =180
         X: =lblHeader_8.X + lblHeader_8.Width
         Y: =lblHeader_1.Y
         ZIndex: =12
@@ -147,8 +146,8 @@ scrTrazabilidad As screen:
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
         Size: =10
-        Text: ="F. CREACIÓN"
-        Width: =110
+        Text: ="FEC. CREAC."
+        Width: =70
         X: =lblHeader_9.X + lblHeader_9.Width
         Y: =lblHeader_1.Y
         ZIndex: =13
@@ -179,7 +178,7 @@ scrTrazabilidad As screen:
         TemplateSize: =27
         Width: =1316
         X: =24
-        Y: =236
+        Y: =222
         ZIndex: =14
 
         Title2_24 As label:
@@ -208,7 +207,7 @@ scrTrazabilidad As screen:
             Text: =ThisItem.AccionOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =80
-            X: =58
+            X: =51
             Y: =4
             ZIndex: =5
 
@@ -222,8 +221,8 @@ scrTrazabilidad As screen:
             Size: =11
             Text: =ThisItem.AreaAbrevOrigen
             VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =152
+            Width: =50
+            X: =131
             Y: =4
             ZIndex: =6
 
@@ -235,10 +234,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1001
+            X: =1106
             Y: =4
             ZIndex: =8
 
@@ -250,10 +249,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
+            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1077
+            X: =1182
             Y: =4
             ZIndex: =9
 
@@ -265,10 +264,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.PersonalOrigen
+            Text: =ThisItem.PersonalActual
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =361
+            Width: =180
+            X: =277
             Y: =4
             ZIndex: =10
 
@@ -280,10 +279,10 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.AreaDestino
+            Text: =ThisItem.ObsSolDetDestino
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =622
+            Width: =250
+            X: =461
             Y: =4
             ZIndex: =11
 
@@ -307,7 +306,7 @@ scrTrazabilidad As screen:
             Text: =ThisItem.PerfilOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =80
-            X: =257
+            X: =193
             Y: =4
             ZIndex: =13
 
@@ -319,12 +318,57 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.ManagerDelArea
+            Text: =ThisItem.PersonalDestino
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =721
+            Width: =180
+            X: =938
             Y: =4
             ZIndex: =14
+
+        Title2_34 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.PerfilDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =80
+            X: =851
+            Y: =4
+            ZIndex: =16
+
+        Title2_35 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AreaAbrevDestino
+            VerticalAlign: =VerticalAlign.Top
+            Width: =50
+            X: =785
+            Y: =4
+            ZIndex: =17
+
+        Title2_33 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AccionActual
+            VerticalAlign: =VerticalAlign.Top
+            Width: =80
+            X: =700
+            Y: =2
+            ZIndex: =18
 
     icnActualizarTraza As icon.Reload:
         Height: =39
@@ -387,4 +431,44 @@ scrTrazabilidad As screen:
         X: =1261
         Y: =125
         ZIndex: =15
+
+    lblHeader_11 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="PERSONAL ORIGEN"
+        Width: =180
+        X: =294
+        Y: =lblHeader_1.Y
+        ZIndex: =16
+
+    lblHeader_12 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="FEC. ATENC."
+        Width: =70
+        X: =lblHeader_10.X + lblHeader_10.Width
+        Y: =lblHeader_1.Y
+        ZIndex: =17
+
+    lblHeader_13 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(221, 79, 14, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ADJ"
+        Width: =35
+        X: |
+            =lblHeader_12.X + lblHeader_12.Width
+        Y: =180
+        ZIndex: =18
 
