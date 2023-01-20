@@ -113,12 +113,15 @@ scrVerDocAdjuntos As screen:
             Height: =64
             Image: |-
                 =//ThisItem.Value
-                If(ThisItem.Extension in ["xlsx","xls"],Excel_Logo,
-                ThisItem.Extension in ["docx","doc"],Word_Logo,
-                ThisItem.Extension in ["pdf"],Pdf_Logo,
-                ThisItem.Extension in ["mp3","mp4","avi","wav"],Audio_Logo,
+                "https://unilabsgroup.sharepoint.com/_layouts/15/getpreview.ashx?path=" & ThisItem.AbsoluteUri
+                /*
+                If(ThisItem.Extension in ["xlsx";"xls"];Excel_Logo;
+                ThisItem.Extension in ["docx";"doc"];Word_Logo;
+                ThisItem.Extension in ["pdf"];Pdf_Logo;
+                ThisItem.Extension in ["mp3";"mp4";"avi";"wav"];Audio_Logo;
                 ThisItem.Value
                 )
+                */
             OnSelect: =Select(Parent)
             Width: =71
             X: =16
@@ -188,11 +191,10 @@ scrVerDocAdjuntos As screen:
         Y: =164
         ZIndex: =12
 
-    Label7 As label:
-        Height: =310
-        Text: =Gallery4.Selected.AbsoluteUri
-        Width: =698
-        X: =176
-        Y: =404
+    Button8 As button:
+        OnSelect: =Launch(Gallery4.Selected.AbsoluteUri)
+        Text: ="Botón"
+        X: =224
+        Y: =500
         ZIndex: =13
 

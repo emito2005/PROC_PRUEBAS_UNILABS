@@ -1,2 +1,27 @@
 Screen2 As screen:
 
+    SPListItemAttachmentsViewer_1 As SPListItemAttachmentsViewer:
+        OnReset: |-
+            =Set(
+                varOpenPdf,
+                false
+            );
+            Set(
+                galData,
+                ForAll(
+                    Sequence(CountRows(SPListItemAttachmentsViewer_1.Items)),
+                    Patch(
+                        Last(
+                            FirstN(
+                                SPListItemAttachmentsViewer_1.Items,
+                                Value
+                            )
+                        ),
+                        {RowNo: Value}
+                    )
+                )
+            );
+            Reset(galAttachments)
+        X: =44
+        Y: =40
+
