@@ -13,7 +13,7 @@ scrArea As screen:
             //Set(varIdAreaDestino;ThisItem.IdAreaDestino);;
             ResetForm(form_EditArea);ViewForm(form_EditArea);
             Navigate(scrAreaEdit, ScreenTransition.None)
-        TemplateFill: =If(   ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
+        TemplateFill: =If(ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =40
         Width: =1072

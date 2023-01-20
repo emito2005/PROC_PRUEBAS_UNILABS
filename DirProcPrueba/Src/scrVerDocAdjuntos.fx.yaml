@@ -3,44 +3,44 @@ scrVerDocAdjuntos As screen:
     cmpBarraSuperior_12 As cmpBarraSuperior:
 
     "Gallery3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
-        Height: =477
+        Height: =321
         Items: =SolicitudDetalle
         Layout: =Layout.Vertical
         TemplatePadding: =0
-        TemplateSize: =44
-        Width: =216
-        X: =30
-        Y: =220
+        TemplateSize: =27
+        Width: =118
+        X: =13
+        Y: =430
         ZIndex: =1
 
         Title3 As label:
-            Height: =32
+            Height: =22
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
+            Size: =12
             Text: =ThisItem.IdSolicitud
             VerticalAlign: =VerticalAlign.Top
-            Width: =52
-            X: =32
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            Width: =31
+            X: =11
+            Y: =3
             ZIndex: =1
 
         NextArrow3 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
-            Height: =60
+            Height: =27
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
-            PaddingBottom: =10
-            PaddingLeft: =10
-            PaddingRight: =10
-            PaddingTop: =10
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
             TabIndex: =0
             Tooltip: ="Ver los detalles del elemento"
-            Width: =60
-            X: =Parent.TemplateWidth - Self.Width - 5
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            Width: =29
+            X: =82
             ZIndex: =2
 
         Separator3 As rectangle:
@@ -51,17 +51,18 @@ scrVerDocAdjuntos As screen:
             ZIndex: =3
 
         Title3_1 As label:
-            Height: =32
+            Height: =25
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
+            Size: =12
             Text: =ThisItem.ID
             VerticalAlign: =VerticalAlign.Top
-            Width: =52
-            X: =95
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            Width: =30
+            X: =39
+            Y: =2
             ZIndex: =4
 
     lbl_TituloPrincipal_9 As label:
@@ -88,66 +89,55 @@ scrVerDocAdjuntos As screen:
         DisplayMode: =DisplayMode.View
         Fill: =RGBA(221, 79, 14, 1)
         FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="COMENTARIO"
-        Width: =400
-        X: =688
-        Y: =220
+        Height: =42
+        Size: =14
+        Text: ="ARCHIVOS ADJUNTOS"
+        Width: =451
+        X: =96
+        Y: =165
         ZIndex: =9
 
     "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =295
-        Items: =Gallery3.Selected.'Datos adjuntos'
+        Height: =436
+        Items: =AddColumns(Gallery3.Selected.'Datos adjuntos',"Extension",Last(Split(DisplayName,".")).Result)
         Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
         TemplatePadding: =0
-        TemplateSize: =107
-        Width: =438
-        X: =332
-        Y: =368
+        TemplateSize: =80
+        Width: =451
+        X: =96
+        Y: =207
         ZIndex: =10
 
         Image3 As image:
-            Height: =94
+            Height: =64
             Image: |-
                 =//ThisItem.Value
-                If(Subtitle3.Text in ["xlsx","xls"],Excel_Logo,
-                Subtitle3.Text in ["docx","doc"],Word_Logo,
-                Subtitle3.Text in ["pdf"],Pdf_Logo,
-                Subtitle3.Text in ["mp3","mp4","avi","wav"],Audio_Logo,
+                If(ThisItem.Extension in ["xlsx","xls"],Excel_Logo,
+                ThisItem.Extension in ["docx","doc"],Word_Logo,
+                ThisItem.Extension in ["pdf"],Pdf_Logo,
+                ThisItem.Extension in ["mp3","mp4","avi","wav"],Audio_Logo,
                 ThisItem.Value
                 )
             OnSelect: =Select(Parent)
-            Width: =78
+            Width: =71
             X: =16
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
         Title4 As label:
-            Height: =Self.Size * 1.8
+            Height: =60
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
+            Size: =15
             Text: =ThisItem.DisplayName
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - Image3.Width - 104
-            X: =Image3.X + Image3.Width + 24
-            Y: =23
+            Width: =282
+            X: =104
+            Y: =9
             ZIndex: =2
-
-        Subtitle3 As label:
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =Last(Split(ThisItem.DisplayName,".")).Result
-            VerticalAlign: =VerticalAlign.Top
-            Width: =98
-            X: =Title4.X
-            Y: =Title4.Y + Title4.Height + 4
-            ZIndex: =3
 
         NextArrow4 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
@@ -171,4 +161,38 @@ scrVerDocAdjuntos As screen:
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
             ZIndex: =5
+
+    imgVisorImagen As image:
+        Height: =576
+        Image: =Gallery4.Selected.Image3
+        Visible: |-
+            =//true
+            If(Gallery4.Selected.Extension in ["jpg","png"],true,false)
+        Width: =748
+        X: =572
+        Y: =164
+        ZIndex: =11
+
+    PdfViewer As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisplayMode: =DisplayMode.View
+        Document: |-
+            =//If(Gallery4.Selected.Extension="pdf";Gallery4.Selected.Value;Substitute(Gallery4.Selected.AbsoluteUri;"/thumbnail";"/pdf"))
+            If(Gallery4.Selected.Extension="pdf",Gallery4.Selected.Value)
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =576
+        ShowControls: =true
+        Visible: =If(imgVisorImagen.Visible=true,false,true)
+        Width: =748
+        X: =572
+        Y: =164
+        ZIndex: =12
+
+    Label7 As label:
+        Height: =310
+        Text: =Gallery4.Selected.Value
+        Width: =565
+        X: =176
+        Y: =404
+        ZIndex: =13
 
