@@ -269,7 +269,8 @@ scrMisSolicitudes As screen:
         OnSelect: |+
             =ClearCollect(colSolicitudCab,
                 AddColumns(
-                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio"
+                        ,"FechaCreacionSol","FechaFinalSol")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
                     ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
                 )
@@ -288,6 +289,8 @@ scrMisSolicitudes As screen:
                     ,"TipoSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,TipoSolicitud)
                     ,"IdTipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoServicio)
                     ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
+                    ,"FechaCreacionSol",LookUp(colSolicitudCab,ID=IdSolicitud,FechaCreacionSol)
+                    ,"FechaFinalSol",LookUp(colSolicitudCab,ID=IdSolicitud,FechaFinalSol)
                     ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
                     ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
                     ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
