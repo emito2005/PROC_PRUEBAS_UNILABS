@@ -3,6 +3,15 @@ scrTrazabilidad As screen:
 
     cmpBarraSuperior_8 As cmpBarraSuperior:
 
+    Rectangle4_7 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =699
+        Width: =1366
+        Y: =69
+        ZIndex: =2
+
     lbl_TituloPrincipal_5 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
@@ -10,150 +19,167 @@ scrTrazabilidad As screen:
         Size: =24
         Text: ="TRAZABILIDAD DE SOLICITUD - " & varSolicitudDetalleItemSel.NroSolicitud
         Width: =1335
-        X: =13
-        Y: =icn_Volver_NS_2.Y + (icn_Volver_NS_2.Height / 2) - (Self.Height / 2)
-        ZIndex: =2
-
-    icn_Volver_NS_2 As icon.BackArrow:
-        Icon: =Icon.BackArrow
-        OnSelect: =Back();
-        X: =60
-        Y: =100
+        X: =15
+        Y: =16
         ZIndex: =3
 
     lblHeader_1 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ID"
         Width: =40
         X: =24
-        Y: =icn_Volver_NS_2.Y + icn_Volver_NS_2.Height + 15
+        Y: =124
         ZIndex: =4
 
     lblHeader_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ACCION ORIGEN"
         Width: |
             =80
         X: =65
-        Y: =lblHeader_1.Y
+        Y: =124
         ZIndex: =5
 
     lblHeader_3 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="AREA ORIGEN"
         Width: =70
         X: =143
-        Y: =lblHeader_1.Y
+        Y: =124
         ZIndex: =6
 
     lblHeader_4 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERFIL ORIGEN"
         Width: =80
         X: =214
-        Y: =lblHeader_1.Y
+        Y: =124
         ZIndex: =7
 
     lblHeader_5 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="COMENTARIO"
         Width: =250
         X: =475
-        Y: =lblHeader_1.Y
+        Y: =124
         ZIndex: =8
 
     lblHeader_6 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ACCION DESTINO"
         Width: =80
-        X: =lblHeader_5.X + lblHeader_5.Width
-        Y: =lblHeader_1.Y
+        X: =725
+        Y: =124
         ZIndex: =9
 
     lblHeader_7 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="AREA DESTINO"
         Width: =70
-        X: =lblHeader_6.X + lblHeader_6.Width
-        Y: =lblHeader_1.Y
+        X: =805
+        Y: =124
         ZIndex: =10
 
     lblHeader_8 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERFIL DESTINO"
         Width: =80
-        X: =lblHeader_7.X + lblHeader_7.Width
-        Y: =lblHeader_1.Y
+        X: =875
+        Y: =124
         ZIndex: =11
 
     lblHeader_9 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERSONAL DESTINO"
         Width: =180
-        X: =lblHeader_8.X + lblHeader_8.Width
-        Y: =lblHeader_1.Y
+        X: =955
+        Y: =124
         ZIndex: =12
 
     lblHeader_10 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="FEC. CREAC."
         Width: =70
-        X: =lblHeader_9.X + lblHeader_9.Width
-        Y: =lblHeader_1.Y
+        X: =1135
+        Y: =124
         ZIndex: =13
 
     "Gallery1_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
-        Height: =464
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri02
+        BorderThickness: =1
+        Height: =589
         Items: |
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
@@ -174,11 +200,14 @@ scrTrazabilidad As screen:
             //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
+        TemplateFill: |-
+            =//RGBA(0; 0; 0; 0)
+            If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
         Width: =1310
         X: =24
-        Y: =222
+        Y: =165
         ZIndex: =14
 
         Title2_24 As label:
@@ -265,8 +294,10 @@ scrTrazabilidad As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.PersonalActual
+            Tooltip: =ThisItem.PersonalActual
             VerticalAlign: =VerticalAlign.Top
             Width: =180
+            Wrap: =false
             X: =277
             Y: =3
             ZIndex: =10
@@ -280,13 +311,18 @@ scrTrazabilidad As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.ObsSolDetDestino
+            Tooltip: =ThisItem.ObsSolDetDestino
             VerticalAlign: =VerticalAlign.Top
             Width: =250
+            Wrap: =false
             X: =461
             Y: =3
             ZIndex: =11
 
         Icon5_2 As icon.ChevronRight:
+            Color: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             Height: =24
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
@@ -318,9 +354,11 @@ scrTrazabilidad As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.PersonalDestino
+            Tooltip: =ThisItem.PersonalActual
             VerticalAlign: =VerticalAlign.Top
             Width: =180
-            X: =938
+            Wrap: =false
+            X: =931
             Y: =3
             ZIndex: =14
 
@@ -378,12 +416,60 @@ scrTrazabilidad As screen:
             X: =1261
             ZIndex: =19
 
+    lblHeader_11 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="PERSONAL ORIGEN"
+        Width: =180
+        X: =294
+        Y: =124
+        ZIndex: =15
+
+    lblHeader_12 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="FEC. ATENC."
+        Width: =70
+        X: =1205
+        Y: =124
+        ZIndex: =16
+
+    lblHeader_13 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="ADJ      "
+        Width: =60
+        X: =1275
+        Y: =124
+        ZIndex: =17
+
     icnActualizarTraza As icon.Reload:
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
+        Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
-        OnSelect: |
-            =
-            ClearCollect(colSolicitudCabTraza,
+        OnSelect: |-
+            =ClearCollect(colSolicitudCabTraza,
                 AddColumns(
                     ShowColumns(Filter(Solicitud,ID=varSolicitudDetalleItemSel.IdSolicitud),"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
@@ -436,47 +522,15 @@ scrTrazabilidad As screen:
                 Filter(SolicitudDetalleDestino;IdAreaDestino=varMyUser.IdArea;IdPerfilDestino=varMyUser.IdPerfil;IdPersonalDestino=varMyUser.ID));;
             */
         Width: =50
-        X: =1261
-        Y: =125
-        ZIndex: =15
-
-    lblHeader_11 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="PERSONAL ORIGEN"
-        Width: =180
-        X: =294
-        Y: =lblHeader_1.Y
-        ZIndex: =16
-
-    lblHeader_12 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="FEC. ATENC."
-        Width: =70
-        X: =lblHeader_10.X + lblHeader_10.Width
-        Y: =lblHeader_1.Y
-        ZIndex: =17
-
-    lblHeader_13 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="ADJ      "
-        Width: =60
-        X: |
-            =lblHeader_12.X + lblHeader_12.Width
-        Y: =lblHeader_1.Y
+        X: =1285
+        Y: =74
         ZIndex: =18
+
+    Icon2_2 As icon.BackArrow:
+        Color: =varColorPri01
+        Icon: =Icon.BackArrow
+        OnSelect: =ResetForm(form_EditArea);Back()
+        X: =13
+        Y: =3
+        ZIndex: =19
 
