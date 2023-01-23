@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |+
+    OnStart: |
         =Set(varIdArea,0);
         //Set(varUserEmail; User().Email);;
         //Set(varUserFullName; User().FullName);;
@@ -36,7 +36,6 @@ App As appinfo:
         Set(varGestionarArea,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=10).EsPermitido);
         Set(varDescargarPdfSol,LookUp(PerfilAccion,IdPerfil=varMyUser.IdPerfil && IdAccion=11).EsPermitido);
         
-        
         If(IsBlank(varGenerar),Set(varGenerar,false),Set(varGenerar,varGenerar));
         If(IsBlank(varAsignar),Set(varAsignar,false),Set(varAsignar,varAsignar));
         If(IsBlank(varElevar),Set(varElevar,false),Set(varElevar,varElevar));
@@ -53,6 +52,14 @@ App As appinfo:
             {id_boton:"MisSol",texto_boton:"Mis Solicitudes",navegacion:scrMisSolicitudes,sangria:1,Habilitado:true},
             {id_boton:"Sol",texto_boton:"Solicitudes",navegacion:scrSolicitudes,sangria:1,Habilitado:true},
             {id_boton:"Area",texto_boton:"Area",navegacion:scrArea,sangria:1,Habilitado:varGestionarArea}
-        )
+        );
         
+        Set(varColorPri01,RGBA(236, 64, 38, 1));
+        Set(varColorPri01B,RGBA(236, 64, 38, 65%));
+        Set(varColorPri02,RGBA(250, 164, 37, 1));
+        Set(varColorPri02B,RGBA(250, 164, 37, 65%));
+        Set(varColorPri03,RGBA(191, 191, 191, 1));
+        Set(varColorPri03B,RGBA(191, 191, 191, 65%));
+        Set(varColorPri04,RGBA(127, 127, 127, 1));
+        Set(varColorPri04B,RGBA(127, 127, 127, 65%));
 

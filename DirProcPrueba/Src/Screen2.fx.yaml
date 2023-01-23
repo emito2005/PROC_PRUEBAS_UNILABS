@@ -1,9 +1,5 @@
 Screen2 As screen:
 
-    SPListItemAttachmentsViewer_1 As SPListItemAttachmentsViewer:
-        X: =44
-        Y: =40
-
     Button2 As button:
         OnSelect: |-
             =ClearCollect(colEjemploPersonas, {

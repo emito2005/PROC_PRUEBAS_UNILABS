@@ -2,8 +2,21 @@ scrArea As screen:
     OnVisible: |-
         =ClearCollect(colHeader,{CodArea:"CODIGO",NombreAbrev:"NOMBRE",Nombre:"DESCRIPCION",SLA:"SLA(Días)",OLA:"OLA(Días)",Accion:"ACCION"})
 
+    cmpBarraSuperior_1 As cmpBarraSuperior:
+
+    Rectangle4_4 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =699
+        Width: =1366
+        Y: =69
+        ZIndex: =2
+
     "DetAreaGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =491
+        BorderColor: =varColorPri02
+        BorderThickness: =1
+        Height: =538
         Items: =Area_1
         Layout: =Layout.Vertical
         OnSelect: |-
@@ -13,16 +26,20 @@ scrArea As screen:
             //Set(varIdAreaDestino;ThisItem.IdAreaDestino);;
             ResetForm(form_EditArea);ViewForm(form_EditArea);
             Navigate(scrAreaEdit, ScreenTransition.None)
-        TemplateFill: =If(ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
+        ShowNavigation: =true
+        TemplateFill: |
+            =//If(ThisItem.IsSelected;RGBA(191; 191; 191; 60%);RGBA(224; 224; 224; 0))
+            If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
-        TemplateSize: =40
+        TemplateSize: =41
         Width: =1072
         X: =234
-        Y: =195
-        ZIndex: =1
+        Y: =181
+        ZIndex: =3
 
         cmd_Detalle As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
+            Color: =varColorPri01
             Height: =lbl_Codigo.Height
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
@@ -52,7 +69,6 @@ scrArea As screen:
             ZIndex: =6
 
         lbl_NombreAbrev As label:
-            Height: =38
             Text: =ThisItem.NombreAbrev
             Width: =93
             X: =lbl_Codigo.X+lbl_Codigo.Width
@@ -76,7 +92,7 @@ scrArea As screen:
             ZIndex: =9
 
     "HeaderGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: =varColorPri02
         Height: =50
         Items: =colHeader
         Layout: =Layout.Vertical
@@ -85,13 +101,13 @@ scrArea As screen:
         TemplateSize: =50
         Width: =1072
         X: =234
-        Y: =144
-        ZIndex: =9
+        Y: =130
+        ZIndex: =4
 
         lbl_Tit_Nombre As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -104,7 +120,7 @@ scrArea As screen:
         lbl_Tit_Codigo As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Size: =14
             Text: =ThisItem.CodArea
@@ -116,7 +132,7 @@ scrArea As screen:
         lbl_Tit_NomAbrev As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -129,7 +145,7 @@ scrArea As screen:
         lbl_Tit_SLA As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -142,7 +158,7 @@ scrArea As screen:
         lbl_Tit_OLA As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -155,7 +171,7 @@ scrArea As screen:
         lbl_Tit_Accion As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(221, 79, 14, 1)
+            Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
             Size: =14
             Text: =ThisItem.Accion
@@ -164,18 +180,8 @@ scrArea As screen:
             Y: =3
             ZIndex: =10
 
-    lbl_TituloPrincipal As label:
-        Align: =Align.Center
-        FontWeight: =FontWeight.Bold
-        Height: =43
-        Size: =24
-        Text: ="MANTENIMIENTO DE AREA"
-        Width: =1072
-        X: =234
-        Y: =96
-        ZIndex: =10
-
     Icon1 As icon.Add:
+        Color: =varColorPri01
         Height: =50
         Icon: =Icon.Add
         OnSelect: |-
@@ -184,38 +190,42 @@ scrArea As screen:
             ResetForm(form_EditArea);NewForm(form_EditArea);Navigate(scrAreaEdit, ScreenTransition.None)
         Width: =51
         X: =1252
-        Y: =92
-        ZIndex: =11
-
-    cmpBarraSuperior_1 As cmpBarraSuperior:
-        ZIndex: =12
+        Y: =75
+        ZIndex: =5
 
     gaMenuLateral_Area As gallery.galleryVertical:
-        Height: =335
+        Height: =271
         Items: =colBarraLateral
         Layout: =Layout.Vertical
         TemplateSize: =61
         Transition: =Transition.Pop
         Width: =181
-        Y: =90
-        ZIndex: =13
+        Y: =69
+        ZIndex: =6
 
         Button2_3 As button:
             Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
+            Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
             Height: =61
-            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
+            HoverFill: =ColorFade(varColorPri02, -20%)
             OnSelect: |-
                 =Set(varIdOpcionMenu,ThisItem.id_boton);
                 Set(varOpcionMenu,ThisItem.texto_boton);
                 Navigate(ThisItem.navegacion,ScreenTransition.Cover)
             PaddingLeft: |
                 =ThisItem.sangria*10
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
             Text: =ThisItem.texto_boton
-            Width: =257
+            Width: =171
             ZIndex: =1
+
+    lbl_TituloPrincipal As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =24
+        Text: ="MANTENIMIENTO DE AREA"
+        Width: =665
+        X: =420
+        Y: =12
+        ZIndex: =7
 
