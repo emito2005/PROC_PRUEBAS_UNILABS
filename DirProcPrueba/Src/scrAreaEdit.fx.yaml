@@ -2,15 +2,16 @@ scrAreaEdit As screen:
     Fill: =
     OnVisible: =
 
-    Rectangle4_3 As rectangle:
-        BorderColor: =RGBA(255, 191, 0, 1)
+    cmpBarraSuperior_2 As cmpBarraSuperior:
+
+    Rectangle4_5 As rectangle:
+        BorderColor: =varColorPri01
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =672
-        Width: =1350
-        X: =7
-        Y: =86
-        ZIndex: =1
+        Height: =699
+        Width: =1366
+        Y: =69
+        ZIndex: =2
 
     form_EditArea As form:
         DataSource: =Area_1
@@ -23,7 +24,7 @@ scrAreaEdit As screen:
         Width: =1024
         X: =198
         Y: =80
-        ZIndex: =2
+        ZIndex: =3
 
         NotificaManager_DataCard1 As typedDataCard.toggleEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -44,6 +45,7 @@ scrAreaEdit As screen:
 
             DataCardKey37 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -57,6 +59,9 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 Tooltip: =Parent.DisplayName
+                TrueFill: |
+                    =//RGBA(56; 96; 178; 1)
+                    varColorPri01
                 Width: =170
                 X: =30
                 Y: =DataCardKey37.Y + DataCardKey37.Height + 5
@@ -108,6 +113,7 @@ scrAreaEdit As screen:
 
             DataCardKey38 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -121,6 +127,9 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 Tooltip: =Parent.DisplayName
+                TrueFill: |-
+                    =//RGBA(56; 96; 178; 1)
+                    varColorPri01
                 Width: =170
                 X: =30
                 Y: =DataCardKey38.Y + DataCardKey38.Height + 5
@@ -152,6 +161,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         CodArea_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: |
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="CodArea"
             Default: =ThisItem.CodArea
@@ -171,6 +183,7 @@ scrAreaEdit As screen:
 
             DataCardKey2 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -184,6 +197,15 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverColor: |-
+                    =RGBA(0, 0, 0, 1)
+                    //varColorPri01B
+                HoverFill: |-
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -222,6 +244,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         NombreAbrev_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="NombreAbrev"
             Default: =ThisItem.NombreAbrev
@@ -241,6 +266,7 @@ scrAreaEdit As screen:
 
             DataCardKey3 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -254,6 +280,12 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverFill: |-
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -292,6 +324,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         Title_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="Nombre"
             Default: =ThisItem.Nombre
@@ -309,6 +344,7 @@ scrAreaEdit As screen:
 
             DataCardKey1 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: ="Nombre"
                 Width: =Parent.Width - 60
@@ -322,6 +358,12 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverFill: |-
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -360,6 +402,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         SLA_DataCard1 As typedDataCard.numberEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="SLA"
             Default: =ThisItem.SLA
@@ -376,6 +421,7 @@ scrAreaEdit As screen:
 
             DataCardKey4 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -390,6 +436,12 @@ scrAreaEdit As screen:
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Format: =TextFormat.Number
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverFill: |-
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -428,6 +480,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         OLA_DataCard1 As typedDataCard.numberEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="OLA"
             Default: =ThisItem.OLA
@@ -444,6 +499,7 @@ scrAreaEdit As screen:
 
             DataCardKey5 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -458,6 +514,12 @@ scrAreaEdit As screen:
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Format: =TextFormat.Number
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverColor: |-
+                    =//RGBA(0; 0; 0; 1)
+                    varColorPri01B
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -495,6 +557,9 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
         Obs_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01B
             BorderStyle: =BorderStyle.Solid
             DataField: ="Obs"
             Default: =ThisItem.Obs
@@ -512,6 +577,7 @@ scrAreaEdit As screen:
 
             DataCardKey6 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -526,6 +592,12 @@ scrAreaEdit As screen:
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =61
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
+                HoverFill: |-
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
                 MaxLength: =Parent.MaxLength
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
@@ -565,19 +637,19 @@ scrAreaEdit As screen:
                 ZIndex: =4
 
     Icon2 As icon.BackArrow:
+        Color: =varColorPri01
         Icon: =Icon.BackArrow
         OnSelect: =ResetForm(form_EditArea);Back()
-        X: =20
-        Y: =112
-        ZIndex: =3
-
-    cmpBarraSuperior_2 As cmpBarraSuperior:
+        X: =13
+        Y: =2
         ZIndex: =4
 
     rectTitManager As rectangle:
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri01
         Height: =29
-        Width: =354
+        Width: =355
         X: =108
         Y: =475
         ZIndex: =5
@@ -641,8 +713,11 @@ scrAreaEdit As screen:
 
     PeopleAddedGallery1_1 As gallery.SelectedUsersTabletGallery:
         AccessibleLabel: ="Personas seleccionadas por el usuario"
-        BorderColor: =RGBA(166, 166, 166, 1)
-        Height: =219
+        BorderColor: |-
+            =//RGBA(166; 166; 166; 1)
+            varColorPri01
+        BorderThickness: =1
+        Height: =210
         Items: |-
             =Filter(
                 AddColumns(AreaManager,
@@ -662,7 +737,7 @@ scrAreaEdit As screen:
         TemplateSize: =45
         Width: =354
         X: =108
-        Y: =txtBuscarManager.Y + txtBuscarManager.Height + 5
+        Y: =txtBuscarManager.Y + txtBuscarManager.Height + 2
         ZIndex: =9
 
         Rectangle1_1 As rectangle:
@@ -719,7 +794,9 @@ scrAreaEdit As screen:
             Color: =Color.White//Title1_1.Color
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            Fill: |-
+                =//RGBA(228; 3; 44; 1)//RGBA(153; 153; 153; 1)
+                varColorPri01
             FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_1.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -869,9 +946,11 @@ scrAreaEdit As screen:
             ZIndex: =6
 
     rectTitManager_1 As rectangle:
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |
+            =//RGBA(221; 79; 14; 1)
+            varColorPri01
         Height: =29
-        Width: =354
+        Width: =355
         X: =518
         Y: =475
         ZIndex: =11
@@ -935,8 +1014,11 @@ scrAreaEdit As screen:
 
     PeopleAddedGallery1_2 As gallery.SelectedUsersTabletGallery:
         AccessibleLabel: ="Personas seleccionadas por el usuario"
-        BorderColor: =RGBA(166, 166, 166, 1)
-        Height: =219
+        BorderColor: |-
+            =//RGBA(166; 166; 166; 1)
+            varColorPri01
+        BorderThickness: =1
+        Height: =210
         Items: |
             =Filter(
                 AddColumns(AreaManagerLider,
@@ -960,7 +1042,7 @@ scrAreaEdit As screen:
         TemplateSize: =45
         Width: =354
         X: =518
-        Y: =txtBuscarLider.Y + txtBuscarLider.Height + 5
+        Y: =txtBuscarLider.Y + txtBuscarLider.Height + 2
         ZIndex: =15
 
         Rectangle1_2 As rectangle:
@@ -1020,7 +1102,9 @@ scrAreaEdit As screen:
             Color: =Color.White
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            Fill: |-
+                =//RGBA(228; 3; 44; 1)//RGBA(153; 153; 153; 1)
+                varColorPri01
             FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_2.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -1166,9 +1250,11 @@ scrAreaEdit As screen:
             ZIndex: =6
 
     rectTitManager_2 As rectangle:
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri01
         Height: =29
-        Width: =354
+        Width: =355
         X: =929
         Y: =475
         ZIndex: =17
@@ -1232,9 +1318,12 @@ scrAreaEdit As screen:
 
     PeopleAddedGallery1_3 As gallery.SelectedUsersTabletGallery:
         AccessibleLabel: ="Personas seleccionadas por el usuario"
-        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderColor: |-
+            =//RGBA(166; 166; 166; 1)
+            varColorPri01
+        BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =219
+        Height: =210
         Items: |-
             =Filter(
                 AddColumns(AreaManagerLiderAnalista,
@@ -1260,7 +1349,7 @@ scrAreaEdit As screen:
         TemplateSize: =45
         Width: =354
         X: =929
-        Y: =txtBuscarAnalista.Y + txtBuscarAnalista.Height + 5
+        Y: =txtBuscarAnalista.Y + txtBuscarAnalista.Height + 2
         ZIndex: =21
 
         Rectangle1_3 As rectangle:
@@ -1319,7 +1408,9 @@ scrAreaEdit As screen:
             Color: =Color.White//Title1_3.Color
             DisabledColor: =RGBA(220, 220, 220, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(228, 3, 44, 1)//RGBA(153; 153; 153; 1)
+            Fill: |-
+                =//RGBA(228; 3; 44; 1)//RGBA(153; 153; 153; 1)
+                varColorPri01
             FocusedBorderThickness: =0
             Height: =PeopleAddedGallery1_3.TemplateHeight
             HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -1468,9 +1559,12 @@ scrAreaEdit As screen:
             ZIndex: =6
 
     btn_GrabarArea_1 As button:
-        Fill: =RGBA(0, 0, 0, 1)
+        Fill: |
+            =//RGBA(0; 0; 0; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Height: =48
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |+
             =SubmitForm(form_EditArea);
             //ResetForm(form_EditArea);;
@@ -1482,15 +1576,31 @@ scrAreaEdit As screen:
         ZIndex: =23
 
     Icon3_1 As icon.Edit:
+        Color: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01
         DisplayMode: =If(DataSourceInfo(Area_1, DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =47
         Icon: =Icon.Edit
         OnSelect: =EditForm(form_EditArea)
         Visible: |-
             =//true
             If(form_EditArea.Mode = FormMode.View,true,false)
-        X: =1268
-        Y: =112
-        ZIndex: =25
+        Width: =46
+        X: =1237
+        Y: =80
+        ZIndex: =24
+
+    lbl_TituloPrincipal_11 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =24
+        Text: ="MANTENIMIENTO DE AREA"
+        Width: =665
+        X: =420
+        Y: =12
+        ZIndex: =31
 
     confirmDialogGroup As group:
         Height: =5
@@ -1506,7 +1616,7 @@ scrAreaEdit As screen:
             Height: =Parent.Height
             Visible: =showConfirmDialog
             Width: =Parent.Width
-            ZIndex: =27
+            ZIndex: =25
 
         confirmDialogFrame_1 As button:
             BorderThickness: =0
@@ -1523,7 +1633,7 @@ scrAreaEdit As screen:
             Width: =400
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =28
+            ZIndex: =26
 
         confirmDialogTitle_1 As label:
             Align: =Align.Center
@@ -1533,7 +1643,7 @@ scrAreaEdit As screen:
             Width: =confirmDialogFrame_1.Width
             X: =confirmDialogFrame_1.X
             Y: =confirmDialogFrame_1.Y + 15
-            ZIndex: =29
+            ZIndex: =27
 
         confirmDialogDescription_1 As label:
             Align: =Align.Center
@@ -1550,7 +1660,7 @@ scrAreaEdit As screen:
             Width: =confirmDialogFrame_1.Width
             X: =confirmDialogFrame_1.X
             Y: =confirmDialogTitle_1.Y + confirmDialogTitle_1.Height + 15
-            ZIndex: =30
+            ZIndex: =28
 
         confirmDialogYes_1 As icon.Check:
             Color: =Color.Green
@@ -1618,7 +1728,7 @@ scrAreaEdit As screen:
             Width: =50
             X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
-            ZIndex: =31
+            ZIndex: =29
 
         confirmDialogNo_1 As icon.Check:
             Color: =RGBA(228, 3, 44, 1)
@@ -1631,5 +1741,5 @@ scrAreaEdit As screen:
             Width: =50
             X: =confirmDialogFrame_1.X + (confirmDialogFrame_1.Width / 2) + 20
             Y: =confirmDialogFrame_1.Y + confirmDialogFrame_1.Height - Self.Height - 20
-            ZIndex: =32
+            ZIndex: =30
 

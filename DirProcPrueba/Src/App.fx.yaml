@@ -54,6 +54,9 @@ App As appinfo:
             {id_boton:"Area",texto_boton:"Area",navegacion:scrArea,sangria:1,Habilitado:varGestionarArea}
         );
         
+        
+        Set(varColorBarraTit,RGBA(245, 221, 149, 1));
+        Set(varColorBarraTitB,RGBA(245, 221, 149, 65%));
         Set(varColorPri01,RGBA(236, 64, 38, 1));
         Set(varColorPri01B,RGBA(236, 64, 38, 65%));
         Set(varColorPri02,RGBA(250, 164, 37, 1));
