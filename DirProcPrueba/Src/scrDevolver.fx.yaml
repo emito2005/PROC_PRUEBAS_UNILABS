@@ -325,8 +325,8 @@ scrDevolver As screen:
             	{
             		IdSolicitud: lastSolicitudDetalle.IdSolicitud,
             		IdSolicitudDetalle: lastSolicitudDetalle.ID,
-            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual, // duda
-            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual, // duda
+            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,
+            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual,
             		IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
             		IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual
             	}
