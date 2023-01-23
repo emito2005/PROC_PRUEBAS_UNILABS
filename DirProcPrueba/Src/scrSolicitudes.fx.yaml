@@ -1,46 +1,16 @@
 scrSolicitudes As screen:
 
     cmpBarraSuperior_6 As cmpBarraSuperior:
-        ZIndex: =2
 
-    gaMenuLateral_S As gallery.galleryVertical:
-        Height: =335
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Width: =181
-        Y: =90
-        ZIndex: =3
-
-        Button2_2 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
-            Height: =61
-            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Text: =ThisItem.texto_boton
-            Width: =257
-            ZIndex: =1
-
-    Rectangle4_2 As rectangle:
-        BorderColor: =RGBA(255, 191, 0, 1)
+    Rectangle4_6 As rectangle:
+        BorderColor: =varColorPri01
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =664
-        Width: =1171
-        X: =181
-        Y: =93
-        ZIndex: =4
+        Height: =699
+        OnSelect: =Reset(txtFilNomNroSol_1)
+        Width: =1366
+        Y: =69
+        ZIndex: =2
 
     lbl_TituloPrincipal_3 As label:
         Align: =Align.Center
@@ -48,10 +18,10 @@ scrSolicitudes As screen:
         Height: =36
         Size: =24
         Text: ="SOLICITUDES"
-        Width: =1160
-        X: =190
-        Y: =100
-        ZIndex: =5
+        Width: =496
+        X: =451
+        Y: =17
+        ZIndex: =3
 
     Label3_1 As label:
         Height: =33
@@ -59,58 +29,34 @@ scrSolicitudes As screen:
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
         X: =186
-        Y: =136
-        ZIndex: =6
+        Y: =80
+        ZIndex: =4
 
     txtFilNomNroSol_1 As text:
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
         Default: =
+        HoverBorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
+        HoverColor: |-
+            =//RGBA(0; 0; 0; 1)
+            varColorPri01B
+        HoverFill: |-
+            =//RGBA(186; 202; 226; 1)
+            varColorPri01B
         Width: =812
         X: =186
-        Y: =169
-        ZIndex: =7
-
-    btnExportar_1 As button:
-        OnSelect: |-
-            =Exportacion_Excel.Run(
-                JSON(
-                    ShowColumns(
-                        Search(
-                            Filter(colSolicitudes,
-                                //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
-                                //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
-                                EsAtendido = false,
-                                EsEliminado = false,
-                                EsFinalizado = false,
-                                EsActivo = true // Va a cambiar cuando se anula la solicitud
-                            ),
-                            txtFilNomNroSol_1.Text,
-                            "NroSolicitud",
-                            "NombreSolicitud"
-                        ),
-                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
-                        "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
-                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
-                    )
-                )
-            );
-            
-            Notify("Exportacion realizada correctamente.", NotificationType.Success);
-        Text: ="Exportar"
-        Width: =100
-        X: =1129
-        Y: =169
-        ZIndex: =8
-
-    btnLimpiar_1 As button:
-        OnSelect: =Reset(txtFilNomNroSol_1)
-        Text: ="Limpiar"
-        Width: =100
-        X: =1019
-        Y: =169
-        ZIndex: =9
+        Y: =113
+        ZIndex: =5
 
     "Gallery1_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
-        Height: =464
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri02
+        BorderThickness: =1
+        Height: =530
         Items: |
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
@@ -133,12 +79,15 @@ scrSolicitudes As screen:
             //ClearCollect(colSolicitudDetalleItemSel;Gallery1_1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1_1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_1.Selected.ID));
+        TemplateFill: |-
+            =//RGBA(0; 0; 0; 0)
+            If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
-        Width: =1166
-        X: =190
-        Y: =273
-        ZIndex: =10
+        Width: =1175
+        X: =181
+        Y: =217
+        ZIndex: =8
 
         Title2_7 As label:
             FontWeight: =FontWeight.Normal
@@ -151,6 +100,7 @@ scrSolicitudes As screen:
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =85
+            X: =5
             Y: =4
             ZIndex: =4
 
@@ -165,7 +115,7 @@ scrSolicitudes As screen:
             Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =170
-            X: =86
+            X: =93
             Y: =4
             ZIndex: =5
 
@@ -180,7 +130,7 @@ scrSolicitudes As screen:
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =140
-            X: =264
+            X: =271
             Y: =4
             ZIndex: =6
 
@@ -195,7 +145,7 @@ scrSolicitudes As screen:
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1001
+            X: =1022
             Y: =4
             ZIndex: =8
 
@@ -210,7 +160,7 @@ scrSolicitudes As screen:
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1077
+            X: =1091
             Y: =4
             ZIndex: =9
 
@@ -224,8 +174,8 @@ scrSolicitudes As screen:
             Size: =11
             Text: =ThisItem.AreaOrigen
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =515
+            Width: =100
+            X: =501
             Y: =4
             ZIndex: =10
 
@@ -239,8 +189,8 @@ scrSolicitudes As screen:
             Size: =11
             Text: =ThisItem.AreaDestino
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =622
+            Width: =100
+            X: =601
             Y: =4
             ZIndex: =11
 
@@ -249,7 +199,7 @@ scrSolicitudes As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1145
+            X: =1159
             Y: =2
             ZIndex: =12
 
@@ -278,12 +228,262 @@ scrSolicitudes As screen:
             Size: =11
             Text: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =721
+            Width: =100
+            X: =707
             Y: =4
             ZIndex: =14
 
+        Title2_36 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.LiderDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =814
+            Y: =4
+            ZIndex: =15
+
+        Title2_37 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AnalistaDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =919
+            Y: =4
+            ZIndex: =16
+
+    gaMenuLateral_S As gallery.galleryVertical:
+        Height: =271
+        Items: =colBarraLateral
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Transition: =Transition.Pop
+        Width: =181
+        Y: =69
+        ZIndex: =22
+
+        Button2_6 As button:
+            Align: =Align.Left
+            Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
+            Height: =61
+            HoverFill: =ColorFade(varColorPri02, -20%)
+            OnSelect: |-
+                =Set(varIdOpcionMenu,ThisItem.id_boton);
+                Set(varOpcionMenu,ThisItem.texto_boton);
+                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
+            PaddingLeft: |
+                =ThisItem.sangria*10
+            Text: =ThisItem.texto_boton
+            Width: =171
+            ZIndex: =1
+
+    btnExportar_1 As button:
+        Fill: =varColorPri01
+        HoverFill: =ColorFade(Self.Fill, -10%)
+        OnSelect: |-
+            =Exportacion_Excel.Run(
+                JSON(
+                    ShowColumns(
+                        Search(
+                            Filter(colSolicitudes,
+                                //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
+                                //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
+                                EsAtendido = false,
+                                EsEliminado = false,
+                                EsFinalizado = false,
+                                EsActivo = true // Va a cambiar cuando se anula la solicitud
+                            ),
+                            txtFilNomNroSol_1.Text,
+                            "NroSolicitud",
+                            "NombreSolicitud"
+                        ),
+                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
+                        "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
+                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                    )
+                )
+            );
+            
+            Notify("Exportacion realizada correctamente.", NotificationType.Success);
+        Text: ="Exportar"
+        Width: =100
+        X: =1123
+        Y: =113
+        ZIndex: =23
+
+    btnLimpiar_1 As button:
+        Fill: =varColorPri01
+        HoverFill: =ColorFade(Self.Fill, -10%)
+        OnSelect: =Reset(txtFilNomNroSol)
+        Text: ="Limpiar"
+        Width: =100
+        X: =1013
+        Y: =113
+        ZIndex: =24
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Rectangle3_1 As rectangle:
+            Fill: =varColorPri02
+            Height: =50
+            Width: =1175
+            X: =181
+            Y: =163
+            ZIndex: =10
+
+        lblHeaderMS_12 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NRO TICKET"
+            Width: =80
+            X: =190
+            Y: =167
+            ZIndex: =11
+
+        lblHeaderMS_13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NOMBRE SOL."
+            Width: =110
+            X: =324
+            Y: =167
+            ZIndex: =12
+
+        lblHeaderMS_14 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="TIPO SOLIC."
+            Width: =80
+            X: =477
+            Y: =167
+            ZIndex: =13
+
+        lblHeaderMS_15 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="TIPO SERV."
+            Width: =80
+            X: =598
+            Y: =167
+            ZIndex: =14
+
+        lblHeaderMS_16 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. PROCEDENCIA"
+            Width: =110
+            X: =682
+            Y: =167
+            ZIndex: =15
+
+        lblHeaderMS_17 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="DPTO. ASIGNADO"
+            Width: =100
+            X: =795
+            Y: =167
+            ZIndex: =16
+
+        lblHeaderMS_18 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="MANAGER"
+            Width: =93
+            X: =897
+            Y: =167
+            ZIndex: =17
+
+        lblHeaderMS_19 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="LIDER"
+            Width: =73
+            X: =1013
+            Y: =167
+            ZIndex: =18
+
+        lblHeaderMS_20 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="ANALISTA"
+            Width: =80
+            X: =1110
+            Y: =167
+            ZIndex: =19
+
+        lblHeaderMS_21 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA CREAC."
+            Width: =70
+            X: =1191
+            Y: =167
+            ZIndex: =20
+
+        lblHeaderMS_22 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="FECHA EXPIRA"
+            Width: =70
+            X: =1260
+            Y: =167
+            ZIndex: =21
+
     icnActualizar_1 As icon.Reload:
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
+        Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
         OnSelect: |+
@@ -341,165 +541,7 @@ scrSolicitudes As screen:
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
         Width: =50
-        X: =1286
-        Y: =170
-        ZIndex: =11
-
-    Group2_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        Rectangle3_1 As rectangle:
-            Fill: =RGBA(221, 79, 14, 1)
-            Height: =50
-            Width: =1175
-            X: =181
-            Y: =219
-            ZIndex: =12
-
-        lblHeaderMS_12 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="NRO TICKET"
-            Width: =80
-            X: =190
-            Y: =223
-            ZIndex: =13
-
-        lblHeaderMS_13 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="NOMBRE SOL."
-            Width: =110
-            X: =324
-            Y: =223
-            ZIndex: =14
-
-        lblHeaderMS_14 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="TIPO SOLIC."
-            Width: =80
-            X: =477
-            Y: =223
-            ZIndex: =15
-
-        lblHeaderMS_15 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="TIPO SERV."
-            Width: =80
-            X: =598
-            Y: =223
-            ZIndex: =16
-
-        lblHeaderMS_16 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. PROCEDENCIA"
-            Width: =110
-            X: =696
-            Y: =223
-            ZIndex: =17
-
-        lblHeaderMS_17 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. ASIGNADO"
-            Width: =100
-            X: =809
-            Y: =223
-            ZIndex: =18
-
-        lblHeaderMS_18 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="MANAGER"
-            Width: =93
-            X: =904
-            Y: =223
-            ZIndex: =19
-
-        lblHeaderMS_19 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="LIDER"
-            Width: =73
-            X: =1013
-            Y: =223
-            ZIndex: =20
-
-        lblHeaderMS_20 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="ANALISTA"
-            Width: =80
-            X: =1110
-            Y: =223
-            ZIndex: =21
-
-        lblHeaderMS_21 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA CREAC."
-            Width: =70
-            X: =1191
-            Y: =223
-            ZIndex: =22
-
-        lblHeaderMS_22 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =RGBA(221, 79, 14, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA EXPIRA"
-            Width: =70
-            X: =1260
-            Y: =223
-            ZIndex: =23
+        X: =1306
+        Y: =113
+        ZIndex: =25
 

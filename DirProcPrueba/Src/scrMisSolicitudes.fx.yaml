@@ -4,7 +4,7 @@ scrMisSolicitudes As screen:
     cmpBarraSuperior_5 As cmpBarraSuperior:
 
     Rectangle4 As rectangle:
-        BorderColor: =RGBA(236, 64, 38, 1)
+        BorderColor: =varColorPri01
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
         Height: =699
@@ -29,15 +29,26 @@ scrMisSolicitudes As screen:
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
         X: =186
-        Y: =136
+        Y: =80
         ZIndex: =4
 
     txtFilNomNroSol As text:
-        BorderColor: =RGBA(236, 64, 38, 1)
+        BorderColor: |-
+            =//RGBA(236; 64; 38; 1)
+            varColorPri01B
         Default: =
+        HoverBorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
+        HoverColor: |-
+            =//RGBA(0; 0; 0; 1)
+            varColorPri01B
+        HoverFill: |-
+            =//RGBA(186; 202; 226; 1)
+            varColorPri01B
         Width: =812
         X: =186
-        Y: =169
+        Y: =113
         ZIndex: =5
 
     btnExportar As button:
@@ -75,8 +86,8 @@ scrMisSolicitudes As screen:
             //Launch(excelPath);;
         Text: ="Exportar"
         Width: =100
-        X: =1129
-        Y: =169
+        X: =1123
+        Y: =113
         ZIndex: =6
 
     btnLimpiar As button:
@@ -85,12 +96,16 @@ scrMisSolicitudes As screen:
         OnSelect: =Reset(txtFilNomNroSol)
         Text: ="Limpiar"
         Width: =100
-        X: =1019
-        Y: =169
+        X: =1013
+        Y: =113
         ZIndex: =7
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
-        Height: =464
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri02
+        BorderThickness: =1
+        Height: =539
         Items: |
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
@@ -113,12 +128,13 @@ scrMisSolicitudes As screen:
             //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1.Selected.ID));
+        ShowNavigation: =true
         TemplateFill: =If(ThisItem.IsSelected,RGBA(191, 191, 191, 60%),RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
-        Width: =1166
-        X: =190
-        Y: =273
+        Width: =1175
+        X: =181
+        Y: =217
         ZIndex: =8
 
         Title2_4 As label:
@@ -132,6 +148,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =85
+            X: =5
             Y: =4
             ZIndex: =4
 
@@ -146,7 +163,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =170
-            X: =86
+            X: =93
             Y: =4
             ZIndex: =5
 
@@ -161,7 +178,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =140
-            X: =264
+            X: =271
             Y: =4
             ZIndex: =6
 
@@ -176,7 +193,7 @@ scrMisSolicitudes As screen:
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1001
+            X: =1022
             Y: =4
             ZIndex: =8
 
@@ -191,7 +208,7 @@ scrMisSolicitudes As screen:
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1077
+            X: =1091
             Y: =4
             ZIndex: =9
 
@@ -206,7 +223,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.AreaOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =107
-            X: =515
+            X: =501
             Y: =4
             ZIndex: =10
 
@@ -221,7 +238,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.AreaDestino
             VerticalAlign: =VerticalAlign.Top
             Width: =107
-            X: =622
+            X: =601
             Y: =4
             ZIndex: =11
 
@@ -230,7 +247,7 @@ scrMisSolicitudes As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1145
+            X: =1159
             Y: =2
             ZIndex: =12
 
@@ -259,12 +276,45 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
-            Width: =107
-            X: =721
+            Width: =100
+            X: =707
             Y: =4
             ZIndex: =14
 
+        Title2_38 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.LiderDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =814
+            Y: =4
+            ZIndex: =15
+
+        Title2_39 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.AnalistaDelArea
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =919
+            Y: =2
+            ZIndex: =16
+
     icnActualizar As icon.Reload:
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
@@ -323,8 +373,8 @@ scrMisSolicitudes As screen:
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
         Width: =50
-        X: =1286
-        Y: =170
+        X: =1300
+        Y: =114
         ZIndex: =9
 
     gaMenuLateral_MS As gallery.galleryVertical:
@@ -364,7 +414,7 @@ scrMisSolicitudes As screen:
             Height: =50
             Width: =1175
             X: =181
-            Y: =219
+            Y: =163
             ZIndex: =10
 
         lblHeaderMS_1 As label:
@@ -376,7 +426,7 @@ scrMisSolicitudes As screen:
             Text: ="NRO TICKET"
             Width: =80
             X: =190
-            Y: =223
+            Y: =167
             ZIndex: =11
 
         lblHeaderMS_2 As label:
@@ -388,7 +438,7 @@ scrMisSolicitudes As screen:
             Text: ="NOMBRE SOL."
             Width: =110
             X: =324
-            Y: =223
+            Y: =167
             ZIndex: =12
 
         lblHeaderMS_3 As label:
@@ -400,7 +450,7 @@ scrMisSolicitudes As screen:
             Text: ="TIPO SOLIC."
             Width: =80
             X: =477
-            Y: =223
+            Y: =167
             ZIndex: =13
 
         lblHeaderMS_4 As label:
@@ -412,7 +462,7 @@ scrMisSolicitudes As screen:
             Text: ="TIPO SERV."
             Width: =80
             X: =598
-            Y: =223
+            Y: =167
             ZIndex: =14
 
         lblHeaderMS_5 As label:
@@ -423,8 +473,8 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
             Width: =110
-            X: =696
-            Y: =223
+            X: =682
+            Y: =167
             ZIndex: =15
 
         lblHeaderMS_6 As label:
@@ -435,8 +485,8 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="DPTO. ASIGNADO"
             Width: =100
-            X: =809
-            Y: =223
+            X: =795
+            Y: =167
             ZIndex: =16
 
         lblHeaderMS_7 As label:
@@ -447,8 +497,8 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="MANAGER"
             Width: =93
-            X: =904
-            Y: =223
+            X: =897
+            Y: =167
             ZIndex: =17
 
         lblHeaderMS_8 As label:
@@ -460,7 +510,7 @@ scrMisSolicitudes As screen:
             Text: ="LIDER"
             Width: =73
             X: =1013
-            Y: =223
+            Y: =167
             ZIndex: =18
 
         lblHeaderMS_9 As label:
@@ -472,7 +522,7 @@ scrMisSolicitudes As screen:
             Text: ="ANALISTA"
             Width: =80
             X: =1110
-            Y: =223
+            Y: =167
             ZIndex: =19
 
         lblHeaderMS_10 As label:
@@ -484,7 +534,7 @@ scrMisSolicitudes As screen:
             Text: ="FECHA CREAC."
             Width: =70
             X: =1191
-            Y: =223
+            Y: =167
             ZIndex: =20
 
         lblHeaderMS_11 As label:
@@ -496,6 +546,6 @@ scrMisSolicitudes As screen:
             Text: ="FECHA EXPIRA"
             Width: =70
             X: =1260
-            Y: =223
+            Y: =167
             ZIndex: =21
 
