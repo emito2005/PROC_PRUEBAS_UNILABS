@@ -46,7 +46,9 @@ scrNuevaSolicitud As screen:
 
     icn_Volver_NS As icon.BackArrow:
         Icon: =Icon.BackArrow
-        OnSelect: =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
+        OnSelect: |-
+            =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
+            Back()
         X: =20
         Y: =112
         ZIndex: =5
