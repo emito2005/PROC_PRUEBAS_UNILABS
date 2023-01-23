@@ -1,7 +1,20 @@
 scrDevolver As screen:
     OnHidden: =Reset(TextInput2_3)
     OnVisible: |-
-        =UpdateContext({  })
+        =// Obtener la primera acción del área y etapa actual
+        UpdateContext({
+            varFirstActionByArea:
+            First(
+                SortByColumns(
+                    Filter(SolicitudDetalle, 
+                        IdSolicitud = varSolicitudDetalleItemSel.IdSolicitud,
+                        IdAreaActual = varMyAreaEtapaFlujo.IdArea, 
+                        IdEtapaActual = varMyAreaEtapaFlujo.IdEtapa
+                    ),
+                    "ID"
+                )
+            )
+        });
         
         /*If(IsBlank(MyLiderElevarID) && varMyUser.IdPerfil = 4; // Analyst
             UpdateContext({ 
@@ -277,29 +290,31 @@ scrDevolver As screen:
             				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
             				FechaCreacion: Today(), 
             				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
-                            FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                            //FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA;
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
-            				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+            				FechaExpiraOLA: DateAdd(Today(), LookUp(Area_1, ID = varFirstActionByArea.IdAreaOrigen).OLA),
+                            //varMyUserArea.OLA);
             				EsAtendido: false,
-            				IdAccionOrigen: 3, // Elevar
+            				IdAccionOrigen: 5, // Devolver
             				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
             				IdAreaOrigen: varMyUser.IdArea,
             				IdPerfilOrigen: varMyUser.IdPerfil,
             				IdPersonalOrigen: varMyUser.ID,
             				IdAccionActual: 0, // Lo actualizará el siguiente usuario
-            				IdEtapaActual: varSolicitudDetalleItemSel.IdEtapaActual,
-            				IdAreaActual: varSolicitudDetalleItemSel.IdAreaActual,
+            				IdEtapaActual: varFirstActionByArea.IdEtapaOrigen,
+            				IdAreaActual: varFirstActionByArea.IdAreaOrigen,
                             // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
-            				IdPerfilActual: LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).IdPerfil,
-            				IdPersonalActual: varSolicitudDetalleItemSel.IdPersonalOrigen,
+            				IdPerfilActual: varFirstActionByArea.IdPerfilOrigen,
+                            //LookUp(Personal; ID = varSolicitudDetalleItemSel.IdPersonalOrigen).IdPerfil;
+            				IdPersonalActual: varFirstActionByArea.IdPersonalOrigen,
                             IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
             				IdEtapaDestino: 0, // Etapa Destino Real
             				IdAreaDestino: 0, // Area Destino Real
             				IdPerfilDestino: 0, // Perfil Destino Real
             				IdPersonalDestino: 0, // Personal Destino 
-                            IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
-                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
-                            ObsSolDet: TrimEnds(TextInput2_1.Text)
+                            IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaActual,
+                            IdAreaDestinoFlujo: varMyUser.IdArea,
+                            ObsSolDet: TrimEnds(TextInput2_3.Text)
                         }
             		)
             });
@@ -310,8 +325,8 @@ scrDevolver As screen:
             	{
             		IdSolicitud: lastSolicitudDetalle.IdSolicitud,
             		IdSolicitudDetalle: lastSolicitudDetalle.ID,
-            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,
-            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual,
+            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual, // duda
+            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual, // duda
             		IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
             		IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual
             	}
@@ -321,21 +336,21 @@ scrDevolver As screen:
             Patch(SolicitudDetalle, 
                 LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
                 {
-                    IdAccionActual: 3, // Elevar
+                    IdAccionActual: 5, // Devolver
                     IdPerfilActual: varMyUser.IdPerfil,
                     IdPersonalActual: varMyUser.ID,
-                    IdAreaDestino: varSolicitudDetalleItemSel.IdAreaActual,
-                    IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaActual,
-                    IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
-                    IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
+                    IdAreaDestino: varFirstActionByArea.IdAreaOrigen,
+                    IdEtapaDestino: varFirstActionByArea.IdEtapaOrigen,
+                    IdPerfilDestino: varFirstActionByArea.IdPerfilOrigen,
+                    IdPersonalDestino: varFirstActionByArea.IdPersonalOrigen,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2_1.Text),
+                    ObsSolDetDestino: TrimEnds(TextInput2_3.Text),
                     FechaAtencion: Today()
                 }
             );
             
-            Notify("Solicitud elevada correctamente.", NotificationType.Success);
+            Notify("Solicitud devuelta correctamente.", NotificationType.Success);
             
             UpdateContext({ isLoading: false });
             
@@ -516,7 +531,7 @@ scrDevolver As screen:
                     IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
                     LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
                 )*/
-                LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Nombre
+                LookUp(Personal, ID = varFirstActionByArea.IdPersonalOrigen).Nombre & " (" & LookUp(Area_1, ID = varFirstActionByArea.IdAreaOrigen).Nombre & ")"
             Width: =requestFieldLbl_69.X + requestFieldLbl_69.Width - Self.X
             X: =requestFieldLbl_70.X + requestFieldLbl_70.Width + 5
             Y: =requestFieldLbl_70.Y
