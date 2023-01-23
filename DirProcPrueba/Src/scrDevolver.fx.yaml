@@ -1,0 +1,524 @@
+scrDevolver As screen:
+    OnHidden: =Reset(TextInput2_3)
+    OnVisible: |-
+        =UpdateContext({  })
+        
+        /*If(IsBlank(MyLiderElevarID) && varMyUser.IdPerfil = 4; // Analyst
+            UpdateContext({ 
+                MyLiderElevarID: LookUp(AreaManagerLiderAnalista; IdPersonal = varMyUser.ID).IdAreaManagerLider
+            });;
+            UpdateContext({ 
+                MyLiderElevarPersonalID: LookUp(AreaManagerLider; ID = MyLiderElevarID).IdPersonal
+            });;
+        );;
+        
+        If(IsBlank(MyManagerElevarID) && varMyUser.IdPerfil = 3; // Leader
+            UpdateContext({ 
+                MyManagerElevarID: LookUp(AreaManagerLider; IdPersonal = varMyUser.ID).IdAreaManager
+            });;
+            UpdateContext({ 
+                MyManagerElevarPersonalID: LookUp(AreaManager; ID = MyManagerElevarID).IdPersonal
+            });;
+        );;*/
+
+    cmpBarraSuperior_13 As cmpBarraSuperior:
+
+    lbl_TituloPrincipal_10 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =24
+        Text: ="DEVOLVER SOLICITUD"
+        Width: =1335
+        X: =13
+        Y: =icn_Volver_NS_7.Y + (icn_Volver_NS_7.Height / 2) - (Self.Height / 2)
+        ZIndex: =2
+
+    icn_Volver_NS_7 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back();
+        X: =60
+        Y: =100
+        ZIndex: =3
+
+    requestFieldGroup_40 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =6
+
+        requestFieldLbl_60 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="ID"
+            Width: =30
+            X: =icn_Volver_NS_1.X
+            Y: =200
+            ZIndex: =4
+
+        requestFieldTxt_40 As text:
+            Default: =requestFieldTxt_1.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =120
+            X: =requestFieldLbl_60.X + requestFieldLbl_60.Width
+            Y: =requestFieldLbl_60.Y
+            ZIndex: =5
+
+    requestFieldGroup_41 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =9
+
+        requestFieldLbl_61 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Nro. Ticket"
+            Width: =100
+            X: =requestFieldTxt_40.X + requestFieldTxt_40.Width + 170
+            Y: =requestFieldLbl_60.Y
+            ZIndex: =6
+
+        requestFieldTxt_41 As text:
+            Default: =requestFieldTxt_2.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =120
+            X: =requestFieldLbl_61.X + requestFieldLbl_61.Width
+            Y: =requestFieldLbl_61.Y
+            ZIndex: =7
+
+    requestFieldGroup_42 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =12
+
+        requestFieldLbl_62 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Nombre de Solicitud"
+            Width: =180
+            X: =requestFieldTxt_41.X + requestFieldTxt_41.Width + 100
+            Y: =requestFieldLbl_60.Y
+            ZIndex: =8
+
+        requestFieldTxt_42 As text:
+            Default: =requestFieldTxt_3.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+            X: =requestFieldLbl_62.X + requestFieldLbl_62.Width
+            Y: =requestFieldLbl_62.Y
+            ZIndex: =9
+
+    requestFieldGroup_43 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =15
+
+        requestFieldLbl_63 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Tipo de Solicitud"
+            X: =requestFieldLbl_60.X
+            Y: =requestFieldLbl_60.Y + requestFieldLbl_60.Height + 40
+            ZIndex: =10
+
+        requestFieldTxt_43 As text:
+            Default: =requestFieldTxt_4.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_63.X + requestFieldLbl_63.Width
+            Y: =requestFieldLbl_63.Y
+            ZIndex: =11
+
+    requestFieldGroup_44 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =18
+
+        requestFieldLbl_64 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Tipo de Servicio"
+            Width: =140
+            X: =requestFieldTxt_43.X + requestFieldTxt_43.Width + 100
+            Y: =requestFieldLbl_63.Y
+            ZIndex: =12
+
+        requestFieldTxt_44 As text:
+            Default: =requestFieldTxt_5.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_64.X + requestFieldLbl_64.Width
+            Y: =requestFieldLbl_64.Y
+            ZIndex: =13
+
+    requestFieldGroup_45 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =21
+
+        requestFieldLbl_65 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Estado"
+            Width: =70
+            X: =requestFieldTxt_44.X + requestFieldTxt_44.Width + 130
+            Y: =requestFieldLbl_63.Y
+            ZIndex: =14
+
+        requestFieldTxt_45 As text:
+            Default: =requestFieldTxt_6.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =200
+            X: =requestFieldLbl_65.X + requestFieldLbl_65.Width
+            Y: =requestFieldLbl_65.Y
+            ZIndex: =15
+
+    requestFieldGroup_46 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =24
+
+        requestFieldLbl_66 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Creación"
+            Width: =110
+            X: =requestFieldLbl_63.X
+            Y: =requestFieldLbl_63.Y + requestFieldLbl_63.Height + 40
+            ZIndex: =16
+
+        requestFieldTxt_46 As text:
+            Default: =requestFieldTxt_12.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_66.X + requestFieldLbl_66.Width
+            Y: =requestFieldLbl_66.Y
+            ZIndex: =17
+
+    Button5_3 As button:
+        OnSelect: |-
+            =UpdateContext({ isLoading: true });
+            
+            // Crear Solicitud Detalle inicial
+            UpdateContext({
+            	lastSolicitudDetalle:
+            		Patch(SolicitudDetalle,
+            			Defaults(SolicitudDetalle),
+            			{
+            				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
+            				FechaCreacion: Today(), 
+            				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                            FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                            // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+            				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+            				EsAtendido: false,
+            				IdAccionOrigen: 3, // Elevar
+            				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
+            				IdAreaOrigen: varMyUser.IdArea,
+            				IdPerfilOrigen: varMyUser.IdPerfil,
+            				IdPersonalOrigen: varMyUser.ID,
+            				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+            				IdEtapaActual: varSolicitudDetalleItemSel.IdEtapaActual,
+            				IdAreaActual: varSolicitudDetalleItemSel.IdAreaActual,
+                            // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+            				IdPerfilActual: LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).IdPerfil,
+            				IdPersonalActual: varSolicitudDetalleItemSel.IdPersonalOrigen,
+                            IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+            				IdEtapaDestino: 0, // Etapa Destino Real
+            				IdAreaDestino: 0, // Area Destino Real
+            				IdPerfilDestino: 0, // Perfil Destino Real
+            				IdPersonalDestino: 0, // Personal Destino 
+                            IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
+                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                            ObsSolDet: TrimEnds(TextInput2_1.Text)
+                        }
+            		)
+            });
+            
+            // Crear Solicitud Detalle Destino del siguiente usuario
+            Patch(SolicitudDetalleDestino,
+            	Defaults(SolicitudDetalleDestino),
+            	{
+            		IdSolicitud: lastSolicitudDetalle.IdSolicitud,
+            		IdSolicitudDetalle: lastSolicitudDetalle.ID,
+            		IdEtapaDestino: lastSolicitudDetalle.IdEtapaActual,
+            		IdAreaDestino: lastSolicitudDetalle.IdAreaActual,
+            		IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
+            		IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual
+            	}
+            );
+            
+            // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+            Patch(SolicitudDetalle, 
+                LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                {
+                    IdAccionActual: 3, // Elevar
+                    IdPerfilActual: varMyUser.IdPerfil,
+                    IdPersonalActual: varMyUser.ID,
+                    IdAreaDestino: varSolicitudDetalleItemSel.IdAreaActual,
+                    IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaActual,
+                    IdPerfilDestino: lastSolicitudDetalle.IdPerfilActual,
+                    IdPersonalDestino: lastSolicitudDetalle.IdPersonalActual,
+                    EsAtendido: true, // Actualizar estado del registro seleccionado
+                    IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                    ObsSolDetDestino: TrimEnds(TextInput2_1.Text),
+                    FechaAtencion: Today()
+                }
+            );
+            
+            Notify("Solicitud elevada correctamente.", NotificationType.Success);
+            
+            UpdateContext({ isLoading: false });
+            
+            Navigate(scrMisSolicitudes, Fade);
+        Text: ="DEVOLVER"
+        Width: =Parent.Width / 2
+        X: =Parent.Width / 2 - Self.Width / 2
+        Y: =Parent.Height - Self.Height - 15
+        ZIndex: =25
+
+    TextInput2_3 As text:
+        Default: =""
+        Height: =60
+        Mode: =TextMode.MultiLine
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =requestFieldTxt_45.X + requestFieldTxt_45.Width - Self.X
+        X: =60
+        Y: =630
+        ZIndex: =28
+
+    requestFieldGroup_47 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =20
+        ZIndex: =28
+
+        requestFieldLbl_67 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="F. Expiración"
+            Width: =120
+            X: =requestFieldTxt_46.X + requestFieldTxt_46.Width + 50
+            Y: =requestFieldLbl_66.Y
+            ZIndex: =18
+
+        requestFieldTxt_47 As text:
+            Default: =requestFieldTxt_13.Text
+            DisplayMode: =DisplayMode.Disabled
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =180
+            X: =requestFieldLbl_67.X + requestFieldLbl_67.Width
+            Y: =requestFieldLbl_67.Y
+            ZIndex: =19
+
+    Rectangle2_10 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =29
+
+    descriptionGroup_8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        requestFieldLbl_68 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Descripción"
+            Width: =110
+            X: =requestFieldLbl_66.X
+            Y: =requestFieldLbl_66.Y + requestFieldLbl_66.Height + 20
+            ZIndex: =20
+
+        requestFieldLbl_69 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =100
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =requestFieldLbl_15.Text
+            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
+            X: =requestFieldLbl_68.X + requestFieldLbl_68.Width
+            Y: =requestFieldLbl_68.Y
+            ZIndex: =21
+
+    descriptionGroup_9 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        requestFieldLbl_72 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Comentario:"
+            Width: =110
+            X: =requestFieldLbl_70.X
+            Y: =requestFieldLbl_70.Y + requestFieldLbl_70.Height + 5
+            ZIndex: =22
+
+        requestFieldScrollLbl_3 As label:
+            Align: =Align.Justify
+            AutoHeight: =true
+            Color: =RGBA(0, 18, 107, 0)
+            Height: =80
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =requestFieldLbl_73.Text
+            Visible: =false
+            Width: =requestFieldLbl_73.Width
+            X: =requestFieldLbl_73.X
+            Y: =requestFieldLbl_73.Y
+            ZIndex: =23
+
+        requestFieldLbl_73 As label:
+            Align: =Align.Justify
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Min(requestFieldScrollLbl_3.Height, 85)
+            Overflow: =Overflow.Scroll
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =requestFieldLbl_15.Text
+            Visible: =false
+            Width: =requestFieldLbl_69.X + requestFieldLbl_69.Width - Self.X
+            X: =requestFieldLbl_72.X
+            Y: =requestFieldLbl_72.Y + requestFieldLbl_72.Height
+            ZIndex: =24
+
+    upperToGroup_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        requestFieldLbl_70 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Devolver Solicitud a:"
+            Width: =170
+            X: =requestFieldLbl_66.X
+            Y: =requestFieldLbl_69.Y + requestFieldLbl_69.Height + 25
+            ZIndex: =26
+
+        requestFieldLbl_71 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                =/*If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4; // Analyst
+                    LookUp(Personal; ID = MyLiderElevarPersonalID).Nombre;
+                
+                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
+                    LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
+                )*/
+                LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Nombre
+            Width: =requestFieldLbl_69.X + requestFieldLbl_69.Width - Self.X
+            X: =requestFieldLbl_70.X + requestFieldLbl_70.Width + 5
+            Y: =requestFieldLbl_70.Y
+            ZIndex: =27
+
