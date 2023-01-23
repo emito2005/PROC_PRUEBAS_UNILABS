@@ -2,7 +2,8 @@ scrDerivar As screen:
     OnHidden: =Reset(TextInput2_2)
     OnVisible: |-
         =ResetForm(RequestAttachmentsForm);
-        NewForm(RequestAttachmentsForm)
+        NewForm(RequestAttachmentsForm);
+        UpdateContext({ operation: "Derivar" })
 
     cmpBarraSuperior_11 As cmpBarraSuperior:
 
@@ -636,7 +637,7 @@ scrDerivar As screen:
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =33
+        ZIndex: =34
 
     requestFieldGroup_37 As group:
         Height: =5
