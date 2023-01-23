@@ -8,16 +8,6 @@ scrNuevaSolicitud As screen:
         NewForm(frm_EditSolicitud);
         NewForm(frmDatosAdjuntos);
 
-    Rectangle4_1 As rectangle:
-        BorderColor: =RGBA(255, 191, 0, 1)
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =670
-        Width: =1339
-        X: =13
-        Y: =89
-        ZIndex: =1
-
     cmpBarraSuperior_4 As cmpBarraSuperior:
         ZIndex: =2
 
@@ -29,29 +19,8 @@ scrNuevaSolicitud As screen:
         Text: ="CREACION DE SOLICITUD"
         Width: =1335
         X: =13
-        Y: =96
+        Y: =16
         ZIndex: =3
-
-    btnGrabar As button:
-        Fill: =RGBA(0, 0, 0, 1)
-        Height: =45
-        OnSelect: |-
-            =SubmitForm(frm_EditSolicitud);
-            Select(icn_Volver_NS)
-        Text: ="CREAR SOLICITUD"
-        Width: =720
-        X: =372
-        Y: =700
-        ZIndex: =4
-
-    icn_Volver_NS As icon.BackArrow:
-        Icon: =Icon.BackArrow
-        OnSelect: |-
-            =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
-            Back()
-        X: =20
-        Y: =112
-        ZIndex: =5
 
     frm_EditSolicitud As form:
         DataSource: =Solicitud
@@ -179,6 +148,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey35 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -259,6 +229,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey34 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -344,6 +315,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey16 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -414,6 +386,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey17 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -482,6 +455,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey18 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -590,6 +564,7 @@ scrNuevaSolicitud As screen:
 
             DataCardKey48 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -637,4 +612,27 @@ scrNuevaSolicitud As screen:
                 Wrap: =false
                 Y: =DataCardKey48.Y
                 ZIndex: =4
+
+    icn_Volver_NS As icon.BackArrow:
+        Color: =varColorPri01
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
+            Back()
+        X: =13
+        Y: =2
+        ZIndex: =9
+
+    btnGrabar As button:
+        Fill: =varColorPri01
+        Height: =46
+        HoverFill: =ColorFade(Self.Fill, -10%)
+        OnSelect: |-
+            =SubmitForm(frm_EditSolicitud);
+            Select(icn_Volver_NS)
+        Text: ="CREAR SOLICITUD"
+        Width: =670
+        X: =352
+        Y: =695
+        ZIndex: =10
 

@@ -86,7 +86,7 @@ scrMisSolicitudes As screen:
             //Launch(excelPath);;
         Text: ="Exportar"
         Width: =100
-        X: =1129
+        X: =1123
         Y: =113
         ZIndex: =6
 
@@ -96,7 +96,7 @@ scrMisSolicitudes As screen:
         OnSelect: =Reset(txtFilNomNroSol)
         Text: ="Limpiar"
         Width: =100
-        X: =1019
+        X: =1013
         Y: =113
         ZIndex: =7
 
@@ -148,7 +148,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.NroSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =85
-            X: =7
+            X: =5
             Y: =4
             ZIndex: =4
 
@@ -178,7 +178,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =140
-            X: =264
+            X: =271
             Y: =4
             ZIndex: =6
 
@@ -193,7 +193,7 @@ scrMisSolicitudes As screen:
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1015
+            X: =1022
             Y: =4
             ZIndex: =8
 
@@ -208,7 +208,7 @@ scrMisSolicitudes As screen:
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
-            X: =1084
+            X: =1091
             Y: =4
             ZIndex: =9
 
@@ -223,7 +223,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.AreaOrigen
             VerticalAlign: =VerticalAlign.Top
             Width: =107
-            X: =508
+            X: =501
             Y: =4
             ZIndex: =10
 
@@ -238,7 +238,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.AreaDestino
             VerticalAlign: =VerticalAlign.Top
             Width: =107
-            X: =608
+            X: =601
             Y: =4
             ZIndex: =11
 
@@ -247,7 +247,7 @@ scrMisSolicitudes As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1152
+            X: =1159
             Y: =2
             ZIndex: =12
 
@@ -277,7 +277,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
-            X: =714
+            X: =707
             Y: =4
             ZIndex: =14
 
@@ -292,7 +292,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.LiderDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
-            X: =810
+            X: =814
             Y: =4
             ZIndex: =15
 
@@ -307,7 +307,7 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.AnalistaDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
-            X: =915
+            X: =919
             Y: =2
             ZIndex: =16
 
@@ -373,7 +373,7 @@ scrMisSolicitudes As screen:
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
         Width: =50
-        X: =1286
+        X: =1300
         Y: =114
         ZIndex: =9
 
