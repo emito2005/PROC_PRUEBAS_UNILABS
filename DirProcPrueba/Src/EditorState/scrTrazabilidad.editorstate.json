@@ -46,7 +46,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "cmpBarraSuperior_8",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -523,7 +523,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Y",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Y",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Width",
         "Height",
         "BorderStyle",
@@ -554,7 +561,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon2_2",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -925,7 +932,14 @@
         "PressedBorderColor",
         "HoverBorderColor",
         "FocusedBorderColor",
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Select(Parent)",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         "BorderThickness",
         "FocusedBorderThickness",
@@ -1168,7 +1182,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TituloPrincipal_5",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5736,7 +5750,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle4_7",
-      "ParentIndex": 0,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

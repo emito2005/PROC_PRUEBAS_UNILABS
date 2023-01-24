@@ -3433,49 +3433,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_NS_6.AccessibleLabel"
+                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_DA.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_NS_6.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrVerDocAdjuntos",
-                "type": "scrVerDocAdjuntos.icn_Volver_NS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_NS_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_NS_6.TabIndex",
+                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_DA.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scrVerDocAdjuntos",
-                "type": "scrVerDocAdjuntos.icn_Volver_NS_6"
+                "type": "scrVerDocAdjuntos.icn_Volver_DA"
               }
             }
           ],
@@ -3487,6 +3457,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_DA.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrVerDocAdjuntos.icn_Volver_DA.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrVerDocAdjuntos",
+                "type": "scrVerDocAdjuntos.icn_Volver_DA"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -7596,6 +7596,66 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrTrazabilidad.Gallery1_2.Icon5_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrTrazabilidad.Gallery1_2.Icon5_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrTrazabilidad",
+                "type": "scrTrazabilidad.Gallery1_2.Icon5_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrTrazabilidad.Gallery1_2.Icon5_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrTrazabilidad.Gallery1_2.Icon5_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrTrazabilidad",
+                "type": "scrTrazabilidad.Gallery1_2.Icon5_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [

@@ -410,7 +410,10 @@ scrTrazabilidad As screen:
         Icon5_3 As icon.ChevronRight:
             Height: =24
             Icon: =Icon.PaperClip
-            OnSelect: =Select(Parent)
+            OnSelect: |
+                =//Select(Parent)
+                Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
+                Navigate(scrVerDocAdjuntos, ScreenTransition.None);
             Visible: =ThisItem.'Tiene datos adjuntos'
             Width: =20
             X: =1261
@@ -531,6 +534,6 @@ scrTrazabilidad As screen:
         Icon: =Icon.BackArrow
         OnSelect: =ResetForm(form_EditArea);Back()
         X: =13
-        Y: =3
+        Y: =2
         ZIndex: =19
 
