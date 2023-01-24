@@ -1045,7 +1045,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =44
 
         devolverBtn As button:
-            DisplayMode: =DisplayMode.Edit//If(varDevolver && varMisSolicitudesScreen && varMyAreaEtapaFlujo.Orden > 1; DisplayMode.Edit; DisplayMode.Disabled)
+            DisplayMode: =If(varDevolver && varMisSolicitudesScreen && varMyAreaEtapaFlujo.Orden > 1, DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
             Size: =12
             Text: ="Devolver"
