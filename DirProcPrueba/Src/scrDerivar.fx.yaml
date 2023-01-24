@@ -207,8 +207,12 @@ scrDerivar As screen:
             				IdPerfilOrigen: varMyUser.IdPerfil,
             				IdPersonalOrigen: varMyUser.ID,
             				IdAccionActual: 0, // Lo actualizará el siguiente usuario
-            				IdEtapaActual: varMyAreaEtapaFlujo.IdEtapaDestino,
-            				IdAreaActual: varMyAreaEtapaFlujo.IdAreaDestino,
+            				//IdEtapaActual: varMyAreaEtapaFlujo.IdEtapaDestino; (esto esta mal)
+                            // Correccion
+            				IdEtapaActual: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                            //IdAreaActual: varMyAreaEtapaFlujo.IdAreaDestino; (esto esta mal)
+                            // Correccion
+                            IdAreaActual: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
                             // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
             				IdPerfilActual: 0,
             				IdPersonalActual: 0,
@@ -217,8 +221,20 @@ scrDerivar As screen:
             				IdAreaDestino: 0, // Area Destino Real
             				IdPerfilDestino: 0, // Perfil Destino Real
             				IdPersonalDestino: 0, // Personal Destino 
-                            IdEtapaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdEtapaDestino,
-                            IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo, IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino,
+                            //IdEtapaDestinoFlujo: LookUp(AreaEtapaFlujo; IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdEtapaDestino; (esto esta mal)
+                            // Correccion
+                            IdEtapaDestinoFlujo: 
+                            LookUp(AreaEtapaFlujo, 
+                                IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
+                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                            ).IdEtapaDestino,
+                            //IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo; IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino; (esto esta mal)
+                            // Correccion
+                            IdAreaDestinoFlujo: 
+                            LookUp(AreaEtapaFlujo, 
+                                IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
+                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                            ).IdAreaDestino,
                             ObsSolDet: TrimEnds(TextInput2_2.Text)
             			},
                         // Guarda los datos adjuntos luego de crear el nuevo registro
@@ -230,26 +246,31 @@ scrDerivar As screen:
             // Obtener los managers de la siguiente area
             Clear(colMyManagers);
             ClearCollect(colMyManagers,
-            	Filter(AreaManager, IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+            	//Filter(AreaManager; IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+                Filter(AreaManager, IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             );
             
             // Obtener los líderes de la siguiente area
             Clear(colMyLideres);
             ClearCollect(colMyLideres,
-            	Filter(AreaManagerLider, IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+            	//Filter(AreaManagerLider; IdArea = varMyAreaEtapaFlujo.IdAreaDestino)
+                Filter(AreaManagerLider, IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             );
             
             // Validar si se notificará a los managers
-            If(LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaManager,
+            //If(LookUp(Area_1; ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaManager;
+            If(LookUp(Area_1, ID = varSolicitudDetalleItemSel.IdAreaDestinoFlujo).NotificaManager,
             	ForAll(colMyManagers,
             		Patch(SolicitudDetalleDestino,
             			Defaults(SolicitudDetalleDestino),
             			{
             				IdSolicitud: lastSolicitudDetalle.IdSolicitud,
             				IdSolicitudDetalle: lastSolicitudDetalle.ID,
-            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
-            				IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
-            				IdPerfilDestino: 2, // Manager
+            				//IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino;
+                            IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+            				//IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino;
+            				IdAreaDestino: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                            IdPerfilDestino: 2, // Manager
             				IdPersonalDestino: IdPersonal
             			}
             		)
@@ -257,15 +278,18 @@ scrDerivar As screen:
             );
             
             // Validar si se notificará a los líderes
-            If(LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaLider,
+            //If(LookUp(Area_1; ID = varMyAreaEtapaFlujo.IdAreaDestino).NotificaLider;
+            If(LookUp(Area_1, ID = varSolicitudDetalleItemSel.IdAreaDestinoFlujo).NotificaLider,
             	ForAll(colMyLideres,
             		Patch(SolicitudDetalleDestino,
             			Defaults(SolicitudDetalleDestino),
             			{
             				IdSolicitud: lastSolicitudDetalle.IdSolicitud,
             				IdSolicitudDetalle: lastSolicitudDetalle.ID,
-            				IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
-            				IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
+            				//IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino;
+                            IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+            				//IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino;
+            				IdAreaDestino: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
             				IdPerfilDestino: 3, // Lider
             				IdPersonalDestino: IdPersonal
             			}
@@ -280,8 +304,10 @@ scrDerivar As screen:
                     IdAccionActual: 4, // Derivar
                     IdPerfilActual: varMyUser.IdPerfil,
                     IdPersonalActual: varMyUser.ID,
-                    IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino,
-                    IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino,
+                    //IdAreaDestino: varMyAreaEtapaFlujo.IdAreaDestino;
+                    IdAreaDestino: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                    //IdEtapaDestino: varMyAreaEtapaFlujo.IdEtapaDestino;
+                    IdEtapaDestino: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
                     IdPerfilDestino: 0,
                     IdPersonalDestino: 0,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
@@ -454,7 +480,7 @@ scrDerivar As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =LookUp(Area_1, ID = varMyAreaEtapaFlujo.IdAreaDestino).Nombre
+            Text: =LookUp(Area_1, ID = varSolicitudDetalleItemSel.IdAreaDestinoFlujo).Nombre
             Width: =requestFieldLbl_52.X + requestFieldLbl_52.Width - Self.X
             X: =requestFieldLbl_54.X + requestFieldLbl_54.Width + 15
             Y: =requestFieldLbl_52.Y + requestFieldLbl_52.Height + 20
