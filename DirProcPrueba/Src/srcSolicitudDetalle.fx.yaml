@@ -232,7 +232,7 @@ srcSolicitudDetalle As screen:
         Text: ="DETALLE DE SOLICITUD"
         Width: =1335
         X: =13
-        Y: =icn_Volver_NS_1.Y + (icn_Volver_NS_1.Height / 2) - (Self.Height / 2)
+        Y: =cmpBarraSuperior_7.Y + (cmpBarraSuperior_7.Height / 2) - (Self.Height / 2)
         ZIndex: =3
 
     icn_Volver_NS_1 As icon.BackArrow:
@@ -862,7 +862,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                         FechaFinalSol: Today() 
@@ -1030,7 +1030,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                 		EsEliminado: true,
@@ -1331,7 +1331,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
                 	{ 
                 		EsFinalizado: true,
                         FechaFinalSol: Today()
