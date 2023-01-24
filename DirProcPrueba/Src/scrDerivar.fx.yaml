@@ -3,7 +3,6 @@ scrDerivar As screen:
     OnVisible: |-
         =ResetForm(RequestAttachmentsForm);
         NewForm(RequestAttachmentsForm);
-        UpdateContext({ operation: "Derivar" })
 
     cmpBarraSuperior_11 As cmpBarraSuperior:
 
@@ -685,7 +684,7 @@ scrDerivar As screen:
             ZIndex: =18
 
         requestFieldTxt_37 As text:
-            Default: =requestFieldTxt_13.Text
+            Default: =requestFieldTxt_38.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0

@@ -615,7 +615,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =29
 
         requestFieldTxt_12 As text:
-            Default: =varSolicitudDetalleItemSel.FechaAtencion
+            Default: =varSolicitudDetalleItemSel.FechaCreacion
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
@@ -1016,7 +1016,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =41
 
         derivarBtn As button:
-            DisplayMode: =If(varDerivar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
             Size: =12
             Text: ="Derivar"
