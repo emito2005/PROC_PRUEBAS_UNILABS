@@ -1,5 +1,8 @@
 scrMisSolicitudes As screen:
-    OnVisible: =Select(icnActualizar)
+    OnVisible: |-
+        =
+        Select(btnLimpiarMS);
+        Select(icnActualizarMS);
 
     cmpBarraSuperior_5 As cmpBarraSuperior:
 
@@ -41,8 +44,8 @@ scrMisSolicitudes As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         HoverColor: |-
-            =//RGBA(0; 0; 0; 1)
-            varColorPri01B
+            =RGBA(0, 0, 0, 1)
+            //varColorPri01B
         HoverFill: |-
             =//RGBA(186; 202; 226; 1)
             varColorPri01B
@@ -51,7 +54,7 @@ scrMisSolicitudes As screen:
         Y: =113
         ZIndex: =5
 
-    btnExportar As button:
+    btnExportarMS As button:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
@@ -122,7 +125,7 @@ scrMisSolicitudes As screen:
         Y: =113
         ZIndex: =6
 
-    btnLimpiar As button:
+    btnLimpiarMS As button:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: =Reset(txtFilNomNroSol)
@@ -353,7 +356,7 @@ scrMisSolicitudes As screen:
             Y: =2
             ZIndex: =16
 
-    icnActualizar As icon.Reload:
+    icnActualizarMS As icon.Reload:
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B

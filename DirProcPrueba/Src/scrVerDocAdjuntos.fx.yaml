@@ -90,6 +90,12 @@ scrVerDocAdjuntos As screen:
 
         NextArrow4 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01
+            Color: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01
             Height: =60
             Icon: =Icon.OpenInNewWindow
             OnSelect: |-

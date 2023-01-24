@@ -130,6 +130,7 @@ scrNuevaSolicitud As screen:
             		)
             	)
             );
+            Select(icn_Volver_NS);
         Width: =1076
         X: =173
         Y: =105
@@ -689,7 +690,7 @@ scrNuevaSolicitud As screen:
         Icon: =Icon.BackArrow
         OnSelect: |-
             =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
-            Back()
+            //Back()
         X: =13
         Y: =2
         ZIndex: =7
@@ -700,7 +701,7 @@ scrNuevaSolicitud As screen:
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =SubmitForm(frm_EditSolicitud);
-            Select(icn_Volver_NS)
+            //Select(icn_Volver_NS)
         Text: ="CREAR SOLICITUD"
         Width: =670
         X: =352
