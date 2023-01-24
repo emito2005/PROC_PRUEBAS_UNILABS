@@ -142,13 +142,6 @@ scrElevar As screen:
         Y: =requestFieldLbl_27.Y + requestFieldLbl_27.Height + 15
         ZIndex: =9
 
-    Rectangle2_8 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =36
-
     requestFieldLbl_27 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -160,6 +153,13 @@ scrElevar As screen:
         Width: =120
         X: =Button8_8.X
         Y: =Icon4.Y + Icon4.Height + 15
+        ZIndex: =36
+
+    Rectangle2_8 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
         ZIndex: =37
 
     upperToGroup As group:
