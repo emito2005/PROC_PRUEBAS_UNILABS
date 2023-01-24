@@ -876,7 +876,7 @@ srcSolicitudDetalle As screen:
                 			Defaults(SolicitudDetalle),
                 			{
                 				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-                				FechaAtencion: Today(),
+                				FechaCreacion: Today(),
                 				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                                 FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -920,7 +920,8 @@ srcSolicitudDetalle As screen:
                         IdPersonalDestino: 0,
                         EsAtendido: true, // Actualizar estado del registro seleccionado
                         IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                        ObsSolDetDestino: TrimEnds(TextInput3.Text)
+                        ObsSolDetDestino: TrimEnds(TextInput3.Text),
+                        FechaAtencion: Today()
                     }
                 );
                 
@@ -1044,7 +1045,7 @@ srcSolicitudDetalle As screen:
                 			Defaults(SolicitudDetalle),
                 			{
                 				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-                				FechaAtencion: Today(),
+                				FechaCreacion: Today(),
                 				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                                 FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -1088,7 +1089,8 @@ srcSolicitudDetalle As screen:
                         IdPersonalDestino: 0,
                         EsAtendido: true, // Actualizar estado del registro seleccionado
                         IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text)
+                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text),
+                        FechaAtencion: Today()
                     }
                 );
                 
@@ -1331,55 +1333,16 @@ srcSolicitudDetalle As screen:
                 Patch(Solicitud, 
                 	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
                 	{ 
-                		EsActivo: false,
-                		EsEliminado: true,
+                		EsFinalizado: true,
                         FechaFinalSol: Today()
                 	}
                 );
-                
-                // Crear Solicitud Detalle inicial
-                UpdateContext({
-                	lastSolicitudDetalle:
-                		Patch(SolicitudDetalle,
-                			Defaults(SolicitudDetalle),
-                			{
-                				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-                				FechaAtencion: Today(),
-                				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
-                                FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
-                                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
-                				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
-                				EsAtendido: false,
-                				IdAccionOrigen: 7, // Eliminar
-                				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
-                				IdAreaOrigen: varMyUser.IdArea,
-                				IdPerfilOrigen: varMyUser.IdPerfil,
-                				IdPersonalOrigen: varMyUser.ID,
-                				IdAccionActual: 0, // Lo actualizará el siguiente usuario
-                				IdEtapaActual: 0,
-                				IdAreaActual: 0,
-                                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
-                				IdPerfilActual: 0,
-                				IdPersonalActual: 0,
-                                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
-                				IdEtapaDestino: 0, // Etapa Destino Real
-                				IdAreaDestino: 0, // Area Destino Real
-                				IdPerfilDestino: 0, // Perfil Destino Real
-                				IdPersonalDestino: 0, // Personal Destino 
-                                //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
-                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
-                                //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
-                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
-                                ObsSolDet: TrimEnds(TextInput3_1.Text)
-                			}
-                		)
-                });
                 
                 // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
                 Patch(SolicitudDetalle, 
                     LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
                     {
-                        IdAccionActual: 7, // Eliminar
+                        IdAccionActual: 8, // Finalizar
                         IdPerfilActual: varMyUser.IdPerfil,
                         IdPersonalActual: varMyUser.ID,
                         IdAreaDestino: 0,
@@ -1387,14 +1350,15 @@ srcSolicitudDetalle As screen:
                         IdPerfilDestino: 0,
                         IdPersonalDestino: 0,
                         EsAtendido: true, // Actualizar estado del registro seleccionado
-                        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text)
+                        IdSolicitudDetalleGenerada: 0, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_2.Text),
+                        FechaAtencion: Today()
                     }
                 );
                 
-                Notify("Solicitud archivada correctamente.", NotificationType.Success);
+                Notify("Solicitud finalizada correctamente.", NotificationType.Success);
                 
-                Reset(TextInput3_1);
+                Reset(TextInput3_2);
                 
                 UpdateContext({ isLoading: false });
                 
