@@ -905,8 +905,10 @@ srcSolicitudDetalle As screen:
                 				IdAreaDestino: 0, // Area Destino Real
                 				IdPerfilDestino: 0, // Perfil Destino Real
                 				IdPersonalDestino: 0, // Personal Destino 
-                                IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
-                                IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                                //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
+                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
+                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
                                 ObsSolDet: TrimEnds(TextInput3.Text)
                 			}
                 		)
@@ -1045,7 +1047,20 @@ srcSolicitudDetalle As screen:
             ZIndex: =44
 
         devolverBtn As button:
-            DisplayMode: =If(varDevolver && varMisSolicitudesScreen && varMyAreaEtapaFlujo.Orden > 1, DisplayMode.Edit, DisplayMode.Disabled)
+            DisplayMode: |-
+                =If(varDevolver && 
+                    varMisSolicitudesScreen && 
+                    //varMyAreaEtapaFlujo.Orden > 1; 
+                    LookUp(AreaEtapaFlujo, 
+                        IdArea = varMyUser.IdArea && 
+                        IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
+                        IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                    ).Orden > 1,
+                    
+                    DisplayMode.Edit, 
+                    
+                    DisplayMode.Disabled
+                )
             OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
             Size: =12
             Text: ="Devolver"
@@ -1170,8 +1185,10 @@ srcSolicitudDetalle As screen:
                 				IdAreaDestino: 0, // Area Destino Real
                 				IdPerfilDestino: 0, // Perfil Destino Real
                 				IdPersonalDestino: 0, // Personal Destino 
-                                IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
-                                IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                                //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
+                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
+                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
                                 ObsSolDet: TrimEnds(TextInput3_1.Text)
                 			}
                 		)

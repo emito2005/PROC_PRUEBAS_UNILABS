@@ -8,8 +8,10 @@ scrDevolver As screen:
                 SortByColumns(
                     Filter(SolicitudDetalle, 
                         IdSolicitud = varSolicitudDetalleItemSel.IdSolicitud,
-                        IdAreaActual = varMyAreaEtapaFlujo.IdArea, 
-                        IdEtapaActual = varMyAreaEtapaFlujo.IdEtapa
+                        //IdAreaActual = varMyAreaEtapaFlujo.IdArea; 
+                        IdAreaActual = varSolicitudDetalleItemSel.IdAreaActual, 
+                        //IdEtapaActual = varMyAreaEtapaFlujo.IdEtapa
+                        IdEtapaActual = varSolicitudDetalleItemSel.IdEtapaActual
                     ),
                     "ID"
                 )

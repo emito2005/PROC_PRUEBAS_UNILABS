@@ -295,8 +295,10 @@ scrElevar As screen:
             				IdAreaDestino: 0, // Area Destino Real
             				IdPerfilDestino: 0, // Perfil Destino Real
             				IdPersonalDestino: 0, // Personal Destino 
-                            IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino,
-                            IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
+                            //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
+                            IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                            //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
+                            IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
                             ObsSolDet: TrimEnds(TextInput2_1.Text)
                         }
             		)
