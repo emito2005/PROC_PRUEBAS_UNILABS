@@ -55,33 +55,65 @@ scrMisSolicitudes As screen:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =UpdateContext({
+            =
+            
+            
+            
+            /*
+            UpdateContext({
                 excelPath: 
                     Exportacion_Excel.Run(
                         JSON(
                             ShowColumns(
                                 Search(
-                                    Filter(colSolicitudes,
-                                        IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
-                                        ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
-                                        EsAtendido = false,
-                                        EsEliminado = false,
-                                        EsFinalizado = false,
+                                    Filter(colSolicitudes;
+                                        IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
+                                        ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
+                                        EsAtendido = false;
+                                        EsEliminado = false;
+                                        EsFinalizado = false;
                                         EsActivo = true // Va a cambiar cuando se anula la solicitud
-                                    ),
-                                    txtFilNomNroSol.Text,
-                                    "NroSolicitud",
+                                    );
+                                    txtFilNomNroSol.Text;
+                                    "NroSolicitud";
                                     "NombreSolicitud"
-                                ),
-                                "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
-                                "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
-                                "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                                );
+                                "ID"; "NroSolicitud"; "TipoSolicitud"; "TipoServicio"; "NombreSolicitud"; "EsActivo"; "AreaOrigen"; 
+                                "AreaActual"; "AreaDestino"; "ManagerDelArea"; "LiderDelArea"; "AnalistaDelArea"; "FechaAtencion"; 
+                                "FechaExpiraSLA"; "FechaExpiraOLA"; "ObsSolDet"
                             )
                         )
                     ).excelpath
-            });
+            });;
+            
+            */
+            
+            
+            Exportacion_Excel.Run(
+                JSON(
+                    ShowColumns(
+                        Search(
+                            Filter(colSolicitudes,
+                                //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
+                                //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
+                                EsAtendido = false,
+                                EsEliminado = false,
+                                EsFinalizado = false,
+                                EsActivo = true // Va a cambiar cuando se anula la solicitud
+                            ),
+                            txtFilNomNroSol_1.Text,
+                            "NroSolicitud",
+                            "NombreSolicitud"
+                        ),
+                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
+                        "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
+                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                    )
+                )
+            );
             
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
+            
             
             //Launch(excelPath);;
         Text: ="Exportar"
@@ -161,8 +193,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.NombreSolicitud
+            Tooltip: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =170
+            Wrap: =false
             X: =93
             Y: =4
             ZIndex: =5
@@ -176,8 +210,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.TipoSolicitud
+            Tooltip: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =140
+            Wrap: =false
             X: =271
             Y: =4
             ZIndex: =6
@@ -275,8 +311,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.ManagerDelArea
+            Tooltip: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =707
             Y: =4
             ZIndex: =14
@@ -290,8 +328,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.LiderDelArea
+            Tooltip: =ThisItem.LiderDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =814
             Y: =4
             ZIndex: =15
@@ -305,8 +345,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.AnalistaDelArea
+            Tooltip: =ThisItem.AnalistaDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =919
             Y: =2
             ZIndex: =16

@@ -113,8 +113,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.NombreSolicitud
+            Tooltip: =ThisItem.NombreSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =170
+            Wrap: =false
             X: =93
             Y: =4
             ZIndex: =5
@@ -130,6 +132,7 @@ scrSolicitudes As screen:
             Text: =ThisItem.TipoSolicitud
             VerticalAlign: =VerticalAlign.Top
             Width: =140
+            Wrap: =false
             X: =271
             Y: =4
             ZIndex: =6
@@ -227,8 +230,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.ManagerDelArea
+            Tooltip: =ThisItem.ManagerDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =707
             Y: =4
             ZIndex: =14
@@ -242,8 +247,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.LiderDelArea
+            Tooltip: =ThisItem.LiderDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =814
             Y: =4
             ZIndex: =15
@@ -257,8 +264,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.AnalistaDelArea
+            Tooltip: =ThisItem.AnalistaDelArea
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =919
             Y: =4
             ZIndex: =16

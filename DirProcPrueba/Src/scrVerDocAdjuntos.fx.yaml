@@ -2,51 +2,59 @@ scrVerDocAdjuntos As screen:
 
     cmpBarraSuperior_12 As cmpBarraSuperior:
 
+    Rectangle4_8 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =699
+        Width: =1366
+        Y: =69
+        ZIndex: =2
+
     lbl_TituloPrincipal_9 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
-        Text: ="DOCUMENTOS ADJUNTOS"
+        Text: ="DOCUMENTOS ADJUNTOS - " & varSolicitudDetalleItemSel.NroSolicitud
         Width: =1335
-        X: =13
-        Y: =icn_Volver_NS_6.Y + (icn_Volver_NS_6.Height / 2) - (Self.Height / 2)
-        ZIndex: =2
-
-    icn_Volver_NS_6 As icon.BackArrow:
-        Icon: =Icon.BackArrow
-        OnSelect: =Back();
-        X: =60
-        Y: =100
+        X: =15
+        Y: =16
         ZIndex: =3
 
     lblHeader_16 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         DisplayMode: =DisplayMode.View
-        Fill: =RGBA(221, 79, 14, 1)
+        Fill: |-
+            =//RGBA(221; 79; 14; 1)
+            varColorPri02
         FontWeight: =FontWeight.Bold
         Height: =42
         Size: =14
         Text: ="ARCHIVOS ADJUNTOS"
         Width: =451
-        X: =96
-        Y: =165
-        ZIndex: =9
+        X: =33
+        Y: =95
+        ZIndex: =4
 
     "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =436
+        BorderColor: |-
+            =//RGBA(0; 18; 107; 1)
+            varColorPri02
+        BorderThickness: =1
+        Height: =608
         Items: |
             =//AddColumns(Gallery3.Selected.'Datos adjuntos';"Extension";Last(Split(DisplayName;".")).Result)
             AddColumns(varSolicitudDetalleItemSel.'Datos adjuntos',"Extension",Last(Split(DisplayName,".")).Result)
         Layout: =Layout.Vertical
-        TemplateFill: =If(ThisItem.IsSelected,RGBA(224, 224, 224, 100),RGBA(224, 224, 224, 0))
+        TemplateFill: =If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =80
         Width: =451
-        X: =96
-        Y: =207
-        ZIndex: =10
+        X: =33
+        Y: =137
+        ZIndex: =5
 
         Image3 As image:
             Height: =64
@@ -99,6 +107,9 @@ scrVerDocAdjuntos As screen:
             ZIndex: =4
 
         Separator4 As rectangle:
+            Fill: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
@@ -106,28 +117,39 @@ scrVerDocAdjuntos As screen:
             ZIndex: =5
 
     imgVisorImagen As image:
-        Height: =576
+        Height: =651
         Image: =Gallery4.Selected.Image3
         Visible: |-
             =//true
             If(Gallery4.Selected.Extension in ["jpg","png"],true,false)
-        Width: =748
-        X: =572
-        Y: =164
-        ZIndex: =11
+        Width: =828
+        X: =509
+        Y: =94
+        ZIndex: =6
 
     PdfViewer As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderColor: |-
+            =//RGBA(0; 0; 0; 1)
+            varColorPri02
+        BorderThickness: =1
         DisplayMode: =DisplayMode.View
         Document: |-
             =//If(Gallery4.Selected.Extension="pdf";Gallery4.Selected.Value;Substitute(Gallery4.Selected.AbsoluteUri;"/thumbnail";"/pdf"))
             If(Gallery4.Selected.Extension="pdf",Gallery4.Selected.Value,Gallery4.Selected.AbsoluteUri)
         Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =576
+        Height: =651
         ShowControls: =true
         Visible: =If(imgVisorImagen.Visible=true,false,true)
-        Width: =748
-        X: =572
-        Y: =164
-        ZIndex: =12
+        Width: =828
+        X: =509
+        Y: =94
+        ZIndex: =7
+
+    icn_Volver_DA As icon.BackArrow:
+        Color: =varColorPri01
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =13
+        Y: =2
+        ZIndex: =8
 
