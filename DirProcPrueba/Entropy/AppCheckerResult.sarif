@@ -7662,19 +7662,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varFinalizar"
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varFinalizar",
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varFinalizar",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "srcSolicitudDetalle",
+                "type": "srcSolicitudDetalle.confirmDialogRect_4"
               }
             }
           ],
@@ -7684,27 +7684,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorBarraTit"
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorBarraTit",
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorBarraTit",
-                "module": "App",
-                "type": "App"
+                "member": "FocusedBorderThickness",
+                "module": "srcSolicitudDetalle",
+                "type": "srcSolicitudDetalle.confirmDialogRect_4"
               }
             }
           ],
@@ -7714,27 +7714,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorBarraTitB"
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorBarraTitB",
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogRect_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorBarraTitB",
-                "module": "App",
-                "type": "App"
+                "member": "TabIndex",
+                "module": "srcSolicitudDetalle",
+                "type": "srcSolicitudDetalle.confirmDialogRect_4"
               }
             }
           ],
@@ -7744,25 +7744,85 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorPri03"
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogFrame_4.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorPri03",
+                  "fullyQualifiedName": "srcSolicitudDetalle.confirmDialogFrame_4.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorPri03",
+                "member": "FocusedBorderThickness",
+                "module": "srcSolicitudDetalle",
+                "type": "srcSolicitudDetalle.confirmDialogFrame_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "srcSolicitudDetalle.TextInput3_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "srcSolicitudDetalle.TextInput3_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "srcSolicitudDetalle",
+                "type": "srcSolicitudDetalle.TextInput3_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorPri04B"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorPri04B",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorPri04B",
                 "module": "App",
                 "type": "App"
               }
@@ -7812,17 +7872,107 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorPri04B"
+                  "fullyQualifiedName": "App.varColorPri03"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorPri04B",
+                  "fullyQualifiedName": "App.varColorPri03",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorPri04B",
+                "member": "varColorPri03",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorBarraTitB"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorBarraTitB",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorBarraTitB",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorBarraTit"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorBarraTit",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorBarraTit",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varFinalizar"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varFinalizar",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varFinalizar",
                 "module": "App",
                 "type": "App"
               }
