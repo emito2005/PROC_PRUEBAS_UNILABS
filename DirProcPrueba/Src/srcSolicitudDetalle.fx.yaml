@@ -1224,13 +1224,6 @@ srcSolicitudDetalle As screen:
             Y: =derivarBtn.Y + derivarBtn.Height + 15
             ZIndex: =24
 
-    Group7 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =70
-
     finishDialogGroup As group:
         Height: =5
         Width: =5
