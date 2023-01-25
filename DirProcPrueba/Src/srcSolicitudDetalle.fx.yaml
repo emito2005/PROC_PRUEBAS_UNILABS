@@ -11,6 +11,24 @@ srcSolicitudDetalle As screen:
         	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
         );
 
+    Rectangle4_9 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =70
+        ZIndex: =1
+
+    Rectangle4_10 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =requestFieldTxt_12.Y + requestFieldTxt_12.Height + 15
+        ZIndex: =2
+
     HtmlText1 As htmlViewer:
         Height: =0
         HtmlText: |-
@@ -219,10 +237,10 @@ srcSolicitudDetalle As screen:
             </html>"
         Visible: =false
         Width: =0
-        ZIndex: =1
+        ZIndex: =3
 
     cmpBarraSuperior_7 As cmpBarraSuperior:
-        ZIndex: =2
+        ZIndex: =4
 
     lbl_TituloPrincipal_4 As label:
         Align: =Align.Center
@@ -232,441 +250,30 @@ srcSolicitudDetalle As screen:
         Text: ="DETALLE DE SOLICITUD"
         Width: =1335
         X: =13
-        Y: =icn_Volver_NS_1.Y + (icn_Volver_NS_1.Height / 2) - (Self.Height / 2)
-        ZIndex: =3
+        Y: =cmpBarraSuperior_7.Y + (cmpBarraSuperior_7.Height / 2) - (Self.Height / 2)
+        ZIndex: =5
 
     icn_Volver_NS_1 As icon.BackArrow:
+        Color: =varColorPri01
         Icon: =Icon.BackArrow
         OnSelect: =Back();
-        X: =60
-        Y: =100
-        ZIndex: =4
-
-    requestFieldGroup_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
+        X: =13
+        Y: =2
         ZIndex: =6
 
-        requestFieldLbl_1 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="ID"
-            Width: =30
-            X: =icn_Volver_NS_1.X
-            Y: =180
-            ZIndex: =5
-
-        requestFieldTxt_1 As text:
-            Default: |
-                =//First(colSolicitudDetalleItemSel).ID
-                varSolicitudDetalleItemSel.ID
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =120
-            X: =90
-            Y: =requestFieldLbl_1.Y
-            ZIndex: =6
-
-    requestFieldGroup_2 As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =8
-
-        requestFieldLbl_2 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Nro. Ticket"
-            Width: =100
-            X: =requestFieldTxt_1.X + requestFieldTxt_1.Width + 50
-            Y: =requestFieldLbl_1.Y
-            ZIndex: =7
-
-        requestFieldTxt_2 As text:
-            Default: =varSolicitudDetalleItemSel.NroSolicitud
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =120
-            X: =requestFieldLbl_2.X + requestFieldLbl_2.Width
-            Y: =requestFieldLbl_2.Y
-            ZIndex: =8
-
-    requestFieldGroup_3 As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =220
-        ZIndex: =10
-
-        requestFieldLbl_3 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Nombre de Solicitud"
-            Width: =180
-            X: =requestFieldLbl_1.X
-            Y: =requestFieldLbl_1.Y + requestFieldLbl_1.Height + 40
-            ZIndex: =9
-
-        requestFieldTxt_3 As text:
-            Default: =varSolicitudDetalleItemSel.NombreSolicitud
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =500
-            X: =requestFieldLbl_3.X + requestFieldLbl_3.Width
-            Y: =requestFieldLbl_3.Y
-            ZIndex: =10
-
-    requestFieldGroup_4 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =20
-        ZIndex: =12
-
-        requestFieldLbl_4 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Tipo de Solicitud"
-            X: =requestFieldTxt_2.X + requestFieldTxt_2.Width + 50
-            Y: =requestFieldTxt_2.Y
-            ZIndex: =11
-
-        requestFieldTxt_4 As text:
-            Default: =varSolicitudDetalleItemSel.TipoSolicitud
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_4.X + requestFieldLbl_4.Width
-            Y: =requestFieldLbl_4.Y
-            ZIndex: =12
-
-    requestFieldGroup_5 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =20
-        ZIndex: =15
-
-        requestFieldLbl_5 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Tipo de Servicio"
-            Width: =140
-            X: =requestFieldTxt_4.X + requestFieldTxt_4.Width + 50
-            Y: =requestFieldLbl_4.Y
-            ZIndex: =13
-
-        requestFieldTxt_5 As text:
-            Default: =varSolicitudDetalleItemSel.TipoServicio
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_5.X + requestFieldLbl_5.Width
-            Y: =requestFieldLbl_5.Y
-            ZIndex: =14
-
-    requestFieldGroup_6 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =20
-        ZIndex: =18
-
-        requestFieldLbl_6 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Estado"
-            Width: =70
-            X: =requestFieldTxt_3.X + requestFieldTxt_3.Width + 130
-            Y: =requestFieldTxt_3.Y
-            ZIndex: =15
-
-        requestFieldTxt_6 As text:
-            Default: =If(varSolicitudDetalleItemSel.EsActivo, "Activo", If(varSolicitudDetalleItemSel.EsEliminado, "Eliminado", "Inactivo"))
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_6.X + requestFieldLbl_6.Width
-            Y: =requestFieldLbl_6.Y
-            ZIndex: =16
-
-    requestFieldGroup_7 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =300
-        ZIndex: =20
-
-        requestFieldLbl_7 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Dpto. de Procedencia"
-            Width: =190
-            X: =requestFieldLbl_3.X
-            Y: =requestFieldLbl_3.Y + requestFieldLbl_3.Height + 40
-            ZIndex: =17
-
-        requestFieldTxt_7 As text:
-            Default: =varSolicitudDetalleItemSel.AreaOrigen
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_7.X + requestFieldLbl_7.Width
-            Y: =requestFieldLbl_7.Y
-            ZIndex: =18
-
-    requestFieldGroup_8 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =300
-        ZIndex: =23
-
-        requestFieldLbl_8 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Dpto. Actual"
-            Width: =140
-            X: =requestFieldTxt_7.X + requestFieldTxt_7.Width + 50
-            Y: =requestFieldLbl_7.Y
-            ZIndex: =19
-
-        requestFieldTxt_8 As text:
-            Default: =varSolicitudDetalleItemSel.AreaActual
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_8.X + requestFieldLbl_8.Width
-            Y: =requestFieldLbl_8.Y
-            ZIndex: =20
-
-    requestFieldGroup_9 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =300
-        ZIndex: =25
-
-        requestFieldLbl_9 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Manager"
-            Width: =90
-            X: =requestFieldLbl_1.X
-            Y: =requestFieldLbl_7.Y + requestFieldLbl_7.Height + 40
-            ZIndex: =23
-
-        requestFieldTxt_9 As text:
-            Default: =varSolicitudDetalleItemSel.ManagerDelArea
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =300
-            X: =requestFieldLbl_9.X + requestFieldLbl_9.Width
-            Y: =requestFieldLbl_9.Y
-            ZIndex: =24
-
-    requestFieldGroup_10 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =300
-        ZIndex: =28
-
-        requestFieldLbl_10 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Lider"
-            Width: =60
-            X: =requestFieldTxt_9.X + requestFieldTxt_9.Width + 50
-            Y: =requestFieldLbl_9.Y
-            ZIndex: =25
-
-        requestFieldTxt_10 As text:
-            Default: =varSolicitudDetalleItemSel.LiderDelArea
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =300
-            X: =requestFieldLbl_10.X + requestFieldLbl_10.Width
-            Y: =requestFieldLbl_10.Y
-            ZIndex: =26
-
-    requestFieldGroup_11 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =300
-        ZIndex: =31
-
-        requestFieldLbl_11 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Analista"
-            Width: =80
-            X: =requestFieldTxt_10.X + requestFieldTxt_10.Width + 60
-            Y: =requestFieldLbl_9.Y
-            ZIndex: =27
-
-        requestFieldTxt_11 As text:
-            Default: =varSolicitudDetalleItemSel.AnalistaDelArea
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =300
-            X: =requestFieldLbl_11.X + requestFieldLbl_11.Width
-            Y: =requestFieldLbl_11.Y
-            ZIndex: =28
-
-    requestFieldGroup_12 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =380
-        ZIndex: =33
-
-        requestFieldLbl_12 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Creación"
-            Width: =110
-            X: =requestFieldLbl_9.X
-            Y: =requestFieldLbl_9.Y + requestFieldLbl_9.Height + 40
-            ZIndex: =29
-
-        requestFieldTxt_12 As text:
-            Default: =varSolicitudDetalleItemSel.FechaAtencion
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =180
-            X: =requestFieldLbl_12.X + requestFieldLbl_12.Width
-            Y: =requestFieldLbl_12.Y
-            ZIndex: =30
-
-    requestFieldGroup_13 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =380
-        ZIndex: =36
-
-        requestFieldLbl_13 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Expiración SLA"
-            X: =requestFieldTxt_12.X + requestFieldTxt_12.Width + 50
-            Y: =requestFieldLbl_12.Y
-            ZIndex: =31
-
-        requestFieldTxt_13 As text:
-            Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =180
-            X: =requestFieldLbl_13.X + requestFieldLbl_13.Width
-            Y: =requestFieldLbl_13.Y
-            ZIndex: =32
-
-    btnVerDocAdjuntos As button:
-        Height: =42
-        OnSelect: =Navigate(scrVerDocAdjuntos)
-        Text: ="Ver Doc. Adjuntos"
-        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
-        Width: =212
-        X: =1098
-        Y: =595
-        ZIndex: =46
+    requestFieldLbl_74 As label:
+        Color: =varColorPri01
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Acciones"
+        Width: =requestFieldTxt_9.Width
+        X: =Button8_3.X
+        Y: =Rectangle4_10.Y + 15
+        ZIndex: =47
 
     descriptionGroup As group:
         Height: =5
@@ -676,7 +283,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =56
 
         requestFieldLbl_14 As label:
-            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -684,110 +291,34 @@ srcSolicitudDetalle As screen:
             PaddingTop: =0
             Text: |-
                 ="Observación: "
-            Width: =110
-            X: =requestFieldLbl_12.X
-            Y: =requestFieldLbl_12.Y + requestFieldLbl_12.Height + 50
-            ZIndex: =35
-
-        requestFieldScrollLbl As label:
-            Align: =Align.Justify
-            AutoHeight: =true
-            Color: =RGBA(0, 18, 107, 0)
-            Height: =80
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =requestFieldLbl_15.Text
-            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
-            X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
-            Y: =requestFieldLbl_14.Y
-            ZIndex: =36
+            Width: =requestFieldTxt_5.X + requestFieldTxt_5.Width - Self.X
+            X: =requestFieldLbl_3.X + requestFieldLbl_3.Width + 50
+            Y: =requestFieldLbl_3.Y
+            ZIndex: =45
 
         requestFieldLbl_15 As label:
             Align: =Align.Justify
-            Color: =RGBA(0, 18, 107, 1)
-            Height: =Max(requestFieldScrollLbl.Height, 85)
+            Height: =50
             Overflow: =Overflow.Scroll
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
-            PaddingTop: =0
             Text: =varSolicitudDetalleItemSel.ObsSolDet
-            Width: =requestFieldTxt_11.X + requestFieldTxt_11.Width - Self.X
-            X: =requestFieldLbl_14.X + requestFieldLbl_14.Width
-            Y: =requestFieldLbl_14.Y
-            ZIndex: =37
+            Width: =requestFieldLbl_14.Width
+            X: =requestFieldLbl_14.X
+            Y: =requestFieldLbl_14.Y + requestFieldLbl_14.Height
+            ZIndex: =46
 
-    requestFieldGroup_38 As group:
-        Height: =5
-        Width: =5
-        X: =420
-        Y: =520
-        ZIndex: =58
-
-        requestFieldLbl_28 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Expiración OLA"
-            X: =requestFieldTxt_13.X + requestFieldTxt_13.Width + 50
-            Y: =requestFieldLbl_12.Y
-            ZIndex: =33
-
-        requestFieldTxt_38 As text:
-            Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =180
-            X: =requestFieldLbl_28.X + requestFieldLbl_28.Width
-            Y: =requestFieldLbl_28.Y
-            ZIndex: =34
-
-    requestFieldGroup_39 As group:
-        Height: =5
-        Width: =5
-        X: =520
-        Y: =360
-        ZIndex: =60
-
-        requestFieldLbl_40 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Dpto. Asignado"
-            Width: =140
-            X: =requestFieldTxt_8.X + requestFieldTxt_8.Width + 50
-            Y: =requestFieldLbl_7.Y
-            ZIndex: =21
-
-        requestFieldTxt_39 As text:
-            Default: =varSolicitudDetalleItemSel.AreaDestino
-            DisplayMode: =DisplayMode.Disabled
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =200
-            X: =requestFieldLbl_40.X + requestFieldLbl_40.Width
-            Y: =requestFieldLbl_40.Y
-            ZIndex: =22
-
-    Rectangle2_9 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =61
+    btnVerDocAdjuntos As button:
+        Fill: =varColorPri01
+        HoverFill: =ColorFade(Self.Fill, -10%)
+        OnSelect: =Navigate(scrVerDocAdjuntos)
+        Size: =12
+        Text: ="Ver Doc. Adjuntos"
+        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
+        X: =archivarBtn.X + archivarBtn.Width + 116.5
+        Y: =archivarBtn.Y
+        ZIndex: =57
 
     archiveDialogGroup As group:
         Height: =5
@@ -803,7 +334,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showArchiveDialog
             Width: =Parent.Width
-            ZIndex: =47
+            ZIndex: =58
 
         confirmDialogFrame_2 As button:
             BorderThickness: =0
@@ -820,7 +351,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =48
+            ZIndex: =59
 
         confirmDialogTitle_2 As label:
             Align: =Align.Center
@@ -830,7 +361,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_2.Width
             X: =confirmDialogFrame_2.X
             Y: =confirmDialogFrame_2.Y + 15
-            ZIndex: =49
+            ZIndex: =60
 
         commentaryLbl As label:
             Height: =20
@@ -845,7 +376,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_2.X + 20
             Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
-            ZIndex: =50
+            ZIndex: =61
 
         TextInput3 As text:
             Default: =""
@@ -860,7 +391,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_2.X + confirmDialogFrame_2.Width - Self.X - 20
             X: =confirmDialogFrame_2.X + 20
             Y: =commentaryLbl.Y + commentaryLbl.Height + 5
-            ZIndex: =51
+            ZIndex: =62
 
         aceptarBtn As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -869,7 +400,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                         FechaFinalSol: Today() 
@@ -883,7 +414,7 @@ srcSolicitudDetalle As screen:
                 			Defaults(SolicitudDetalle),
                 			{
                 				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-                				FechaAtencion: Today(),
+                				FechaCreacion: Today(),
                 				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                                 FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -927,7 +458,8 @@ srcSolicitudDetalle As screen:
                         IdPersonalDestino: 0,
                         EsAtendido: true, // Actualizar estado del registro seleccionado
                         IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                        ObsSolDetDestino: TrimEnds(TextInput3.Text)
+                        ObsSolDetDestino: TrimEnds(TextInput3.Text),
+                        FechaAtencion: Today()
                     }
                 );
                 
@@ -943,7 +475,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
-            ZIndex: =52
+            ZIndex: =63
 
         cancelarBtn As button:
             OnSelect: |-
@@ -954,119 +486,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) + 20
             Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
-            ZIndex: =53
-
-    actionButtonsGroup As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =62
-
-        descargarPDFBtn As button:
-            DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: |-
-                =UpdateContext({
-                    isLoading: true,
-                    callback:
-                    Exportacion_PDF.Run(
-                        HtmlText1.HtmlText, 
-                        "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                        varSolicitudDetalleItemSel.ID
-                    ).callback
-                });
-                If(callback = "true",
-                    Notify("Exportacion realizada correctamente.", NotificationType.Success);
-                    UpdateContext({ 
-                        isLoading: false,
-                        callback: "false"
-                    })
-                )
-            Size: =12
-            Text: ="Generar PDF"
-            X: =40
-            Y: =Parent.Height - Self.Height - 20
-            ZIndex: =38
-
-        trazabilidadBtn As button:
-            DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Trazabilidad"
-            X: =descargarPDFBtn.X + descargarPDFBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =39
-
-        elevarBtn As button:
-            DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Elevar"
-            X: =trazabilidadBtn.X + trazabilidadBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =40
-
-        asignarBtn As button:
-            DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Asignar"
-            X: =elevarBtn.X + elevarBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =41
-
-        derivarBtn As button:
-            DisplayMode: =If(varDerivar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Derivar"
-            X: =asignarBtn.X + asignarBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =42
-
-        archivarBtn As button:
-            DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: |-
-                =Reset(TextInput3);
-                UpdateContext({ showArchiveDialog: true })
-            Size: =12
-            Text: ="Archivar"
-            X: =derivarBtn.X + derivarBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =43
-
-        eliminarBtn As button:
-            DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            OnSelect: |-
-                =Reset(TextInput3_1);
-                UpdateContext({ showDeleteDialog: true })
-            Size: =12
-            Text: ="Eliminar"
-            X: =archivarBtn.X + archivarBtn.Width + 25
-            Y: =descargarPDFBtn.Y
-            ZIndex: =44
-
-        devolverBtn As button:
-            DisplayMode: |-
-                =If(varDevolver && 
-                    varMisSolicitudesScreen && 
-                    //varMyAreaEtapaFlujo.Orden > 1; 
-                    LookUp(AreaEtapaFlujo, 
-                        IdArea = varMyUser.IdArea && 
-                        IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
-                        IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
-                    ).Orden > 1,
-                    
-                    DisplayMode.Edit, 
-                    
-                    DisplayMode.Disabled
-                )
-            OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Devolver"
-            X: =eliminarBtn.X
-            Y: =eliminarBtn.Y - Self.Height - 15
-            ZIndex: =45
+            ZIndex: =64
 
     deleteDialogGroup As group:
         Height: =5
@@ -1082,7 +502,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showDeleteDialog
             Width: =Parent.Width
-            ZIndex: =54
+            ZIndex: =65
 
         confirmDialogFrame_3 As button:
             BorderThickness: =0
@@ -1099,7 +519,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =55
+            ZIndex: =66
 
         confirmDialogTitle_3 As label:
             Align: =Align.Center
@@ -1109,7 +529,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_3.Width
             X: =confirmDialogFrame_3.X
             Y: =confirmDialogFrame_3.Y + 15
-            ZIndex: =56
+            ZIndex: =67
 
         commentaryLbl_1 As label:
             Height: =20
@@ -1124,7 +544,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_3.X + 20
             Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
-            ZIndex: =57
+            ZIndex: =68
 
         TextInput3_1 As text:
             Default: =""
@@ -1139,7 +559,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_3.X + confirmDialogFrame_3.Width - Self.X - 20
             X: =confirmDialogFrame_3.X + 20
             Y: =commentaryLbl.Y + commentaryLbl.Height + 5
-            ZIndex: =58
+            ZIndex: =69
 
         aceptarBtn_1 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_1.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -1148,7 +568,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.ID), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                 		EsEliminado: true,
@@ -1163,7 +583,7 @@ srcSolicitudDetalle As screen:
                 			Defaults(SolicitudDetalle),
                 			{
                 				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
-                				FechaAtencion: Today(),
+                				FechaCreacion: Today(),
                 				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                                 FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
@@ -1207,7 +627,8 @@ srcSolicitudDetalle As screen:
                         IdPersonalDestino: 0,
                         EsAtendido: true, // Actualizar estado del registro seleccionado
                         IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text)
+                        ObsSolDetDestino: TrimEnds(TextInput3_1.Text),
+                        FechaAtencion: Today()
                     }
                 );
                 
@@ -1223,7 +644,7 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
-            ZIndex: =59
+            ZIndex: =70
 
         cancelarBtn_1 As button:
             OnSelect: |-
@@ -1234,5 +655,424 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) + 20
             Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
-            ZIndex: =60
+            ZIndex: =71
+
+    actionButtonsGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =63
+
+        descargarPDFBtn As button:
+            DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({
+                    isLoading: true,
+                    callback:
+                    Exportacion_PDF.Run(
+                        HtmlText1.HtmlText, 
+                        "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
+                        varSolicitudDetalleItemSel.ID
+                    ).callback
+                });
+                If(callback = "true",
+                    Notify("Exportacion realizada correctamente.", NotificationType.Success);
+                    UpdateContext({ 
+                        isLoading: false,
+                        callback: "false"
+                    })
+                )
+            Size: =12
+            Text: ="Generar PDF"
+            X: =requestFieldLbl_74.X
+            Y: =requestFieldLbl_74.Y + requestFieldLbl_74.Height + 15
+            ZIndex: =48
+
+        trazabilidadBtn As button:
+            DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Trazabilidad"
+            X: =descargarPDFBtn.X
+            Y: =descargarPDFBtn.Y + descargarPDFBtn.Height + 15
+            ZIndex: =49
+
+        elevarBtn As button:
+            DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Elevar"
+            X: =trazabilidadBtn.X + trazabilidadBtn.Width + 116.5
+            Y: =descargarPDFBtn.Y
+            ZIndex: =50
+
+        asignarBtn As button:
+            DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Asignar"
+            X: =elevarBtn.X
+            Y: =elevarBtn.Y + elevarBtn.Height + 15
+            ZIndex: =51
+
+        derivarBtn As button:
+            DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Derivar"
+            Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
+            X: =asignarBtn.X + asignarBtn.Width + 116.5
+            Y: =descargarPDFBtn.Y
+            ZIndex: =52
+
+        finalizarBtn As button:
+            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3_2);
+                UpdateContext({ showFinishDialog: true })
+            Size: =12
+            Text: ="Finalizar"
+            Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
+            X: =btnVerDocAdjuntos.X
+            Y: =btnVerDocAdjuntos.Y + btnVerDocAdjuntos.Height + 15
+            ZIndex: =53
+
+        archivarBtn As button:
+            DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3);
+                UpdateContext({ showArchiveDialog: true })
+            Size: =12
+            Text: ="Archivar"
+            X: =derivarBtn.X + derivarBtn.Width + 116.5
+            Y: =descargarPDFBtn.Y
+            ZIndex: =54
+
+        eliminarBtn As button:
+            DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3_1);
+                UpdateContext({ showDeleteDialog: true })
+            Size: =12
+            Text: ="Eliminar"
+            X: =archivarBtn.X
+            Y: =archivarBtn.Y + archivarBtn.Height + 15
+            ZIndex: =55
+
+        devolverBtn As button:
+            DisplayMode: |-
+                =If(varDevolver && 
+                    varMisSolicitudesScreen && 
+                    //varMyAreaEtapaFlujo.Orden > 1; 
+                    LookUp(AreaEtapaFlujo, 
+                        IdArea = varMyUser.IdArea && 
+                        IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
+                        IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                    ).Orden > 1,
+                    
+                    DisplayMode.Edit, 
+                    
+                    DisplayMode.Disabled
+                )
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
+            Size: =12
+            Text: ="Devolver"
+            X: =derivarBtn.X
+            Y: =derivarBtn.Y + derivarBtn.Height + 15
+            ZIndex: =56
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =70
+
+    finishDialogGroup As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =70
+
+        confirmDialogRect_4 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showFinishDialog
+            Width: =Parent.Width
+            ZIndex: =72
+
+        confirmDialogFrame_4 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showFinishDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =73
+
+        confirmDialogTitle_4 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE FINALIZAR LA SOLICITUD?"
+            Visible: =showFinishDialog
+            Width: =confirmDialogFrame_4.Width
+            X: =confirmDialogFrame_4.X
+            Y: =confirmDialogFrame_4.Y + 15
+            ZIndex: =74
+
+        commentaryLbl_2 As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showFinishDialog
+            Width: =100
+            X: =confirmDialogFrame_4.X + 20
+            Y: =confirmDialogTitle_4.Y + confirmDialogTitle_4.Height + 15
+            ZIndex: =75
+
+        TextInput3_2 As text:
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showFinishDialog
+            Width: =confirmDialogFrame_4.X + confirmDialogFrame_4.Width - Self.X - 20
+            X: =confirmDialogFrame_4.X + 20
+            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            ZIndex: =76
+
+        aceptarBtn_2 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_2.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            OnSelect: |-
+                =UpdateContext({ showFinishDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	{ 
+                		EsFinalizado: true,
+                        FechaFinalSol: Today()
+                	}
+                );
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    {
+                        IdAccionActual: 8, // Finalizar
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: 0, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_2.Text),
+                        FechaAtencion: Today()
+                    }
+                );
+                
+                Notify("Solicitud finalizada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3_2);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showFinishDialog
+            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
+            ZIndex: =77
+
+        cancelarBtn_2 As button:
+            OnSelect: |-
+                =UpdateContext({ showFinishDialog: false });
+                Reset(TextInput3_2)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showFinishDialog
+            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) + 20
+            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
+            ZIndex: =78
+
+    Group8 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =72
+
+        Button8 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =varColorPri01
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            PaddingLeft: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =40
+            Text: ="Datos de Solicitud"
+            Width: =230
+            X: =50
+            Y: =85
+            ZIndex: =7
+
+        Rectangle5 As rectangle:
+            Fill: =varColorPri01
+            Height: =2
+            Width: =Parent.Width - Self.X - 50
+            X: =Button8.X
+            Y: =Button8.Y + Button8.Height - Self.Height
+            ZIndex: =8
+
+    Group8_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =74
+
+        Button8_1 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =varColorPri01
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            PaddingLeft: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =40
+            Text: ="Datos de Departamento"
+            Width: =280
+            X: =requestFieldTxt_3.X
+            Y: =requestFieldTxt_3.Y + requestFieldTxt_3.Height + 15
+            ZIndex: =9
+
+        Rectangle5_1 As rectangle:
+            Fill: =varColorPri01
+            Height: =2
+            Width: =Parent.Width - Self.X - 50
+            X: =Button8_1.X
+            Y: =Button8_1.Y + Button8_1.Height - Self.Height
+            ZIndex: =10
+
+    Group8_2 As group:
+        Height: =5
+        Width: =5
+        X: =70
+        Y: =380
+        ZIndex: =76
+
+        Button8_2 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =varColorPri01
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            PaddingLeft: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =40
+            Text: ="Datos de Personal"
+            Width: =230
+            X: =requestFieldTxt_7.X
+            Y: =requestFieldTxt_7.Y + requestFieldTxt_7.Height + 15
+            ZIndex: =11
+
+        Rectangle5_2 As rectangle:
+            Fill: =varColorPri01
+            Height: =2
+            Width: =Parent.Width - Self.X - 50
+            X: =Button8_2.X
+            Y: =Button8_2.Y + Button8_2.Height - Self.Height
+            ZIndex: =12
+
+    Group8_3 As group:
+        Height: =5
+        Width: =5
+        X: =70
+        Y: =500
+        ZIndex: =78
+
+        Button8_3 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =varColorPri01
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            PaddingLeft: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =40
+            Text: ="Datos de Fecha"
+            Width: =230
+            X: =requestFieldTxt_9.X
+            Y: =requestFieldTxt_9.Y + requestFieldTxt_9.Height + 15
+            ZIndex: =13
+
+        Rectangle5_3 As rectangle:
+            Fill: =varColorPri01
+            Height: =2
+            Width: =Parent.Width - Self.X - 50
+            X: =Button8_3.X
+            Y: =Button8_3.Y + Button8_3.Height - Self.Height
+            ZIndex: =14
+
+    Rectangle2_9 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =79
 

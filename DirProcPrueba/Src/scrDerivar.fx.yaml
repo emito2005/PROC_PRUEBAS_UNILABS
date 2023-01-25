@@ -3,7 +3,15 @@ scrDerivar As screen:
     OnVisible: |-
         =ResetForm(RequestAttachmentsForm);
         NewForm(RequestAttachmentsForm);
-        UpdateContext({ operation: "Derivar" })
+        UpdateContext({ 
+            currentOrder:
+            LookUp(AreaEtapaFlujo,
+                IdArea = varMyUser.IdArea &&
+                IdEtapa = varSolicitudDetalleItemSel.IdEtapaActual &&
+                IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo &&
+                IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+            ).Orden
+        })
 
     cmpBarraSuperior_11 As cmpBarraSuperior:
 
@@ -226,14 +234,16 @@ scrDerivar As screen:
                             IdEtapaDestinoFlujo: 
                             LookUp(AreaEtapaFlujo, 
                                 IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
-                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo &&
+                                Orden = currentOrder + 1
                             ).IdEtapaDestino,
                             //IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo; IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino; (esto esta mal)
                             // Correccion
                             IdAreaDestinoFlujo: 
                             LookUp(AreaEtapaFlujo, 
                                 IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
-                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                                IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo &&
+                                Orden = currentOrder + 1
                             ).IdAreaDestino,
                             ObsSolDet: TrimEnds(TextInput2_2.Text)
             			},
@@ -685,7 +695,7 @@ scrDerivar As screen:
             ZIndex: =18
 
         requestFieldTxt_37 As text:
-            Default: =requestFieldTxt_13.Text
+            Default: =requestFieldTxt_38.Text
             DisplayMode: =DisplayMode.Disabled
             PaddingLeft: =5
             RadiusBottomLeft: =0
