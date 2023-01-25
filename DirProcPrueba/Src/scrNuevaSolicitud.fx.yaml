@@ -737,12 +737,16 @@ scrNuevaSolicitud As screen:
             	Filter(AreaManagerLider, IdArea = varMyUser.IdArea)
             );
             
-            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(colMyManagers,Email,";")));
+            AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email));
+            AddColumns(colMyLideres,"Email",LookUp(Personal,ID=IdPersonal,Email));
+            
+            
+            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(colMyManagers,EmailManager,";")));
             
             If(varMyUserArea.NotificaLider,ClearCollect(colDestinatariosLider,Concat(colMyLideres,Email,";")));
             
             
-            Set(varEmailMessage,htm_EmailPreview.HtmlText);
+            Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
             Office365Outlook.SendEmailV2("equintana@spperu.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," Nro. : ",DataCardValue16.Text),varEmailMessage);
             
         Text: ="Botón"
@@ -751,7 +755,7 @@ scrNuevaSolicitud As screen:
         ZIndex: =9
 
     htm_EmailPreview_1 As htmlViewer:
-        Height: =134
+        Height: =142
         HtmlText: |-
             ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
             xmlns:o=""""urn:schemas-microsoft-com:office:office""""
@@ -1517,9 +1521,9 @@ scrNuevaSolicitud As screen:
             <p class=MsoNormal><b><span style='font-size:12.0pt'>SOLICITUD : <span
             class=SpellE>" & DataCardValue16.Text & "</span><o:p></o:p></span></b></p>
             
-            <p class=MsoNormal>TIPO DE SOLICITUD : <span class=SpellE>" & ddwTipoSolicitud.Seleted.Nombre & "</span><o:p></o:p></p>
+            <p class=MsoNormal>TIPO DE SOLICITUD : <span class=SpellE>" & ddwTipoSolicitud.Selected.Nombre & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>TIPO DE SERVICIO : <span class=SpellE> " & ddwTipoServicio.Seleted.Nombre & "</span><o:p></o:p></p>
+            <p class=MsoNormal>TIPO DE SERVICIO : <span class=SpellE> " & ddwTipoServicio.Selected.Nombre & "</span><o:p></o:p></p>
             
             <p class=MsoNormal>NOMBRE DE SOLICITUD : <span class=SpellE>" & DataCardValue17.Text & "</span><o:p></o:p></p>
             
@@ -1532,8 +1536,8 @@ scrNuevaSolicitud As screen:
             </body>
             
             </html>"
-        Width: =416
-        X: =264
-        Y: =506
+        Width: =419
+        X: =204
+        Y: =504
         ZIndex: =10
 
