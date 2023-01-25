@@ -38,6 +38,15 @@ scrDevolver As screen:
 
     cmpBarraSuperior_13 As cmpBarraSuperior:
 
+    Rectangle4_12 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =699
+        Width: =1366
+        Y: =69
+        ZIndex: =2
+
     lbl_TituloPrincipal_10 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
@@ -47,7 +56,7 @@ scrDevolver As screen:
         Width: =1335
         X: =13
         Y: =icn_Volver_NS_7.Y + (icn_Volver_NS_7.Height / 2) - (Self.Height / 2)
-        ZIndex: =2
+        ZIndex: =3
 
     icn_Volver_NS_7 As icon.BackArrow:
         Color: =icn_Volver_NS_1.Color
@@ -55,7 +64,7 @@ scrDevolver As screen:
         OnSelect: =Back();
         X: =icn_Volver_NS_1.X
         Y: =icn_Volver_NS_1.Y
-        ZIndex: =3
+        ZIndex: =4
 
     Button5_3 As button:
         Fill: =varColorPri01
@@ -141,7 +150,7 @@ scrDevolver As screen:
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 35
-        ZIndex: =4
+        ZIndex: =5
 
     TextInput2_3 As text:
         BorderColor: =varColorPri01B
@@ -157,7 +166,7 @@ scrDevolver As screen:
         Width: =Rectangle5_15.X + Rectangle5_15.Width - Self.X
         X: =requestFieldLbl_29.X
         Y: =requestFieldLbl_29.Y + requestFieldLbl_29.Height
-        ZIndex: =5
+        ZIndex: =6
 
     Label6_46 As label:
         FontWeight: =FontWeight.Semibold
@@ -170,7 +179,7 @@ scrDevolver As screen:
         Width: =(Parent.Width - 250) / 4
         X: =Button8_13.X
         Y: =Button8_13.Y + Button8_13.Height + 15
-        ZIndex: =12
+        ZIndex: =13
 
     TextInput4_38 As text:
         BorderThickness: =0
@@ -187,7 +196,7 @@ scrDevolver As screen:
         Width: =Label6_46.Width
         X: =Label6_46.X
         Y: =Label6_46.Y + Label6_46.Height
-        ZIndex: =13
+        ZIndex: =14
 
     Label6_47 As label:
         FontWeight: =FontWeight.Semibold
@@ -200,7 +209,7 @@ scrDevolver As screen:
         Width: =Label6_46.Width
         X: =Label6_46.X + Label6_46.Width + 50
         Y: =Label6_46.Y
-        ZIndex: =14
+        ZIndex: =15
 
     TextInput4_39 As text:
         BorderThickness: =0
@@ -217,7 +226,7 @@ scrDevolver As screen:
         Width: =Label6_47.Width
         X: =Label6_47.X
         Y: =Label6_47.Y + Label6_47.Height
-        ZIndex: =15
+        ZIndex: =16
 
     Label6_48 As label:
         FontWeight: =FontWeight.Semibold
@@ -230,7 +239,7 @@ scrDevolver As screen:
         Width: =Label6_46.Width
         X: =Label6_47.X + Label6_47.Width + 50
         Y: =Label6_47.Y
-        ZIndex: =16
+        ZIndex: =17
 
     TextInput4_40 As text:
         BorderThickness: =0
@@ -247,7 +256,7 @@ scrDevolver As screen:
         Width: =Label6_48.Width
         X: =Label6_48.X
         Y: =Label6_48.Y + Label6_48.Height
-        ZIndex: =17
+        ZIndex: =18
 
     Label6_49 As label:
         FontWeight: =FontWeight.Semibold
@@ -260,7 +269,7 @@ scrDevolver As screen:
         Width: =Label6_46.Width
         X: =Label6_48.X + Label6_48.Width + 50
         Y: =Label6_48.Y
-        ZIndex: =18
+        ZIndex: =19
 
     TextInput4_41 As text:
         BorderThickness: =0
@@ -277,7 +286,7 @@ scrDevolver As screen:
         Width: =Label6_49.Width
         X: =Label6_49.X
         Y: =Label6_49.Y + Label6_49.Height
-        ZIndex: =19
+        ZIndex: =20
 
     Label6_50 As label:
         FontWeight: =FontWeight.Semibold
@@ -290,7 +299,7 @@ scrDevolver As screen:
         Width: =TextInput4_39.X + TextInput4_39.Width - Self.X
         X: =TextInput4_38.X
         Y: =TextInput4_38.Y + TextInput4_38.Height + 15
-        ZIndex: =20
+        ZIndex: =21
 
     TextInput4_42 As text:
         BorderThickness: =0
@@ -307,7 +316,7 @@ scrDevolver As screen:
         Width: =Label6_50.Width
         X: =Label6_50.X
         Y: =Label6_50.Y + Label6_50.Height
-        ZIndex: =21
+        ZIndex: =22
 
     Label6_51 As label:
         FontWeight: =FontWeight.Semibold
@@ -320,7 +329,7 @@ scrDevolver As screen:
         Width: =TextInput4_41.X + TextInput4_41.Width - Self.X
         X: =Label6_50.X + Label6_50.Width + 50
         Y: =Label6_50.Y
-        ZIndex: =22
+        ZIndex: =23
 
     Label6_52 As label:
         Height: =50
@@ -332,7 +341,7 @@ scrDevolver As screen:
         Width: =Label6_51.Width
         X: =Label6_51.X
         Y: =Label6_51.Y + Label6_51.Height
-        ZIndex: =23
+        ZIndex: =24
 
     Label6_53 As label:
         FontWeight: =FontWeight.Semibold
@@ -345,7 +354,7 @@ scrDevolver As screen:
         Width: =(Parent.Width - 200) / 3
         X: =Button8_11.X
         Y: =Button8_11.Y + Button8_11.Height + 15
-        ZIndex: =24
+        ZIndex: =25
 
     TextInput4_43 As text:
         BorderThickness: =0
@@ -362,7 +371,7 @@ scrDevolver As screen:
         Width: =Label6_53.Width
         X: =Label6_53.X
         Y: =Label6_53.Y + Label6_53.Height
-        ZIndex: =25
+        ZIndex: =26
 
     Label6_54 As label:
         FontWeight: =FontWeight.Semibold
@@ -375,7 +384,7 @@ scrDevolver As screen:
         Width: =Label6_53.Width
         X: =Label6_53.X + Label6_53.Width + 50
         Y: =Label6_53.Y
-        ZIndex: =26
+        ZIndex: =27
 
     TextInput4_44 As text:
         BorderThickness: =0
@@ -392,7 +401,7 @@ scrDevolver As screen:
         Width: =Label6_54.Width
         X: =Label6_54.X
         Y: =Label6_54.Y + Label6_54.Height
-        ZIndex: =27
+        ZIndex: =28
 
     Label6_55 As label:
         FontWeight: =FontWeight.Semibold
@@ -405,7 +414,7 @@ scrDevolver As screen:
         Width: =Label6_54.Width
         X: =Label6_54.X + Label6_54.Width + 50
         Y: =Label6_54.Y
-        ZIndex: =28
+        ZIndex: =29
 
     TextInput4_45 As text:
         BorderThickness: =0
@@ -422,7 +431,7 @@ scrDevolver As screen:
         Width: =Label6_55.Width
         X: =Label6_55.X
         Y: =Label6_55.Y + Label6_55.Height
-        ZIndex: =29
+        ZIndex: =30
 
     requestFieldLbl_29 As label:
         FontWeight: =FontWeight.Semibold
@@ -434,14 +443,14 @@ scrDevolver As screen:
         Width: =170
         X: =requestFieldLbl_28.X
         Y: =Icon4_2.Y + Icon4_2.Height
-        ZIndex: =34
+        ZIndex: =35
 
     Rectangle2_10 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =35
+        ZIndex: =36
 
     Group8_13 As group:
         Height: =5
@@ -466,7 +475,7 @@ scrDevolver As screen:
             Width: =230
             X: =50
             Y: =115
-            ZIndex: =6
+            ZIndex: =7
 
         Rectangle5_13 As rectangle:
             Fill: =varColorPri01
@@ -474,7 +483,7 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_13.X
             Y: =Button8_13.Y + Button8_13.Height - Self.Height
-            ZIndex: =7
+            ZIndex: =8
 
     Group8_14 As group:
         Height: =5
@@ -499,7 +508,7 @@ scrDevolver As screen:
             Width: =230
             X: =TextInput4_42.X
             Y: =TextInput4_42.Y + TextInput4_42.Height + 15
-            ZIndex: =8
+            ZIndex: =9
 
         Rectangle5_14 As rectangle:
             Fill: =varColorPri01
@@ -507,7 +516,7 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_14.X
             Y: =Button8_14.Y + Button8_14.Height - Self.Height
-            ZIndex: =9
+            ZIndex: =10
 
     upperToGroup_3 As group:
         Height: =5
@@ -528,7 +537,7 @@ scrDevolver As screen:
             Width: =170
             X: =Button8_15.X
             Y: =Button8_15.Y + Button8_15.Height + 15
-            ZIndex: =30
+            ZIndex: =31
 
         Icon4_2 As icon.Person:
             Color: =varColorPri01
@@ -538,7 +547,7 @@ scrDevolver As screen:
             PaddingRight: =5
             X: =requestFieldLbl_28.X + requestFieldLbl_28.Width + 15
             Y: =requestFieldLbl_28.Y
-            ZIndex: =31
+            ZIndex: =32
 
         requestFieldLbl_77 As label:
             FontWeight: =FontWeight.Semibold
@@ -559,7 +568,7 @@ scrDevolver As screen:
             Width: =Rectangle5_8.X + Rectangle5_8.Width - Self.X
             X: =Icon4_2.X + Icon4_2.Width
             Y: =Icon4_2.Y
-            ZIndex: =32
+            ZIndex: =33
 
         requestFieldLbl_61 As label:
             Height: =Icon4_2.Height / 2
@@ -572,7 +581,7 @@ scrDevolver As screen:
             Width: =Rectangle5_8.X + Rectangle5_8.Width - Self.X
             X: =Icon4_2.X + Icon4_2.Width
             Y: =requestFieldLbl_77.Y + requestFieldLbl_77.Height
-            ZIndex: =33
+            ZIndex: =34
 
     Group8_15 As group:
         Height: =5
@@ -597,7 +606,7 @@ scrDevolver As screen:
             Width: =240
             X: =TextInput4_43.X
             Y: =TextInput4_43.Y + TextInput4_43.Height + 15
-            ZIndex: =10
+            ZIndex: =11
 
         Rectangle5_15 As rectangle:
             Fill: =varColorPri01
@@ -605,5 +614,5 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_15.X
             Y: =Button8_15.Y + Button8_15.Height - Self.Height
-            ZIndex: =11
+            ZIndex: =12
 

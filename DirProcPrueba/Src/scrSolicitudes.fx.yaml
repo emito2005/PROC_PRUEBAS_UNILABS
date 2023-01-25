@@ -82,10 +82,10 @@ scrSolicitudes As screen:
             )
         Layout: =Layout.Vertical
         OnSelect: |
-            =Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: false });
-            //ClearCollect(colSolicitudDetalleItemSel;Gallery1_1.Selected);;
+            =//ClearCollect(colSolicitudDetalleItemSel;Gallery1_1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1_1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_1.Selected.ID));
+            Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: false });
         TemplateFill: |-
             =//RGBA(0; 0; 0; 0)
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))

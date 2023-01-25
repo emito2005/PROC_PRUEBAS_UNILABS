@@ -184,10 +184,8 @@ scrTrazabilidad As screen:
             =colDetSolicitudTraza
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Navigate(srcSolicitudDetalle, ScreenTransition.None);
-            //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
-            //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
-            Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
+            =Set(varSolicitudDetalleTrazaItemSel,LookUp(colDetSolicitudTraza,ID=Gallery1_2.Selected.ID));
+            Navigate(srcSolicitudDetalleTra, ScreenTransition.None);
         TemplateFill: |-
             =//RGBA(0; 0; 0; 0)
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
@@ -400,7 +398,8 @@ scrTrazabilidad As screen:
             Icon: =Icon.PaperClip
             OnSelect: |
                 =//Select(Parent)
-                Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));
+                //Set(varSolicitudDetalleItemSel;LookUp(colSolicitudes;ID=Gallery1_2.Selected.ID));;
+                Set(varSolicitudDetalleItemSelDA,LookUp(colDetSolicitudTraza,ID=Gallery1_2.Selected.ID));
                 Navigate(scrVerDocAdjuntos, ScreenTransition.None);
             Visible: =ThisItem.'Tiene datos adjuntos'
             Width: =20

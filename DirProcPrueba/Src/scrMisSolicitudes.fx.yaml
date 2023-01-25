@@ -159,10 +159,10 @@ scrMisSolicitudes As screen:
             )
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: true });
-            //ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
+            =//ClearCollect(colSolicitudDetalleItemSel;Gallery1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1.Selected.ID));
+            Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: true });
         ShowNavigation: =true
         TemplateFill: =If(ThisItem.IsSelected,RGBA(191, 191, 191, 60%),RGBA(224, 224, 224, 0))
         TemplatePadding: =0

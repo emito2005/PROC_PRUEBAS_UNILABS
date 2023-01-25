@@ -897,7 +897,14 @@
         "PressedBorderColor",
         "HoverBorderColor",
         "FocusedBorderColor",
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//Select(Parent)\r\nSet(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_2.Selected.ID));\r\nNavigate(scrVerDocAdjuntos, ScreenTransition.None);\r\n",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         "BorderThickness",
         "FocusedBorderThickness",

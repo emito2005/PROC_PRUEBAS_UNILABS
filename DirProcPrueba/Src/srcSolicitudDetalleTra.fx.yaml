@@ -1,4 +1,4 @@
-srcSolicitudDetalle As screen:
+srcSolicitudDetalleTra As screen:
     OnHidden: =
     OnVisible: |-
         =// Get AreaManager ID if is blank
@@ -11,9 +11,9 @@ srcSolicitudDetalle As screen:
         	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
         );
 
-    cmpBarraSuperior_7 As cmpBarraSuperior:
+    cmpBarraSuperior_14 As cmpBarraSuperior:
 
-    Rectangle4_9 As rectangle:
+    Rectangle4_15 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
@@ -22,16 +22,16 @@ srcSolicitudDetalle As screen:
         Y: =70
         ZIndex: =2
 
-    Rectangle4_10 As rectangle:
+    Rectangle4_16 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
         Height: =Parent.Height - Self.Y
         Width: =Parent.Width
-        Y: =TextInput4_11.Y + TextInput4_11.Height + 15
+        Y: =TextInput4_57.Y + TextInput4_57.Height + 15
         ZIndex: =3
 
-    HtmlText1 As htmlViewer:
+    HtmlText1_1 As htmlViewer:
         Height: =0
         HtmlText: |-
             ="<!DOCTYPE html>
@@ -138,22 +138,22 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 2%;'>ID</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_46.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Nro. Ticket</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_1.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_47.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Tipo de Solicitud</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_2.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_48.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Tipo de Servicio</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_3.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_49.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -161,7 +161,7 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Nombre de Solicitud</td>
-            						<td class='value' style='width: 25%;'>" & TextInput4_4.Text & "</td>
+            						<td class='value' style='width: 25%;'>" & TextInput4_50.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
@@ -174,17 +174,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Dpto. de Procedencia</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_5.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_51.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Dpto. Actual</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_6.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_52.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Dpto. Asignado</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_7.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_53.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -192,17 +192,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Manager</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_8.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_54.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Lider</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_9.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_55.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Analista</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_10.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_56.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -210,17 +210,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>F. Creación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_11.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_57.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Expiración SLA</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_12.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_58.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Expiración OLA</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_13.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_59.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -230,7 +230,7 @@ srcSolicitudDetalle As screen:
             						<td style='width: 100%; border: 0px #fff solid; text-align: left;'>Observación</td>
             					</tr>
             					<tr>
-            						<td style='width: 100%; height: 120px;'>" & Label6_6.Text & "</td>
+            						<td style='width: 100%; height: 120px;'>" & Label6_62.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -241,7 +241,7 @@ srcSolicitudDetalle As screen:
         Width: =0
         ZIndex: =4
 
-    lbl_TituloPrincipal_4 As label:
+    lbl_TituloPrincipal_12 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Height: =38
@@ -249,10 +249,10 @@ srcSolicitudDetalle As screen:
         Text: ="DETALLE DE SOLICITUD"
         Width: =1335
         X: =13
-        Y: =cmpBarraSuperior_7.Y + (cmpBarraSuperior_7.Height / 2) - (Self.Height / 2)
+        Y: =cmpBarraSuperior_14.Y + (cmpBarraSuperior_14.Height / 2) - (Self.Height / 2)
         ZIndex: =5
 
-    icn_Volver_NS_1 As icon.BackArrow:
+    icn_Volver_NS_2 As icon.BackArrow:
         Color: =varColorPri01
         Icon: =Icon.BackArrow
         OnSelect: =Back();
@@ -260,7 +260,7 @@ srcSolicitudDetalle As screen:
         Y: =2
         ZIndex: =6
 
-    requestFieldLbl_74 As label:
+    requestFieldLbl_76 As label:
         Color: =varColorPri01
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -269,24 +269,24 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Acciones"
-        X: =Button8_3.X
-        Y: =Rectangle4_10.Y + 15
+        X: =Button8_19.X
+        Y: =Rectangle4_16.Y + 15
         ZIndex: =15
 
-    btnVerDocAdjuntos As button:
+    btnVerDocAdjuntos_1 As button:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleItemSel);
+            =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleTrazaItemSel);
             Navigate(scrVerDocAdjuntos)
         Size: =12
         Text: ="Ver Doc. Adjuntos"
-        Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
-        X: =archivarBtn.X + archivarBtn.Width + 116.5
-        Y: =archivarBtn.Y
+        Visible: =varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos'
+        X: =descargarPDFBtn_1.X + descargarPDFBtn_1.Width + 116.5
+        Y: =descargarPDFBtn_1.Y
         ZIndex: =25
 
-    Label6 As label:
+    Label6_56 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -295,13 +295,13 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="ID"
         Width: =(Parent.Width - 250) / 4
-        X: =Button8.X
-        Y: =Button8.Y + Button8.Height + 15
+        X: =Button8_16.X
+        Y: =Button8_16.Y + Button8_16.Height + 15
         ZIndex: =26
 
-    TextInput4 As text:
+    TextInput4_46 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.ID
+        Default: =varSolicitudDetalleTrazaItemSel.ID
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -311,12 +311,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6.Width
-        X: =Label6.X
-        Y: =Label6.Y + Label6.Height
+        Width: =Label6_56.Width
+        X: =Label6_56.X
+        Y: =Label6_56.Y + Label6_56.Height
         ZIndex: =27
 
-    Label6_1 As label:
+    Label6_57 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -324,14 +324,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Nro. Ticket"
-        Width: =Label6.Width
-        X: =Label6.X + Label6.Width + 50
-        Y: =Label6.Y
+        Width: =Label6_56.Width
+        X: =Label6_56.X + Label6_56.Width + 50
+        Y: =Label6_56.Y
         ZIndex: =28
 
-    TextInput4_1 As text:
+    TextInput4_47 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.NroSolicitud
+        Default: =varSolicitudDetalleTrazaItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -341,12 +341,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_1.Width
-        X: =Label6_1.X
-        Y: =Label6_1.Y + Label6_1.Height
+        Width: =Label6_57.Width
+        X: =Label6_57.X
+        Y: =Label6_57.Y + Label6_57.Height
         ZIndex: =29
 
-    Label6_2 As label:
+    Label6_58 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -354,14 +354,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Tipo de Solicitud"
-        Width: =Label6.Width
-        X: =Label6_1.X + Label6_1.Width + 50
-        Y: =Label6_1.Y
+        Width: =Label6_56.Width
+        X: =Label6_57.X + Label6_57.Width + 50
+        Y: =Label6_57.Y
         ZIndex: =30
 
-    TextInput4_2 As text:
+    TextInput4_48 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.TipoSolicitud
+        Default: =varSolicitudDetalleTrazaItemSel.TipoSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -371,12 +371,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_2.Width
-        X: =Label6_2.X
-        Y: =Label6_2.Y + Label6_2.Height
+        Width: =Label6_58.Width
+        X: =Label6_58.X
+        Y: =Label6_58.Y + Label6_58.Height
         ZIndex: =31
 
-    Label6_3 As label:
+    Label6_59 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -384,14 +384,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Tipo de Servicio"
-        Width: =Label6.Width
-        X: =Label6_2.X + Label6_2.Width + 50
-        Y: =Label6_2.Y
+        Width: =Label6_56.Width
+        X: =Label6_58.X + Label6_58.Width + 50
+        Y: =Label6_58.Y
         ZIndex: =32
 
-    TextInput4_3 As text:
+    TextInput4_49 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.TipoServicio
+        Default: =varSolicitudDetalleTrazaItemSel.TipoServicio
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -401,12 +401,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_3.Width
-        X: =Label6_3.X
-        Y: =Label6_3.Y + Label6_3.Height
+        Width: =Label6_59.Width
+        X: =Label6_59.X
+        Y: =Label6_59.Y + Label6_59.Height
         ZIndex: =33
 
-    Label6_4 As label:
+    Label6_60 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -414,14 +414,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Nombre de Solicitud"
-        Width: =TextInput4_1.X + TextInput4_1.Width - Self.X
-        X: =TextInput4.X
-        Y: =TextInput4.Y + TextInput4.Height + 15
+        Width: =TextInput4_47.X + TextInput4_47.Width - Self.X
+        X: =TextInput4_46.X
+        Y: =TextInput4_46.Y + TextInput4_46.Height + 15
         ZIndex: =34
 
-    TextInput4_4 As text:
+    TextInput4_50 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.NombreSolicitud
+        Default: =varSolicitudDetalleTrazaItemSel.NombreSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -431,12 +431,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_4.Width
-        X: =Label6_4.X
-        Y: =Label6_4.Y + Label6_4.Height
+        Width: =Label6_60.Width
+        X: =Label6_60.X
+        Y: =Label6_60.Y + Label6_60.Height
         ZIndex: =35
 
-    Label6_5 As label:
+    Label6_61 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -444,24 +444,24 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Observación"
-        Width: =TextInput4_3.X + TextInput4_3.Width - Self.X
-        X: =Label6_4.X + Label6_4.Width + 50
-        Y: =Label6_4.Y
+        Width: =TextInput4_49.X + TextInput4_49.Width - Self.X
+        X: =Label6_60.X + Label6_60.Width + 50
+        Y: =Label6_60.Y
         ZIndex: =36
 
-    Label6_6 As label:
+    Label6_62 As label:
         Height: =50
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
-        Text: =varSolicitudDetalleItemSel.ObsSolDet
-        Width: =Label6_5.Width
-        X: =Label6_5.X
-        Y: =Label6_5.Y + Label6_5.Height
+        Text: =varSolicitudDetalleTrazaItemSel.ObsSolDet
+        Width: =Label6_61.Width
+        X: =Label6_61.X
+        Y: =Label6_61.Y + Label6_61.Height
         ZIndex: =37
 
-    Label6_7 As label:
+    Label6_63 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -470,13 +470,13 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="Dpto. de Procedencia"
         Width: =(Parent.Width - 200) / 3
-        X: =Button8_1.X
-        Y: =Button8_1.Y + Button8_1.Height + 15
+        X: =Button8_17.X
+        Y: =Button8_17.Y + Button8_17.Height + 15
         ZIndex: =38
 
-    TextInput4_5 As text:
+    TextInput4_51 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.AreaOrigen
+        Default: =varSolicitudDetalleTrazaItemSel.AreaOrigen
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -486,12 +486,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_7.Width
-        X: =Label6_7.X
-        Y: =Label6_7.Y + Label6_7.Height
+        Width: =Label6_63.Width
+        X: =Label6_63.X
+        Y: =Label6_63.Y + Label6_63.Height
         ZIndex: =39
 
-    Label6_8 As label:
+    Label6_64 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -499,14 +499,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Dpto. Actual"
-        Width: =Label6_7.Width
-        X: =Label6_7.X + Label6_7.Width + 50
-        Y: =Label6_7.Y
+        Width: =Label6_63.Width
+        X: =Label6_63.X + Label6_63.Width + 50
+        Y: =Label6_63.Y
         ZIndex: =40
 
-    TextInput4_6 As text:
+    TextInput4_52 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.AreaActual
+        Default: =varSolicitudDetalleTrazaItemSel.AreaActual
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -516,12 +516,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_8.Width
-        X: =Label6_8.X
-        Y: =Label6_8.Y + Label6_8.Height
+        Width: =Label6_64.Width
+        X: =Label6_64.X
+        Y: =Label6_64.Y + Label6_64.Height
         ZIndex: =41
 
-    Label6_9 As label:
+    Label6_65 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -529,14 +529,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Dpto. Asignado"
-        Width: =Label6_8.Width
-        X: =Label6_8.X + Label6_8.Width + 50
-        Y: =Label6_8.Y
+        Width: =Label6_64.Width
+        X: =Label6_64.X + Label6_64.Width + 50
+        Y: =Label6_64.Y
         ZIndex: =42
 
-    TextInput4_7 As text:
+    TextInput4_53 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.AreaDestino
+        Default: =varSolicitudDetalleTrazaItemSel.AreaDestino
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -546,12 +546,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_9.Width
-        X: =Label6_9.X
-        Y: =Label6_9.Y + Label6_9.Height
+        Width: =Label6_65.Width
+        X: =Label6_65.X
+        Y: =Label6_65.Y + Label6_65.Height
         ZIndex: =43
 
-    Label6_10 As label:
+    Label6_66 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -560,13 +560,13 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="Manager"
         Width: =(Parent.Width - 200) / 3
-        X: =Button8_2.X
-        Y: =Button8_2.Y + Button8_2.Height + 15
+        X: =Button8_18.X
+        Y: =Button8_18.Y + Button8_18.Height + 15
         ZIndex: =44
 
-    TextInput4_8 As text:
+    TextInput4_54 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.ManagerDelArea
+        Default: =varSolicitudDetalleTrazaItemSel.ManagerDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -576,12 +576,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_10.Width
-        X: =Label6_10.X
-        Y: =Label6_10.Y + Label6_10.Height
+        Width: =Label6_66.Width
+        X: =Label6_66.X
+        Y: =Label6_66.Y + Label6_66.Height
         ZIndex: =45
 
-    Label6_11 As label:
+    Label6_67 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -589,14 +589,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Líder"
-        Width: =Label6_10.Width
-        X: =Label6_10.X + Label6_10.Width + 50
-        Y: =Label6_10.Y
+        Width: =Label6_66.Width
+        X: =Label6_66.X + Label6_66.Width + 50
+        Y: =Label6_66.Y
         ZIndex: =46
 
-    TextInput4_9 As text:
+    TextInput4_55 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.LiderDelArea
+        Default: =varSolicitudDetalleTrazaItemSel.LiderDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -606,12 +606,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_11.Width
-        X: =Label6_11.X
-        Y: =Label6_11.Y + Label6_11.Height
+        Width: =Label6_67.Width
+        X: =Label6_67.X
+        Y: =Label6_67.Y + Label6_67.Height
         ZIndex: =47
 
-    Label6_12 As label:
+    Label6_68 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -619,14 +619,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Analista"
-        Width: =Label6_11.Width
-        X: =Label6_11.X + Label6_11.Width + 50
-        Y: =Label6_11.Y
+        Width: =Label6_67.Width
+        X: =Label6_67.X + Label6_67.Width + 50
+        Y: =Label6_67.Y
         ZIndex: =48
 
-    TextInput4_10 As text:
+    TextInput4_56 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.AnalistaDelArea
+        Default: =varSolicitudDetalleTrazaItemSel.AnalistaDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -636,12 +636,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_12.Width
-        X: =Label6_12.X
-        Y: =Label6_12.Y + Label6_12.Height
+        Width: =Label6_68.Width
+        X: =Label6_68.X
+        Y: =Label6_68.Y + Label6_68.Height
         ZIndex: =49
 
-    Label6_13 As label:
+    Label6_69 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -650,13 +650,13 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="F. Creación"
         Width: =(Parent.Width - 200) / 3
-        X: =Button8_3.X
-        Y: =Button8_3.Y + Button8_3.Height + 15
+        X: =Button8_19.X
+        Y: =Button8_19.Y + Button8_19.Height + 15
         ZIndex: =50
 
-    TextInput4_11 As text:
+    TextInput4_57 As text:
         BorderThickness: =0
-        Default: =Text(varSolicitudDetalleItemSel.FechaCreacion, "dd/mm/yyyy")
+        Default: =Text(varSolicitudDetalleTrazaItemSel.FechaCreacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -666,12 +666,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_13.Width
-        X: =Label6_13.X
-        Y: =Label6_13.Y + Label6_13.Height
+        Width: =Label6_69.Width
+        X: =Label6_69.X
+        Y: =Label6_69.Y + Label6_69.Height
         ZIndex: =51
 
-    Label6_14 As label:
+    Label6_70 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -679,14 +679,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Expiración SLA"
-        Width: =Label6_13.Width
-        X: =Label6_13.X + Label6_13.Width + 50
-        Y: =Label6_13.Y
+        Width: =Label6_69.Width
+        X: =Label6_69.X + Label6_69.Width + 50
+        Y: =Label6_69.Y
         ZIndex: =52
 
-    TextInput4_12 As text:
+    TextInput4_58 As text:
         BorderThickness: =0
-        Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
+        Default: =Text(varSolicitudDetalleTrazaItemSel.FechaExpiraSLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -696,12 +696,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_14.Width
-        X: =Label6_14.X
-        Y: =Label6_14.Y + Label6_14.Height
+        Width: =Label6_70.Width
+        X: =Label6_70.X
+        Y: =Label6_70.Y + Label6_70.Height
         ZIndex: =53
 
-    Label6_15 As label:
+    Label6_71 As label:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -709,14 +709,14 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Expiración OLA"
-        Width: =Label6_14.Width
-        X: =Label6_14.X + Label6_14.Width + 50
-        Y: =Label6_14.Y
+        Width: =Label6_70.Width
+        X: =Label6_70.X + Label6_70.Width + 50
+        Y: =Label6_70.Y
         ZIndex: =54
 
-    TextInput4_13 As text:
+    TextInput4_59 As text:
         BorderThickness: =0
-        Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
+        Default: =Text(varSolicitudDetalleTrazaItemSel.FechaExpiraOLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
@@ -726,19 +726,19 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_15.Width
-        X: =Label6_15.X
-        Y: =Label6_15.Y + Label6_15.Height
+        Width: =Label6_71.Width
+        X: =Label6_71.X
+        Y: =Label6_71.Y + Label6_71.Height
         ZIndex: =55
 
-    archiveDialogGroup As group:
+    archiveDialogGroup_1 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =61
 
-        confirmDialogRect_2 As rectangle:
+        confirmDialogRect_5 As rectangle:
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0.5)
             FocusedBorderThickness: =0
@@ -747,7 +747,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width
             ZIndex: =56
 
-        confirmDialogFrame_2 As button:
+        confirmDialogFrame_5 As button:
             BorderThickness: =0
             DisabledFill: =Color.White
             DisplayMode: =DisplayMode.Disabled
@@ -764,17 +764,17 @@ srcSolicitudDetalle As screen:
             Y: =Parent.Height / 2 - Self.Height / 2
             ZIndex: =57
 
-        confirmDialogTitle_2 As label:
+        confirmDialogTitle_5 As label:
             Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Text: ="¿ESTA SEGURO DE ARCHIVAR LA SOLICITUD?"
             Visible: =showArchiveDialog
-            Width: =confirmDialogFrame_2.Width
-            X: =confirmDialogFrame_2.X
-            Y: =confirmDialogFrame_2.Y + 15
+            Width: =confirmDialogFrame_5.Width
+            X: =confirmDialogFrame_5.X
+            Y: =confirmDialogFrame_5.Y + 15
             ZIndex: =58
 
-        commentaryLbl As label:
+        commentaryLbl_3 As label:
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -785,11 +785,11 @@ srcSolicitudDetalle As screen:
                 ="Comentario:"
             Visible: =showArchiveDialog
             Width: =100
-            X: =confirmDialogFrame_2.X + 20
-            Y: =confirmDialogTitle_2.Y + confirmDialogTitle_2.Height + 15
+            X: =confirmDialogFrame_5.X + 20
+            Y: =confirmDialogTitle_5.Y + confirmDialogTitle_5.Height + 15
             ZIndex: =59
 
-        TextInput3 As text:
+        TextInput3_3 As text:
             BorderColor: =varColorPri01B
             Default: =""
             Height: =120
@@ -802,13 +802,13 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Visible: =showArchiveDialog
-            Width: =confirmDialogFrame_2.X + confirmDialogFrame_2.Width - Self.X - 20
-            X: =confirmDialogFrame_2.X + 20
-            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            Width: =confirmDialogFrame_5.X + confirmDialogFrame_5.Width - Self.X - 20
+            X: =confirmDialogFrame_5.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
             ZIndex: =60
 
-        aceptarBtn As button:
-            DisplayMode: =If(IsBlank(TrimEnds(TextInput3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+        aceptarBtn_3 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
@@ -816,7 +816,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleTrazaItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                         FechaFinalSol: Today() 
@@ -829,15 +829,15 @@ srcSolicitudDetalle As screen:
                 		Patch(SolicitudDetalle,
                 			Defaults(SolicitudDetalle),
                 			{
-                				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
+                				IdSolicitud: varSolicitudDetalleTrazaItemSel.IdSolicitud,
                 				FechaCreacion: Today(),
-                				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
-                                FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                				FechaExpiraSLA: varSolicitudDetalleTrazaItemSel.FechaExpiraSLA,
+                                FechaExpiraOLA: varSolicitudDetalleTrazaItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
                 				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
                 				EsAtendido: false,
                 				IdAccionOrigen: 6, // Anular
-                				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
+                				IdEtapaOrigen: varSolicitudDetalleTrazaItemSel.IdEtapaActual,
                 				IdAreaOrigen: varMyUser.IdArea,
                 				IdPerfilOrigen: varMyUser.IdPerfil,
                 				IdPersonalOrigen: varMyUser.ID,
@@ -853,9 +853,9 @@ srcSolicitudDetalle As screen:
                 				IdPerfilDestino: 0, // Perfil Destino Real
                 				IdPersonalDestino: 0, // Personal Destino 
                                 //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
-                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                IdEtapaDestinoFlujo: varSolicitudDetalleTrazaItemSel.IdEtapaDestinoFlujo,
                                 //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
-                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                                IdAreaDestinoFlujo: varSolicitudDetalleTrazaItemSel.IdAreaDestinoFlujo,
                                 ObsSolDet: TrimEnds(TextInput3.Text)
                 			}
                 		)
@@ -863,7 +863,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
                 Patch(SolicitudDetalle, 
-                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleTrazaItemSel.ID),
                     {
                         IdAccionActual: 6, // Anular
                         IdPerfilActual: varMyUser.IdPerfil,
@@ -889,31 +889,31 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Aceptar"
             Visible: =showArchiveDialog
-            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
+            X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
             ZIndex: =61
 
-        cancelarBtn As button:
+        cancelarBtn_3 As button:
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showArchiveDialog: false });
-                Reset(TextInput3)
+                Reset(TextInput3_3)
             Size: =12
             Text: ="Cancelar"
             Visible: =showArchiveDialog
-            X: =confirmDialogFrame_2.X + (confirmDialogFrame_2.Width / 2) + 20
-            Y: =confirmDialogFrame_2.Y + confirmDialogFrame_2.Height - Self.Height - 20
+            X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) + 20
+            Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
             ZIndex: =62
 
-    deleteDialogGroup As group:
+    deleteDialogGroup_1 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =62
 
-        confirmDialogRect_3 As rectangle:
+        confirmDialogRect_6 As rectangle:
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0.5)
             FocusedBorderThickness: =0
@@ -922,7 +922,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width
             ZIndex: =63
 
-        confirmDialogFrame_3 As button:
+        confirmDialogFrame_6 As button:
             BorderThickness: =0
             DisabledFill: =Color.White
             DisplayMode: =DisplayMode.Disabled
@@ -939,17 +939,17 @@ srcSolicitudDetalle As screen:
             Y: =Parent.Height / 2 - Self.Height / 2
             ZIndex: =64
 
-        confirmDialogTitle_3 As label:
+        confirmDialogTitle_6 As label:
             Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Text: ="¿ESTA SEGURO DE ELIMINAR LA SOLICITUD?"
             Visible: =showDeleteDialog
-            Width: =confirmDialogFrame_3.Width
-            X: =confirmDialogFrame_3.X
-            Y: =confirmDialogFrame_3.Y + 15
+            Width: =confirmDialogFrame_6.Width
+            X: =confirmDialogFrame_6.X
+            Y: =confirmDialogFrame_6.Y + 15
             ZIndex: =65
 
-        commentaryLbl_1 As label:
+        commentaryLbl_4 As label:
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -960,11 +960,11 @@ srcSolicitudDetalle As screen:
                 ="Comentario:"
             Visible: =showDeleteDialog
             Width: =100
-            X: =confirmDialogFrame_3.X + 20
-            Y: =confirmDialogTitle_3.Y + confirmDialogTitle_3.Height + 15
+            X: =confirmDialogFrame_6.X + 20
+            Y: =confirmDialogTitle_6.Y + confirmDialogTitle_6.Height + 15
             ZIndex: =66
 
-        TextInput3_1 As text:
+        TextInput3_4 As text:
             BorderColor: =varColorPri01B
             Default: =""
             Height: =120
@@ -977,13 +977,13 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Visible: =showDeleteDialog
-            Width: =confirmDialogFrame_3.X + confirmDialogFrame_3.Width - Self.X - 20
-            X: =confirmDialogFrame_3.X + 20
-            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            Width: =confirmDialogFrame_6.X + confirmDialogFrame_6.Width - Self.X - 20
+            X: =confirmDialogFrame_6.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
             ZIndex: =67
 
-        aceptarBtn_1 As button:
-            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_1.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+        aceptarBtn_4 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_4.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
@@ -991,7 +991,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleTrazaItemSel.IdSolicitud), 
                 	{ 
                 		EsActivo: false,
                 		EsEliminado: true,
@@ -1005,15 +1005,15 @@ srcSolicitudDetalle As screen:
                 		Patch(SolicitudDetalle,
                 			Defaults(SolicitudDetalle),
                 			{
-                				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
+                				IdSolicitud: varSolicitudDetalleTrazaItemSel.IdSolicitud,
                 				FechaCreacion: Today(),
-                				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
-                                FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                				FechaExpiraSLA: varSolicitudDetalleTrazaItemSel.FechaExpiraSLA,
+                                FechaExpiraOLA: varSolicitudDetalleTrazaItemSel.FechaExpiraOLA,
                                 // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
                 				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
                 				EsAtendido: false,
                 				IdAccionOrigen: 7, // Eliminar
-                				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
+                				IdEtapaOrigen: varSolicitudDetalleTrazaItemSel.IdEtapaActual,
                 				IdAreaOrigen: varMyUser.IdArea,
                 				IdPerfilOrigen: varMyUser.IdPerfil,
                 				IdPersonalOrigen: varMyUser.ID,
@@ -1029,9 +1029,9 @@ srcSolicitudDetalle As screen:
                 				IdPerfilDestino: 0, // Perfil Destino Real
                 				IdPersonalDestino: 0, // Personal Destino 
                                 //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
-                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                IdEtapaDestinoFlujo: varSolicitudDetalleTrazaItemSel.IdEtapaDestinoFlujo,
                                 //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
-                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                                IdAreaDestinoFlujo: varSolicitudDetalleTrazaItemSel.IdAreaDestinoFlujo,
                                 ObsSolDet: TrimEnds(TextInput3_1.Text)
                 			}
                 		)
@@ -1039,7 +1039,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
                 Patch(SolicitudDetalle, 
-                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleTrazaItemSel.ID),
                     {
                         IdAccionActual: 7, // Eliminar
                         IdPerfilActual: varMyUser.IdPerfil,
@@ -1065,31 +1065,31 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Aceptar"
             Visible: =showDeleteDialog
-            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
+            X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
             ZIndex: =68
 
-        cancelarBtn_1 As button:
+        cancelarBtn_4 As button:
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showDeleteDialog: false });
-                Reset(TextInput3_1)
+                Reset(TextInput3_4)
             Size: =12
             Text: ="Cancelar"
             Visible: =showDeleteDialog
-            X: =confirmDialogFrame_3.X + (confirmDialogFrame_3.Width / 2) + 20
-            Y: =confirmDialogFrame_3.Y + confirmDialogFrame_3.Height - Self.Height - 20
+            X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) + 20
+            Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
             ZIndex: =69
 
-    actionButtonsGroup As group:
+    actionButtonsGroup_1 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =63
 
-        descargarPDFBtn As button:
+        descargarPDFBtn_1 As button:
             DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
@@ -1099,8 +1099,8 @@ srcSolicitudDetalle As screen:
                     callback:
                     Exportacion_PDF.Run(
                         HtmlText1.HtmlText, 
-                        "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                        varSolicitudDetalleItemSel.ID
+                        "request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
+                        varSolicitudDetalleTrazaItemSel.ID
                     ).callback
                 });
                 If(callback = "true",
@@ -1112,127 +1112,29 @@ srcSolicitudDetalle As screen:
                 )
             Size: =12
             Text: ="Generar PDF"
-            X: =requestFieldLbl_74.X
-            Y: =requestFieldLbl_74.Y + requestFieldLbl_74.Height + 15
+            X: =requestFieldLbl_76.X
+            Y: =requestFieldLbl_76.Y + requestFieldLbl_76.Height + 15
             ZIndex: =16
 
-        trazabilidadBtn As button:
+        trazabilidadBtn_1 As button:
             DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
             Size: =12
             Text: ="Trazabilidad"
-            X: =descargarPDFBtn.X
-            Y: =descargarPDFBtn.Y + descargarPDFBtn.Height + 15
+            X: =descargarPDFBtn_1.X
+            Y: =descargarPDFBtn_1.Y + descargarPDFBtn_1.Height + 15
             ZIndex: =17
 
-        elevarBtn As button:
-            DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Elevar"
-            X: =trazabilidadBtn.X + trazabilidadBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
-            ZIndex: =18
-
-        asignarBtn As button:
-            DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Asignar"
-            X: =elevarBtn.X
-            Y: =elevarBtn.Y + elevarBtn.Height + 15
-            ZIndex: =19
-
-        derivarBtn As button:
-            DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Derivar"
-            Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
-            X: =asignarBtn.X + asignarBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
-            ZIndex: =20
-
-        finalizarBtn As button:
-            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: |-
-                =Reset(TextInput3_2);
-                UpdateContext({ showFinishDialog: true })
-            Size: =12
-            Text: ="Finalizar"
-            Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
-            X: =btnVerDocAdjuntos.X
-            Y: =btnVerDocAdjuntos.Y + btnVerDocAdjuntos.Height + 15
-            ZIndex: =21
-
-        archivarBtn As button:
-            DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: |-
-                =Reset(TextInput3);
-                UpdateContext({ showArchiveDialog: true })
-            Size: =12
-            Text: ="Archivar"
-            X: =derivarBtn.X + derivarBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
-            ZIndex: =22
-
-        eliminarBtn As button:
-            DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: |-
-                =Reset(TextInput3_1);
-                UpdateContext({ showDeleteDialog: true })
-            Size: =12
-            Text: ="Eliminar"
-            X: =archivarBtn.X
-            Y: =archivarBtn.Y + archivarBtn.Height + 15
-            ZIndex: =23
-
-        devolverBtn As button:
-            DisplayMode: |-
-                =If(varDevolver && 
-                    varMisSolicitudesScreen && 
-                    //varMyAreaEtapaFlujo.Orden > 1; 
-                    LookUp(AreaEtapaFlujo, 
-                        IdArea = varMyUser.IdArea && 
-                        IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
-                        IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
-                    ).Orden > 1,
-                    
-                    DisplayMode.Edit, 
-                    
-                    DisplayMode.Disabled
-                )
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Devolver"
-            X: =derivarBtn.X
-            Y: =derivarBtn.Y + derivarBtn.Height + 15
-            ZIndex: =24
-
-    finishDialogGroup As group:
+    finishDialogGroup_1 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =70
 
-        confirmDialogRect_4 As rectangle:
+        confirmDialogRect_7 As rectangle:
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0.5)
             FocusedBorderThickness: =0
@@ -1241,7 +1143,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width
             ZIndex: =70
 
-        confirmDialogFrame_4 As button:
+        confirmDialogFrame_7 As button:
             BorderThickness: =0
             DisabledFill: =Color.White
             DisplayMode: =DisplayMode.Disabled
@@ -1258,17 +1160,17 @@ srcSolicitudDetalle As screen:
             Y: =Parent.Height / 2 - Self.Height / 2
             ZIndex: =71
 
-        confirmDialogTitle_4 As label:
+        confirmDialogTitle_7 As label:
             Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Text: ="¿ESTA SEGURO DE FINALIZAR LA SOLICITUD?"
             Visible: =showFinishDialog
-            Width: =confirmDialogFrame_4.Width
-            X: =confirmDialogFrame_4.X
-            Y: =confirmDialogFrame_4.Y + 15
+            Width: =confirmDialogFrame_7.Width
+            X: =confirmDialogFrame_7.X
+            Y: =confirmDialogFrame_7.Y + 15
             ZIndex: =72
 
-        commentaryLbl_2 As label:
+        commentaryLbl_5 As label:
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -1279,11 +1181,11 @@ srcSolicitudDetalle As screen:
                 ="Comentario:"
             Visible: =showFinishDialog
             Width: =100
-            X: =confirmDialogFrame_4.X + 20
-            Y: =confirmDialogTitle_4.Y + confirmDialogTitle_4.Height + 15
+            X: =confirmDialogFrame_7.X + 20
+            Y: =confirmDialogTitle_7.Y + confirmDialogTitle_7.Height + 15
             ZIndex: =73
 
-        TextInput3_2 As text:
+        TextInput3_5 As text:
             BorderColor: =varColorPri01B
             Default: =""
             Height: =120
@@ -1296,13 +1198,13 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Visible: =showFinishDialog
-            Width: =confirmDialogFrame_4.X + confirmDialogFrame_4.Width - Self.X - 20
-            X: =confirmDialogFrame_4.X + 20
-            Y: =commentaryLbl.Y + commentaryLbl.Height + 5
+            Width: =confirmDialogFrame_7.X + confirmDialogFrame_7.Width - Self.X - 20
+            X: =confirmDialogFrame_7.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
             ZIndex: =74
 
-        aceptarBtn_2 As button:
-            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_2.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+        aceptarBtn_5 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_5.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
@@ -1310,7 +1212,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar datos base de solicitud
                 Patch(Solicitud, 
-                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	LookUp(Solicitud, ID = varSolicitudDetalleTrazaItemSel.IdSolicitud), 
                 	{ 
                 		EsFinalizado: true,
                         FechaFinalSol: Today()
@@ -1319,7 +1221,7 @@ srcSolicitudDetalle As screen:
                 
                 // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
                 Patch(SolicitudDetalle, 
-                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleTrazaItemSel.ID),
                     {
                         IdAccionActual: 8, // Finalizar
                         IdPerfilActual: varMyUser.IdPerfil,
@@ -1345,31 +1247,31 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Aceptar"
             Visible: =showFinishDialog
-            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) - Self.Width - 20
-            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
+            X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
             ZIndex: =75
 
-        cancelarBtn_2 As button:
+        cancelarBtn_5 As button:
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showFinishDialog: false });
-                Reset(TextInput3_2)
+                Reset(TextInput3_5)
             Size: =12
             Text: ="Cancelar"
             Visible: =showFinishDialog
-            X: =confirmDialogFrame_4.X + (confirmDialogFrame_4.Width / 2) + 20
-            Y: =confirmDialogFrame_4.Y + confirmDialogFrame_4.Height - Self.Height - 20
+            X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) + 20
+            Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
             ZIndex: =76
 
-    Group8 As group:
+    Group8_18 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =72
 
-        Button8 As button:
+        Button8_16 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1387,22 +1289,22 @@ srcSolicitudDetalle As screen:
             Y: =85
             ZIndex: =7
 
-        Rectangle5 As rectangle:
+        Rectangle5_16 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8.X
-            Y: =Button8.Y + Button8.Height - Self.Height
+            X: =Button8_16.X
+            Y: =Button8_16.Y + Button8_16.Height - Self.Height
             ZIndex: =8
 
-    Group8_1 As group:
+    Group8_19 As group:
         Height: =5
         Width: =5
         X: =20
         Y: =20
         ZIndex: =74
 
-        Button8_1 As button:
+        Button8_17 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1416,26 +1318,26 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Text: ="Datos de Departamento"
             Width: =280
-            X: =TextInput4_4.X
-            Y: =TextInput4_4.Y + TextInput4_4.Height + 15
+            X: =TextInput4_50.X
+            Y: =TextInput4_50.Y + TextInput4_50.Height + 15
             ZIndex: =9
 
-        Rectangle5_1 As rectangle:
+        Rectangle5_17 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_1.X
-            Y: =Button8_1.Y + Button8_1.Height - Self.Height
+            X: =Button8_17.X
+            Y: =Button8_17.Y + Button8_17.Height - Self.Height
             ZIndex: =10
 
-    Group8_2 As group:
+    Group8_17 As group:
         Height: =5
         Width: =5
         X: =70
         Y: =380
         ZIndex: =76
 
-        Button8_2 As button:
+        Button8_18 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1449,33 +1351,33 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Text: ="Datos de Personal"
             Width: =230
-            X: =TextInput4_5.X
-            Y: =TextInput4_5.Y + TextInput4_5.Height + 15
+            X: =TextInput4_51.X
+            Y: =TextInput4_51.Y + TextInput4_51.Height + 15
             ZIndex: =11
 
-        Rectangle5_2 As rectangle:
+        Rectangle5_18 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_2.X
-            Y: =Button8_2.Y + Button8_2.Height - Self.Height
+            X: =Button8_18.X
+            Y: =Button8_18.Y + Button8_18.Height - Self.Height
             ZIndex: =12
 
-    Rectangle2_9 As rectangle:
+    Rectangle2_11 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
         ZIndex: =77
 
-    Group8_3 As group:
+    Group8_16 As group:
         Height: =5
         Width: =5
         X: =70
         Y: =500
         ZIndex: =78
 
-        Button8_3 As button:
+        Button8_19 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1489,15 +1391,15 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Text: ="Datos de Fecha"
             Width: =230
-            X: =TextInput4_8.X
-            Y: =TextInput4_8.Y + TextInput4_8.Height + 15
+            X: =TextInput4_54.X
+            Y: =TextInput4_54.Y + TextInput4_54.Height + 15
             ZIndex: =13
 
-        Rectangle5_3 As rectangle:
+        Rectangle5_19 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_3.X
-            Y: =Button8_3.Y + Button8_3.Height - Self.Height
+            X: =Button8_19.X
+            Y: =Button8_19.Y + Button8_19.Height - Self.Height
             ZIndex: =14
 

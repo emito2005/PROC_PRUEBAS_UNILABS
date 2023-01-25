@@ -46,7 +46,7 @@ scrVerDocAdjuntos As screen:
         Height: =608
         Items: |
             =//AddColumns(Gallery3.Selected.'Datos adjuntos';"Extension";Last(Split(DisplayName;".")).Result)
-            AddColumns(varSolicitudDetalleItemSel.'Datos adjuntos',"Extension",Last(Split(DisplayName,".")).Result)
+            AddColumns(varSolicitudDetalleItemSelDA.'Datos adjuntos',"Extension",Last(Split(DisplayName,".")).Result)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
