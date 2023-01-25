@@ -34,7 +34,7 @@ scrAsignar As screen:
         Width: =110
         X: =txtBuscarManager_2.X + txtBuscarManager_2.Width + 25
         Y: =requestFieldLbl_41.Y
-        ZIndex: =22
+        ZIndex: =4
 
     Button5_1 As button:
         DisplayMode: =If(!IsBlank(UserSelected), DisplayMode.Edit, DisplayMode.Disabled)
@@ -121,7 +121,23 @@ scrAsignar As screen:
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 35
-        ZIndex: =25
+        ZIndex: =5
+
+    TextInput2 As text:
+        BorderColor: =varColorPri01B
+        Default: =""
+        Height: =Icon6.Y + Icon6.Height - Self.Y
+        HoverBorderColor: =varColorPri01B
+        HoverFill: =varColorPri01B
+        Mode: =TextMode.MultiLine
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Rectangle5_10.X + Rectangle5_10.Width - Self.X
+        X: =requestFieldLbl_39.X
+        Y: =requestFieldLbl_39.Y + requestFieldLbl_39.Height
+        ZIndex: =15
 
     upperToGroup_1 As group:
         Height: =5
@@ -140,7 +156,7 @@ scrAsignar As screen:
             Width: =155
             X: =Button8_10.X
             Y: =Button8_10.Y + Button8_10.Height + 15
-            ZIndex: =26
+            ZIndex: =6
 
         txtBuscarManager_2 As text:
             Align: =Left
@@ -167,7 +183,7 @@ scrAsignar As screen:
             Width: =354
             X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
             Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
-            ZIndex: =27
+            ZIndex: =7
 
         SearchIcon1_5 As icon.Search:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -192,7 +208,7 @@ scrAsignar As screen:
             Width: =38
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
-            ZIndex: =28
+            ZIndex: =8
 
         UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
             AccessibleLabel: ="Resultados de la búsqueda de usuarios"
@@ -236,7 +252,7 @@ scrAsignar As screen:
             Width: =txtBuscarManager_2.Width
             X: =txtBuscarManager_2.X
             Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
-            ZIndex: =29
+            ZIndex: =9
 
             Rectangle2_5 As rectangle:
                 BorderColor: =varColorPri01//Title2_8.Color
@@ -297,29 +313,6 @@ scrAsignar As screen:
                 Y: =58
                 ZIndex: =6
 
-    TextInput2 As text:
-        BorderColor: =varColorPri01B
-        Default: =""
-        Height: =Icon6.Y + Icon6.Height - Self.Y
-        HoverBorderColor: =varColorPri01B
-        HoverFill: =varColorPri01B
-        Mode: =TextMode.MultiLine
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Width: =Rectangle5_10.X + Rectangle5_10.Width - Self.X
-        X: =requestFieldLbl_39.X
-        Y: =requestFieldLbl_39.Y + requestFieldLbl_39.Height
-        ZIndex: =35
-
-    Rectangle2 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =36
-
     Group1 As group:
         Height: =5
         Width: =5
@@ -338,7 +331,7 @@ scrAsignar As screen:
             Width: =txtBuscarManager_2.X + txtBuscarManager_2.Width - Self.X - 50
             X: =requestFieldLbl_41.X
             Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 5
-            ZIndex: =30
+            ZIndex: =10
 
         Icon6 As icon.Person:
             Color: =varColorPri01
@@ -347,7 +340,7 @@ scrAsignar As screen:
             Visible: =!IsBlank(UserSelected)
             X: =Label5.X
             Y: =Label5.Y + Label5.Height + 5
-            ZIndex: =31
+            ZIndex: =11
 
         Label5_1 As label:
             Height: =Icon6.Height / 2
@@ -360,7 +353,7 @@ scrAsignar As screen:
             Width: =Label5.X + Label5.Width - Self.X
             X: =Icon6.X + Icon6.Width
             Y: =Icon6.Y
-            ZIndex: =32
+            ZIndex: =12
 
         Label5_2 As label:
             Height: =Icon6.Height / 2
@@ -373,7 +366,7 @@ scrAsignar As screen:
             Width: =Label5.X + Label5.Width - Self.X
             X: =Icon6.X + Icon6.Width
             Y: =Label5_1.Y + Label5_1.Height
-            ZIndex: =33
+            ZIndex: =13
 
         ClearSelectedUserIcon As icon.Cancel:
             Color: =varColorPri01
@@ -388,7 +381,14 @@ scrAsignar As screen:
             Width: =40
             X: =Label5_1.X + Label5_1.Width + 5
             Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
-            ZIndex: =34
+            ZIndex: =14
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =42
 
     Group7_2 As group:
         Height: =5
@@ -408,7 +408,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 250) / 4
             X: =50
             Y: =Button8_5.Y + Button8_5.Height + 15
-            ZIndex: =41
+            ZIndex: =20
 
         requestFieldTxt_20 As text:
             BorderThickness: =0
@@ -431,7 +431,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_29.Width
             X: =requestFieldLbl_29.X
             Y: =requestFieldLbl_29.Y + requestFieldLbl_29.Height
-            ZIndex: =42
+            ZIndex: =21
 
         requestFieldLbl_30 As label:
             FontWeight: =FontWeight.Semibold
@@ -444,7 +444,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 250) / 4
             X: =requestFieldLbl_29.X + requestFieldLbl_29.Width + 50
             Y: =requestFieldLbl_29.Y
-            ZIndex: =43
+            ZIndex: =22
 
         requestFieldTxt_21 As text:
             BorderThickness: =0
@@ -465,7 +465,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_30.Width
             X: =requestFieldLbl_30.X
             Y: =requestFieldLbl_30.Y + requestFieldLbl_30.Height
-            ZIndex: =44
+            ZIndex: =23
 
         requestFieldLbl_31 As label:
             FontWeight: =FontWeight.Semibold
@@ -478,7 +478,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 250) / 4
             X: =requestFieldTxt_21.X + requestFieldTxt_21.Width + 50
             Y: =requestFieldLbl_30.Y
-            ZIndex: =45
+            ZIndex: =24
 
         requestFieldTxt_22 As text:
             BorderThickness: =0
@@ -499,7 +499,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_31.Width
             X: =requestFieldLbl_31.X
             Y: =requestFieldLbl_31.Y + requestFieldLbl_31.Height
-            ZIndex: =46
+            ZIndex: =25
 
         requestFieldLbl_32 As label:
             FontWeight: =FontWeight.Semibold
@@ -512,7 +512,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 250) / 4
             X: =requestFieldTxt_22.X + requestFieldTxt_22.Width + 50
             Y: =requestFieldLbl_31.Y
-            ZIndex: =47
+            ZIndex: =26
 
         requestFieldTxt_23 As text:
             BorderThickness: =0
@@ -533,7 +533,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_32.Width
             X: =requestFieldLbl_32.X
             Y: =requestFieldLbl_32.Y + requestFieldLbl_32.Height
-            ZIndex: =48
+            ZIndex: =27
 
         requestFieldLbl_33 As label:
             FontWeight: =FontWeight.Semibold
@@ -546,7 +546,7 @@ scrAsignar As screen:
             Width: =requestFieldTxt_21.X + requestFieldTxt_21.Width - Self.X
             X: =requestFieldTxt_20.X
             Y: =requestFieldTxt_20.Y + requestFieldTxt_20.Height + 15
-            ZIndex: =49
+            ZIndex: =28
 
         requestFieldTxt_24 As text:
             BorderThickness: =0
@@ -567,7 +567,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_33.Width
             X: =requestFieldLbl_33.X
             Y: =requestFieldLbl_33.Y + requestFieldLbl_33.Height
-            ZIndex: =50
+            ZIndex: =29
 
         requestFieldLbl_34 As label:
             FontWeight: =FontWeight.Semibold
@@ -581,7 +581,7 @@ scrAsignar As screen:
             Width: =requestFieldTxt_23.Width
             X: =requestFieldLbl_33.X + requestFieldLbl_33.Width + 50
             Y: =requestFieldLbl_33.Y
-            ZIndex: =51
+            ZIndex: =30
 
         requestFieldTxt_25 As text:
             BorderThickness: =0
@@ -603,7 +603,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_34.Width
             X: =requestFieldLbl_34.X
             Y: =requestFieldLbl_34.Y + requestFieldLbl_34.Height
-            ZIndex: =52
+            ZIndex: =31
 
         requestFieldLbl_82 As label:
             FontWeight: =FontWeight.Semibold
@@ -616,7 +616,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 200) / 3
             X: =Button8_9.X
             Y: =Button8_9.Y + Button8_9.Height + 15
-            ZIndex: =53
+            ZIndex: =32
 
         requestFieldTxt_55 As text:
             BorderThickness: =0
@@ -637,7 +637,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_82.Width
             X: =requestFieldLbl_82.X
             Y: =requestFieldLbl_82.Y + requestFieldLbl_82.Height
-            ZIndex: =54
+            ZIndex: =33
 
         requestFieldLbl_83 As label:
             FontWeight: =FontWeight.Semibold
@@ -650,7 +650,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 200) / 3
             X: =requestFieldLbl_82.X + requestFieldLbl_82.Width + 50
             Y: =requestFieldLbl_82.Y
-            ZIndex: =55
+            ZIndex: =34
 
         requestFieldTxt_56 As text:
             BorderThickness: =0
@@ -671,7 +671,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_83.Width
             X: =requestFieldLbl_83.X
             Y: =requestFieldLbl_83.Y + requestFieldLbl_83.Height
-            ZIndex: =56
+            ZIndex: =35
 
         requestFieldLbl_84 As label:
             FontWeight: =FontWeight.Semibold
@@ -684,7 +684,7 @@ scrAsignar As screen:
             Width: =(Parent.Width - 200) / 3
             X: =requestFieldLbl_83.X + requestFieldLbl_83.Width + 50
             Y: =requestFieldLbl_82.Y
-            ZIndex: =57
+            ZIndex: =36
 
         requestFieldTxt_57 As text:
             BorderThickness: =0
@@ -705,7 +705,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_84.Width
             X: =requestFieldLbl_84.X
             Y: =requestFieldLbl_84.Y + requestFieldLbl_84.Height
-            ZIndex: =58
+            ZIndex: =37
 
     Group8_5 As group:
         Height: =5
@@ -730,7 +730,7 @@ scrAsignar As screen:
             Width: =230
             X: =50
             Y: =115
-            ZIndex: =37
+            ZIndex: =16
 
         Rectangle5_5 As rectangle:
             Fill: =varColorPri01
@@ -738,7 +738,7 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_5.X
             Y: =Button8_5.Y + Button8_5.Height - Self.Height
-            ZIndex: =38
+            ZIndex: =17
 
     descriptionGroup_2 As group:
         Height: =5
@@ -759,7 +759,7 @@ scrAsignar As screen:
             Width: =requestFieldTxt_5.X + requestFieldTxt_5.Width - Self.X
             X: =requestFieldLbl_33.X + requestFieldLbl_33.Width + 50
             Y: =requestFieldLbl_33.Y
-            ZIndex: =59
+            ZIndex: =38
 
         requestFieldLbl_36 As label:
             Align: =Align.Justify
@@ -772,7 +772,7 @@ scrAsignar As screen:
             Width: =requestFieldLbl_35.Width
             X: =requestFieldLbl_35.X
             Y: =requestFieldLbl_35.Y + requestFieldLbl_35.Height
-            ZIndex: =60
+            ZIndex: =39
 
     Group8_9 As group:
         Height: =5
@@ -797,7 +797,7 @@ scrAsignar As screen:
             Width: =230
             X: =requestFieldTxt_24.X
             Y: =requestFieldTxt_24.Y + requestFieldTxt_24.Height + 15
-            ZIndex: =39
+            ZIndex: =18
 
         Rectangle5_9 As rectangle:
             Fill: =varColorPri01
@@ -805,7 +805,7 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_9.X
             Y: =Button8_9.Y + Button8_9.Height - Self.Height
-            ZIndex: =40
+            ZIndex: =19
 
     Group8_10 As group:
         Height: =5
@@ -830,7 +830,7 @@ scrAsignar As screen:
             Width: =240
             X: =requestFieldTxt_55.X
             Y: =requestFieldTxt_55.Y + requestFieldTxt_55.Height + 15
-            ZIndex: =61
+            ZIndex: =40
 
         Rectangle5_10 As rectangle:
             Fill: =varColorPri01
@@ -838,5 +838,5 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_10.X
             Y: =Button8_10.Y + Button8_10.Height - Self.Height
-            ZIndex: =62
+            ZIndex: =41
 

@@ -379,9 +379,12 @@ srcSolicitudDetalle As screen:
             ZIndex: =61
 
         TextInput3 As text:
+            BorderColor: =varColorPri01B
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
             Mode: =TextMode.MultiLine
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -395,6 +398,8 @@ srcSolicitudDetalle As screen:
 
         aceptarBtn As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showArchiveDialog: false, isLoading: true });
                 
@@ -478,6 +483,8 @@ srcSolicitudDetalle As screen:
             ZIndex: =63
 
         cancelarBtn As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showArchiveDialog: false });
                 Reset(TextInput3)
@@ -547,9 +554,12 @@ srcSolicitudDetalle As screen:
             ZIndex: =68
 
         TextInput3_1 As text:
+            BorderColor: =varColorPri01B
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
             Mode: =TextMode.MultiLine
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -563,6 +573,8 @@ srcSolicitudDetalle As screen:
 
         aceptarBtn_1 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_1.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showDeleteDialog: false, isLoading: true });
                 
@@ -647,6 +659,8 @@ srcSolicitudDetalle As screen:
             ZIndex: =70
 
         cancelarBtn_1 As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showDeleteDialog: false });
                 Reset(TextInput3_1)
@@ -1380,9 +1394,12 @@ srcSolicitudDetalle As screen:
             ZIndex: =75
 
         TextInput3_2 As text:
+            BorderColor: =varColorPri01B
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
             Mode: =TextMode.MultiLine
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1396,6 +1413,8 @@ srcSolicitudDetalle As screen:
 
         aceptarBtn_2 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_2.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showFinishDialog: false, isLoading: true });
                 
@@ -1441,6 +1460,8 @@ srcSolicitudDetalle As screen:
             ZIndex: =77
 
         cancelarBtn_2 As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showFinishDialog: false });
                 Reset(TextInput3_2)
