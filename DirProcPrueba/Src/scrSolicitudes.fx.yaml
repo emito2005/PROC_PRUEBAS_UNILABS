@@ -61,17 +61,21 @@ scrSolicitudes As screen:
         BorderThickness: =1
         Height: =530
         Items: |
-            =//colSolicitudes
-            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
+            =/*
             Search(
-                Filter(colSolicitudes,
-                    //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
-                    //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
-                    EsAtendido = false,
-                    EsEliminado = false,
-                    EsFinalizado = false,
+                Filter(colSolicitudes;
+                    EsAtendido = false;
+                    EsEliminado = false;
+                    EsFinalizado = false;
                     EsActivo = true // Va a cambiar cuando se anula la solicitud
-                ),
+                );
+                txtFilNomNroSol_1.Text;
+                "NroSolicitud";
+                "NombreSolicitud"
+            )
+            */
+            
+            Search(colSolicitudes,
                 txtFilNomNroSol_1.Text,
                 "NroSolicitud",
                 "NombreSolicitud"
@@ -309,8 +313,6 @@ scrSolicitudes As screen:
                     ShowColumns(
                         Search(
                             Filter(colSolicitudes,
-                                //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
-                                //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
                                 EsAtendido = false,
                                 EsEliminado = false,
                                 EsFinalizado = false,
@@ -499,7 +501,15 @@ scrSolicitudes As screen:
         Height: =39
         Icon: =Icon.Reload
         OnSelect: |+
-            =ClearCollect(colSolicitudCab,
+            =
+            //ClearCollect(colSolicitudUltDet;AddColumns(Solicitud;"MaxId";Max(Cities;Population)));;
+            ClearCollect(colSolicitudUltDet,
+            AddColumns(
+                       GroupBy(SolicitudDetalle,"IdSolicitud","GroupIdSol"),
+                       "MaxID",Max(GroupIdSol,ID)
+                       ));
+            
+            ClearCollect(colSolicitudCab,
                 AddColumns(
                     ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio"
                         ,"FechaCreacionSol","FechaFinalSol")
@@ -510,7 +520,7 @@ scrSolicitudes As screen:
             ClearCollect(colSolicitudes,
                 AddColumns(
                     //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
-                    SolicitudDetalle
+                    Filter(SolicitudDetalle, ID in colSolicitudUltDet.MaxID)
                     ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
                     ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
                     ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
@@ -548,9 +558,6 @@ scrSolicitudes As screen:
                 );
             
             
-            //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
-            ClearCollect(colSolicitudDetalleDestino,
-                Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
         Width: =50
         X: =1306
