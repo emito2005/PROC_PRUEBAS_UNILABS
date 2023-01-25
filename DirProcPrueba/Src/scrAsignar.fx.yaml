@@ -2,7 +2,36 @@ scrAsignar As screen:
     OnHidden: |-
         =Select(ClearSelectedUserIcon);
         Reset(TextInput2)
-    OnVisible: =
+    OnVisible: |-
+        =If(varMyUser.IdPerfil = 2, // Manager
+        	UpdateContext({
+        		varMyAreaManager: LookUp(AreaManager, IdPersonal = varMyUser.ID)
+        	});
+        
+        	ClearCollect(colMyAreaManagerLider, Filter(AreaManagerLider, IdAreaManager = varMyAreaManager.ID));
+        
+        	Clear(colMyLideres);
+        	ForAll(colMyAreaManagerLider,
+        		Collect(colMyLideres,
+        			LookUp(Personal, ID = IdPersonal)
+        		)
+        	),
+        
+        
+        	varMyUser.IdPerfil = 3, // Leader
+        	UpdateContext({
+        		varMyAreaManagerLider: LookUp(AreaManagerLider, IdPersonal = varMyUser.ID)
+        	});
+        
+        	ClearCollect(colMyAreaManagerLiderAnalista, Filter(AreaManagerLiderAnalista, IdAreaManagerLider = varMyAreaManagerLider.ID));
+        
+        	Clear(colMyAnalistas);
+        	ForAll(colMyAreaManagerLiderAnalista,
+        		Collect(colMyAnalistas,
+        			LookUp(Personal, ID = IdPersonal)
+        		)
+        	);
+        )
 
     cmpBarraSuperior_10 As cmpBarraSuperior:
 
@@ -410,21 +439,23 @@ scrAsignar As screen:
                 		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
                 			UserPrincipalName in AddColumns(Filter(AreaManagerLider; IdAreaManager = MyAreaManagerID); "EmailPersonalML"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalML
                 		);*/
-                        Filter(Personal,
-                            IdPerfil = 3, // Leader
-                            IdArea = varMyUser.IdArea,
-                            StartsWith(Nombre, txtBuscarManager_2.Text)
-                        ),
+                        /*Filter(Personal;
+                            IdPerfil = 3; // Leader
+                            IdArea = varMyUser.IdArea;
+                            StartsWith(Nombre; txtBuscarManager_2.Text)
+                        );*/
+                        colMyLideres,
                 		
                 		varMyUser.IdPerfil = 3, // Leader
                 		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
                 			UserPrincipalName in AddColumns(Filter(AreaManagerLiderAnalista; IdAreaManagerLider = MyAreaManagerLiderID); "EmailPersonalMLA"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalMLA
                 		)*/
-                        Filter(Personal,
-                            IdPerfil = 4, // Analyst
-                            IdArea = varMyUser.IdArea,
-                            StartsWith(Nombre, txtBuscarManager_2.Text)
-                        )
+                        /*Filter(Personal;
+                            IdPerfil = 4; // Analyst
+                            IdArea = varMyUser.IdArea;
+                            StartsWith(Nombre; txtBuscarManager_2.Text)
+                        )*/
+                        colMyAnalistas
                 	)
                 //)
             Layout: =Layout.Vertical
