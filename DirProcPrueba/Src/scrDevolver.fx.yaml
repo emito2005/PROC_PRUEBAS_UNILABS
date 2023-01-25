@@ -141,7 +141,7 @@ scrDevolver As screen:
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
         Y: =Parent.Height - Self.Height - 35
-        ZIndex: =5
+        ZIndex: =4
 
     TextInput2_3 As text:
         BorderColor: =varColorPri01B
@@ -155,177 +155,293 @@ scrDevolver As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Width: =Rectangle5_15.X + Rectangle5_15.Width - Self.X
-        X: =requestFieldLbl_72.X
-        Y: =requestFieldLbl_72.Y + requestFieldLbl_72.Height
-        ZIndex: =10
+        X: =requestFieldLbl_29.X
+        Y: =requestFieldLbl_29.Y + requestFieldLbl_29.Height
+        ZIndex: =5
+
+    Label6_46 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="ID"
+        Width: =(Parent.Width - 250) / 4
+        X: =Button8_13.X
+        Y: =Button8_13.Y + Button8_13.Height + 15
+        ZIndex: =12
+
+    TextInput4_38 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.ID
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_46.Width
+        X: =Label6_46.X
+        Y: =Label6_46.Y + Label6_46.Height
+        ZIndex: =13
+
+    Label6_47 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Nro. Ticket"
+        Width: =Label6_46.Width
+        X: =Label6_46.X + Label6_46.Width + 50
+        Y: =Label6_46.Y
+        ZIndex: =14
+
+    TextInput4_39 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.NroSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_47.Width
+        X: =Label6_47.X
+        Y: =Label6_47.Y + Label6_47.Height
+        ZIndex: =15
+
+    Label6_48 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Tipo de Solicitud"
+        Width: =Label6_46.Width
+        X: =Label6_47.X + Label6_47.Width + 50
+        Y: =Label6_47.Y
+        ZIndex: =16
+
+    TextInput4_40 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_48.Width
+        X: =Label6_48.X
+        Y: =Label6_48.Y + Label6_48.Height
+        ZIndex: =17
+
+    Label6_49 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Tipo de Servicio"
+        Width: =Label6_46.Width
+        X: =Label6_48.X + Label6_48.Width + 50
+        Y: =Label6_48.Y
+        ZIndex: =18
+
+    TextInput4_41 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoServicio
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_49.Width
+        X: =Label6_49.X
+        Y: =Label6_49.Y + Label6_49.Height
+        ZIndex: =19
+
+    Label6_50 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Nombre de Solicitud"
+        Width: =TextInput4_39.X + TextInput4_39.Width - Self.X
+        X: =TextInput4_38.X
+        Y: =TextInput4_38.Y + TextInput4_38.Height + 15
+        ZIndex: =20
+
+    TextInput4_42 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.NombreSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_50.Width
+        X: =Label6_50.X
+        Y: =Label6_50.Y + Label6_50.Height
+        ZIndex: =21
+
+    Label6_51 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Observación"
+        Width: =TextInput4_41.X + TextInput4_41.Width - Self.X
+        X: =Label6_50.X + Label6_50.Width + 50
+        Y: =Label6_50.Y
+        ZIndex: =22
+
+    Label6_52 As label:
+        Height: =50
+        Overflow: =Overflow.Scroll
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        Text: =varSolicitudDetalleItemSel.ObsSolDet
+        Width: =Label6_51.Width
+        X: =Label6_51.X
+        Y: =Label6_51.Y + Label6_51.Height
+        ZIndex: =23
+
+    Label6_53 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Creación"
+        Width: =(Parent.Width - 200) / 3
+        X: =Button8_11.X
+        Y: =Button8_11.Y + Button8_11.Height + 15
+        ZIndex: =24
+
+    TextInput4_43 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.FechaCreacion, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_53.Width
+        X: =Label6_53.X
+        Y: =Label6_53.Y + Label6_53.Height
+        ZIndex: =25
+
+    Label6_54 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Expiración SLA"
+        Width: =Label6_53.Width
+        X: =Label6_53.X + Label6_53.Width + 50
+        Y: =Label6_53.Y
+        ZIndex: =26
+
+    TextInput4_44 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_54.Width
+        X: =Label6_54.X
+        Y: =Label6_54.Y + Label6_54.Height
+        ZIndex: =27
+
+    Label6_55 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Expiración OLA"
+        Width: =Label6_54.Width
+        X: =Label6_54.X + Label6_54.Width + 50
+        Y: =Label6_54.Y
+        ZIndex: =28
+
+    TextInput4_45 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_55.Width
+        X: =Label6_55.X
+        Y: =Label6_55.Y + Label6_55.Height
+        ZIndex: =29
+
+    requestFieldLbl_29 As label:
+        FontWeight: =FontWeight.Semibold
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Comentarios"
+        Width: =170
+        X: =requestFieldLbl_28.X
+        Y: =Icon4_2.Y + Icon4_2.Height
+        ZIndex: =34
 
     Rectangle2_10 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =37
-
-    Group10 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =40
-
-        Icon4_1 As icon.Person:
-            Color: =varColorPri01
-            DisplayMode: =DisplayMode.View
-            Icon: =Icon.Person
-            PaddingLeft: =5
-            PaddingRight: =5
-            X: =requestFieldLbl_70.X + requestFieldLbl_70.Width + 15
-            Y: =requestFieldLbl_70.Y
-            ZIndex: =7
-
-        requestFieldLbl_76 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =Icon4_1.Height / 2
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                =/*If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4; // Analyst
-                    LookUp(Personal; ID = MyLiderElevarPersonalID).Nombre;
-                
-                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
-                    LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
-                )*/
-                LookUp(Personal, ID = varFirstActionByArea.IdPersonalOrigen).Nombre & " (" & LookUp(Area_1, ID = varFirstActionByArea.IdAreaOrigen).Nombre & ")"
-            VerticalAlign: =VerticalAlign.Bottom
-            Width: =Rectangle5_8.X + Rectangle5_8.Width - Self.X
-            X: =Icon4_1.X + Icon4_1.Width
-            Y: =Icon4_1.Y
-            ZIndex: =8
-
-    Group7_4 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =56
-
-        requestFieldLbl_56 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Estado"
-            Visible: =false
-            Width: =requestFieldTxt_35.Width
-            X: =requestFieldLbl_53.X + requestFieldLbl_53.Width + 50
-            Y: =requestFieldLbl_53.Y
-            ZIndex: =25
-
-        requestFieldLbl_88 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Creación"
-            Width: =(Parent.Width - 200) / 3
-            X: =Button8_14.X
-            Y: =Button8_14.Y + Button8_14.Height + 15
-            ZIndex: =27
-
-        requestFieldTxt_61 As text:
-            BorderThickness: =0
-            Default: =varSolicitudDetalleItemSel.FechaCreacion
-            DisabledColor: =requestFieldTxt_32.DisabledColor
-            DisabledFill: =requestFieldTxt_32.DisabledFill
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =25
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =requestFieldLbl_88.Width
-            X: =requestFieldLbl_88.X
-            Y: =requestFieldLbl_88.Y + requestFieldLbl_88.Height
-            ZIndex: =28
-
-        requestFieldLbl_89 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Expiración SLA"
-            Width: =(Parent.Width - 200) / 3
-            X: =requestFieldLbl_88.X + requestFieldLbl_88.Width + 50
-            Y: =requestFieldLbl_88.Y
-            ZIndex: =29
-
-        requestFieldTxt_62 As text:
-            BorderThickness: =0
-            Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
-            DisabledColor: =requestFieldTxt_32.DisabledColor
-            DisabledFill: =requestFieldTxt_32.DisabledFill
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =25
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =requestFieldLbl_89.Width
-            X: =requestFieldLbl_89.X
-            Y: =requestFieldLbl_89.Y + requestFieldLbl_89.Height
-            ZIndex: =30
-
-        requestFieldLbl_90 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="F. Expiración OLA"
-            Width: =(Parent.Width - 200) / 3
-            X: =requestFieldLbl_89.X + requestFieldLbl_89.Width + 50
-            Y: =requestFieldLbl_88.Y
-            ZIndex: =31
-
-        requestFieldTxt_63 As text:
-            BorderThickness: =0
-            Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
-            DisabledColor: =requestFieldTxt_32.DisabledColor
-            DisabledFill: =requestFieldTxt_32.DisabledFill
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =25
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =requestFieldLbl_90.Width
-            X: =requestFieldLbl_90.X
-            Y: =requestFieldLbl_90.Y + requestFieldLbl_90.Height
-            ZIndex: =32
+        ZIndex: =35
 
     Group8_13 As group:
         Height: =5
@@ -350,7 +466,7 @@ scrDevolver As screen:
             Width: =230
             X: =50
             Y: =115
-            ZIndex: =11
+            ZIndex: =6
 
         Rectangle5_13 As rectangle:
             Fill: =varColorPri01
@@ -358,28 +474,7 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_13.X
             Y: =Button8_13.Y + Button8_13.Height - Self.Height
-            ZIndex: =12
-
-    descriptionGroup_4 As group:
-        Height: =5
-        Width: =5
-        X: =748
-        Y: =240
-        ZIndex: =58
-
-        requestFieldLbl_57 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Observación: "
-            Width: =requestFieldTxt_5.X + requestFieldTxt_5.Width - Self.X
-            X: =requestFieldLbl_53.X + requestFieldLbl_53.Width + 50
-            Y: =requestFieldLbl_53.Y
-            ZIndex: =33
+            ZIndex: =7
 
     Group8_14 As group:
         Height: =5
@@ -402,9 +497,9 @@ scrDevolver As screen:
             RadiusTopRight: =40
             Text: ="Datos de Fecha"
             Width: =230
-            X: =requestFieldTxt_36.X
-            Y: =requestFieldTxt_36.Y + requestFieldTxt_36.Height + 15
-            ZIndex: =13
+            X: =TextInput4_42.X
+            Y: =TextInput4_42.Y + TextInput4_42.Height + 15
+            ZIndex: =8
 
         Rectangle5_14 As rectangle:
             Fill: =varColorPri01
@@ -412,7 +507,72 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_14.X
             Y: =Button8_14.Y + Button8_14.Height - Self.Height
-            ZIndex: =14
+            ZIndex: =9
+
+    upperToGroup_3 As group:
+        Height: =5
+        Width: =5
+        X: =70
+        Y: =480
+        ZIndex: =60
+
+        requestFieldLbl_28 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Devolver Solicitud a:"
+            Width: =170
+            X: =Button8_15.X
+            Y: =Button8_15.Y + Button8_15.Height + 15
+            ZIndex: =30
+
+        Icon4_2 As icon.Person:
+            Color: =varColorPri01
+            DisplayMode: =DisplayMode.View
+            Icon: =Icon.Person
+            PaddingLeft: =5
+            PaddingRight: =5
+            X: =requestFieldLbl_28.X + requestFieldLbl_28.Width + 15
+            Y: =requestFieldLbl_28.Y
+            ZIndex: =31
+
+        requestFieldLbl_77 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =Icon4_2.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                =/*If(IsBlank(MyLiderElevarPersonalID) && varMyUser.IdPerfil = 4; // Analyst
+                    LookUp(Personal; ID = MyLiderElevarPersonalID).Nombre;
+                
+                    IsBlank(MyManagerElevarPersonalID) && varMyUser.IdPerfil = 3; // Leader
+                    LookUp(Personal; ID = MyManagerElevarPersonalID).Nombre
+                )*/
+                LookUp(Personal, ID = varFirstActionByArea.IdPersonalOrigen).Nombre & " (" & LookUp(Area_1, ID = varFirstActionByArea.IdAreaOrigen).Nombre & ")"
+            VerticalAlign: =VerticalAlign.Bottom
+            Width: =Rectangle5_8.X + Rectangle5_8.Width - Self.X
+            X: =Icon4_2.X + Icon4_2.Width
+            Y: =Icon4_2.Y
+            ZIndex: =32
+
+        requestFieldLbl_61 As label:
+            Height: =Icon4_2.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =LookUp(Perfil, ID = varFirstActionByArea.IdPerfilOrigen).Nombre
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Rectangle5_8.X + Rectangle5_8.Width - Self.X
+            X: =Icon4_2.X + Icon4_2.Width
+            Y: =requestFieldLbl_77.Y + requestFieldLbl_77.Height
+            ZIndex: =33
 
     Group8_15 As group:
         Height: =5
@@ -435,9 +595,9 @@ scrDevolver As screen:
             RadiusTopRight: =40
             Text: ="Datos de Operación"
             Width: =240
-            X: =requestFieldTxt_61.X
-            Y: =requestFieldTxt_61.Y + requestFieldTxt_61.Height + 15
-            ZIndex: =35
+            X: =TextInput4_43.X
+            Y: =TextInput4_43.Y + TextInput4_43.Height + 15
+            ZIndex: =10
 
         Rectangle5_15 As rectangle:
             Fill: =varColorPri01
@@ -445,5 +605,5 @@ scrDevolver As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_15.X
             Y: =Button8_15.Y + Button8_15.Height - Self.Height
-            ZIndex: =36
+            ZIndex: =11
 
