@@ -10,9 +10,9 @@ scrAsignar As screen:
         
         	ClearCollect(colMyAreaManagerLider, Filter(AreaManagerLider, IdAreaManager = varMyAreaManager.ID));
         
-        	Clear(colMyLideres);
+        	Clear(colMyLideres_2);
         	ForAll(colMyAreaManagerLider,
-        		Collect(colMyLideres,
+        		Collect(colMyLideres_2,
         			LookUp(Personal, ID = IdPersonal)
         		)
         	),
@@ -25,9 +25,9 @@ scrAsignar As screen:
         
         	ClearCollect(colMyAreaManagerLiderAnalista, Filter(AreaManagerLiderAnalista, IdAreaManagerLider = varMyAreaManagerLider.ID));
         
-        	Clear(colMyAnalistas);
+        	Clear(colMyAnalistas_2);
         	ForAll(colMyAreaManagerLiderAnalista,
-        		Collect(colMyAnalistas,
+        		Collect(colMyAnalistas_2,
         			LookUp(Personal, ID = IdPersonal)
         		)
         	);
@@ -444,7 +444,7 @@ scrAsignar As screen:
                             IdArea = varMyUser.IdArea;
                             StartsWith(Nombre; txtBuscarManager_2.Text)
                         );*/
-                        colMyLideres,
+                        colMyLideres_2,
                 		
                 		varMyUser.IdPerfil = 3, // Leader
                 		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
@@ -455,7 +455,7 @@ scrAsignar As screen:
                             IdArea = varMyUser.IdArea;
                             StartsWith(Nombre; txtBuscarManager_2.Text)
                         )*/
-                        colMyAnalistas
+                        colMyAnalistas_2
                 	)
                 //)
             Layout: =Layout.Vertical

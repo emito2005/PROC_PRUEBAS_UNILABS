@@ -8303,7 +8303,14 @@
         "Orientation",
         "LoadingSpinner",
         "LoadingSpinnerColor",
-        "OnVisible",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(varMyUser.IdPerfil = 2, // Manager\r\n\tUpdateContext({\r\n\t\tvarMyAreaManager: LookUp(AreaManager, IdPersonal = varMyUser.ID)\r\n\t});\r\n\r\n\tClearCollect(colMyAreaManagerLider, Filter(AreaManagerLider, IdAreaManager = varMyAreaManager.ID));\r\n\r\n\tClear(colMyLideres);\r\n\tForAll(colMyAreaManagerLider,\r\n\t\tCollect(colMyLideres,\r\n\t\t\tLookUp(Personal, ID = IdPersonal)\r\n\t\t)\r\n\t),\r\n\r\n\r\n\tvarMyUser.IdPerfil = 3, // Leader\r\n\tUpdateContext({\r\n\t\tvarMyAreaManagerLider: LookUp(AreaManagerLider, IdPersonal = varMyUser.ID)\r\n\t});\r\n\r\n\tClearCollect(colMyAreaManagerLiderAnalista, Filter(AreaManagerLiderAnalista, IdAreaManagerLider = varMyAreaManagerLider.ID));\r\n\r\n\tClear(colMyAnalistas);\r\n\tForAll(colMyAreaManagerLiderAnalista,\r\n\t\tCollect(colMyAnalistas,\r\n\t\t\tLookUp(Personal, ID = IdPersonal)\r\n\t\t)\r\n\t);\r\n)",
+          "InvariantPropertyName": "OnVisible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
