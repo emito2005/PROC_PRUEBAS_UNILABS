@@ -91,20 +91,33 @@ scrMisSolicitudes As screen:
             
             */
             
-            
+            UpdateContext({ isLoading: true });
             Exportacion_Excel.Run(
                 JSON(
                     ShowColumns(
-                        Search(
-                            Filter(colSolicitudes,
+                        /*Search(
+                            Filter(colSolicitudes;
                                 //IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
                                 //ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
+                                EsAtendido = false;
+                                EsEliminado = false;
+                                EsFinalizado = false;
+                                EsActivo = true // Va a cambiar cuando se anula la solicitud
+                            );
+                            txtFilNomNroSol_1.Text;
+                            "NroSolicitud";
+                            "NombreSolicitud"
+                        );*/
+                        Search(
+                            Filter(colSolicitudes,
+                                IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
+                                ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
                                 EsAtendido = false,
                                 EsEliminado = false,
                                 EsFinalizado = false,
                                 EsActivo = true // Va a cambiar cuando se anula la solicitud
                             ),
-                            txtFilNomNroSol_1.Text,
+                            txtFilNomNroSol.Text,
                             "NroSolicitud",
                             "NombreSolicitud"
                         ),
@@ -114,7 +127,7 @@ scrMisSolicitudes As screen:
                     )
                 )
             );
-            
+            UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
             
             
@@ -446,6 +459,25 @@ scrMisSolicitudes As screen:
             Text: =ThisItem.texto_boton
             Width: =171
             ZIndex: =1
+
+    Icon7 As icon.Folder:
+        Color: =varColorPri01
+        Height: =40
+        Icon: =Icon.Folder
+        OnSelect: |-
+            =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
+        Tooltip: ="Ver Carpeta"
+        Width: =40
+        X: =btnExportarMS.X + btnExportarMS.Width + 20
+        Y: =btnExportarMS.Y + (btnExportarMS.Height / 2) - (Self.Height / 2)
+        ZIndex: =23
+
+    Rectangle2_12 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =24
 
     Group2 As group:
         Height: =5
