@@ -181,19 +181,7 @@ scrTrazabilidad As screen:
         BorderThickness: =1
         Height: =589
         Items: |
-            =//colSolicitudes
-            //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
-            /*
-            Filter(colSolicitudesDetalleTraza;
-                IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);
-                ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);
-                EsAtendido = false;
-                EsEliminado = false;
-                EsFinalizado = false;
-                EsActivo = true // Va a cambiar cuando se anula la solicitud
-            )
-            */
-            colDetSolicitudTraza
+            =colDetSolicitudTraza
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(srcSolicitudDetalle, ScreenTransition.None);
@@ -471,7 +459,7 @@ scrTrazabilidad As screen:
         Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
-        OnSelect: |-
+        OnSelect: |+
             =ClearCollect(colSolicitudCabTraza,
                 AddColumns(
                     ShowColumns(Filter(Solicitud,ID=varSolicitudDetalleItemSel.IdSolicitud),"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
@@ -519,11 +507,6 @@ scrTrazabilidad As screen:
                     )
                 );
             
-            /*
-            //Coleccion para obtener el listado solicitudes y detalle de solicitud pendiente de atender del personal que se logueo
-            ClearCollect(colSolicitudDetalleDestino;
-                Filter(SolicitudDetalleDestino;IdAreaDestino=varMyUser.IdArea;IdPerfilDestino=varMyUser.IdPerfil;IdPersonalDestino=varMyUser.ID));;
-            */
         Width: =50
         X: =1285
         Y: =74

@@ -34,18 +34,6 @@ scrDerivar As screen:
         Y: =icn_Volver_NS_1.Y
         ZIndex: =3
 
-    requestFieldLbl_51 As label:
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: |-
-            ="Comentario:"
-        Width: =110
-        X: =RequestAttachmentsForm.X + RequestAttachmentsForm.Width + 25
-        Y: =requestFieldLbl_55.Y
-        ZIndex: =4
-
     Button5_2 As button:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
@@ -376,19 +364,6 @@ scrDerivar As screen:
             Y: =requestFieldLbl_38.Y + requestFieldLbl_38.Height
             ZIndex: =18
 
-        requestFieldLbl_42 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Tipo de Solicitud"
-            Width: =(Parent.Width - 250) / 4
-            X: =requestFieldTxt_27.X + requestFieldTxt_27.Width + 50
-            Y: =requestFieldLbl_38.Y
-            ZIndex: =19
-
         requestFieldTxt_28 As text:
             BorderThickness: =0
             Default: =varSolicitudDetalleItemSel.TipoSolicitud
@@ -410,19 +385,6 @@ scrDerivar As screen:
             Y: =requestFieldLbl_42.Y + requestFieldLbl_42.Height
             ZIndex: =20
 
-        requestFieldLbl_43 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Tipo de Servicio"
-            Width: =(Parent.Width - 250) / 4
-            X: =requestFieldTxt_28.X + requestFieldTxt_28.Width + 50
-            Y: =requestFieldLbl_42.Y
-            ZIndex: =21
-
         requestFieldTxt_29 As text:
             BorderThickness: =0
             Default: =varSolicitudDetalleItemSel.TipoServicio
@@ -443,76 +405,6 @@ scrDerivar As screen:
             X: =requestFieldLbl_43.X
             Y: =requestFieldLbl_43.Y + requestFieldLbl_43.Height
             ZIndex: =22
-
-        requestFieldLbl_44 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Nombre de Solicitud"
-            Width: =requestFieldTxt_27.X + requestFieldTxt_27.Width - Self.X
-            X: =requestFieldTxt_26.X
-            Y: =requestFieldTxt_26.Y + requestFieldTxt_26.Height + 15
-            ZIndex: =23
-
-        requestFieldTxt_30 As text:
-            BorderThickness: =0
-            Default: =varSolicitudDetalleItemSel.NombreSolicitud
-            DisabledColor: =requestFieldTxt_26.DisabledColor
-            DisabledFill: =requestFieldTxt_26.DisabledFill
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =25
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =requestFieldLbl_44.Width
-            X: =requestFieldLbl_44.X
-            Y: =requestFieldLbl_44.Y + requestFieldLbl_44.Height
-            ZIndex: =24
-
-        requestFieldLbl_45 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Estado"
-            Visible: =false
-            Width: =requestFieldTxt_29.Width
-            X: =requestFieldLbl_44.X + requestFieldLbl_44.Width + 50
-            Y: =requestFieldLbl_44.Y
-            ZIndex: =25
-
-        requestFieldTxt_31 As text:
-            BorderThickness: =0
-            Default: =If(varSolicitudDetalleItemSel.EsActivo, "Activo", If(varSolicitudDetalleItemSel.EsEliminado, "Eliminado", "Inactivo"))
-            DisabledColor: =requestFieldTxt_26.DisabledColor
-            DisabledFill: =requestFieldTxt_26.DisabledFill
-            DisplayMode: =DisplayMode.Disabled
-            FocusedBorderThickness: =0
-            Height: =25
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Visible: =false
-            Width: =requestFieldLbl_45.Width
-            X: =requestFieldLbl_45.X
-            Y: =requestFieldLbl_45.Y + requestFieldLbl_45.Height
-            ZIndex: =26
 
         requestFieldLbl_85 As label:
             FontWeight: =FontWeight.Semibold
@@ -655,33 +547,6 @@ scrDerivar As screen:
         X: =748
         Y: =240
         ZIndex: =63
-
-        requestFieldLbl_46 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =20
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Observación: "
-            Width: =requestFieldTxt_5.X + requestFieldTxt_5.Width - Self.X
-            X: =requestFieldLbl_44.X + requestFieldLbl_44.Width + 50
-            Y: =requestFieldLbl_44.Y
-            ZIndex: =33
-
-        requestFieldLbl_47 As label:
-            Align: =Align.Justify
-            Height: =50
-            Overflow: =Overflow.Scroll
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            Text: =varSolicitudDetalleItemSel.ObsSolDet
-            Width: =requestFieldLbl_46.Width
-            X: =requestFieldLbl_46.X
-            Y: =requestFieldLbl_46.Y + requestFieldLbl_46.Height
-            ZIndex: =34
 
     Group8_11 As group:
         Height: =5
