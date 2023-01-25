@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |
+    OnStart: |-
         =Set(varIdArea,0);
         //Set(varUserEmail; User().Email);;
         //Set(varUserFullName; User().FullName);;
@@ -65,4 +65,7 @@ App As appinfo:
         Set(varColorPri03B,RGBA(191, 191, 191, 65%));
         Set(varColorPri04,RGBA(127, 127, 127, 1));
         Set(varColorPri04B,RGBA(127, 127, 127, 65%));
+        
+        
+        Navigate(scrMisSolicitudes);
 
