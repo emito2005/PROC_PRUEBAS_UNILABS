@@ -91,6 +91,7 @@ scrNuevaSolicitud As screen:
             	Filter(AreaManager, IdArea = varMyUser.IdArea)
             );
             
+            
             // Obtener mis líderes
             Clear(colMyLideres);
             ClearCollect(colMyLideres,
@@ -113,6 +114,9 @@ scrNuevaSolicitud As screen:
             		)
             	)
             );
+            
+            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(colMyManagers,Email,";")));
+            
             
             // Validar si se notificará a los líderes
             If(varMyUserArea.NotificaLider,

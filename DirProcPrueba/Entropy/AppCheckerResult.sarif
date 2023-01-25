@@ -1893,19 +1893,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.TextInput1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.txt_sol.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.txt_sol.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.TextInput1"
+                "type": "Screen2.txt_sol"
               }
             }
           ],
@@ -1923,19 +1923,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.TextInput1_2.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.txtTipoSol.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_2.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.txtTipoSol.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.TextInput1_2"
+                "type": "Screen2.txtTipoSol"
               }
             }
           ],
@@ -1953,19 +1953,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.TextInput1_3.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.txtTipoSer.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_3.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.txtTipoSer.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.TextInput1_3"
+                "type": "Screen2.txtTipoSer"
               }
             }
           ],
@@ -1983,19 +1983,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.TextInput1_1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.txtNombreSol.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.txtNombreSol.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.TextInput1_1"
+                "type": "Screen2.txtNombreSol"
               }
             }
           ],
@@ -2013,139 +2013,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.TextInput1_4.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.txtObsSol.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_4.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.txtObsSol.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.TextInput1_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.TextInput1_5.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.TextInput1_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.TextInput1_6.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_6.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.TextInput1_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.TextInput1_7.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_7.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.TextInput1_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.TextInput1_8.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.TextInput1_8.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.TextInput1_8"
+                "type": "Screen2.txtObsSol"
               }
             }
           ],
