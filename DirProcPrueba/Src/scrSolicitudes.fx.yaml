@@ -308,16 +308,22 @@ scrSolicitudes As screen:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =Exportacion_Excel.Run(
+            =UpdateContext({ isLoading: true });
+            Exportacion_Excel.Run(
                 JSON(
                     ShowColumns(
-                        Search(
-                            Filter(colSolicitudes,
-                                EsAtendido = false,
-                                EsEliminado = false,
-                                EsFinalizado = false,
+                        /*Search(
+                            Filter(colSolicitudes;
+                                EsAtendido = false;
+                                EsEliminado = false;
+                                EsFinalizado = false;
                                 EsActivo = true // Va a cambiar cuando se anula la solicitud
-                            ),
+                            );
+                            txtFilNomNroSol_1.Text;
+                            "NroSolicitud";
+                            "NombreSolicitud"
+                        );*/
+                        Search(colSolicitudes,
                             txtFilNomNroSol_1.Text,
                             "NroSolicitud",
                             "NombreSolicitud"
@@ -328,7 +334,7 @@ scrSolicitudes As screen:
                     )
                 )
             );
-            
+            UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
         Text: ="Exportar"
         Width: =100
@@ -563,4 +569,23 @@ scrSolicitudes As screen:
         X: =1306
         Y: =113
         ZIndex: =25
+
+    Icon7_1 As icon.Folder:
+        Color: =varColorPri01
+        Height: =40
+        Icon: =Icon.Folder
+        OnSelect: |-
+            =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
+        Tooltip: ="Ver Carpeta"
+        Width: =40
+        X: =btnExportarS.X + btnExportarS.Width + 20
+        Y: =btnExportarS.Y + (btnExportarS.Height / 2) - (Self.Height / 2)
+        ZIndex: =26
+
+    Rectangle2_13 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =27
 
