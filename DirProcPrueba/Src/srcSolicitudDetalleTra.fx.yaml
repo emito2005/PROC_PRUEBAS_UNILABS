@@ -26,9 +26,9 @@ srcSolicitudDetalleTra As screen:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =Parent.Height - Self.Y
+        Height: =128
         Width: =Parent.Width
-        Y: =TextInput4_57.Y + TextInput4_57.Height + 15
+        Y: =640
         ZIndex: =3
 
     HtmlText1_1 As htmlViewer:
@@ -273,18 +273,32 @@ srcSolicitudDetalleTra As screen:
         Y: =Rectangle4_16.Y + 15
         ZIndex: =15
 
-    btnVerDocAdjuntos_1 As button:
+    descargarPDFBtn_1 As button:
+        DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleTrazaItemSel);
-            Navigate(scrVerDocAdjuntos)
+            =UpdateContext({
+                isLoading: true,
+                callback:
+                Exportacion_PDF.Run(
+                    HtmlText1.HtmlText, 
+                    "request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
+                    varSolicitudDetalleTrazaItemSel.ID
+                ).callback
+            });
+            If(callback = "true",
+                Notify("Exportacion realizada correctamente.", NotificationType.Success);
+                UpdateContext({ 
+                    isLoading: false,
+                    callback: "false"
+                })
+            )
         Size: =12
-        Text: ="Ver Doc. Adjuntos"
-        Visible: =varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos'
-        X: =descargarPDFBtn_1.X + descargarPDFBtn_1.Width + 116.5
-        Y: =descargarPDFBtn_1.Y
-        ZIndex: =25
+        Text: ="Generar PDF"
+        X: =511
+        Y: =696
+        ZIndex: =16
 
     Label6_56 As label:
         FontWeight: =FontWeight.Semibold
@@ -1082,51 +1096,6 @@ srcSolicitudDetalleTra As screen:
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
             ZIndex: =69
 
-    actionButtonsGroup_1 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =63
-
-        descargarPDFBtn_1 As button:
-            DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: |-
-                =UpdateContext({
-                    isLoading: true,
-                    callback:
-                    Exportacion_PDF.Run(
-                        HtmlText1.HtmlText, 
-                        "request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                        varSolicitudDetalleTrazaItemSel.ID
-                    ).callback
-                });
-                If(callback = "true",
-                    Notify("Exportacion realizada correctamente.", NotificationType.Success);
-                    UpdateContext({ 
-                        isLoading: false,
-                        callback: "false"
-                    })
-                )
-            Size: =12
-            Text: ="Generar PDF"
-            X: =requestFieldLbl_76.X
-            Y: =requestFieldLbl_76.Y + requestFieldLbl_76.Height + 15
-            ZIndex: =16
-
-        trazabilidadBtn_1 As button:
-            DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
-            Fill: =varColorPri01
-            HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
-            Size: =12
-            Text: ="Trazabilidad"
-            X: =descargarPDFBtn_1.X
-            Y: =descargarPDFBtn_1.Y + descargarPDFBtn_1.Height + 15
-            ZIndex: =17
-
     finishDialogGroup_1 As group:
         Height: =5
         Width: =5
@@ -1369,6 +1338,24 @@ srcSolicitudDetalleTra As screen:
         Visible: =isLoading
         Width: =Parent.Width
         ZIndex: =77
+
+    btnVerDocAdjuntos_1 As button:
+        DisplayMode: |-
+            =//DisplayMode.Edit
+            If(varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos',DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =varColorPri01
+        HoverFill: =ColorFade(Self.Fill, -10%)
+        OnSelect: |-
+            =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleTrazaItemSel);
+            Navigate(scrVerDocAdjuntos)
+        Size: =12
+        Text: ="Ver Doc. Adjuntos"
+        Visible: |-
+            =//varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos'
+            true
+        X: =690
+        Y: =696
+        ZIndex: =78
 
     Group8_16 As group:
         Height: =5
