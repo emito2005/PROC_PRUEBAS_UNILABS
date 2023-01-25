@@ -242,7 +242,7 @@ scrMisSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
             VerticalAlign: =VerticalAlign.Top
             Width: =70
             X: =1008
