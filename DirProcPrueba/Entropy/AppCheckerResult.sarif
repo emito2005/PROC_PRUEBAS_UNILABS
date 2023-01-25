@@ -14,32 +14,32 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrNuevaSolicitud.Button11.OnSelect"
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrNuevaSolicitud.Button11.OnSelect",
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 12,
-                  "charOffset": 521,
+                  "charLength": 8,
+                  "charOffset": 47988,
                   "snippet": {
-                    "text": "EmailManager"
+                    "text": ".Seleted"
                   }
                 }
               },
               "properties": {
-                "member": "OnSelect",
+                "member": "HtmlText",
                 "module": "scrNuevaSolicitud",
-                "type": "scrNuevaSolicitud.Button11"
+                "type": "scrNuevaSolicitud.htm_EmailPreview_1"
               }
             }
           ],
           "message": {
             "arguments": [
-              "EmailManager"
+              "Seleted"
             ],
             "id": "issue"
           },
@@ -54,39 +54,113 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrNuevaSolicitud.Button11.OnSelect"
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrNuevaSolicitud.Button11.OnSelect",
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 38,
-                  "charOffset": 500,
+                  "charLength": 7,
+                  "charOffset": 47996,
                   "snippet": {
-                    "text": "Concat(colMyManagers;EmailManager;\";\")"
+                    "text": ".Nombre"
                   }
                 }
               },
               "properties": {
-                "member": "OnSelect",
+                "member": "HtmlText",
                 "module": "scrNuevaSolicitud",
-                "type": "scrNuevaSolicitud.Button11"
+                "type": "scrNuevaSolicitud.htm_EmailPreview_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 48110,
+                  "snippet": {
+                    "text": ".Seleted"
+                  }
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "scrNuevaSolicitud",
+                "type": "scrNuevaSolicitud.htm_EmailPreview_1"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Concat"
+              "Seleted"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrNuevaSolicitud.htm_EmailPreview_1.HtmlText",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 48118,
+                  "snippet": {
+                    "text": ".Nombre"
+                  }
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "scrNuevaSolicitud",
+                "type": "scrNuevaSolicitud.htm_EmailPreview_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
           "ruleIndex": 1
         },
         {
@@ -12240,10 +12314,10 @@
               }
             },
             {
-              "id": "app-ErrInvalidArgs-Func",
+              "id": "app-ErrInvalidDot",
               "messageStrings": {
                 "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
+                  "text": "Invalid use of '.'"
                 }
               },
               "properties": {

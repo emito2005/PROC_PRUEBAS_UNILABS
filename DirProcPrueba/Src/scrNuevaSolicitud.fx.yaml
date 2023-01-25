@@ -135,9 +135,22 @@ scrNuevaSolicitud As screen:
             );
             
             
+            //Envio de correo
+            Clear(colDestinatariosManager);
+            Clear(colDestinatariosLider);
+            
+            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";")));
+            
+            If(varMyUserArea.NotificaLider,ClearCollect(colDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";")));
+            
+            Set(varDestinatarios,Concatenate(First(colDestinatariosManager).Value,First(colDestinatariosLider).Value));
+            
             Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
-            Office365Outlook.SendEmailV2("equintana@spperu.com", Concatenate(ddwTipoSolicitud.Selected.Nombre
-                ," ",ddwTipoServicio.Selected.Nombre," Nro. : ",DataCardValue16.Text),varEmailMessage);
+            
+            Office365Outlook.SendEmailV2("823248@unilabs.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
+            
+            //Office365Outlook.SendEmailV2(varDestinatarios; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
+            
             
             
             Select(icn_Volver_NS);
@@ -722,40 +735,8 @@ scrNuevaSolicitud As screen:
         Y: =695
         ZIndex: =8
 
-    Button11 As button:
-        OnSelect: |+
-            =// Obtener mis managers
-            Clear(colMyManagers);
-            ClearCollect(colMyManagers,
-            	Filter(AreaManager, IdArea = varMyUser.IdArea)
-            );
-            
-            
-            // Obtener mis líderes
-            Clear(colMyLideres);
-            ClearCollect(colMyLideres,
-            	Filter(AreaManagerLider, IdArea = varMyUser.IdArea)
-            );
-            
-            AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email));
-            AddColumns(colMyLideres,"Email",LookUp(Personal,ID=IdPersonal,Email));
-            
-            
-            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(colMyManagers,EmailManager,";")));
-            
-            If(varMyUserArea.NotificaLider,ClearCollect(colDestinatariosLider,Concat(colMyLideres,Email,";")));
-            
-            
-            Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
-            Office365Outlook.SendEmailV2("equintana@spperu.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," Nro. : ",DataCardValue16.Text),varEmailMessage);
-            
-        Text: ="Botón"
-        X: =13
-        Y: =695
-        ZIndex: =9
-
     htm_EmailPreview_1 As htmlViewer:
-        Height: =142
+        Height: =163
         HtmlText: |-
             ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
             xmlns:o=""""urn:schemas-microsoft-com:office:office""""
@@ -1536,8 +1517,9 @@ scrNuevaSolicitud As screen:
             </body>
             
             </html>"
-        Width: =419
-        X: =204
+        Visible: =false
+        Width: =546
+        X: =77
         Y: =504
         ZIndex: =10
 

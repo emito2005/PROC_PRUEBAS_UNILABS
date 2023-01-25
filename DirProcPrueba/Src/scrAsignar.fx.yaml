@@ -139,6 +139,7 @@ scrAsignar As screen:
                 }
             );
             
+            
             Notify("Solicitud asignada correctamente.", NotificationType.Success);
             
             UpdateContext({ isLoading: false });
