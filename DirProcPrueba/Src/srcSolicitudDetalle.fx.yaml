@@ -458,7 +458,7 @@ srcSolicitudDetalle As screen:
         Text: ="Dpto. de Procedencia"
         Width: =(Parent.Width - 200) / 3
         X: =Button8_1.X
-        Y: =Button8_1.Y + Button8_1.Height + 15
+        Y: =Button8_1.Y + Button8_1.Height + 10
         ZIndex: =38
 
     TextInput4_5 As text:
@@ -548,7 +548,7 @@ srcSolicitudDetalle As screen:
         Text: ="Manager"
         Width: =(Parent.Width - 200) / 3
         X: =Button8_2.X
-        Y: =Button8_2.Y + Button8_2.Height + 15
+        Y: =Button8_2.Y + Button8_2.Height + 10
         ZIndex: =44
 
     TextInput4_8 As text:
@@ -636,9 +636,9 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Creación"
-        Width: =(Parent.Width - 200) / 3
+        Width: =(Parent.Width - 200) / 5
         X: =Button8_3.X
-        Y: =Button8_3.Y + Button8_3.Height + 15
+        Y: =Button8_3.Y + Button8_3.Height + 10
         ZIndex: =50
 
     TextInput4_11 As text:
@@ -1406,7 +1406,7 @@ srcSolicitudDetalle As screen:
             Text: ="Datos de Departamento"
             Width: =280
             X: =TextInput4_4.X
-            Y: =TextInput4_4.Y + TextInput4_4.Height + 15
+            Y: =TextInput4_4.Y + TextInput4_4.Height + 105
             ZIndex: =9
 
         Rectangle5_1 As rectangle:
@@ -1440,7 +1440,7 @@ srcSolicitudDetalle As screen:
             Text: ="Datos de Personal"
             Width: =230
             X: =TextInput4_5.X
-            Y: =TextInput4_5.Y + TextInput4_5.Height + 15
+            Y: =TextInput4_5.Y + TextInput4_5.Height + 10
             ZIndex: =11
 
         Rectangle5_2 As rectangle:
@@ -1481,7 +1481,7 @@ srcSolicitudDetalle As screen:
             Text: ="Datos de Fecha"
             Width: =230
             X: =TextInput4_8.X
-            Y: =TextInput4_8.Y + TextInput4_8.Height + 15
+            Y: =TextInput4_8.Y + TextInput4_8.Height + 10
             ZIndex: =13
 
         Rectangle5_3 As rectangle:
