@@ -134,23 +134,17 @@ scrNuevaSolicitud As screen:
             	)
             );
             
-            
             //Envio de correo
-            Clear(colDestinatariosManager);
-            Clear(colDestinatariosLider);
+            Set(varDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";"));
+            Set(varDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";"));
             
-            If(varMyUserArea.NotificaManager,ClearCollect(colDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";")));
-            
-            If(varMyUserArea.NotificaLider,ClearCollect(colDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";")));
-            
-            Set(varDestinatarios,Concatenate(First(colDestinatariosManager).Value,First(colDestinatariosLider).Value));
+            Set(varDestinatariosNotificacion,If(IsBlank(varDestinatariosManager),varDestinatariosManager,varDestinatariosManager & ";") & varDestinatariosLider);
             
             Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
             
-            Office365Outlook.SendEmailV2("823248@unilabs.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
+            //Office365Outlook.SendEmailV2("823248@unilabs.com"; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
             
-            //Office365Outlook.SendEmailV2(varDestinatarios; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
-            
+            Office365Outlook.SendEmailV2(varDestinatariosNotificacion, Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
             
             
             Select(icn_Volver_NS);

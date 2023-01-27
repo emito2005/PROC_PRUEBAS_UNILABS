@@ -94,15 +94,44 @@ Screen2 As screen:
         ZIndex: =12
 
     Button9 As button:
-        OnSelect: |
-            =Set(varEmailMessage,htm_EmailPreview.HtmlText);
-            Office365Outlook.SendEmailV2("equintana@spperu.com", Concatenate(txtTipoSol.Text," ",txtTipoSer.Text," Nro. :",txt_sol.Text),varEmailMessage)
+        Height: =41
+        OnSelect: |+
+            =/*
+            Set(varEmailMessage;htm_EmailPreview.HtmlText);;
+            Office365Outlook.SendEmailV2("equintana@spperu.com"; Concatenate(txtTipoSol.Text;" ";txtTipoSer.Text;" Nro. :";txt_sol.Text);varEmailMessage)
             //Office365Outlook.SendEmailV2("itdepartment@companyname.com", "Test", varEmailMessage)
+            */
+            
+            // Obtener mis managers
+            Clear(colMyManagers);
+            ClearCollect(colMyManagers,
+            	Filter(AreaManager, IdArea = varMyUser.IdArea)
+            );
+            
+            // Obtener mis líderes
+            Clear(colMyLideres);
+            ClearCollect(colMyLideres,
+            	Filter(AreaManagerLider, IdArea = varMyUser.IdArea)
+            );
+            
+            
+            //Envio de correo
+            Set(varDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";"));
+            //Set(varDestinatariosManager;If(IsBlank(varDestinatariosManager);varDestinatariosManager;varDestinatariosManager & ";"));;
+            
+            Set(varDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";"));
+            //Set(varDestinatariosLider;If(IsBlank(varDestinatariosLider);varDestinatariosLider;varDestinatariosLider & ";"));;
+            
+            Set(varDestinatariosNotificacion,If(IsBlank(varDestinatariosManager),varDestinatariosManager,varDestinatariosManager & ";") & varDestinatariosLider);
+            
+            
+            
         Text: |-
             ="enviar correo
             "
-        X: =349
-        Y: =552
+        Width: =398
+        X: =330
+        Y: =669
         ZIndex: =21
 
     htm_EmailPreview As htmlViewer:
@@ -888,8 +917,8 @@ Screen2 As screen:
             
             </html>"
         Width: =461
-        X: =716
-        Y: =500
+        X: =856
+        Y: =433
         ZIndex: =22
 
     Button10 As button:
@@ -899,4 +928,12 @@ Screen2 As screen:
         X: =76
         Y: =636
         ZIndex: =23
+
+    Label7 As label:
+        Height: =143
+        Text: =varDestinatarios
+        Width: =512
+        X: =312
+        Y: =504
+        ZIndex: =24
 
