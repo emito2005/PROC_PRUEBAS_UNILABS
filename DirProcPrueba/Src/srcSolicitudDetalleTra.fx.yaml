@@ -435,7 +435,7 @@ srcSolicitudDetalleTra As screen:
 
     TextInput4_50 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleTrazaItemSel.NombreSolicitud
+        Default: =varSolicitudDetalleTrazaItemSel.AsuntoSol
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled

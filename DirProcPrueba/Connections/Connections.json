@@ -120,6 +120,9 @@
           "SolicitudDetalleDestino": {
             "tableName": "1204728d-b186-4e6b-b4fc-2249f653a738"
           },
+          "TipoOperacion": {
+            "tableName": "05ad202e-bef8-466f-bfd8-55c23cdfc4e2"
+          },
           "TipoServicio": {
             "tableName": "cee98033-3faa-4b51-9f9a-81be2c6b788a"
           },
@@ -145,7 +148,8 @@
       "AreaEtapaFlujo",
       "SolicitudDetalleDestino",
       "PerfilAccion",
-      "Parametros"
+      "Parametros",
+      "TipoOperacion"
     ],
     "dependencies": {},
     "dependents": [

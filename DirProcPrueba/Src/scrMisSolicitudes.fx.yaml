@@ -79,9 +79,9 @@ scrMisSolicitudes As screen:
                                     );
                                     txtFilNomNroSol.Text;
                                     "NroSolicitud";
-                                    "NombreSolicitud"
+                                    "AsuntoSol"
                                 );
-                                "ID"; "NroSolicitud"; "TipoSolicitud"; "TipoServicio"; "NombreSolicitud"; "EsActivo"; "AreaOrigen"; 
+                                "ID"; "NroSolicitud"; "TipoSolicitud"; "TipoServicio"; "AsuntoSol"; "EsActivo"; "AreaOrigen"; 
                                 "AreaActual"; "AreaDestino"; "ManagerDelArea"; "LiderDelArea"; "AnalistaDelArea"; "FechaAtencion"; 
                                 "FechaExpiraSLA"; "FechaExpiraOLA"; "ObsSolDet"
                             )
@@ -106,7 +106,7 @@ scrMisSolicitudes As screen:
                             );
                             txtFilNomNroSol_1.Text;
                             "NroSolicitud";
-                            "NombreSolicitud"
+                            "AsuntoSol"
                         );*/
                         Search(
                             Filter(colSolicitudes,
@@ -119,9 +119,9 @@ scrMisSolicitudes As screen:
                             ),
                             txtFilNomNroSol.Text,
                             "NroSolicitud",
-                            "NombreSolicitud"
+                            "AsuntoSol"
                         ),
-                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "NombreSolicitud", "EsActivo", "AreaOrigen", 
+                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "AsuntoSol", "EsActivo", "AreaOrigen", 
                         "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
                         "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
                     )
@@ -168,7 +168,7 @@ scrMisSolicitudes As screen:
                 ),
                 txtFilNomNroSol.Text,
                 "NroSolicitud",
-                "NombreSolicitud"
+                "AsuntoSol"
             )
         Layout: =Layout.Vertical
         OnSelect: |-
@@ -208,8 +208,8 @@ scrMisSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.NombreSolicitud
-            Tooltip: =ThisItem.NombreSolicitud
+            Text: =ThisItem.AsuntoSol
+            Tooltip: =ThisItem.AsuntoSol
             VerticalAlign: =VerticalAlign.Top
             Width: =170
             Wrap: =false
@@ -379,7 +379,7 @@ scrMisSolicitudes As screen:
         OnSelect: |+
             =ClearCollect(colSolicitudCab,
                 AddColumns(
-                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio"
+                    ShowColumns(Solicitud,"ID","NroSolicitud","AsuntoSol","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio"
                         ,"FechaCreacionSol","FechaFinalSol")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
                     ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
@@ -390,7 +390,7 @@ scrMisSolicitudes As screen:
                     //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
                     SolicitudDetalle
                     ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
-                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"AsuntoSol",LookUp(colSolicitudCab,ID=IdSolicitud,AsuntoSol)
                     ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
                     ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
                     ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)

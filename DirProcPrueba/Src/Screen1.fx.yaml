@@ -66,7 +66,7 @@ Screen1 As screen:
         OnSelect: |-
             =ClearCollect(colSolicitudCab,
                 AddColumns(
-                    ShowColumns(Solicitud,"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ShowColumns(Solicitud,"ID","NroSolicitud","AsuntoSol","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
                     ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
                 )
@@ -75,7 +75,7 @@ Screen1 As screen:
                 AddColumns(
                     ShowColumns(SolicitudDetalle,"ID","FechaAtencion","FechaExpiraSLA","FechaExpiraOLA","EsAtendido","IdSolicitud","IdAreaOrigen","IdPerfilOrigen",             "IdPersonalOrigen","IdAreaDestino","IdPerfilDestino","IdPersonalDestino","IdEtapaOrigen","IdEtapaDestino","IdAccionOrigen","IdAccionDestino")
                     ,"NroSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NroSolicitud)
-                    ,"NombreSolicitud",LookUp(colSolicitudCab,ID=IdSolicitud,NombreSolicitud)
+                    ,"AsuntoSol",LookUp(colSolicitudCab,ID=IdSolicitud,AsuntoSol)
                     ,"Obs",LookUp(colSolicitudCab,ID=IdSolicitud,Obs)
                     ,"EsActivo",LookUp(colSolicitudCab,ID=IdSolicitud,EsActivo)
                     ,"EsEliminado",LookUp(colSolicitudCab,ID=IdSolicitud,EsEliminado)

@@ -286,7 +286,7 @@ scrElevar As screen:
 
     TextInput4_18 As text:
         BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.NombreSolicitud
+        Default: =varSolicitudDetalleItemSel.AsuntoSol
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled

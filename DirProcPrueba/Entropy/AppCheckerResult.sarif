@@ -24,7 +24,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1136,
+                  "charOffset": 1130,
                   "snippet": {
                     "text": "in"
                   }
@@ -1083,36 +1083,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrMisSolicitudes.icnActualizarMS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrMisSolicitudes.icnActualizarMS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrMisSolicitudes",
-                "type": "scrMisSolicitudes.icnActualizarMS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "scrMisSolicitudes.icnActualizarMS.TabIndex"
                 }
               ],
@@ -1137,6 +1107,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrMisSolicitudes.icnActualizarMS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrMisSolicitudes.icnActualizarMS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrMisSolicitudes",
+                "type": "scrMisSolicitudes.icnActualizarMS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -2073,19 +2073,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.NombreSolicitud_DataCard1.DataCardValue17.AccessibleLabel"
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.AsuntoSol_DataCard1.DataCardValue17.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.NombreSolicitud_DataCard1.DataCardValue17.AccessibleLabel",
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.AsuntoSol_DataCard1.DataCardValue17.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrNuevaSolicitud",
-                "type": "scrNuevaSolicitud.frm_EditSolicitud.NombreSolicitud_DataCard1.DataCardValue17"
+                "type": "scrNuevaSolicitud.frm_EditSolicitud.AsuntoSol_DataCard1.DataCardValue17"
               }
             }
           ],
@@ -11443,6 +11443,36 @@
               },
               "properties": {
                 "member": "varNroSolGenerada",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varDestinatariosNotificacion"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varDestinatariosNotificacion",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varDestinatariosNotificacion",
                 "module": "App",
                 "type": "App"
               }

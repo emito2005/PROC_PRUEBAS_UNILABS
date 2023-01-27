@@ -462,7 +462,7 @@ scrTrazabilidad As screen:
         OnSelect: |+
             =ClearCollect(colSolicitudCabTraza,
                 AddColumns(
-                    ShowColumns(Filter(Solicitud,ID=varSolicitudDetalleItemSel.IdSolicitud),"ID","NroSolicitud","NombreSolicitud","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
+                    ShowColumns(Filter(Solicitud,ID=varSolicitudDetalleItemSel.IdSolicitud),"ID","NroSolicitud","AsuntoSol","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
                     ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
                 )
@@ -474,7 +474,7 @@ scrTrazabilidad As screen:
                     //ShowColumns(SolicitudDetalle;"ID";"FechaAtencion";"FechaExpiraSLA";"FechaExpiraOLA";"EsAtendido";"IdSolicitud";"IdAccionOrigen";"IdEtapaOrigen";"IdAreaOrigen";"IdPerfilOrigen";"IdPersonalOrigen";"IdAccionActual";"IdEtapaActual";"IdAreaActual";"IdPerfilActual";"IdPersonalActual";"IdAccionDestino";"IdEtapaDestino";"IdAreaDestino";"IdPerfilDestino";"IdPersonalDestino")
                     Filter(SolicitudDetalle,IdSolicitud=varSolicitudDetalleItemSel.IdSolicitud)
                     ,"NroSolicitud",LookUp(colSolicitudCabTraza,ID=IdSolicitud,NroSolicitud)
-                    ,"NombreSolicitud",LookUp(colSolicitudCabTraza,ID=IdSolicitud,NombreSolicitud)
+                    ,"AsuntoSol",LookUp(colSolicitudCabTraza,ID=IdSolicitud,AsuntoSol)
                     ,"Obs",LookUp(colSolicitudCabTraza,ID=IdSolicitud,Obs)
                     ,"EsActivo",LookUp(colSolicitudCabTraza,ID=IdSolicitud,EsActivo)
                     ,"EsEliminado",LookUp(colSolicitudCabTraza,ID=IdSolicitud,EsEliminado)

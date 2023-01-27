@@ -142,9 +142,9 @@ scrNuevaSolicitud As screen:
             
             Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
             
-            //Office365Outlook.SendEmailV2("823248@unilabs.com"; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
+            Office365Outlook.SendEmailV2("823248@unilabs.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
             
-            Office365Outlook.SendEmailV2(varDestinatariosNotificacion, Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
             
             
             Select(icn_Volver_NS);
@@ -268,7 +268,7 @@ scrNuevaSolicitud As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: |
                 =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"IdTipoServicio")
-                "Tipo de Servicio"
+                "Segmento del Negocio"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -435,20 +435,20 @@ scrNuevaSolicitud As screen:
                 Y: =DataCardKey16.Y
                 ZIndex: =4
 
-        NombreSolicitud_DataCard1 As typedDataCard.textualEditCard:
+        AsuntoSol_DataCard1 As typedDataCard.textualEditCard:
             BorderColor: |-
                 =//RGBA(0; 18; 107; 1)
                 varColorPri01
             BorderStyle: =BorderStyle.Solid
-            DataField: ="NombreSolicitud"
-            Default: =ThisItem.NombreSolicitud
+            DataField: ="AsuntoSol"
+            Default: =ThisItem.AsuntoSol
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
-                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"NombreSolicitud")
-                "Nombre de Solicitud"
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"AsuntoSol")
+                "Asunto de Solicitud"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "NombreSolicitud")
+            MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "AsuntoSol")
             Required: =false
             Update: =DataCardValue17.Text
             Width: =800
@@ -730,7 +730,7 @@ scrNuevaSolicitud As screen:
         ZIndex: =8
 
     htm_EmailPreview_1 As htmlViewer:
-        Height: =163
+        Height: =96
         HtmlText: |-
             ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
             xmlns:o=""""urn:schemas-microsoft-com:office:office""""
@@ -1512,8 +1512,8 @@ scrNuevaSolicitud As screen:
             
             </html>"
         Visible: =false
-        Width: =546
-        X: =77
-        Y: =504
+        Width: =138
+        X: =13
+        Y: =667
         ZIndex: =10
 
