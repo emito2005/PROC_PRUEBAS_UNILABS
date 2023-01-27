@@ -1,5 +1,5 @@
 scrDevolver As screen:
-    OnHidden: =Reset(TextInput2_3)
+    OnHidden: =Reset(txtComentarioDevS)
     OnVisible: |-
         =// Obtener la primera acción del área y etapa actual
         UpdateContext({
@@ -105,7 +105,7 @@ scrDevolver As screen:
             				IdPersonalDestino: 0, // Personal Destino 
                             IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaActual,
                             IdAreaDestinoFlujo: varMyUser.IdArea,
-                            ObsSolDet: TrimEnds(TextInput2_3.Text)
+                            ObsSolDet: TrimEnds(txtComentarioDevS.Text)
                         }
             		)
             });
@@ -136,10 +136,19 @@ scrDevolver As screen:
                     IdPersonalDestino: varFirstActionByArea.IdPersonalOrigen,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2_3.Text),
+                    ObsSolDetDestino: TrimEnds(txtComentarioDevS.Text),
                     FechaAtencion: Today()
                 }
             );
+            
+            //Envio de correo
+            Set(varDestinatariosNotificacion,LookUp(Personal, ID = varFirstActionByArea.IdPersonalOrigen).Email);
+            Set(varAsuntoCorreo,Concatenate("Solicitud Devuelta Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
+            Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
+            
+            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
+            
             
             Notify("Solicitud devuelta correctamente.", NotificationType.Success);
             
@@ -152,7 +161,7 @@ scrDevolver As screen:
         Y: =Parent.Height - Self.Height - 35
         ZIndex: =5
 
-    TextInput2_3 As text:
+    txtComentarioDevS As text:
         BorderColor: =varColorPri01B
         Default: =""
         Height: =85
@@ -1225,7 +1234,7 @@ scrDevolver As screen:
             
             <p class=MsoNormal>ASUNTO DE LA SOLICITUD : <span class=SpellE>" & varSolicitudDetalleItemSel.AsuntoSol & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & TrimEnds(txtComentarioES.Text) & "</span><o:p></o:p></p>
+            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & TrimEnds(txtComentarioDevS.Text) & "</span><o:p></o:p></p>
             
             <p class=MsoNormal><o:p>&nbsp;</o:p></p>
             

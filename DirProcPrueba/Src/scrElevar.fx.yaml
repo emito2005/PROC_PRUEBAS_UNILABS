@@ -126,11 +126,11 @@ scrElevar As screen:
             
             //Envio de correo
             Set(varDestinatariosNotificacion,LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Email);
-            Set(varEmailMessage,htm_EmailPreview_ES.HtmlText);
             Set(varAsuntoCorreo,Concatenate("Solicitud Elevada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
+            Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
             
-            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varEmailMessage);
-            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varEmailMessage);;
+            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
             
             Notify("Solicitud elevada correctamente.", NotificationType.Success);

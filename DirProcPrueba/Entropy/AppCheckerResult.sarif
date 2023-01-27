@@ -8394,19 +8394,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrAsignar.TextInput2.AccessibleLabel"
+                  "fullyQualifiedName": "scrAsignar.txtComentarioAS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrAsignar.TextInput2.AccessibleLabel",
+                  "fullyQualifiedName": "scrAsignar.txtComentarioAS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrAsignar",
-                "type": "scrAsignar.TextInput2"
+                "type": "scrAsignar.txtComentarioAS"
               }
             }
           ],
@@ -9264,19 +9264,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrDerivar.TextInput2_2.AccessibleLabel"
+                  "fullyQualifiedName": "scrDerivar.txtComentarioDerS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrDerivar.TextInput2_2.AccessibleLabel",
+                  "fullyQualifiedName": "scrDerivar.txtComentarioDerS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrDerivar",
-                "type": "scrDerivar.TextInput2_2"
+                "type": "scrDerivar.txtComentarioDerS"
               }
             }
           ],
@@ -10854,19 +10854,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrDevolver.TextInput2_3.AccessibleLabel"
+                  "fullyQualifiedName": "scrDevolver.txtComentarioDevS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrDevolver.TextInput2_3.AccessibleLabel",
+                  "fullyQualifiedName": "scrDevolver.txtComentarioDevS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrDevolver",
-                "type": "scrDevolver.TextInput2_3"
+                "type": "scrDevolver.txtComentarioDevS"
               }
             }
           ],
@@ -12154,66 +12154,6 @@
                 "member": "Width",
                 "module": "scrDevolver",
                 "type": "scrDevolver.requestFieldLbl_61"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrDevolver.htm_EmailPreview_DS.HtmlText"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrDevolver.htm_EmailPreview_DS.HtmlText",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "HtmlText",
-                "module": "scrDevolver",
-                "type": "scrDevolver.htm_EmailPreview_DS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrAsignar.htm_EmailPreview_AS.HtmlText"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrAsignar.htm_EmailPreview_AS.HtmlText",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "HtmlText",
-                "module": "scrAsignar",
-                "type": "scrAsignar.htm_EmailPreview_AS"
               }
             }
           ],

@@ -1,5 +1,5 @@
 scrDerivar As screen:
-    OnHidden: =Reset(TextInput2_2)
+    OnHidden: =Reset(txtComentarioDerS)
     OnVisible: |-
         =ResetForm(RequestAttachmentsForm);
         NewForm(RequestAttachmentsForm);
@@ -98,7 +98,7 @@ scrDerivar As screen:
                                 IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo &&
                                 Orden = currentOrder + 1
                             ).IdAreaDestino,
-                            ObsSolDet: TrimEnds(TextInput2_2.Text)
+                            ObsSolDet: TrimEnds(txtComentarioDerS.Text)
             			},
                         // Guarda los datos adjuntos luego de crear el nuevo registro
                         RequestAttachmentsForm.Updates
@@ -175,10 +175,21 @@ scrDerivar As screen:
                     IdPersonalDestino: 0,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2_2.Text),
+                    ObsSolDetDestino: TrimEnds(txtComentarioDerS.Text),
                     FechaAtencion: Today()
                 }
             );
+            
+            //Envio de correo
+            Set(varDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";"));
+            Set(varDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";"));
+            Set(varDestinatariosNotificacion,If(IsBlank(varDestinatariosManager),varDestinatariosManager,varDestinatariosManager & ";") & varDestinatariosLider);
+            
+            Set(varAsuntoCorreo,Concatenate("Solicitud Derivada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
+            Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
+            
+            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
             Notify("Solicitud derivada correctamente.", NotificationType.Success);
             
@@ -242,7 +253,7 @@ scrDerivar As screen:
                 Width: =Parent.Width
                 ZIndex: =2
 
-    TextInput2_2 As text:
+    txtComentarioDerS As text:
         BorderColor: =varColorPri01B
         Default: =""
         Height: =114

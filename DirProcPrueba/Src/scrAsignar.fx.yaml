@@ -1,7 +1,7 @@
 scrAsignar As screen:
     OnHidden: |-
         =Select(ClearSelectedUserIcon);
-        Reset(TextInput2)
+        Reset(txtComentarioAS)
     OnVisible: |-
         =If(varMyUser.IdPerfil = 2, // Manager
         	UpdateContext({
@@ -103,7 +103,7 @@ scrAsignar As screen:
                             IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
                             //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
                             IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
-                            ObsSolDet: TrimEnds(TextInput2.Text)
+                            ObsSolDet: TrimEnds(txtComentarioAS.Text)
             			}
             		)
             });
@@ -134,13 +134,18 @@ scrAsignar As screen:
                     IdPersonalDestino: LookUp(Personal, Email = UserSelected.Email).ID,
                     EsAtendido: true, // Actualizar estado del registro seleccionado
                     IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
-                    ObsSolDetDestino: TrimEnds(TextInput2.Text),
+                    ObsSolDetDestino: TrimEnds(txtComentarioAS.Text),
                     FechaAtencion: Today()
                 }
             );
             
+            //Envio de correo
+            Set(varDestinatariosNotificacion,LookUp(Personal, Email = UserSelected.Email).Email);
+            Set(varAsuntoCorreo,Concatenate("Solicitud Asignada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
+            Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
             
-            
+            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
             
             Notify("Solicitud asignada correctamente.", NotificationType.Success);
@@ -154,7 +159,7 @@ scrAsignar As screen:
         Y: =Parent.Height - Self.Height - 35
         ZIndex: =5
 
-    TextInput2 As text:
+    txtComentarioAS As text:
         BorderColor: =varColorPri01B
         Default: =""
         Height: =Icon6.Y + Icon6.Height - Self.Y
@@ -1472,7 +1477,7 @@ scrAsignar As screen:
             
             <p class=MsoNormal>ASUNTO DE LA SOLICITUD : <span class=SpellE>" & varSolicitudDetalleItemSel.AsuntoSol & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & TrimEnds(txtComentarioES.Text) & "</span><o:p></o:p></p>
+            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & TrimEnds(txtComentarioAS.Text) & "</span><o:p></o:p></p>
             
             <p class=MsoNormal><o:p>&nbsp;</o:p></p>
             
