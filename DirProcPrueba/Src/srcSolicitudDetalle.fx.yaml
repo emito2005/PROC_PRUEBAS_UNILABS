@@ -413,7 +413,7 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Text: ="Nombre de Solicitud"
+        Text: ="Asunto de la Solicitud"
         Width: =TextInput4_1.X + TextInput4_1.Width - Self.X
         X: =TextInput4.X
         Y: =TextInput4.Y + TextInput4.Height + 15
