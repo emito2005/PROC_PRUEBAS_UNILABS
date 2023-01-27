@@ -137,14 +137,13 @@ scrNuevaSolicitud As screen:
             //Envio de correo
             Set(varDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";"));
             Set(varDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";"));
-            
             Set(varDestinatariosNotificacion,If(IsBlank(varDestinatariosManager),varDestinatariosManager,varDestinatariosManager & ";") & varDestinatariosLider);
+            Set(varAsuntoCorreo,Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text));
+            Set(varCuerpoCorreo,htm_EmailPreview_CS.HtmlText);
             
-            Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
+            Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
             
-            Office365Outlook.SendEmailV2("823248@unilabs.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
-            
-            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
             
             Select(icn_Volver_NS);
@@ -729,7 +728,7 @@ scrNuevaSolicitud As screen:
         Y: =695
         ZIndex: =8
 
-    htm_EmailPreview_1 As htmlViewer:
+    htm_EmailPreview_CS As htmlViewer:
         Height: =96
         HtmlText: |-
             ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
@@ -1498,11 +1497,11 @@ scrNuevaSolicitud As screen:
             
             <p class=MsoNormal>TIPO DE SOLICITUD : <span class=SpellE>" & ddwTipoSolicitud.Selected.Nombre & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>TIPO DE SERVICIO : <span class=SpellE> " & ddwTipoServicio.Selected.Nombre & "</span><o:p></o:p></p>
+            <p class=MsoNormal>SEGEMENTO DEL NEGOCIO : <span class=SpellE> " & ddwTipoServicio.Selected.Nombre & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>NOMBRE DE SOLICITUD : <span class=SpellE>" & DataCardValue17.Text & "</span><o:p></o:p></p>
+            <p class=MsoNormal>ASUNTO DE LA SOLICITUD : <span class=SpellE>" & DataCardValue17.Text & "</span><o:p></o:p></p>
             
-            <p class=MsoNormal>OBS: <span class=SpellE>" & DataCardValue18.Text & "</span><o:p></o:p></p>
+            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & DataCardValue18.Text & "</span><o:p></o:p></p>
             
             <p class=MsoNormal><o:p>&nbsp;</o:p></p>
             
