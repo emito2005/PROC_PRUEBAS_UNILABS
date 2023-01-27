@@ -124,6 +124,24 @@ scrElevar As screen:
                 }
             );
             
+            //Envio de correo
+            Set(varDestinatariosManager,Concat(AddColumns(colMyManagers,"EmailManager",LookUp(Personal,ID=IdPersonal,Email)),EmailManager,";"));
+            Set(varDestinatariosLider,Concat(AddColumns(colMyLideres,"EmailLider",LookUp(Personal,ID=IdPersonal,Email)),EmailLider,";"));
+            
+            Set(varDestinatariosNotificacion,LookUp(Personal, ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Email);
+            
+            Set(varEmailMessage,htm_EmailPreview_1.HtmlText);
+            
+            Office365Outlook.SendEmailV2("823248@unilabs.com", Concatenate(ddwTipoSolicitud.Selected.Nombre," ",ddwTipoServicio.Selected.Nombre," NRO. SOL.:: ",DataCardValue16.Text),varEmailMessage);
+            
+            //Office365Outlook.SendEmailV2(varDestinatariosNotificacion; Concatenate(ddwTipoSolicitud.Selected.Nombre;" ";ddwTipoServicio.Selected.Nombre;" NRO. SOL.:: ";DataCardValue16.Text);varEmailMessage);;
+            
+            
+            
+            
+            
+            
+            
             Notify("Solicitud elevada correctamente.", NotificationType.Success);
             
             UpdateContext({ isLoading: false });

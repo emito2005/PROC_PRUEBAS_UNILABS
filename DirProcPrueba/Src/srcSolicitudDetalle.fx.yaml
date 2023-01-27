@@ -26,9 +26,9 @@ srcSolicitudDetalle As screen:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =Parent.Height - Self.Y
+        Height: =139
         Width: =Parent.Width
-        Y: =TextInput4_11.Y + TextInput4_11.Height + 15
+        Y: =627
         ZIndex: =3
 
     HtmlText1 As htmlViewer:
@@ -259,19 +259,6 @@ srcSolicitudDetalle As screen:
         X: =13
         Y: =2
         ZIndex: =6
-
-    requestFieldLbl_74 As label:
-        Color: =varColorPri01
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Acciones"
-        X: =Button8_3.X
-        Y: =Rectangle4_10.Y + 15
-        ZIndex: =15
 
     btnVerDocAdjuntos As button:
         Fill: =varColorPri01
@@ -1112,8 +1099,8 @@ srcSolicitudDetalle As screen:
                 )
             Size: =12
             Text: ="Generar PDF"
-            X: =requestFieldLbl_74.X
-            Y: =requestFieldLbl_74.Y + requestFieldLbl_74.Height + 15
+            X: =50//requestFieldLbl_74.X
+            Y: =650
             ZIndex: =16
 
         trazabilidadBtn As button:
@@ -1124,7 +1111,7 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Trazabilidad"
             X: =descargarPDFBtn.X
-            Y: =descargarPDFBtn.Y + descargarPDFBtn.Height + 15
+            Y: =705
             ZIndex: =17
 
         elevarBtn As button:
@@ -1134,8 +1121,8 @@ srcSolicitudDetalle As screen:
             OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
             Size: =12
             Text: ="Elevar"
-            X: =trazabilidadBtn.X + trazabilidadBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
+            X: =327
+            Y: =650
             ZIndex: =18
 
         asignarBtn As button:
@@ -1146,7 +1133,7 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Asignar"
             X: =elevarBtn.X
-            Y: =elevarBtn.Y + elevarBtn.Height + 15
+            Y: =705
             ZIndex: =19
 
         derivarBtn As button:
@@ -1157,8 +1144,8 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Derivar"
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
-            X: =asignarBtn.X + asignarBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
+            X: =604
+            Y: =650
             ZIndex: =20
 
         finalizarBtn As button:
@@ -1171,8 +1158,8 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Finalizar"
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
-            X: =btnVerDocAdjuntos.X
-            Y: =btnVerDocAdjuntos.Y + btnVerDocAdjuntos.Height + 15
+            X: =1158
+            Y: =705
             ZIndex: =21
 
         archivarBtn As button:
@@ -1184,8 +1171,8 @@ srcSolicitudDetalle As screen:
                 UpdateContext({ showArchiveDialog: true })
             Size: =12
             Text: ="Archivar"
-            X: =derivarBtn.X + derivarBtn.Width + 116.5
-            Y: =descargarPDFBtn.Y
+            X: =881
+            Y: =650
             ZIndex: =22
 
         eliminarBtn As button:
@@ -1198,7 +1185,7 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Eliminar"
             X: =archivarBtn.X
-            Y: =archivarBtn.Y + archivarBtn.Height + 15
+            Y: =705
             ZIndex: =23
 
         devolverBtn As button:
@@ -1222,7 +1209,7 @@ srcSolicitudDetalle As screen:
             Size: =12
             Text: ="Devolver"
             X: =derivarBtn.X
-            Y: =derivarBtn.Y + derivarBtn.Height + 15
+            Y: =705
             ZIndex: =24
 
     finishDialogGroup As group:
@@ -1376,6 +1363,7 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1409,6 +1397,7 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1442,6 +1431,7 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1482,6 +1472,7 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0

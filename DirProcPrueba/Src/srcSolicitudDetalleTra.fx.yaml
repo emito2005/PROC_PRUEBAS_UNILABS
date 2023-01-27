@@ -26,9 +26,9 @@ srcSolicitudDetalleTra As screen:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =128
+        Height: =73
         Width: =Parent.Width
-        Y: =640
+        Y: =695
         ZIndex: =3
 
     HtmlText1_1 As htmlViewer:
@@ -260,19 +260,6 @@ srcSolicitudDetalleTra As screen:
         Y: =2
         ZIndex: =6
 
-    requestFieldLbl_76 As label:
-        Color: =varColorPri01
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Acciones"
-        X: =Button8_19.X
-        Y: =Rectangle4_16.Y + 15
-        ZIndex: =15
-
     descargarPDFBtn_1 As button:
         DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
         Fill: =varColorPri01
@@ -297,7 +284,7 @@ srcSolicitudDetalleTra As screen:
         Size: =12
         Text: ="Generar PDF"
         X: =511
-        Y: =696
+        Y: =710
         ZIndex: =16
 
     Label6_56 As label:
@@ -1247,6 +1234,7 @@ srcSolicitudDetalleTra As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1280,6 +1268,7 @@ srcSolicitudDetalleTra As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1313,6 +1302,7 @@ srcSolicitudDetalleTra As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1354,7 +1344,7 @@ srcSolicitudDetalleTra As screen:
             =//varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos'
             true
         X: =690
-        Y: =696
+        Y: =710
         ZIndex: =78
 
     Group8_16 As group:
@@ -1371,6 +1361,7 @@ srcSolicitudDetalleTra As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
