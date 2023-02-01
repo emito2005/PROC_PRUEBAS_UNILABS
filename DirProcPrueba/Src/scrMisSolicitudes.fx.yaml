@@ -312,8 +312,10 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.TipoServicio
+            Tooltip: =ThisItem.TipoServicio
             VerticalAlign: =VerticalAlign.Top
             Width: =90
+            Wrap: =false
             X: =397
             Y: =4
             ZIndex: =13
