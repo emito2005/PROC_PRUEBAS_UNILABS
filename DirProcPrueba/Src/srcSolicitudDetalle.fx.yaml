@@ -1412,7 +1412,7 @@ srcSolicitudDetalle As screen:
             Text: ="Datos de Departamento"
             Width: =280
             X: =TextInput4_4.X
-            Y: =TextInput4_4.Y + TextInput4_4.Height + 105
+            Y: =Label6_6.Y + Label6_6.Height + 15
             ZIndex: =9
 
         Rectangle5_1 As rectangle:
@@ -1631,7 +1631,7 @@ srcSolicitudDetalle As screen:
             =//Label6.Width
             (Parent.Width - 260) / 2
         X: =TextInput4_4.X
-        Y: =259
+        Y: =TextInput4_4.Y + TextInput4_4.Height + 15
         ZIndex: =86
 
     TextInput4_64 As text:

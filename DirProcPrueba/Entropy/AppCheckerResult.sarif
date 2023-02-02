@@ -12651,6 +12651,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "srcSolicitudDetalleTra.isLoading"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "srcSolicitudDetalleTra.isLoading",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "isLoading",
+                "module": "srcSolicitudDetalleTra",
+                "type": "srcSolicitudDetalleTra"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrAreaDetalle.FormViewer1.Item"
                 }
               ],

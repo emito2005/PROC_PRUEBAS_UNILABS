@@ -734,13 +734,6 @@ srcSolicitudDetalleTra As screen:
         Y: =Label6_71.Y + Label6_71.Height
         ZIndex: =45
 
-    Rectangle2_11 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =46
-
     btnVerDocAdjuntos_1 As button:
         DisplayMode: |-
             =//DisplayMode.Edit
