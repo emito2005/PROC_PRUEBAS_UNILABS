@@ -461,7 +461,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RucCliente")
             Required: =false
             Update: =DataCardValue20.Text
-            Width: =214
+            Width: =200
             X: =1
             Y: =1
             ZIndex: =1
@@ -538,7 +538,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RazonSocialCliente")
             Required: =false
             Update: =DataCardValue21.Text
-            Width: =400
+            Width: =415
             X: =2
             Y: =1
             ZIndex: =1
