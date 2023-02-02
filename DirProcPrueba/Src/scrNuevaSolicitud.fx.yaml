@@ -264,6 +264,7 @@ scrNuevaSolicitud As screen:
                 SelectionFill: |
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
+                TabIndex: =2
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey35.Y + DataCardKey35.Height + 5
@@ -367,6 +368,7 @@ scrNuevaSolicitud As screen:
                 SelectionFill: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
+                TabIndex: =3
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey34.Y + DataCardKey34.Height + 5
@@ -470,6 +472,7 @@ scrNuevaSolicitud As screen:
                 SelectionFill: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
+                TabIndex: =4
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =49
@@ -521,6 +524,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =6
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -598,6 +602,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =7
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -672,6 +677,7 @@ scrNuevaSolicitud As screen:
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 StartYear: =1899
+                TabIndex: =8
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -746,6 +752,7 @@ scrNuevaSolicitud As screen:
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 StartYear: =1899
+                TabIndex: =9
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -823,6 +830,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =10
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -899,6 +907,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =1
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -979,6 +988,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =5
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -1061,6 +1071,7 @@ scrNuevaSolicitud As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =11
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -1173,6 +1184,7 @@ scrNuevaSolicitud As screen:
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PaddingRight: =5
                 PaddingTop: =5
+                TabIndex: =12
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
@@ -1221,6 +1233,7 @@ scrNuevaSolicitud As screen:
         OnSelect: |-
             =SubmitForm(frm_EditSolicitud);
             //Select(icn_Volver_NS)
+        TabIndex: =13
         Text: ="CREAR SOLICITUD"
         Width: =670
         X: =352
