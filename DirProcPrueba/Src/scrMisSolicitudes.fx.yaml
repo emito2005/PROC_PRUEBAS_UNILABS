@@ -194,10 +194,9 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.NroSolicitud
-            VerticalAlign: =VerticalAlign.Top
             Width: =85
             X: =5
-            Y: =4
+            Y: =2
             ZIndex: =4
 
         Title2_5 As label:
@@ -210,11 +209,10 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.AsuntoSol
             Tooltip: =ThisItem.AsuntoSol
-            VerticalAlign: =VerticalAlign.Top
             Width: =170
             Wrap: =false
             X: =86
-            Y: =4
+            Y: =2
             ZIndex: =5
 
         Title2_6 As label:
@@ -227,11 +225,10 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.TipoSolicitud
             Tooltip: =ThisItem.TipoSolicitud
-            VerticalAlign: =VerticalAlign.Top
             Width: =140
             Wrap: =false
             X: =257
-            Y: =4
+            Y: =2
             ZIndex: =6
 
         Title2_9 As label:
@@ -243,10 +240,9 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
             Width: =70
             X: =1008
-            Y: =4
+            Y: =2
             ZIndex: =8
 
         Title2_10 As label:
@@ -258,10 +254,9 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
             Width: =70
             X: =1077
-            Y: =4
+            Y: =2
             ZIndex: =9
 
         Title2_11 As label:
@@ -273,10 +268,9 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.AreaOrigen
-            VerticalAlign: =VerticalAlign.Top
             Width: =107
             X: =487
-            Y: =4
+            Y: =2
             ZIndex: =10
 
         Title2_12 As label:
@@ -288,10 +282,9 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.AreaDestino
-            VerticalAlign: =VerticalAlign.Top
             Width: =107
             X: =587
-            Y: =4
+            Y: =2
             ZIndex: =11
 
         Icon5 As icon.ChevronRight:
@@ -313,11 +306,10 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.TipoServicio
             Tooltip: =ThisItem.TipoServicio
-            VerticalAlign: =VerticalAlign.Top
             Width: =90
             Wrap: =false
             X: =397
-            Y: =4
+            Y: =2
             ZIndex: =13
 
         Title2_15 As label:
@@ -330,11 +322,10 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.ManagerDelArea
             Tooltip: =ThisItem.ManagerDelArea
-            VerticalAlign: =VerticalAlign.Top
             Width: =100
             Wrap: =false
             X: =693
-            Y: =4
+            Y: =2
             ZIndex: =14
 
         Title2_38 As label:
@@ -347,11 +338,10 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.LiderDelArea
             Tooltip: =ThisItem.LiderDelArea
-            VerticalAlign: =VerticalAlign.Top
             Width: =100
             Wrap: =false
             X: =800
-            Y: =4
+            Y: =2
             ZIndex: =15
 
         Title2_39 As label:
@@ -364,7 +354,6 @@ scrMisSolicitudes As screen:
             Size: =11
             Text: =ThisItem.AnalistaDelArea
             Tooltip: =ThisItem.AnalistaDelArea
-            VerticalAlign: =VerticalAlign.Top
             Width: =100
             Wrap: =false
             X: =905

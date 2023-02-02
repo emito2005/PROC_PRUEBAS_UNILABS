@@ -515,6 +515,9 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
                 HoverFill: |-
                     =//RGBA(186; 202; 226; 1)
                     varColorPri01B
@@ -593,6 +596,9 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
                 HoverFill: |-
                     =//RGBA(186; 202; 226; 1)
                     varColorPri01B
@@ -821,6 +827,9 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HoverBorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01B
                 HoverFill: |-
                     =//RGBA(186; 202; 226; 1)
                     varColorPri01B
