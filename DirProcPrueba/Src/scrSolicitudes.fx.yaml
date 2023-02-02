@@ -506,21 +506,20 @@ scrSolicitudes As screen:
         Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
-        OnSelect: |+
-            =
-            //ClearCollect(colSolicitudUltDet;AddColumns(Solicitud;"MaxId";Max(Cities;Population)));;
+        OnSelect: |
+            =//ClearCollect(colSolicitudUltDet;AddColumns(Solicitud;"MaxId";Max(Cities;Population)));;
             ClearCollect(colSolicitudUltDet,
             AddColumns(
                        GroupBy(SolicitudDetalle,"IdSolicitud","GroupIdSol"),
                        "MaxID",Max(GroupIdSol,ID)
                        ));
-            
             ClearCollect(colSolicitudCab,
                 AddColumns(
                     ShowColumns(Solicitud,"ID","NroSolicitud","AsuntoSol","Obs","EsActivo","EsEliminado","EsFinalizado","IdTipoSolicitud","IdTipoServicio"
-                        ,"FechaCreacionSol","FechaFinalSol")
+                        ,"FechaCreacionSol","FechaFinalSol","RucCliente","RazonSocialCliente","IdTipoOperacion","InicioOperacion","FinOperacion","DescripcionPrueba")
                     ,"TipoSolicitud",LookUp(TipoSolicitud,ID=IdTipoSolicitud,Nombre)
                     ,"TipoServicio",LookUp(TipoServicio,ID=IdTipoServicio,Nombre)
+                    ,"TipoOperacion",LookUp(TipoOperacion,ID=IdTipoOperacion,Nombre)
                 )
                 );
             ClearCollect(colSolicitudes,
@@ -539,6 +538,13 @@ scrSolicitudes As screen:
                     ,"TipoServicio",LookUp(colSolicitudCab,ID=IdSolicitud,TipoServicio)
                     ,"FechaCreacionSol",LookUp(colSolicitudCab,ID=IdSolicitud,FechaCreacionSol)
                     ,"FechaFinalSol",LookUp(colSolicitudCab,ID=IdSolicitud,FechaFinalSol)
+                    ,"RucCliente",LookUp(colSolicitudCab,ID=IdSolicitud,RucCliente)
+                    ,"RazonSocialCliente",LookUp(colSolicitudCab,ID=IdSolicitud,RazonSocialCliente)
+                    ,"IdTipoOperacion",LookUp(colSolicitudCab,ID=IdSolicitud,IdTipoOperacion)
+                    ,"TipoOperacion",LookUp(colSolicitudCab,ID=IdSolicitud,TipoOperacion)
+                    ,"InicioOperacion",LookUp(colSolicitudCab,ID=IdSolicitud,InicioOperacion)
+                    ,"FinOperacion",LookUp(colSolicitudCab,ID=IdSolicitud,FinOperacion)
+                    ,"DescripcionPrueba",LookUp(colSolicitudCab,ID=IdSolicitud,DescripcionPrueba)
                     ,"AccionOrigen",LookUp(Accion,ID=IdAccionOrigen,Nombre)
                     ,"EtapaOrigen",LookUp(Etapa,ID=IdEtapaOrigen,Nombre)
                     ,"AreaOrigen",LookUp(Area_1,ID=IdAreaOrigen,Nombre)
@@ -562,9 +568,6 @@ scrSolicitudes As screen:
                     ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
-            
-            
-            
         Width: =50
         X: =1306
         Y: =113

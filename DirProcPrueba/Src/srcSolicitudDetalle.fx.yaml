@@ -17,7 +17,7 @@ srcSolicitudDetalle As screen:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =15
+        Height: =698
         Width: =Parent.Width
         Y: =70
         ZIndex: =2
@@ -450,7 +450,7 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.DescripcionPrueba
         Width: =Label6_76.Width
-        X: =Label6_66.X
+        X: =Label6_76.X
         Y: =Label6_76.Y + Label6_76.Height
         ZIndex: =37
 
@@ -1538,7 +1538,7 @@ srcSolicitudDetalle As screen:
         Text: ="F. Inicio de Operación"
         Width: =Label6_15.Width
         X: =Label6_15.X + Label6_15.Width + 50
-        Y: =572
+        Y: =Label6_15.Y
         ZIndex: =80
 
     TextInput4_61 As text:
@@ -1568,7 +1568,7 @@ srcSolicitudDetalle As screen:
         Text: ="F. Fin de Operación"
         Width: =Label6_73.Width
         X: =Label6_73.X + Label6_73.Width + 50
-        Y: =572
+        Y: =Label6_73.Y
         ZIndex: =82
 
     TextInput4_62 As text:
@@ -1676,6 +1676,15 @@ srcSolicitudDetalle As screen:
             =//Label6.Width
             (Parent.Width - 260) / 2
         X: =731
-        Y: =257
+        Y: =Label6_76.Y
         ZIndex: =89
+
+    Rectangle4_17 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =139
+        Width: =Parent.Width
+        Y: =629
+        ZIndex: =90
 

@@ -25,7 +25,7 @@ scrElevar As screen:
         BorderColor: =varColorPri01
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =699
+        Height: =11
         Width: =1366
         Y: =69
         ZIndex: =2
@@ -159,181 +159,6 @@ scrElevar As screen:
         X: =requestFieldLbl_27.X
         Y: =requestFieldLbl_27.Y + requestFieldLbl_27.Height + 15
         ZIndex: =10
-
-    Label6_16 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="ID"
-        Width: =(Parent.Width - 250) / 4
-        X: =Button8_4.X
-        Y: =Button8_4.Y + Button8_4.Height + 15
-        ZIndex: =17
-
-    TextInput4_14 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.ID
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_16.Width
-        X: =Label6_16.X
-        Y: =Label6_16.Y + Label6_16.Height
-        ZIndex: =18
-
-    Label6_17 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Nro. Ticket"
-        Width: =Label6_16.Width
-        X: =Label6_16.X + Label6_16.Width + 50
-        Y: =Label6_16.Y
-        ZIndex: =19
-
-    TextInput4_15 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.NroSolicitud
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_17.Width
-        X: =Label6_17.X
-        Y: =Label6_17.Y + Label6_17.Height
-        ZIndex: =20
-
-    Label6_18 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Tipo de Solicitud"
-        Width: =Label6_16.Width
-        X: =Label6_17.X + Label6_17.Width + 50
-        Y: =Label6_17.Y
-        ZIndex: =21
-
-    TextInput4_16 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.TipoSolicitud
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_18.Width
-        X: =Label6_18.X
-        Y: =Label6_18.Y + Label6_18.Height
-        ZIndex: =22
-
-    Label6_19 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Segemento del Negocio"
-        Width: =Label6_16.Width
-        X: =Label6_18.X + Label6_18.Width + 50
-        Y: =Label6_18.Y
-        ZIndex: =23
-
-    TextInput4_17 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.TipoServicio
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_19.Width
-        X: =Label6_19.X
-        Y: =Label6_19.Y + Label6_19.Height
-        ZIndex: =24
-
-    Label6_20 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Asunto de la Solicitud"
-        Width: =TextInput4_15.X + TextInput4_15.Width - Self.X
-        X: =TextInput4_14.X
-        Y: =TextInput4_14.Y + TextInput4_14.Height + 15
-        ZIndex: =25
-
-    TextInput4_18 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.AsuntoSol
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_20.Width
-        X: =Label6_20.X
-        Y: =Label6_20.Y + Label6_20.Height
-        ZIndex: =26
-
-    Label6_21 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="Comentario"
-        Width: =TextInput4_17.X + TextInput4_17.Width - Self.X
-        X: =Label6_20.X + Label6_20.Width + 50
-        Y: =Label6_20.Y
-        ZIndex: =27
-
-    Label6_22 As label:
-        Height: =50
-        Overflow: =Overflow.Scroll
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        Text: =varSolicitudDetalleItemSel.ObsSolDet
-        Width: =Label6_21.Width
-        X: =Label6_21.X
-        Y: =Label6_21.Y + Label6_21.Height
-        ZIndex: =28
 
     Label6_23 As label:
         FontWeight: =FontWeight.Semibold
@@ -1295,12 +1120,193 @@ scrElevar As screen:
             Y: =requestFieldLbl_75.Y + requestFieldLbl_75.Height
             ZIndex: =9
 
+    Label6_16 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="ID"
+        Width: |-
+            =//(Parent.Width - 250) / 5
+            150
+        X: =Button8_4.X
+        Y: =Button8_4.Y + Button8_4.Height + 15
+        ZIndex: =40
+
+    TextInput4_14 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.ID
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_16.Width
+        X: =Label6_16.X
+        Y: =Label6_16.Y + Label6_16.Height
+        ZIndex: =41
+
+    Label6_17 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Nro. Ticket"
+        Width: |-
+            =//Label6.Width
+            (Parent.Width - 260) / 5
+        X: |-
+            =//Label6.X + Label6.Width + 50
+            Label6_16.X + Label6_16.Width
+        Y: =Label6_16.Y
+        ZIndex: =42
+
+    TextInput4_15 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.NroSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =TextInput4_14.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_17.Width
+        X: =Label6_17.X
+        Y: =Label6_17.Y + Label6_17.Height
+        ZIndex: =43
+
+    Label6_18 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Tipo de Solicitud"
+        Width: =Label6_17.Width
+        X: =Label6_17.X + Label6_17.Width + 50
+        Y: =Label6_17.Y
+        ZIndex: =44
+
+    TextInput4_16 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =TextInput4_14.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_18.Width
+        X: =Label6_18.X
+        Y: =Label6_18.Y + Label6_18.Height
+        ZIndex: =45
+
+    Label6_19 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Segmento del Negocio"
+        Width: =Label6_17.Width
+        X: =Label6_18.X + Label6_18.Width + 50
+        Y: =Label6_18.Y
+        ZIndex: =46
+
+    TextInput4_17 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoServicio
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =TextInput4_14.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_19.Width
+        X: =Label6_19.X
+        Y: =Label6_19.Y + Label6_19.Height
+        ZIndex: =47
+
+    Label6_20 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Asunto de la Solicitud"
+        Width: =TextInput4_15.X + TextInput4_15.Width - Self.X + 150
+        X: =TextInput4_14.X
+        Y: =TextInput4_14.Y + TextInput4_14.Height + 15
+        ZIndex: =48
+
+    TextInput4_18 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.AsuntoSol
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_20.Width
+        X: =Label6_20.X
+        Y: =Label6_20.Y + Label6_20.Height
+        ZIndex: =49
+
+    Label6_21 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="RUC Cliente"
+        X: =Label6_20.X + Label6_20.Width + 50
+        Y: =Label6_20.Y
+        ZIndex: =50
+
+    Label6_22 As label:
+        Height: =50
+        Overflow: =Overflow.Scroll
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: =varSolicitudDetalleItemSel.DescripcionPrueba
+        Width: =Label6_88.Width
+        X: =Label6_88.X
+        Y: =Label6_88.Y + Label6_88.Height
+        ZIndex: =51
+
     Group8_4 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
-        ZIndex: =69
+        ZIndex: =52
 
         Button8_4 As button:
             Align: =Align.Left
@@ -1309,6 +1315,7 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1317,8 +1324,8 @@ scrElevar As screen:
             Text: ="Datos de Solicitud"
             Width: =230
             X: =50
-            Y: =115
-            ZIndex: =11
+            Y: =85
+            ZIndex: =38
 
         Rectangle5_4 As rectangle:
             Fill: =varColorPri01
@@ -1326,7 +1333,128 @@ scrElevar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_4.X
             Y: =Button8_4.Y + Button8_4.Height - Self.Height
-            ZIndex: =12
+            ZIndex: =39
+
+    Label6_86 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Tipo de Operación"
+        Width: =Label6_17.Width + 50
+        X: =Label6_19.X + Label6_19.Width + 50
+        Y: =Label6_19.Y
+        ZIndex: =53
+
+    TextInput4_70 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoOperacion
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =TextInput4_14.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_86.Width
+        X: =Label6_86.X
+        Y: =Label6_86.Y + Label6_86.Height
+        ZIndex: =54
+
+    Label6_87 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Razón Social Cliente"
+        Width: |
+            =500
+        X: =Label6_21.X + Label6_21.Width + 20
+        Y: =Label6_21.Y
+        ZIndex: =55
+
+    TextInput4_71 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.RazonSocialCliente
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =Label6_20.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_87.Width
+        X: =Label6_87.X
+        Y: =Label6_87.Y + Label6_87.Height
+        ZIndex: =56
+
+    Label6_88 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Descripción"
+        Width: |-
+            =//Label6.Width
+            (Parent.Width - 260) / 2
+        X: =TextInput4_18.X
+        Y: =TextInput4_18.Y + TextInput4_18.Height + 15
+        ZIndex: =57
+
+    TextInput4_72 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.NroSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =Label6_20.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_21.Width
+        X: =Label6_21.X
+        Y: =Label6_21.Y + Label6_21.Height
+        ZIndex: =58
+
+    Label6_89 As label:
+        Height: =Label6_22.Height
+        Overflow: =Overflow.Scroll
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: =varSolicitudDetalleItemSel.ObsSolDet
+        Width: =Label6_90.Width
+        X: =731
+        Y: =Label6_90.Y + Label6_90.Height
+        ZIndex: =59
+
+    Label6_90 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="Comentario"
+        Width: |-
+            =//Label6.Width
+            (Parent.Width - 260) / 2
+        X: =731
+        Y: =Label6_88.Y
+        ZIndex: =60
 
     Group8_7 As group:
         Height: =5
@@ -1350,7 +1478,7 @@ scrElevar As screen:
             Text: ="Datos de Fecha"
             Width: =230
             X: =TextInput4_18.X
-            Y: =TextInput4_18.Y + TextInput4_18.Height + 15
+            Y: =Label6_22.Y + Label6_22.Height + 15
             ZIndex: =13
 
         Rectangle5_7 As rectangle:
