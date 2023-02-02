@@ -89,7 +89,7 @@ scrNuevaSolicitud As screen:
             			IdPersonalDestino: 0,   //llenar cuando es a una sola persona, o sea cuando NO ES Derivar(derivar al ser varios destinos se graba en detalle destino)
                         IdEtapaDestinoFlujo:varMyAreaEtapaFlujo.IdEtapaDestino,
                         IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino,
-                        ObsSolDet:DataCardValue18.Text
+                        ObsSolDet:frm_EditSolicitud.LastSubmit.Obs  //comentario de Sol.
             		},
                     frmDatosAdjuntos.Updates
             	)
