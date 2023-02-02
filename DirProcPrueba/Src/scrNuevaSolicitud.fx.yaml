@@ -1,8 +1,18 @@
 scrNuevaSolicitud As screen:
     Fill: =
-    OnVisible: |-
-        =Set(varIdTipoServicio,ddwTipoServicio.Selected.ID);
-        Set(varIdTipoSolicitud,ddwTipoSolicitud.Selected.ID);
+    OnVisible: |
+        =Set(
+            varIdTipoServicio,
+            ddwTipoServicio.Selected.ID
+        );
+        Set(
+            varIdTipoSolicitud,
+            ddwTipoSolicitud.Selected.ID
+        );
+        Set(
+            varIdTipoOperacion,
+            ddwTipoOperacion.Selected.ID
+        );
         ResetForm(frm_EditSolicitud);
         ResetForm(frmDatosAdjuntos);
         NewForm(frm_EditSolicitud);
