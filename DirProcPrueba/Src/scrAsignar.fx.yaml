@@ -33,7 +33,17 @@ scrAsignar As screen:
         	);
         )
 
+    Rectangle4_19 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        Width: =Parent.Width
+        Y: =698
+        ZIndex: =1
+
     cmpBarraSuperior_10 As cmpBarraSuperior:
+        ZIndex: =2
 
     Rectangle4_13 As rectangle:
         BorderColor: =varColorPri01
@@ -42,7 +52,7 @@ scrAsignar As screen:
         Height: =699
         Width: =1366
         Y: =69
-        ZIndex: =2
+        ZIndex: =3
 
     lbl_TituloPrincipal_7 As label:
         Align: =Align.Center
@@ -53,7 +63,7 @@ scrAsignar As screen:
         Width: =1335
         X: =13
         Y: =icn_Volver_NS_4.Y + (icn_Volver_NS_4.Height / 2) - (Self.Height / 2)
-        ZIndex: =3
+        ZIndex: =4
 
     icn_Volver_NS_4 As icon.BackArrow:
         Color: =icn_Volver_NS_1.Color
@@ -61,7 +71,7 @@ scrAsignar As screen:
         OnSelect: =Back();
         X: =icn_Volver_NS_1.X
         Y: =icn_Volver_NS_1.Y
-        ZIndex: =4
+        ZIndex: =5
 
     Button5_1 As button:
         DisplayMode: =If(!IsBlank(UserSelected), DisplayMode.Edit, DisplayMode.Disabled)
@@ -159,7 +169,7 @@ scrAsignar As screen:
         Y: |-
             =712
             //Parent.Height - Self.Height - 16
-        ZIndex: =5
+        ZIndex: =6
 
     txtComentarioAS As text:
         BorderColor: =varColorPri01B
@@ -175,7 +185,7 @@ scrAsignar As screen:
         Width: =Rectangle5_10.X + Rectangle5_10.Width - Self.X
         X: =requestFieldLbl_42.X
         Y: =requestFieldLbl_42.Y + requestFieldLbl_42.Height
-        ZIndex: =15
+        ZIndex: =16
 
     Label6_33 As label:
         FontWeight: =FontWeight.Semibold
@@ -188,183 +198,7 @@ scrAsignar As screen:
         Width: =(Parent.Width - 200) / 5
         X: =Button8_7.X
         Y: =Button8_7.Y + Button8_7.Height + 15
-        ZIndex: =34
-
-    upperToGroup_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =34
-
-        requestFieldLbl_41 As label:
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Asignar Solicitud a:"
-            Width: =155
-            X: =Button8_10.X
-            Y: =Button8_10.Y + Button8_10.Height + 15
-            ZIndex: =6
-
-        txtBuscarManager_2 As text:
-            Align: =Left
-            BorderColor: =varColorPri01B
-            Color: =RGBA(0, 0, 0, 1)
-            Default: =""
-            DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
-            DisplayMode: |
-                =// Disable if UserSelected is blank
-                If(IsBlank(UserSelected),
-                     DisplayMode.Edit,
-                     DisplayMode.Disabled
-                )
-            HintText: ="Buscar"
-            HoverBorderColor: =varColorPri01B
-            HoverColor: =RGBA(0, 0, 0, 1)
-            HoverFill: =varColorPri01B
-            PaddingLeft: =35
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =13
-            Width: =354
-            X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
-            Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
-            ZIndex: =7
-
-        SearchIcon1_5 As icon.Search:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(220, 220, 220, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            DisplayMode: =If(txtBuscarManager_2.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
-            FocusedBorderThickness: =4
-            Height: =30
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Icon: =Icon.Search
-            PaddingBottom: =8
-            PaddingLeft: =8
-            PaddingRight: =8
-            PaddingTop: =8
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Tooltip: ="Buscar"
-            Width: =38
-            X: =txtBuscarManager_2.X
-            Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
-            ZIndex: =8
-
-        UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
-            AccessibleLabel: ="Resultados de la búsqueda de usuarios"
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderThickness: =1
-            Default: ={}
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =148
-            Items: |-
-                =// Validate if textField is not blank
-                //If(!IsBlank(Trim(txtBuscarManager_2.Text));
-                	If(varMyUser.IdPerfil = 2, // Manager
-                		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
-                			UserPrincipalName in AddColumns(Filter(AreaManagerLider; IdAreaManager = MyAreaManagerID); "EmailPersonalML"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalML
-                		);*/
-                        /*Filter(Personal;
-                            IdPerfil = 3; // Leader
-                            IdArea = varMyUser.IdArea;
-                            StartsWith(Nombre; txtBuscarManager_2.Text)
-                        );*/
-                        colMyLideres_2,
-                		
-                		varMyUser.IdPerfil = 3, // Leader
-                		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
-                			UserPrincipalName in AddColumns(Filter(AreaManagerLiderAnalista; IdAreaManagerLider = MyAreaManagerLiderID); "EmailPersonalMLA"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalMLA
-                		)*/
-                        /*Filter(Personal;
-                            IdPerfil = 4; // Analyst
-                            IdArea = varMyUser.IdArea;
-                            StartsWith(Nombre; txtBuscarManager_2.Text)
-                        )*/
-                        colMyAnalistas_2
-                	)
-                //)
-            Layout: =Layout.Vertical
-            OnSelect: |-
-                =UpdateContext({ UserSelected: UserBrowseGallery1_5.Selected });
-                Reset(txtBuscarManager_2);
-            ShowScrollbar: =false
-            TemplatePadding: =0
-            TemplateSize: =60
-            Visible: =IsBlank(UserSelected)
-            Width: =txtBuscarManager_2.Width
-            X: =txtBuscarManager_2.X
-            Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
-            ZIndex: =9
-
-            Rectangle2_5 As rectangle:
-                BorderColor: =varColorPri01//Title2_8.Color
-                BorderThickness: |-
-                    =//If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName; 2; 0)
-                    1
-                DisabledFill: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(0,0,0,0)
-                Height: =58
-                HoverFill: =RGBA(0,0,0,0)
-                OnSelect: =Select(Title2_8)
-                PressedFill: =RGBA(135, 100, 184, 1)
-                Width: =Parent.TemplateWidth - 2*Self.X
-                X: =1
-                Y: =1
-                ZIndex: =1
-
-            Title2_8 As label:
-                BorderColor: =Self.Color
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =2
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent);
-                Size: =12
-                TabIndex: =0
-                Text: =ThisItem.Nombre
-                VerticalAlign: =Middle
-                Width: =UserBrowseGallery1_5.TemplateWidth - 30
-                Wrap: =false
-                X: =5
-                Y: =9
-                ZIndex: =4
-
-            Subtitle1_5 As label:
-                Color: =RGBA(51, 51, 51, 1)
-                FocusedBorderThickness: =2
-                Font: =Font.'Segoe UI'
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Title2_8)
-                Size: =12
-                Text: =ThisItem.Email
-                VerticalAlign: =Middle
-                Width: =Title2_8.Width
-                Wrap: =false
-                X: =5
-                Y: =31
-                ZIndex: =5
-
-            Separator1_5 As rectangle:
-                BorderColor: =RGBA(0, 0, 0, 0)
-                Fill: =varColorPri01//ColorFade(RGBA(135; 100; 184; 1); -30%)
-                Height: =1
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =58
-                ZIndex: =6
+        ZIndex: =21
 
     TextInput4_27 As text:
         BorderThickness: =0
@@ -381,7 +215,7 @@ scrAsignar As screen:
         Width: =Label6_33.Width
         X: =Label6_33.X
         Y: =Label6_33.Y + Label6_33.Height
-        ZIndex: =35
+        ZIndex: =22
 
     Label6_34 As label:
         FontWeight: =FontWeight.Semibold
@@ -394,77 +228,7 @@ scrAsignar As screen:
         Width: =Label6_33.Width
         X: =Label6_33.X + Label6_33.Width + 20
         Y: =Label6_33.Y
-        ZIndex: =36
-
-    Group1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =36
-
-        Label5 As label:
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Usuario seleccionado:"
-            Visible: =!IsBlank(UserSelected)
-            Width: =txtBuscarManager_2.X + txtBuscarManager_2.Width - Self.X - 50
-            X: =requestFieldLbl_41.X
-            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 5
-            ZIndex: =10
-
-        Icon6 As icon.Person:
-            Color: =varColorPri01
-            DisplayMode: =DisplayMode.View
-            Icon: =Icon.Person
-            Visible: =!IsBlank(UserSelected)
-            X: =Label5.X
-            Y: =Label5.Y + Label5.Height + 5
-            ZIndex: =11
-
-        Label5_1 As label:
-            Height: =Icon6.Height / 2
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =UserSelected.Nombre
-            Visible: =!IsBlank(UserSelected)
-            Width: =Label5.X + Label5.Width - Self.X
-            X: =Icon6.X + Icon6.Width
-            Y: =Icon6.Y
-            ZIndex: =12
-
-        Label5_2 As label:
-            Height: =Icon6.Height / 2
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =UserSelected.Email
-            Visible: =!IsBlank(UserSelected)
-            Width: =Label5.X + Label5.Width - Self.X
-            X: =Icon6.X + Icon6.Width
-            Y: =Label5_1.Y + Label5_1.Height
-            ZIndex: =13
-
-        ClearSelectedUserIcon As icon.Cancel:
-            Color: =varColorPri01
-            Height: =40
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =Reset(txtBuscarManager_2);
-                Reset(UserBrowseGallery1_5);
-                UpdateContext({ UserSelected: Blank() })
-            Tooltip: ="Cancelar selección"
-            Visible: =!IsBlank(UserSelected)
-            Width: =40
-            X: =Label5_1.X + Label5_1.Width + 5
-            Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
-            ZIndex: =14
+        ZIndex: =23
 
     TextInput4_28 As text:
         BorderThickness: =0
@@ -481,7 +245,7 @@ scrAsignar As screen:
         Width: =Label6_34.Width
         X: =Label6_34.X
         Y: =Label6_34.Y + Label6_34.Height
-        ZIndex: =37
+        ZIndex: =24
 
     Label6_35 As label:
         FontWeight: =FontWeight.Semibold
@@ -494,7 +258,7 @@ scrAsignar As screen:
         Width: =Label6_34.Width
         X: =Label6_34.X + Label6_34.Width + 50
         Y: =Label6_34.Y
-        ZIndex: =38
+        ZIndex: =25
 
     TextInput4_29 As text:
         BorderThickness: =0
@@ -511,7 +275,7 @@ scrAsignar As screen:
         Width: =Label6_35.Width
         X: =Label6_35.X
         Y: =Label6_35.Y + Label6_35.Height
-        ZIndex: =39
+        ZIndex: =26
 
     requestFieldLbl_42 As label:
         PaddingBottom: =0
@@ -522,14 +286,14 @@ scrAsignar As screen:
         Width: =155
         X: =txtBuscarManager_2.X + txtBuscarManager_2.Width + 15
         Y: =Button8_10.Y + Button8_10.Height + 15
-        ZIndex: =40
+        ZIndex: =27
 
     Rectangle2 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =41
+        ZIndex: =28
 
     htm_EmailPreview_AS As htmlViewer:
         Height: =149
@@ -1316,7 +1080,7 @@ scrAsignar As screen:
         Width: =384
         X: =964
         Y: =607
-        ZIndex: =42
+        ZIndex: =29
 
     Label6_26 As label:
         FontWeight: =FontWeight.Semibold
@@ -1331,7 +1095,7 @@ scrAsignar As screen:
             150
         X: =Button8_5.X
         Y: =Button8_5.Y + Button8_5.Height + 15
-        ZIndex: =45
+        ZIndex: =32
 
     TextInput4_22 As text:
         BorderThickness: =0
@@ -1348,7 +1112,7 @@ scrAsignar As screen:
         Width: =Label6_26.Width
         X: =Label6_26.X
         Y: =Label6_26.Y + Label6_26.Height
-        ZIndex: =46
+        ZIndex: =33
 
     Label6_27 As label:
         FontWeight: =FontWeight.Semibold
@@ -1365,7 +1129,183 @@ scrAsignar As screen:
             =//Label6.X + Label6.Width + 50
             Label6_26.X + Label6_26.Width
         Y: =Label6_26.Y
-        ZIndex: =47
+        ZIndex: =34
+
+    upperToGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =34
+
+        requestFieldLbl_41 As label:
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Asignar Solicitud a:"
+            Width: =155
+            X: =Button8_10.X
+            Y: =Button8_10.Y + Button8_10.Height + 15
+            ZIndex: =7
+
+        txtBuscarManager_2 As text:
+            Align: =Left
+            BorderColor: =varColorPri01B
+            Color: =RGBA(0, 0, 0, 1)
+            Default: =""
+            DisabledFill: =ColorFade(Color.Black, 0.95)//Self.Fill
+            DisplayMode: |
+                =// Disable if UserSelected is blank
+                If(IsBlank(UserSelected),
+                     DisplayMode.Edit,
+                     DisplayMode.Disabled
+                )
+            HintText: ="Buscar"
+            HoverBorderColor: =varColorPri01B
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =varColorPri01B
+            PaddingLeft: =35
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Width: =354
+            X: =requestFieldLbl_41.X + requestFieldLbl_41.Width + 10
+            Y: =requestFieldLbl_41.Y + (requestFieldLbl_41.Height / 2) - (Self.Height / 2)
+            ZIndex: =8
+
+        SearchIcon1_5 As icon.Search:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(txtBuscarManager_2.DisplayMode = DisplayMode.Edit, DisplayMode.Edit, DisplayMode.View)
+            FocusedBorderThickness: =4
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Search
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Buscar"
+            Width: =38
+            X: =txtBuscarManager_2.X
+            Y: =txtBuscarManager_2.Y + (txtBuscarManager_2.Height / 2) - (Self.Height / 2)
+            ZIndex: =9
+
+        UserBrowseGallery1_5 As gallery.PeoplePickerTabletGallery:
+            AccessibleLabel: ="Resultados de la búsqueda de usuarios"
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderThickness: =1
+            Default: ={}
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =148
+            Items: |-
+                =// Validate if textField is not blank
+                //If(!IsBlank(Trim(txtBuscarManager_2.Text));
+                	If(varMyUser.IdPerfil = 2, // Manager
+                		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
+                			UserPrincipalName in AddColumns(Filter(AreaManagerLider; IdAreaManager = MyAreaManagerID); "EmailPersonalML"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalML
+                		);*/
+                        /*Filter(Personal;
+                            IdPerfil = 3; // Leader
+                            IdArea = varMyUser.IdArea;
+                            StartsWith(Nombre; txtBuscarManager_2.Text)
+                        );*/
+                        colMyLideres_2,
+                		
+                		varMyUser.IdPerfil = 3, // Leader
+                		/*Filter(UsuariosdeOffice365.SearchUser({ searchTerm: Trim(txtBuscarManager_2.Text); top: 999 });
+                			UserPrincipalName in AddColumns(Filter(AreaManagerLiderAnalista; IdAreaManagerLider = MyAreaManagerLiderID); "EmailPersonalMLA"; LookUp(Personal; ID = IdPersonal).Email).EmailPersonalMLA
+                		)*/
+                        /*Filter(Personal;
+                            IdPerfil = 4; // Analyst
+                            IdArea = varMyUser.IdArea;
+                            StartsWith(Nombre; txtBuscarManager_2.Text)
+                        )*/
+                        colMyAnalistas_2
+                	)
+                //)
+            Layout: =Layout.Vertical
+            OnSelect: |-
+                =UpdateContext({ UserSelected: UserBrowseGallery1_5.Selected });
+                Reset(txtBuscarManager_2);
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =60
+            Visible: =IsBlank(UserSelected)
+            Width: =txtBuscarManager_2.Width
+            X: =txtBuscarManager_2.X
+            Y: =txtBuscarManager_2.Y + txtBuscarManager_2.Height + 5
+            ZIndex: =10
+
+            Rectangle2_5 As rectangle:
+                BorderColor: =varColorPri01//Title2_8.Color
+                BorderThickness: |-
+                    =//If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName; 2; 0)
+                    1
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0,0,0,0)
+                Height: =58
+                HoverFill: =RGBA(0,0,0,0)
+                OnSelect: =Select(Title2_8)
+                PressedFill: =RGBA(135, 100, 184, 1)
+                Width: =Parent.TemplateWidth - 2*Self.X
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+            Title2_8 As label:
+                BorderColor: =Self.Color
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =2
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent);
+                Size: =12
+                TabIndex: =0
+                Text: =ThisItem.Nombre
+                VerticalAlign: =Middle
+                Width: =UserBrowseGallery1_5.TemplateWidth - 30
+                Wrap: =false
+                X: =5
+                Y: =9
+                ZIndex: =4
+
+            Subtitle1_5 As label:
+                Color: =RGBA(51, 51, 51, 1)
+                FocusedBorderThickness: =2
+                Font: =Font.'Segoe UI'
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Title2_8)
+                Size: =12
+                Text: =ThisItem.Email
+                VerticalAlign: =Middle
+                Width: =Title2_8.Width
+                Wrap: =false
+                X: =5
+                Y: =31
+                ZIndex: =5
+
+            Separator1_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =varColorPri01//ColorFade(RGBA(135; 100; 184; 1); -30%)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =58
+                ZIndex: =6
 
     TextInput4_23 As text:
         BorderThickness: =0
@@ -1382,7 +1322,7 @@ scrAsignar As screen:
         Width: =Label6_27.Width
         X: =Label6_27.X
         Y: =Label6_27.Y + Label6_27.Height
-        ZIndex: =48
+        ZIndex: =35
 
     Label6_28 As label:
         FontWeight: =FontWeight.Semibold
@@ -1395,7 +1335,77 @@ scrAsignar As screen:
         Width: =Label6_27.Width
         X: =Label6_27.X + Label6_27.Width + 50
         Y: =Label6_27.Y
-        ZIndex: =49
+        ZIndex: =36
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =36
+
+        Label5 As label:
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Usuario seleccionado:"
+            Visible: =!IsBlank(UserSelected)
+            Width: =txtBuscarManager_2.X + txtBuscarManager_2.Width - Self.X - 50
+            X: =requestFieldLbl_41.X
+            Y: =requestFieldLbl_41.Y + requestFieldLbl_41.Height + 5
+            ZIndex: =11
+
+        Icon6 As icon.Person:
+            Color: =varColorPri01
+            DisplayMode: =DisplayMode.View
+            Icon: =Icon.Person
+            Visible: =!IsBlank(UserSelected)
+            X: =Label5.X
+            Y: =Label5.Y + Label5.Height + 5
+            ZIndex: =12
+
+        Label5_1 As label:
+            Height: =Icon6.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =UserSelected.Nombre
+            Visible: =!IsBlank(UserSelected)
+            Width: =Label5.X + Label5.Width - Self.X
+            X: =Icon6.X + Icon6.Width
+            Y: =Icon6.Y
+            ZIndex: =13
+
+        Label5_2 As label:
+            Height: =Icon6.Height / 2
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =UserSelected.Email
+            Visible: =!IsBlank(UserSelected)
+            Width: =Label5.X + Label5.Width - Self.X
+            X: =Icon6.X + Icon6.Width
+            Y: =Label5_1.Y + Label5_1.Height
+            ZIndex: =14
+
+        ClearSelectedUserIcon As icon.Cancel:
+            Color: =varColorPri01
+            Height: =40
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =Reset(txtBuscarManager_2);
+                Reset(UserBrowseGallery1_5);
+                UpdateContext({ UserSelected: Blank() })
+            Tooltip: ="Cancelar selección"
+            Visible: =!IsBlank(UserSelected)
+            Width: =40
+            X: =Label5_1.X + Label5_1.Width + 5
+            Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
+            ZIndex: =15
 
     TextInput4_24 As text:
         BorderThickness: =0
@@ -1412,7 +1422,7 @@ scrAsignar As screen:
         Width: =Label6_28.Width
         X: =Label6_28.X
         Y: =Label6_28.Y + Label6_28.Height
-        ZIndex: =50
+        ZIndex: =37
 
     Label6_29 As label:
         FontWeight: =FontWeight.Semibold
@@ -1425,7 +1435,7 @@ scrAsignar As screen:
         Width: =Label6_27.Width
         X: =Label6_28.X + Label6_28.Width + 50
         Y: =Label6_28.Y
-        ZIndex: =51
+        ZIndex: =38
 
     TextInput4_25 As text:
         BorderThickness: =0
@@ -1442,7 +1452,7 @@ scrAsignar As screen:
         Width: =Label6_29.Width
         X: =Label6_29.X
         Y: =Label6_29.Y + Label6_29.Height
-        ZIndex: =52
+        ZIndex: =39
 
     Label6_30 As label:
         FontWeight: =FontWeight.Semibold
@@ -1455,7 +1465,7 @@ scrAsignar As screen:
         Width: =TextInput4_23.X + TextInput4_23.Width - Self.X + 150
         X: =TextInput4_22.X
         Y: =TextInput4_22.Y + TextInput4_22.Height + 15
-        ZIndex: =53
+        ZIndex: =40
 
     TextInput4_26 As text:
         BorderThickness: =0
@@ -1472,7 +1482,7 @@ scrAsignar As screen:
         Width: =Label6_30.Width
         X: =Label6_30.X
         Y: =Label6_30.Y + Label6_30.Height
-        ZIndex: =54
+        ZIndex: =41
 
     Label6_31 As label:
         FontWeight: =FontWeight.Semibold
@@ -1484,7 +1494,7 @@ scrAsignar As screen:
         Text: ="RUC Cliente"
         X: =Label6_30.X + Label6_30.Width + 50
         Y: =Label6_30.Y
-        ZIndex: =55
+        ZIndex: =42
 
     Label6_32 As label:
         Height: =50
@@ -1497,7 +1507,7 @@ scrAsignar As screen:
         Width: =Label6_95.Width
         X: =Label6_95.X
         Y: =Label6_95.Y + Label6_95.Height
-        ZIndex: =56
+        ZIndex: =43
 
     Label6_93 As label:
         FontWeight: =FontWeight.Semibold
@@ -1510,7 +1520,7 @@ scrAsignar As screen:
         Width: =Label6_27.Width + 50
         X: =Label6_29.X + Label6_29.Width + 50
         Y: =Label6_29.Y
-        ZIndex: =57
+        ZIndex: =44
 
     TextInput4_75 As text:
         BorderThickness: =0
@@ -1527,7 +1537,7 @@ scrAsignar As screen:
         Width: =Label6_93.Width
         X: =Label6_93.X
         Y: =Label6_93.Y + Label6_93.Height
-        ZIndex: =58
+        ZIndex: =45
 
     Label6_94 As label:
         FontWeight: =FontWeight.Semibold
@@ -1541,7 +1551,7 @@ scrAsignar As screen:
             =500
         X: =Label6_31.X + Label6_31.Width + 20
         Y: =Label6_31.Y
-        ZIndex: =59
+        ZIndex: =46
 
     TextInput4_76 As text:
         BorderThickness: =0
@@ -1558,7 +1568,7 @@ scrAsignar As screen:
         Width: =Label6_94.Width
         X: =Label6_94.X
         Y: =Label6_94.Y + Label6_94.Height
-        ZIndex: =60
+        ZIndex: =47
 
     Label6_95 As label:
         FontWeight: =FontWeight.Semibold
@@ -1573,7 +1583,7 @@ scrAsignar As screen:
             (Parent.Width - 260) / 2
         X: =TextInput4_26.X
         Y: =TextInput4_26.Y + TextInput4_26.Height + 15
-        ZIndex: =61
+        ZIndex: =48
 
     TextInput4_77 As text:
         BorderThickness: =0
@@ -1590,7 +1600,7 @@ scrAsignar As screen:
         Width: =Label6_31.Width
         X: =Label6_31.X
         Y: =Label6_31.Y + Label6_31.Height
-        ZIndex: =62
+        ZIndex: =49
 
     Label6_96 As label:
         Height: =Label6_32.Height
@@ -1603,7 +1613,7 @@ scrAsignar As screen:
         Width: =Label6_97.Width
         X: =751
         Y: =Label6_97.Y + Label6_97.Height
-        ZIndex: =63
+        ZIndex: =50
 
     Label6_97 As label:
         FontWeight: =FontWeight.Semibold
@@ -1618,7 +1628,7 @@ scrAsignar As screen:
             (Parent.Width - 260) / 2
         X: =751
         Y: =Label6_95.Y
-        ZIndex: =64
+        ZIndex: =51
 
     Label6_98 As label:
         FontWeight: =FontWeight.Semibold
@@ -1631,7 +1641,54 @@ scrAsignar As screen:
         Width: =Label6_15.Width
         X: =Label6_35.X + Label6_35.Width + 50
         Y: =387
-        ZIndex: =65
+        ZIndex: =52
+
+    TextInput4_78 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_98.Width
+        X: =Label6_98.X
+        Y: =Label6_98.Y + Label6_98.Height
+        ZIndex: =53
+
+    Label6_99 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Fin de Operación"
+        Width: =Label6_98.Width
+        X: =Label6_98.X + Label6_98.Width + 50
+        Y: =387
+        ZIndex: =54
+
+    TextInput4_79 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_99.Width
+        X: =Label6_99.X
+        Y: =Label6_99.Y + Label6_99.Height
+        ZIndex: =55
 
     Group8_5 As group:
         Height: =5
@@ -1656,8 +1713,8 @@ scrAsignar As screen:
             Text: ="Datos de Solicitud"
             Width: =230
             X: =50
-            Y: =105
-            ZIndex: =43
+            Y: =85
+            ZIndex: =30
 
         Rectangle5_5 As rectangle:
             Fill: =varColorPri01
@@ -1665,24 +1722,7 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_5.X
             Y: =Button8_5.Y + Button8_5.Height - Self.Height
-            ZIndex: =44
-
-    TextInput4_78 As text:
-        BorderThickness: =0
-        Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_98.Width
-        X: =Label6_98.X
-        Y: =Label6_98.Y + Label6_98.Height
-        ZIndex: =66
+            ZIndex: =31
 
     Group8_9 As group:
         Height: =5
@@ -1706,10 +1746,8 @@ scrAsignar As screen:
             Text: ="Datos de Fecha"
             Width: =230
             X: =TextInput4_26.X
-            Y: |-
-                =//TextInput4_26.Y + TextInput4_26.Height + 15
-                335
-            ZIndex: =18
+            Y: =Label6_32.Y + Label6_32.Height + 15
+            ZIndex: =17
 
         Rectangle5_9 As rectangle:
             Fill: =varColorPri01
@@ -1717,20 +1755,7 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_9.X
             Y: =Button8_9.Y + Button8_9.Height - Self.Height
-            ZIndex: =19
-
-    Label6_99 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =20
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: ="F. Fin de Operación"
-        Width: =Label6_98.Width
-        X: =Label6_98.X + Label6_98.Width + 50
-        Y: =387
-        ZIndex: =67
+            ZIndex: =18
 
     Group8_10 As group:
         Height: =5
@@ -1755,7 +1780,7 @@ scrAsignar As screen:
             Width: =240
             X: =TextInput4_27.X
             Y: =TextInput4_27.Y + TextInput4_27.Height + 15
-            ZIndex: =20
+            ZIndex: =19
 
         Rectangle5_10 As rectangle:
             Fill: =varColorPri01
@@ -1763,31 +1788,5 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_10.X
             Y: =Button8_10.Y + Button8_10.Height - Self.Height
-            ZIndex: =21
-
-    TextInput4_79 As text:
-        BorderThickness: =0
-        Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Height: =25
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_99.Width
-        X: =Label6_99.X
-        Y: =Label6_99.Y + Label6_99.Height
-        ZIndex: =68
-
-    Rectangle4_19 As rectangle:
-        BorderColor: =varColorPri01
-        BorderThickness: =2
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =70
-        Width: =Parent.Width
-        Y: =698
-        ZIndex: =69
+            ZIndex: =20
 
