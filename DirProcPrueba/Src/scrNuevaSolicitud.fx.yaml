@@ -371,7 +371,9 @@ scrNuevaSolicitud As screen:
             DataField: ="IdTipoOperacion"
             Default: =ThisItem.IdTipoOperacion
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"IdTipoOperacion")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"IdTipoOperacion")
+                "Tipo de Operación"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -451,7 +453,9 @@ scrNuevaSolicitud As screen:
             DataField: ="RucCliente"
             Default: =ThisItem.RucCliente
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"RucCliente")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"RucCliente")
+                "RUC Cliente"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RucCliente")
@@ -526,7 +530,9 @@ scrNuevaSolicitud As screen:
             DataField: ="RazonSocialCliente"
             Default: =ThisItem.RazonSocialCliente
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"RazonSocialCliente")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"RazonSocialCliente")
+                "Razón Social Cliente"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RazonSocialCliente")
@@ -601,7 +607,9 @@ scrNuevaSolicitud As screen:
             DataField: ="FinOperacion"
             Default: =ThisItem.FinOperacion
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"FinOperacion")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"FinOperacion")
+                "Fin de Operación"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -673,7 +681,9 @@ scrNuevaSolicitud As screen:
             DataField: ="InicioOperacion"
             Default: =ThisItem.InicioOperacion
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"InicioOperacion")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"InicioOperacion")
+                "Inicio de Operación"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -745,7 +755,9 @@ scrNuevaSolicitud As screen:
             DataField: ="DescripcionPrueba"
             Default: =ThisItem.DescripcionPrueba
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"DescripcionPrueba")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"DescripcionPrueba")
+                "Descripción de Prueba"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "DescripcionPrueba")
@@ -976,7 +988,9 @@ scrNuevaSolicitud As screen:
             DataField: ="Obs"
             Default: =ThisItem.Obs
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"Obs")
+            DisplayName: |-
+                =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"Obs")
+                "Comentario"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "Obs")
