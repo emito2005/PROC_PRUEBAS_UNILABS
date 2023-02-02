@@ -362,14 +362,15 @@ scrNuevaSolicitud As screen:
                 Y: =DataCardKey34.Y + DataCardKey34.Height + 5
                 ZIndex: =5
 
-        IdTipoOperacion_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Solicitud], DataSourceInfo.AllowedValues, "IdTipoOperacion")
+        IdTipoOperacion_DataCard3 As typedDataCard.numberEditCard:
             BorderColor: |-
                 =//RGBA(0; 18; 107; 1)
                 varColorPri01
             BorderStyle: =BorderStyle.Solid
             DataField: ="IdTipoOperacion"
-            Default: =ThisItem.IdTipoOperacion
+            Default: |-
+                =//ThisItem.IdTipoOperacion
+                varIdTipoOperacion
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
                 =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"IdTipoOperacion")
@@ -377,13 +378,13 @@ scrNuevaSolicitud As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue19.Selected.Value
+            Update: =Value(DataCardValue27.Text)
             Width: =350
             X: =4
             Y: =0
             ZIndex: =1
 
-            DataCardKey19 As label:
+            DataCardKey27 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
                 Height: =34
@@ -394,33 +395,25 @@ scrNuevaSolicitud As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue19 As dropdown:
+            DataCardValue27 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: |-
-                    =//RGBA(56; 96; 178; 1)
-                    varColorPri01
-                ChevronHoverBackground: |-
-                    =//ColorFade(RGBA(56; 96; 178; 1); -20%)
-                    ColorFade(varColorPri01, -20%)
                 Default: =Parent.Default
+                DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                HoverFill: |-
-                    =//RGBA(186; 202; 226; 1)
-                    varColorPri01B
-                Items: =Parent.AllowedValues
-                PressedFill: |-
-                    =//RGBA(0; 18; 107; 1)
-                    varColorPri01
-                SelectionFill: |-
-                    =//RGBA(56; 96; 178; 1)
-                    varColorPri01
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
+                Visible: =false
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                Y: =DataCardKey27.Y + DataCardKey27.Height + 5
                 ZIndex: =2
 
-            ErrorMessage12 As label:
+            ErrorMessage20 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -432,18 +425,45 @@ scrNuevaSolicitud As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue19.Y + DataCardValue19.Height
+                Y: =DataCardValue27.Y + DataCardValue27.Height
                 ZIndex: =3
 
-            StarVisible12 As label:
+            StarVisible20 As label:
                 Align: =Align.Center
-                Height: =DataCardKey19.Height
+                Height: =DataCardKey27.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey19.Y
+                Y: =DataCardKey27.Y
                 ZIndex: =4
+
+            ddwTipoOperacion As dropdown:
+                BorderColor: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01
+                ChevronBackground: |-
+                    =//RGBA(56; 96; 178; 1)
+                    varColorPri01
+                ChevronHoverBackground: |-
+                    =//ColorFade(RGBA(56; 96; 178; 1); -20%)
+                    ColorFade(varColorPri01, -20%)
+                Height: =37
+                HoverFill: |
+                    =//RGBA(186; 202; 226; 1)
+                    varColorPri01B
+                Items: =TipoOperacion
+                OnChange: =Set(varIdTipoOperacion,ddwTipoOperacion.Selected.ID)
+                PressedFill: |-
+                    =//RGBA(0; 18; 107; 1)
+                    varColorPri01
+                SelectionFill: |-
+                    =//RGBA(56; 96; 178; 1)
+                    varColorPri01
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =49
+                ZIndex: =5
 
         RucCliente_DataCard1 As typedDataCard.textualEditCard:
             BorderColor: |-

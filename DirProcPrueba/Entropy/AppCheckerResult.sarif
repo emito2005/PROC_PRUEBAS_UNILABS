@@ -10762,19 +10762,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard2.DataCardValue19.AccessibleLabel"
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.DataCardValue27.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard2.DataCardValue19.AccessibleLabel",
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.DataCardValue27.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrNuevaSolicitud",
-                "type": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard2.DataCardValue19"
+                "type": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.DataCardValue27"
               }
             }
           ],
@@ -10925,6 +10925,36 @@
                 "member": "AccessibleLabel",
                 "module": "scrNuevaSolicitud",
                 "type": "scrNuevaSolicitud.frm_EditSolicitud.DescripcionPrueba_DataCard3.DataCardValue26"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.ddwTipoOperacion.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.ddwTipoOperacion.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrNuevaSolicitud",
+                "type": "scrNuevaSolicitud.frm_EditSolicitud.IdTipoOperacion_DataCard3.ddwTipoOperacion"
               }
             }
           ],
