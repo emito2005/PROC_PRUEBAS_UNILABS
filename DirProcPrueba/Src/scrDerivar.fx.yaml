@@ -240,7 +240,7 @@ scrDerivar As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Solicitud],DataSourceInfo.DisplayName,"{Attachments}")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =143
+            Height: =135
             Required: =false
             Update: =DataCardValue44.Attachments
             Width: =Parent.Width
@@ -286,7 +286,7 @@ scrDerivar As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Creación"
-        Width: =(Parent.Width - 200) / 5
+        Width: =(Parent.Width - 250) / 5
         X: =Button8_11.X
         Y: =Button8_11.Y + Button8_11.Height + 15
         ZIndex: =16
@@ -1505,6 +1505,66 @@ scrDerivar As screen:
         X: =751
         Y: =Label6_102.Y
         ZIndex: =46
+
+    Label6_112 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Inicio de Operación"
+        Width: =Label6_15.Width
+        X: =Label6_45.X + Label6_45.Width + 50
+        Y: =387
+        ZIndex: =47
+
+    TextInput4_88 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_112.Width
+        X: =Label6_112.X
+        Y: =Label6_112.Y + Label6_112.Height
+        ZIndex: =48
+
+    Label6_113 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =20
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: ="F. Fin de Operación"
+        Width: =Label6_112.Width
+        X: =Label6_112.X + Label6_112.Width + 50
+        Y: =387
+        ZIndex: =49
+
+    TextInput4_89 As text:
+        BorderThickness: =0
+        Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Height: =25
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_113.Width
+        X: =Label6_113.X
+        Y: =Label6_113.Y + Label6_113.Height
+        ZIndex: =50
 
     Group8_6 As group:
         Height: =5
