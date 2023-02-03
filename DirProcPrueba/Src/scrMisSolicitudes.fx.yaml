@@ -135,6 +135,7 @@ scrMisSolicitudes As screen:
             
             //Launch(excelPath);;
         Text: ="Exportar"
+        Tooltip: ="Exportar Listado a Excel"
         Width: =100
         X: =1123
         Y: =113
@@ -443,6 +444,7 @@ scrMisSolicitudes As screen:
             ClearCollect(colSolicitudDetalleDestino,
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
+        Tooltip: ="Actualizar Listado de Mis Solictudes"
         Width: =50
         X: =1300
         Y: =114
@@ -480,7 +482,7 @@ scrMisSolicitudes As screen:
         Icon: =Icon.Folder
         OnSelect: |-
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
-        Tooltip: ="Ver Carpeta"
+        Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
         X: =btnExportarMS.X + btnExportarMS.Width + 20
         Y: =btnExportarMS.Y + (btnExportarMS.Height / 2) - (Self.Height / 2)
