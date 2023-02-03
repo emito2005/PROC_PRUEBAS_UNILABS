@@ -328,9 +328,9 @@ scrSolicitudes As screen:
                             "NroSolicitud",
                             "AsuntoSol"
                         ),
-                        "ID", "NroSolicitud", "TipoSolicitud", "TipoServicio", "AsuntoSol", "EsActivo", "AreaOrigen", 
+                        "ID", "NroSolicitud", "AsuntoSol", "TipoSolicitud", "TipoServicio", "TipoOperacion", "EsActivo", "RucCliente", "RazonSocialCliente", "AreaOrigen", 
                         "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
-                        "FechaExpiraSLA", "FechaExpiraOLA", "ObsSolDet"
+                        "FechaExpiraSLA", "FechaExpiraOLA", "InicioOperacion", "FinOperacion", "DescripcionPrueba", "ObsSolDet", "FechaCreacionSol"
                     )
                 )
             );
