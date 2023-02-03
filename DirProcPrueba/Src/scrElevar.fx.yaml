@@ -41,6 +41,7 @@ scrElevar As screen:
 
     lbl_TituloPrincipal_6 As label:
         Align: =Align.Center
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -60,6 +61,7 @@ scrElevar As screen:
 
     Button5 As button:
         Fill: =varColorPri01
+        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -156,6 +158,7 @@ scrElevar As screen:
     txtComentarioES As text:
         BorderColor: =varColorPri01B
         Default: =""
+        Font: =Font.'Segoe UI'
         Height: =60
         HoverBorderColor: =varColorPri01B
         HoverFill: =varColorPri01B
@@ -170,6 +173,7 @@ scrElevar As screen:
         ZIndex: =11
 
     Label6_23 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -189,6 +193,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -200,6 +205,7 @@ scrElevar As screen:
         ZIndex: =17
 
     Label6_24 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -219,6 +225,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -230,6 +237,7 @@ scrElevar As screen:
         ZIndex: =19
 
     Label6_25 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -249,6 +257,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -260,6 +269,7 @@ scrElevar As screen:
         ZIndex: =21
 
     requestFieldLbl_27 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1060,12 +1070,14 @@ scrElevar As screen:
             </body>
             
             </html>"
+        Visible: =false
         Width: =286
         X: =1079
         Y: =603
         ZIndex: =24
 
     Label6_16 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1087,6 +1099,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1098,6 +1111,7 @@ scrElevar As screen:
         ZIndex: =28
 
     Label6_17 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1121,6 +1135,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =TextInput4_14.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1132,6 +1147,7 @@ scrElevar As screen:
         ZIndex: =30
 
     Label6_18 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1151,6 +1167,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =TextInput4_14.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1162,6 +1179,7 @@ scrElevar As screen:
         ZIndex: =32
 
     Label6_19 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1181,6 +1199,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =TextInput4_14.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1192,6 +1211,7 @@ scrElevar As screen:
         ZIndex: =34
 
     Label6_20 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1211,6 +1231,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1222,6 +1243,7 @@ scrElevar As screen:
         ZIndex: =36
 
     Label6_21 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1241,6 +1263,7 @@ scrElevar As screen:
         ZIndex: =37
 
         requestFieldLbl_26 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =20
             PaddingBottom: =0
@@ -1264,6 +1287,7 @@ scrElevar As screen:
             ZIndex: =8
 
         requestFieldLbl_75 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =Icon4.Height / 2
             PaddingBottom: =0
@@ -1285,6 +1309,7 @@ scrElevar As screen:
             ZIndex: =9
 
         requestFieldLbl_59 As label:
+            Font: =Font.'Segoe UI'
             Height: =Icon4.Height / 2
             PaddingBottom: =0
             PaddingLeft: =0
@@ -1298,6 +1323,7 @@ scrElevar As screen:
             ZIndex: =10
 
     Label6_22 As label:
+        Font: =Font.'Segoe UI'
         Height: =50
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
@@ -1311,6 +1337,7 @@ scrElevar As screen:
         ZIndex: =38
 
     Label6_86 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1330,6 +1357,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =TextInput4_14.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1341,6 +1369,7 @@ scrElevar As screen:
         ZIndex: =40
 
     Label6_87 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1361,6 +1390,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =Label6_20.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1372,6 +1402,7 @@ scrElevar As screen:
         ZIndex: =42
 
     Label6_88 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1393,6 +1424,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =Label6_20.Height
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1404,6 +1436,7 @@ scrElevar As screen:
         ZIndex: =44
 
     Label6_89 As label:
+        Font: =Font.'Segoe UI'
         Height: =Label6_22.Height
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
@@ -1417,6 +1450,7 @@ scrElevar As screen:
         ZIndex: =45
 
     Label6_90 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1432,6 +1466,7 @@ scrElevar As screen:
         ZIndex: =46
 
     Label6_91 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1451,6 +1486,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1462,6 +1498,7 @@ scrElevar As screen:
         ZIndex: =48
 
     Label6_92 As label:
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
@@ -1481,6 +1518,7 @@ scrElevar As screen:
         DisabledFill: =RGBA(244, 244, 244, 0)
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
         Height: =25
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1505,12 +1543,14 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Font: =Font.'Segoe UI'
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
+            Size: =16
             Text: ="Datos de Solicitud"
             Width: =230
             X: =50
@@ -1539,11 +1579,13 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Font: =Font.'Segoe UI'
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
+            Size: =16
             Text: ="Datos de Fecha"
             Width: =230
             X: =TextInput4_18.X
@@ -1572,11 +1614,13 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            Font: =Font.'Segoe UI'
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
+            Size: =16
             Text: ="Datos de Operación"
             Width: =240
             X: =TextInput4_19.X

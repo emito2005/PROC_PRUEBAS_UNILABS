@@ -46,6 +46,7 @@ scrAreaEdit As screen:
             DataCardKey37 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -58,6 +59,7 @@ scrAreaEdit As screen:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Tooltip: =Parent.DisplayName
                 TrueFill: |
                     =//RGBA(56; 96; 178; 1)
@@ -114,6 +116,7 @@ scrAreaEdit As screen:
             DataCardKey38 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -126,6 +129,7 @@ scrAreaEdit As screen:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Tooltip: =Parent.DisplayName
                 TrueFill: |-
                     =//RGBA(56; 96; 178; 1)
@@ -184,6 +188,7 @@ scrAreaEdit As screen:
             DataCardKey2 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -197,6 +202,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -267,6 +273,7 @@ scrAreaEdit As screen:
             DataCardKey3 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -280,6 +287,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -345,6 +353,7 @@ scrAreaEdit As screen:
             DataCardKey1 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: ="Nombre"
                 Width: =Parent.Width - 60
@@ -358,6 +367,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -422,6 +432,7 @@ scrAreaEdit As screen:
             DataCardKey4 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -435,6 +446,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Format: =TextFormat.Number
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
@@ -500,6 +512,7 @@ scrAreaEdit As screen:
             DataCardKey5 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -513,6 +526,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Format: =TextFormat.Number
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
@@ -578,6 +592,7 @@ scrAreaEdit As screen:
             DataCardKey6 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -591,6 +606,7 @@ scrAreaEdit As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Height: =61
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
@@ -664,6 +680,7 @@ scrAreaEdit As screen:
                 DisplayMode.Disabled,
                 DisplayMode.Edit
             )
+        Font: =Font.'Segoe UI'
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -679,6 +696,7 @@ scrAreaEdit As screen:
 
     lblTitManager As label:
         Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =29
         Text: ="MANAGER"
@@ -769,6 +787,7 @@ scrAreaEdit As screen:
 
         Label8 As label:
             Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Font: =Font.'Segoe UI'
             Height: =Title1_1.Height
             OnSelect: =
             PaddingLeft: =10
@@ -911,7 +930,6 @@ scrAreaEdit As screen:
                 //If(Not(ThisItem.UserPrincipalName in AddColumns(AreaManager;"EmailPersonal";LookUp(Personal;ID=AreaManager[@IdPersonal].Id).Email).EmailPersonal);
                 //Patch(AreaManager;Defaults(AreaManager);{IdArea:{Value:"";Id:varIdArea};IdPersonal:{Value:"";Id:LookUp(Personal; Email = ThisItem.UserPrincipalName).ID}})
                 //If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName); Collect(MyPeople; ThisItem)))
-            Size: =12
             TabIndex: =0
             Text: =ThisItem.DisplayName
             VerticalAlign: =Middle
@@ -927,7 +945,7 @@ scrAreaEdit As screen:
             Font: =Font.'Segoe UI'
             Height: =Self.Size * 1.8
             OnSelect: =Select(Title2_1)
-            Size: =12
+            Size: =13
             Text: =ThisItem.UserPrincipalName
             VerticalAlign: =Middle
             Width: =Title2_1.Width
@@ -965,6 +983,7 @@ scrAreaEdit As screen:
                 DisplayMode.Disabled,
                 DisplayMode.Edit
             )
+        Font: =Font.'Segoe UI'
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -980,6 +999,7 @@ scrAreaEdit As screen:
 
     lblTitManager_1 As label:
         Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =29
         Text: ="LIDER"
@@ -1076,6 +1096,7 @@ scrAreaEdit As screen:
 
         Label4 As label:
             Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Lighter
             Height: =Title1_2.Height
             OnSelect: =Select(Parent)
@@ -1215,7 +1236,6 @@ scrAreaEdit As screen:
                         IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
                     }    
                 )
-            Size: =12
             TabIndex: =0
             Text: =ThisItem.DisplayName
             VerticalAlign: =Middle
@@ -1231,7 +1251,7 @@ scrAreaEdit As screen:
             Font: =Font.'Segoe UI'
             Height: =Self.Size * 1.8
             OnSelect: =Select(Title2_2)
-            Size: =12
+            Size: =13
             Text: =ThisItem.UserPrincipalName
             VerticalAlign: =Middle
             Width: =Title2_2.Width
@@ -1269,6 +1289,7 @@ scrAreaEdit As screen:
                 DisplayMode.Disabled,
                 DisplayMode.Edit
             )
+        Font: =Font.'Segoe UI'
         Height: =30
         HintText: ="Buscar"
         PaddingLeft: =35
@@ -1284,6 +1305,7 @@ scrAreaEdit As screen:
 
     lblTitManager_2 As label:
         Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =29
         Text: ="ANALISTA"
@@ -1383,6 +1405,7 @@ scrAreaEdit As screen:
 
         Label9 As label:
             Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1))
+            Font: =Font.'Segoe UI'
             Height: =Title1_3.Height
             OnSelect: =Select(Parent)
             PaddingLeft: =10
@@ -1524,7 +1547,6 @@ scrAreaEdit As screen:
                         IdPersonal: LookUp(Personal, Email = ThisItem.UserPrincipalName).ID
                     }
                 )
-            Size: =12
             TabIndex: =0
             Text: =ThisItem.DisplayName
             VerticalAlign: =Middle
@@ -1540,7 +1562,7 @@ scrAreaEdit As screen:
             Font: =Font.'Segoe UI'
             Height: =Self.Size * 1.8
             OnSelect: =Select(Title2_3)
-            Size: =12
+            Size: =13
             Text: =ThisItem.UserPrincipalName
             VerticalAlign: =Middle
             Width: =Title2_3.Width
@@ -1562,6 +1584,7 @@ scrAreaEdit As screen:
         Fill: |
             =//RGBA(0; 0; 0; 1)
             varColorPri02
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =48
         HoverFill: =ColorFade(Self.Fill, -20%)
@@ -1593,6 +1616,7 @@ scrAreaEdit As screen:
 
     lbl_TituloPrincipal_11 As label:
         Align: =Align.Center
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =46
         Size: =24

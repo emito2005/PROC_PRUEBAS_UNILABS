@@ -18,8 +18,6 @@ scrNuevaSolicitud As screen:
         NewForm(frm_EditSolicitud);
         NewForm(frmDatosAdjuntos);
 
-    cmpBarraSuperior_4 As cmpBarraSuperior:
-
     Rectangle4_1 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =1
@@ -27,10 +25,23 @@ scrNuevaSolicitud As screen:
         Height: =699
         Width: =1366
         Y: =69
+        ZIndex: =1
+
+    Rectangle4_22 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =93
+        Width: =Parent.Width
+        Y: =675
         ZIndex: =2
+
+    cmpBarraSuperior_4 As cmpBarraSuperior:
+        ZIndex: =3
 
     lbl_TituloPrincipal_1 As label:
         Align: =Align.Center
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -38,7 +49,7 @@ scrNuevaSolicitud As screen:
         Width: =1335
         X: =13
         Y: =16
-        ZIndex: =3
+        ZIndex: =4
 
     frm_EditSolicitud As form:
         DataSource: =Solicitud
@@ -165,7 +176,7 @@ scrNuevaSolicitud As screen:
         Width: =1252
         X: =57
         Y: =83
-        ZIndex: =4
+        ZIndex: =5
 
         IdTipoSolicitud_DataCard3 As typedDataCard.numberEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -189,6 +200,7 @@ scrNuevaSolicitud As screen:
             DataCardKey35 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -253,6 +265,7 @@ scrNuevaSolicitud As screen:
                 ChevronHoverFill: |-
                     =
                     RGBA(255, 255, 255, 1)
+                Font: =Font.'Segoe UI'
                 HoverFill: |-
                     =//RGBA(186; 202; 226; 1)
                     varColorPri01B
@@ -295,6 +308,7 @@ scrNuevaSolicitud As screen:
             DataCardKey34 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -356,6 +370,7 @@ scrNuevaSolicitud As screen:
                 ChevronHoverBackground: |-
                     =//ColorFade(RGBA(56; 96; 178; 1); -20%)
                     ColorFade(varColorPri01, -20%)
+                Font: =Font.'Segoe UI'
                 Height: =37
                 HoverFill: |
                     =//RGBA(186; 202; 226; 1)
@@ -399,6 +414,7 @@ scrNuevaSolicitud As screen:
             DataCardKey27 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -460,6 +476,7 @@ scrNuevaSolicitud As screen:
                 ChevronHoverBackground: |-
                     =//ColorFade(RGBA(56; 96; 178; 1); -20%)
                     ColorFade(varColorPri01, -20%)
+                Font: =Font.'Segoe UI'
                 Height: =37
                 HoverFill: |
                     =//RGBA(186; 202; 226; 1)
@@ -502,6 +519,7 @@ scrNuevaSolicitud As screen:
             DataCardKey20 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -515,6 +533,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -583,6 +602,7 @@ scrNuevaSolicitud As screen:
             DataCardKey21 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -596,6 +616,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -663,6 +684,7 @@ scrNuevaSolicitud As screen:
             DataCardKey23 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -676,6 +698,7 @@ scrNuevaSolicitud As screen:
                 DefaultDate: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 EndYear: =Year(Today())+100
+                Font: =Font.'Segoe UI'
                 IconBackground: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
@@ -738,6 +761,7 @@ scrNuevaSolicitud As screen:
             DataCardKey22 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -751,6 +775,7 @@ scrNuevaSolicitud As screen:
                 DefaultDate: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 EndYear: =Year(Today())+100
+                Font: =Font.'Segoe UI'
                 IconBackground: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
@@ -814,6 +839,7 @@ scrNuevaSolicitud As screen:
             DataCardKey26 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -827,6 +853,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -897,6 +924,7 @@ scrNuevaSolicitud As screen:
             DataCardKey16 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -910,6 +938,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -972,6 +1001,7 @@ scrNuevaSolicitud As screen:
             DataCardKey17 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -985,6 +1015,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -1053,6 +1084,7 @@ scrNuevaSolicitud As screen:
             DataCardKey18 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -1066,6 +1098,7 @@ scrNuevaSolicitud As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Height: =135
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
@@ -1120,7 +1153,7 @@ scrNuevaSolicitud As screen:
         Visible: =false
         Width: =65
         Y: =710
-        ZIndex: =5
+        ZIndex: =6
 
         Button2_4 As button:
             Align: =Align.Left
@@ -1149,7 +1182,7 @@ scrNuevaSolicitud As screen:
         Width: =545
         X: =764
         Y: =377
-        ZIndex: =6
+        ZIndex: =7
 
         "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
             BorderColor: |-
@@ -1172,6 +1205,7 @@ scrNuevaSolicitud As screen:
             DataCardKey48 As label:
                 AutoHeight: =true
                 Color: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -1183,6 +1217,7 @@ scrNuevaSolicitud As screen:
             DataCardValue49 As attachments:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode
+                Font: =Font.'Segoe UI'
                 Height: =230
                 HoverFill: |
                     =//RGBA(186; 202; 226; 1)
@@ -1233,10 +1268,11 @@ scrNuevaSolicitud As screen:
             //Back()
         X: =13
         Y: =2
-        ZIndex: =7
+        ZIndex: =8
 
     btnGrabar As button:
         Fill: =varColorPri01
+        Font: =Font.'Segoe UI'
         Height: =46
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
@@ -1246,8 +1282,8 @@ scrNuevaSolicitud As screen:
         Text: ="CREAR SOLICITUD"
         Width: =670
         X: =352
-        Y: =695
-        ZIndex: =8
+        Y: =700
+        ZIndex: =9
 
     htm_EmailPreview_CS As htmlViewer:
         Height: =56

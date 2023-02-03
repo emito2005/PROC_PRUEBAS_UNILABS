@@ -17,6 +17,7 @@ scrSolicitudes As screen:
 
     lbl_TituloPrincipal_3 As label:
         Align: =Align.Center
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =36
         Size: =24
@@ -27,8 +28,8 @@ scrSolicitudes As screen:
         ZIndex: =3
 
     Label3_1 As label:
+        Font: =Font.'Segoe UI'
         Height: =33
-        Size: =12
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
         X: =186
@@ -97,6 +98,7 @@ scrSolicitudes As screen:
         ZIndex: =8
 
         Title2_7 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -112,6 +114,7 @@ scrSolicitudes As screen:
             ZIndex: =4
 
         Title2_16 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -129,6 +132,7 @@ scrSolicitudes As screen:
             ZIndex: =5
 
         Title2_17 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -145,6 +149,7 @@ scrSolicitudes As screen:
             ZIndex: =6
 
         Title2_22 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -160,6 +165,7 @@ scrSolicitudes As screen:
             ZIndex: =8
 
         Title2_23 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -175,6 +181,7 @@ scrSolicitudes As screen:
             ZIndex: =9
 
         Title2_19 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -190,6 +197,7 @@ scrSolicitudes As screen:
             ZIndex: =10
 
         Title2_20 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -214,6 +222,7 @@ scrSolicitudes As screen:
             ZIndex: =12
 
         Title2_18 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -229,6 +238,7 @@ scrSolicitudes As screen:
             ZIndex: =13
 
         Title2_21 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -246,6 +256,7 @@ scrSolicitudes As screen:
             ZIndex: =14
 
         Title2_36 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -263,6 +274,7 @@ scrSolicitudes As screen:
             ZIndex: =15
 
         Title2_37 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
             PaddingBottom: =0
@@ -292,6 +304,7 @@ scrSolicitudes As screen:
         Button2_6 As button:
             Align: =Align.Left
             Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
+            Font: =Font.'Segoe UI'
             Height: =61
             HoverFill: =ColorFade(varColorPri02, -20%)
             OnSelect: |-
@@ -306,6 +319,7 @@ scrSolicitudes As screen:
 
     btnExportarS As button:
         Fill: =varColorPri01
+        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -337,6 +351,7 @@ scrSolicitudes As screen:
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
         Text: ="Exportar"
+        Tooltip: ="Exportar Listado a Excel"
         Width: =100
         X: =1123
         Y: =113
@@ -344,6 +359,7 @@ scrSolicitudes As screen:
 
     btnLimpiarS As button:
         Fill: =varColorPri01
+        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: =Reset(txtFilNomNroSol)
         Text: ="Limpiar"
@@ -371,6 +387,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="NRO TICKET"
@@ -383,6 +400,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="NOMBRE SOL."
@@ -395,6 +413,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="TIPO SOLIC."
@@ -407,6 +426,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="TIPO SERV."
@@ -419,6 +439,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
@@ -431,6 +452,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="DPTO. ASIGNADO"
@@ -443,6 +465,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="MANAGER"
@@ -455,6 +478,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="LIDER"
@@ -467,6 +491,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="ANALISTA"
@@ -479,6 +504,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="FECHA CREAC."
@@ -491,6 +517,7 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="FECHA EXPIRA"
@@ -568,6 +595,7 @@ scrSolicitudes As screen:
                     ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
+        Tooltip: ="Actualizar Listado de Solictudes"
         Width: =50
         X: =1306
         Y: =113
@@ -579,7 +607,7 @@ scrSolicitudes As screen:
         Icon: =Icon.Folder
         OnSelect: |-
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
-        Tooltip: ="Ver Carpeta"
+        Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
         X: =btnExportarS.X + btnExportarS.Width + 20
         Y: =btnExportarS.Y + (btnExportarS.Height / 2) - (Self.Height / 2)
