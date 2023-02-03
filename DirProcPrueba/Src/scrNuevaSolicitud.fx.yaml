@@ -167,8 +167,6 @@ scrNuevaSolicitud As screen:
             //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
             
-            Select(icn_Volver_NS);
-            
             
             
             
@@ -1151,7 +1149,7 @@ scrNuevaSolicitud As screen:
         TemplateSize: =61
         Transition: =Transition.Pop
         Visible: =false
-        Width: =65
+        Width: =108
         Y: =710
         ZIndex: =6
 
@@ -1276,8 +1274,11 @@ scrNuevaSolicitud As screen:
         Height: =46
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =SubmitForm(frm_EditSolicitud);
-            //Select(icn_Volver_NS)
+            =UpdateContext({ isLoading: true });
+            SubmitForm(frm_EditSolicitud);
+            Notify("Solicitud creada correctamente.", NotificationType.Success);
+            UpdateContext({ isLoading: false });
+            Select(icn_Volver_NS);
         TabIndex: =13
         Text: ="CREAR SOLICITUD"
         Width: =670
@@ -2072,4 +2073,12 @@ scrNuevaSolicitud As screen:
         X: =89
         Y: =710
         ZIndex: =10
+
+    Rectangle2_11 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: |
+            =isLoading
+        Width: =Parent.Width
+        ZIndex: =11
 

@@ -148,7 +148,8 @@ scrElevar As screen:
             
             UpdateContext({ isLoading: false });
             
-            Navigate(scrMisSolicitudes, Fade);
+            //Navigate(scrMisSolicitudes; Fade);;
+            Select(gaMenuLateral_Eleva,2,Button2_7);
         Text: ="ELEVAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
@@ -280,13 +281,6 @@ scrElevar As screen:
         X: =requestFieldLbl_26.X
         Y: =Icon4.Y + Icon4.Height + 15
         ZIndex: =22
-
-    Rectangle2_8 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =23
 
     htm_EmailPreview_ES As htmlViewer:
         Height: =147
@@ -1074,7 +1068,7 @@ scrElevar As screen:
         Width: =286
         X: =1079
         Y: =603
-        ZIndex: =24
+        ZIndex: =23
 
     Label6_16 As label:
         Font: =Font.'Segoe UI'
@@ -1090,7 +1084,7 @@ scrElevar As screen:
             150
         X: =Button8_4.X
         Y: =Button8_4.Y + Button8_4.Height + 15
-        ZIndex: =27
+        ZIndex: =26
 
     TextInput4_14 As text:
         BorderThickness: =0
@@ -1108,7 +1102,7 @@ scrElevar As screen:
         Width: =Label6_16.Width
         X: =Label6_16.X
         Y: =Label6_16.Y + Label6_16.Height
-        ZIndex: =28
+        ZIndex: =27
 
     Label6_17 As label:
         Font: =Font.'Segoe UI'
@@ -1126,7 +1120,7 @@ scrElevar As screen:
             =//Label6.X + Label6.Width + 50
             Label6_16.X + Label6_16.Width
         Y: =Label6_16.Y
-        ZIndex: =29
+        ZIndex: =28
 
     TextInput4_15 As text:
         BorderThickness: =0
@@ -1144,7 +1138,7 @@ scrElevar As screen:
         Width: =Label6_17.Width
         X: =Label6_17.X
         Y: =Label6_17.Y + Label6_17.Height
-        ZIndex: =30
+        ZIndex: =29
 
     Label6_18 As label:
         Font: =Font.'Segoe UI'
@@ -1158,7 +1152,7 @@ scrElevar As screen:
         Width: =Label6_17.Width
         X: =Label6_17.X + Label6_17.Width + 50
         Y: =Label6_17.Y
-        ZIndex: =31
+        ZIndex: =30
 
     TextInput4_16 As text:
         BorderThickness: =0
@@ -1176,7 +1170,7 @@ scrElevar As screen:
         Width: =Label6_18.Width
         X: =Label6_18.X
         Y: =Label6_18.Y + Label6_18.Height
-        ZIndex: =32
+        ZIndex: =31
 
     Label6_19 As label:
         Font: =Font.'Segoe UI'
@@ -1190,7 +1184,7 @@ scrElevar As screen:
         Width: =Label6_17.Width
         X: =Label6_18.X + Label6_18.Width + 50
         Y: =Label6_18.Y
-        ZIndex: =33
+        ZIndex: =32
 
     TextInput4_17 As text:
         BorderThickness: =0
@@ -1208,7 +1202,7 @@ scrElevar As screen:
         Width: =Label6_19.Width
         X: =Label6_19.X
         Y: =Label6_19.Y + Label6_19.Height
-        ZIndex: =34
+        ZIndex: =33
 
     Label6_20 As label:
         Font: =Font.'Segoe UI'
@@ -1222,7 +1216,7 @@ scrElevar As screen:
         Width: =TextInput4_15.X + TextInput4_15.Width - Self.X + 150
         X: =TextInput4_14.X
         Y: =TextInput4_14.Y + TextInput4_14.Height + 15
-        ZIndex: =35
+        ZIndex: =34
 
     TextInput4_18 As text:
         BorderThickness: =0
@@ -1240,7 +1234,7 @@ scrElevar As screen:
         Width: =Label6_20.Width
         X: =Label6_20.X
         Y: =Label6_20.Y + Label6_20.Height
-        ZIndex: =36
+        ZIndex: =35
 
     Label6_21 As label:
         Font: =Font.'Segoe UI'
@@ -1253,6 +1247,20 @@ scrElevar As screen:
         Text: ="RUC Cliente"
         X: =Label6_20.X + Label6_20.Width + 50
         Y: =Label6_20.Y
+        ZIndex: =36
+
+    Label6_22 As label:
+        Font: =Font.'Segoe UI'
+        Height: =50
+        Overflow: =Overflow.Scroll
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: =varSolicitudDetalleItemSel.DescripcionPrueba
+        Width: =Label6_88.Width
+        X: =Label6_88.X
+        Y: =Label6_88.Y + Label6_88.Height
         ZIndex: =37
 
     upperToGroup As group:
@@ -1322,20 +1330,6 @@ scrElevar As screen:
             Y: =requestFieldLbl_75.Y + requestFieldLbl_75.Height
             ZIndex: =10
 
-    Label6_22 As label:
-        Font: =Font.'Segoe UI'
-        Height: =50
-        Overflow: =Overflow.Scroll
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =varSolicitudDetalleItemSel.DescripcionPrueba
-        Width: =Label6_88.Width
-        X: =Label6_88.X
-        Y: =Label6_88.Y + Label6_88.Height
-        ZIndex: =38
-
     Label6_86 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
@@ -1348,7 +1342,7 @@ scrElevar As screen:
         Width: =Label6_17.Width + 50
         X: =Label6_19.X + Label6_19.Width + 50
         Y: =Label6_19.Y
-        ZIndex: =39
+        ZIndex: =38
 
     TextInput4_70 As text:
         BorderThickness: =0
@@ -1366,7 +1360,7 @@ scrElevar As screen:
         Width: =Label6_86.Width
         X: =Label6_86.X
         Y: =Label6_86.Y + Label6_86.Height
-        ZIndex: =40
+        ZIndex: =39
 
     Label6_87 As label:
         Font: =Font.'Segoe UI'
@@ -1381,7 +1375,7 @@ scrElevar As screen:
             =500
         X: =Label6_21.X + Label6_21.Width + 20
         Y: =Label6_21.Y
-        ZIndex: =41
+        ZIndex: =40
 
     TextInput4_71 As text:
         BorderThickness: =0
@@ -1399,7 +1393,7 @@ scrElevar As screen:
         Width: =Label6_87.Width
         X: =Label6_87.X
         Y: =Label6_87.Y + Label6_87.Height
-        ZIndex: =42
+        ZIndex: =41
 
     Label6_88 As label:
         Font: =Font.'Segoe UI'
@@ -1415,7 +1409,7 @@ scrElevar As screen:
             (Parent.Width - 260) / 2
         X: =TextInput4_18.X
         Y: =TextInput4_18.Y + TextInput4_18.Height + 15
-        ZIndex: =43
+        ZIndex: =42
 
     TextInput4_72 As text:
         BorderThickness: =0
@@ -1433,7 +1427,7 @@ scrElevar As screen:
         Width: =Label6_21.Width
         X: =Label6_21.X
         Y: =Label6_21.Y + Label6_21.Height
-        ZIndex: =44
+        ZIndex: =43
 
     Label6_89 As label:
         Font: =Font.'Segoe UI'
@@ -1447,7 +1441,7 @@ scrElevar As screen:
         Width: =Label6_90.Width
         X: =731
         Y: =Label6_90.Y + Label6_90.Height
-        ZIndex: =45
+        ZIndex: =44
 
     Label6_90 As label:
         Font: =Font.'Segoe UI'
@@ -1463,7 +1457,7 @@ scrElevar As screen:
             (Parent.Width - 260) / 2
         X: =731
         Y: =Label6_88.Y
-        ZIndex: =46
+        ZIndex: =45
 
     Label6_91 As label:
         Font: =Font.'Segoe UI'
@@ -1477,7 +1471,7 @@ scrElevar As screen:
         Width: =Label6_15.Width
         X: =Label6_25.X + Label6_25.Width + 50
         Y: =387
-        ZIndex: =47
+        ZIndex: =46
 
     TextInput4_73 As text:
         BorderThickness: =0
@@ -1495,7 +1489,7 @@ scrElevar As screen:
         Width: =Label6_91.Width
         X: =Label6_91.X
         Y: =Label6_91.Y + Label6_91.Height
-        ZIndex: =48
+        ZIndex: =47
 
     Label6_92 As label:
         Font: =Font.'Segoe UI'
@@ -1509,7 +1503,7 @@ scrElevar As screen:
         Width: =Label6_91.Width
         X: =Label6_91.X + Label6_91.Width + 50
         Y: =387
-        ZIndex: =49
+        ZIndex: =48
 
     TextInput4_74 As text:
         BorderThickness: =0
@@ -1527,7 +1521,44 @@ scrElevar As screen:
         Width: =Label6_92.Width
         X: =Label6_92.X
         Y: =Label6_92.Y + Label6_92.Height
+        ZIndex: =49
+
+    gaMenuLateral_Eleva As gallery.galleryVertical:
+        Height: =70
+        Items: =colBarraLateral
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Transition: =Transition.Pop
+        Visible: =false
+        Width: =107
+        Y: =698
         ZIndex: =50
+
+        Button2_7 As button:
+            Align: =Align.Left
+            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
+            Height: =61
+            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
+            OnSelect: |-
+                =Set(varIdOpcionMenu,ThisItem.id_boton);
+                Set(varOpcionMenu,ThisItem.texto_boton);
+                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
+            PaddingLeft: |
+                =ThisItem.sangria*10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =ThisItem.texto_boton
+            Width: =130
+            ZIndex: =1
+
+    Rectangle2_8 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =51
 
     Group8_4 As group:
         Height: =5
@@ -1555,7 +1586,7 @@ scrElevar As screen:
             Width: =230
             X: =50
             Y: =85
-            ZIndex: =25
+            ZIndex: =24
 
         Rectangle5_4 As rectangle:
             Fill: =varColorPri01
@@ -1563,7 +1594,7 @@ scrElevar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_4.X
             Y: =Button8_4.Y + Button8_4.Height - Self.Height
-            ZIndex: =26
+            ZIndex: =25
 
     Group8_7 As group:
         Height: =5

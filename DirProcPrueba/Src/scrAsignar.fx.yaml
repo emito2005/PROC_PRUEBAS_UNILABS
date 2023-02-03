@@ -163,7 +163,8 @@ scrAsignar As screen:
             
             UpdateContext({ isLoading: false });
             
-            Navigate(scrMisSolicitudes, Fade);
+            //Navigate(scrMisSolicitudes; Fade);;
+            Select(gaMenuLateral_Asignar,2,Button2_9);
         Text: ="ASIGNAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
@@ -296,13 +297,6 @@ scrAsignar As screen:
         X: =txtBuscarManager_2.X + txtBuscarManager_2.Width + 15
         Y: =Button8_10.Y + Button8_10.Height + 15
         ZIndex: =27
-
-    Rectangle2 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =28
 
     htm_EmailPreview_AS As htmlViewer:
         Height: =149
@@ -1090,7 +1084,7 @@ scrAsignar As screen:
         Width: =384
         X: =964
         Y: =607
-        ZIndex: =29
+        ZIndex: =28
 
     Label6_26 As label:
         Font: =Font.'Segoe UI'
@@ -1106,7 +1100,7 @@ scrAsignar As screen:
             150
         X: =Button8_5.X
         Y: =Button8_5.Y + Button8_5.Height + 15
-        ZIndex: =32
+        ZIndex: =31
 
     TextInput4_22 As text:
         BorderThickness: =0
@@ -1124,7 +1118,7 @@ scrAsignar As screen:
         Width: =Label6_26.Width
         X: =Label6_26.X
         Y: =Label6_26.Y + Label6_26.Height
-        ZIndex: =33
+        ZIndex: =32
 
     Label6_27 As label:
         Font: =Font.'Segoe UI'
@@ -1142,6 +1136,24 @@ scrAsignar As screen:
             =//Label6.X + Label6.Width + 50
             Label6_26.X + Label6_26.Width
         Y: =Label6_26.Y
+        ZIndex: =33
+
+    TextInput4_23 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.NroSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
+        Height: =TextInput4_22.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_27.Width
+        X: =Label6_27.X
+        Y: =Label6_27.Y + Label6_27.Height
         ZIndex: =34
 
     upperToGroup_1 As group:
@@ -1322,24 +1334,6 @@ scrAsignar As screen:
                 Y: =58
                 ZIndex: =6
 
-    TextInput4_23 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.NroSolicitud
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Font: =Font.'Segoe UI'
-        Height: =TextInput4_22.Height
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_27.Width
-        X: =Label6_27.X
-        Y: =Label6_27.Y + Label6_27.Height
-        ZIndex: =35
-
     Label6_28 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
@@ -1352,6 +1346,24 @@ scrAsignar As screen:
         Width: =Label6_27.Width
         X: =Label6_27.X + Label6_27.Width + 50
         Y: =Label6_27.Y
+        ZIndex: =35
+
+    TextInput4_24 As text:
+        BorderThickness: =0
+        Default: =varSolicitudDetalleItemSel.TipoSolicitud
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
+        Height: =TextInput4_22.Height
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Label6_28.Width
+        X: =Label6_28.X
+        Y: =Label6_28.Y + Label6_28.Height
         ZIndex: =36
 
     Group1 As group:
@@ -1424,24 +1436,6 @@ scrAsignar As screen:
             Y: =Icon6.Y + (Icon6.Height / 2) - (Self.Height / 2)
             ZIndex: =15
 
-    TextInput4_24 As text:
-        BorderThickness: =0
-        Default: =varSolicitudDetalleItemSel.TipoSolicitud
-        DisabledColor: =RGBA(0, 0, 0, 1)
-        DisabledFill: =RGBA(244, 244, 244, 0)
-        DisplayMode: =DisplayMode.Disabled
-        FocusedBorderThickness: =0
-        Font: =Font.'Segoe UI'
-        Height: =TextInput4_22.Height
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Width: =Label6_28.Width
-        X: =Label6_28.X
-        Y: =Label6_28.Y + Label6_28.Height
-        ZIndex: =37
-
     Label6_29 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
@@ -1454,7 +1448,7 @@ scrAsignar As screen:
         Width: =Label6_27.Width
         X: =Label6_28.X + Label6_28.Width + 50
         Y: =Label6_28.Y
-        ZIndex: =38
+        ZIndex: =37
 
     TextInput4_25 As text:
         BorderThickness: =0
@@ -1472,7 +1466,7 @@ scrAsignar As screen:
         Width: =Label6_29.Width
         X: =Label6_29.X
         Y: =Label6_29.Y + Label6_29.Height
-        ZIndex: =39
+        ZIndex: =38
 
     Label6_30 As label:
         Font: =Font.'Segoe UI'
@@ -1486,7 +1480,7 @@ scrAsignar As screen:
         Width: =TextInput4_23.X + TextInput4_23.Width - Self.X + 150
         X: =TextInput4_22.X
         Y: =TextInput4_22.Y + TextInput4_22.Height + 15
-        ZIndex: =40
+        ZIndex: =39
 
     TextInput4_26 As text:
         BorderThickness: =0
@@ -1504,7 +1498,7 @@ scrAsignar As screen:
         Width: =Label6_30.Width
         X: =Label6_30.X
         Y: =Label6_30.Y + Label6_30.Height
-        ZIndex: =41
+        ZIndex: =40
 
     Label6_31 As label:
         Font: =Font.'Segoe UI'
@@ -1517,7 +1511,7 @@ scrAsignar As screen:
         Text: ="RUC Cliente"
         X: =Label6_30.X + Label6_30.Width + 50
         Y: =Label6_30.Y
-        ZIndex: =42
+        ZIndex: =41
 
     Label6_32 As label:
         Font: =Font.'Segoe UI'
@@ -1531,7 +1525,7 @@ scrAsignar As screen:
         Width: =Label6_95.Width
         X: =Label6_95.X
         Y: =Label6_95.Y + Label6_95.Height
-        ZIndex: =43
+        ZIndex: =42
 
     Label6_93 As label:
         Font: =Font.'Segoe UI'
@@ -1545,7 +1539,7 @@ scrAsignar As screen:
         Width: =Label6_27.Width + 50
         X: =Label6_29.X + Label6_29.Width + 50
         Y: =Label6_29.Y
-        ZIndex: =44
+        ZIndex: =43
 
     TextInput4_75 As text:
         BorderThickness: =0
@@ -1563,7 +1557,7 @@ scrAsignar As screen:
         Width: =Label6_93.Width
         X: =Label6_93.X
         Y: =Label6_93.Y + Label6_93.Height
-        ZIndex: =45
+        ZIndex: =44
 
     Label6_94 As label:
         Font: =Font.'Segoe UI'
@@ -1578,7 +1572,7 @@ scrAsignar As screen:
             =500
         X: =Label6_31.X + Label6_31.Width + 20
         Y: =Label6_31.Y
-        ZIndex: =46
+        ZIndex: =45
 
     TextInput4_76 As text:
         BorderThickness: =0
@@ -1596,7 +1590,7 @@ scrAsignar As screen:
         Width: =Label6_94.Width
         X: =Label6_94.X
         Y: =Label6_94.Y + Label6_94.Height
-        ZIndex: =47
+        ZIndex: =46
 
     Label6_95 As label:
         Font: =Font.'Segoe UI'
@@ -1612,7 +1606,7 @@ scrAsignar As screen:
             (Parent.Width - 260) / 2
         X: =TextInput4_26.X
         Y: =TextInput4_26.Y + TextInput4_26.Height + 15
-        ZIndex: =48
+        ZIndex: =47
 
     TextInput4_77 As text:
         BorderThickness: =0
@@ -1630,7 +1624,7 @@ scrAsignar As screen:
         Width: =Label6_31.Width
         X: =Label6_31.X
         Y: =Label6_31.Y + Label6_31.Height
-        ZIndex: =49
+        ZIndex: =48
 
     Label6_96 As label:
         Font: =Font.'Segoe UI'
@@ -1644,7 +1638,7 @@ scrAsignar As screen:
         Width: =Label6_97.Width
         X: =751
         Y: =Label6_97.Y + Label6_97.Height
-        ZIndex: =50
+        ZIndex: =49
 
     Label6_97 As label:
         Font: =Font.'Segoe UI'
@@ -1660,7 +1654,7 @@ scrAsignar As screen:
             (Parent.Width - 260) / 2
         X: =751
         Y: =Label6_95.Y
-        ZIndex: =51
+        ZIndex: =50
 
     Label6_98 As label:
         Font: =Font.'Segoe UI'
@@ -1674,7 +1668,7 @@ scrAsignar As screen:
         Width: =Label6_15.Width
         X: =Label6_35.X + Label6_35.Width + 50
         Y: =387
-        ZIndex: =52
+        ZIndex: =51
 
     TextInput4_78 As text:
         BorderThickness: =0
@@ -1692,7 +1686,7 @@ scrAsignar As screen:
         Width: =Label6_98.Width
         X: =Label6_98.X
         Y: =Label6_98.Y + Label6_98.Height
-        ZIndex: =53
+        ZIndex: =52
 
     Label6_99 As label:
         Font: =Font.'Segoe UI'
@@ -1706,7 +1700,7 @@ scrAsignar As screen:
         Width: =Label6_98.Width
         X: =Label6_98.X + Label6_98.Width + 50
         Y: =387
-        ZIndex: =54
+        ZIndex: =53
 
     TextInput4_79 As text:
         BorderThickness: =0
@@ -1724,7 +1718,45 @@ scrAsignar As screen:
         Width: =Label6_99.Width
         X: =Label6_99.X
         Y: =Label6_99.Y + Label6_99.Height
+        ZIndex: =54
+
+    gaMenuLateral_Asignar As gallery.galleryVertical:
+        Height: =70
+        Items: =colBarraLateral
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Transition: =Transition.Pop
+        Visible: =false
+        Width: =95
+        X: =40
+        Y: =698
         ZIndex: =55
+
+        Button2_9 As button:
+            Align: =Align.Left
+            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
+            Height: =61
+            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
+            OnSelect: |-
+                =Set(varIdOpcionMenu,ThisItem.id_boton);
+                Set(varOpcionMenu,ThisItem.texto_boton);
+                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
+            PaddingLeft: |
+                =ThisItem.sangria*10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =ThisItem.texto_boton
+            Width: =130
+            ZIndex: =1
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =56
 
     Group8_5 As group:
         Height: =5
@@ -1752,7 +1784,7 @@ scrAsignar As screen:
             Width: =230
             X: =50
             Y: =85
-            ZIndex: =30
+            ZIndex: =29
 
         Rectangle5_5 As rectangle:
             Fill: =varColorPri01
@@ -1760,7 +1792,7 @@ scrAsignar As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_5.X
             Y: =Button8_5.Y + Button8_5.Height - Self.Height
-            ZIndex: =31
+            ZIndex: =30
 
     Group8_9 As group:
         Height: =5
