@@ -92,6 +92,7 @@ scrSolicitudes As screen:
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
+        Visible: =!isLoading
         Width: =1175
         X: =181
         Y: =215

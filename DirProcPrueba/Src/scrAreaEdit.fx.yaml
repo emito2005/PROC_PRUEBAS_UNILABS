@@ -174,7 +174,7 @@ scrAreaEdit As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
                 =//DataSourceInfo([@Area_1];DataSourceInfo.DisplayName;"CodArea")
-                "Cod. Area"
+                "Cod. Área"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: =DataSourceInfo([@Area_1], DataSourceInfo.MaxLength, "CodArea")
@@ -1606,6 +1606,7 @@ scrAreaEdit As screen:
         Height: =47
         Icon: =Icon.Edit
         OnSelect: =EditForm(form_EditArea)
+        Tooltip: ="Modificar Datos del Área"
         Visible: |-
             =//true
             If(form_EditArea.Mode = FormMode.View,true,false)

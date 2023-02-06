@@ -60,9 +60,7 @@ scrMisSolicitudes As screen:
         Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =
-            
-            
+            =UpdateContext({ isLoading: true });
             
             /*
             UpdateContext({
@@ -93,7 +91,6 @@ scrMisSolicitudes As screen:
             
             */
             
-            UpdateContext({ isLoading: true });
             Exportacion_Excel.Run(
                 JSON(
                     ShowColumns(
