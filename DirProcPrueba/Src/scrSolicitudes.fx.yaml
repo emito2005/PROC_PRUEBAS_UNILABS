@@ -190,8 +190,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.AreaOrigen
+            Tooltip: ="ThisItem.AreaOrigen"
             VerticalAlign: =VerticalAlign.Top
             Width: =100
+            Wrap: =false
             X: =487
             Y: =4
             ZIndex: =10
@@ -231,8 +233,10 @@ scrSolicitudes As screen:
             PaddingTop: =0
             Size: =11
             Text: =ThisItem.TipoServicio
+            Tooltip: ="ThisItem.TipoServicio"
             VerticalAlign: =VerticalAlign.Top
             Width: =90
+            Wrap: =false
             X: =397
             Y: =4
             ZIndex: =13
@@ -323,20 +327,10 @@ scrSolicitudes As screen:
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
+            
             Exportacion_Excel.Run(
                 JSON(
                     ShowColumns(
-                        /*Search(
-                            Filter(colSolicitudes;
-                                EsAtendido = false;
-                                EsEliminado = false;
-                                EsFinalizado = false;
-                                EsActivo = true // Va a cambiar cuando se anula la solicitud
-                            );
-                            txtFilNomNroSol_1.Text;
-                            "NroSolicitud";
-                            "AsuntoSol"
-                        );*/
                         Search(colSolicitudes,
                             txtFilNomNroSol_1.Text,
                             "NroSolicitud",
@@ -348,6 +342,7 @@ scrSolicitudes As screen:
                     )
                 )
             );
+            
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
         Text: ="Exportar"
@@ -533,8 +528,9 @@ scrSolicitudes As screen:
         Color: =RGBA(236, 64, 38, 1)
         Height: =39
         Icon: =Icon.Reload
-        OnSelect: |
-            =//ClearCollect(colSolicitudUltDet;AddColumns(Solicitud;"MaxId";Max(Cities;Population)));;
+        OnSelect: |-
+            =UpdateContext({ isLoading: true });
+            //ClearCollect(colSolicitudUltDet;AddColumns(Solicitud;"MaxId";Max(Cities;Population)));;
             ClearCollect(colSolicitudUltDet,
             AddColumns(
                        GroupBy(SolicitudDetalle,"IdSolicitud","GroupIdSol"),
@@ -595,6 +591,7 @@ scrSolicitudes As screen:
                     ,"AnalistaDelArea",Concat(Filter(RenameColumns(SolicitudDetalleDestino,"IdSolicitud","IdSolicitudDetDes","ID","IDSolDetDest"),IdSolicitudDetDes=IdSolicitud,IdSolicitudDetalle=ID,IdPerfilDestino=4),LookUp(Personal,ID=IdPersonalDestino).Nombre & ", ")
                     )
                 );
+            UpdateContext({ isLoading: false });
         Tooltip: ="Actualizar Listado de Solictudes"
         Width: =50
         X: =1306
