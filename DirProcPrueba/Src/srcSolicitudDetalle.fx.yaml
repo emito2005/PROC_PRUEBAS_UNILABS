@@ -11,19 +11,19 @@ srcSolicitudDetalle As screen:
         	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
         );
 
-    Rectangle4_17 As rectangle:
+    Rectangle4_25 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =93
+        Height: =139
         Width: =Parent.Width
-        Y: =675
+        Y: =629
         ZIndex: =1
 
-    cmpBarraSuperior_7 As cmpBarraSuperior:
+    cmpBarraSuperior_15 As cmpBarraSuperior:
         ZIndex: =2
 
-    Rectangle4_9 As rectangle:
+    Rectangle4_24 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =2
         Fill: =RGBA(0, 0, 0, 0)
@@ -32,7 +32,16 @@ srcSolicitudDetalle As screen:
         Y: =70
         ZIndex: =3
 
-    HtmlText1 As htmlViewer:
+    Rectangle4_26 As rectangle:
+        BorderColor: =varColorPri01
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =0
+        Width: =Parent.Width
+        Y: =629
+        ZIndex: =4
+
+    HtmlText1_3 As htmlViewer:
         Height: =70
         HtmlText: |-
             ="<!DOCTYPE html>
@@ -139,27 +148,27 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 2%;'>ID</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_90.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Nro. Solicitud</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_1.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_91.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Tipo de Solicitud</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_2.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_92.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Segmento del Negocio</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_3.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_93.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             						
             						<td class='field' style='width: 5%;'>Tipo de Operación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_60.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_94.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -167,17 +176,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Asunto de Solicitud</td>
-            						<td class='value' style='width: 15%;'>" & TextInput4_4.Text & "</td>
+            						<td class='value' style='width: 15%;'>" & TextInput4_95.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>RUC Cliente</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_64.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_96.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             						
             						<td class='field' style='width: 5%;'>Razón Social del Cliente</td>
-            						<td class='value' style='width: 10%;'>" & TextInput4_63.Text & "</td>
+            						<td class='value' style='width: 10%;'>" & TextInput4_97.Text & "</td>
             						
             					</tr>
             				</tbody>
@@ -186,7 +195,7 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Descripción</td>
-            						<td class='value' style='width: 25%;'>" & Label6_6.Text & "</td>
+            						<td class='value' style='width: 25%;'>" & Label6_124.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -194,17 +203,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Dpto. de Procedencia</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_5.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_98.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Dpto. Actual</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_6.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_99.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Dpto. Asignado</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_7.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_100.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -212,17 +221,17 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>Manager</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_8.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_101.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Lider</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_9.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_102.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>Analista</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_10.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_103.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -230,27 +239,27 @@ srcSolicitudDetalle As screen:
             				<tbody>
             					<tr>
             						<td class='field' style='width: 5%;'>F. Creación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_11.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_104.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Expiración SLA</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_12.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_105.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Expiración OLA</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_13.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_106.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Inicio de Operación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_61.Text & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_107.Text & "</td>
             						
             						<td class='blank' style='width: 2%;'>a</td>
             
             						<td class='field' style='width: 5%;'>F. Fin de Operación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_62 & "</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_108 & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -260,7 +269,7 @@ srcSolicitudDetalle As screen:
             						<td style='width: 100%; border: 0px #fff solid; text-align: left;'>Comentario</td>
             					</tr>
             					<tr>
-            						<td style='width: 100%; height: 120px;'>" & Label6_6.Text & "</td>
+            						<td style='width: 100%; height: 120px;'>" & Label6_124.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -271,7 +280,7 @@ srcSolicitudDetalle As screen:
         Width: =383
         ZIndex: =5
 
-    lbl_TituloPrincipal_4 As label:
+    lbl_TituloPrincipal_13 As label:
         Align: =Align.Center
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
@@ -280,10 +289,10 @@ srcSolicitudDetalle As screen:
         Text: ="DETALLE DE SOLICITUD"
         Width: =1335
         X: =13
-        Y: =cmpBarraSuperior_7.Y + (cmpBarraSuperior_7.Height / 2) - (Self.Height / 2)
+        Y: =cmpBarraSuperior_15.Y + (cmpBarraSuperior_15.Height / 2) - (Self.Height / 2)
         ZIndex: =6
 
-    icn_Volver_NS_1 As icon.BackArrow:
+    icn_Volver_NS_6 As icon.BackArrow:
         Color: =varColorPri01
         Icon: =Icon.BackArrow
         OnSelect: =Back();
@@ -291,20 +300,20 @@ srcSolicitudDetalle As screen:
         Y: =2
         ZIndex: =7
 
-    btnVerDocAdjuntos As button:
+    btnVerDocAdjuntos_2 As button:
         Fill: =varColorPri01
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleItemSel);
             Navigate(scrVerDocAdjuntos)
+        Size: =12
         Text: ="Ver Doc. Adjuntos"
         Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
-        Width: =216
-        X: =579
-        Y: =700
+        X: =archivarBtn_1.X + archivarBtn_1.Width + 116.5
+        Y: =archivarBtn_1.Y
         ZIndex: =16
 
-    Label6 As label:
+    Label6_114 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -316,11 +325,11 @@ srcSolicitudDetalle As screen:
         Width: |-
             =//(Parent.Width - 250) / 5
             150
-        X: =Button8.X
-        Y: =Button8.Y + Button8.Height + 15
+        X: =Button8_20.X
+        Y: =Button8_20.Y + Button8_20.Height + 15
         ZIndex: =17
 
-    TextInput4 As text:
+    TextInput4_90 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.ID
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -333,12 +342,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6.Width
-        X: =Label6.X
-        Y: =Label6.Y + Label6.Height
+        Width: =Label6_114.Width
+        X: =Label6_114.X
+        Y: =Label6_114.Y + Label6_114.Height
         ZIndex: =18
 
-    Label6_1 As label:
+    Label6_115 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -352,11 +361,11 @@ srcSolicitudDetalle As screen:
             (Parent.Width - 260) / 5
         X: |-
             =//Label6.X + Label6.Width + 50
-            Label6.X + Label6.Width
-        Y: =Label6.Y
+            Label6_114.X + Label6_114.Width
+        Y: =Label6_114.Y
         ZIndex: =19
 
-    TextInput4_1 As text:
+    TextInput4_91 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -364,17 +373,17 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =TextInput4.Height
+        Height: =TextInput4_90.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_1.Width
-        X: =Label6_1.X
-        Y: =Label6_1.Y + Label6_1.Height
+        Width: =Label6_115.Width
+        X: =Label6_115.X
+        Y: =Label6_115.Y + Label6_115.Height
         ZIndex: =20
 
-    Label6_2 As label:
+    Label6_116 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -383,12 +392,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Tipo de Solicitud"
-        Width: =Label6_1.Width
-        X: =Label6_1.X + Label6_1.Width + 50
-        Y: =Label6_1.Y
+        Width: =Label6_115.Width
+        X: =Label6_115.X + Label6_115.Width + 50
+        Y: =Label6_115.Y
         ZIndex: =21
 
-    TextInput4_2 As text:
+    TextInput4_92 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.TipoSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -396,17 +405,17 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =TextInput4.Height
+        Height: =TextInput4_90.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_2.Width
-        X: =Label6_2.X
-        Y: =Label6_2.Y + Label6_2.Height
+        Width: =Label6_116.Width
+        X: =Label6_116.X
+        Y: =Label6_116.Y + Label6_116.Height
         ZIndex: =22
 
-    Label6_3 As label:
+    Label6_117 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -415,12 +424,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Segmento del Negocio"
-        Width: =Label6_1.Width
-        X: =Label6_2.X + Label6_2.Width + 50
-        Y: =Label6_2.Y
+        Width: =Label6_115.Width
+        X: =Label6_116.X + Label6_116.Width + 50
+        Y: =Label6_116.Y
         ZIndex: =23
 
-    TextInput4_3 As text:
+    TextInput4_93 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.TipoServicio
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -428,17 +437,17 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =TextInput4.Height
+        Height: =TextInput4_90.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_3.Width
-        X: =Label6_3.X
-        Y: =Label6_3.Y + Label6_3.Height
+        Width: =Label6_117.Width
+        X: =Label6_117.X
+        Y: =Label6_117.Y + Label6_117.Height
         ZIndex: =24
 
-    Label6_4 As label:
+    Label6_119 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -447,12 +456,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Asunto de la Solicitud"
-        Width: =TextInput4_1.X + TextInput4_1.Width - Self.X + 150
-        X: =TextInput4.X
-        Y: =TextInput4.Y + TextInput4.Height + 15
+        Width: =TextInput4_91.X + TextInput4_91.Width - Self.X + 150
+        X: =TextInput4_90.X
+        Y: =TextInput4_90.Y + TextInput4_90.Height + 15
         ZIndex: =25
 
-    TextInput4_4 As text:
+    TextInput4_95 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.AsuntoSol
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -465,12 +474,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_4.Width
-        X: =Label6_4.X
-        Y: =Label6_4.Y + Label6_4.Height
+        Width: =Label6_119.Width
+        X: =Label6_119.X
+        Y: =Label6_119.Y + Label6_119.Height
         ZIndex: =26
 
-    Label6_5 As label:
+    Label6_120 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -479,11 +488,11 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="RUC Cliente"
-        X: =Label6_4.X + Label6_4.Width + 50
-        Y: =Label6_4.Y
+        X: =Label6_119.X + Label6_119.Width + 50
+        Y: =Label6_119.Y
         ZIndex: =27
 
-    Label6_6 As label:
+    Label6_124 As label:
         Font: =Font.'Segoe UI'
         Height: =50
         Overflow: =Overflow.Scroll
@@ -492,12 +501,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.DescripcionPrueba
-        Width: =Label6_76.Width
-        X: =Label6_76.X
-        Y: =Label6_76.Y + Label6_76.Height
+        Width: =Label6_122.Width
+        X: =Label6_122.X
+        Y: =Label6_122.Y + Label6_122.Height
         ZIndex: =28
 
-    Label6_7 As label:
+    Label6_126 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -507,11 +516,11 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="Dpto. de Procedencia"
         Width: =(Parent.Width - 200) / 3
-        X: =Button8_1.X
-        Y: =Button8_1.Y + Button8_1.Height + 10
+        X: =Button8_21.X
+        Y: =Button8_21.Y + Button8_21.Height + 10
         ZIndex: =29
 
-    TextInput4_5 As text:
+    TextInput4_98 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.AreaOrigen
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -524,12 +533,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_7.Width
-        X: =Label6_7.X
-        Y: =Label6_7.Y + Label6_7.Height
+        Width: =Label6_126.Width
+        X: =Label6_126.X
+        Y: =Label6_126.Y + Label6_126.Height
         ZIndex: =30
 
-    Label6_8 As label:
+    Label6_127 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -538,12 +547,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Dpto. Actual"
-        Width: =Label6_7.Width
-        X: =Label6_7.X + Label6_7.Width + 50
-        Y: =Label6_7.Y
+        Width: =Label6_126.Width
+        X: =Label6_126.X + Label6_126.Width + 50
+        Y: =Label6_126.Y
         ZIndex: =31
 
-    TextInput4_6 As text:
+    TextInput4_99 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.AreaActual
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -556,12 +565,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_8.Width
-        X: =Label6_8.X
-        Y: =Label6_8.Y + Label6_8.Height
+        Width: =Label6_127.Width
+        X: =Label6_127.X
+        Y: =Label6_127.Y + Label6_127.Height
         ZIndex: =32
 
-    Label6_9 As label:
+    Label6_128 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -570,12 +579,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Dpto. Asignado"
-        Width: =Label6_8.Width
-        X: =Label6_8.X + Label6_8.Width + 50
-        Y: =Label6_8.Y
+        Width: =Label6_127.Width
+        X: =Label6_127.X + Label6_127.Width + 50
+        Y: =Label6_127.Y
         ZIndex: =33
 
-    TextInput4_7 As text:
+    TextInput4_100 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.AreaDestino
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -588,12 +597,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_9.Width
-        X: =Label6_9.X
-        Y: =Label6_9.Y + Label6_9.Height
+        Width: =Label6_128.Width
+        X: =Label6_128.X
+        Y: =Label6_128.Y + Label6_128.Height
         ZIndex: =34
 
-    Label6_10 As label:
+    Label6_129 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -603,11 +612,11 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="Manager"
         Width: =(Parent.Width - 200) / 3
-        X: =Button8_2.X
-        Y: =Button8_2.Y + Button8_2.Height + 10
+        X: =Button8_22.X
+        Y: =Button8_22.Y + Button8_22.Height + 10
         ZIndex: =35
 
-    TextInput4_8 As text:
+    TextInput4_101 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.ManagerDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -620,12 +629,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_10.Width
-        X: =Label6_10.X
-        Y: =Label6_10.Y + Label6_10.Height
+        Width: =Label6_129.Width
+        X: =Label6_129.X
+        Y: =Label6_129.Y + Label6_129.Height
         ZIndex: =36
 
-    Label6_11 As label:
+    Label6_130 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -634,12 +643,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Líder"
-        Width: =Label6_10.Width
-        X: =Label6_10.X + Label6_10.Width + 50
-        Y: =Label6_10.Y
+        Width: =Label6_129.Width
+        X: =Label6_129.X + Label6_129.Width + 50
+        Y: =Label6_129.Y
         ZIndex: =37
 
-    TextInput4_9 As text:
+    TextInput4_102 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.LiderDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -652,12 +661,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_11.Width
-        X: =Label6_11.X
-        Y: =Label6_11.Y + Label6_11.Height
+        Width: =Label6_130.Width
+        X: =Label6_130.X
+        Y: =Label6_130.Y + Label6_130.Height
         ZIndex: =38
 
-    Label6_12 As label:
+    Label6_131 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -666,12 +675,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Analista"
-        Width: =Label6_11.Width
-        X: =Label6_11.X + Label6_11.Width + 50
-        Y: =Label6_11.Y
+        Width: =Label6_130.Width
+        X: =Label6_130.X + Label6_130.Width + 50
+        Y: =Label6_130.Y
         ZIndex: =39
 
-    TextInput4_10 As text:
+    TextInput4_103 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.AnalistaDelArea
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -684,12 +693,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_12.Width
-        X: =Label6_12.X
-        Y: =Label6_12.Y + Label6_12.Height
+        Width: =Label6_131.Width
+        X: =Label6_131.X
+        Y: =Label6_131.Y + Label6_131.Height
         ZIndex: =40
 
-    Label6_13 As label:
+    Label6_132 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -699,11 +708,11 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="F. Creación"
         Width: =(Parent.Width - 250) / 5
-        X: =Button8_3.X
-        Y: =Button8_3.Y + Button8_3.Height + 10
+        X: =Button8_23.X
+        Y: =Button8_23.Y + Button8_23.Height + 10
         ZIndex: =41
 
-    TextInput4_11 As text:
+    TextInput4_104 As text:
         BorderThickness: =0
         Default: =Text(varSolicitudDetalleItemSel.FechaCreacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -716,12 +725,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_13.Width
-        X: =Label6_13.X
-        Y: =Label6_13.Y + Label6_13.Height
+        Width: =Label6_132.Width
+        X: =Label6_132.X
+        Y: =Label6_132.Y + Label6_132.Height
         ZIndex: =42
 
-    Label6_14 As label:
+    Label6_133 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -730,12 +739,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Expiración SLA"
-        Width: =Label6_13.Width
-        X: =Label6_13.X + Label6_13.Width + 20
-        Y: =Label6_13.Y
+        Width: =Label6_132.Width
+        X: =Label6_132.X + Label6_132.Width + 20
+        Y: =Label6_132.Y
         ZIndex: =43
 
-    TextInput4_12 As text:
+    TextInput4_105 As text:
         BorderThickness: =0
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -748,12 +757,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_14.Width
-        X: =Label6_14.X
-        Y: =Label6_14.Y + Label6_14.Height
+        Width: =Label6_133.Width
+        X: =Label6_133.X
+        Y: =Label6_133.Y + Label6_133.Height
         ZIndex: =44
 
-    Label6_15 As label:
+    Label6_134 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -762,12 +771,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Expiración OLA"
-        Width: =Label6_14.Width
-        X: =Label6_14.X + Label6_14.Width + 50
-        Y: =Label6_14.Y
+        Width: =Label6_133.Width
+        X: =Label6_133.X + Label6_133.Width + 50
+        Y: =Label6_133.Y
         ZIndex: =45
 
-    TextInput4_13 As text:
+    TextInput4_106 As text:
         BorderThickness: =0
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -780,19 +789,19 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_15.Width
-        X: =Label6_15.X
-        Y: =Label6_15.Y + Label6_15.Height
+        Width: =Label6_134.Width
+        X: =Label6_134.X
+        Y: =Label6_134.Y + Label6_134.Height
         ZIndex: =46
 
-    Rectangle2_9 As rectangle:
+    Rectangle2_14 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
         ZIndex: =47
 
-    Label6_72 As label:
+    Label6_118 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -801,12 +810,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Tipo de Operación"
-        Width: =Label6_1.Width + 50
-        X: =Label6_3.X + Label6_3.Width + 50
-        Y: =Label6_3.Y
+        Width: =Label6_115.Width + 50
+        X: =Label6_117.X + Label6_117.Width + 50
+        Y: =Label6_117.Y
         ZIndex: =48
 
-    TextInput4_60 As text:
+    TextInput4_94 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.TipoOperacion
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -814,17 +823,17 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =TextInput4.Height
+        Height: =TextInput4_90.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_72.Width
-        X: =Label6_72.X
-        Y: =Label6_72.Y + Label6_72.Height
+        Width: =Label6_118.Width
+        X: =Label6_118.X
+        Y: =Label6_118.Y + Label6_118.Height
         ZIndex: =49
 
-    Label6_73 As label:
+    Label6_135 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -833,12 +842,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Inicio de Operación"
-        Width: =Label6_15.Width
-        X: =Label6_15.X + Label6_15.Width + 50
-        Y: =Label6_15.Y
+        Width: =Label6_134.Width
+        X: =Label6_134.X + Label6_134.Width + 50
+        Y: =Label6_134.Y
         ZIndex: =50
 
-    TextInput4_61 As text:
+    TextInput4_107 As text:
         BorderThickness: =0
         Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -851,12 +860,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_73.Width
-        X: =Label6_73.X
-        Y: =Label6_73.Y + Label6_73.Height
+        Width: =Label6_135.Width
+        X: =Label6_135.X
+        Y: =Label6_135.Y + Label6_135.Height
         ZIndex: =51
 
-    Label6_74 As label:
+    Label6_136 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -865,12 +874,12 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Fin de Operación"
-        Width: =Label6_73.Width
-        X: =Label6_73.X + Label6_73.Width + 50
-        Y: =Label6_73.Y
+        Width: =Label6_135.Width
+        X: =Label6_135.X + Label6_135.Width + 50
+        Y: =Label6_135.Y
         ZIndex: =52
 
-    TextInput4_62 As text:
+    TextInput4_108 As text:
         BorderThickness: =0
         Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -883,12 +892,12 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_74.Width
-        X: =Label6_74.X
-        Y: =Label6_74.Y + Label6_74.Height
+        Width: =Label6_136.Width
+        X: =Label6_136.X
+        Y: =Label6_136.Y + Label6_136.Height
         ZIndex: =53
 
-    Label6_75 As label:
+    Label6_121 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -899,11 +908,11 @@ srcSolicitudDetalle As screen:
         Text: ="Razón Social Cliente"
         Width: |
             =500
-        X: =Label6_5.X + Label6_5.Width + 20
-        Y: =Label6_5.Y
+        X: =Label6_120.X + Label6_120.Width + 20
+        Y: =Label6_120.Y
         ZIndex: =54
 
-    TextInput4_63 As text:
+    TextInput4_97 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.RazonSocialCliente
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -911,17 +920,17 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =Label6_4.Height
+        Height: =Label6_119.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_75.Width
-        X: =Label6_75.X
-        Y: =Label6_75.Y + Label6_75.Height
+        Width: =Label6_121.Width
+        X: =Label6_121.X
+        Y: =Label6_121.Y + Label6_121.Height
         ZIndex: =55
 
-    Label6_76 As label:
+    Label6_122 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -933,11 +942,11 @@ srcSolicitudDetalle As screen:
         Width: |-
             =//Label6.Width
             (Parent.Width - 260) / 2
-        X: =TextInput4_4.X
-        Y: =TextInput4_4.Y + TextInput4_4.Height + 15
+        X: =TextInput4_95.X
+        Y: =TextInput4_95.Y + TextInput4_95.Height + 15
         ZIndex: =56
 
-    TextInput4_64 As text:
+    TextInput4_96 As text:
         BorderThickness: =0
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
@@ -945,31 +954,31 @@ srcSolicitudDetalle As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =Label6_4.Height
+        Height: =Label6_119.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Width: =Label6_5.Width
-        X: =Label6_5.X
-        Y: =Label6_5.Y + Label6_5.Height
+        Width: =Label6_120.Width
+        X: =Label6_120.X
+        Y: =Label6_120.Y + Label6_120.Height
         ZIndex: =57
 
-    Label6_77 As label:
+    Label6_125 As label:
         Font: =Font.'Segoe UI'
-        Height: =Label6_6.Height
+        Height: =Label6_124.Height
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.ObsSolDet
-        Width: =Label6_78.Width
+        Width: =Label6_123.Width
         X: =731
-        Y: =Label6_78.Y + Label6_78.Height
+        Y: =Label6_123.Y + Label6_123.Height
         ZIndex: =58
 
-    Label6_78 As label:
+    Label6_123 As label:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =20
@@ -982,17 +991,648 @@ srcSolicitudDetalle As screen:
             =//Label6.Width
             (Parent.Width - 260) / 2
         X: =731
-        Y: =Label6_76.Y
+        Y: =Label6_122.Y
         ZIndex: =59
 
-    Group8 As group:
+    archiveDialogGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =61
+
+        confirmDialogRect_5 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showArchiveDialog
+            Width: =Parent.Width
+            ZIndex: =74
+
+        confirmDialogFrame_5 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showArchiveDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =75
+
+        confirmDialogTitle_5 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE ARCHIVAR LA SOLICITUD?"
+            Visible: =showArchiveDialog
+            Width: =confirmDialogFrame_5.Width
+            X: =confirmDialogFrame_5.X
+            Y: =confirmDialogFrame_5.Y + 15
+            ZIndex: =76
+
+        commentaryLbl_3 As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showArchiveDialog
+            Width: =100
+            X: =confirmDialogFrame_5.X + 20
+            Y: =confirmDialogTitle_5.Y + confirmDialogTitle_5.Height + 15
+            ZIndex: =77
+
+        TextInput3_3 As text:
+            BorderColor: =varColorPri01B
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showArchiveDialog
+            Width: =confirmDialogFrame_5.X + confirmDialogFrame_5.Width - Self.X - 20
+            X: =confirmDialogFrame_5.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
+            ZIndex: =78
+
+        aceptarBtn_3 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({ showArchiveDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	{ 
+                		EsActivo: false,
+                        FechaFinalSol: Today() 
+                	}
+                );
+                
+                // Crear Solicitud Detalle inicial
+                UpdateContext({
+                	lastSolicitudDetalle:
+                		Patch(SolicitudDetalle,
+                			Defaults(SolicitudDetalle),
+                			{
+                				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
+                				FechaCreacion: Today(),
+                				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                                FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+                				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+                				EsAtendido: false,
+                				IdAccionOrigen: 6, // Anular
+                				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
+                				IdAreaOrigen: varMyUser.IdArea,
+                				IdPerfilOrigen: varMyUser.IdPerfil,
+                				IdPersonalOrigen: varMyUser.ID,
+                				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+                				IdEtapaActual: 0,
+                				IdAreaActual: 0,
+                                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+                				IdPerfilActual: 0,
+                				IdPersonalActual: 0,
+                                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+                				IdEtapaDestino: 0, // Etapa Destino Real
+                				IdAreaDestino: 0, // Area Destino Real
+                				IdPerfilDestino: 0, // Perfil Destino Real
+                				IdPersonalDestino: 0, // Personal Destino 
+                                //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
+                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
+                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                                ObsSolDet: TrimEnds(TextInput3_3.Text)
+                			}
+                		)
+                });
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    {
+                        IdAccionActual: 6, // Anular
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_3.Text),
+                        FechaAtencion: Today()
+                    }
+                );
+                
+                Notify("Solicitud archivada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3_3);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showArchiveDialog
+            X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
+            ZIndex: =79
+
+        cancelarBtn_3 As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({ showArchiveDialog: false });
+                Reset(TextInput3_3)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showArchiveDialog
+            X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) + 20
+            Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
+            ZIndex: =80
+
+    deleteDialogGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =62
+
+        confirmDialogRect_6 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showDeleteDialog
+            Width: =Parent.Width
+            ZIndex: =67
+
+        confirmDialogFrame_6 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showDeleteDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =68
+
+        confirmDialogTitle_6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE ELIMINAR LA SOLICITUD?"
+            Visible: =showDeleteDialog
+            Width: =confirmDialogFrame_6.Width
+            X: =confirmDialogFrame_6.X
+            Y: =confirmDialogFrame_6.Y + 15
+            ZIndex: =69
+
+        commentaryLbl_4 As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showDeleteDialog
+            Width: =100
+            X: =confirmDialogFrame_6.X + 20
+            Y: =confirmDialogTitle_6.Y + confirmDialogTitle_6.Height + 15
+            ZIndex: =70
+
+        TextInput3_4 As text:
+            BorderColor: =varColorPri01B
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showDeleteDialog
+            Width: =confirmDialogFrame_6.X + confirmDialogFrame_6.Width - Self.X - 20
+            X: =confirmDialogFrame_6.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
+            ZIndex: =71
+
+        aceptarBtn_4 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_4.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({ showDeleteDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	{ 
+                		EsActivo: false,
+                		EsEliminado: true,
+                        FechaFinalSol: Today()
+                	}
+                );
+                
+                // Crear Solicitud Detalle inicial
+                UpdateContext({
+                	lastSolicitudDetalle:
+                		Patch(SolicitudDetalle,
+                			Defaults(SolicitudDetalle),
+                			{
+                				IdSolicitud: varSolicitudDetalleItemSel.IdSolicitud,
+                				FechaCreacion: Today(),
+                				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
+                                FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA,
+                                // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
+                				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA);
+                				EsAtendido: false,
+                				IdAccionOrigen: 7, // Eliminar
+                				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
+                				IdAreaOrigen: varMyUser.IdArea,
+                				IdPerfilOrigen: varMyUser.IdPerfil,
+                				IdPersonalOrigen: varMyUser.ID,
+                				IdAccionActual: 0, // Lo actualizará el siguiente usuario
+                				IdEtapaActual: 0,
+                				IdAreaActual: 0,
+                                // Si fuera derivar, Perfil y persona quedaria en 0 porque es de uno a muchos
+                				IdPerfilActual: 0,
+                				IdPersonalActual: 0,
+                                IdAccionDestino: 0, // Siempre será 0 porque todavía no se toma en cuenta
+                				IdEtapaDestino: 0, // Etapa Destino Real
+                				IdAreaDestino: 0, // Area Destino Real
+                				IdPerfilDestino: 0, // Perfil Destino Real
+                				IdPersonalDestino: 0, // Personal Destino 
+                                //IdEtapaDestinoFlujo: varMyAreaEtapaFlujo.IdEtapaDestino;
+                                IdEtapaDestinoFlujo: varSolicitudDetalleItemSel.IdEtapaDestinoFlujo,
+                                //IdAreaDestinoFlujo: varMyAreaEtapaFlujo.IdAreaDestino;
+                                IdAreaDestinoFlujo: varSolicitudDetalleItemSel.IdAreaDestinoFlujo,
+                                ObsSolDet: TrimEnds(TextInput3_4.Text)
+                			}
+                		)
+                });
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    {
+                        IdAccionActual: 7, // Eliminar
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: lastSolicitudDetalle.ID, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_4.Text),
+                        FechaAtencion: Today()
+                    }
+                );
+                
+                Notify("Solicitud archivada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3_4);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showDeleteDialog
+            X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
+            ZIndex: =72
+
+        cancelarBtn_4 As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({ showDeleteDialog: false });
+                Reset(TextInput3_4)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showDeleteDialog
+            X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) + 20
+            Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
+            ZIndex: =73
+
+    actionButtonsGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =63
+
+        descargarPDFBtn_2 As button:
+            DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({
+                    isLoading: true,
+                    callback:
+                    Exportacion_PDF.Run(
+                        HtmlText1.HtmlText, 
+                        "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
+                        varSolicitudDetalleItemSel.ID
+                    ).callback
+                });
+                If(callback = "true",
+                    Notify("Exportacion realizada correctamente.", NotificationType.Success);
+                    UpdateContext({ 
+                        isLoading: false,
+                        callback: "false"
+                    })
+                )
+            Text: ="Generar PDF"
+            X: =50//requestFieldLbl_74.X
+            Y: =650
+            ZIndex: =81
+
+        trazabilidadBtn_1 As button:
+            DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
+            Text: ="Trazabilidad"
+            X: =descargarPDFBtn_2.X
+            Y: =705
+            ZIndex: =82
+
+        elevarBtn_1 As button:
+            DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
+            Text: ="Elevar"
+            X: =327
+            Y: =650
+            ZIndex: =83
+
+        asignarBtn_1 As button:
+            DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
+            Text: ="Asignar"
+            X: =elevarBtn_1.X
+            Y: =705
+            ZIndex: =84
+
+        derivarBtn_1 As button:
+            DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
+            Text: ="Derivar"
+            Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
+            X: =604
+            Y: =650
+            ZIndex: =85
+
+        finalizarBtn_1 As button:
+            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3_5);
+                UpdateContext({ showFinishDialog: true })
+            Text: ="Finalizar"
+            Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
+            X: =1158
+            Y: =705
+            ZIndex: =86
+
+        archivarBtn_1 As button:
+            DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3_3);
+                UpdateContext({ showArchiveDialog: true })
+            Text: ="Archivar"
+            X: =881
+            Y: =650
+            ZIndex: =87
+
+        eliminarBtn_1 As button:
+            DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =Reset(TextInput3_4);
+                UpdateContext({ showDeleteDialog: true })
+            Text: ="Eliminar"
+            X: =archivarBtn_1.X
+            Y: =705
+            ZIndex: =88
+
+        devolverBtn_1 As button:
+            DisplayMode: |-
+                =If(varDevolver && 
+                    varMisSolicitudesScreen && 
+                    //varMyAreaEtapaFlujo.Orden > 1; 
+                    LookUp(AreaEtapaFlujo, 
+                        IdArea = varMyUser.IdArea && 
+                        IdAreaDestino = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
+                        IdEtapaDestino = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo
+                    ).Orden > 1,
+                    
+                    DisplayMode.Edit, 
+                    
+                    DisplayMode.Disabled
+                )
+            Fill: =varColorPri01
+            Font: =Font.'Segoe UI'
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
+            Text: ="Devolver"
+            X: =derivarBtn_1.X
+            Y: =705
+            ZIndex: =89
+
+    finishDialogGroup_1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =70
+
+        confirmDialogRect_7 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.5)
+            FocusedBorderThickness: =0
+            Height: =Parent.Height
+            Visible: =showFinishDialog
+            Width: =Parent.Width
+            ZIndex: =60
+
+        confirmDialogFrame_7 As button:
+            BorderThickness: =0
+            DisabledFill: =Color.White
+            DisplayMode: =DisplayMode.Disabled
+            FocusedBorderThickness: =0
+            Height: =300
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: =""
+            Visible: =showFinishDialog
+            Width: =600
+            X: =Parent.Width / 2 - Self.Width / 2
+            Y: =Parent.Height / 2 - Self.Height / 2
+            ZIndex: =61
+
+        confirmDialogTitle_7 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Text: ="¿ESTA SEGURO DE FINALIZAR LA SOLICITUD?"
+            Visible: =showFinishDialog
+            Width: =confirmDialogFrame_7.Width
+            X: =confirmDialogFrame_7.X
+            Y: =confirmDialogFrame_7.Y + 15
+            ZIndex: =62
+
+        commentaryLbl_5 As label:
+            Height: =20
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Comentario:"
+            Visible: =showFinishDialog
+            Width: =100
+            X: =confirmDialogFrame_7.X + 20
+            Y: =confirmDialogTitle_7.Y + confirmDialogTitle_7.Height + 15
+            ZIndex: =63
+
+        TextInput3_5 As text:
+            BorderColor: =varColorPri01B
+            Default: =""
+            Height: =120
+            HintText: ="Ingrese un comentario..."
+            HoverBorderColor: =varColorPri01B
+            HoverFill: =varColorPri01B
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showFinishDialog
+            Width: =confirmDialogFrame_7.X + confirmDialogFrame_7.Width - Self.X - 20
+            X: =confirmDialogFrame_7.X + 20
+            Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
+            ZIndex: =64
+
+        aceptarBtn_5 As button:
+            DisplayMode: =If(IsBlank(TrimEnds(TextInput3_5.Text)), DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({showFinishDialog: false, isLoading: true });
+                
+                // Actualizar datos base de solicitud
+                Patch(Solicitud, 
+                	LookUp(Solicitud, ID = varSolicitudDetalleItemSel.IdSolicitud), 
+                	{ 
+                		EsFinalizado: true,
+                        FechaFinalSol: Today()
+                	}
+                );
+                
+                // Actualizar Solicitud seleccionada con los datos de la persona que esta realizando la accion
+                Patch(SolicitudDetalle, 
+                    LookUp(SolicitudDetalle, ID = varSolicitudDetalleItemSel.ID),
+                    {
+                        IdAccionActual: 8, // Finalizar
+                        IdPerfilActual: varMyUser.IdPerfil,
+                        IdPersonalActual: varMyUser.ID,
+                        IdAreaDestino: 0,
+                        IdEtapaDestino: 0,
+                        IdPerfilDestino: 0,
+                        IdPersonalDestino: 0,
+                        EsAtendido: true, // Actualizar estado del registro seleccionado
+                        IdSolicitudDetalleGenerada: 0, // Guardar ID de la solicitud detalle generada
+                        ObsSolDetDestino: TrimEnds(TextInput3_5.Text),
+                        FechaAtencion: Today()
+                    }
+                );
+                
+                Notify("Solicitud finalizada correctamente.", NotificationType.Success);
+                
+                Reset(TextInput3_5);
+                
+                UpdateContext({ isLoading: false });
+                
+                Navigate(scrMisSolicitudes, Fade);
+            Size: =12
+            Text: ="Aceptar"
+            Visible: =showFinishDialog
+            X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) - Self.Width - 20
+            Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
+            ZIndex: =65
+
+        cancelarBtn_5 As button:
+            Fill: =varColorPri01
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            OnSelect: |-
+                =UpdateContext({ showFinishDialog: false });
+                Reset(TextInput3_5)
+            Size: =12
+            Text: ="Cancelar"
+            Visible: =showFinishDialog
+            X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) + 20
+            Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
+            ZIndex: =66
+
+    Group8_22 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =72
 
-        Button8 As button:
+        Button8_20 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1013,22 +1653,22 @@ srcSolicitudDetalle As screen:
             Y: =85
             ZIndex: =8
 
-        Rectangle5 As rectangle:
+        Rectangle5_20 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8.X
-            Y: =Button8.Y + Button8.Height - Self.Height
+            X: =Button8_20.X
+            Y: =Button8_20.Y + Button8_20.Height - Self.Height
             ZIndex: =9
 
-    Group8_1 As group:
+    Group8_23 As group:
         Height: =5
         Width: =5
         X: =20
         Y: =20
         ZIndex: =74
 
-        Button8_1 As button:
+        Button8_21 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1045,26 +1685,26 @@ srcSolicitudDetalle As screen:
             Size: =16
             Text: ="Datos de Departamento"
             Width: =280
-            X: =TextInput4_4.X
-            Y: =Label6_6.Y + Label6_6.Height + 20
+            X: =TextInput4_95.X
+            Y: =Label6_124.Y + Label6_124.Height + 15
             ZIndex: =10
 
-        Rectangle5_1 As rectangle:
+        Rectangle5_21 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_1.X
-            Y: =Button8_1.Y + Button8_1.Height - Self.Height
+            X: =Button8_21.X
+            Y: =Button8_21.Y + Button8_21.Height - Self.Height
             ZIndex: =11
 
-    Group8_2 As group:
+    Group8_21 As group:
         Height: =5
         Width: =5
         X: =70
         Y: =380
         ZIndex: =76
 
-        Button8_2 As button:
+        Button8_22 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1081,26 +1721,26 @@ srcSolicitudDetalle As screen:
             Size: =16
             Text: ="Datos de Personal"
             Width: =230
-            X: =TextInput4_5.X
-            Y: =TextInput4_5.Y + TextInput4_5.Height + 20
+            X: =TextInput4_98.X
+            Y: =TextInput4_98.Y + TextInput4_98.Height + 10
             ZIndex: =12
 
-        Rectangle5_2 As rectangle:
+        Rectangle5_22 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_2.X
-            Y: =Button8_2.Y + Button8_2.Height - Self.Height
+            X: =Button8_22.X
+            Y: =Button8_22.Y + Button8_22.Height - Self.Height
             ZIndex: =13
 
-    Group8_3 As group:
+    Group8_20 As group:
         Height: =5
         Width: =5
         X: =70
         Y: =500
         ZIndex: =78
 
-        Button8_3 As button:
+        Button8_23 As button:
             Align: =Align.Left
             BorderThickness: =0
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1117,53 +1757,15 @@ srcSolicitudDetalle As screen:
             Size: =16
             Text: ="Datos de Fecha"
             Width: =230
-            X: =TextInput4_8.X
-            Y: =TextInput4_8.Y + TextInput4_8.Height + 20
+            X: =TextInput4_101.X
+            Y: =TextInput4_101.Y + TextInput4_101.Height + 10
             ZIndex: =14
 
-        Rectangle5_3 As rectangle:
+        Rectangle5_23 As rectangle:
             Fill: =varColorPri01
             Height: =2
             Width: =Parent.Width - Self.X - 50
-            X: =Button8_3.X
-            Y: =Button8_3.Y + Button8_3.Height - Self.Height
+            X: =Button8_23.X
+            Y: =Button8_23.Y + Button8_23.Height - Self.Height
             ZIndex: =15
-
-    descargarPDFBtn As button:
-        DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
-        Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
-        HoverFill: =ColorFade(Self.Fill, -10%)
-        OnSelect: |-
-            =UpdateContext({
-                isLoading: true,
-                callback:
-                Exportacion_PDF.Run(
-                    HtmlText1.HtmlText, 
-                    "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                    varSolicitudDetalleItemSel.ID
-                ).callback
-            });
-            If(callback = "true",
-                Notify("Exportacion realizada correctamente.", NotificationType.Success);
-                UpdateContext({ 
-                    isLoading: false,
-                    callback: "false"
-                })
-            )
-        Text: ="Generar PDF"
-        X: =374
-        Y: =700
-        ZIndex: =81
-
-    trazabilidadBtn As button:
-        DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
-        Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
-        HoverFill: =ColorFade(Self.Fill, -10%)
-        OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
-        Text: ="Trazabilidad"
-        X: =839
-        Y: =700
-        ZIndex: =82
 

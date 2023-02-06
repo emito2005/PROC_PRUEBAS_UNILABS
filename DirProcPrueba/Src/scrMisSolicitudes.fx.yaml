@@ -108,7 +108,7 @@ scrMisSolicitudes As screen:
                             "AsuntoSol"
                         );*/
                         Search(
-                            Filter(colSolicitudes,
+                            Filter(AddColumns(colSolicitudes,"SegmentoNegocio",TipoServicio),
                                 IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud),
                                 ID in(colSolicitudDetalleDestino.IdSolicitudDetalle),
                                 EsAtendido = false,
@@ -120,7 +120,7 @@ scrMisSolicitudes As screen:
                             "NroSolicitud",
                             "AsuntoSol"
                         ),
-                        "ID", "NroSolicitud", "AsuntoSol", "TipoSolicitud", "TipoServicio", "TipoOperacion", "EsActivo", "RucCliente", "RazonSocialCliente", "AreaOrigen", 
+                        "ID", "NroSolicitud", "AsuntoSol", "TipoSolicitud", "SegmentoNegocio", "TipoOperacion", "EsActivo", "RucCliente", "RazonSocialCliente", "AreaOrigen", 
                         "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
                         "FechaExpiraSLA", "FechaExpiraOLA", "InicioOperacion", "FinOperacion", "DescripcionPrueba", "ObsSolDet", "FechaCreacionSol"
                     )
@@ -508,7 +508,6 @@ scrMisSolicitudes As screen:
             ZIndex: =10
 
         lblHeaderMS_1 As label:
-            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             Font: =Font.'Segoe UI'
@@ -521,7 +520,6 @@ scrMisSolicitudes As screen:
             ZIndex: =11
 
         lblHeaderMS_2 As label:
-            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             Font: =Font.'Segoe UI'
@@ -529,12 +527,11 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="ASUNTO SOL."
             Width: =110
-            X: =324
+            X: =282
             Y: =167
             ZIndex: =12
 
         lblHeaderMS_3 As label:
-            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             Font: =Font.'Segoe UI'
@@ -542,25 +539,23 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="TIPO SOLIC."
             Width: =80
-            X: =477
+            X: =449
             Y: =167
             ZIndex: =13
 
         lblHeaderMS_4 As label:
-            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="TIPO SERV."
-            Width: =80
-            X: =598
+            Text: ="SEGMENTO NEGOCIO"
+            Width: =85
+            X: =577
             Y: =167
             ZIndex: =14
 
         lblHeaderMS_5 As label:
-            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             Font: =Font.'Segoe UI'
@@ -568,7 +563,7 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
             Width: =110
-            X: =682
+            X: =668
             Y: =167
             ZIndex: =15
 
