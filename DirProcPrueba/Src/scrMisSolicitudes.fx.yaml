@@ -9,9 +9,9 @@ scrMisSolicitudes As screen:
     Rectangle4 As rectangle:
         BorderColor: =varColorPri01
         Fill: =RGBA(237, 237, 237, 1)
-        Height: =699
+        Height: =618
         Width: =1366
-        Y: =69
+        Y: =150
         ZIndex: =2
 
     lbl_TituloPrincipal_2 As label:
@@ -30,14 +30,15 @@ scrMisSolicitudes As screen:
         Height: =33
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
-        X: =186
-        Y: =80
+        X: =119
+        Y: =161
         ZIndex: =4
 
     txtFilNomNroSol As text:
         BorderColor: |-
             =//RGBA(236; 64; 38; 1)
             varColorPri01B
+        BorderThickness: =1
         Default: =
         HoverBorderColor: |-
             =//RGBA(0; 18; 107; 1)
@@ -48,9 +49,13 @@ scrMisSolicitudes As screen:
         HoverFill: |-
             =//RGBA(186; 202; 226; 1)
             varColorPri01B
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =812
-        X: =186
-        Y: =113
+        X: =119
+        Y: =194
         ZIndex: =5
 
     btnExportarMS As button:
@@ -137,8 +142,8 @@ scrMisSolicitudes As screen:
         Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
-        X: =1123
-        Y: =113
+        X: =1056
+        Y: =194
         ZIndex: =6
 
     btnLimpiarMS As button:
@@ -153,8 +158,8 @@ scrMisSolicitudes As screen:
         Size: =12
         Text: ="LIMPIAR"
         Width: =100
-        X: =1013
-        Y: =113
+        X: =946
+        Y: =194
         ZIndex: =7
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
@@ -163,7 +168,7 @@ scrMisSolicitudes As screen:
             varColorPri02
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =539
+        Height: =450
         Items: |
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
@@ -190,203 +195,204 @@ scrMisSolicitudes As screen:
         TemplateFill: =If(ThisItem.IsSelected,RGBA(191, 191, 191, 60%),RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
-        Width: =1175
-        X: =181
-        Y: =215
+        Width: =1300
+        X: |-
+            =33
+            //(Parent.Width-Gallery1.Width)/2
+        Y: =301
         ZIndex: =8
 
-        Title2_4 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.NroSolicitud
-            Width: =85
-            X: =5
+        Icon5 As icon.ChevronRight:
+            Height: =22
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =15
+            X: =1285
             Y: =2
-            ZIndex: =4
-
-        Title2_5 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AsuntoSol
-            Tooltip: =ThisItem.AsuntoSol
-            Width: =170
-            Wrap: =false
-            X: =86
-            Y: =2
-            ZIndex: =5
-
-        Title2_6 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.TipoSolicitud
-            Tooltip: =ThisItem.TipoSolicitud
-            Width: =140
-            Wrap: =false
-            X: =257
-            Y: =2
-            ZIndex: =6
-
-        Title2_9 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
-            Width: =70
-            X: =1008
-            Y: =2
-            ZIndex: =8
+            ZIndex: =1
 
         Title2_10 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
             Width: =70
-            X: =1077
-            Y: =2
-            ZIndex: =9
+            X: =Title2_9.X + Title2_9.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =2
 
-        Title2_11 As label:
+        Title2_9 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AreaOrigen
-            Width: =107
-            X: =487
-            Y: =2
-            ZIndex: =10
-
-        Title2_12 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AreaDestino
-            Width: =107
-            X: =587
-            Y: =2
-            ZIndex: =11
-
-        Icon5 As icon.ChevronRight:
-            Height: =24
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            Width: =15
-            X: =1145
-            Y: =2
-            ZIndex: =12
-
-        Title2_14 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.TipoServicio
-            Tooltip: =ThisItem.TipoServicio
-            Width: =90
-            Wrap: =false
-            X: =397
-            Y: =2
-            ZIndex: =13
-
-        Title2_15 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.ManagerDelArea
-            Tooltip: =ThisItem.ManagerDelArea
-            Width: =100
-            Wrap: =false
-            X: =693
-            Y: =2
-            ZIndex: =14
-
-        Title2_38 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.LiderDelArea
-            Tooltip: =ThisItem.LiderDelArea
-            Width: =100
-            Wrap: =false
-            X: =800
-            Y: =2
-            ZIndex: =15
+            Size: =10
+            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
+            Width: =70
+            X: =Title2_39.X + Title2_39.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =3
 
         Title2_39 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.AnalistaDelArea
             Tooltip: =ThisItem.AnalistaDelArea
-            Width: =100
+            Width: =110
             Wrap: =false
-            X: =905
+            X: =Title2_38.X + Title2_38.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =4
+
+        Title2_38 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.LiderDelArea
+            Tooltip: =ThisItem.LiderDelArea
+            Width: =110
+            Wrap: =false
+            X: =Title2_15.X + Title2_15.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =5
+
+        Title2_15 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.ManagerDelArea
+            Tooltip: =ThisItem.ManagerDelArea
+            Width: =110
+            Wrap: =false
+            X: =Title2_12.X + Title2_12.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =6
+
+        Title2_12 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AreaDestino
+            Width: =105
+            X: =Title2_11.X + Title2_11.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =7
+
+        Title2_11 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AreaOrigen
+            Width: =105
+            X: =Title2_14.X + Title2_14.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =8
+
+        Title2_14 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.TipoServicio
+            Tooltip: =ThisItem.TipoServicio
+            Width: =110
+            Wrap: =false
+            X: =Title2_6.X + Title2_6.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =9
+
+        Title2_6 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.TipoSolicitud
+            Tooltip: =ThisItem.TipoSolicitud
+            Wrap: =false
+            X: =Title2_5.X + Title2_5.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =10
+
+        Title2_5 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AsuntoSol
+            Tooltip: =ThisItem.AsuntoSol
+            Width: =166
+            Wrap: =false
+            X: =Title2_4.X + Title2_4.Width + 10
+            Y: =Title2_4.Y
+            ZIndex: =11
+
+        Title2_4 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.NroSolicitud
+            Width: =81
+            X: =5
             Y: =2
-            ZIndex: =16
+            ZIndex: =12
 
     icnActualizarMS As icon.Reload:
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
-        Height: =39
+        Height: =40
         Icon: =Icon.Reload
         OnSelect: |+
             =ClearCollect(colSolicitudCab,
@@ -451,36 +457,10 @@ scrMisSolicitudes As screen:
                 Filter(SolicitudDetalleDestino,IdAreaDestino=varMyUser.IdArea,IdPerfilDestino=varMyUser.IdPerfil,IdPersonalDestino=varMyUser.ID));
             
         Tooltip: ="Actualizar Listado de Mis Solictudes"
-        Width: =50
-        X: =1300
-        Y: =114
+        Width: =40
+        X: =1233
+        Y: =194
         ZIndex: =9
-
-    gaMenuLateral_MS As gallery.galleryVertical:
-        Height: =304
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Width: =186
-        Y: =395
-        ZIndex: =22
-
-        Button2_5 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
-            Font: =Font.'Segoe UI'
-            Height: =61
-            HoverFill: =ColorFade(Self.Fill, -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            Text: =ThisItem.texto_boton
-            Width: =171
-            ZIndex: =1
 
     Icon7 As icon.Folder:
         Color: =varColorPri01
@@ -490,8 +470,8 @@ scrMisSolicitudes As screen:
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
-        X: =btnExportarMS.X + btnExportarMS.Width + 20
-        Y: =btnExportarMS.Y + (btnExportarMS.Height / 2) - (Self.Height / 2)
+        X: =1176
+        Y: =194
         ZIndex: =23
 
     Rectangle2_12 As rectangle:
@@ -511,64 +491,80 @@ scrMisSolicitudes As screen:
         Rectangle3 As rectangle:
             Fill: =RGBA(250, 164, 37, 1)
             Height: =50
-            Width: =1175
-            X: =181
-            Y: =163
+            Width: =1300
+            X: =33
+            Y: |
+                =245
             ZIndex: =10
 
         lblHeaderMS_1 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =50
             Size: =10
             Text: ="NRO TICKET"
-            Width: =80
-            X: =190
-            Y: =167
+            Width: =Title2_4.Width
+            X: =38
+            Y: |
+                =245
             ZIndex: =11
 
         lblHeaderMS_2 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="ASUNTO SOL."
-            Width: =110
-            X: =282
-            Y: =167
+            Width: =Title2_5.Width
+            X: =lblHeaderMS_1.X + lblHeaderMS_1.Width + 10
+            Y: |
+                =245
             ZIndex: =12
 
         lblHeaderMS_3 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="TIPO SOLIC."
-            Width: =80
-            X: =449
-            Y: =167
+            Width: =Title2_6.Width
+            X: =lblHeaderMS_2.X + lblHeaderMS_2.Width + 10
+            Y: |
+                =245
             ZIndex: =13
 
         lblHeaderMS_4 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="SEGMENTO NEGOCIO"
-            Width: =85
-            X: =577
-            Y: =167
+            Width: =Title2_14.Width
+            X: =lblHeaderMS_3.X + lblHeaderMS_3.Width + 10
+            Y: |
+                =245
             ZIndex: =14
 
         lblHeaderMS_5 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
-            Width: =110
-            X: =668
-            Y: =167
+            Width: =Title2_11.Width
+            X: =lblHeaderMS_4.X + lblHeaderMS_4.Width + 10
+            Y: |
+                =245
             ZIndex: =15
 
         lblHeaderMS_6 As label:
@@ -576,11 +572,13 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="DPTO. ASIGNADO"
-            Width: =100
-            X: =795
-            Y: =167
+            Width: =Title2_12.Width
+            X: =lblHeaderMS_5.X + lblHeaderMS_5.Width + 10
+            Y: |
+                =245
             ZIndex: =16
 
         lblHeaderMS_7 As label:
@@ -588,11 +586,13 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="MANAGER"
-            Width: =93
-            X: =897
-            Y: =167
+            Width: =Title2_15.Width
+            X: =lblHeaderMS_6.X + lblHeaderMS_6.Width + 10
+            Y: |
+                =245
             ZIndex: =17
 
         lblHeaderMS_8 As label:
@@ -600,11 +600,13 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="LIDER"
-            Width: =73
-            X: =1013
-            Y: =167
+            Width: =Title2_38.Width
+            X: =lblHeaderMS_7.X + lblHeaderMS_7.Width + 10
+            Y: |
+                =245
             ZIndex: =18
 
         lblHeaderMS_9 As label:
@@ -612,11 +614,13 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="ANALISTA"
-            Width: =80
-            X: =1110
-            Y: =167
+            Width: =Title2_39.Width
+            X: =lblHeaderMS_8.X + lblHeaderMS_8.Width + 10
+            Y: |
+                =245
             ZIndex: =19
 
         lblHeaderMS_10 As label:
@@ -624,11 +628,13 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="FECHA CREAC."
-            Width: =70
-            X: =1191
-            Y: =167
+            Width: =Title2_9.Width
+            X: =lblHeaderMS_9.X + lblHeaderMS_9.Width + 10
+            Y: |
+                =245
             ZIndex: =20
 
         lblHeaderMS_11 As label:
@@ -636,10 +642,111 @@ scrMisSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(250, 164, 37, 1)
             FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMS_1.Height
             Size: =10
             Text: ="FECHA EXPIRA"
-            Width: =70
-            X: =1260
-            Y: =167
+            Width: =Title2_10.Width
+            X: =lblHeaderMS_10.X + lblHeaderMS_10.Width + 10
+            Y: |
+                =245
             ZIndex: =21
+
+    optMS_NS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =27
+
+        ImgMS_NS As image:
+            Height: =ImgMS_NS.Width
+            Image: ='SOLICI MAS'
+            OnSelect: =Navigate(scrNuevaSolicitud);
+            Width: =75
+            X: =164
+            Y: =70
+            ZIndex: =25
+
+        lblMS_NS As label:
+            Height: =32
+            OnSelect: =Select(ImgMS_NS)
+            Text: ="NUEVA SOLICITUD"
+            Width: =170
+            X: =245
+            Y: =92
+            ZIndex: =26
+
+    optMS_MS As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =29
+
+        ImgMS_MS As image:
+            Height: =ImgMS_MS.Width
+            Image: ='MIS SOL SELECT'
+            Width: =75
+            X: =446
+            Y: =70
+            ZIndex: =27
+
+        lbMS_lMS As label:
+            Height: =32
+            OnSelect: =
+            Text: ="MIS SOLICITUDES"
+            Width: =170
+            X: =527
+            Y: =92
+            ZIndex: =28
+
+    optMS_SO As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =31
+
+        ImgMS_SO As image:
+            Height: =ImgMS_SO.Width
+            Image: =SOLICI
+            OnSelect: =Navigate(scrSolicitudes);
+            Width: =75
+            X: =724
+            Y: =70
+            ZIndex: =29
+
+        lblMS_SO As label:
+            Height: =32
+            OnSelect: =Select(ImgMS_SO)
+            Text: ="SOLICITUDES"
+            Width: =170
+            X: =805
+            Y: =92
+            ZIndex: =30
+
+    optMS_AR As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =33
+
+        ImgMS_AR As image:
+            Height: =ImgMS_AR.Width
+            Image: =AREA
+            OnSelect: =Navigate(scrArea);
+            Width: =75
+            X: =995
+            Y: =70
+            ZIndex: =31
+
+        lblMS_AR As label:
+            Height: =32
+            OnSelect: =Select(ImgMS_AR)
+            Text: ="AREA"
+            Width: =170
+            X: =1076
+            Y: =92
+            ZIndex: =32
 

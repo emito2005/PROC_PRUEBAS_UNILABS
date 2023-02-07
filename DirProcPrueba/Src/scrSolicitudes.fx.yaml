@@ -8,10 +8,10 @@ scrSolicitudes As screen:
     Rectangle4_6 As rectangle:
         BorderColor: =varColorPri01
         Fill: =RGBA(237, 237, 237, 1)
-        Height: =699
+        Height: =618
         OnSelect: =Reset(txtFilNomNroSol_1)
         Width: =1366
-        Y: =69
+        Y: =150
         ZIndex: =2
 
     lbl_TituloPrincipal_3 As label:
@@ -30,14 +30,15 @@ scrSolicitudes As screen:
         Height: =33
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
-        X: =186
-        Y: =80
+        X: =119
+        Y: =161
         ZIndex: =4
 
     txtFilNomNroSol_1 As text:
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
+        BorderThickness: =1
         Default: =
         HoverBorderColor: |-
             =//RGBA(0; 18; 107; 1)
@@ -48,18 +49,22 @@ scrSolicitudes As screen:
         HoverFill: |-
             =//RGBA(186; 202; 226; 1)
             varColorPri01B
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =812
-        X: =186
-        Y: =113
+        X: =119
+        Y: =194
         ZIndex: =5
 
-    "Gallery1_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galSolicitudes As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri02
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =541
+        Height: =450
         Items: |
             =/*
             Search(
@@ -84,7 +89,7 @@ scrSolicitudes As screen:
         OnSelect: |
             =//ClearCollect(colSolicitudDetalleItemSel;Gallery1_1.Selected);;
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1_1.Selected.'Datos adjuntos');;
-            Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=Gallery1_1.Selected.ID));
+            Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=galSolicitudes.Selected.ID));
             Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: false });
         TemplateFill: |-
             =//RGBA(0; 0; 0; 0)
@@ -92,12 +97,12 @@ scrSolicitudes As screen:
         TemplatePadding: =0
         TemplateSize: =27
         Visible: =!isLoading
-        Width: =1175
-        X: =181
-        Y: =215
-        ZIndex: =8
+        Width: =1300
+        X: =33
+        Y: =301
+        ZIndex: =6
 
-        Title2_7 As label:
+        txtGalSol01 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -113,7 +118,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =4
 
-        Title2_16 As label:
+        txtGalSol02 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -131,7 +136,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =5
 
-        Title2_17 As label:
+        txtGalSol03 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -148,7 +153,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =6
 
-        Title2_22 As label:
+        txtGalSol10 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -164,7 +169,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =8
 
-        Title2_23 As label:
+        txtGalSol11 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -180,7 +185,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =9
 
-        Title2_19 As label:
+        txtGalSol05 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -198,7 +203,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =10
 
-        Title2_20 As label:
+        txtGalSol06 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -214,7 +219,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =11
 
-        Icon5_1 As icon.ChevronRight:
+        icnGalSol01 As icon.ChevronRight:
             Height: =24
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
@@ -223,7 +228,7 @@ scrSolicitudes As screen:
             Y: =2
             ZIndex: =12
 
-        Title2_18 As label:
+        txtGalSol04 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -241,7 +246,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =13
 
-        Title2_21 As label:
+        txtGalSol07 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -259,7 +264,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =14
 
-        Title2_36 As label:
+        txtGalSol08 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -277,7 +282,7 @@ scrSolicitudes As screen:
             Y: =4
             ZIndex: =15
 
-        Title2_37 As label:
+        txtGalSol09 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =23
@@ -294,32 +299,6 @@ scrSolicitudes As screen:
             X: =905
             Y: =4
             ZIndex: =16
-
-    gaMenuLateral_S As gallery.galleryVertical:
-        Height: =233
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Width: =142
-        Y: =369
-        ZIndex: =22
-
-        Button2_6 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
-            Font: =Font.'Segoe UI'
-            Height: =61
-            HoverFill: =ColorFade(varColorPri02, -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            Text: =ThisItem.texto_boton
-            Width: =171
-            ZIndex: =1
 
     btnExportarS As button:
         BorderThickness: =0
@@ -353,9 +332,9 @@ scrSolicitudes As screen:
         Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
-        X: =1123
-        Y: =113
-        ZIndex: =23
+        X: =1054
+        Y: =194
+        ZIndex: =19
 
     btnLimpiarS As button:
         BorderThickness: =0
@@ -369,163 +348,16 @@ scrSolicitudes As screen:
         Size: =12
         Text: ="LIMPIAR"
         Width: =100
-        X: =1013
-        Y: =113
-        ZIndex: =24
-
-    Group2_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        Rectangle3_1 As rectangle:
-            Fill: =varColorPri02
-            Height: =50
-            Width: =1175
-            X: =181
-            Y: =163
-            ZIndex: =10
-
-        lblHeaderMS_12 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="NRO TICKET"
-            Width: =80
-            X: =190
-            Y: =167
-            ZIndex: =11
-
-        lblHeaderMS_13 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="ASUNTO SOL."
-            Width: =110
-            X: =324
-            Y: =167
-            ZIndex: =12
-
-        lblHeaderMS_14 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="TIPO SOLIC."
-            Width: =80
-            X: =477
-            Y: =167
-            ZIndex: =13
-
-        lblHeaderMS_15 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="TIPO SERV."
-            Width: =80
-            X: =598
-            Y: =167
-            ZIndex: =14
-
-        lblHeaderMS_16 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. PROCEDENCIA"
-            Width: =110
-            X: =682
-            Y: =167
-            ZIndex: =15
-
-        lblHeaderMS_17 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="DPTO. ASIGNADO"
-            Width: =100
-            X: =795
-            Y: =167
-            ZIndex: =16
-
-        lblHeaderMS_18 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="MANAGER"
-            Width: =93
-            X: =897
-            Y: =167
-            ZIndex: =17
-
-        lblHeaderMS_19 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="LIDER"
-            Width: =73
-            X: =1013
-            Y: =167
-            ZIndex: =18
-
-        lblHeaderMS_20 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="ANALISTA"
-            Width: =80
-            X: =1110
-            Y: =167
-            ZIndex: =19
-
-        lblHeaderMS_21 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA CREAC."
-            Width: =70
-            X: =1191
-            Y: =167
-            ZIndex: =20
-
-        lblHeaderMS_22 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="FECHA EXPIRA"
-            Width: =70
-            X: =1260
-            Y: =167
-            ZIndex: =21
+        X: =944
+        Y: =194
+        ZIndex: =20
 
     icnActualizarS As icon.Reload:
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
-        Height: =39
+        Height: =40
         Icon: =Icon.Reload
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -592,10 +424,10 @@ scrSolicitudes As screen:
                 );
             UpdateContext({ isLoading: false });
         Tooltip: ="Actualizar Listado de Solictudes"
-        Width: =50
-        X: =1306
-        Y: =113
-        ZIndex: =25
+        Width: =40
+        X: =1237
+        Y: =194
+        ZIndex: =21
 
     Icon7_1 As icon.Folder:
         Color: =varColorPri01
@@ -605,14 +437,271 @@ scrSolicitudes As screen:
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
-        X: =btnExportarS.X + btnExportarS.Width + 20
-        Y: =btnExportarS.Y + (btnExportarS.Height / 2) - (Self.Height / 2)
-        ZIndex: =26
+        X: =1174
+        Y: =194
+        ZIndex: =22
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Rectangle3_1 As rectangle:
+            Fill: =varColorPri02
+            Height: =50
+            Width: =1300
+            X: =33
+            Y: =245
+            ZIndex: =7
+
+        lblHeaderSO_01 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="NRO TICKET"
+            Width: =80
+            X: =42
+            Y: =245
+            ZIndex: =8
+
+        lblHeaderSO_02 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ASUNTO SOL."
+            Width: =110
+            X: =176
+            Y: =245
+            ZIndex: =9
+
+        lblHeaderSO_03 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="TIPO SOLIC."
+            Width: =80
+            X: =329
+            Y: =245
+            ZIndex: =10
+
+        lblHeaderSO_04 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="TIPO SERV."
+            Width: =80
+            X: =450
+            Y: =245
+            ZIndex: =11
+
+        lblHeaderSO_05 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="DPTO. PROCEDENCIA"
+            Width: =110
+            X: =534
+            Y: =245
+            ZIndex: =12
+
+        lblHeaderSO_06 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="DPTO. ASIGNADO"
+            Width: =100
+            X: =647
+            Y: =245
+            ZIndex: =13
+
+        lblHeaderSO_07 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="MANAGER"
+            Width: =93
+            X: =749
+            Y: =245
+            ZIndex: =14
+
+        lblHeaderSO_08 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="LIDER"
+            Width: =73
+            X: =865
+            Y: =245
+            ZIndex: =15
+
+        lblHeaderSO_09 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ANALISTA"
+            Width: =80
+            X: =962
+            Y: =245
+            ZIndex: =16
+
+        lblHeaderSO_10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="FECHA CREAC."
+            Width: =70
+            X: =1043
+            Y: =245
+            ZIndex: =17
+
+        lblHeaderSO_11 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="FECHA EXPIRA"
+            Width: =70
+            X: =1112
+            Y: =245
+            ZIndex: =18
+
+    optSO_NS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        ImgSO_NS As image:
+            Height: =ImgSO_NS.Width
+            Image: ='SOLICI MAS'
+            OnSelect: =Navigate(scrNuevaSolicitud);
+            Width: =75
+            X: =164
+            Y: =70
+            ZIndex: =23
+
+        lblSO_NS As label:
+            Height: =32
+            OnSelect: =Select(ImgSO_NS)
+            Text: ="NUEVA SOLICITUD"
+            Width: =170
+            X: =245
+            Y: =92
+            ZIndex: =24
 
     Rectangle2_13 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =27
+        ZIndex: =31
+
+    optSO_MS As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =33
+
+        ImgSO_MS As image:
+            Height: =ImgSO_MS.Width
+            Image: ='MIS SOL SELECT'
+            Width: =75
+            X: =446
+            Y: =70
+            ZIndex: =25
+
+        lbSO_lMS As label:
+            Height: =32
+            OnSelect: =
+            Text: ="MIS SOLICITUDES"
+            Width: =170
+            X: =527
+            Y: =92
+            ZIndex: =26
+
+    optSO_SO As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =36
+
+        ImgSO_SO As image:
+            Height: =ImgSO_SO.Width
+            Image: =SOLICI
+            OnSelect: =Navigate(scrSolicitudes);
+            Width: =75
+            X: =724
+            Y: =70
+            ZIndex: =27
+
+        lblSO_SO As label:
+            Height: =32
+            OnSelect: =Select(ImgSO_SO)
+            Text: ="SOLICITUDES"
+            Width: =170
+            X: =805
+            Y: =92
+            ZIndex: =28
+
+    optSO_AR As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =39
+
+        ImgSO_AR As image:
+            Height: =ImgSO_AR.Width
+            Image: =AREA
+            OnSelect: =Navigate(scrArea);
+            Width: =75
+            X: =995
+            Y: =70
+            ZIndex: =29
+
+        lblSO_AR As label:
+            Height: =32
+            OnSelect: =Select(ImgSO_AR)
+            Text: ="AREA"
+            Width: =170
+            X: =1076
+            Y: =92
+            ZIndex: =30
 
