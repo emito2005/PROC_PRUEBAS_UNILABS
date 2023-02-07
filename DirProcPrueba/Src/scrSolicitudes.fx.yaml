@@ -28,6 +28,7 @@ scrSolicitudes As screen:
     Label3_1 As label:
         Font: =Font.'Segoe UI'
         Height: =33
+        TabIndex: =5
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
         X: =119
@@ -53,6 +54,7 @@ scrSolicitudes As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
+        TabIndex: =6
         Width: =812
         X: =119
         Y: =194
@@ -91,6 +93,7 @@ scrSolicitudes As screen:
             //ClearCollect(colSolicitudDetalleItemSelDatosAdj;Gallery1_1.Selected.'Datos adjuntos');;
             Set(varSolicitudDetalleItemSel,LookUp(colSolicitudes,ID=galSolicitudes.Selected.ID));
             Navigate(srcSolicitudDetalle, ScreenTransition.None, { varMisSolicitudesScreen: false });
+        TabIndex: =11
         TemplateFill: |-
             =//RGBA(0; 0; 0; 0)
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
@@ -317,6 +320,7 @@ scrSolicitudes As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
+        TabIndex: =8
         Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
@@ -334,6 +338,7 @@ scrSolicitudes As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
+        TabIndex: =7
         Text: ="LIMPIAR"
         Width: =100
         X: =944
@@ -411,6 +416,7 @@ scrSolicitudes As screen:
                     )
                 );
             UpdateContext({ isLoading: false });
+        TabIndex: =10
         Tooltip: ="Actualizar Listado de Solictudes"
         Width: =40
         X: =1237
@@ -423,6 +429,7 @@ scrSolicitudes As screen:
         Icon: =Icon.Folder
         OnSelect: |-
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
+        TabIndex: =9
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
         X: =1174
@@ -598,6 +605,7 @@ scrSolicitudes As screen:
             Height: =ImgSO_NS.Width
             Image: ='SOLICI MAS'
             OnSelect: =Navigate(scrNuevaSolicitud);
+            TabIndex: =1
             Width: =75
             X: =164
             Y: =70
@@ -606,6 +614,7 @@ scrSolicitudes As screen:
         lblSO_NS As label:
             Height: =32
             OnSelect: =Select(ImgSO_NS)
+            TabIndex: =1
             Text: ="NUEVA SOLICITUD"
             Width: =170
             X: =245
@@ -630,6 +639,7 @@ scrSolicitudes As screen:
             Height: =ImgSO_MS.Width
             Image: ='MIS SOL'
             OnSelect: =Navigate(scrMisSolicitudes);
+            TabIndex: =2
             Width: =75
             X: =446
             Y: =70
@@ -638,6 +648,7 @@ scrSolicitudes As screen:
         lbSO_lMS As label:
             Height: =32
             OnSelect: =Select(ImgSO_MS)
+            TabIndex: =2
             Text: ="MIS SOLICITUDES"
             Width: =170
             X: =527
@@ -655,6 +666,7 @@ scrSolicitudes As screen:
             Height: =ImgSO_SO.Width
             Image: ='SOLICI SELECT'
             OnSelect: =
+            TabIndex: =3
             Width: =75
             X: =724
             Y: =70
@@ -663,6 +675,7 @@ scrSolicitudes As screen:
         lblSO_SO As label:
             Height: =32
             OnSelect: =
+            TabIndex: =3
             Text: ="SOLICITUDES"
             Width: =170
             X: =805
@@ -680,6 +693,7 @@ scrSolicitudes As screen:
             Height: =ImgSO_AR.Width
             Image: =AREA
             OnSelect: =Navigate(scrArea);
+            TabIndex: =4
             Width: =75
             X: =995
             Y: =70
@@ -688,6 +702,7 @@ scrSolicitudes As screen:
         lblSO_AR As label:
             Height: =32
             OnSelect: =Select(ImgSO_AR)
+            TabIndex: =4
             Text: ="AREA"
             Width: =170
             X: =1076

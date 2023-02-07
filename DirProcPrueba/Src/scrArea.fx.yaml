@@ -26,6 +26,7 @@ scrArea As screen:
             ResetForm(form_EditArea);ViewForm(form_EditArea);
             Navigate(scrAreaEdit, ScreenTransition.None)
         ShowNavigation: =true
+        TabIndex: =6
         TemplateFill: |
             =//If(ThisItem.IsSelected;RGBA(191; 191; 191; 60%);RGBA(224; 224; 224; 0))
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
@@ -105,6 +106,7 @@ scrArea As screen:
             =//Set(varNewRegArea;1);;
             Set(varIdArea,0);
             ResetForm(form_EditArea);NewForm(form_EditArea);Navigate(scrAreaEdit, ScreenTransition.None)
+        TabIndex: =5
         Tooltip: ="Nueva Área"
         Width: =40
         X: =1293
@@ -133,6 +135,7 @@ scrArea As screen:
             Height: =ImgMA_NS.Width
             Image: ='SOLICI MAS'
             OnSelect: =Navigate(scrNuevaSolicitud);
+            TabIndex: =1
             Width: =75
             X: =164
             Y: =70
@@ -141,6 +144,7 @@ scrArea As screen:
         lblMA_NS As label:
             Height: =32
             OnSelect: =Select(ImgMA_NS)
+            TabIndex: =1
             Text: ="NUEVA SOLICITUD"
             Width: =170
             X: =245
@@ -158,6 +162,7 @@ scrArea As screen:
             Height: =ImgMA_MS.Width
             Image: ='MIS SOL'
             OnSelect: =Navigate(scrMisSolicitudes);
+            TabIndex: =2
             Width: =75
             X: =446
             Y: =70
@@ -166,6 +171,7 @@ scrArea As screen:
         lbMA_lMS As label:
             Height: =32
             OnSelect: =Select(ImgMA_MS)
+            TabIndex: =2
             Text: ="MIS SOLICITUDES"
             Width: =170
             X: =527
@@ -258,6 +264,7 @@ scrArea As screen:
             Height: =ImgMA_SO.Width
             Image: =SOLICI
             OnSelect: =Navigate(scrSolicitudes);
+            TabIndex: =3
             Width: =75
             X: =724
             Y: =70
@@ -266,6 +273,7 @@ scrArea As screen:
         lblMA_SO As label:
             Height: =32
             OnSelect: =Select(ImgMA_SO)
+            TabIndex: =3
             Text: ="SOLICITUDES"
             Width: =170
             X: =805
@@ -283,6 +291,7 @@ scrArea As screen:
             Height: =ImgMA_AR.Width
             Image: ='AREA SELECT'
             OnSelect: =
+            TabIndex: =4
             Width: =75
             X: =995
             Y: =70
@@ -291,6 +300,7 @@ scrArea As screen:
         lblMA_AR As label:
             Height: =32
             OnSelect: =
+            TabIndex: =4
             Text: ="AREA"
             Width: =170
             X: =1076
