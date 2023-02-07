@@ -207,7 +207,7 @@ scrMisSolicitudes As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1285
+            X: =1273
             Y: =2
             ZIndex: =1
 
@@ -221,7 +221,7 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =10
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
-            Width: =70
+            Width: =65
             X: =Title2_9.X + Title2_9.Width + 10
             Y: =Title2_4.Y
             ZIndex: =2
@@ -236,7 +236,7 @@ scrMisSolicitudes As screen:
             PaddingTop: =0
             Size: =10
             Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
-            Width: =70
+            Width: =65
             X: =Title2_39.X + Title2_39.Width + 10
             Y: =Title2_4.Y
             ZIndex: =3
@@ -252,7 +252,7 @@ scrMisSolicitudes As screen:
             Size: =10
             Text: =ThisItem.AnalistaDelArea
             Tooltip: =ThisItem.AnalistaDelArea
-            Width: =110
+            Width: =105
             Wrap: =false
             X: =Title2_38.X + Title2_38.Width + 10
             Y: =Title2_4.Y

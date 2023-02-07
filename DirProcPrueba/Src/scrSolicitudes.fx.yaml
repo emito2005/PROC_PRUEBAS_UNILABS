@@ -96,7 +96,7 @@ scrSolicitudes As screen:
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
-        Visible: =!isLoading
+        Visible: =true//!isLoading
         Width: =1300
         X: =33
         Y: =301
@@ -105,15 +105,14 @@ scrSolicitudes As screen:
         txtGalSol01 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.NroSolicitud
-            VerticalAlign: =VerticalAlign.Top
-            Width: =85
+            Width: =81
             X: =5
             Y: =4
             ZIndex: =4
@@ -121,102 +120,95 @@ scrSolicitudes As screen:
         txtGalSol02 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.AsuntoSol
             Tooltip: =ThisItem.AsuntoSol
-            VerticalAlign: =VerticalAlign.Top
-            Width: =170
+            Width: =166
             Wrap: =false
-            X: =86
-            Y: =4
+            X: =txtGalSol01.X + txtGalSol01.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =5
 
         txtGalSol03 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.TipoSolicitud
-            VerticalAlign: =VerticalAlign.Top
-            Width: =140
             Wrap: =false
-            X: =257
-            Y: =4
+            X: =txtGalSol02.X + txtGalSol02.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =6
 
         txtGalSol10 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
-            Width: =70
-            X: =1008
-            Y: =4
+            Width: =65
+            X: =txtGalSol09.X + txtGalSol09.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =8
 
         txtGalSol11 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =Text(ThisItem.FechaExpiraSLA,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
-            Width: =70
-            X: =1077
-            Y: =4
+            Width: =65
+            X: =txtGalSol10.X + txtGalSol10.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =9
 
         txtGalSol05 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.AreaOrigen
             Tooltip: ="ThisItem.AreaOrigen"
-            VerticalAlign: =VerticalAlign.Top
-            Width: =100
+            Width: =105
             Wrap: =false
-            X: =487
-            Y: =4
+            X: =txtGalSol04.X + txtGalSol04.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =10
 
         txtGalSol06 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.AreaDestino
-            VerticalAlign: =VerticalAlign.Top
-            Width: =100
-            X: =587
-            Y: =4
+            Width: =105
+            X: =txtGalSol05.X + txtGalSol05.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =11
 
         icnGalSol01 As icon.ChevronRight:
@@ -224,80 +216,76 @@ scrSolicitudes As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =15
-            X: =1145
-            Y: =2
+            X: =1273
+            Y: =3
             ZIndex: =12
 
         txtGalSol04 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.TipoServicio
             Tooltip: ="ThisItem.TipoServicio"
-            VerticalAlign: =VerticalAlign.Top
-            Width: =90
+            Width: =110
             Wrap: =false
-            X: =397
-            Y: =4
+            X: =txtGalSol03.X + txtGalSol03.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =13
 
         txtGalSol07 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.ManagerDelArea
             Tooltip: =ThisItem.ManagerDelArea
-            VerticalAlign: =VerticalAlign.Top
-            Width: =100
+            Width: =110
             Wrap: =false
-            X: =693
-            Y: =4
+            X: =txtGalSol06.X + txtGalSol06.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =14
 
         txtGalSol08 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.LiderDelArea
             Tooltip: =ThisItem.LiderDelArea
-            VerticalAlign: =VerticalAlign.Top
-            Width: =100
+            Width: =110
             Wrap: =false
-            X: =800
-            Y: =4
+            X: =txtGalSol07.X + txtGalSol07.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =15
 
         txtGalSol09 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
-            Height: =23
+            Height: =22
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =10
             Text: =ThisItem.AnalistaDelArea
             Tooltip: =ThisItem.AnalistaDelArea
-            VerticalAlign: =VerticalAlign.Top
-            Width: =100
+            Width: =105
             Wrap: =false
-            X: =905
-            Y: =4
+            X: =txtGalSol08.X + txtGalSol08.Width + 10
+            Y: =txtGalSol01.Y
             ZIndex: =16
 
     btnExportarS As button:
@@ -640,7 +628,8 @@ scrSolicitudes As screen:
 
         ImgSO_MS As image:
             Height: =ImgSO_MS.Width
-            Image: ='MIS SOL SELECT'
+            Image: ='MIS SOL'
+            OnSelect: =Navigate(scrMisSolicitudes);
             Width: =75
             X: =446
             Y: =70
@@ -648,7 +637,7 @@ scrSolicitudes As screen:
 
         lbSO_lMS As label:
             Height: =32
-            OnSelect: =
+            OnSelect: =Select(ImgSO_MS)
             Text: ="MIS SOLICITUDES"
             Width: =170
             X: =527
@@ -664,8 +653,8 @@ scrSolicitudes As screen:
 
         ImgSO_SO As image:
             Height: =ImgSO_SO.Width
-            Image: =SOLICI
-            OnSelect: =Navigate(scrSolicitudes);
+            Image: ='SOLICI SELECT'
+            OnSelect: =
             Width: =75
             X: =724
             Y: =70
@@ -673,7 +662,7 @@ scrSolicitudes As screen:
 
         lblSO_SO As label:
             Height: =32
-            OnSelect: =Select(ImgSO_SO)
+            OnSelect: =
             Text: ="SOLICITUDES"
             Width: =170
             X: =805

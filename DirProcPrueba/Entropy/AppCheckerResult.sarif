@@ -13762,19 +13762,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrSolicitudes.lblSO_SO.FocusedBorderThickness"
+                  "fullyQualifiedName": "scrSolicitudes.lbSO_lMS.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrSolicitudes.lblSO_SO.FocusedBorderThickness",
+                  "fullyQualifiedName": "scrSolicitudes.lbSO_lMS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scrSolicitudes",
+                "type": "scrSolicitudes.lbSO_lMS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrSolicitudes.lbSO_lMS.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrSolicitudes.lbSO_lMS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scrSolicitudes",
-                "type": "scrSolicitudes.lblSO_SO"
+                "type": "scrSolicitudes.lbSO_lMS"
               }
             }
           ],
@@ -13792,19 +13822,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrSolicitudes.lblSO_SO.TabIndex"
+                  "fullyQualifiedName": "scrSolicitudes.ImgSO_MS.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrSolicitudes.lblSO_SO.TabIndex",
+                  "fullyQualifiedName": "scrSolicitudes.ImgSO_MS.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scrSolicitudes",
-                "type": "scrSolicitudes.lblSO_SO"
+                "type": "scrSolicitudes.ImgSO_MS"
               }
             }
           ],
@@ -13822,19 +13852,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrSolicitudes.ImgSO_SO.AccessibleLabel"
+                  "fullyQualifiedName": "scrSolicitudes.ImgSO_MS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrSolicitudes.ImgSO_SO.AccessibleLabel",
+                  "fullyQualifiedName": "scrSolicitudes.ImgSO_MS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrSolicitudes",
-                "type": "scrSolicitudes.ImgSO_SO"
+                "type": "scrSolicitudes.ImgSO_MS"
               }
             }
           ],
@@ -13846,36 +13876,6 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrSolicitudes.ImgSO_SO.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrSolicitudes.ImgSO_SO.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scrSolicitudes",
-                "type": "scrSolicitudes.ImgSO_SO"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
         },
         {
           "locations": [
@@ -14272,36 +14272,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.MIS SOL"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.MIS SOL",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "MIS SOL",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.SOLICI MAS SELECT"
                 }
               ],
@@ -14313,36 +14283,6 @@
               },
               "properties": {
                 "member": "SOLICI MAS SELECT",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.SOLICI SELECT"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.SOLICI SELECT",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "SOLICI SELECT",
                 "module": "App",
                 "type": "App"
               }
