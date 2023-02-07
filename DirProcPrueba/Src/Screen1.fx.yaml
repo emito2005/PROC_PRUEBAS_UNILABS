@@ -278,3 +278,18 @@ Screen1 As screen:
         Y: =443
         ZIndex: =11
 
+    Image2 As image:
+        Image: =analisis_icon2
+        X: =479
+        Y: =66
+        ZIndex: =12
+
+    Icon8 As icon.Alarm:
+        Color: =RGBA(172, 62, 11, 1)
+        Height: =120
+        Icon: =Icon.Printing3D
+        Width: =111
+        X: =468
+        Y: =217
+        ZIndex: =13
+
