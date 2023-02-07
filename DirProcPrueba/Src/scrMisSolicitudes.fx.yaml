@@ -8,8 +8,7 @@ scrMisSolicitudes As screen:
 
     Rectangle4 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(237, 237, 237, 1)
         Height: =699
         Width: =1366
         Y: =69
@@ -134,7 +133,8 @@ scrMisSolicitudes As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Exportar"
+        Size: =12
+        Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
         X: =1123
@@ -150,7 +150,8 @@ scrMisSolicitudes As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Limpiar"
+        Size: =12
+        Text: ="LIMPIAR"
         Width: =100
         X: =1013
         Y: =113
@@ -161,6 +162,7 @@ scrMisSolicitudes As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri02
         BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =539
         Items: |
             =//colSolicitudes
@@ -460,8 +462,8 @@ scrMisSolicitudes As screen:
         Layout: =Layout.Vertical
         TemplateSize: =61
         Transition: =Transition.Pop
-        Width: =181
-        Y: =69
+        Width: =137
+        Y: =395
         ZIndex: =22
 
         Button2_5 As button:

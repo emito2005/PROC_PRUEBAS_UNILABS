@@ -7,8 +7,7 @@ scrSolicitudes As screen:
 
     Rectangle4_6 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(237, 237, 237, 1)
         Height: =699
         OnSelect: =Reset(txtFilNomNroSol_1)
         Width: =1366
@@ -59,6 +58,7 @@ scrSolicitudes As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri02
         BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =541
         Items: |
             =/*
@@ -296,13 +296,13 @@ scrSolicitudes As screen:
             ZIndex: =16
 
     gaMenuLateral_S As gallery.galleryVertical:
-        Height: =271
+        Height: =233
         Items: =colBarraLateral
         Layout: =Layout.Vertical
         TemplateSize: =61
         Transition: =Transition.Pop
-        Width: =181
-        Y: =69
+        Width: =142
+        Y: =369
         ZIndex: =22
 
         Button2_6 As button:
@@ -349,7 +349,8 @@ scrSolicitudes As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Exportar"
+        Size: =12
+        Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
         X: =1123
@@ -365,7 +366,8 @@ scrSolicitudes As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Limpiar"
+        Size: =12
+        Text: ="LIMPIAR"
         Width: =100
         X: =1013
         Y: =113

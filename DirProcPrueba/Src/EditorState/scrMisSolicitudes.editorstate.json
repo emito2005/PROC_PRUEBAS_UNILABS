@@ -83,7 +83,14 @@
           "NameMapSourceSchema": "?"
         },
         "FocusedBorderThickness",
-        "Size",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Size",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Italic",
         "Underline",
         "Strikethrough",
@@ -114,7 +121,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnExportarMS",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -389,7 +396,14 @@
           "NameMapSourceSchema": "?"
         },
         "FocusedBorderThickness",
-        "Size",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Size",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Italic",
         "Underline",
         "Strikethrough",
@@ -405,7 +419,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnLimpiarMS",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1020,7 +1034,14 @@
         "HoverBorderColor",
         "BorderStyle",
         "FocusedBorderColor",
-        "Fill",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Fill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisabledFill",
         "PressedFill",
         "HoverFill",
@@ -1050,7 +1071,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Gallery1",
-      "ParentIndex": 23,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1307,7 +1328,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gaMenuLateral_MS",
-      "ParentIndex": 4,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1538,7 +1559,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "icnActualizarMS",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1944,7 +1965,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon7",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2150,7 +2171,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label3",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2758,7 +2779,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_1",
-      "ParentIndex": 12,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3076,7 +3097,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_10",
-      "ParentIndex": 21,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3394,7 +3415,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_11",
-      "ParentIndex": 22,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3712,7 +3733,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_2",
-      "ParentIndex": 13,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4030,7 +4051,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_3",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4348,7 +4369,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_4",
-      "ParentIndex": 15,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4666,7 +4687,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_5",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4984,7 +5005,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_6",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5302,7 +5323,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_7",
-      "ParentIndex": 18,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5620,7 +5641,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_8",
-      "ParentIndex": 19,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5938,7 +5959,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblHeaderMS_9",
-      "ParentIndex": 20,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6356,7 +6377,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle3",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9818,7 +9839,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txtFilNomNroSol",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

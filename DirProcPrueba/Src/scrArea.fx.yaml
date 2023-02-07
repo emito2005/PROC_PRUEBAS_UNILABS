@@ -6,8 +6,7 @@ scrArea As screen:
 
     Rectangle4_4 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(237, 237, 237, 1)
         Height: =699
         Width: =1366
         Y: =69
@@ -16,6 +15,7 @@ scrArea As screen:
     "DetAreaGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =varColorPri02
         BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =538
         Items: =Area_1
         Layout: =Layout.Vertical
