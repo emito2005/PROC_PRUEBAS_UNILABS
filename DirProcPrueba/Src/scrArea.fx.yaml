@@ -1,22 +1,21 @@
 scrArea As screen:
-    OnVisible: |-
-        =ClearCollect(colHeader,{CodArea:"CODIGO",NombreAbrev:"NOMBRE",Nombre:"DESCRIPCION",SLA:"SLA(Días)",OLA:"OLA(Días)",Accion:"ACCION"})
+    OnVisible: =
 
     cmpBarraSuperior_1 As cmpBarraSuperior:
 
     Rectangle4_4 As rectangle:
         BorderColor: =varColorPri01
         Fill: =RGBA(237, 237, 237, 1)
-        Height: =699
+        Height: =618
         Width: =1366
-        Y: =69
+        Y: =150
         ZIndex: =2
 
     "DetAreaGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =varColorPri02
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =538
+        Height: =500
         Items: =Area_1
         Layout: =Layout.Vertical
         OnSelect: |-
@@ -32,9 +31,9 @@ scrArea As screen:
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =41
-        Width: =1072
-        X: =234
-        Y: =181
+        Width: =1300
+        X: =33
+        Y: =247
         ZIndex: =3
 
         cmd_Detalle As icon.ChevronRight:
@@ -49,16 +48,16 @@ scrArea As screen:
             PaddingTop: =10
             TabIndex: =0
             Tooltip: ="Ver los detalles del elemento"
-            Width: =60
-            X: =1006
+            Width: =40
+            X: =1246
             Y: =1
             ZIndex: =4
 
         lbl_Nombre As label:
             Font: =Font.'Segoe UI'
             Text: =ThisItem.Nombre
-            Width: =511
-            X: =lbl_NombreAbrev.X+lbl_NombreAbrev.Width
+            Width: =650
+            X: =lbl_NombreAbrev.X+lbl_NombreAbrev.Width+10
             Y: =1
             ZIndex: =5
 
@@ -73,8 +72,9 @@ scrArea As screen:
         lbl_NombreAbrev As label:
             Font: =Font.'Segoe UI'
             Text: =ThisItem.NombreAbrev
-            Width: =93
-            X: =lbl_Codigo.X+lbl_Codigo.Width
+            Width: =120
+            X: |
+                =lbl_Codigo.X+lbl_Codigo.Width+10
             Y: =1
             ZIndex: =7
 
@@ -83,7 +83,7 @@ scrArea As screen:
             Font: =Font.'Segoe UI'
             Text: =ThisItem.SLA
             Width: =100
-            X: =lbl_Nombre.X+lbl_Nombre.Width
+            X: =lbl_Nombre.X+lbl_Nombre.Width+10
             Y: =1
             ZIndex: =8
 
@@ -92,137 +92,24 @@ scrArea As screen:
             Font: =Font.'Segoe UI'
             Text: =ThisItem.OLA
             Width: =100
-            X: =lbl_SLA.X+lbl_SLA.Width
+            X: |
+                =lbl_SLA.X+lbl_SLA.Width+10
             Y: =1
             ZIndex: =9
 
-    "HeaderGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Fill: =varColorPri02
-        Height: =50
-        Items: =colHeader
-        Layout: =Layout.Vertical
-        ShowScrollbar: =false
-        TemplatePadding: =0
-        TemplateSize: =50
-        Width: =1072
-        X: =234
-        Y: =130
-        ZIndex: =4
-
-        lbl_Tit_Nombre As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo.Height
-            Size: =14
-            Text: =ThisItem.Nombre
-            Width: =lbl_Nombre.Width
-            X: =lbl_Tit_NomAbrev.X+lbl_Tit_NomAbrev.Width
-            Y: =3
-            ZIndex: =5
-
-        lbl_Tit_Codigo As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =14
-            Text: =ThisItem.CodArea
-            Width: =lbl_Codigo.Width
-            X: =lbl_Codigo.X
-            Y: =3
-            ZIndex: =6
-
-        lbl_Tit_NomAbrev As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo.Height
-            Size: =14
-            Text: =ThisItem.NombreAbrev
-            Width: =lbl_NombreAbrev.Width
-            X: =lbl_Tit_Codigo.X+lbl_Tit_Codigo.Width
-            Y: =3
-            ZIndex: =7
-
-        lbl_Tit_SLA As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo.Height
-            Size: =14
-            Text: =ThisItem.SLA
-            Width: =112
-            X: =lbl_Tit_Nombre.X+lbl_Tit_Nombre.Width
-            Y: =3
-            ZIndex: =8
-
-        lbl_Tit_OLA As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Height: =lbl_Tit_Codigo.Height
-            Size: =14
-            Text: =ThisItem.OLA
-            Width: =111
-            X: =lbl_Tit_SLA.X+lbl_Tit_SLA.Width
-            Y: =3
-            ZIndex: =9
-
-        lbl_Tit_Accion As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =varColorPri02
-            FontWeight: =FontWeight.Bold
-            Size: =14
-            Text: =ThisItem.Accion
-            Width: =100
-            X: =962
-            Y: =3
-            ZIndex: =10
-
     Icon1 As icon.Add:
         Color: =varColorPri01
-        Height: =50
+        Height: =40
         Icon: =Icon.Add
         OnSelect: |-
             =//Set(varNewRegArea;1);;
             Set(varIdArea,0);
             ResetForm(form_EditArea);NewForm(form_EditArea);Navigate(scrAreaEdit, ScreenTransition.None)
-        Width: =51
-        X: =1252
-        Y: =75
+        Tooltip: ="Nueva Área"
+        Width: =40
+        X: =1293
+        Y: =149
         ZIndex: =5
-
-    gaMenuLateral_Area As gallery.galleryVertical:
-        Height: =271
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Width: =181
-        Y: =69
-        ZIndex: =6
-
-        Button2_3 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,varColorPri02,varColorPri02B)
-            Font: =Font.'Segoe UI'
-            Height: =61
-            HoverFill: =ColorFade(varColorPri02, -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            Text: =ThisItem.texto_boton
-            Width: =171
-            ZIndex: =1
 
     lbl_TituloPrincipal As label:
         Align: =Align.Center
@@ -234,4 +121,179 @@ scrArea As screen:
         X: =420
         Y: =12
         ZIndex: =7
+
+    optMA_NS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        ImgMA_NS As image:
+            Height: =ImgMA_NS.Width
+            Image: ='SOLICI MAS'
+            OnSelect: =Navigate(scrNuevaSolicitud);
+            Width: =75
+            X: =164
+            Y: =70
+            ZIndex: =15
+
+        lblMA_NS As label:
+            Height: =32
+            OnSelect: =Select(ImgMA_NS)
+            Text: ="NUEVA SOLICITUD"
+            Width: =170
+            X: =245
+            Y: =92
+            ZIndex: =16
+
+    optMA_MS As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =20
+
+        ImgMA_MS As image:
+            Height: =ImgMA_MS.Width
+            Image: ='MIS SOL'
+            OnSelect: =Navigate(scrMisSolicitudes);
+            Width: =75
+            X: =446
+            Y: =70
+            ZIndex: =18
+
+        lbMA_lMS As label:
+            Height: =32
+            OnSelect: =Select(ImgMA_MS)
+            Text: ="MIS SOLICITUDES"
+            Width: =170
+            X: =527
+            Y: =92
+            ZIndex: =19
+
+    Group2_2 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =20
+
+        Rectangle3_2 As rectangle:
+            Fill: =RGBA(250, 164, 37, 1)
+            Height: =50
+            Width: =1300
+            X: =33
+            Y: =190
+            ZIndex: =8
+
+        lblHeaderMA_01 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(250, 164, 37, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Text: ="CODIGO"
+            Width: =lbl_Codigo.Width
+            X: =42
+            Y: =190
+            ZIndex: =9
+
+        lblHeaderMA_02 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(250, 164, 37, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMA_01.Height
+            Text: ="NOMBRE"
+            Width: =lbl_NombreAbrev.Width
+            X: =lblHeaderMA_01.X + lblHeaderMA_01.Width + 10
+            Y: =190
+            ZIndex: =10
+
+        lblHeaderMA_03 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(250, 164, 37, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMA_01.Height
+            Text: ="DESCRIPCION"
+            Width: =lbl_Nombre.Width
+            X: =lblHeaderMA_02.X + lblHeaderMA_02.Width + 10
+            Y: =190
+            ZIndex: =11
+
+        lblHeaderMA_04 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(250, 164, 37, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMA_01.Height
+            Text: ="SLA (DIAS)"
+            Width: =lbl_SLA.Width
+            X: =lblHeaderMA_03.X + lblHeaderMA_03.Width + 10
+            Y: =190
+            ZIndex: =12
+
+        lblHeaderMA_05 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(250, 164, 37, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =lblHeaderMA_01.Height
+            Text: ="OLA (DIAS)"
+            Width: =lbl_OLA.Width
+            X: =lblHeaderMA_04.X + lblHeaderMA_04.Width + 10
+            Y: =190
+            ZIndex: =13
+
+    optMA_SO As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =23
+
+        ImgMA_SO As image:
+            Height: =ImgMA_SO.Width
+            Image: =SOLICI
+            OnSelect: =Navigate(scrSolicitudes);
+            Width: =75
+            X: =724
+            Y: =70
+            ZIndex: =21
+
+        lblMA_SO As label:
+            Height: =32
+            OnSelect: =Select(ImgMA_SO)
+            Text: ="SOLICITUDES"
+            Width: =170
+            X: =805
+            Y: =92
+            ZIndex: =22
+
+    optMA_AR As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =26
+
+        ImgMA_AR As image:
+            Height: =ImgMA_AR.Width
+            Image: ='AREA SELECT'
+            OnSelect: =
+            Width: =75
+            X: =995
+            Y: =70
+            ZIndex: =24
+
+        lblMA_AR As label:
+            Height: =32
+            OnSelect: =
+            Text: ="AREA"
+            Width: =170
+            X: =1076
+            Y: =92
+            ZIndex: =25
 
