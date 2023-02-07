@@ -178,6 +178,7 @@ scrTrazabilidad As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri02
         BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =588
         Items: |
             =colDetSolicitudTraza
@@ -468,7 +469,7 @@ scrTrazabilidad As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
-        Height: =39
+        Height: =31
         Icon: =Icon.Reload
         OnSelect: |+
             =ClearCollect(colSolicitudCabTraza,
@@ -527,9 +528,9 @@ scrTrazabilidad As screen:
                     )
                 );
             
-        Width: =50
-        X: =1285
-        Y: =74
+        Width: =35
+        X: =1300
+        Y: =73
         ZIndex: =18
 
     Icon2_2 As icon.BackArrow:
