@@ -282,7 +282,6 @@ srcSolicitudDetalle As screen:
 
     lbl_TituloPrincipal_13 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -1355,14 +1354,13 @@ srcSolicitudDetalle As screen:
         descargarPDFBtn_2 As button:
             DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({
                     isLoading: true,
                     callback:
                     Exportacion_PDF.Run(
-                        HtmlText1.HtmlText, 
+                        HtmlText1_3.HtmlText, 
                         "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
                         varSolicitudDetalleItemSel.ID
                     ).callback
@@ -1382,7 +1380,6 @@ srcSolicitudDetalle As screen:
         trazabilidadBtn_1 As button:
             DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
             Text: ="Trazabilidad"
@@ -1393,7 +1390,6 @@ srcSolicitudDetalle As screen:
         elevarBtn_1 As button:
             DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
             Text: ="Elevar"
@@ -1404,7 +1400,6 @@ srcSolicitudDetalle As screen:
         asignarBtn_1 As button:
             DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
             Text: ="Asignar"
@@ -1415,7 +1410,6 @@ srcSolicitudDetalle As screen:
         derivarBtn_1 As button:
             DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
             Text: ="Derivar"
@@ -1427,7 +1421,6 @@ srcSolicitudDetalle As screen:
         finalizarBtn_1 As button:
             DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_5);
@@ -1441,7 +1434,6 @@ srcSolicitudDetalle As screen:
         archivarBtn_1 As button:
             DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_3);
@@ -1454,7 +1446,6 @@ srcSolicitudDetalle As screen:
         eliminarBtn_1 As button:
             DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_4);
@@ -1480,7 +1471,6 @@ srcSolicitudDetalle As screen:
                     DisplayMode.Disabled
                 )
             Fill: =varColorPri01
-            Font: =Font.'Segoe UI'
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
             Text: ="Devolver"

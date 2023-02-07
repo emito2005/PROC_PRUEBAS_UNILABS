@@ -17,7 +17,6 @@ scrSolicitudes As screen:
 
     lbl_TituloPrincipal_3 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =36
         Size: =24
@@ -323,8 +322,8 @@ scrSolicitudes As screen:
             ZIndex: =1
 
     btnExportarS As button:
+        BorderThickness: =0
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -346,6 +345,10 @@ scrSolicitudes As screen:
             
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="Exportar"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
@@ -354,10 +357,14 @@ scrSolicitudes As screen:
         ZIndex: =23
 
     btnLimpiarS As button:
+        BorderThickness: =0
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: =Reset(txtFilNomNroSol)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="Limpiar"
         Width: =100
         X: =1013
@@ -383,7 +390,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="NRO TICKET"
@@ -396,7 +402,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="ASUNTO SOL."
@@ -409,7 +414,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="TIPO SOLIC."
@@ -422,7 +426,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="TIPO SERV."
@@ -435,7 +438,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
@@ -448,7 +450,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="DPTO. ASIGNADO"
@@ -461,7 +462,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="MANAGER"
@@ -474,7 +474,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="LIDER"
@@ -487,7 +486,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="ANALISTA"
@@ -500,7 +498,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="FECHA CREAC."
@@ -513,7 +510,6 @@ scrSolicitudes As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =10
             Text: ="FECHA EXPIRA"

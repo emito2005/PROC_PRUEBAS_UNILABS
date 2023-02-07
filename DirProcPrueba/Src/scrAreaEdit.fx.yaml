@@ -1584,7 +1584,6 @@ scrAreaEdit As screen:
         Fill: |
             =//RGBA(0; 0; 0; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =48
         HoverFill: =ColorFade(Self.Fill, -20%)
@@ -1617,7 +1616,6 @@ scrAreaEdit As screen:
 
     lbl_TituloPrincipal_11 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =46
         Size: =24

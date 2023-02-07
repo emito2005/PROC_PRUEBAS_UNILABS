@@ -245,7 +245,6 @@ srcSolicitudDetalleTra As screen:
 
     lbl_TituloPrincipal_12 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -266,7 +265,6 @@ srcSolicitudDetalleTra As screen:
     descargarPDFBtn_1 As button:
         DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({
@@ -295,7 +293,6 @@ srcSolicitudDetalleTra As screen:
             =//DisplayMode.Edit
             If(varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos',DisplayMode.Edit,DisplayMode.Disabled)
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =Set(varSolicitudDetalleItemSelDA,varSolicitudDetalleTrazaItemSel);

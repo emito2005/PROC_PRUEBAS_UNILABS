@@ -113,7 +113,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -127,7 +126,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =14
             Text: =ThisItem.CodArea
@@ -140,7 +138,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -154,7 +151,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -168,7 +164,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Height: =lbl_Tit_Codigo.Height
             Size: =14
@@ -182,7 +177,6 @@ scrArea As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
-            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
             Size: =14
             Text: =ThisItem.Accion
@@ -232,7 +226,6 @@ scrArea As screen:
 
     lbl_TituloPrincipal As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =46
         Size: =24

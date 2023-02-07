@@ -13,7 +13,6 @@ scrVerDocAdjuntos As screen:
 
     lbl_TituloPrincipal_9 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -30,7 +29,6 @@ scrVerDocAdjuntos As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =42
         Size: =14

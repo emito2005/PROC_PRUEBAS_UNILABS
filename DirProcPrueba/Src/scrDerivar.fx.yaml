@@ -46,16 +46,15 @@ scrDerivar As screen:
         ZIndex: =4
 
     icn_Volver_NS_5 As icon.BackArrow:
-        Color: =icn_Volver_NS_1.Color
+        Color: =icn_Volver_NS.Color
         Icon: =Icon.BackArrow
         OnSelect: =Back();
-        X: =icn_Volver_NS_1.X
-        Y: =icn_Volver_NS_1.Y
+        X: =icn_Volver_NS.X
+        Y: =icn_Volver_NS.Y
         ZIndex: =5
 
     Button5_2 As button:
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -1543,7 +1542,7 @@ scrDerivar As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Inicio de Operación"
-        Width: =Label6_15.Width
+        Width: =Label6_45.Width
         X: =Label6_45.X + Label6_45.Width + 50
         Y: =387
         ZIndex: =46

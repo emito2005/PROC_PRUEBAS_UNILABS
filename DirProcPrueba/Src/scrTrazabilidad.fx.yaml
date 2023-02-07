@@ -14,7 +14,6 @@ scrTrazabilidad As screen:
 
     lbl_TituloPrincipal_5 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -31,7 +30,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ID"
@@ -47,7 +45,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ACCION ORIGEN"
@@ -64,7 +61,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="AREA ORIGEN"
@@ -80,7 +76,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERFIL ORIGEN"
@@ -96,7 +91,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="COMENTARIO"
@@ -112,7 +106,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ACCION DESTINO"
@@ -128,7 +121,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="AREA DESTINO"
@@ -144,7 +136,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERFIL DESTINO"
@@ -160,7 +151,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERSONAL DESTINO"
@@ -176,7 +166,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="FEC. CREAC."
@@ -437,7 +426,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="PERSONAL ORIGEN"
@@ -453,7 +441,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="FEC. ATENC."
@@ -469,7 +456,6 @@ scrTrazabilidad As screen:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
             varColorPri02
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="ADJ      "

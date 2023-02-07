@@ -55,7 +55,6 @@ scrAsignar As screen:
 
     lbl_TituloPrincipal_7 As label:
         Align: =Align.Center
-        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Height: =38
         Size: =24
@@ -66,17 +65,16 @@ scrAsignar As screen:
         ZIndex: =4
 
     icn_Volver_NS_4 As icon.BackArrow:
-        Color: =icn_Volver_NS_1.Color
+        Color: =icn_Volver_NS.Color
         Icon: =Icon.BackArrow
         OnSelect: =Back();
-        X: =icn_Volver_NS_1.X
-        Y: =icn_Volver_NS_1.Y
+        X: =icn_Volver_NS.X
+        Y: =icn_Volver_NS.Y
         ZIndex: =5
 
     Button5_1 As button:
         DisplayMode: =If(!IsBlank(UserSelected), DisplayMode.Edit, DisplayMode.Disabled)
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -1665,7 +1663,7 @@ scrAsignar As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Inicio de Operación"
-        Width: =Label6_15.Width
+        Width: =Label6_35.Width
         X: =Label6_35.X + Label6_35.Width + 50
         Y: =387
         ZIndex: =51
