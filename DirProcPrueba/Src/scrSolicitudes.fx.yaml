@@ -96,7 +96,7 @@ scrSolicitudes As screen:
             If(ThisItem.IsSelected,varColorPri03B,RGBA(224, 224, 224, 0))
         TemplatePadding: =0
         TemplateSize: =27
-        Visible: =true//!isLoading
+        Visible: =!isLoading
         Width: =1300
         X: =33
         Y: =301
@@ -452,8 +452,8 @@ scrSolicitudes As screen:
             Height: =50
             Size: =10
             Text: ="NRO TICKET"
-            Width: =80
-            X: =42
+            Width: =txtGalSol01.Width
+            X: =38
             Y: =245
             ZIndex: =8
 
@@ -462,12 +462,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="ASUNTO SOL."
-            Width: =110
-            X: =176
-            Y: =245
+            Width: =txtGalSol02.Width
+            X: =lblHeaderSO_01.X + lblHeaderSO_01.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =9
 
         lblHeaderSO_03 As label:
@@ -475,12 +475,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="TIPO SOLIC."
-            Width: =80
-            X: =329
-            Y: =245
+            Width: =txtGalSol03.Width
+            X: =lblHeaderSO_02.X + lblHeaderSO_02.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =10
 
         lblHeaderSO_04 As label:
@@ -488,12 +488,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="TIPO SERV."
-            Width: =80
-            X: =450
-            Y: =245
+            Width: =txtGalSol04.Width
+            X: =lblHeaderSO_03.X + lblHeaderSO_03.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =11
 
         lblHeaderSO_05 As label:
@@ -501,12 +501,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="DPTO. PROCEDENCIA"
-            Width: =110
-            X: =534
-            Y: =245
+            Width: =txtGalSol05.Width
+            X: =lblHeaderSO_04.X + lblHeaderSO_04.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =12
 
         lblHeaderSO_06 As label:
@@ -514,12 +514,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="DPTO. ASIGNADO"
-            Width: =100
-            X: =647
-            Y: =245
+            Width: =txtGalSol06.Width
+            X: =lblHeaderSO_05.X + lblHeaderSO_05.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =13
 
         lblHeaderSO_07 As label:
@@ -527,12 +527,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="MANAGER"
-            Width: =93
-            X: =749
-            Y: =245
+            Width: =txtGalSol07.Width
+            X: =lblHeaderSO_06.X + lblHeaderSO_06.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =14
 
         lblHeaderSO_08 As label:
@@ -540,12 +540,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="LIDER"
-            Width: =73
-            X: =865
-            Y: =245
+            Width: =txtGalSol08.Width
+            X: =lblHeaderSO_07.X + lblHeaderSO_07.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =15
 
         lblHeaderSO_09 As label:
@@ -553,12 +553,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="ANALISTA"
-            Width: =80
-            X: =962
-            Y: =245
+            Width: =txtGalSol09.Width
+            X: =lblHeaderSO_08.X + lblHeaderSO_08.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =16
 
         lblHeaderSO_10 As label:
@@ -566,12 +566,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="FECHA CREAC."
-            Width: =70
-            X: =1043
-            Y: =245
+            Width: =txtGalSol10.Width
+            X: =lblHeaderSO_09.X + lblHeaderSO_09.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =17
 
         lblHeaderSO_11 As label:
@@ -579,12 +579,12 @@ scrSolicitudes As screen:
             Color: =RGBA(255, 255, 255, 1)
             Fill: =varColorPri02
             FontWeight: =FontWeight.Bold
-            Height: =50
+            Height: =lblHeaderSO_01.Height
             Size: =10
             Text: ="FECHA EXPIRA"
-            Width: =70
-            X: =1112
-            Y: =245
+            Width: =txtGalSol11.Width
+            X: =lblHeaderSO_10.X + lblHeaderSO_10.Width + 10
+            Y: =lblHeaderSO_01.Y
             ZIndex: =18
 
     optSO_NS As group:
