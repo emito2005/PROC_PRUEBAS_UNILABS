@@ -22,158 +22,7 @@ scrTrazabilidad As screen:
         Y: =16
         ZIndex: =3
 
-    lblHeader_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="ID"
-        Width: =40
-        X: =24
-        Y: =124
-        ZIndex: =4
-
-    lblHeader_2 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="ACCION ORIGEN"
-        Width: |
-            =80
-        X: =65
-        Y: =124
-        ZIndex: =5
-
-    lblHeader_3 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="AREA ORIGEN"
-        Width: =70
-        X: =143
-        Y: =124
-        ZIndex: =6
-
-    lblHeader_4 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="PERFIL ORIGEN"
-        Width: =80
-        X: =214
-        Y: =124
-        ZIndex: =7
-
-    lblHeader_5 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="COMENTARIO"
-        Width: =250
-        X: =475
-        Y: =124
-        ZIndex: =8
-
-    lblHeader_6 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="ACCION DESTINO"
-        Width: =80
-        X: =725
-        Y: =124
-        ZIndex: =9
-
-    lblHeader_7 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="AREA DESTINO"
-        Width: =70
-        X: =805
-        Y: =124
-        ZIndex: =10
-
-    lblHeader_8 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="PERFIL DESTINO"
-        Width: =80
-        X: =875
-        Y: =124
-        ZIndex: =11
-
-    lblHeader_9 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="PERSONAL DESTINO"
-        Width: =180
-        X: =955
-        Y: =124
-        ZIndex: =12
-
-    lblHeader_10 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="FEC. CREAC."
-        Width: =70
-        X: =1135
-        Y: =124
-        ZIndex: =13
-
-    "Gallery1_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galTraza As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri02
@@ -184,7 +33,7 @@ scrTrazabilidad As screen:
             =colDetSolicitudTraza
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Set(varSolicitudDetalleTrazaItemSel,LookUp(colDetSolicitudTraza,ID=Gallery1_2.Selected.ID));
+            =Set(varSolicitudDetalleTrazaItemSel,LookUp(colDetSolicitudTraza,ID=galTraza.Selected.ID));
             Navigate(srcSolicitudDetalleTra, ScreenTransition.None);
         ShowNavigation: =true
         TemplateFill: |-
@@ -195,123 +44,7 @@ scrTrazabilidad As screen:
         Width: =1310
         X: =24
         Y: =165
-        ZIndex: =14
-
-        Title2_24 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.ID
-            VerticalAlign: =VerticalAlign.Top
-            Width: =40
-            X: =7
-            Y: =3
-            ZIndex: =4
-
-        Title2_25 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AccionOrigen
-            VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =51
-            Y: =3
-            ZIndex: =5
-
-        Title2_26 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AreaAbrevOrigen
-            VerticalAlign: =VerticalAlign.Top
-            Width: =50
-            X: =131
-            Y: =3
-            ZIndex: =6
-
-        Title2_31 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
-            Width: =70
-            X: =1106
-            Y: =3
-            ZIndex: =8
-
-        Title2_32 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
-            VerticalAlign: =VerticalAlign.Top
-            Width: =70
-            X: =1182
-            Y: =3
-            ZIndex: =9
-
-        Title2_28 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.PersonalActual
-            Tooltip: =ThisItem.PersonalActual
-            VerticalAlign: =VerticalAlign.Top
-            Width: =180
-            Wrap: =false
-            X: =277
-            Y: =3
-            ZIndex: =10
-
-        Title2_29 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.ObsSolDet
-            Tooltip: =ThisItem.ObsSolDetDestino
-            VerticalAlign: =VerticalAlign.Top
-            Width: =240
-            Wrap: =false
-            X: =461
-            Y: =3
-            ZIndex: =11
+        ZIndex: =4
 
         Icon5_2 As icon.ChevronRight:
             Color: |-
@@ -321,90 +54,8 @@ scrTrazabilidad As screen:
             Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             Width: =20
-            X: =1276
-            ZIndex: =12
-
-        Title2_27 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.PerfilOrigen
-            VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =193
-            Y: =3
-            ZIndex: =13
-
-        Title2_30 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.PersonalDestino
-            Tooltip: =ThisItem.PersonalActual
-            VerticalAlign: =VerticalAlign.Top
-            Width: =180
-            Wrap: =false
-            X: =931
-            Y: =3
-            ZIndex: =14
-
-        Title2_34 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.PerfilDestino
-            VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =851
-            Y: =3
-            ZIndex: =16
-
-        Title2_35 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AreaAbrevDestino
-            VerticalAlign: =VerticalAlign.Top
-            Width: =50
-            X: =785
-            Y: =3
-            ZIndex: =17
-
-        Title2_33 As label:
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Normal
-            Height: =23
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =11
-            Text: =ThisItem.AccionActual
-            VerticalAlign: =VerticalAlign.Top
-            Width: =80
-            X: =700
-            Y: =3
-            ZIndex: =18
+            X: =1270
+            ZIndex: =1
 
         Icon5_3 As icon.ChevronRight:
             Height: =24
@@ -412,57 +63,198 @@ scrTrazabilidad As screen:
             OnSelect: |
                 =//Select(Parent)
                 //Set(varSolicitudDetalleItemSel;LookUp(colSolicitudes;ID=Gallery1_2.Selected.ID));;
-                Set(varSolicitudDetalleItemSelDA,LookUp(colDetSolicitudTraza,ID=Gallery1_2.Selected.ID));
+                Set(varSolicitudDetalleItemSelDA,LookUp(colDetSolicitudTraza,ID=galTraza.Selected.ID));
                 Navigate(scrVerDocAdjuntos, ScreenTransition.None);
             Visible: =ThisItem.'Tiene datos adjuntos'
             Width: =20
             X: =1250
-            ZIndex: =19
+            ZIndex: =2
 
-    lblHeader_11 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="PERSONAL ORIGEN"
-        Width: =180
-        X: =294
-        Y: =124
-        ZIndex: =15
+        txtGalTra12 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            Width: =70
+            X: =txtGalTra11.X + txtGalTra11.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =3
 
-    lblHeader_12 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="FEC. ATENC."
-        Width: =70
-        X: =1205
-        Y: =124
-        ZIndex: =16
+        txtGalTra11 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =Text(ThisItem.FechaCreacion,"dd/mm/yy")
+            Width: =70
+            X: =txtGalTra10.X + txtGalTra10.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =4
 
-    lblHeader_13 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        DisplayMode: =DisplayMode.View
-        Fill: |-
-            =//RGBA(221; 79; 14; 1)
-            varColorPri02
-        FontWeight: =FontWeight.Bold
-        Size: =10
-        Text: ="ADJ      "
-        Width: =60
-        X: =1275
-        Y: =124
-        ZIndex: =17
+        txtGalTra10 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.PersonalDestino
+            Tooltip: =ThisItem.PersonalActual
+            Width: =160
+            Wrap: =false
+            X: =txtGalTra09.X + txtGalTra09.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =5
+
+        txtGalTra09 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.PerfilDestino
+            Width: =70
+            X: =txtGalTra08.X + txtGalTra08.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =6
+
+        txtGalTra08 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AreaAbrevDestino
+            Width: =70
+            X: =txtGalTra07.X + txtGalTra07.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =7
+
+        txtGalTra07 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AccionActual
+            Width: =70
+            X: =txtGalTra06.X + txtGalTra06.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =8
+
+        txtGalTra06 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.ObsSolDet
+            Tooltip: =ThisItem.ObsSolDetDestino
+            Width: =220
+            Wrap: =false
+            X: =txtGalTra05.X + txtGalTra05.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =9
+
+        txtGalTra05 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.PersonalActual
+            Tooltip: =ThisItem.PersonalActual
+            Width: =160
+            Wrap: =false
+            X: =txtGalTra04.X + txtGalTra04.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =10
+
+        txtGalTra04 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.PerfilOrigen
+            Width: =70
+            X: =txtGalTra03.X + txtGalTra03.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =11
+
+        txtGalTra03 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AreaAbrevOrigen
+            Width: =70
+            X: =txtGalTra02.X + txtGalTra02.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =12
+
+        txtGalTra02 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =txtGalTra01.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.AccionOrigen
+            Width: =70
+            X: =txtGalTra01.X + txtGalTra01.Width + 10
+            Y: =txtGalTra01.Y
+            ZIndex: =13
+
+        txtGalTra01 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =22
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.ID
+            Width: =35
+            X: =7
+            Y: =3
+            ZIndex: =14
 
     icnActualizarTraza As icon.Reload:
         BorderColor: |-
@@ -531,7 +323,7 @@ scrTrazabilidad As screen:
         Width: =35
         X: =1300
         Y: =73
-        ZIndex: =18
+        ZIndex: =5
 
     Icon2_2 As icon.BackArrow:
         Color: =varColorPri01
@@ -539,5 +331,228 @@ scrTrazabilidad As screen:
         OnSelect: =ResetForm(form_EditArea);Back()
         X: =13
         Y: =2
-        ZIndex: =19
+        ZIndex: =6
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        Rectangle3_4 As rectangle:
+            Fill: =varColorPri02
+            Height: =50
+            Width: =1310
+            X: =24
+            Y: =109
+            ZIndex: =7
+
+        lblHeader_TR_13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ADJ      "
+            Width: =46
+            X: =lblHeader_TR_12.X + lblHeader_TR_12.Width + 10
+            Y: =109
+            ZIndex: =8
+
+        lblHeader_TR_12 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="FEC. ATENC."
+            Width: =txtGalTra12.Width
+            X: =lblHeader_TR_11.X + lblHeader_TR_11.Width + 10
+            Y: =109
+            ZIndex: =9
+
+        lblHeader_TR_11 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="FEC. CREAC."
+            Width: =txtGalTra11.Width
+            X: =lblHeader_TR_10.X + lblHeader_TR_10.Width + 10
+            Y: =109
+            ZIndex: =10
+
+        lblHeader_TR_10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="PERSONAL DESTINO"
+            Width: =txtGalTra10.Width
+            X: =lblHeader_TR_09.X + lblHeader_TR_09.Width + 10
+            Y: =109
+            ZIndex: =11
+
+        lblHeader_TR_09 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="PERFIL DESTINO"
+            Width: =txtGalTra09.Width
+            X: =lblHeader_TR_08.X + lblHeader_TR_08.Width + 10
+            Y: =109
+            ZIndex: =12
+
+        lblHeader_TR_08 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="AREA DESTINO"
+            Width: =txtGalTra08.Width
+            X: =lblHeader_TR_07.X + lblHeader_TR_07.Width + 10
+            Y: =109
+            ZIndex: =13
+
+        lblHeader_TR_07 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ACCION DESTINO"
+            Width: =txtGalTra07.Width
+            X: =lblHeader_TR_06.X + lblHeader_TR_06.Width + 10
+            Y: =109
+            ZIndex: =14
+
+        lblHeader_TR_06 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="COMENTARIO"
+            Width: =txtGalTra06.Width
+            X: =lblHeader_TR_05.X + lblHeader_TR_05.Width + 10
+            Y: =109
+            ZIndex: =15
+
+        lblHeader_TR_05 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="PERSONAL ORIGEN"
+            Width: =txtGalTra05.Width
+            X: =lblHeader_TR_04.X + lblHeader_TR_04.Width + 10
+            Y: =109
+            ZIndex: =16
+
+        lblHeader_TR_04 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="PERFIL ORIGEN"
+            Width: =txtGalTra04.Width
+            X: =lblHeader_TR_03.X + lblHeader_TR_03.Width + 10
+            Y: =109
+            ZIndex: =17
+
+        lblHeader_TR_03 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="AREA ORIGEN"
+            Width: =txtGalTra03.Width
+            X: =lblHeader_TR_02.X + lblHeader_TR_02.Width + 10
+            Y: =109
+            ZIndex: =18
+
+        lblHeader_TR_02 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ACCION ORIGEN"
+            Width: =txtGalTra02.Width
+            X: =lblHeader_TR_01.X + lblHeader_TR_01.Width + 10
+            Y: =109
+            ZIndex: =19
+
+        lblHeader_TR_01 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: |-
+                =//RGBA(221; 79; 14; 1)
+                varColorPri02
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =10
+            Text: ="ID"
+            Width: =txtGalTra01.Width
+            X: =31
+            Y: =109
+            ZIndex: =20
 
