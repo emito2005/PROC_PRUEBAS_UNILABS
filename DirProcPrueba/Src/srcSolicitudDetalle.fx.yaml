@@ -2208,9 +2208,7 @@ srcSolicitudDetalle As screen:
             ZIndex: =65
 
         finalizarBtn_1 As button:
-            DisplayMode: |-
-                =//If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo); DisplayMode.Edit; DisplayMode.Disabled)
-                DisplayMode.Edit
+            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
