@@ -50,6 +50,7 @@ scrSolicitudes As screen:
         HoverFill: |-
             =//RGBA(186; 202; 226; 1)
             varColorPri01B
+        PaddingLeft: =40
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -621,12 +622,27 @@ scrSolicitudes As screen:
             Y: =92
             ZIndex: =24
 
+    Icon9_1 As icon.Search:
+        Color: =RGBA(179, 179, 179, 1)
+        DisabledColor: =RGBA(179, 179, 179, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =40
+        Icon: =Icon.Search
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =40
+        X: =119
+        Y: =194
+        ZIndex: =31
+
     Rectangle2_13 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =31
+        ZIndex: =32
 
     optSO_MS As group:
         Height: =5
