@@ -11,6 +11,794 @@ srcSolicitudDetalle As screen:
         	Set(MyAreaManagerLiderID, LookUp(AreaManagerLider, IdPersonal = varMyUser.ID).ID)
         );
 
+    htm_EmailPreview_FS As htmlViewer:
+        Height: =63
+        HtmlText: |-
+            ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
+            xmlns:o=""""urn:schemas-microsoft-com:office:office""""
+            xmlns:w=""""urn:schemas-microsoft-com:office:word""""
+            xmlns:m=""""http://schemas.microsoft.com/office/2004/12/omml""""
+            xmlns=""""http://www.w3.org/TR/REC-html40"""">
+            
+            <head>
+            <meta http-equiv=Content-Type content=""""text/html; charset=windows-1252"""">
+            <meta name=ProgId content=Word.Document>
+            <meta name=Generator content=""""Microsoft Word 15"""">
+            <meta name=Originator content=""""Microsoft Word 15"""">
+            <link rel=File-List href=""""plantilla_crea_solicitud_archivos/filelist.xml"""">
+            <link rel=Edit-Time-Data href=""""plantilla_crea_solicitud_archivos/editdata.mso"""">
+            <!--[if gte mso 9]><xml>
+             <o:OfficeDocumentSettings>
+              <o:AllowPNG/>
+             </o:OfficeDocumentSettings>
+            </xml><![endif]-->
+            <link rel=themeData href=""""plantilla_crea_solicitud_archivos/themedata.thmx"""">
+            <link rel=colorSchemeMapping
+            href=""""plantilla_crea_solicitud_archivos/colorschememapping.xml"""">
+            <!--[if gte mso 9]><xml>
+             <w:WordDocument>
+              <w:SpellingState>Clean</w:SpellingState>
+              <w:TrackMoves/>
+              <w:TrackFormatting/>
+              <w:HyphenationZone>21</w:HyphenationZone>
+              <w:PunctuationKerning/>
+              <w:ValidateAgainstSchemas/>
+              <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+              <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+              <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+              <w:DoNotPromoteQF/>
+              <w:LidThemeOther>ES-PE</w:LidThemeOther>
+              <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+              <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+              <w:Compatibility>
+               <w:BreakWrappedTables/>
+               <w:SnapToGridInCell/>
+               <w:WrapTextWithPunct/>
+               <w:UseAsianBreakRules/>
+               <w:DontGrowAutofit/>
+               <w:SplitPgBreakAndParaMark/>
+               <w:EnableOpenTypeKerning/>
+               <w:DontFlipMirrorIndents/>
+               <w:OverrideTableStyleHps/>
+              </w:Compatibility>
+              <m:mathPr>
+               <m:mathFont m:val=""""Cambria Math""""/>
+               <m:brkBin m:val=""""before""""/>
+               <m:brkBinSub m:val=""""&#45;-""""/>
+               <m:smallFrac m:val=""""off""""/>
+               <m:dispDef/>
+               <m:lMargin m:val=""""0""""/>
+               <m:rMargin m:val=""""0""""/>
+               <m:defJc m:val=""""centerGroup""""/>
+               <m:wrapIndent m:val=""""1440""""/>
+               <m:intLim m:val=""""subSup""""/>
+               <m:naryLim m:val=""""undOvr""""/>
+              </m:mathPr></w:WordDocument>
+            </xml><![endif]--><!--[if gte mso 9]><xml>
+             <w:LatentStyles DefLockedState=""""false"""" DefUnhideWhenUsed=""""false""""
+              DefSemiHidden=""""false"""" DefQFormat=""""false"""" DefPriority=""""99""""
+              LatentStyleCount=""""376"""">
+              <w:LsdException Locked=""""false"""" Priority=""""0"""" QFormat=""""true"""" Name=""""Normal""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" QFormat=""""true"""" Name=""""heading 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 7""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 8""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""9"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""heading 9""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 6""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 7""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 8""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index 9""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 7""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 8""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""toc 9""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Normal Indent""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""footnote text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""annotation text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""header""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""footer""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""index heading""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""35"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""caption""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""table of figures""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""envelope address""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""envelope return""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""footnote reference""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""annotation reference""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""line number""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""page number""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""endnote reference""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""endnote text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""table of authorities""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""macro""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""toa heading""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Bullet""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Number""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Bullet 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Bullet 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Bullet 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Bullet 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Number 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Number 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Number 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Number 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""10"""" QFormat=""""true"""" Name=""""Title""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Closing""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Signature""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""1"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""Default Paragraph Font""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text Indent""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Continue""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Continue 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Continue 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Continue 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""List Continue 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Message Header""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""11"""" QFormat=""""true"""" Name=""""Subtitle""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Salutation""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Date""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text First Indent""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text First Indent 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Note Heading""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text Indent 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Body Text Indent 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Block Text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Hyperlink""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""FollowedHyperlink""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""22"""" QFormat=""""true"""" Name=""""Strong""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""20"""" QFormat=""""true"""" Name=""""Emphasis""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Document Map""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Plain Text""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""E-mail Signature""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Top of Form""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Bottom of Form""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Normal (Web)""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Acronym""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Address""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Cite""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Code""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Definition""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Keyboard""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Preformatted""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Sample""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Typewriter""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""HTML Variable""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""annotation subject""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""No List""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Outline List 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Outline List 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Outline List 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Simple 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Simple 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Simple 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Classic 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Classic 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Classic 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Classic 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Colorful 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Colorful 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Colorful 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Columns 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Columns 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Columns 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Columns 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Columns 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 6""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 7""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Grid 8""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 4""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 5""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 6""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 7""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table List 8""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table 3D effects 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table 3D effects 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table 3D effects 3""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Contemporary""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Elegant""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Professional""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Subtle 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Subtle 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Web 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Table Web 2""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Balloon Text""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" Name=""""Table Grid""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" Name=""""Placeholder Text""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""1"""" QFormat=""""true"""" Name=""""No Spacing""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" Name=""""Revision""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""34"""" QFormat=""""true""""
+               Name=""""List Paragraph""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""29"""" QFormat=""""true"""" Name=""""Quote""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""30"""" QFormat=""""true""""
+               Name=""""Intense Quote""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""60"""" Name=""""Light Shading Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""61"""" Name=""""Light List Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""62"""" Name=""""Light Grid Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""63"""" Name=""""Medium Shading 1 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""64"""" Name=""""Medium Shading 2 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""65"""" Name=""""Medium List 1 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""66"""" Name=""""Medium List 2 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""67"""" Name=""""Medium Grid 1 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""68"""" Name=""""Medium Grid 2 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""69"""" Name=""""Medium Grid 3 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""70"""" Name=""""Dark List Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""71"""" Name=""""Colorful Shading Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""72"""" Name=""""Colorful List Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""73"""" Name=""""Colorful Grid Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""19"""" QFormat=""""true""""
+               Name=""""Subtle Emphasis""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""21"""" QFormat=""""true""""
+               Name=""""Intense Emphasis""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""31"""" QFormat=""""true""""
+               Name=""""Subtle Reference""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""32"""" QFormat=""""true""""
+               Name=""""Intense Reference""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""33"""" QFormat=""""true"""" Name=""""Book Title""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""37"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" Name=""""Bibliography""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""39"""" SemiHidden=""""true""""
+               UnhideWhenUsed=""""true"""" QFormat=""""true"""" Name=""""TOC Heading""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""41"""" Name=""""Plain Table 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""42"""" Name=""""Plain Table 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""43"""" Name=""""Plain Table 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""44"""" Name=""""Plain Table 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""45"""" Name=""""Plain Table 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""40"""" Name=""""Grid Table Light""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46"""" Name=""""Grid Table 1 Light""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51"""" Name=""""Grid Table 6 Colorful""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52"""" Name=""""Grid Table 7 Colorful""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""Grid Table 1 Light Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""Grid Table 2 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""Grid Table 3 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""Grid Table 4 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""Grid Table 5 Dark Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""Grid Table 6 Colorful Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""Grid Table 7 Colorful Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46"""" Name=""""List Table 1 Light""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51"""" Name=""""List Table 6 Colorful""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52"""" Name=""""List Table 7 Colorful""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 1""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 2""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 3""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 4""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 5""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""46""""
+               Name=""""List Table 1 Light Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""47"""" Name=""""List Table 2 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""48"""" Name=""""List Table 3 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""49"""" Name=""""List Table 4 Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""50"""" Name=""""List Table 5 Dark Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""51""""
+               Name=""""List Table 6 Colorful Accent 6""""/>
+              <w:LsdException Locked=""""false"""" Priority=""""52""""
+               Name=""""List Table 7 Colorful Accent 6""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Mention""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Smart Hyperlink""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Hashtag""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Unresolved Mention""""/>
+              <w:LsdException Locked=""""false"""" SemiHidden=""""true"""" UnhideWhenUsed=""""true""""
+               Name=""""Smart Link""""/>
+             </w:LatentStyles>
+            </xml><![endif]-->
+            <style>
+            <!--
+             /* Font Definitions */
+             @font-face
+            	{font-family:""""Cambria Math"""";
+            	panose-1:2 4 5 3 5 4 6 3 2 4;
+            	mso-font-charset:0;
+            	mso-generic-font-family:roman;
+            	mso-font-pitch:variable;
+            	mso-font-signature:3 0 0 0 1 0;}
+            @font-face
+            	{font-family:Calibri;
+            	panose-1:2 15 5 2 2 2 4 3 2 4;
+            	mso-font-charset:0;
+            	mso-generic-font-family:swiss;
+            	mso-font-pitch:variable;
+            	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
+             /* Style Definitions */
+             p.MsoNormal, li.MsoNormal, div.MsoNormal
+            	{mso-style-unhide:no;
+            	mso-style-qformat:yes;
+            	mso-style-parent:"""""""";
+            	margin:0cm;
+            	mso-pagination:widow-orphan;
+            	font-size:11.0pt;
+            	font-family:""""Calibri"""",sans-serif;
+            	mso-ascii-font-family:Calibri;
+            	mso-ascii-theme-font:minor-latin;
+            	mso-fareast-font-family:Calibri;
+            	mso-fareast-theme-font:minor-latin;
+            	mso-hansi-font-family:Calibri;
+            	mso-hansi-theme-font:minor-latin;
+            	mso-bidi-font-family:""""Times New Roman"""";
+            	mso-bidi-theme-font:minor-bidi;
+            	mso-fareast-language:EN-US;}
+            a:link, span.MsoHyperlink
+            	{mso-style-noshow:yes;
+            	mso-style-priority:99;
+            	color:#0563C1;
+            	mso-themecolor:hyperlink;
+            	text-decoration:underline;
+            	text-underline:single;}
+            a:visited, span.MsoHyperlinkFollowed
+            	{mso-style-noshow:yes;
+            	mso-style-priority:99;
+            	color:#954F72;
+            	mso-themecolor:followedhyperlink;
+            	text-decoration:underline;
+            	text-underline:single;}
+            span.EstiloCorreo17
+            	{mso-style-type:personal-compose;
+            	mso-style-noshow:yes;
+            	mso-style-unhide:no;
+            	mso-ansi-font-size:11.0pt;
+            	mso-bidi-font-size:11.0pt;
+            	font-family:""""Calibri"""",sans-serif;
+            	mso-ascii-font-family:Calibri;
+            	mso-ascii-theme-font:minor-latin;
+            	mso-fareast-font-family:Calibri;
+            	mso-fareast-theme-font:minor-latin;
+            	mso-hansi-font-family:Calibri;
+            	mso-hansi-theme-font:minor-latin;
+            	mso-bidi-font-family:""""Times New Roman"""";
+            	mso-bidi-theme-font:minor-bidi;
+            	color:windowtext;}
+            span.SpellE
+            	{mso-style-name:"""""""";
+            	mso-spl-e:yes;}
+            .MsoChpDefault
+            	{mso-style-type:export-only;
+            	mso-default-props:yes;
+            	font-family:""""Calibri"""",sans-serif;
+            	mso-ascii-font-family:Calibri;
+            	mso-ascii-theme-font:minor-latin;
+            	mso-fareast-font-family:Calibri;
+            	mso-fareast-theme-font:minor-latin;
+            	mso-hansi-font-family:Calibri;
+            	mso-hansi-theme-font:minor-latin;
+            	mso-bidi-font-family:""""Times New Roman"""";
+            	mso-bidi-theme-font:minor-bidi;
+            	mso-fareast-language:EN-US;}
+            @page WordSection1
+            	{size:612.0pt 792.0pt;
+            	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+            	mso-header-margin:36.0pt;
+            	mso-footer-margin:36.0pt;
+            	mso-paper-source:0;}
+            div.WordSection1
+            	{page:WordSection1;}
+            -->
+            </style>
+            <!--[if gte mso 10]>
+            <style>
+             /* Style Definitions */
+             table.MsoNormalTable
+            	{mso-style-name:""""Tabla normal"""";
+            	mso-tstyle-rowband-size:0;
+            	mso-tstyle-colband-size:0;
+            	mso-style-noshow:yes;
+            	mso-style-priority:99;
+            	mso-style-parent:"""""""";
+            	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+            	mso-para-margin:0cm;
+            	mso-pagination:widow-orphan;
+            	font-size:11.0pt;
+            	font-family:""""Calibri"""",sans-serif;
+            	mso-ascii-font-family:Calibri;
+            	mso-ascii-theme-font:minor-latin;
+            	mso-hansi-font-family:Calibri;
+            	mso-hansi-theme-font:minor-latin;
+            	mso-bidi-font-family:""""Times New Roman"""";
+            	mso-bidi-theme-font:minor-bidi;
+            	mso-fareast-language:EN-US;}
+            </style>
+            <![endif]--><!--[if gte mso 9]><xml>
+             <o:shapedefaults v:ext=""""edit"""" spidmax=""""1026""""/>
+            </xml><![endif]--><!--[if gte mso 9]><xml>
+             <o:shapelayout v:ext=""""edit"""">
+              <o:idmap v:ext=""""edit"""" data=""""1""""/>
+             </o:shapelayout></xml><![endif]-->
+            </head>
+            
+            <body lang=ES-PE link=""""#0563C1"""" vlink=""""#954F72"""" style='tab-interval:35.4pt;
+            word-wrap:break-word'>
+            
+            <div class=WordSection1>
+            
+            <p class=MsoNormal><b><span style='font-size:12.0pt'>SOLICITUD : <span
+            class=SpellE>" & varSolicitudDetalleItemSel.NroSolicitud & "</span><o:p></o:p></span></b></p>
+            
+            <p class=MsoNormal>TIPO DE SOLICITUD : <span class=SpellE>" & varSolicitudDetalleItemSel.TipoSolicitud & "</span><o:p></o:p></p>
+            
+            <p class=MsoNormal>SEGEMENTO DEL NEGOCIO : <span class=SpellE> " & varSolicitudDetalleItemSel.TipoServicio & "</span><o:p></o:p></p>
+            
+            <p class=MsoNormal>ASUNTO DE LA SOLICITUD : <span class=SpellE>" & varSolicitudDetalleItemSel.AsuntoSol & "</span><o:p></o:p></p>
+            
+            <p class=MsoNormal>COMENTARIO: <span class=SpellE>" & TrimEnds(txtComentarioES.Text) & "</span><o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            </div>
+            
+            </body>
+            
+            </html>"
+        Visible: =false
+        Width: =48
+        X: =1318
+        Y: =705
+        ZIndex: =1
+
     Rectangle4_25 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =2
@@ -18,10 +806,10 @@ srcSolicitudDetalle As screen:
         Height: =139
         Width: =Parent.Width
         Y: =629
-        ZIndex: =1
+        ZIndex: =2
 
     cmpBarraSuperior_15 As cmpBarraSuperior:
-        ZIndex: =2
+        ZIndex: =3
 
     Rectangle4_24 As rectangle:
         BorderColor: =varColorPri01
@@ -30,7 +818,7 @@ srcSolicitudDetalle As screen:
         Height: =698
         Width: =Parent.Width
         Y: =70
-        ZIndex: =3
+        ZIndex: =4
 
     Rectangle4_26 As rectangle:
         BorderColor: =varColorPri01
@@ -39,7 +827,7 @@ srcSolicitudDetalle As screen:
         Height: =0
         Width: =Parent.Width
         Y: =629
-        ZIndex: =4
+        ZIndex: =5
 
     HtmlText1_3 As htmlViewer:
         Height: =70
@@ -277,8 +1065,9 @@ srcSolicitudDetalle As screen:
             	</body>
             </html>"
         Visible: =false
-        Width: =383
-        ZIndex: =5
+        Width: =89
+        X: =293
+        ZIndex: =6
 
     lbl_TituloPrincipal_13 As label:
         Align: =Align.Center
@@ -289,7 +1078,7 @@ srcSolicitudDetalle As screen:
         Width: =1335
         X: =13
         Y: =cmpBarraSuperior_15.Y + (cmpBarraSuperior_15.Height / 2) - (Self.Height / 2)
-        ZIndex: =6
+        ZIndex: =7
 
     icn_Volver_NS_6 As icon.BackArrow:
         Color: =varColorPri01
@@ -297,7 +1086,7 @@ srcSolicitudDetalle As screen:
         OnSelect: =Back();
         X: =13
         Y: =2
-        ZIndex: =7
+        ZIndex: =8
 
     btnVerDocAdjuntos_2 As button:
         Fill: =varColorPri01
@@ -310,7 +1099,7 @@ srcSolicitudDetalle As screen:
         Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
         X: =archivarBtn_1.X + archivarBtn_1.Width + 116.5
         Y: =archivarBtn_1.Y
-        ZIndex: =16
+        ZIndex: =17
 
     Label6_114 As label:
         Font: =Font.'Segoe UI'
@@ -326,7 +1115,7 @@ srcSolicitudDetalle As screen:
             150
         X: =Button8_20.X
         Y: =Button8_20.Y + Button8_20.Height + 15
-        ZIndex: =17
+        ZIndex: =18
 
     TextInput4_90 As text:
         BorderThickness: =0
@@ -344,7 +1133,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_114.Width
         X: =Label6_114.X
         Y: =Label6_114.Y + Label6_114.Height
-        ZIndex: =18
+        ZIndex: =19
 
     Label6_115 As label:
         Font: =Font.'Segoe UI'
@@ -362,7 +1151,7 @@ srcSolicitudDetalle As screen:
             =//Label6.X + Label6.Width + 50
             Label6_114.X + Label6_114.Width
         Y: =Label6_114.Y
-        ZIndex: =19
+        ZIndex: =20
 
     TextInput4_91 As text:
         BorderThickness: =0
@@ -380,7 +1169,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_115.X
         Y: =Label6_115.Y + Label6_115.Height
-        ZIndex: =20
+        ZIndex: =21
 
     Label6_116 As label:
         Font: =Font.'Segoe UI'
@@ -394,7 +1183,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_115.X + Label6_115.Width + 50
         Y: =Label6_115.Y
-        ZIndex: =21
+        ZIndex: =22
 
     TextInput4_92 As text:
         BorderThickness: =0
@@ -412,7 +1201,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_116.Width
         X: =Label6_116.X
         Y: =Label6_116.Y + Label6_116.Height
-        ZIndex: =22
+        ZIndex: =23
 
     Label6_117 As label:
         Font: =Font.'Segoe UI'
@@ -426,7 +1215,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_116.X + Label6_116.Width + 50
         Y: =Label6_116.Y
-        ZIndex: =23
+        ZIndex: =24
 
     TextInput4_93 As text:
         BorderThickness: =0
@@ -444,7 +1233,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_117.Width
         X: =Label6_117.X
         Y: =Label6_117.Y + Label6_117.Height
-        ZIndex: =24
+        ZIndex: =25
 
     Label6_119 As label:
         Font: =Font.'Segoe UI'
@@ -458,7 +1247,7 @@ srcSolicitudDetalle As screen:
         Width: =TextInput4_91.X + TextInput4_91.Width - Self.X + 150
         X: =TextInput4_90.X
         Y: =TextInput4_90.Y + TextInput4_90.Height + 15
-        ZIndex: =25
+        ZIndex: =26
 
     TextInput4_95 As text:
         BorderThickness: =0
@@ -476,7 +1265,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_119.Width
         X: =Label6_119.X
         Y: =Label6_119.Y + Label6_119.Height
-        ZIndex: =26
+        ZIndex: =27
 
     Label6_120 As label:
         Font: =Font.'Segoe UI'
@@ -489,7 +1278,7 @@ srcSolicitudDetalle As screen:
         Text: ="RUC Cliente"
         X: =Label6_119.X + Label6_119.Width + 50
         Y: =Label6_119.Y
-        ZIndex: =27
+        ZIndex: =28
 
     Label6_124 As label:
         Font: =Font.'Segoe UI'
@@ -503,7 +1292,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_122.Width
         X: =Label6_122.X
         Y: =Label6_122.Y + Label6_122.Height
-        ZIndex: =28
+        ZIndex: =29
 
     Label6_126 As label:
         Font: =Font.'Segoe UI'
@@ -517,7 +1306,7 @@ srcSolicitudDetalle As screen:
         Width: =(Parent.Width - 200) / 3
         X: =Button8_21.X
         Y: =Button8_21.Y + Button8_21.Height + 10
-        ZIndex: =29
+        ZIndex: =30
 
     TextInput4_98 As text:
         BorderThickness: =0
@@ -535,7 +1324,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_126.Width
         X: =Label6_126.X
         Y: =Label6_126.Y + Label6_126.Height
-        ZIndex: =30
+        ZIndex: =31
 
     Label6_127 As label:
         Font: =Font.'Segoe UI'
@@ -549,7 +1338,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_126.Width
         X: =Label6_126.X + Label6_126.Width + 50
         Y: =Label6_126.Y
-        ZIndex: =31
+        ZIndex: =32
 
     TextInput4_99 As text:
         BorderThickness: =0
@@ -567,7 +1356,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_127.Width
         X: =Label6_127.X
         Y: =Label6_127.Y + Label6_127.Height
-        ZIndex: =32
+        ZIndex: =33
 
     Label6_128 As label:
         Font: =Font.'Segoe UI'
@@ -581,7 +1370,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_127.Width
         X: =Label6_127.X + Label6_127.Width + 50
         Y: =Label6_127.Y
-        ZIndex: =33
+        ZIndex: =34
 
     TextInput4_100 As text:
         BorderThickness: =0
@@ -599,7 +1388,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_128.Width
         X: =Label6_128.X
         Y: =Label6_128.Y + Label6_128.Height
-        ZIndex: =34
+        ZIndex: =35
 
     Label6_129 As label:
         Font: =Font.'Segoe UI'
@@ -613,7 +1402,7 @@ srcSolicitudDetalle As screen:
         Width: =(Parent.Width - 200) / 3
         X: =Button8_22.X
         Y: =Button8_22.Y + Button8_22.Height + 10
-        ZIndex: =35
+        ZIndex: =36
 
     TextInput4_101 As text:
         BorderThickness: =0
@@ -631,7 +1420,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_129.Width
         X: =Label6_129.X
         Y: =Label6_129.Y + Label6_129.Height
-        ZIndex: =36
+        ZIndex: =37
 
     Label6_130 As label:
         Font: =Font.'Segoe UI'
@@ -645,7 +1434,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_129.Width
         X: =Label6_129.X + Label6_129.Width + 50
         Y: =Label6_129.Y
-        ZIndex: =37
+        ZIndex: =38
 
     TextInput4_102 As text:
         BorderThickness: =0
@@ -663,7 +1452,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_130.Width
         X: =Label6_130.X
         Y: =Label6_130.Y + Label6_130.Height
-        ZIndex: =38
+        ZIndex: =39
 
     Label6_131 As label:
         Font: =Font.'Segoe UI'
@@ -677,7 +1466,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_130.Width
         X: =Label6_130.X + Label6_130.Width + 50
         Y: =Label6_130.Y
-        ZIndex: =39
+        ZIndex: =40
 
     TextInput4_103 As text:
         BorderThickness: =0
@@ -695,7 +1484,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_131.Width
         X: =Label6_131.X
         Y: =Label6_131.Y + Label6_131.Height
-        ZIndex: =40
+        ZIndex: =41
 
     Label6_132 As label:
         Font: =Font.'Segoe UI'
@@ -709,7 +1498,7 @@ srcSolicitudDetalle As screen:
         Width: =(Parent.Width - 250) / 5
         X: =Button8_23.X
         Y: =Button8_23.Y + Button8_23.Height + 10
-        ZIndex: =41
+        ZIndex: =42
 
     TextInput4_104 As text:
         BorderThickness: =0
@@ -727,7 +1516,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_132.Width
         X: =Label6_132.X
         Y: =Label6_132.Y + Label6_132.Height
-        ZIndex: =42
+        ZIndex: =43
 
     Label6_133 As label:
         Font: =Font.'Segoe UI'
@@ -741,7 +1530,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_132.Width
         X: =Label6_132.X + Label6_132.Width + 20
         Y: =Label6_132.Y
-        ZIndex: =43
+        ZIndex: =44
 
     TextInput4_105 As text:
         BorderThickness: =0
@@ -759,7 +1548,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_133.Width
         X: =Label6_133.X
         Y: =Label6_133.Y + Label6_133.Height
-        ZIndex: =44
+        ZIndex: =45
 
     Label6_134 As label:
         Font: =Font.'Segoe UI'
@@ -773,7 +1562,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_133.Width
         X: =Label6_133.X + Label6_133.Width + 50
         Y: =Label6_133.Y
-        ZIndex: =45
+        ZIndex: =46
 
     TextInput4_106 As text:
         BorderThickness: =0
@@ -791,14 +1580,14 @@ srcSolicitudDetalle As screen:
         Width: =Label6_134.Width
         X: =Label6_134.X
         Y: =Label6_134.Y + Label6_134.Height
-        ZIndex: =46
+        ZIndex: =47
 
     Rectangle2_14 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =47
+        ZIndex: =48
 
     Label6_118 As label:
         Font: =Font.'Segoe UI'
@@ -812,7 +1601,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width + 50
         X: =Label6_117.X + Label6_117.Width + 50
         Y: =Label6_117.Y
-        ZIndex: =48
+        ZIndex: =49
 
     TextInput4_94 As text:
         BorderThickness: =0
@@ -830,7 +1619,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_118.Width
         X: =Label6_118.X
         Y: =Label6_118.Y + Label6_118.Height
-        ZIndex: =49
+        ZIndex: =50
 
     Label6_135 As label:
         Font: =Font.'Segoe UI'
@@ -844,7 +1633,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_134.Width
         X: =Label6_134.X + Label6_134.Width + 50
         Y: =Label6_134.Y
-        ZIndex: =50
+        ZIndex: =51
 
     TextInput4_107 As text:
         BorderThickness: =0
@@ -862,7 +1651,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_135.Width
         X: =Label6_135.X
         Y: =Label6_135.Y + Label6_135.Height
-        ZIndex: =51
+        ZIndex: =52
 
     Label6_136 As label:
         Font: =Font.'Segoe UI'
@@ -876,7 +1665,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_135.Width
         X: =Label6_135.X + Label6_135.Width + 50
         Y: =Label6_135.Y
-        ZIndex: =52
+        ZIndex: =53
 
     TextInput4_108 As text:
         BorderThickness: =0
@@ -894,7 +1683,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_136.Width
         X: =Label6_136.X
         Y: =Label6_136.Y + Label6_136.Height
-        ZIndex: =53
+        ZIndex: =54
 
     Label6_121 As label:
         Font: =Font.'Segoe UI'
@@ -909,7 +1698,7 @@ srcSolicitudDetalle As screen:
             =500
         X: =Label6_120.X + Label6_120.Width + 20
         Y: =Label6_120.Y
-        ZIndex: =54
+        ZIndex: =55
 
     TextInput4_97 As text:
         BorderThickness: =0
@@ -927,7 +1716,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_121.Width
         X: =Label6_121.X
         Y: =Label6_121.Y + Label6_121.Height
-        ZIndex: =55
+        ZIndex: =56
 
     Label6_122 As label:
         Font: =Font.'Segoe UI'
@@ -943,7 +1732,7 @@ srcSolicitudDetalle As screen:
             (Parent.Width - 260) / 2
         X: =TextInput4_95.X
         Y: =TextInput4_95.Y + TextInput4_95.Height + 15
-        ZIndex: =56
+        ZIndex: =57
 
     TextInput4_96 As text:
         BorderThickness: =0
@@ -961,7 +1750,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_120.Width
         X: =Label6_120.X
         Y: =Label6_120.Y + Label6_120.Height
-        ZIndex: =57
+        ZIndex: =58
 
     Label6_125 As label:
         Font: =Font.'Segoe UI'
@@ -975,7 +1764,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_123.Width
         X: =731
         Y: =Label6_123.Y + Label6_123.Height
-        ZIndex: =58
+        ZIndex: =59
 
     Label6_123 As label:
         Font: =Font.'Segoe UI'
@@ -991,7 +1780,7 @@ srcSolicitudDetalle As screen:
             (Parent.Width - 260) / 2
         X: =731
         Y: =Label6_122.Y
-        ZIndex: =59
+        ZIndex: =60
 
     archiveDialogGroup_1 As group:
         Height: =5
@@ -1007,7 +1796,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showArchiveDialog
             Width: =Parent.Width
-            ZIndex: =74
+            ZIndex: =70
 
         confirmDialogFrame_5 As button:
             BorderThickness: =0
@@ -1024,7 +1813,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =75
+            ZIndex: =71
 
         confirmDialogTitle_5 As label:
             Align: =Align.Center
@@ -1034,7 +1823,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_5.Width
             X: =confirmDialogFrame_5.X
             Y: =confirmDialogFrame_5.Y + 15
-            ZIndex: =76
+            ZIndex: =72
 
         commentaryLbl_3 As label:
             Height: =20
@@ -1049,7 +1838,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_5.X + 20
             Y: =confirmDialogTitle_5.Y + confirmDialogTitle_5.Height + 15
-            ZIndex: =77
+            ZIndex: =73
 
         TextInput3_3 As text:
             BorderColor: =varColorPri01B
@@ -1067,7 +1856,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_5.X + confirmDialogFrame_5.Width - Self.X - 20
             X: =confirmDialogFrame_5.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =78
+            ZIndex: =74
 
         aceptarBtn_3 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -1153,7 +1942,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
-            ZIndex: =79
+            ZIndex: =75
 
         cancelarBtn_3 As button:
             Fill: =varColorPri01
@@ -1166,7 +1955,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) + 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
-            ZIndex: =80
+            ZIndex: =76
 
     deleteDialogGroup_1 As group:
         Height: =5
@@ -1182,7 +1971,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showDeleteDialog
             Width: =Parent.Width
-            ZIndex: =67
+            ZIndex: =77
 
         confirmDialogFrame_6 As button:
             BorderThickness: =0
@@ -1199,7 +1988,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =68
+            ZIndex: =78
 
         confirmDialogTitle_6 As label:
             Align: =Align.Center
@@ -1209,7 +1998,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_6.Width
             X: =confirmDialogFrame_6.X
             Y: =confirmDialogFrame_6.Y + 15
-            ZIndex: =69
+            ZIndex: =79
 
         commentaryLbl_4 As label:
             Height: =20
@@ -1224,7 +2013,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_6.X + 20
             Y: =confirmDialogTitle_6.Y + confirmDialogTitle_6.Height + 15
-            ZIndex: =70
+            ZIndex: =80
 
         TextInput3_4 As text:
             BorderColor: =varColorPri01B
@@ -1242,7 +2031,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_6.X + confirmDialogFrame_6.Width - Self.X - 20
             X: =confirmDialogFrame_6.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =71
+            ZIndex: =81
 
         aceptarBtn_4 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_4.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -1329,7 +2118,7 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
-            ZIndex: =72
+            ZIndex: =82
 
         cancelarBtn_4 As button:
             Fill: =varColorPri01
@@ -1342,7 +2131,7 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) + 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
-            ZIndex: =73
+            ZIndex: =83
 
     actionButtonsGroup_1 As group:
         Height: =5
@@ -1375,7 +2164,7 @@ srcSolicitudDetalle As screen:
             Text: ="Generar PDF"
             X: =50//requestFieldLbl_74.X
             Y: =650
-            ZIndex: =81
+            ZIndex: =61
 
         trazabilidadBtn_1 As button:
             DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
@@ -1385,7 +2174,7 @@ srcSolicitudDetalle As screen:
             Text: ="Trazabilidad"
             X: =descargarPDFBtn_2.X
             Y: =705
-            ZIndex: =82
+            ZIndex: =62
 
         elevarBtn_1 As button:
             DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
@@ -1395,7 +2184,7 @@ srcSolicitudDetalle As screen:
             Text: ="Elevar"
             X: =327
             Y: =650
-            ZIndex: =83
+            ZIndex: =63
 
         asignarBtn_1 As button:
             DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
@@ -1405,7 +2194,7 @@ srcSolicitudDetalle As screen:
             Text: ="Asignar"
             X: =elevarBtn_1.X
             Y: =705
-            ZIndex: =84
+            ZIndex: =64
 
         derivarBtn_1 As button:
             DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
@@ -1416,10 +2205,12 @@ srcSolicitudDetalle As screen:
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =604
             Y: =650
-            ZIndex: =85
+            ZIndex: =65
 
         finalizarBtn_1 As button:
-            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            DisplayMode: |-
+                =//If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo); DisplayMode.Edit; DisplayMode.Disabled)
+                DisplayMode.Edit
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
@@ -1429,7 +2220,7 @@ srcSolicitudDetalle As screen:
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =1158
             Y: =705
-            ZIndex: =86
+            ZIndex: =66
 
         archivarBtn_1 As button:
             DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
@@ -1441,7 +2232,7 @@ srcSolicitudDetalle As screen:
             Text: ="Archivar"
             X: =881
             Y: =650
-            ZIndex: =87
+            ZIndex: =67
 
         eliminarBtn_1 As button:
             DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
@@ -1453,7 +2244,7 @@ srcSolicitudDetalle As screen:
             Text: ="Eliminar"
             X: =archivarBtn_1.X
             Y: =705
-            ZIndex: =88
+            ZIndex: =68
 
         devolverBtn_1 As button:
             DisplayMode: |-
@@ -1476,7 +2267,7 @@ srcSolicitudDetalle As screen:
             Text: ="Devolver"
             X: =derivarBtn_1.X
             Y: =705
-            ZIndex: =89
+            ZIndex: =69
 
     finishDialogGroup_1 As group:
         Height: =5
@@ -1492,7 +2283,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showFinishDialog
             Width: =Parent.Width
-            ZIndex: =60
+            ZIndex: =84
 
         confirmDialogFrame_7 As button:
             BorderThickness: =0
@@ -1509,7 +2300,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =61
+            ZIndex: =85
 
         confirmDialogTitle_7 As label:
             Align: =Align.Center
@@ -1519,7 +2310,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_7.Width
             X: =confirmDialogFrame_7.X
             Y: =confirmDialogFrame_7.Y + 15
-            ZIndex: =62
+            ZIndex: =86
 
         commentaryLbl_5 As label:
             Height: =20
@@ -1534,7 +2325,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_7.X + 20
             Y: =confirmDialogTitle_7.Y + confirmDialogTitle_7.Height + 15
-            ZIndex: =63
+            ZIndex: =87
 
         TextInput3_5 As text:
             BorderColor: =varColorPri01B
@@ -1552,7 +2343,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_7.X + confirmDialogFrame_7.Width - Self.X - 20
             X: =confirmDialogFrame_7.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =64
+            ZIndex: =88
 
         aceptarBtn_5 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_5.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -1588,6 +2379,19 @@ srcSolicitudDetalle As screen:
                     }
                 );
                 
+                
+                
+                //Envio de correo
+                
+                //Set(varDestinatariosNotificacion;LookUp(Personal; ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Email);;
+                Set(varAsuntoCorreo,Concatenate("Solicitud Finalizada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
+                Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
+                
+                
+                Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
+                //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
+                
+                
                 Notify("Solicitud finalizada correctamente.", NotificationType.Success);
                 
                 Reset(TextInput3_5);
@@ -1600,7 +2404,7 @@ srcSolicitudDetalle As screen:
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
-            ZIndex: =65
+            ZIndex: =89
 
         cancelarBtn_5 As button:
             Fill: =varColorPri01
@@ -1613,7 +2417,7 @@ srcSolicitudDetalle As screen:
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) + 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
-            ZIndex: =66
+            ZIndex: =90
 
     Group8_22 As group:
         Height: =5
@@ -1641,7 +2445,7 @@ srcSolicitudDetalle As screen:
             Width: =230
             X: =50
             Y: =85
-            ZIndex: =8
+            ZIndex: =9
 
         Rectangle5_20 As rectangle:
             Fill: =varColorPri01
@@ -1649,7 +2453,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_20.X
             Y: =Button8_20.Y + Button8_20.Height - Self.Height
-            ZIndex: =9
+            ZIndex: =10
 
     Group8_23 As group:
         Height: =5
@@ -1677,7 +2481,7 @@ srcSolicitudDetalle As screen:
             Width: =280
             X: =TextInput4_95.X
             Y: =Label6_124.Y + Label6_124.Height + 15
-            ZIndex: =10
+            ZIndex: =11
 
         Rectangle5_21 As rectangle:
             Fill: =varColorPri01
@@ -1685,7 +2489,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_21.X
             Y: =Button8_21.Y + Button8_21.Height - Self.Height
-            ZIndex: =11
+            ZIndex: =12
 
     Group8_21 As group:
         Height: =5
@@ -1713,7 +2517,7 @@ srcSolicitudDetalle As screen:
             Width: =230
             X: =TextInput4_98.X
             Y: =TextInput4_98.Y + TextInput4_98.Height + 10
-            ZIndex: =12
+            ZIndex: =13
 
         Rectangle5_22 As rectangle:
             Fill: =varColorPri01
@@ -1721,7 +2525,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_22.X
             Y: =Button8_22.Y + Button8_22.Height - Self.Height
-            ZIndex: =13
+            ZIndex: =14
 
     Group8_20 As group:
         Height: =5
@@ -1749,7 +2553,7 @@ srcSolicitudDetalle As screen:
             Width: =230
             X: =TextInput4_101.X
             Y: =TextInput4_101.Y + TextInput4_101.Height + 10
-            ZIndex: =14
+            ZIndex: =15
 
         Rectangle5_23 As rectangle:
             Fill: =varColorPri01
@@ -1757,5 +2561,5 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_23.X
             Y: =Button8_23.Y + Button8_23.Height - Self.Height
-            ZIndex: =15
+            ZIndex: =16
 

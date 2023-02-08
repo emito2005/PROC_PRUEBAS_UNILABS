@@ -59,6 +59,15 @@ scrDerivar As screen:
         OnSelect: |-
             =UpdateContext({ isLoading: true });
             
+            //Si se esta en la etapa Margen y Area Comercial, la politica de empresa dice que si la prueba es NUEVA el flujo siguiente es CONTABILIDAD, y si la solicitud es ACTUALIZACION el area siguiente es SISTEMAS
+            //SI : SOL. NUEVO + (AREA ORIGEN = PLANING Y CONTROL & ETAPA = MARGEN) -> CONTABILIDAD
+            //SI : SOL. NUEVO + (AREA ORIGEN = CONTABILIDAD & ETAPA = MARGEN) + ACCION ORIGEN=DEVOLUCION -> CONTABILIDAD
+            //SI : SOL. ACTUALIZACION + (AREA ORIGEN = PLANING Y CONTROL & ETAPA = MARGEN) -> SISTEMAS --Aplicamos esta logica para la plotica de la emp
+            //se salta 3 orden(orden flujo actual +3) del flujo, caso contrario avanza al siguiente(1 orden del flujo +)
+            UpdateContext({ cantAddEtapa: 
+            If(varSolicitudDetalleItemSel.IdTipoSolicitud=2 And varSolicitudDetalleItemSel.IdAreaActual=1 And varSolicitudDetalleItemSel.IdEtapaActual=3,3,1) 
+            });
+            
             // Crear Solicitud Detalle inicial
             UpdateContext({
             	lastSolicitudDetalle:
@@ -98,7 +107,7 @@ scrDerivar As screen:
                             LookUp(AreaEtapaFlujo, 
                                 IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
                                 IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo &&
-                                Orden = currentOrder + 1
+                                Orden = currentOrder + cantAddEtapa
                             ).IdEtapaDestino,
                             //IdAreaDestinoFlujo: LookUp(AreaEtapaFlujo; IdArea = varMyAreaEtapaFlujo.IdAreaDestino && IdEtapa = varMyAreaEtapaFlujo.IdEtapaDestino).IdAreaDestino; (esto esta mal)
                             // Correccion
@@ -106,7 +115,7 @@ scrDerivar As screen:
                             LookUp(AreaEtapaFlujo, 
                                 IdArea = varSolicitudDetalleItemSel.IdAreaDestinoFlujo && 
                                 IdEtapa = varSolicitudDetalleItemSel.IdEtapaDestinoFlujo &&
-                                Orden = currentOrder + 1
+                                Orden = currentOrder + cantAddEtapa
                             ).IdAreaDestino,
                             ObsSolDet: TrimEnds(txtComentarioDerS.Text)
             			},
@@ -196,7 +205,7 @@ scrDerivar As screen:
             Set(varDestinatariosNotificacion,If(IsBlank(varDestinatariosManager),varDestinatariosManager,varDestinatariosManager & ";") & varDestinatariosLider);
             
             Set(varAsuntoCorreo,Concatenate("Solicitud Derivada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
-            Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
+            Set(varCuerpoCorreo,htm_EmailPreview_DVS.HtmlText);
             
             Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
             //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
@@ -205,8 +214,8 @@ scrDerivar As screen:
             
             UpdateContext({ isLoading: false });
             
-            //Navigate(scrMisSolicitudes; Fade);;
-            Select(gaMenuLateral_Derivar,2,Button2_10);
+            Navigate(scrMisSolicitudes);
+            //Select(gaMenuLateral_Derivar;2;Button2_10);;
         Text: ="DERIVAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
@@ -1596,37 +1605,6 @@ scrDerivar As screen:
         X: =Label6_113.X
         Y: =Label6_113.Y + Label6_113.Height
         ZIndex: =49
-
-    gaMenuLateral_Derivar As gallery.galleryVertical:
-        Height: =70
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Visible: =false
-        Width: =95
-        X: =60
-        Y: =698
-        ZIndex: =50
-
-        Button2_10 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
-            Height: =61
-            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Text: =ThisItem.texto_boton
-            Width: =130
-            ZIndex: =1
 
     Rectangle2_7 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
