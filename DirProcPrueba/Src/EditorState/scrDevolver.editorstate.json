@@ -2607,7 +2607,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "150",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Width",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -3232,7 +3232,14 @@
         "PressedColor",
         "HoverColor",
         "BorderColor",
-        "DisabledBorderColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "RGBA(56, 56, 56, 1)",
+          "InvariantPropertyName": "DisabledBorderColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "PressedBorderColor",
         "HoverBorderColor",
         "BorderStyle",
@@ -4021,7 +4028,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label6_110",
-      "ParentIndex": 29,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4353,7 +4360,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label6_111",
-      "ParentIndex": 30,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4620,7 +4627,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "150",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Width",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -6569,11 +6576,25 @@
         },
         "Role",
         "Color",
-        "DisabledColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "DisabledColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "PressedColor",
         "HoverColor",
         "BorderColor",
-        "DisabledBorderColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "RGBA(56, 56, 56, 1)",
+          "InvariantPropertyName": "DisabledBorderColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "PressedBorderColor",
         "HoverBorderColor",
         "BorderStyle",
@@ -7030,7 +7051,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label6_53",
-      "ParentIndex": 31,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7362,7 +7383,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label6_54",
-      "ParentIndex": 32,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7694,7 +7715,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label6_55",
-      "ParentIndex": 33,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12695,7 +12716,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput4_43",
-      "ParentIndex": 36,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13073,7 +13094,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput4_44",
-      "ParentIndex": 37,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13451,7 +13472,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput4_45",
-      "ParentIndex": 38,
+      "ParentIndex": 36,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15047,7 +15068,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput4_86",
-      "ParentIndex": 34,
+      "ParentIndex": 37,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15425,7 +15446,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput4_87",
-      "ParentIndex": 35,
+      "ParentIndex": 38,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

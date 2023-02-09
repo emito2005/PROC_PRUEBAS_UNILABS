@@ -1808,8 +1808,7 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="Descripción"
         Width: |-
-            =//Label6.Width
-            //(Parent.Width - 79) / 2
+            =//(Parent.Width - 79) / 2
             Label6_119.Width
         X: =TextInput4_95.X
         Y: =TextInput4_95.Y + TextInput4_95.Height + 10
