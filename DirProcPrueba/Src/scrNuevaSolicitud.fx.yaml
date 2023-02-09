@@ -806,7 +806,9 @@ scrNuevaSolicitud As screen:
                 Align: =Align.Center
                 Height: =DataCardKey22.Height
                 Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Visible: |-
+                    =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    //And(Parent.Required; Parent.DisplayMode=DisplayMode.Edit;DataCardValue22.SelectedDate<DataCardValue23.SelectedDate)
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey22.Y
@@ -1141,37 +1143,6 @@ scrNuevaSolicitud As screen:
                 Y: =DataCardKey18.Y
                 ZIndex: =4
 
-    gaMenuLateral_NS As gallery.galleryVertical:
-        Height: =58
-        Items: =colBarraLateral
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Transition: =Transition.Pop
-        Visible: =false
-        Width: =108
-        Y: =710
-        ZIndex: =6
-
-        Button2_4 As button:
-            Align: =Align.Left
-            Fill: =If(ThisItem.texto_boton=varOpcionMenu,RGBA(221, 79, 14, 1),RGBA(221, 79, 14, 70%))
-            Height: =61
-            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
-            OnSelect: |-
-                =Set(varIdOpcionMenu,ThisItem.id_boton);
-                Set(varOpcionMenu,ThisItem.texto_boton);
-                Navigate(ThisItem.navegacion,ScreenTransition.Cover)
-            PaddingLeft: |
-                =ThisItem.sangria*10
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Text: =ThisItem.texto_boton
-            Width: =142
-            X: =1
-            ZIndex: =1
-
     frmDatosAdjuntos As form:
         DataSource: =SolicitudDetalle
         Height: =301
@@ -1261,8 +1232,9 @@ scrNuevaSolicitud As screen:
         Color: =varColorPri01
         Icon: =Icon.BackArrow
         OnSelect: |-
-            =ResetForm(frm_EditSolicitud);Select(gaMenuLateral_NS,2,Button2_4);
-            //Back()
+            =ResetForm(frm_EditSolicitud);
+            //Select(gaMenuLateral_NS;2;Button2_4);;
+            Back()
         X: =13
         Y: =2
         ZIndex: =8
