@@ -165,7 +165,9 @@ scrNuevaSolicitud As screen:
             
             //Office365Outlook.SendEmailV2(varDestinatariosNotificacion;varAsuntoCorreo;varCuerpoCorreo);;
             
-            
+            Notify("Solicitud creada correctamente.", NotificationType.Success);
+            UpdateContext({ isLoading: false });
+            Select(icn_Volver_NS);
             
             
             
@@ -1267,9 +1269,9 @@ scrNuevaSolicitud As screen:
         OnSelect: |-
             =UpdateContext({ isLoading: true });
             SubmitForm(frm_EditSolicitud);
-            Notify("Solicitud creada correctamente.", NotificationType.Success);
-            UpdateContext({ isLoading: false });
-            Select(icn_Volver_NS);
+            //Notify("Solicitud creada correctamente."; NotificationType.Success);;
+            //UpdateContext({ isLoading: false });;
+            //Select(icn_Volver_NS);;
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
