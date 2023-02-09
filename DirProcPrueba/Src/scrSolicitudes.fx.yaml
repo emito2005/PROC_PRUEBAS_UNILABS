@@ -209,7 +209,7 @@ scrSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =ThisItem.AreaDestino
+            Text: =ThisItem.AreaActual
             Width: =105
             X: =txtGalSol05.X + txtGalSol05.Width + 10
             Y: =txtGalSol01.Y
@@ -526,7 +526,7 @@ scrSolicitudes As screen:
             FontWeight: =FontWeight.Bold
             Height: =lblHeaderSO_01.Height
             Size: =10
-            Text: ="DPTO. ASIGNADO"
+            Text: ="DPTO. ACTUAL"
             Width: =txtGalSol06.Width
             X: =lblHeaderSO_05.X + lblHeaderSO_05.Width + 10
             Y: =lblHeaderSO_01.Y

@@ -14662,107 +14662,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorBarraTit"
+                  "fullyQualifiedName": "App.varColorPri04B"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorBarraTit",
+                  "fullyQualifiedName": "App.varColorPri04B",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorBarraTit",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.varColorBarraTitB"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varColorBarraTitB",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varColorBarraTitB",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.varColorPri02B"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varColorPri02B",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varColorPri02B",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.varColorPri03"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varColorPri03",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varColorPri03",
+                "member": "varColorPri04B",
                 "module": "App",
                 "type": "App"
               }
@@ -14812,17 +14722,107 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varColorPri04B"
+                  "fullyQualifiedName": "App.varColorPri03"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varColorPri04B",
+                  "fullyQualifiedName": "App.varColorPri03",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varColorPri04B",
+                "member": "varColorPri03",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorPri02B"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorPri02B",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorPri02B",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorBarraTitB"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorBarraTitB",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorBarraTitB",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varColorBarraTit"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varColorBarraTit",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varColorBarraTit",
                 "module": "App",
                 "type": "App"
               }

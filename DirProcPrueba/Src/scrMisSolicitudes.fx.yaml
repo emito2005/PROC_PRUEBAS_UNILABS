@@ -309,7 +309,7 @@ scrMisSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =ThisItem.AreaDestino
+            Text: =ThisItem.AreaActual
             Width: =105
             X: =Title2_11.X + Title2_11.Width + 10
             Y: =Title2_4.Y
@@ -571,7 +571,7 @@ scrMisSolicitudes As screen:
             FontWeight: =FontWeight.Bold
             Height: =lblHeaderMS_1.Height
             Size: =10
-            Text: ="DPTO. ASIGNADO"
+            Text: ="DPTO. ACTUAL"
             Width: =Title2_12.Width
             X: =lblHeaderMS_5.X + lblHeaderMS_5.Width + 10
             Y: =220
