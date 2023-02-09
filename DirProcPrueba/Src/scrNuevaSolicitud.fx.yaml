@@ -18,6 +18,8 @@ scrNuevaSolicitud As screen:
         NewForm(frm_EditSolicitud);
         NewForm(frmDatosAdjuntos);
 
+    cmpBarraSuperior_4 As cmpBarraSuperior:
+
     Rectangle4_1 As rectangle:
         BorderColor: =varColorPri01
         BorderThickness: =1
@@ -25,18 +27,15 @@ scrNuevaSolicitud As screen:
         Height: =699
         Width: =1366
         Y: =69
-        ZIndex: =1
+        ZIndex: =2
 
     Rectangle4_22 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =2
+        BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
         Height: =93
         Width: =Parent.Width
         Y: =675
-        ZIndex: =2
-
-    cmpBarraSuperior_4 As cmpBarraSuperior:
         ZIndex: =3
 
     lbl_TituloPrincipal_1 As label:
@@ -1169,7 +1168,7 @@ scrNuevaSolicitud As screen:
         Width: =545
         X: =764
         Y: =377
-        ZIndex: =7
+        ZIndex: =6
 
         "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
             BorderColor: |-
@@ -1258,7 +1257,7 @@ scrNuevaSolicitud As screen:
             Back()
         X: =13
         Y: =2
-        ZIndex: =8
+        ZIndex: =7
 
     btnGrabar As button:
         BorderThickness: =1
@@ -1281,7 +1280,7 @@ scrNuevaSolicitud As screen:
         Width: =670
         X: =352
         Y: =700
-        ZIndex: =9
+        ZIndex: =8
 
     htm_EmailPreview_CS As htmlViewer:
         Height: =56
@@ -2069,7 +2068,7 @@ scrNuevaSolicitud As screen:
         Width: =58
         X: =89
         Y: =710
-        ZIndex: =10
+        ZIndex: =9
 
     Rectangle2_11 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
@@ -2077,5 +2076,5 @@ scrNuevaSolicitud As screen:
         Visible: |
             =isLoading
         Width: =Parent.Width
-        ZIndex: =11
+        ZIndex: =10
 
