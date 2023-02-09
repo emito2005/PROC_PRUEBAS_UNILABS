@@ -42,11 +42,11 @@ scrElevar As screen:
     lbl_TituloPrincipal_6 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =36
         Size: =24
         Text: ="ELEVAR SOLICITUD"
-        Width: =1335
-        X: =13
+        Width: =1174
+        X: =96
         Y: =icn_Volver_NS_3.Y + (icn_Volver_NS_3.Height / 2) - (Self.Height / 2)
         ZIndex: =4
 

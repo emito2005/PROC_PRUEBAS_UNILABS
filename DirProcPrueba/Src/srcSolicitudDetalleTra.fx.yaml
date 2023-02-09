@@ -32,7 +32,7 @@ srcSolicitudDetalleTra As screen:
         ZIndex: =3
 
     HtmlText1_1 As htmlViewer:
-        Height: =68
+        Height: =158
         HtmlText: |-
             ="<!DOCTYPE html>
             <html>
@@ -142,7 +142,7 @@ srcSolicitudDetalleTra As screen:
             
             						<td class='blank' style='width: 2%;'>a</td>
             
-            						<td class='field' style='width: 5%;'>Nro. Ticket</td>
+            						<td class='field' style='width: 5%;'>Nro. Solicitud</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_47.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
@@ -152,21 +152,40 @@ srcSolicitudDetalleTra As screen:
             						
             						<td class='blank' style='width: 2%;'>a</td>
             
-            						<td class='field' style='width: 5%;'>Tipo de Servicio</td>
+            						<td class='field' style='width: 5%;'>Segmento del Negocio</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_49.Text & "</td>
+            						
+            						<td class='blank' style='width: 2%;'>a</td>
+            						
+            						<td class='field' style='width: 5%;'>Tipo de Operación</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_65.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
             			<table class='fieldsTable'>
             				<tbody>
             					<tr>
-            						<td class='field' style='width: 5%;'>Nombre de Solicitud</td>
-            						<td class='value' style='width: 25%;'>" & TextInput4_50.Text & "</td>
+            						<td class='field' style='width: 5%;'>Asunto de Solicitud</td>
+            						<td class='value' style='width: 15%;'>" & TextInput4_50.Text & "</td>
             
             						<td class='blank' style='width: 2%;'>a</td>
             
-            						<td class='field' style='width: 5%;'>Estado</td>
-            						<td class='value' style='width: 5%;'>" & "Activo" & "</td>
+            						<td class='field' style='width: 5%;'>RUC Cliente</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_69.Text & "</td>
+            						
+            						<td class='blank' style='width: 2%;'>a</td>
+            						
+            						<td class='field' style='width: 5%;'>Razón Social del Cliente</td>
+            						<td class='value' style='width: 10%;'>" & TextInput4_68.Text & "</td>
+            						
+            					</tr>
+            				</tbody>
+            			</table>
+            			<table class='fieldsTable'>
+            				<tbody>
+            					<tr>
+            						<td class='field' style='width: 5%;'>Descripción</td>
+            						<td class='value' style='width: 25%;'>" & Label6_62.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -221,16 +240,26 @@ srcSolicitudDetalleTra As screen:
             
             						<td class='field' style='width: 5%;'>F. Expiración OLA</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_59.Text & "</td>
+            						
+            						<td class='blank' style='width: 2%;'>a</td>
+            
+            						<td class='field' style='width: 5%;'>F. Inicio de Operación</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_66.Text & "</td>
+            						
+            						<td class='blank' style='width: 2%;'>a</td>
+            
+            						<td class='field' style='width: 5%;'>F. Fin de Operación</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_67 & "</td>
             					</tr>
             				</tbody>
             			</table>
             			<table class='fieldsTable'>
             				<tbody>
             					<tr>
-            						<td style='width: 100%; border: 0px #fff solid; text-align: left;'>Observación</td>
+            						<td style='width: 100%; border: 0px #fff solid; text-align: left;'>Comentario</td>
             					</tr>
             					<tr>
-            						<td style='width: 100%; height: 120px;'>" & Label6_62.Text & "</td>
+            						<td style='width: 100%; height: 120px;'>" & Label6_84.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -238,19 +267,19 @@ srcSolicitudDetalleTra As screen:
             	</body>
             </html>"
         Visible: =false
-        Width: =217
-        X: =1131
-        Y: =695
+        Width: =280
+        X: =1067
+        Y: =605
         ZIndex: =4
 
     lbl_TituloPrincipal_12 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =34
         Size: =24
         Text: ="DETALLE DE SOLICITUD"
-        Width: =1335
-        X: =13
+        Width: =1208
+        X: =77
         Y: =cmpBarraSuperior_14.Y + (cmpBarraSuperior_14.Height / 2) - (Self.Height / 2)
         ZIndex: =5
 
@@ -273,7 +302,7 @@ srcSolicitudDetalleTra As screen:
                 isLoading: true,
                 callback:
                 Exportacion_PDF.Run(
-                    HtmlText1_2.HtmlText, 
+                    HtmlText1_1.HtmlText, 
                     "request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
                     varSolicitudDetalleTrazaItemSel.ID
                 ).callback

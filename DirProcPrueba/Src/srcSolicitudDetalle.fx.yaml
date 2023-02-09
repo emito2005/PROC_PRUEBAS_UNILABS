@@ -1058,18 +1058,18 @@ srcSolicitudDetalle As screen:
         Visible: =false
         Width: =89
         X: =293
-        ZIndex: =6
+        ZIndex: =5
 
     lbl_TituloPrincipal_13 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =34
         Size: =24
         Text: ="DETALLE DE SOLICITUD"
-        Width: =1335
-        X: =13
+        Width: =1201
+        X: =77
         Y: =cmpBarraSuperior_15.Y + (cmpBarraSuperior_15.Height / 2) - (Self.Height / 2)
-        ZIndex: =7
+        ZIndex: =6
 
     icn_Volver_NS_6 As icon.BackArrow:
         Color: =varColorPri01
@@ -1077,7 +1077,7 @@ srcSolicitudDetalle As screen:
         OnSelect: =Back();
         X: =13
         Y: =2
-        ZIndex: =8
+        ZIndex: =7
 
     btnVerDocAdjuntos_2 As button:
         BorderThickness: =1
@@ -1096,7 +1096,7 @@ srcSolicitudDetalle As screen:
         Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
         X: =archivarBtn_1.X + archivarBtn_1.Width + 116.5
         Y: =archivarBtn_1.Y
-        ZIndex: =17
+        ZIndex: =16
 
     Label6_114 As label:
         Font: =Font.'Segoe UI'
@@ -1111,7 +1111,7 @@ srcSolicitudDetalle As screen:
         Y: |+
             =Button8_20.Y + Button8_20.Height + 7
             
-        ZIndex: =18
+        ZIndex: =17
 
     TextInput4_90 As text:
         BorderThickness: =1
@@ -1133,7 +1133,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_114.Width
         X: =Label6_114.X
         Y: =Label6_114.Y + Label6_114.Height+2
-        ZIndex: =19
+        ZIndex: =18
 
     Label6_115 As label:
         Font: =Font.'Segoe UI'
@@ -1148,7 +1148,7 @@ srcSolicitudDetalle As screen:
             =//Label6.X + Label6.Width + 50
             Label6_114.X + Label6_114.Width+50
         Y: =Label6_114.Y
-        ZIndex: =20
+        ZIndex: =19
 
     TextInput4_91 As text:
         BorderThickness: =1
@@ -1171,7 +1171,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_115.X
         Y: =TextInput4_90.Y
-        ZIndex: =21
+        ZIndex: =20
 
     Label6_116 As label:
         Font: =Font.'Segoe UI'
@@ -1184,7 +1184,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_115.X + Label6_115.Width + 50
         Y: =Label6_115.Y
-        ZIndex: =22
+        ZIndex: =21
 
     TextInput4_92 As text:
         BorderThickness: =1
@@ -1207,7 +1207,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_116.Width
         X: =Label6_116.X
         Y: =TextInput4_90.Y
-        ZIndex: =23
+        ZIndex: =22
 
     Label6_117 As label:
         Font: =Font.'Segoe UI'
@@ -1220,7 +1220,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width
         X: =Label6_116.X + Label6_116.Width + 50
         Y: =Label6_116.Y
-        ZIndex: =24
+        ZIndex: =23
 
     TextInput4_93 As text:
         BorderThickness: =1
@@ -1243,7 +1243,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_117.Width
         X: =Label6_117.X
         Y: =TextInput4_90.Y
-        ZIndex: =25
+        ZIndex: =24
 
     Label6_119 As label:
         Font: =Font.'Segoe UI'
@@ -1256,7 +1256,7 @@ srcSolicitudDetalle As screen:
         Width: =TextInput4_91.X + TextInput4_91.Width - Self.X + 283
         X: =TextInput4_90.X
         Y: =TextInput4_90.Y + TextInput4_90.Height + 10
-        ZIndex: =26
+        ZIndex: =25
 
     TextInput4_95 As text:
         BorderThickness: =1
@@ -1279,7 +1279,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_119.Width
         X: =Label6_119.X
         Y: =Label6_119.Y + Label6_119.Height+2
-        ZIndex: =27
+        ZIndex: =26
 
     Label6_120 As label:
         Font: =Font.'Segoe UI'
@@ -1291,7 +1291,7 @@ srcSolicitudDetalle As screen:
         Text: ="RUC Cliente"
         X: =Label6_119.X + Label6_119.Width + 50
         Y: =Label6_119.Y
-        ZIndex: =28
+        ZIndex: =27
 
     Label6_124 As label:
         BorderThickness: =1
@@ -1310,7 +1310,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_122.Width
         X: =Label6_122.X
         Y: =Label6_122.Y + Label6_122.Height+2
-        ZIndex: =29
+        ZIndex: =28
 
     Label6_126 As label:
         Font: =Font.'Segoe UI'
@@ -1323,7 +1323,7 @@ srcSolicitudDetalle As screen:
         Width: =(Parent.Width - 200) / 3
         X: =Button8_21.X
         Y: =Button8_21.Y + Button8_21.Height + 7
-        ZIndex: =30
+        ZIndex: =29
 
     TextInput4_98 As text:
         BorderThickness: =1
@@ -1346,7 +1346,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_126.Width
         X: =Label6_126.X
         Y: =Label6_126.Y + Label6_126.Height+2
-        ZIndex: =31
+        ZIndex: =30
 
     Label6_127 As label:
         Font: =Font.'Segoe UI'
@@ -1359,7 +1359,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_126.Width
         X: =Label6_126.X + Label6_126.Width + 50
         Y: =Label6_126.Y
-        ZIndex: =32
+        ZIndex: =31
 
     TextInput4_99 As text:
         BorderThickness: =1
@@ -1382,7 +1382,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_127.Width
         X: =Label6_127.X
         Y: =TextInput4_98.Y
-        ZIndex: =33
+        ZIndex: =32
 
     Label6_128 As label:
         Font: =Font.'Segoe UI'
@@ -1395,7 +1395,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_127.Width
         X: =Label6_127.X + Label6_127.Width + 50
         Y: =Label6_127.Y
-        ZIndex: =34
+        ZIndex: =33
 
     TextInput4_100 As text:
         BorderThickness: =1
@@ -1418,7 +1418,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_128.Width
         X: =Label6_128.X
         Y: =TextInput4_98.Y
-        ZIndex: =35
+        ZIndex: =34
 
     Label6_129 As label:
         Font: =Font.'Segoe UI'
@@ -1431,7 +1431,7 @@ srcSolicitudDetalle As screen:
         Width: =(Parent.Width - 200) / 3
         X: =Button8_22.X
         Y: =Button8_22.Y + Button8_22.Height + 7
-        ZIndex: =36
+        ZIndex: =35
 
     TextInput4_101 As text:
         BorderThickness: =1
@@ -1455,7 +1455,7 @@ srcSolicitudDetalle As screen:
         X: =Label6_129.X
         Y: |
             =Label6_129.Y + Label6_129.Height+2
-        ZIndex: =37
+        ZIndex: =36
 
     Label6_130 As label:
         Font: =Font.'Segoe UI'
@@ -1468,7 +1468,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_129.Width
         X: =Label6_129.X + Label6_129.Width + 50
         Y: =Label6_129.Y
-        ZIndex: =38
+        ZIndex: =37
 
     TextInput4_102 As text:
         BorderThickness: =1
@@ -1491,7 +1491,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_130.Width
         X: =Label6_130.X
         Y: =TextInput4_101.Y
-        ZIndex: =39
+        ZIndex: =38
 
     Label6_131 As label:
         Font: =Font.'Segoe UI'
@@ -1504,7 +1504,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_130.Width
         X: =Label6_130.X + Label6_130.Width + 50
         Y: =Label6_130.Y
-        ZIndex: =40
+        ZIndex: =39
 
     TextInput4_103 As text:
         BorderThickness: =1
@@ -1527,7 +1527,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_131.Width
         X: =Label6_131.X
         Y: =TextInput4_101.Y
-        ZIndex: =41
+        ZIndex: =40
 
     Label6_132 As label:
         Font: =Font.'Segoe UI'
@@ -1541,7 +1541,7 @@ srcSolicitudDetalle As screen:
         X: =Button8_23.X
         Y: |
             =Button8_23.Y + Button8_23.Height + 7
-        ZIndex: =42
+        ZIndex: =41
 
     TextInput4_104 As text:
         BorderThickness: =1
@@ -1565,7 +1565,7 @@ srcSolicitudDetalle As screen:
         X: =Label6_132.X
         Y: |
             =Label6_132.Y + Label6_132.Height+2
-        ZIndex: =43
+        ZIndex: =42
 
     Label6_133 As label:
         Font: =Font.'Segoe UI'
@@ -1578,7 +1578,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_132.Width
         X: =Label6_132.X + Label6_132.Width + 50
         Y: =Label6_132.Y
-        ZIndex: =44
+        ZIndex: =43
 
     TextInput4_105 As text:
         BorderThickness: =1
@@ -1601,7 +1601,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_133.Width
         X: =Label6_133.X
         Y: =TextInput4_104.Y
-        ZIndex: =45
+        ZIndex: =44
 
     Label6_134 As label:
         Font: =Font.'Segoe UI'
@@ -1614,7 +1614,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_133.Width
         X: =Label6_133.X + Label6_133.Width + 50
         Y: =Label6_133.Y
-        ZIndex: =46
+        ZIndex: =45
 
     TextInput4_106 As text:
         BorderThickness: =1
@@ -1637,14 +1637,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_134.Width
         X: =Label6_134.X
         Y: =TextInput4_104.Y
-        ZIndex: =47
-
-    Rectangle2_14 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =48
+        ZIndex: =46
 
     Label6_118 As label:
         Font: =Font.'Segoe UI'
@@ -1657,7 +1650,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_115.Width + 50
         X: =Label6_117.X + Label6_117.Width + 50
         Y: =Label6_117.Y
-        ZIndex: =49
+        ZIndex: =47
 
     TextInput4_94 As text:
         BorderThickness: =1
@@ -1680,7 +1673,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_118.Width
         X: =Label6_118.X
         Y: =TextInput4_90.Y
-        ZIndex: =50
+        ZIndex: =48
 
     Label6_135 As label:
         Font: =Font.'Segoe UI'
@@ -1693,7 +1686,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_134.Width
         X: =Label6_134.X + Label6_134.Width + 50
         Y: =Label6_134.Y
-        ZIndex: =51
+        ZIndex: =49
 
     TextInput4_107 As text:
         BorderThickness: =1
@@ -1716,7 +1709,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_135.Width
         X: =Label6_135.X
         Y: =TextInput4_104.Y
-        ZIndex: =52
+        ZIndex: =50
 
     Label6_136 As label:
         Font: =Font.'Segoe UI'
@@ -1729,7 +1722,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_135.Width
         X: =Label6_135.X + Label6_135.Width + 50
         Y: =Label6_135.Y
-        ZIndex: =53
+        ZIndex: =51
 
     TextInput4_108 As text:
         BorderThickness: =1
@@ -1752,7 +1745,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_136.Width
         X: =Label6_136.X
         Y: =TextInput4_104.Y
-        ZIndex: =54
+        ZIndex: =52
 
     Label6_121 As label:
         Font: =Font.'Segoe UI'
@@ -1765,7 +1758,7 @@ srcSolicitudDetalle As screen:
         Width: =396
         X: =Label6_120.X + Label6_120.Width + 20
         Y: =Label6_120.Y
-        ZIndex: =55
+        ZIndex: =53
 
     TextInput4_97 As text:
         BorderThickness: =1
@@ -1788,7 +1781,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_121.Width
         X: =Label6_121.X
         Y: =TextInput4_95.Y
-        ZIndex: =56
+        ZIndex: =54
 
     Label6_122 As label:
         Font: =Font.'Segoe UI'
@@ -1803,7 +1796,7 @@ srcSolicitudDetalle As screen:
             Label6_119.Width
         X: =TextInput4_95.X
         Y: =TextInput4_95.Y + TextInput4_95.Height + 10
-        ZIndex: =57
+        ZIndex: =55
 
     TextInput4_96 As text:
         BorderThickness: =1
@@ -1826,7 +1819,7 @@ srcSolicitudDetalle As screen:
         Width: =Label6_120.Width
         X: =Label6_120.X
         Y: =TextInput4_95.Y
-        ZIndex: =58
+        ZIndex: =56
 
     Label6_125 As label:
         BorderThickness: =1
@@ -1846,7 +1839,7 @@ srcSolicitudDetalle As screen:
         X: =Label6_123.X
         Y: |
             =Label6_123.Y + Label6_123.Height+2
-        ZIndex: =59
+        ZIndex: =57
 
     Label6_123 As label:
         Font: =Font.'Segoe UI'
@@ -1862,7 +1855,7 @@ srcSolicitudDetalle As screen:
             566
         X: =Label6_122.X + Label6_122.Width + 50
         Y: =Label6_122.Y
-        ZIndex: =60
+        ZIndex: =58
 
     archiveDialogGroup_1 As group:
         Height: =5
@@ -1878,7 +1871,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showArchiveDialog
             Width: =Parent.Width
-            ZIndex: =70
+            ZIndex: =68
 
         confirmDialogFrame_5 As button:
             BorderThickness: =0
@@ -1895,7 +1888,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =71
+            ZIndex: =69
 
         confirmDialogTitle_5 As label:
             Align: =Align.Center
@@ -1905,7 +1898,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_5.Width
             X: =confirmDialogFrame_5.X
             Y: =confirmDialogFrame_5.Y + 15
-            ZIndex: =72
+            ZIndex: =70
 
         commentaryLbl_3 As label:
             Height: =20
@@ -1920,7 +1913,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_5.X + 20
             Y: =confirmDialogTitle_5.Y + confirmDialogTitle_5.Height + 15
-            ZIndex: =73
+            ZIndex: =71
 
         TextInput3_3 As text:
             BorderColor: =varColorPri01B
@@ -1938,7 +1931,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_5.X + confirmDialogFrame_5.Width - Self.X - 20
             X: =confirmDialogFrame_5.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =74
+            ZIndex: =72
 
         aceptarBtn_3 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -2024,7 +2017,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
-            ZIndex: =75
+            ZIndex: =73
 
         cancelarBtn_3 As button:
             Fill: =varColorPri01
@@ -2037,7 +2030,7 @@ srcSolicitudDetalle As screen:
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) + 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
-            ZIndex: =76
+            ZIndex: =74
 
     deleteDialogGroup_1 As group:
         Height: =5
@@ -2053,7 +2046,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showDeleteDialog
             Width: =Parent.Width
-            ZIndex: =77
+            ZIndex: =75
 
         confirmDialogFrame_6 As button:
             BorderThickness: =0
@@ -2070,7 +2063,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =78
+            ZIndex: =76
 
         confirmDialogTitle_6 As label:
             Align: =Align.Center
@@ -2080,7 +2073,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_6.Width
             X: =confirmDialogFrame_6.X
             Y: =confirmDialogFrame_6.Y + 15
-            ZIndex: =79
+            ZIndex: =77
 
         commentaryLbl_4 As label:
             Height: =20
@@ -2095,7 +2088,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_6.X + 20
             Y: =confirmDialogTitle_6.Y + confirmDialogTitle_6.Height + 15
-            ZIndex: =80
+            ZIndex: =78
 
         TextInput3_4 As text:
             BorderColor: =varColorPri01B
@@ -2113,7 +2106,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_6.X + confirmDialogFrame_6.Width - Self.X - 20
             X: =confirmDialogFrame_6.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =81
+            ZIndex: =79
 
         aceptarBtn_4 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_4.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -2200,7 +2193,7 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
-            ZIndex: =82
+            ZIndex: =80
 
         cancelarBtn_4 As button:
             Fill: =varColorPri01
@@ -2213,7 +2206,7 @@ srcSolicitudDetalle As screen:
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) + 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
-            ZIndex: =83
+            ZIndex: =81
 
     actionButtonsGroup_1 As group:
         Height: =5
@@ -2253,7 +2246,7 @@ srcSolicitudDetalle As screen:
             Text: ="GENERAR PDF"
             X: =50//requestFieldLbl_74.X
             Y: =657
-            ZIndex: =61
+            ZIndex: =59
 
         trazabilidadBtn_1 As button:
             BorderThickness: =1
@@ -2270,7 +2263,7 @@ srcSolicitudDetalle As screen:
             Text: ="TRAZABILIDAD"
             X: =descargarPDFBtn_2.X
             Y: =712
-            ZIndex: =62
+            ZIndex: =60
 
         elevarBtn_1 As button:
             BorderThickness: =1
@@ -2287,7 +2280,7 @@ srcSolicitudDetalle As screen:
             Text: ="ELEVAR"
             X: =327
             Y: =657
-            ZIndex: =63
+            ZIndex: =61
 
         asignarBtn_1 As button:
             BorderThickness: =1
@@ -2304,7 +2297,7 @@ srcSolicitudDetalle As screen:
             Text: ="ASIGNAR"
             X: =elevarBtn_1.X
             Y: =712
-            ZIndex: =64
+            ZIndex: =62
 
         derivarBtn_1 As button:
             BorderThickness: =1
@@ -2322,7 +2315,7 @@ srcSolicitudDetalle As screen:
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =604
             Y: =657
-            ZIndex: =65
+            ZIndex: =63
 
         finalizarBtn_1 As button:
             BorderThickness: =1
@@ -2342,7 +2335,7 @@ srcSolicitudDetalle As screen:
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =1158
             Y: =712
-            ZIndex: =66
+            ZIndex: =64
 
         archivarBtn_1 As button:
             BorderThickness: =1
@@ -2361,7 +2354,7 @@ srcSolicitudDetalle As screen:
             Text: ="ARCHIVAR"
             X: =881
             Y: =657
-            ZIndex: =67
+            ZIndex: =65
 
         eliminarBtn_1 As button:
             BorderThickness: =1
@@ -2380,7 +2373,7 @@ srcSolicitudDetalle As screen:
             Text: ="ELIMINAR"
             X: =archivarBtn_1.X
             Y: =712
-            ZIndex: =68
+            ZIndex: =66
 
         devolverBtn_1 As button:
             BorderThickness: =1
@@ -2410,7 +2403,7 @@ srcSolicitudDetalle As screen:
             Text: ="DEVOLVER"
             X: =derivarBtn_1.X
             Y: =712
-            ZIndex: =69
+            ZIndex: =67
 
     finishDialogGroup_1 As group:
         Height: =5
@@ -2426,7 +2419,7 @@ srcSolicitudDetalle As screen:
             Height: =Parent.Height
             Visible: =showFinishDialog
             Width: =Parent.Width
-            ZIndex: =84
+            ZIndex: =82
 
         confirmDialogFrame_7 As button:
             BorderThickness: =0
@@ -2443,7 +2436,7 @@ srcSolicitudDetalle As screen:
             Width: =600
             X: =Parent.Width / 2 - Self.Width / 2
             Y: =Parent.Height / 2 - Self.Height / 2
-            ZIndex: =85
+            ZIndex: =83
 
         confirmDialogTitle_7 As label:
             Align: =Align.Center
@@ -2453,7 +2446,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_7.Width
             X: =confirmDialogFrame_7.X
             Y: =confirmDialogFrame_7.Y + 15
-            ZIndex: =86
+            ZIndex: =84
 
         commentaryLbl_5 As label:
             Height: =20
@@ -2468,7 +2461,7 @@ srcSolicitudDetalle As screen:
             Width: =100
             X: =confirmDialogFrame_7.X + 20
             Y: =confirmDialogTitle_7.Y + confirmDialogTitle_7.Height + 15
-            ZIndex: =87
+            ZIndex: =85
 
         TextInput3_5 As text:
             BorderColor: =varColorPri01B
@@ -2486,7 +2479,7 @@ srcSolicitudDetalle As screen:
             Width: =confirmDialogFrame_7.X + confirmDialogFrame_7.Width - Self.X - 20
             X: =confirmDialogFrame_7.X + 20
             Y: =commentaryLbl_3.Y + commentaryLbl_3.Height + 5
-            ZIndex: =88
+            ZIndex: =86
 
         aceptarBtn_5 As button:
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_5.Text)), DisplayMode.Disabled, DisplayMode.Edit)
@@ -2547,7 +2540,7 @@ srcSolicitudDetalle As screen:
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
-            ZIndex: =89
+            ZIndex: =87
 
         cancelarBtn_5 As button:
             Fill: =varColorPri01
@@ -2560,7 +2553,7 @@ srcSolicitudDetalle As screen:
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) + 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
-            ZIndex: =90
+            ZIndex: =88
 
     Group8_22 As group:
         Height: =5
@@ -2588,7 +2581,7 @@ srcSolicitudDetalle As screen:
             Width: =280
             X: =50
             Y: =85
-            ZIndex: =9
+            ZIndex: =8
 
         Rectangle5_20 As rectangle:
             Fill: =varColorPri01
@@ -2596,7 +2589,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_20.X
             Y: =Button8_20.Y + Button8_20.Height - Self.Height
-            ZIndex: =10
+            ZIndex: =9
 
     Group8_23 As group:
         Height: =5
@@ -2624,7 +2617,7 @@ srcSolicitudDetalle As screen:
             Width: =Button8_20.Width
             X: =TextInput4_95.X
             Y: =Label6_124.Y + Label6_124.Height + 15
-            ZIndex: =11
+            ZIndex: =10
 
         Rectangle5_21 As rectangle:
             Fill: =varColorPri01
@@ -2632,7 +2625,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_21.X
             Y: =Button8_21.Y + Button8_21.Height - Self.Height
-            ZIndex: =12
+            ZIndex: =11
 
     Group8_21 As group:
         Height: =5
@@ -2660,7 +2653,7 @@ srcSolicitudDetalle As screen:
             Width: =Button8_20.Width
             X: =TextInput4_98.X
             Y: =TextInput4_98.Y + TextInput4_98.Height + 10
-            ZIndex: =13
+            ZIndex: =12
 
         Rectangle5_22 As rectangle:
             Fill: =varColorPri01
@@ -2668,7 +2661,7 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_22.X
             Y: =Button8_22.Y + Button8_22.Height - Self.Height
-            ZIndex: =14
+            ZIndex: =13
 
     Group8_20 As group:
         Height: =5
@@ -2696,7 +2689,7 @@ srcSolicitudDetalle As screen:
             Width: =Button8_20.Width
             X: =TextInput4_101.X
             Y: =TextInput4_101.Y + TextInput4_101.Height + 10
-            ZIndex: =15
+            ZIndex: =14
 
         Rectangle5_23 As rectangle:
             Fill: =varColorPri01
@@ -2704,5 +2697,12 @@ srcSolicitudDetalle As screen:
             Width: =Parent.Width - Self.X - 50
             X: =Button8_23.X
             Y: =Button8_23.Y + Button8_23.Height - Self.Height
-            ZIndex: =16
+            ZIndex: =15
+
+    Rectangle2_14 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =89
 

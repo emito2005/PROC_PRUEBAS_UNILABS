@@ -14,11 +14,11 @@ scrVerDocAdjuntos As screen:
     lbl_TituloPrincipal_9 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =39
         Size: =24
         Text: ="DOCUMENTOS ADJUNTOS - " & varSolicitudDetalleItemSel.NroSolicitud
-        Width: =1335
-        X: =15
+        Width: =1209
+        X: =77
         Y: =16
         ZIndex: =3
 

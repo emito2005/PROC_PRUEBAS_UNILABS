@@ -482,14 +482,7 @@ scrMisSolicitudes As screen:
         Width: =40
         X: =btnExportarMS.X + btnExportarMS.Width + 10
         Y: =Label3.Y
-        ZIndex: =23
-
-    Rectangle2_12 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.4)
-        Height: =Parent.Height
-        Visible: =isLoading
-        Width: =Parent.Width
-        ZIndex: =24
+        ZIndex: =22
 
     Group2 As group:
         Height: =5
@@ -667,7 +660,7 @@ scrMisSolicitudes As screen:
             Width: =75
             X: =164
             Y: =70
-            ZIndex: =25
+            ZIndex: =23
 
         lblMS_NS As label:
             BorderColor: |-
@@ -680,7 +673,7 @@ scrMisSolicitudes As screen:
             Width: =170
             X: =245
             Y: =92
-            ZIndex: =26
+            ZIndex: =24
 
     optMS_MS As group:
         Height: =5
@@ -699,7 +692,7 @@ scrMisSolicitudes As screen:
             Width: =75
             X: =446
             Y: =70
-            ZIndex: =27
+            ZIndex: =25
 
         lbMS_lMS As label:
             BorderColor: |-
@@ -712,7 +705,22 @@ scrMisSolicitudes As screen:
             Width: =170
             X: =527
             Y: =92
-            ZIndex: =28
+            ZIndex: =26
+
+    Icon9 As icon.Search:
+        Color: =RGBA(179, 179, 179, 1)
+        DisabledColor: =RGBA(179, 179, 179, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =40
+        Icon: =Icon.Search
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =40
+        X: =txtFilNomNroSol.X
+        Y: =txtFilNomNroSol.Y
+        ZIndex: =31
 
     optMS_SO As group:
         Height: =5
@@ -732,7 +740,7 @@ scrMisSolicitudes As screen:
             Width: =75
             X: =724
             Y: =70
-            ZIndex: =29
+            ZIndex: =27
 
         lblMS_SO As label:
             BorderColor: |-
@@ -745,22 +753,14 @@ scrMisSolicitudes As screen:
             Width: =170
             X: =805
             Y: =92
-            ZIndex: =30
+            ZIndex: =28
 
-    Icon9 As icon.Search:
-        Color: =RGBA(179, 179, 179, 1)
-        DisabledColor: =RGBA(179, 179, 179, 1)
-        DisplayMode: =DisplayMode.Disabled
-        Height: =40
-        Icon: =Icon.Search
-        PaddingBottom: =5
-        PaddingLeft: =5
-        PaddingRight: =5
-        PaddingTop: =5
-        Width: =40
-        X: =txtFilNomNroSol.X
-        Y: =txtFilNomNroSol.Y
-        ZIndex: =33
+    Rectangle2_12 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        Visible: =isLoading
+        Width: =Parent.Width
+        ZIndex: =32
 
     optMS_AR As group:
         Height: =5
@@ -780,7 +780,7 @@ scrMisSolicitudes As screen:
             Width: =75
             X: =995
             Y: =70
-            ZIndex: =31
+            ZIndex: =29
 
         lblMS_AR As label:
             BorderColor: |-
@@ -793,5 +793,5 @@ scrMisSolicitudes As screen:
             Width: =170
             X: =1076
             Y: =92
-            ZIndex: =32
+            ZIndex: =30
 

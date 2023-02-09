@@ -56,11 +56,11 @@ scrAsignar As screen:
     lbl_TituloPrincipal_7 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =57
         Size: =24
         Text: ="ASIGNAR SOLICITUD"
-        Width: =1335
-        X: =13
+        Width: =1209
+        X: =77
         Y: =icn_Volver_NS_4.Y + (icn_Volver_NS_4.Height / 2) - (Self.Height / 2)
         ZIndex: =4
 

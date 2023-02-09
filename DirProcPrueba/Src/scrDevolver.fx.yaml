@@ -59,11 +59,11 @@ scrDevolver As screen:
     lbl_TituloPrincipal_10 As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
-        Height: =38
+        Height: =37
         Size: =24
         Text: ="DEVOLVER SOLICITUD"
-        Width: =1335
-        X: =13
+        Width: =1172
+        X: =96
         Y: =icn_Volver_NS_7.Y + (icn_Volver_NS_7.Height / 2) - (Self.Height / 2)
         ZIndex: =4
 
