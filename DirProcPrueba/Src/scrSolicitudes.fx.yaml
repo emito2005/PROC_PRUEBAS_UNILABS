@@ -27,12 +27,11 @@ scrSolicitudes As screen:
 
     Label3_1 As label:
         Font: =Font.'Segoe UI'
-        Height: =33
         TabIndex: =5
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
-        X: =119
-        Y: =161
+        X: =38
+        Y: =170
         ZIndex: =4
 
     txtFilNomNroSol_1 As text:
@@ -41,6 +40,7 @@ scrSolicitudes As screen:
             varColorPri01B
         BorderThickness: =1
         Default: =
+        Height: =Label3_1.Height
         HoverBorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
@@ -56,9 +56,9 @@ scrSolicitudes As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         TabIndex: =6
-        Width: =812
-        X: =119
-        Y: =194
+        Width: =762
+        X: =Label3_1.X + Label3_1.Width + 10
+        Y: =Label3_1.Y
         ZIndex: =5
 
     "galSolicitudes As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
@@ -67,7 +67,7 @@ scrSolicitudes As screen:
             varColorPri02
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =450
+        Height: =470
         Items: |
             =/*
             Search(
@@ -103,7 +103,7 @@ scrSolicitudes As screen:
         Visible: =!isLoading
         Width: =1300
         X: =33
-        Y: =301
+        Y: =275
         ZIndex: =6
 
         txtGalSol01 As label:
@@ -295,6 +295,7 @@ scrSolicitudes As screen:
     btnExportarS As button:
         BorderThickness: =0
         Fill: =varColorPri01
+        Height: =Label3_1.Height
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -325,13 +326,14 @@ scrSolicitudes As screen:
         Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
-        X: =1054
-        Y: =194
+        X: =btnLimpiarS.X + btnLimpiarS.Width + 10
+        Y: =Label3_1.Y
         ZIndex: =19
 
     btnLimpiarS As button:
         BorderThickness: =0
         Fill: =varColorPri01
+        Height: =Label3_1.Height
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: =Reset(txtFilNomNroSol)
         RadiusBottomLeft: =0
@@ -342,8 +344,8 @@ scrSolicitudes As screen:
         TabIndex: =7
         Text: ="LIMPIAR"
         Width: =100
-        X: =944
-        Y: =194
+        X: =txtFilNomNroSol_1.X + txtFilNomNroSol_1.Width + 10
+        Y: =Label3_1.Y
         ZIndex: =20
 
     icnActualizarS As icon.Reload:
@@ -351,7 +353,7 @@ scrSolicitudes As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
-        Height: =40
+        Height: =Label3_1.Height
         Icon: =Icon.Reload
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -420,21 +422,21 @@ scrSolicitudes As screen:
         TabIndex: =10
         Tooltip: ="Actualizar Listado de Solictudes"
         Width: =40
-        X: =1237
-        Y: =194
+        X: =Icon7_1.X + Icon7_1.Width + 10
+        Y: =Label3_1.Y
         ZIndex: =21
 
     Icon7_1 As icon.Folder:
         Color: =varColorPri01
-        Height: =40
+        Height: =Label3_1.Height
         Icon: =Icon.Folder
         OnSelect: |-
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
         TabIndex: =9
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
-        X: =1174
-        Y: =194
+        X: =btnExportarS.X + btnExportarS.Width + 10
+        Y: =Label3_1.Y
         ZIndex: =22
 
     Group2_1 As group:
@@ -449,7 +451,7 @@ scrSolicitudes As screen:
             Height: =50
             Width: =1300
             X: =33
-            Y: =245
+            Y: =lblHeaderSO_01.Y
             ZIndex: =7
 
         lblHeaderSO_01 As label:
@@ -462,7 +464,7 @@ scrSolicitudes As screen:
             Text: ="NRO TICKET"
             Width: =txtGalSol01.Width
             X: =38
-            Y: =245
+            Y: =220
             ZIndex: =8
 
         lblHeaderSO_02 As label:
@@ -603,6 +605,7 @@ scrSolicitudes As screen:
         ZIndex: =30
 
         ImgSO_NS As image:
+            BorderColor: =varColorPri02
             Height: =ImgSO_NS.Width
             Image: ='SOLICI MAS'
             OnSelect: =Navigate(scrNuevaSolicitud);
@@ -613,6 +616,7 @@ scrSolicitudes As screen:
             ZIndex: =23
 
         lblSO_NS As label:
+            BorderColor: =varColorPri02
             Height: =32
             OnSelect: =Select(ImgSO_NS)
             TabIndex: =1
@@ -633,8 +637,8 @@ scrSolicitudes As screen:
         PaddingRight: =5
         PaddingTop: =5
         Width: =40
-        X: =119
-        Y: =194
+        X: =txtFilNomNroSol_1.X
+        Y: =txtFilNomNroSol_1.Y
         ZIndex: =31
 
     Rectangle2_13 As rectangle:
@@ -652,6 +656,7 @@ scrSolicitudes As screen:
         ZIndex: =33
 
         ImgSO_MS As image:
+            BorderColor: =varColorPri02
             Height: =ImgSO_MS.Width
             Image: ='MIS SOL'
             OnSelect: =Navigate(scrMisSolicitudes);
@@ -662,6 +667,7 @@ scrSolicitudes As screen:
             ZIndex: =25
 
         lbSO_lMS As label:
+            BorderColor: =varColorPri02
             Height: =32
             OnSelect: =Select(ImgSO_MS)
             TabIndex: =2
@@ -679,6 +685,9 @@ scrSolicitudes As screen:
         ZIndex: =36
 
         ImgSO_SO As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgSO_SO.Width
             Image: ='SOLICI SELECT'
             OnSelect: =
@@ -689,6 +698,9 @@ scrSolicitudes As screen:
             ZIndex: =27
 
         lblSO_SO As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =
             TabIndex: =3
@@ -706,6 +718,9 @@ scrSolicitudes As screen:
         ZIndex: =39
 
         ImgSO_AR As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgSO_AR.Width
             Image: =AREA
             OnSelect: =Navigate(scrArea);
@@ -716,6 +731,9 @@ scrSolicitudes As screen:
             ZIndex: =29
 
         lblSO_AR As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =Select(ImgSO_AR)
             TabIndex: =4

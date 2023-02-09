@@ -27,12 +27,11 @@ scrMisSolicitudes As screen:
 
     Label3 As label:
         Font: =Font.'Segoe UI'
-        Height: =33
         TabIndex: =5
         Text: ="Nombre / Nro. Solicitud"
         Width: =196
         X: =38
-        Y: =197
+        Y: =170
         ZIndex: =4
 
     txtFilNomNroSol As text:
@@ -41,6 +40,7 @@ scrMisSolicitudes As screen:
             varColorPri01B
         BorderThickness: =1
         Default: =
+        Height: =Label3.Height
         HoverBorderColor: |-
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
@@ -56,14 +56,15 @@ scrMisSolicitudes As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         TabIndex: =6
-        Width: =812
-        X: =119
-        Y: =194
+        Width: =762
+        X: =Label3.X + Label3.Width + 10
+        Y: =Label3.Y
         ZIndex: =5
 
     btnExportarMS As button:
         BorderThickness: =0
         Fill: =varColorPri01
+        Height: =Label3.Height
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -146,13 +147,14 @@ scrMisSolicitudes As screen:
         Text: ="EXPORTAR"
         Tooltip: ="Exportar Listado a Excel"
         Width: =100
-        X: =1056
-        Y: =194
+        X: =btnLimpiarMS.X + btnLimpiarMS.Width + 10
+        Y: =Label3.Y
         ZIndex: =6
 
     btnLimpiarMS As button:
         BorderThickness: =0
         Fill: =varColorPri01
+        Height: =Label3.Height
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: =Reset(txtFilNomNroSol)
         RadiusBottomLeft: =0
@@ -163,8 +165,8 @@ scrMisSolicitudes As screen:
         TabIndex: =7
         Text: ="LIMPIAR"
         Width: =100
-        X: =946
-        Y: =194
+        X: =txtFilNomNroSol.X + txtFilNomNroSol.Width + 10
+        Y: =Label3.Y
         ZIndex: =7
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
@@ -173,7 +175,7 @@ scrMisSolicitudes As screen:
             varColorPri02
         BorderThickness: =1
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =450
+        Height: =470
         Items: |
             =//colSolicitudes
             //Filter(colSolicitudes;IdSolicitud in(colSolicitudDetalleDestino.IdSolicitud);ID in(colSolicitudDetalleDestino.IdSolicitudDetalle);EsAtendido=false)
@@ -205,7 +207,7 @@ scrMisSolicitudes As screen:
         X: |-
             =33
             //(Parent.Width-Gallery1.Width)/2
-        Y: =301
+        Y: =275
         ZIndex: =8
 
         Icon5 As icon.ChevronRight:
@@ -398,7 +400,7 @@ scrMisSolicitudes As screen:
             =//RGBA(0; 18; 107; 1)
             varColorPri01B
         Color: =RGBA(236, 64, 38, 1)
-        Height: =40
+        Height: =Label3.Height
         Icon: =Icon.Reload
         OnSelect: |+
             =ClearCollect(colSolicitudCab,
@@ -465,21 +467,21 @@ scrMisSolicitudes As screen:
         TabIndex: =10
         Tooltip: ="Actualizar Listado de Mis Solictudes"
         Width: =40
-        X: =1233
-        Y: =194
+        X: =Icon7.X + Icon7.Width + 10
+        Y: =Label3.Y
         ZIndex: =9
 
     Icon7 As icon.Folder:
         Color: =varColorPri01
-        Height: =40
+        Height: =Label3.Height
         Icon: =Icon.Folder
         OnSelect: |-
             =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
         TabIndex: =9
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
-        X: =1176
-        Y: =194
+        X: =btnExportarMS.X + btnExportarMS.Width + 10
+        Y: =Label3.Y
         ZIndex: =23
 
     Rectangle2_12 As rectangle:
@@ -501,8 +503,7 @@ scrMisSolicitudes As screen:
             Height: =50
             Width: =1300
             X: =33
-            Y: |
-                =245
+            Y: =220
             ZIndex: =10
 
         lblHeaderMS_1 As label:
@@ -515,8 +516,7 @@ scrMisSolicitudes As screen:
             Text: ="NRO TICKET"
             Width: =Title2_4.Width
             X: =38
-            Y: |
-                =245
+            Y: =220
             ZIndex: =11
 
         lblHeaderMS_2 As label:
@@ -529,8 +529,7 @@ scrMisSolicitudes As screen:
             Text: ="ASUNTO SOL."
             Width: =Title2_5.Width
             X: =lblHeaderMS_1.X + lblHeaderMS_1.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =12
 
         lblHeaderMS_3 As label:
@@ -543,8 +542,7 @@ scrMisSolicitudes As screen:
             Text: ="TIPO SOLIC."
             Width: =Title2_6.Width
             X: =lblHeaderMS_2.X + lblHeaderMS_2.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =13
 
         lblHeaderMS_4 As label:
@@ -557,8 +555,7 @@ scrMisSolicitudes As screen:
             Text: ="SEGMENTO NEGOCIO"
             Width: =Title2_14.Width
             X: =lblHeaderMS_3.X + lblHeaderMS_3.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =14
 
         lblHeaderMS_5 As label:
@@ -571,8 +568,7 @@ scrMisSolicitudes As screen:
             Text: ="DPTO. PROCEDENCIA"
             Width: =Title2_11.Width
             X: =lblHeaderMS_4.X + lblHeaderMS_4.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =15
 
         lblHeaderMS_6 As label:
@@ -585,8 +581,7 @@ scrMisSolicitudes As screen:
             Text: ="DPTO. ASIGNADO"
             Width: =Title2_12.Width
             X: =lblHeaderMS_5.X + lblHeaderMS_5.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =16
 
         lblHeaderMS_7 As label:
@@ -599,8 +594,7 @@ scrMisSolicitudes As screen:
             Text: ="MANAGER"
             Width: =Title2_15.Width
             X: =lblHeaderMS_6.X + lblHeaderMS_6.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =17
 
         lblHeaderMS_8 As label:
@@ -613,8 +607,7 @@ scrMisSolicitudes As screen:
             Text: ="LIDER"
             Width: =Title2_38.Width
             X: =lblHeaderMS_7.X + lblHeaderMS_7.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =18
 
         lblHeaderMS_9 As label:
@@ -627,8 +620,7 @@ scrMisSolicitudes As screen:
             Text: ="ANALISTA"
             Width: =Title2_39.Width
             X: =lblHeaderMS_8.X + lblHeaderMS_8.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =19
 
         lblHeaderMS_10 As label:
@@ -641,8 +633,7 @@ scrMisSolicitudes As screen:
             Text: ="FECHA CREAC."
             Width: =Title2_9.Width
             X: =lblHeaderMS_9.X + lblHeaderMS_9.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =20
 
         lblHeaderMS_11 As label:
@@ -655,8 +646,7 @@ scrMisSolicitudes As screen:
             Text: ="FECHA EXPIRA"
             Width: =Title2_10.Width
             X: =lblHeaderMS_10.X + lblHeaderMS_10.Width + 10
-            Y: |
-                =245
+            Y: =220
             ZIndex: =21
 
     optMS_NS As group:
@@ -667,6 +657,9 @@ scrMisSolicitudes As screen:
         ZIndex: =27
 
         ImgMS_NS As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgMS_NS.Width
             Image: ='SOLICI MAS'
             OnSelect: =Navigate(scrNuevaSolicitud);
@@ -677,6 +670,9 @@ scrMisSolicitudes As screen:
             ZIndex: =25
 
         lblMS_NS As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =Select(ImgMS_NS)
             TabIndex: =1
@@ -694,6 +690,9 @@ scrMisSolicitudes As screen:
         ZIndex: =29
 
         ImgMS_MS As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgMS_MS.Width
             Image: ='MIS SOL SELECT'
             TabIndex: =2
@@ -703,6 +702,9 @@ scrMisSolicitudes As screen:
             ZIndex: =27
 
         lbMS_lMS As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =
             TabIndex: =2
@@ -720,6 +722,9 @@ scrMisSolicitudes As screen:
         ZIndex: =31
 
         ImgMS_SO As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgMS_SO.Width
             Image: =SOLICI
             OnSelect: =Navigate(scrSolicitudes);
@@ -730,6 +735,9 @@ scrMisSolicitudes As screen:
             ZIndex: =29
 
         lblMS_SO As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =Select(ImgMS_SO)
             TabIndex: =3
@@ -750,8 +758,8 @@ scrMisSolicitudes As screen:
         PaddingRight: =5
         PaddingTop: =5
         Width: =40
-        X: =121
-        Y: =194
+        X: =txtFilNomNroSol.X
+        Y: =txtFilNomNroSol.Y
         ZIndex: =33
 
     optMS_AR As group:
@@ -762,6 +770,9 @@ scrMisSolicitudes As screen:
         ZIndex: =33
 
         ImgMS_AR As image:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =ImgMS_AR.Width
             Image: =AREA
             OnSelect: =Navigate(scrArea);
@@ -772,6 +783,9 @@ scrMisSolicitudes As screen:
             ZIndex: =31
 
         lblMS_AR As label:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri02
             Height: =32
             OnSelect: =Select(ImgMS_AR)
             TabIndex: =4
