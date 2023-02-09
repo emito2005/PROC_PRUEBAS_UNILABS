@@ -286,7 +286,7 @@ scrDerivar As screen:
         BorderThickness: =1
         Default: =""
         Font: =Font.'Segoe UI'
-        Height: =114
+        Height: =135
         HoverBorderColor: =varColorPri01B
         HoverFill: =varColorPri01B
         Mode: =TextMode.MultiLine
@@ -301,13 +301,13 @@ scrDerivar As screen:
 
     Label6_43 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Creación"
-        Width: =(Parent.Width - 250) / 5
+        Width: =(Parent.Width - 300) / 5
         X: =Button8_11.X
         Y: =Button8_11.Y + Button8_11.Height + 15
         ZIndex: =16
@@ -320,9 +320,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -336,7 +336,7 @@ scrDerivar As screen:
 
     Label6_44 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -355,9 +355,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -366,12 +366,12 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_44.Width
         X: =Label6_44.X
-        Y: =Label6_44.Y + Label6_44.Height
+        Y: =TextInput4_35.Y
         ZIndex: =19
 
     Label6_45 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -379,7 +379,7 @@ scrDerivar As screen:
         Text: ="F. Expiración OLA"
         Width: =Label6_44.Width
         X: =Label6_44.X + Label6_44.Width + 50
-        Y: =Label6_44.Y
+        Y: =Label6_43.Y
         ZIndex: =20
 
     TextInput4_37 As text:
@@ -390,9 +390,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -401,7 +401,7 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_45.Width
         X: =Label6_45.X
-        Y: =Label6_45.Y + Label6_45.Height
+        Y: =TextInput4_35.Y
         ZIndex: =21
 
     requestFieldLbl_60 As label:
@@ -1212,9 +1212,7 @@ scrDerivar As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="ID"
-        Width: |-
-            =//(Parent.Width - 250) / 5
-            150
+        Width: =80
         X: =Button8_6.X
         Y: =Button8_6.Y + Button8_6.Height + 15
         ZIndex: =26
@@ -1227,9 +1225,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =30
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1243,18 +1241,14 @@ scrDerivar As screen:
 
     Label6_37 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Nro. Solicitud"
-        Width: |-
-            =//Label6.Width
-            (Parent.Width - 260) / 5
-        X: |-
-            =//Label6.X + Label6.Width + 50
-            Label6_36.X + Label6_36.Width
+        Width: =(Parent.Width - 200) / 5
+        X: =Label6_36.X + Label6_36.Width + 50
         Y: =Label6_36.Y
         ZIndex: =28
 
@@ -1268,7 +1262,7 @@ scrDerivar As screen:
         Font: =Font.'Segoe UI'
         Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1277,12 +1271,12 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_37.Width
         X: =Label6_37.X
-        Y: =Label6_37.Y + Label6_37.Height
+        Y: =TextInput4_30.Y
         ZIndex: =29
 
     Label6_38 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1290,7 +1284,7 @@ scrDerivar As screen:
         Text: ="Tipo de Solicitud"
         Width: =Label6_37.Width
         X: =Label6_37.X + Label6_37.Width + 50
-        Y: =Label6_37.Y
+        Y: =Label6_36.Y
         ZIndex: =30
 
     TextInput4_32 As text:
@@ -1303,7 +1297,7 @@ scrDerivar As screen:
         Font: =Font.'Segoe UI'
         Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1312,12 +1306,12 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_38.Width
         X: =Label6_38.X
-        Y: =Label6_38.Y + Label6_38.Height
+        Y: =TextInput4_30.Y
         ZIndex: =31
 
     Label6_39 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1325,7 +1319,7 @@ scrDerivar As screen:
         Text: ="Segmento del Negocio"
         Width: =Label6_37.Width
         X: =Label6_38.X + Label6_38.Width + 50
-        Y: =Label6_38.Y
+        Y: =Label6_36.Y
         ZIndex: =32
 
     upperToGroup_2 As group:
@@ -1371,7 +1365,7 @@ scrDerivar As screen:
         Font: =Font.'Segoe UI'
         Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1380,18 +1374,18 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_39.Width
         X: =Label6_39.X
-        Y: =Label6_39.Y + Label6_39.Height
+        Y: =TextInput4_30.Y
         ZIndex: =33
 
     Label6_40 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Asunto de la Solicitud"
-        Width: =TextInput4_31.X + TextInput4_31.Width - Self.X + 150
+        Width: =TextInput4_31.X + TextInput4_31.Width - Self.X + 283
         X: =TextInput4_30.X
         Y: =TextInput4_30.Y + TextInput4_30.Height + 15
         ZIndex: =34
@@ -1404,9 +1398,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1420,7 +1414,7 @@ scrDerivar As screen:
 
     Label6_41 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1432,12 +1426,13 @@ scrDerivar As screen:
 
     Label6_42 As label:
         BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
         DisplayMode: =DisplayMode.Disabled
         Font: =Font.'Segoe UI'
         Height: =50
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
-        PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.DescripcionPrueba
@@ -1448,7 +1443,7 @@ scrDerivar As screen:
 
     Label6_100 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1456,7 +1451,7 @@ scrDerivar As screen:
         Text: ="Tipo de Operación"
         Width: =Label6_37.Width + 50
         X: =Label6_39.X + Label6_39.Width + 50
-        Y: =Label6_39.Y
+        Y: =Label6_36.Y
         ZIndex: =38
 
     TextInput4_80 As text:
@@ -1469,7 +1464,7 @@ scrDerivar As screen:
         Font: =Font.'Segoe UI'
         Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1478,19 +1473,18 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_100.Width
         X: =Label6_100.X
-        Y: =Label6_100.Y + Label6_100.Height
+        Y: =TextInput4_30.Y
         ZIndex: =39
 
     Label6_101 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Razón Social Cliente"
-        Width: |
-            =500
+        Width: =396
         X: =Label6_41.X + Label6_41.Width + 20
         Y: =Label6_41.Y
         ZIndex: =40
@@ -1503,9 +1497,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =Label6_40.Height
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1514,20 +1508,18 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_101.Width
         X: =Label6_101.X
-        Y: =Label6_101.Y + Label6_101.Height
+        Y: =TextInput4_34.Y
         ZIndex: =41
 
     Label6_102 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Descripción"
-        Width: |-
-            =//Label6.Width
-            (Parent.Width - 260) / 2
+        Width: =Label6_40.Width
         X: =TextInput4_34.X
         Y: =TextInput4_34.Y + TextInput4_34.Height + 15
         ZIndex: =42
@@ -1540,9 +1532,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =Label6_40.Height
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1551,43 +1543,42 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_41.Width
         X: =Label6_41.X
-        Y: =Label6_41.Y + Label6_41.Height
+        Y: =TextInput4_34.Y
         ZIndex: =43
 
     Label6_103 As label:
         BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
         DisplayMode: =DisplayMode.Disabled
         Font: =Font.'Segoe UI'
         Height: =Label6_42.Height
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
-        PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.ObsSolDet
         Width: =Label6_104.Width
-        X: =751
+        X: =Label6_104.X
         Y: =Label6_104.Y + Label6_104.Height
         ZIndex: =44
 
     Label6_104 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Comentario"
-        Width: |-
-            =//Label6.Width
-            (Parent.Width - 260) / 2
-        X: =751
+        Width: =566
+        X: =Label6_102.X + Label6_102.Width + 50
         Y: =Label6_102.Y
         ZIndex: =45
 
     Label6_112 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1595,7 +1586,7 @@ scrDerivar As screen:
         Text: ="F. Inicio de Operación"
         Width: =Label6_45.Width
         X: =Label6_45.X + Label6_45.Width + 50
-        Y: =387
+        Y: =Label6_43.Y
         ZIndex: =46
 
     TextInput4_88 As text:
@@ -1606,9 +1597,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1617,12 +1608,12 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_112.Width
         X: =Label6_112.X
-        Y: =Label6_112.Y + Label6_112.Height
+        Y: =TextInput4_35.Y
         ZIndex: =47
 
     Label6_113 As label:
         Font: =Font.'Segoe UI'
-        Height: =20
+        Height: =Label6_36.Height
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1630,7 +1621,7 @@ scrDerivar As screen:
         Text: ="F. Fin de Operación"
         Width: =Label6_112.Width
         X: =Label6_112.X + Label6_112.Width + 50
-        Y: =387
+        Y: =Label6_43.Y
         ZIndex: =48
 
     TextInput4_89 As text:
@@ -1641,9 +1632,9 @@ scrDerivar As screen:
         DisplayMode: =DisplayMode.Disabled
         FocusedBorderThickness: =0
         Font: =Font.'Segoe UI'
-        Height: =25
+        Height: =TextInput4_30.Height
         PaddingBottom: =0
-        PaddingLeft: =0
+        PaddingLeft: =5
         PaddingRight: =0
         PaddingTop: =0
         RadiusBottomLeft: =0
@@ -1652,7 +1643,7 @@ scrDerivar As screen:
         RadiusTopRight: =0
         Width: =Label6_113.Width
         X: =Label6_113.X
-        Y: =Label6_113.Y + Label6_113.Height
+        Y: =TextInput4_35.Y
         ZIndex: =49
 
     Rectangle2_7 As rectangle:

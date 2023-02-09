@@ -1285,7 +1285,6 @@ scrDevolver As screen:
         Height: =50
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
-        PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.DescripcionPrueba
@@ -1407,12 +1406,11 @@ scrDevolver As screen:
         Height: =Label6_52.Height
         Overflow: =Overflow.Scroll
         PaddingBottom: =0
-        PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
         Text: =varSolicitudDetalleItemSel.ObsSolDet
         Width: =Label6_109.Width
-        X: =751
+        X: =Label6_109.X
         Y: =Label6_109.Y + Label6_109.Height
         ZIndex: =44
 
@@ -1425,7 +1423,7 @@ scrDevolver As screen:
         PaddingTop: =0
         Text: ="Comentario"
         Width: =566
-        X: =751
+        X: =Label6_107.X + Label6_107.Width + 50
         Y: =Label6_107.Y
         ZIndex: =45
 
