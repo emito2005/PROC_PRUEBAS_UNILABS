@@ -1152,9 +1152,7 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="Nro. Solicitud"
-        Width: |-
-            =//Label6.Width
-            (Parent.Width - 200) / 5
+        Width: =(Parent.Width - 200) / 5
         X: |-
             =//Label6.X + Label6.Width + 50
             Label6_114.X + Label6_114.Width+50
@@ -1811,7 +1809,8 @@ srcSolicitudDetalle As screen:
         Text: ="Descripción"
         Width: |-
             =//Label6.Width
-            (Parent.Width - 80) / 2
+            //(Parent.Width - 79) / 2
+            Label6_119.Width
         X: =TextInput4_95.X
         Y: =TextInput4_95.Y + TextInput4_95.Height + 10
         ZIndex: =57
@@ -1869,7 +1868,8 @@ srcSolicitudDetalle As screen:
         Text: ="Comentario"
         Width: |-
             =//Label6.Width
-            (Parent.Width - 225) / 2
+            //(Parent.Width - 229) / 2
+            566
         X: =Label6_122.X + Label6_122.Width + 50
         Y: =Label6_122.Y
         ZIndex: =60
