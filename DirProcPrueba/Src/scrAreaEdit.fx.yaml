@@ -21,6 +21,7 @@ scrAreaEdit As screen:
         Height: =330
         Item: =LookUp(Area_1, ID = varIdArea)//DetAreaGallery.Selected
         OnSuccess: =Set(varIdArea,form_EditArea.LastSubmit.ID)
+        SnapToColumns: =false
         Width: =1024
         X: =198
         Y: =80
@@ -199,6 +200,7 @@ scrAreaEdit As screen:
 
             DataCardValue2 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -284,6 +286,7 @@ scrAreaEdit As screen:
 
             DataCardValue3 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -364,6 +367,7 @@ scrAreaEdit As screen:
 
             DataCardValue1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -443,6 +447,7 @@ scrAreaEdit As screen:
 
             DataCardValue4 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -523,6 +528,7 @@ scrAreaEdit As screen:
 
             DataCardValue5 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -584,8 +590,8 @@ scrAreaEdit As screen:
             MaxLength: =DataSourceInfo([@Area_1], DataSourceInfo.MaxLength, "Obs")
             Required: =false
             Update: =DataCardValue6.Text
-            Width: =700
-            X: =2
+            Width: =680
+            X: =500
             Y: =1
             ZIndex: =2
 
@@ -595,14 +601,15 @@ scrAreaEdit As screen:
                 Font: =Font.'Segoe UI'
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =Parent.Width - 90
                 Wrap: =false
-                X: =30
+                X: =80
                 Y: =10
                 ZIndex: =1
 
             DataCardValue6 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -622,8 +629,8 @@ scrAreaEdit As screen:
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =Parent.Width - 90
+                X: =80
                 Y: =DataCardKey6.Y + DataCardKey6.Height + 5
                 ZIndex: =2
 
@@ -1581,6 +1588,7 @@ scrAreaEdit As screen:
             ZIndex: =6
 
     btn_GrabarArea_1 As button:
+        BorderThickness: =1
         Fill: |
             =//RGBA(0; 0; 0; 1)
             varColorPri02
@@ -1591,6 +1599,10 @@ scrAreaEdit As screen:
             =SubmitForm(form_EditArea);
             //ResetForm(form_EditArea);;
             
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="GRABAR AREA"
         Width: =719
         X: =323
