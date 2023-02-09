@@ -1101,7 +1101,7 @@ srcSolicitudDetalle As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Text: ="Ver Doc. Adjuntos"
+        Text: ="VER DOC. ADJUNTOS"
         Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
         X: =archivarBtn_1.X + archivarBtn_1.Width + 116.5
         Y: =archivarBtn_1.Y
@@ -1548,7 +1548,7 @@ srcSolicitudDetalle As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Creación"
-        Width: =(Parent.Width - 250) / 5
+        Width: =(Parent.Width - 300) / 5
         X: =Button8_23.X
         Y: |
             =Button8_23.Y + Button8_23.Height + 7
@@ -1587,7 +1587,7 @@ srcSolicitudDetalle As screen:
         PaddingTop: =0
         Text: ="F. Expiración SLA"
         Width: =Label6_132.Width
-        X: =Label6_132.X + Label6_132.Width + 20
+        X: =Label6_132.X + Label6_132.Width + 50
         Y: =Label6_132.Y
         ZIndex: =44
 
@@ -2293,7 +2293,7 @@ srcSolicitudDetalle As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Text: ="Elevar"
+            Text: ="ELEVAR"
             X: =327
             Y: =650
             ZIndex: =63
@@ -2309,7 +2309,7 @@ srcSolicitudDetalle As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Text: ="Asignar"
+            Text: ="ASIGNAR"
             X: =elevarBtn_1.X
             Y: =705
             ZIndex: =64
@@ -2326,7 +2326,7 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Derivar"
+            Text: ="DERIVAR"
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =604
             Y: =650
@@ -2346,7 +2346,7 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Finalizar"
+            Text: ="FINALIZAR"
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =1158
             Y: =705
@@ -2366,7 +2366,7 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Archivar"
+            Text: ="ARCHIVAR"
             X: =881
             Y: =650
             ZIndex: =67
@@ -2385,7 +2385,7 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Eliminar"
+            Text: ="ELIMINAR"
             X: =archivarBtn_1.X
             Y: =705
             ZIndex: =68
@@ -2415,7 +2415,7 @@ srcSolicitudDetalle As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Devolver"
+            Text: ="DEVOLVER"
             X: =derivarBtn_1.X
             Y: =705
             ZIndex: =69
