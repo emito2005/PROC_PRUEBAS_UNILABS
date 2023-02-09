@@ -2251,6 +2251,7 @@ srcSolicitudDetalle As screen:
             BorderThickness: =1
             DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
             RadiusBottomLeft: =0
@@ -2266,6 +2267,7 @@ srcSolicitudDetalle As screen:
             BorderThickness: =1
             DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
             RadiusBottomLeft: =0
@@ -2278,10 +2280,17 @@ srcSolicitudDetalle As screen:
             ZIndex: =64
 
         derivarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varDerivar && varMisSolicitudesScreen && !IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
             Text: ="Derivar"
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =604
@@ -2289,12 +2298,19 @@ srcSolicitudDetalle As screen:
             ZIndex: =65
 
         finalizarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_5);
                 UpdateContext({ showFinishDialog: true })
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
             Text: ="Finalizar"
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =1158
@@ -2302,30 +2318,45 @@ srcSolicitudDetalle As screen:
             ZIndex: =66
 
         archivarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varAnular && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_3);
                 UpdateContext({ showArchiveDialog: true })
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
             Text: ="Archivar"
             X: =881
             Y: =650
             ZIndex: =67
 
         eliminarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varEliminar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =Reset(TextInput3_4);
                 UpdateContext({ showDeleteDialog: true })
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
             Text: ="Eliminar"
             X: =archivarBtn_1.X
             Y: =705
             ZIndex: =68
 
         devolverBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: |-
                 =If(varDevolver && 
                     varMisSolicitudesScreen && 
@@ -2341,8 +2372,14 @@ srcSolicitudDetalle As screen:
                     DisplayMode.Disabled
                 )
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrDevolver, ScreenTransition.Fade)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
             Text: ="Devolver"
             X: =derivarBtn_1.X
             Y: =705
@@ -2548,15 +2585,15 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Departamento"
+            Size: =12
+            Text: ="DATOS DE DEPARTAMENTO"
             Width: =280
             X: =TextInput4_95.X
             Y: =Label6_124.Y + Label6_124.Height + 15
@@ -2584,15 +2621,15 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Personal"
+            Size: =12
+            Text: ="DATOS DE PERSONAL"
             Width: =230
             X: =TextInput4_98.X
             Y: =TextInput4_98.Y + TextInput4_98.Height + 10
@@ -2620,15 +2657,15 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Fecha"
+            Size: =12
+            Text: ="DATOS DE FECHA"
             Width: =230
             X: =TextInput4_101.X
             Y: =TextInput4_101.Y + TextInput4_101.Height + 10
