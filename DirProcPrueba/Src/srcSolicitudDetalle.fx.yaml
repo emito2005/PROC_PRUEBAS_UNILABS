@@ -801,11 +801,11 @@ srcSolicitudDetalle As screen:
 
     Rectangle4_25 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =2
+        BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =139
+        Height: =131
         Width: =Parent.Width
-        Y: =629
+        Y: =636
         ZIndex: =2
 
     cmpBarraSuperior_15 As cmpBarraSuperior:
@@ -813,21 +813,12 @@ srcSolicitudDetalle As screen:
 
     Rectangle4_24 As rectangle:
         BorderColor: =varColorPri01
-        BorderThickness: =2
+        BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
         Height: =698
         Width: =Parent.Width
         Y: =70
         ZIndex: =4
-
-    Rectangle4_26 As rectangle:
-        BorderColor: =varColorPri01
-        BorderThickness: =2
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =0
-        Width: =Parent.Width
-        Y: =629
-        ZIndex: =5
 
     HtmlText1_3 As htmlViewer:
         Height: =70
@@ -1101,7 +1092,7 @@ srcSolicitudDetalle As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Text: ="VER DOC. ADJUNTOS"
+        Text: ="VER ADJUNTOS"
         Visible: =varSolicitudDetalleItemSel.'Tiene datos adjuntos'
         X: =archivarBtn_1.X + archivarBtn_1.Width + 116.5
         Y: =archivarBtn_1.Y
@@ -2261,7 +2252,7 @@ srcSolicitudDetalle As screen:
             Size: =13
             Text: ="GENERAR PDF"
             X: =50//requestFieldLbl_74.X
-            Y: =650
+            Y: =657
             ZIndex: =61
 
         trazabilidadBtn_1 As button:
@@ -2278,7 +2269,7 @@ srcSolicitudDetalle As screen:
             Size: =13
             Text: ="TRAZABILIDAD"
             X: =descargarPDFBtn_2.X
-            Y: =705
+            Y: =712
             ZIndex: =62
 
         elevarBtn_1 As button:
@@ -2292,9 +2283,10 @@ srcSolicitudDetalle As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =13
             Text: ="ELEVAR"
             X: =327
-            Y: =650
+            Y: =657
             ZIndex: =63
 
         asignarBtn_1 As button:
@@ -2308,9 +2300,10 @@ srcSolicitudDetalle As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =13
             Text: ="ASIGNAR"
             X: =elevarBtn_1.X
-            Y: =705
+            Y: =712
             ZIndex: =64
 
         derivarBtn_1 As button:
@@ -2328,7 +2321,7 @@ srcSolicitudDetalle As screen:
             Text: ="DERIVAR"
             Visible: =true//!IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =604
-            Y: =650
+            Y: =657
             ZIndex: =65
 
         finalizarBtn_1 As button:
@@ -2348,7 +2341,7 @@ srcSolicitudDetalle As screen:
             Text: ="FINALIZAR"
             Visible: =true//IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo)
             X: =1158
-            Y: =705
+            Y: =712
             ZIndex: =66
 
         archivarBtn_1 As button:
@@ -2367,7 +2360,7 @@ srcSolicitudDetalle As screen:
             Size: =13
             Text: ="ARCHIVAR"
             X: =881
-            Y: =650
+            Y: =657
             ZIndex: =67
 
         eliminarBtn_1 As button:
@@ -2386,7 +2379,7 @@ srcSolicitudDetalle As screen:
             Size: =13
             Text: ="ELIMINAR"
             X: =archivarBtn_1.X
-            Y: =705
+            Y: =712
             ZIndex: =68
 
         devolverBtn_1 As button:
@@ -2416,7 +2409,7 @@ srcSolicitudDetalle As screen:
             Size: =13
             Text: ="DEVOLVER"
             X: =derivarBtn_1.X
-            Y: =705
+            Y: =712
             ZIndex: =69
 
     finishDialogGroup_1 As group:

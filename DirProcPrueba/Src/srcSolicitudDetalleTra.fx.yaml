@@ -311,11 +311,10 @@ srcSolicitudDetalleTra As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Text: ="VER DOC. ADJUNTOS"
+        Text: ="VER ADJUNTOS"
         Visible: |-
             =//varSolicitudDetalleTrazaItemSel.'Tiene datos adjuntos'
             true
-        Width: =200
         X: =690
         Y: =700
         ZIndex: =47
@@ -866,7 +865,7 @@ srcSolicitudDetalleTra As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =40
             Size: =12
-            Text: ="Datos de Solicitud"
+            Text: ="DATOS DE SOLICITUD"
             Width: =Button8_20.Width
             X: =50
             Y: =85
@@ -902,7 +901,7 @@ srcSolicitudDetalleTra As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =40
             Size: =12
-            Text: ="Datos de Departamento"
+            Text: ="DATOS DE DEPARTAMENTO"
             Width: =Button8_20.Width
             X: =TextInput4_50.X
             Y: =Label6_62.Y + Label6_62.Height + 15
@@ -938,7 +937,7 @@ srcSolicitudDetalleTra As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =40
             Size: =12
-            Text: ="Datos de Personal"
+            Text: ="DATOS DE PERSONAL"
             Width: =Button8_20.Width
             X: =TextInput4_51.X
             Y: =TextInput4_51.Y + TextInput4_51.Height + 20

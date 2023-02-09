@@ -670,7 +670,7 @@ scrAreaEdit As screen:
     rectTitManager As rectangle:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
-            varColorPri01
+            varColorPri02
         Height: =29
         Width: =355
         X: =108
@@ -973,7 +973,7 @@ scrAreaEdit As screen:
     rectTitManager_1 As rectangle:
         Fill: |
             =//RGBA(221; 79; 14; 1)
-            varColorPri01
+            varColorPri02
         Height: =29
         Width: =355
         X: =518
@@ -1279,7 +1279,7 @@ scrAreaEdit As screen:
     rectTitManager_2 As rectangle:
         Fill: |-
             =//RGBA(221; 79; 14; 1)
-            varColorPri01
+            varColorPri02
         Height: =29
         Width: =355
         X: =929
@@ -1590,8 +1590,7 @@ scrAreaEdit As screen:
     btn_GrabarArea_1 As button:
         BorderThickness: =1
         Fill: |
-            =//RGBA(0; 0; 0; 1)
-            varColorPri02
+            =varColorPri01
         FontWeight: =FontWeight.Bold
         Height: =48
         HoverFill: =ColorFade(Self.Fill, -20%)
