@@ -76,7 +76,9 @@ scrDevolver As screen:
         ZIndex: =5
 
     Button5_3 As button:
+        BorderThickness: =1
         Fill: =varColorPri01
+        FontWeight: =FontWeight.Bold
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |+
             =UpdateContext({ isLoading: true });
@@ -165,6 +167,10 @@ scrDevolver As screen:
             
             Navigate(scrMisSolicitudes);
             
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="DEVOLVER"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
@@ -192,7 +198,6 @@ scrDevolver As screen:
 
     Label6_53 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -205,7 +210,7 @@ scrDevolver As screen:
         ZIndex: =12
 
     TextInput4_43 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaCreacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -224,7 +229,6 @@ scrDevolver As screen:
 
     Label6_54 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -237,7 +241,7 @@ scrDevolver As screen:
         ZIndex: =14
 
     TextInput4_44 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -256,7 +260,6 @@ scrDevolver As screen:
 
     Label6_55 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -269,7 +272,7 @@ scrDevolver As screen:
         ZIndex: =16
 
     TextInput4_45 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -288,7 +291,6 @@ scrDevolver As screen:
 
     requestFieldLbl_29 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1089,7 +1091,6 @@ scrDevolver As screen:
 
     Label6_46 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1104,7 +1105,7 @@ scrDevolver As screen:
         ZIndex: =26
 
     TextInput4_38 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.ID
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1116,6 +1117,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_46.Width
         X: =Label6_46.X
         Y: =Label6_46.Y + Label6_46.Height
@@ -1123,7 +1128,6 @@ scrDevolver As screen:
 
     Label6_47 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1140,7 +1144,7 @@ scrDevolver As screen:
         ZIndex: =28
 
     TextInput4_39 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1152,6 +1156,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_47.Width
         X: =Label6_47.X
         Y: =Label6_47.Y + Label6_47.Height
@@ -1159,7 +1167,6 @@ scrDevolver As screen:
 
     Label6_48 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1172,7 +1179,7 @@ scrDevolver As screen:
         ZIndex: =30
 
     TextInput4_40 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1184,6 +1191,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_48.Width
         X: =Label6_48.X
         Y: =Label6_48.Y + Label6_48.Height
@@ -1191,7 +1202,6 @@ scrDevolver As screen:
 
     Label6_49 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1204,7 +1214,7 @@ scrDevolver As screen:
         ZIndex: =32
 
     TextInput4_41 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoServicio
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1216,6 +1226,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_49.Width
         X: =Label6_49.X
         Y: =Label6_49.Y + Label6_49.Height
@@ -1223,7 +1237,6 @@ scrDevolver As screen:
 
     Label6_50 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1236,7 +1249,7 @@ scrDevolver As screen:
         ZIndex: =34
 
     TextInput4_42 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.AsuntoSol
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1248,6 +1261,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_50.Width
         X: =Label6_50.X
         Y: =Label6_50.Y + Label6_50.Height
@@ -1255,7 +1272,6 @@ scrDevolver As screen:
 
     Label6_51 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1267,6 +1283,8 @@ scrDevolver As screen:
         ZIndex: =36
 
     Label6_52 As label:
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Disabled
         Font: =Font.'Segoe UI'
         Height: =50
         Overflow: =Overflow.Scroll
@@ -1282,7 +1300,6 @@ scrDevolver As screen:
 
     Label6_105 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1295,7 +1312,7 @@ scrDevolver As screen:
         ZIndex: =38
 
     TextInput4_83 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoOperacion
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1307,6 +1324,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_105.Width
         X: =Label6_105.X
         Y: =Label6_105.Y + Label6_105.Height
@@ -1314,7 +1335,6 @@ scrDevolver As screen:
 
     Label6_106 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1328,7 +1348,7 @@ scrDevolver As screen:
         ZIndex: =40
 
     TextInput4_84 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.RazonSocialCliente
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1340,6 +1360,10 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_106.Width
         X: =Label6_106.X
         Y: =Label6_106.Y + Label6_106.Height
@@ -1347,7 +1371,6 @@ scrDevolver As screen:
 
     Label6_107 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1362,7 +1385,7 @@ scrDevolver As screen:
         ZIndex: =42
 
     TextInput4_85 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1374,12 +1397,18 @@ scrDevolver As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_51.Width
         X: =Label6_51.X
         Y: =Label6_51.Y + Label6_51.Height
         ZIndex: =43
 
     Label6_108 As label:
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Disabled
         Font: =Font.'Segoe UI'
         Height: =Label6_52.Height
         Overflow: =Overflow.Scroll
@@ -1395,7 +1424,6 @@ scrDevolver As screen:
 
     Label6_109 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1411,7 +1439,6 @@ scrDevolver As screen:
 
     Label6_110 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1424,7 +1451,7 @@ scrDevolver As screen:
         ZIndex: =46
 
     TextInput4_86 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1443,7 +1470,6 @@ scrDevolver As screen:
 
     Label6_111 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1456,7 +1482,7 @@ scrDevolver As screen:
         ZIndex: =48
 
     TextInput4_87 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1494,14 +1520,16 @@ scrDevolver As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Fecha"
+            Size: =12
+            Text: |-
+                ="DATOS DE FECHA
+                "
             Width: =230
             X: =TextInput4_42.X
             Y: =Label6_52.Y + Label6_52.Height + 15
@@ -1524,7 +1552,6 @@ scrDevolver As screen:
 
         requestFieldLbl_28 As label:
             Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
             Height: =20
             PaddingBottom: =0
             PaddingLeft: =0
@@ -1597,14 +1624,14 @@ scrDevolver As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Operación"
+            Size: =12
+            Text: ="DATOS DE OPERACIÓN"
             Width: =240
             X: =TextInput4_43.X
             Y: =TextInput4_43.Y + TextInput4_43.Height + 15
@@ -1632,15 +1659,15 @@ scrDevolver As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Solicitud"
+            Size: =12
+            Text: ="DATOS DE SOLICITUD"
             Width: =230
             X: =50
             Y: =85

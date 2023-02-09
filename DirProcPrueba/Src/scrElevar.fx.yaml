@@ -59,7 +59,9 @@ scrElevar As screen:
         ZIndex: =5
 
     Button5 As button:
+        BorderThickness: =1
         Fill: =varColorPri01
+        FontWeight: =FontWeight.Bold
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
             =UpdateContext({ isLoading: true });
@@ -148,6 +150,10 @@ scrElevar As screen:
             
             Navigate(scrMisSolicitudes);
             //Select(gaMenuLateral_Eleva;2;Button2_7);;
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="ELEVAR"
         Width: =Parent.Width / 2
         X: =Parent.Width / 2 - Self.Width / 2
@@ -1542,15 +1548,15 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Solicitud"
+            Size: =12
+            Text: ="DATOS DE SOLICITUD"
             Width: =230
             X: =50
             Y: =85
@@ -1578,14 +1584,13 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Fecha"
+            Size: =12
+            Text: ="DATOS DE FECHA"
             Width: =230
             X: =TextInput4_18.X
             Y: =Label6_22.Y + Label6_22.Height + 15
@@ -1613,14 +1618,14 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Operación"
+            Size: =12
+            Text: ="DATOS DE OPERACIÓN"
             Width: =240
             X: =TextInput4_19.X
             Y: =TextInput4_19.Y + TextInput4_19.Height + 15
