@@ -1521,6 +1521,7 @@ scrDevolver As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1530,7 +1531,7 @@ scrDevolver As screen:
             Text: |-
                 ="DATOS DE FECHA
                 "
-            Width: =230
+            Width: =Button8_20.Width
             X: =TextInput4_42.X
             Y: =Label6_52.Y + Label6_52.Height + 15
             ZIndex: =8
@@ -1625,6 +1626,7 @@ scrDevolver As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1632,7 +1634,7 @@ scrDevolver As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE OPERACIÓN"
-            Width: =240
+            Width: =Button8_20.Width
             X: =TextInput4_43.X
             Y: =TextInput4_43.Y + TextInput4_43.Height + 15
             ZIndex: =10
@@ -1660,7 +1662,7 @@ scrDevolver As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1668,7 +1670,7 @@ scrDevolver As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE SOLICITUD"
-            Width: =230
+            Width: =Button8_20.Width
             X: =50
             Y: =85
             ZIndex: =24

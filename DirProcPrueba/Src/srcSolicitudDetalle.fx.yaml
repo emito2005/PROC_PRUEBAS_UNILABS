@@ -2558,7 +2558,7 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE SOLICITUD"
-            Width: =230
+            Width: =280
             X: =50
             Y: =85
             ZIndex: =9
@@ -2586,7 +2586,7 @@ srcSolicitudDetalle As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -2594,7 +2594,7 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE DEPARTAMENTO"
-            Width: =280
+            Width: =Button8_20.Width
             X: =TextInput4_95.X
             Y: =Label6_124.Y + Label6_124.Height + 15
             ZIndex: =11
@@ -2622,7 +2622,7 @@ srcSolicitudDetalle As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -2630,7 +2630,7 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE PERSONAL"
-            Width: =230
+            Width: =Button8_20.Width
             X: =TextInput4_98.X
             Y: =TextInput4_98.Y + TextInput4_98.Height + 10
             ZIndex: =13
@@ -2658,7 +2658,7 @@ srcSolicitudDetalle As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -2666,7 +2666,7 @@ srcSolicitudDetalle As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE FECHA"
-            Width: =230
+            Width: =Button8_20.Width
             X: =TextInput4_101.X
             Y: =TextInput4_101.Y + TextInput4_101.Height + 10
             ZIndex: =15

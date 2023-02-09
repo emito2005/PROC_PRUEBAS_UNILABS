@@ -1678,7 +1678,7 @@ scrDerivar As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1686,7 +1686,7 @@ scrDerivar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE SOLICITUD"
-            Width: =230
+            Width: =Button8_20.Width
             X: =50
             Y: =85
             ZIndex: =24
@@ -1714,6 +1714,7 @@ scrDerivar As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1721,7 +1722,7 @@ scrDerivar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE FECHA"
-            Width: =230
+            Width: =Button8_20.Width
             X: =TextInput4_34.X
             Y: =Label6_42.Y + Label6_42.Height + 15
             ZIndex: =12
@@ -1749,6 +1750,7 @@ scrDerivar As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1756,7 +1758,7 @@ scrDerivar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE OPERACIÓN"
-            Width: =240
+            Width: =Button8_20.Width
             X: =TextInput4_35.X
             Y: =TextInput4_35.Y + TextInput4_35.Height + 15
             ZIndex: =14

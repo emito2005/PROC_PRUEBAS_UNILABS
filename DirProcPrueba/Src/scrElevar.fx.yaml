@@ -179,7 +179,6 @@ scrElevar As screen:
 
     Label6_23 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -192,7 +191,7 @@ scrElevar As screen:
         ZIndex: =16
 
     TextInput4_19 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaCreacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -204,6 +203,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_23.Width
         X: =Label6_23.X
         Y: =Label6_23.Y + Label6_23.Height
@@ -211,7 +214,6 @@ scrElevar As screen:
 
     Label6_24 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -224,7 +226,7 @@ scrElevar As screen:
         ZIndex: =18
 
     TextInput4_20 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraSLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -236,6 +238,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_24.Width
         X: =Label6_24.X
         Y: =Label6_24.Y + Label6_24.Height
@@ -243,7 +249,6 @@ scrElevar As screen:
 
     Label6_25 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -256,7 +261,7 @@ scrElevar As screen:
         ZIndex: =20
 
     TextInput4_21 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FechaExpiraOLA, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -268,6 +273,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_25.Width
         X: =Label6_25.X
         Y: =Label6_25.Y + Label6_25.Height
@@ -1076,7 +1085,6 @@ scrElevar As screen:
 
     Label6_16 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1091,7 +1099,7 @@ scrElevar As screen:
         ZIndex: =26
 
     TextInput4_14 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.ID
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1103,6 +1111,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_16.Width
         X: =Label6_16.X
         Y: =Label6_16.Y + Label6_16.Height
@@ -1110,7 +1122,6 @@ scrElevar As screen:
 
     Label6_17 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1127,7 +1138,7 @@ scrElevar As screen:
         ZIndex: =28
 
     TextInput4_15 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1139,6 +1150,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_17.Width
         X: =Label6_17.X
         Y: =Label6_17.Y + Label6_17.Height
@@ -1146,7 +1161,6 @@ scrElevar As screen:
 
     Label6_18 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1159,7 +1173,7 @@ scrElevar As screen:
         ZIndex: =30
 
     TextInput4_16 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1171,6 +1185,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_18.Width
         X: =Label6_18.X
         Y: =Label6_18.Y + Label6_18.Height
@@ -1178,7 +1196,6 @@ scrElevar As screen:
 
     Label6_19 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1191,7 +1208,7 @@ scrElevar As screen:
         ZIndex: =32
 
     TextInput4_17 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoServicio
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1203,6 +1220,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_19.Width
         X: =Label6_19.X
         Y: =Label6_19.Y + Label6_19.Height
@@ -1210,7 +1231,6 @@ scrElevar As screen:
 
     Label6_20 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1223,7 +1243,7 @@ scrElevar As screen:
         ZIndex: =34
 
     TextInput4_18 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.AsuntoSol
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1235,6 +1255,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_20.Width
         X: =Label6_20.X
         Y: =Label6_20.Y + Label6_20.Height
@@ -1242,7 +1266,6 @@ scrElevar As screen:
 
     Label6_21 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1336,7 +1359,6 @@ scrElevar As screen:
 
     Label6_86 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1349,7 +1371,7 @@ scrElevar As screen:
         ZIndex: =38
 
     TextInput4_70 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoOperacion
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1361,6 +1383,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_86.Width
         X: =Label6_86.X
         Y: =Label6_86.Y + Label6_86.Height
@@ -1368,7 +1394,6 @@ scrElevar As screen:
 
     Label6_87 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1382,7 +1407,7 @@ scrElevar As screen:
         ZIndex: =40
 
     TextInput4_71 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.RazonSocialCliente
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1394,6 +1419,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_87.Width
         X: =Label6_87.X
         Y: =Label6_87.Y + Label6_87.Height
@@ -1401,7 +1430,6 @@ scrElevar As screen:
 
     Label6_88 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1416,7 +1444,7 @@ scrElevar As screen:
         ZIndex: =42
 
     TextInput4_72 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1428,6 +1456,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_21.Width
         X: =Label6_21.X
         Y: =Label6_21.Y + Label6_21.Height
@@ -1449,7 +1481,6 @@ scrElevar As screen:
 
     Label6_90 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1465,7 +1496,6 @@ scrElevar As screen:
 
     Label6_91 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1478,7 +1508,7 @@ scrElevar As screen:
         ZIndex: =46
 
     TextInput4_73 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.InicioOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1490,6 +1520,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_91.Width
         X: =Label6_91.X
         Y: =Label6_91.Y + Label6_91.Height
@@ -1497,7 +1531,6 @@ scrElevar As screen:
 
     Label6_92 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1510,7 +1543,7 @@ scrElevar As screen:
         ZIndex: =48
 
     TextInput4_74 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =Text(varSolicitudDetalleItemSel.FinOperacion, "dd/mm/yyyy")
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1522,6 +1555,10 @@ scrElevar As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_92.Width
         X: =Label6_92.X
         Y: =Label6_92.Y + Label6_92.Height
@@ -1549,7 +1586,7 @@ scrElevar As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
-            Height: =30
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1557,7 +1594,7 @@ scrElevar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE SOLICITUD"
-            Width: =230
+            Width: =Button8_20.Width
             X: =50
             Y: =85
             ZIndex: =24
@@ -1584,6 +1621,8 @@ scrElevar As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
+            FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1591,7 +1630,7 @@ scrElevar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE FECHA"
-            Width: =230
+            Width: =Button8_20.Width
             X: =TextInput4_18.X
             Y: =Label6_22.Y + Label6_22.Height + 15
             ZIndex: =12
@@ -1619,6 +1658,7 @@ scrElevar As screen:
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
             FontWeight: =FontWeight.Bold
+            Height: =Button8_20.Height
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1626,7 +1666,7 @@ scrElevar As screen:
             RadiusTopRight: =40
             Size: =12
             Text: ="DATOS DE OPERACIÓN"
-            Width: =240
+            Width: =Button8_20.Width
             X: =TextInput4_19.X
             Y: =TextInput4_19.Y + TextInput4_19.Height + 15
             ZIndex: =14
