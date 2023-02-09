@@ -253,6 +253,7 @@ scrNuevaSolicitud As screen:
                 BorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01
+                BorderThickness: =1
                 ChevronBackground: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
@@ -361,6 +362,7 @@ scrNuevaSolicitud As screen:
                 BorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01
+                BorderThickness: =1
                 ChevronBackground: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
@@ -467,6 +469,7 @@ scrNuevaSolicitud As screen:
                 BorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01
+                BorderThickness: =1
                 ChevronBackground: |-
                     =//RGBA(56; 96; 178; 1)
                     varColorPri01
@@ -508,7 +511,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RucCliente")
             Required: =false
             Update: =DataCardValue20.Text
-            Width: =200
+            Width: =210
             X: =2
             Y: =1
             ZIndex: =1
@@ -527,6 +530,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue20 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -591,7 +595,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "RazonSocialCliente")
             Required: =false
             Update: =DataCardValue21.Text
-            Width: =415
+            Width: =490
             X: =3
             Y: =1
             ZIndex: =1
@@ -610,6 +614,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue21 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -673,7 +678,7 @@ scrNuevaSolicitud As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue23.SelectedDate
-            Width: =280
+            Width: =275
             X: =4
             Y: =1
             ZIndex: =1
@@ -692,6 +697,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue23 As datepicker:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 DefaultDate: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 EndYear: =Year(Today())+100
@@ -750,7 +756,7 @@ scrNuevaSolicitud As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue22.SelectedDate
-            Width: =280
+            Width: =275
             X: =5
             Y: =1
             ZIndex: =1
@@ -769,6 +775,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue22 As datepicker:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 DefaultDate: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
                 EndYear: =Year(Today())+100
@@ -830,7 +837,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "DescripcionPrueba")
             Required: =false
             Update: =DataCardValue26.Text
-            Width: =690
+            Width: =700
             X: =6
             Y: =1
             ZIndex: =1
@@ -849,6 +856,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue26 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -898,7 +906,11 @@ scrNuevaSolicitud As screen:
                 ZIndex: =4
 
         NroSolicitud_DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: |-
+                =//RGBA(0; 18; 107; 1)
+                varColorPri01
             BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
             DataField: ="NroSolicitud"
             Default: |
                 =//ThisItem.NroSolicitud
@@ -933,7 +945,10 @@ scrNuevaSolicitud As screen:
                 ZIndex: =1
 
             DataCardValue16 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderColor: |-
+                    =//If(IsBlank(Parent.Error); Parent.BorderColor; Color.Red)
+                    Color.Red
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -992,7 +1007,7 @@ scrNuevaSolicitud As screen:
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "AsuntoSol")
             Required: =false
             Update: =DataCardValue17.Text
-            Width: =635
+            Width: =550
             X: =0
             Y: =1
             ZIndex: =7
@@ -1011,6 +1026,7 @@ scrNuevaSolicitud As screen:
 
             DataCardValue17 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
@@ -1071,11 +1087,11 @@ scrNuevaSolicitud As screen:
                 =//DataSourceInfo([@Solicitud];DataSourceInfo.DisplayName;"Obs")
                 "Comentario"
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =256
             MaxLength: =DataSourceInfo([@Solicitud], DataSourceInfo.MaxLength, "Obs")
             Required: =false
             Update: =DataCardValue18.Text
-            Width: =700
+            Width: =728
             X: =7
             Y: =1
             ZIndex: =7
@@ -1094,11 +1110,12 @@ scrNuevaSolicitud As screen:
 
             DataCardValue18 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Font: =Font.'Segoe UI'
-                Height: =135
+                Height: =183
                 HoverBorderColor: |-
                     =//RGBA(0; 18; 107; 1)
                     varColorPri01B
@@ -1162,7 +1179,7 @@ scrNuevaSolicitud As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@SolicitudDetalle],DataSourceInfo.DisplayName,"{Attachments}")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =235
+            Height: =256
             Required: =false
             Update: =DataCardValue49.Attachments
             Width: =545
@@ -1184,9 +1201,11 @@ scrNuevaSolicitud As screen:
 
             DataCardValue49 As attachments:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
                 DisplayMode: =Parent.DisplayMode
+                DropTargetBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =230
+                Height: =183
                 HoverFill: |
                     =//RGBA(186; 202; 226; 1)
                     varColorPri01B
@@ -1240,8 +1259,9 @@ scrNuevaSolicitud As screen:
         ZIndex: =8
 
     btnGrabar As button:
+        BorderThickness: =1
         Fill: =varColorPri01
-        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Height: =46
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
@@ -1250,6 +1270,10 @@ scrNuevaSolicitud As screen:
             Notify("Solicitud creada correctamente.", NotificationType.Success);
             UpdateContext({ isLoading: false });
             Select(icn_Volver_NS);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         TabIndex: =13
         Text: ="CREAR SOLICITUD"
         Width: =670

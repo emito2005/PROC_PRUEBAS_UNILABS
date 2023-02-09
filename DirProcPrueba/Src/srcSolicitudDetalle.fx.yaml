@@ -1103,7 +1103,6 @@ srcSolicitudDetalle As screen:
 
     Label6_114 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1118,7 +1117,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =18
 
     TextInput4_90 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.ID
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1130,6 +1129,10 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_114.Width
         X: =Label6_114.X
         Y: =Label6_114.Y + Label6_114.Height
@@ -1137,7 +1140,6 @@ srcSolicitudDetalle As screen:
 
     Label6_115 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1154,7 +1156,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =20
 
     TextInput4_91 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.NroSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1166,6 +1168,10 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_115.Width
         X: =Label6_115.X
         Y: =Label6_115.Y + Label6_115.Height
@@ -1173,7 +1179,6 @@ srcSolicitudDetalle As screen:
 
     Label6_116 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1186,7 +1191,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =22
 
     TextInput4_92 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoSolicitud
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1198,6 +1203,10 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_116.Width
         X: =Label6_116.X
         Y: =Label6_116.Y + Label6_116.Height
@@ -1205,7 +1214,6 @@ srcSolicitudDetalle As screen:
 
     Label6_117 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1218,7 +1226,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =24
 
     TextInput4_93 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoServicio
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1230,6 +1238,10 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_117.Width
         X: =Label6_117.X
         Y: =Label6_117.Y + Label6_117.Height
@@ -1591,7 +1603,6 @@ srcSolicitudDetalle As screen:
 
     Label6_118 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingBottom: =0
         PaddingLeft: =0
@@ -1604,7 +1615,7 @@ srcSolicitudDetalle As screen:
         ZIndex: =49
 
     TextInput4_94 As text:
-        BorderThickness: =0
+        BorderThickness: =1
         Default: =varSolicitudDetalleItemSel.TipoOperacion
         DisabledColor: =RGBA(0, 0, 0, 1)
         DisabledFill: =RGBA(244, 244, 244, 0)
@@ -1616,6 +1627,10 @@ srcSolicitudDetalle As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Width: =Label6_118.Width
         X: =Label6_118.X
         Y: =Label6_118.Y + Label6_118.Height
@@ -2141,8 +2156,10 @@ srcSolicitudDetalle As screen:
         ZIndex: =63
 
         descargarPDFBtn_2 As button:
+            BorderThickness: =1
             DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({
@@ -2161,36 +2178,58 @@ srcSolicitudDetalle As screen:
                         callback: "false"
                     })
                 )
-            Text: ="Generar PDF"
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="GENERAR PDF"
             X: =50//requestFieldLbl_74.X
             Y: =650
             ZIndex: =61
 
         trazabilidadBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varTrazabilidad, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrTrazabilidad, ScreenTransition.Fade)
-            Text: ="Trazabilidad"
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="TRAZABILIDAD"
             X: =descargarPDFBtn_2.X
             Y: =705
             ZIndex: =62
 
         elevarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varElevar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrElevar, ScreenTransition.Fade)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Text: ="Elevar"
             X: =327
             Y: =650
             ZIndex: =63
 
         asignarBtn_1 As button:
+            BorderThickness: =1
             DisplayMode: =If(varAsignar && varMisSolicitudesScreen, DisplayMode.Edit, DisplayMode.Disabled)
             Fill: =varColorPri01
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: =Navigate(scrAsignar, ScreenTransition.Fade)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Text: ="Asignar"
             X: =elevarBtn_1.X
             Y: =705
@@ -2431,15 +2470,15 @@ srcSolicitudDetalle As screen:
             DisabledFill: =varColorPri01
             DisplayMode: =DisplayMode.Disabled
             FocusedBorderThickness: =0
-            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =30
             PaddingLeft: =15
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =40
-            Size: =16
-            Text: ="Datos de Solicitud"
+            Size: =12
+            Text: ="DATOS DE SOLICITUD"
             Width: =230
             X: =50
             Y: =85
