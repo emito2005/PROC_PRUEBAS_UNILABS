@@ -747,7 +747,7 @@ srcSolicitudDetalleTra As screen:
         PaddingRight: =0
         PaddingTop: =0
         Text: ="F. Creación"
-        Width: =(Parent.Width - 250) / 5
+        Width: =(Parent.Width - 300) / 5
         X: =Button8_19.X
         Y: =Button8_19.Y + Button8_19.Height + 10
         ZIndex: =80
@@ -783,7 +783,7 @@ srcSolicitudDetalleTra As screen:
         PaddingTop: =0
         Text: ="F. Expiración SLA"
         Width: =Label6_69.Width
-        X: =Label6_69.X + Label6_69.Width + 20
+        X: =Label6_69.X + Label6_69.Width + 50
         Y: =Label6_69.Y
         ZIndex: =82
 
