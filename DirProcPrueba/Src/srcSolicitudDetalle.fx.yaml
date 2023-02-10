@@ -1917,6 +1917,7 @@ srcSolicitudDetalle As screen:
 
         TextInput3_3 As text:
             BorderColor: =varColorPri01B
+            BorderThickness: =1
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
@@ -1934,8 +1935,10 @@ srcSolicitudDetalle As screen:
             ZIndex: =72
 
         aceptarBtn_3 As button:
+            BorderThickness: =1
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_3.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showArchiveDialog: false, isLoading: true });
@@ -2012,21 +2015,31 @@ srcSolicitudDetalle As screen:
                 UpdateContext({ isLoading: false });
                 
                 Navigate(scrMisSolicitudes, Fade);
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Aceptar"
+            Text: ="ACEPTAR"
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
             ZIndex: =73
 
         cancelarBtn_3 As button:
+            BorderThickness: =1
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showArchiveDialog: false });
                 Reset(TextInput3_3)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Cancelar"
+            Text: ="CANCELAR"
             Visible: =showArchiveDialog
             X: =confirmDialogFrame_5.X + (confirmDialogFrame_5.Width / 2) + 20
             Y: =confirmDialogFrame_5.Y + confirmDialogFrame_5.Height - Self.Height - 20
@@ -2092,6 +2105,7 @@ srcSolicitudDetalle As screen:
 
         TextInput3_4 As text:
             BorderColor: =varColorPri01B
+            BorderThickness: =1
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
@@ -2109,8 +2123,10 @@ srcSolicitudDetalle As screen:
             ZIndex: =79
 
         aceptarBtn_4 As button:
+            BorderThickness: =1
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_4.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showDeleteDialog: false, isLoading: true });
@@ -2188,21 +2204,31 @@ srcSolicitudDetalle As screen:
                 UpdateContext({ isLoading: false });
                 
                 Navigate(scrMisSolicitudes, Fade);
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Aceptar"
+            Text: ="ACEPTAR"
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
             ZIndex: =80
 
         cancelarBtn_4 As button:
+            BorderThickness: =1
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showDeleteDialog: false });
                 Reset(TextInput3_4)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Cancelar"
+            Text: ="CANCELAR"
             Visible: =showDeleteDialog
             X: =confirmDialogFrame_6.X + (confirmDialogFrame_6.Width / 2) + 20
             Y: =confirmDialogFrame_6.Y + confirmDialogFrame_6.Height - Self.Height - 20
@@ -2322,7 +2348,9 @@ srcSolicitudDetalle As screen:
 
         finalizarBtn_1 As button:
             BorderThickness: =1
-            DisplayMode: =If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo), DisplayMode.Edit, DisplayMode.Disabled)
+            DisplayMode: |-
+                =//If(varFinalizar && varMisSolicitudesScreen && IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo); DisplayMode.Edit; DisplayMode.Disabled)
+                DisplayMode.Edit
             Fill: =varColorPri01
             FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
@@ -2468,6 +2496,7 @@ srcSolicitudDetalle As screen:
 
         TextInput3_5 As text:
             BorderColor: =varColorPri01B
+            BorderThickness: =1
             Default: =""
             Height: =120
             HintText: ="Ingrese un comentario..."
@@ -2485,8 +2514,10 @@ srcSolicitudDetalle As screen:
             ZIndex: =86
 
         aceptarBtn_5 As button:
+            BorderThickness: =1
             DisplayMode: =If(IsBlank(TrimEnds(TextInput3_5.Text)), DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({showFinishDialog: false, isLoading: true });
@@ -2538,21 +2569,31 @@ srcSolicitudDetalle As screen:
                 UpdateContext({ isLoading: false });
                 
                 Navigate(scrMisSolicitudes, Fade);
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Aceptar"
+            Text: ="ACEPTAR"
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) - Self.Width - 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
             ZIndex: =87
 
         cancelarBtn_5 As button:
+            BorderThickness: =1
             Fill: =varColorPri01
+            FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
                 =UpdateContext({ showFinishDialog: false });
                 Reset(TextInput3_5)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =12
-            Text: ="Cancelar"
+            Text: ="CANCELAR"
             Visible: =showFinishDialog
             X: =confirmDialogFrame_7.X + (confirmDialogFrame_7.Width / 2) + 20
             Y: =confirmDialogFrame_7.Y + confirmDialogFrame_7.Height - Self.Height - 20
