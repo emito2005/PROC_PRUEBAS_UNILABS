@@ -2305,7 +2305,10 @@ srcSolicitudDetalle As screen:
             Fill: =varColorPri01
             FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
-            OnSelect: =Navigate(scrDerivar, ScreenTransition.Fade)
+            OnSelect: |+
+                =If(IsBlank(varSolicitudDetalleItemSel.IdAreaDestinoFlujo),Notify("No puede Derivar la solicitud por que ha llegado al final del flujo",NotificationType.Error,2000),Navigate(scrDerivar, ScreenTransition.Fade))
+                
+                
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -2705,4 +2708,10 @@ srcSolicitudDetalle As screen:
         Visible: =isLoading
         Width: =Parent.Width
         ZIndex: =89
+
+    Label6 As label:
+        Text: =varSolicitudDetalleItemSel.IdSolicitudDetalleGenerada
+        X: =95
+        Y: =15
+        ZIndex: =90
 

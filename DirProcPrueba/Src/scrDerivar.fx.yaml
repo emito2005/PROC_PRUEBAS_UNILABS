@@ -81,7 +81,8 @@ scrDerivar As screen:
             				FechaExpiraSLA: varSolicitudDetalleItemSel.FechaExpiraSLA,
                             //FechaExpiraOLA: varSolicitudDetalleItemSel.FechaExpiraOLA;
                             // Cuando se deriva, la fecha OLA se debe volver a generar ya que cada Area tiene un OLA distinto
-            				FechaExpiraOLA: DateAdd(Today(), varMyUserArea.OLA),
+            				//FechaExpiraOLA: DateAdd(Today(); varMyUserArea.OLA); //el OLA debe de ser del area a donde se le esta mandando y no del area actual
+                            FechaExpiraOLA: DateAdd(Today(), LookUp(Area_1,ID=varSolicitudDetalleItemSel.IdAreaDestinoFlujo,OLA)),
             				EsAtendido: false,
             				IdAccionOrigen: 4, // Derivar
             				IdEtapaOrigen: varSolicitudDetalleItemSel.IdEtapaActual,
