@@ -109,7 +109,7 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =ThisItem.PersonalDestino
+            Text: =ThisItem.PersonalActual
             Tooltip: =ThisItem.PersonalActual
             Width: =160
             Wrap: =false
@@ -126,7 +126,7 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =ThisItem.PerfilDestino
+            Text: =ThisItem.PerfilActual
             Width: =70
             X: =txtGalTra08.X + txtGalTra08.Width + 10
             Y: =txtGalTra01.Y
@@ -188,8 +188,8 @@ scrTrazabilidad As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =ThisItem.PersonalActual
-            Tooltip: =ThisItem.PersonalActual
+            Text: =ThisItem.PersonalOrigen
+            Tooltip: =ThisItem.PersonalOrigen
             Width: =160
             Wrap: =false
             X: =txtGalTra04.X + txtGalTra04.Width + 10

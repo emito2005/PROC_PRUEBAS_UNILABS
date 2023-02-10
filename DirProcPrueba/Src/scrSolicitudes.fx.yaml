@@ -297,18 +297,18 @@ scrSolicitudes As screen:
         Fill: =varColorPri01
         Height: =Label3_1.Height
         HoverFill: =ColorFade(Self.Fill, -10%)
-        OnSelect: |-
+        OnSelect: |+
             =UpdateContext({ isLoading: true });
             
             Exportacion_Excel.Run(
                 JSON(
                     ShowColumns(
-                        Search(colSolicitudes,
+                        Search(AddColumns(colSolicitudes,"SegmentoNegocio",TipoServicio),
                             txtFilNomNroSol_1.Text,
                             "NroSolicitud",
                             "AsuntoSol"
                         ),
-                        "ID", "NroSolicitud", "AsuntoSol", "TipoSolicitud", "TipoServicio", "TipoOperacion", "EsActivo", "RucCliente", "RazonSocialCliente", "AreaOrigen", 
+                        "ID", "NroSolicitud", "AsuntoSol", "TipoSolicitud", "SegmentoNegocio", "TipoOperacion", "EsActivo", "RucCliente", "RazonSocialCliente", "AreaOrigen", 
                         "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
                         "FechaExpiraSLA", "FechaExpiraOLA", "InicioOperacion", "FinOperacion", "DescripcionPrueba", "ObsSolDet", "FechaCreacionSol"
                     )
@@ -317,6 +317,9 @@ scrSolicitudes As screen:
             
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
+            
+            
+            
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
