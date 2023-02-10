@@ -162,7 +162,7 @@ scrSolicitudes As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =Text(ThisItem.FechaAtencion,"dd/mm/yy")
+            Text: =Text(ThisItem.FechaCreacionSol,"dd/mm/yy")
             Width: =65
             X: =txtGalSol09.X + txtGalSol09.Width + 10
             Y: =txtGalSol01.Y
