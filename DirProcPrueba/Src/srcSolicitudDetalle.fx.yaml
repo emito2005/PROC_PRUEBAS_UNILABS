@@ -12,7 +12,7 @@ srcSolicitudDetalle As screen:
         );
 
     htm_EmailPreview_FS As htmlViewer:
-        Height: =63
+        Height: =81
         HtmlText: |-
             ="<html xmlns:v=""""urn:schemas-microsoft-com:vml""""
             xmlns:o=""""urn:schemas-microsoft-com:office:office""""
@@ -796,7 +796,7 @@ srcSolicitudDetalle As screen:
         Visible: =false
         Width: =48
         X: =1318
-        Y: =705
+        Y: =686
         ZIndex: =1
 
     Rectangle4_25 As rectangle:
@@ -2552,10 +2552,20 @@ srcSolicitudDetalle As screen:
                 
                 
                 //Envio de correo
+                //UpdateContext({ colPersonalSolicitudFin:Filter(SolicitudDetalle;IdSolicitud=varSolicitudDetalleItemSel.IdSolicitud) });;
+                UpdateContext({colPersonalSolicitudFin:
+                    Distinct(
+                        AddColumns(
+                            Filter(SolicitudDetalle,IdSolicitud=varSolicitudDetalleItemSel.IdSolicitud,IdPersonalActual>0),
+                            "EmailDestinos",
+                            LookUp(Personal,ID=IdPersonalActual,Email)
+                                ),EmailDestinos
+                            )
+                        });
                 
-                //Set(varDestinatariosNotificacion;LookUp(Personal; ID = varSolicitudDetalleItemSel.IdPersonalOrigen).Email);;
+                Set(varDestinatariosNotificacion,Concat(colPersonalSolicitudFin,Result,";"));
                 Set(varAsuntoCorreo,Concatenate("Solicitud Finalizada Nro. : ", varSolicitudDetalleItemSel.NroSolicitud));
-                Set(varCuerpoCorreo,htm_EmailPreview_ES.HtmlText);
+                Set(varCuerpoCorreo,htm_EmailPreview_FS.HtmlText);
                 
                 
                 Office365Outlook.SendEmailV2("823248@unilabs.com",varAsuntoCorreo,varCuerpoCorreo);
