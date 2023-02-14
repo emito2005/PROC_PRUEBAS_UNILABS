@@ -1478,6 +1478,7 @@ srcSolicitudDetalleTra As screen:
 
     Icon7_3 As icon.Folder:
         Color: =varColorPri01
+        DisplayMode: =If(varDescargarPdfSol, DisplayMode.Edit, DisplayMode.Disabled)
         Height: =Label3_1.Height
         Icon: =Icon.Folder
         OnSelect: |-
