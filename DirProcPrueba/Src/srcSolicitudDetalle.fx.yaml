@@ -1,5 +1,6 @@
 srcSolicitudDetalle As screen:
-    OnHidden: =
+    OnHidden: |-
+        =UpdateContext({ isLoading: false })
     OnVisible: |-
         =// Get AreaManager ID if is blank
         If(IsBlank(MyAreaManagerID) && varMyUser.IdPerfil = 2,
@@ -2248,13 +2249,14 @@ srcSolicitudDetalle As screen:
             FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(Self.Fill, -10%)
             OnSelect: |-
-                =UpdateContext({
-                    isLoading: true,
+                =UpdateContext({ isLoading: true });
+                UpdateContext({
                     callback:
                     Exportacion_PDF.Run(
                         HtmlText1_3.HtmlText, 
                         "request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                        varSolicitudDetalleItemSel.ID
+                        varSolicitudDetalleItemSel.ID,
+                        User().Email
                     ).callback
                 });
                 If(callback = "true",
@@ -2753,16 +2755,33 @@ srcSolicitudDetalle As screen:
             Y: =Button8_23.Y + Button8_23.Height - Self.Height
             ZIndex: =15
 
+    Label6 As label:
+        Text: =varSolicitudDetalleItemSel.IdSolicitudDetalleGenerada
+        X: =95
+        Y: =15
+        ZIndex: =89
+
+    Icon7_2 As icon.Folder:
+        Color: =varColorPri01
+        Height: =Label3_1.Height
+        Icon: =Icon.Folder
+        OnSelect: |-
+            =Launch(
+            "https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FPDF%2F" &
+            First(Split(User().Email, "@")).Result &
+            "%40unilabs%2Ecom&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521"
+            )
+        TabIndex: =9
+        Tooltip: ="Ver Carpeta de Archivos Exportados"
+        Width: =40
+        X: =descargarPDFBtn_2.X + descargarPDFBtn_2.Width + 10
+        Y: =descargarPDFBtn_2.Y + (descargarPDFBtn_2.Height / 2) - (Self.Height / 2)
+        ZIndex: =90
+
     Rectangle2_14 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
         Height: =Parent.Height
         Visible: =isLoading
         Width: =Parent.Width
-        ZIndex: =89
-
-    Label6 As label:
-        Text: =varSolicitudDetalleItemSel.IdSolicitudDetalleGenerada
-        X: =95
-        Y: =15
-        ZIndex: =90
+        ZIndex: =91
 

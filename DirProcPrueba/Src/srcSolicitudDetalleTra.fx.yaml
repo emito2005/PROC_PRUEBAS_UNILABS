@@ -304,13 +304,14 @@ srcSolicitudDetalleTra As screen:
         FontWeight: =FontWeight.Bold
         HoverFill: =ColorFade(Self.Fill, -10%)
         OnSelect: |-
-            =UpdateContext({
-                isLoading: true,
+            =UpdateContext({ isLoading: true });
+            UpdateContext({
                 callback:
                 Exportacion_PDF.Run(
                     HtmlText1_1.HtmlText, 
                     "request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(), "ddmmyy") & ".html", 
-                    varSolicitudDetalleTrazaItemSel.ID
+                    varSolicitudDetalleTrazaItemSel.ID,
+                    User().Email
                 ).callback
             });
             If(callback = "true",
@@ -1474,4 +1475,21 @@ srcSolicitudDetalleTra As screen:
         Width: =383
         Y: =2
         ZIndex: =102
+
+    Icon7_3 As icon.Folder:
+        Color: =varColorPri01
+        Height: =Label3_1.Height
+        Icon: =Icon.Folder
+        OnSelect: |-
+            =Launch(
+            "https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FPDF%2F" &
+            First(Split(User().Email, "@")).Result &
+            "%40unilabs%2Ecom&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521"
+            )
+        TabIndex: =9
+        Tooltip: ="Ver Carpeta de Archivos Exportados"
+        Width: =40
+        X: =descargarPDFBtn_1.X - Self.Width - 10
+        Y: =descargarPDFBtn_1.Y + (descargarPDFBtn_1.Height / 2) - (Self.Height / 2)
+        ZIndex: =103
 
