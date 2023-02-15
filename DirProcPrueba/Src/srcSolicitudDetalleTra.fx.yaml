@@ -310,7 +310,7 @@ srcSolicitudDetalleTra As screen:
                 Exportacion_PDF.Run(
                     HtmlText1_1.HtmlText, 
                     //"request_" & varSolicitudDetalleTrazaItemSel.ID & "_" & Text(Today(); "ddmmyy") & ".html"; 
-                    Text(Today(), "ddmmyy") & "_" & Text(Now(), "hhmmss") & "_" & varSolicitudDetalleTrazaItemSel.NroSolicitud & ".html",
+                    Text(Today(), "yymmdd") & "_" & Text(Now(), "hhmmss") & "_" & varSolicitudDetalleTrazaItemSel.NroSolicitud & ".html",
                     varSolicitudDetalleTrazaItemSel.ID,
                     User().Email
                 ).callback
