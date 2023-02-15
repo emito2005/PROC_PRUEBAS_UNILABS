@@ -16,7 +16,7 @@ Screen2 As screen:
                 Genero: "Masculino"
             });
             
-            Exportacion_Excel.Run(JSON(colEjemploPersonas), User().Email);
+            //Exportacion_Excel.Run(JSON(colEjemploPersonas); User().Email);;
             
             Notify("Exportacion Excel realizada correctamente.", NotificationType.Success);
         Text: ="Botón"

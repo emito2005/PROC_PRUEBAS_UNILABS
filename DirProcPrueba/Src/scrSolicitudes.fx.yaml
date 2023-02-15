@@ -313,7 +313,8 @@ scrSolicitudes As screen:
                         "FechaExpiraSLA", "FechaExpiraOLA", "InicioOperacion", "FinOperacion", "DescripcionPrueba", "ObsSolDet", "FechaCreacionSol"
                     )
                 ),
-                User().Email
+                User().Email,
+                Text(Today(), "ddmmyy") & "_" & Text(Now(), "hhmmss") & ".xlsx"
             );
             
             UpdateContext({ isLoading: false });
