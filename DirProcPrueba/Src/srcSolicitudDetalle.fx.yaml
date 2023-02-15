@@ -2255,7 +2255,7 @@ srcSolicitudDetalle As screen:
                     Exportacion_PDF.Run(
                         HtmlText1_3.HtmlText, 
                         //"request_" & varSolicitudDetalleItemSel.ID & "_" & Text(Today(); "ddmmyy") & ".html"; 
-                        Text(Today(), "ddmmyy") & "_" & Text(Now(), "hhmmss") & "_" & varSolicitudDetalleItemSel.NroSolicitud & ".html",
+                        Text(Today(), "yymmdd") & "_" & Text(Now(), "hhmmss") & "_" & varSolicitudDetalleItemSel.NroSolicitud & ".html",
                         varSolicitudDetalleItemSel.ID,
                         User().Email
                     ).callback

@@ -133,7 +133,7 @@ scrMisSolicitudes As screen:
                     )
                 ),
                 User().Email,
-                Text(Today(), "ddmmyy") & "_" & Text(Now(), "hhmmss") & ".xlsx"
+                Text(Today(), "yymmdd") & "_" & Text(Now(), "hhmmss") & ".xlsx"
             );
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
