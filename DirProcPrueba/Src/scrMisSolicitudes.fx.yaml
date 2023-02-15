@@ -131,7 +131,8 @@ scrMisSolicitudes As screen:
                         "AreaActual", "AreaDestino", "ManagerDelArea", "LiderDelArea", "AnalistaDelArea", "FechaAtencion", 
                         "FechaExpiraSLA", "FechaExpiraOLA", "InicioOperacion", "FinOperacion", "DescripcionPrueba", "ObsSolDet", "FechaCreacionSol"
                     )
-                )
+                ),
+                User().Email
             );
             UpdateContext({ isLoading: false });
             Notify("Exportacion realizada correctamente.", NotificationType.Success);
@@ -476,7 +477,11 @@ scrMisSolicitudes As screen:
         Height: =Label3.Height
         Icon: =Icon.Folder
         OnSelect: |-
-            =Launch("https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FProcesodePruebas%2FShared%20Documents&viewpath=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521")
+            =Launch(
+                "https://unilabsgroup.sharepoint.com/sites/ProcesodePruebas/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FProcesodePruebas%2FShared%20Documents%2FReportes%5FExcel%2F" &
+                First(Split(User().Email, "@")).Result &
+                "%40unilabs%2Ecom&viewid=052b6700%2D93eb%2D45c7%2Daeaa%2Dc1e1b6dd2521"
+            )
         TabIndex: =9
         Tooltip: ="Ver Carpeta de Archivos Exportados"
         Width: =40
