@@ -944,22 +944,25 @@ srcSolicitudDetalle As screen:
             
             						<td class='field' style='width: 5%;'>Segmento del Negocio</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_93.Text & "</td>
-            						
-            						<td class='blank' style='width: 2%;'>a</td>
-            						
-            						<td class='field' style='width: 5%;'>Tipo de Operación</td>
-            						<td class='value' style='width: 5%;'>" & TextInput4_94.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
             			<table class='fieldsTable'>
             				<tbody>
             					<tr>
+            						<td class='field' style='width: 5%;'>Tipo de Operación</td>
+            						<td class='value' style='width: 5%;'>" & TextInput4_94.Text & "</td>
+            						
+            						<td class='blank' style='width: 2%;'>a</td>
+            						
             						<td class='field' style='width: 5%;'>Asunto de Solicitud</td>
             						<td class='value' style='width: 15%;'>" & TextInput4_95.Text & "</td>
-            
-            						<td class='blank' style='width: 2%;'>a</td>
-            
+            					</tr>
+            				</tbody>
+            			</table>			
+            			<table class='fieldsTable'>
+            				<tbody>
+            					<tr>
             						<td class='field' style='width: 5%;'>RUC Cliente</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_96.Text & "</td>
             						
@@ -968,14 +971,10 @@ srcSolicitudDetalle As screen:
             						<td class='field' style='width: 5%;'>Razón Social del Cliente</td>
             						<td class='value' style='width: 10%;'>" & TextInput4_97.Text & "</td>
             						
-            					</tr>
-            				</tbody>
-            			</table>
-            			<table class='fieldsTable'>
-            				<tbody>
-            					<tr>
+            						<td class='blank' style='width: 2%;'>a</td>
+            						
             						<td class='field' style='width: 5%;'>Descripción</td>
-            						<td class='value' style='width: 25%;'>" & Label6_124.Text & "</td>
+            						<td class='value' style='width: 15%;'>" & Label6_124.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
@@ -1030,9 +1029,12 @@ srcSolicitudDetalle As screen:
             
             						<td class='field' style='width: 5%;'>F. Expiración OLA</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_106.Text & "</td>
-            						
-            						<td class='blank' style='width: 2%;'>a</td>
-            
+            					</tr>
+            				</tbody>
+            			</table>
+            			<table class='fieldsTable'>
+            				<tbody>
+            					<tr>
             						<td class='field' style='width: 5%;'>F. Inicio de Operación</td>
             						<td class='value' style='width: 5%;'>" & TextInput4_107.Text & "</td>
             						
@@ -1049,7 +1051,7 @@ srcSolicitudDetalle As screen:
             						<td style='width: 100%; border: 0px #fff solid; text-align: left;'>Comentario</td>
             					</tr>
             					<tr>
-            						<td style='width: 100%; height: 120px;'>" & Label6_124.Text & "</td>
+            						<td style='width: 100%; height: 120px; text-align: left;vertical-align:top;'>" & Label6_124.Text & "</td>
             					</tr>
             				</tbody>
             			</table>
